@@ -13,8 +13,6 @@ extern struct {
 	u8 data[0x14];  // D_801282C0
 	f32 value;
 } D_801282C0;
-//extern u8 D_801282C0[10];
-//extern s8 D_801282C0;
 extern s8 D_801282C1; 
 extern s8 D_801282C2; 
 extern s8 D_801282C3; //Transparency
