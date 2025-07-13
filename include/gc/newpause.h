@@ -8,7 +8,7 @@ typedef struct {
 	u8 PageIndex; //0x0
 	u8 SubPage; //0x1
 	u8 ExitType; //Flag for exiting the pause Menu
-	s8 unk3;
+	s8 unk3; //Which supplemental ui to show
 	u8 unk4;
 	u8 LastOptionSelected;//0x5
 	s8 HeaderAndButtonOffset; //0x6
@@ -21,7 +21,7 @@ typedef struct {
 	u8 ConfirmTextStart;
 	u8 unk11;
 	u8 ConfirmTextEnd;
-	s8 unk13;
+	s8 unk13; //Unused Indicate if in rando menu
 	u32* textPointer;//0x14
 	s16 pageTitleOffset; //0x18
 	u8 MovePageHeaderTrigger; //0x1A
@@ -39,7 +39,7 @@ typedef struct {
 	s16 B_Button_Pos; //0x28
 	s16 GameOverTransparency; //0x2A
 	s16 GameOverFadingIn; //0x2C
-	u16 unk2E;
+	u32* movesTextPointer; //Moves Text
 	OptionState optionState;
 } PauseState;
 
@@ -71,6 +71,18 @@ typedef struct {
 } Coords2D;
 
 typedef struct {
+	u8 x;
+	u8 y;
+	u8 DialogIndex;
+	u8 AbilityId;
+} AbilityCheck;
+
+typedef struct {
+	AbilityCheck* checks;
+} AbilityPage;
+
+
+typedef struct {
 	u16 Icon; //0x0
 	u8 Text; //0x2
 	u8 Function; //0x3
@@ -80,8 +92,8 @@ typedef struct {
 
 //Information about a given pause menu state, how many options there are
 typedef struct {
-	s16 unk1;
-	s8 unk3;
+	s16 Dialog; //Which Dialog File to Use
+	s8 unk3; //Supplemental UI
 	u8 Size;
 	Option* options;
 } PauseOption;
@@ -96,7 +108,7 @@ typedef struct unk80802190 {
 	s16 unk2;
 	s16 unk4;
 } unk80802190;
-
+//Array of Different pause menu states
 extern PauseOption D_80802070_gcnewpause[];
 extern void* D_808021CC_gcnewpause;
 extern void* D_808021E4_gcnewpause;
@@ -113,7 +125,9 @@ extern unk80802190 D_80802190_gcnewpause[6];
 extern u8 D_808021B4_gcnewpause[12];
 extern void* D_808021C0_gcnewpause;
 extern u8 D_8012762D;
+extern u32 D_80127658;
 extern s8 D_80802072_gcnewpause;
+extern AbilityPage D_80802218_gcnewpause[];
 
 PauseState* gcnewpause_entrypoint_0(u32 arg0);
 PauseState* _gcnewpause_entrypoint_0(u32 arg0);

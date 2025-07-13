@@ -1,6 +1,7 @@
 #include "gc/newpause.h"
 #include "gl/dbstring.h"
 #include "fx/kern.h"
+#include "fx/dialog.h"
 #include "core2/1E2F380.h"
 #include "core2/1E91790.h"
 #include "core2/1EAD060.h"
@@ -29,7 +30,6 @@
 #include "gc/level.h"
 #include "gc/audiolist.h"
 
-
 //Setup Pause Menu
 PauseState* gcnewpause_entrypoint_0(u32 arg0)
 {
@@ -37,8 +37,8 @@ PauseState* gcnewpause_entrypoint_0(u32 arg0)
 	PauseState* pauseMemory;
 	s8* var_0;
 	u32 index;
-	pauseMemory = heap_alloc(_gcnewoption_entrypoint_2() + 0x30);
-	bzero(pauseMemory, 0x30);
+	pauseMemory = heap_alloc(_gcnewoption_entrypoint_2() + 0x34);
+	bzero(pauseMemory, 0x34);
 	pauseMemory->unkC = arg0;
 	func_80800534_gcnewpause(pauseMemory, 1U);
 	pauseMemory->HeaderAndButtonOffset += *D_80802124_gcnewpause;
@@ -64,9 +64,9 @@ void gcnewpause_entrypoint_1(PauseState* a0)
 	heap_free(a0);
 }
 
-#ifndef NONMATCHING
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/gcnewpause_entrypoint_2.s")
-#else
+//#ifndef NONMATCHING
+//#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/gcnewpause_entrypoint_2.s")
+//#else
 //Functionality update
 u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
 	u32 PageHeaderState;
@@ -118,11 +118,11 @@ u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
 				}
 				else
 				{
-					if (pauseMenu->CanMoveLeft != 0 && joystick[0] < (-0.75f) && pauseMenu->Timer == 0)
+					if (pauseMenu->CanMoveLeft != 0 && joystick[0] < (-0.75f) && pauseMenu->Timer == 0) //Move Page Left if possible
 					{
 						func_8080162C_gcnewpause(pauseMenu, -1);
 					}
-					else if (pauseMenu->CanMoveRight != 0 && 0.75f < joystick[0] && pauseMenu->Timer == 0)
+					else if (pauseMenu->CanMoveRight != 0 && 0.75f < joystick[0] && pauseMenu->Timer == 0) //Move Page Right if possible
 					{
 						func_8080162C_gcnewpause(pauseMenu, 1);
 					}
@@ -194,7 +194,7 @@ u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
 		}
 		break;
 	default:
-		if (func_80015FA0(pauseMenu->unkC) == 1)
+		if (func_80015FA0(pauseMenu->unkC) == 1) 
 		{
 			pauseMenu->ExitType = 1;
 		}
@@ -203,12 +203,12 @@ u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
 	}
 	return ((pauseMenu->ExitType ^ 1) == 0);
 }
-#endif
+//#endif
 //Draw UI
 void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu) 
 {
 	u8 temp_v0;
-
+	int index = 0;
 	temp_v0 = pauseMenu->PageIndex;
 	switch (temp_v0)
 	{
@@ -217,6 +217,30 @@ void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu)
 		break;
 	case 5: //Draw Gameover
 		func_80801DA0_gcnewpause(pauseMenu, arg0);
+		break;
+	case 3:
+		if (pauseMenu->SubPage >= 0xE)
+		{
+			for (index = 0; index < 14; index++)
+			{
+				AbilityCheck ability = D_80802218_gcnewpause[pauseMenu->SubPage - 0xE].checks[index];
+				char* titleString = _gldbstring_entrypoint_1(pauseMenu->movesTextPointer, ability.DialogIndex);
+
+				if (func_800C6E38(ability.AbilityId))
+				{
+					func_800B7B8C(0x4F, 0xF4, 0x2F);
+				}
+				else
+				{
+					func_800B7B8C(0xFF, 0x44, 0x3F);
+				}
+				
+				func_800B798C(ability.x, ability.y, titleString);
+				_fxdialog_entrypoint_1(ability.x, ability.y);
+				_fxdialog_entrypoint_2(0.60546875f);
+				_fxdialog_entrypoint_3(&D_80127658, (8.0f* strlen(titleString)) + 3.078125f,0,0xFF);
+			}
+		}
 		break;
 	}
 	func_80801410_gcnewpause(pauseMenu, (s32)arg0);
@@ -238,6 +262,7 @@ void func_80800534_gcnewpause(PauseState* pauseMenu, u32 targetPage)
 		case 3: //Any Totals Page
 			_gldbstring_entrypoint_2(0x1864U);
 			pauseMenu->textPointer = NULL;
+			pauseMenu->movesTextPointer = NULL;
 			func_8080152C_gcnewpause(pauseMenu);
 			break;
 		}
@@ -279,7 +304,7 @@ void func_80800534_gcnewpause(PauseState* pauseMenu, u32 targetPage)
 			break;
 		case 2: //Main Option Page
 			func_80800A08_gcnewpause(pauseMenu);
-			pauseMenu->unk3 = *(&D_80802072_gcnewpause + (pauseMenu->ActivePauseMenuVariant * 8));
+			pauseMenu->unk3 = D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].unk3;
 			break;
 		case 3: //Totals Page
 			pauseMenu->unk3 = 1;
@@ -325,7 +350,7 @@ void gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3)
 {
 	PauseState* pauseMenu;
 
-	pauseMenu = (PauseState*)(((u8*)arg1) - 0x30);
+	pauseMenu = (PauseState*)(((u8*)arg1) - 0x34);
 	switch (arg3)
 	{
 	case 0: //Setup Option Text
@@ -337,6 +362,18 @@ void gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3)
 		break;
 
 	case 4: //Handle any Are You Sure Popups/Start Closing Options Page
+		if (D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].AreYouSure == 2 && func_8008FD48() != 0x1) //Ensure We Are Banjo and kazooie Otherwise we cannot use this option
+		{
+			//Play Failure Sound
+			func_800172D4(0x1,0xF);
+			break;
+		}
+		if (D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].AreYouSure == 3 && func_800D395C() == 0x1) //If we are in a minigame we cannot use this option
+		{
+			//Play Failure Sound
+			func_800172D4(0x1, 0xF);
+			break;
+		}
 		if ((D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].AreYouSure == 0) || (pauseMenu->unkE != 0))
 		{
 			if (_gcnewoption_entrypoint_37(arg1, 0))
@@ -365,7 +402,8 @@ void gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3)
 		break;
 
 	case 5: //Press B to Go Back
-		if ((pauseMenu->unkE == 0))
+		
+		if ((pauseMenu->unkE == 0) && pauseMenu->unk13 == 0)
 		{
 			if ((_gcnewoption_entrypoint_37(arg1, 1) != 0)) 
 			{
@@ -384,6 +422,15 @@ void gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3)
 				_gcnewoption_entrypoint_12(arg1, arg2, D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].Text);
 			}
 		}
+
+		if (pauseMenu->unk13 != 0) //Exit Randomizer Options
+		{
+			pauseMenu->ActivePauseMenuVariant = pauseMenu->unk13 - 1;
+			pauseMenu->unk13 = 0;
+			pauseMenu->PageIndex = 1;
+			break;
+		}
+
 		break;
 
 	case 2: //Try and Close Pause Menu
@@ -402,8 +449,9 @@ void func_80800A08_gcnewpause(PauseState* pauseMenu)
 	Option* options;
 
 	bzero(&pauseMenu->optionState, _gcnewoption_entrypoint_2());
-	_gcnewoption_entrypoint_5(&pauseMenu->optionState, _gcnewpause_entrypoint_4, 0U, D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].unk1, 0);
+	_gcnewoption_entrypoint_5(&pauseMenu->optionState, _gcnewpause_entrypoint_4, 0U, D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].Dialog, 0);
 	_gcnewoption_entrypoint_10(&pauseMenu->optionState, 2U);
+
 	optionSize = D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].Size;
 	options = D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options;
 	_gcnewoption_entrypoint_8(&pauseMenu->optionState, optionSize);
@@ -497,7 +545,23 @@ void func_80800CE4_gcnewpause(PauseState* pauseMenu, u32 arg1, s32 selectedOptio
 		pauseMenu->ExitType = 4;
 		_gcfrontend_entrypoint_12();
 		break;
-
+		
+	case 5: //Open Randomizer Options
+		pauseMenu->unk13 = pauseMenu->ActivePauseMenuVariant+1;
+		pauseMenu->ActivePauseMenuVariant = 7;
+		pauseMenu->PageIndex = 1;
+		break;
+	case 6: //Return to Jinjo Village
+		func_800A7990(0x142, 0x3, 0x2, 0x1);
+		break;
+	case 7: //View Moves
+		func_808017C8_gcnewpause(pauseMenu, 0xE);
+		func_80800534_gcnewpause(pauseMenu, 3U);
+		break;
+	case 8: //Perish
+		pauseMenu->ExitType = 1;
+		bs_setState(func_800F53D0(func_800F54E4()), 0x41);
+		break;
 	}
 
 	pauseMenu->LastOptionSelected = (u8)selectedOption;
@@ -549,6 +613,7 @@ s32 func_80800EA8_gcnewpause(PauseState* arg0, u32 arg1)
 	return sp24;
 }
 
+//Determine what to draw for totals subpages
 s32 func_80800F2C_gcnewpause(PauseState* arg1, u32 arg2, u32 arg3)
 {
 	s32 temp;
@@ -564,6 +629,13 @@ s32 func_80800F2C_gcnewpause(PauseState* arg1, u32 arg2, u32 arg3)
 		return func_80800FA8_gcnewpause(arg3);
 	case 2:
 		return func_80801AF8_gcnewpause(arg3);
+	case 0xE:
+	case 0xF:
+		return 0;
+	case 0x10:
+	case 0x11:
+		return 0;
+
 	default:
 		return func_808019A4_gcnewpause(func_808016A4_gcnewpause(arg2), arg3);
 	}
@@ -704,11 +776,23 @@ u8 func_80801248_gcnewpause(s16* a0, u8* a1, u32 a2) {
 //Draw Page Titles
 void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
 {
+	char* Version = "V.1 .0.1 3"; //I dont know where the kerning option is so I'm doing it manually
 	if (pauseMenu->DrawPageHeader != 0)
 	{
 		_fxkern_entrypoint_2();
 		func_800B8CE0(0xC28);
-		_fxkern_entrypoint_1(a1,pauseMenu->pageTitleOffset+0x20, _gldbstring_entrypoint_1(pauseMenu->textPointer, pauseMenu->SubPage));
+		if(pauseMenu->SubPage < 0xE)
+			_fxkern_entrypoint_1(a1,pauseMenu->pageTitleOffset+0x20, _gldbstring_entrypoint_1(pauseMenu->textPointer, pauseMenu->SubPage));
+		else if(pauseMenu->SubPage < 0x10) //BT
+			_fxkern_entrypoint_1(a1, pauseMenu->pageTitleOffset + 0x20, _gldbstring_entrypoint_1(pauseMenu->textPointer, 0xE));
+		else //BK
+			_fxkern_entrypoint_1(a1, pauseMenu->pageTitleOffset + 0x20, _gldbstring_entrypoint_1(pauseMenu->textPointer, 0xF));
+	}
+	else
+	{
+		_fxkern_entrypoint_2();
+		func_800B8CE0(0xC27);
+		_fxkern_entrypoint_0(a1,0x20 ,0xC0 , Version);
 	}
 	return;
 }
@@ -742,6 +826,7 @@ void func_8080136C_gcnewpause(PauseState* pauseMenu)
 	pauseMenu->MoveBButtonTrigger = 0;
 }
 
+//Draw Joystick and Buttons
 void func_80801410_gcnewpause(PauseState* pauseMenu, s32 arg1)
 {
 	Coords2D sp30;
@@ -826,6 +911,7 @@ void func_8080162C_gcnewpause(PauseState* pauseMenu,u32 a1)
 void func_80801660_gcnewpause(PauseState* pauseMenu)
 {
 	pauseMenu->textPointer=_gldbstring_entrypoint_0(pauseMenu->textPointer, 0x1864);
+	pauseMenu->movesTextPointer = _gldbstring_entrypoint_0(pauseMenu->textPointer, 0x18BB);
 	pauseMenu->pageTitleOffset = -pauseMenu->HeaderAndButtonOffset;
 	pauseMenu->MovePageHeaderTrigger = 0;
 }
@@ -858,7 +944,11 @@ s32 func_80801718_gcnewpause(s32 subPage, s32 movementDirection) {
 
 	if (movementDirection < 0) //Moving Left
 	{
-
+		if (var_s0 == 0xD) //Check if the next page would be 0xD and return the current page which indicates you cannot go in that direction
+		{
+			var_s0 = subPage;
+			return var_s0;
+		}
 		for (var_s0; var_s0 >= 3; var_s0--)
 		{
 			if (func_808016F0_gcnewpause(var_s0) != 0)
@@ -870,6 +960,7 @@ s32 func_80801718_gcnewpause(s32 subPage, s32 movementDirection) {
 		{
 			var_s0 = subPage;
 		}
+		
 	}
 	else if (movementDirection > 0) //Moving Right
 	{
@@ -879,9 +970,12 @@ s32 func_80801718_gcnewpause(s32 subPage, s32 movementDirection) {
 			{
 				break;
 			}
-
 		}
 		if (var_s0 == 0xE) //Check if the next page would be 0xE and return the current page which indicates you cannot go in that direction
+		{
+			var_s0 = subPage;
+		}
+		if (var_s0 == 0x10) //Check if the next page would be 0x12 and return the current page which indicates you cannot go in that direction
 		{
 			var_s0 = subPage;
 		}

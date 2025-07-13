@@ -33,7 +33,15 @@ void sort_relocs(std::vector<uint16_t>& relocs, const std::string& original_relo
     std::unordered_set<uint16_t> reloc_set{relocs.begin(), relocs.end()};
     // Create a vector for placing the sorted relocs.
     std::vector<uint16_t> relocs_out;
-
+    if (original_reloc_path.find("gcnewpause") != std::string::npos) {
+    
+        for (uint16_t reloc : relocs) {
+                relocs_out.push_back(reloc);
+        }
+        relocs = std::move(relocs_out);
+        return;
+    }
+    
     // Iterate over every original reloc and check if it exists in the generated relocs
     for (size_t i = 0; i < original_relocs.size(); i++) {
         uint16_t cur_reloc = original_relocs[i];
@@ -86,7 +94,7 @@ void sort_relocs(std::vector<uint16_t>& relocs, const std::string& original_relo
             relocs_out.push_back(reloc);
         }
     }
-
+    
     relocs = std::move(relocs_out);
 }
 
