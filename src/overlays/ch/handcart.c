@@ -1007,6 +1007,7 @@ void func_80802120_chhandcart(Actor* arg0)
     Prop* var_v0_2;
     sp34 = (HandcartMemory*)func_80100094(arg0, 0U);
     arg0->scale = 0.425f;
+    //Based on if we've spawned the first Item set which location canary mary should think we're at
     arg0->unk64.bits.unk64_19 = func_800D0A9C(0xC, 1);
     sp34->unk8F4 = 0;
     sp34->unk4 = 0.0f;
@@ -1080,6 +1081,7 @@ void func_80802394_chhandcart(Actor* arg0)
     func_801015D0(arg0);
 }
 
+//Play Canary Mary Dialog
 void func_808023B4_chhandcart(Actor* arg0, u32 arg1, u32 arg2)
 {
     arg2 = arg2 | 0x4;
@@ -1399,7 +1401,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
                 break;
             }
         }
-        else
+        else //Play Open
         {
             func_808023B4_chhandcart(arg0, 0xF7F, 0xB);
             break;
@@ -1729,18 +1731,18 @@ void func_80803794_chhandcart(Actor* arg0)
     switch (arg0->unk70_10)
     {
     case 24:
-        if (func_800DA298(0) != 0)
+        if (func_800DA298(0) != 0) //If we have spoken to canary mary in the cage
         {
             if (func_80090270() == 0)
             {
                 func_80802CE8_chhandcart(arg0, 0x19);
             }
         }
-        else if (func_800DA298(1) == 0)
+        else if (func_800DA298(1) == 0) //If we haven't spoken to canary mary in the cage
         {
             if ((_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0x1F4, 0x46, 6) != 0) && (func_80090178(0x4001) != 0))
             {
-                if (func_800DA9E4(0x42A, 1) == 0)
+                if (func_800DA9E4(0x42A, 1) == 0) //If we havent spoken to canary mary set flag to true
                 {
                     func_808023B4_chhandcart(arg0, 0xF7E, 0xB);
                 }
@@ -1809,17 +1811,17 @@ void func_80803794_chhandcart(Actor* arg0)
                 {
                     func_800DA544(0x508);
                     func_80800858_chhandcart(sp40, arg0, 2, 0);
-                    if (func_800DA298(0x57A) != 0)
+                    if (func_800DA298(0x57A) != 0) //If canary Mary has been freed get the race rules talk
                     {
                         func_808023B4_chhandcart(arg0, 0xF80, 0xB);
                     }
-                    else
+                    else //Alternate canary Mary introduces herself them gives the race rules talk
                     {
                         func_808023B4_chhandcart(arg0, 0xFB7, 0xB);
                     }
                 }
             }
-            else if (func_800DA298(0x54) != 0)
+            else if (func_800DA298(0x54) != 0) //if the Detonator has talked to canary mary
             {
                 if (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
                 {
@@ -1828,6 +1830,7 @@ void func_80803794_chhandcart(Actor* arg0)
             }
             else if (_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
             {
+                //Set Detonator talks to canary mary flag
                 func_800DA544(0x54);
                 func_808023B4_chhandcart(arg0, 0xFB0, 0xB);
             }
@@ -1972,6 +1975,7 @@ void func_80803794_chhandcart(Actor* arg0)
     }
 }
 
+//Update Function
 s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
 {
     HandcartMemory* temp_t0;
@@ -1997,10 +2001,12 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
         switch (*(s16*)&arg2)
         {
         case 0xF84:
+            //Won Race 1
             //Spawn jiggy of flag C
             func_800D1000(0xC, 0x1, temp_t0->rewardSpawn, 1, arg0->unk0);
             break;
         case 0xF89:
+            //Won Race 2
             //Spawn Cheato page of flag 4
             func_800D1000(0x4, 0x4, temp_t0->rewardSpawn, 1, arg0->unk0);
             break;
