@@ -63,6 +63,7 @@ u8 func_8080011C_chclockworkmouse(Actor *actor) {
     return sp1C->unkC.bytes[3];
 }
 
+//Set Race Progress State
 void func_80800158_chclockworkmouse(Actor *actor, s32 arg1) {
     Unk80100094 *sp1C;
 
@@ -71,18 +72,22 @@ void func_80800158_chclockworkmouse(Actor *actor, s32 arg1) {
     sp1C->unkC.bytes[3] = arg1;
 }
 
-void func_8080019C_chclockworkmouse(Actor *actor) {
+//Progress the Race
+void func_8080019C_chclockworkmouse(Actor *actor) 
+{
     switch (((Unk80100094 *)func_80100094(actor, 0))->unkC.bytes[3]) {
-    case 0:
+    case 0://If we are in the default state enter the race state
+        //Mid Race
         func_80800158_chclockworkmouse(actor, 1);
         func_808000B4_chclockworkmouse(actor);
         return;
-    case 1:
+    case 1://If we are in the race state enter the win state
+        //Won Race
         func_80800158_chclockworkmouse(actor, 2);
         _gcintrotext_entrypoint_0();
         func_808000B4_chclockworkmouse(actor);
         return;
-    case 2:
+    case 2://If we are in the win state reset to default
         func_80800158_chclockworkmouse(actor, 0);
         func_80800024_chclockworkmouse(0);
         return;
@@ -192,17 +197,21 @@ void func_80800700_chclockworkmouse(Unk80132ED0 **arg0, s32 arg1) {
     _capod_entrypoint_2(*arg0, 0x1C, arg1 | 0x800);
 }
 
-void func_80800734_chclockworkmouse(Actor *actor) {
-    if (((Unk80100094 *)func_80100094(actor, 0))->unkFA == 3) {
+void func_80800734_chclockworkmouse(Actor *actor) 
+{
+    if (((Unk80100094 *)func_80100094(actor, 0))->unkFA == 3) 
+    {
         func_80100074(actor, 1, 0);
     }
 }
 
-void func_80800774_chclockworkmouse(Actor *actor) {
+void func_80800774_chclockworkmouse(Actor *actor) 
+{
     func_8008FB58(actor->position, 0.0f, 70.0f);
 }
 
-void func_8080079C_chclockworkmouse(Actor *actor, Actor *arg1, s32 arg2, s32 arg3) {
+void func_8080079C_chclockworkmouse(Actor *actor, Actor *arg1, s32 arg2, s32 arg3) 
+{
     Unk80100094 *sp1C;
     u8 temp_t8;
 
@@ -444,6 +453,7 @@ f32 func_80800F10_chclockworkmouse(f32* arg0, f32 arg1) {
     s32 temp_v0;
 
     sp34 = func_800D8FF8();
+    //Get Button Hold Time
     temp_v0 = func_80016B30(0, 0);
     if (*arg0 < 0.0f) {
         if (temp_v0 != 0) {
@@ -463,7 +473,8 @@ f32 func_80800F10_chclockworkmouse(f32* arg0, f32 arg1) {
         arg1 *= 0.98f;
     }
 
-    if (arg1 > 200.0f) {
+    if (arg1 > 200.0f && !func_800DA298(0x3D7)) 
+    {
         arg1 = 200.0f;
     }
 
@@ -531,24 +542,35 @@ void func_80801240_chclockworkmouse(Actor* actor) {
             temp_v0->unkE0[var_s3] = 0;
         }
     }
-    for (var_s3 = 0; var_s3 < 10; var_s3++) {
-        if (temp_v0->unkF0[var_s3] == 2) {
+    for (var_s3 = 0; var_s3 < 10; var_s3++) 
+    {
+        if (temp_v0->unkF0[var_s3] == 2) 
+        {
             temp_f0 = 1.5f * temp_f28;
-            if (temp_v0->unkE0[var_s3] != 0) {
+            if (temp_v0->unkE0[var_s3] != 0) 
+            {
                 temp_v0->unkAC[var_s3] -= temp_f0;
-                if (temp_v0->unkAC[var_s3] <= 0.15f) {
+                if (temp_v0->unkAC[var_s3] <= 0.15f) 
+                {
                     temp_v0->unkE0[var_s3] = 0U;
                 }
-            } else {
+            } 
+            else 
+            {
                 temp_v0->unkAC[var_s3] += temp_f0;
-                if (temp_v0->unkAC[var_s3] >= 0.3f) {
+                if (temp_v0->unkAC[var_s3] >= 0.3f) 
+                {
                     temp_v0->unkE0[var_s3] = 1U;
                 }
             }
-            if (temp_v0->unk84[var_s3] <= temp_f20) {
-                if (temp_f20 >= 1.0f) {
+            if (temp_v0->unk84[var_s3] <= temp_f20) 
+            {
+                if (temp_f20 >= 1.0f) 
+                {
                     temp_v0->unkF0[var_s3] = 0U;
-                } else {
+                }
+                else 
+                {
                     temp_v0->unkF0[var_s3] = 1U;
                 }
             }
@@ -952,6 +974,11 @@ void func_808022E4_chclockworkmouse(Actor* actor, s32 arg1) {
     case 7:
         func_80800024_chclockworkmouse(2);
         func_80090658(1);
+        func_80800214_chhandcart(arg0);
+        if (func_800DA298(0x3D7)) //If we have the speed cap removed play crash noise
+        {
+            func_800172D4(0x1, 0x74);
+        }
         break;
     case 8:
         if (func_80105AE8(actor) < 0.93f) {
