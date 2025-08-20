@@ -974,7 +974,7 @@ void func_808022E4_chclockworkmouse(Actor* actor, s32 arg1) {
     case 7:
         func_80800024_chclockworkmouse(2);
         func_80090658(1);
-        func_80800214_chhandcart(arg0);
+        func_8080019C_chclockworkmouse(actor);
         if (func_800DA298(0x3D7)) //If we have the speed cap removed play crash noise
         {
             func_800172D4(0x1, 0x74);
