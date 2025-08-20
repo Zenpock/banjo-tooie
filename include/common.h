@@ -95,6 +95,9 @@ typedef struct Actor {
     /* 0x7C */ u32 pad7C_13 : 19;
     /* 0x7C */ u32 unk7C_12 : 1; // unk7C & 0x1000
     /* 0x7C */ u32 unk7C_0 : 12; // unk7C & 0xFFF
+    /* 0x80 */ u16 unk80;
+    /* 0x82 */ s16 IndexForMemory;
+    /* 0x84 */ u8 unk84[0x18];
 } Actor;
 
 typedef struct ActorData {

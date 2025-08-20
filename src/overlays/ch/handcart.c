@@ -612,7 +612,7 @@ f32 func_8080115C_chhandcart(f32* arg0, f32 arg1)
         }
     }
     //Cap the player speed at 90
-    if (arg1 > 90.0f)
+    if (arg1 > 90.0f && !func_800DA298(0x3D7))
     {
         arg1 = 90.0f;
     }
@@ -1452,9 +1452,14 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
         break;
 
     case 7:
-        //Win the Race
+        //Win the Race (hitting the end gate)
         func_80800024_chhandcart(2);
         func_80090658(1);
+        func_80800214_chhandcart(arg0);
+        if (func_800DA298(0x3D7)) //If we have the speed cap removed play crash noise
+        {
+            func_800172D4(0x1, 0x74);
+        }
         break;
 
     case 8:
