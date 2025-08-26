@@ -33,7 +33,7 @@ void func_80800000_chbubbleelevator(Actor* arg0)
         arg0->unk79_4 = 1;
     }
     //If world 7 is unlocked
-    if (_sujiggy_entrypoint_20(7) != 0)
+    if (_sujiggy_entrypoint_20(7) != 0 || (func_800DA298(0x3D8) == 1 && func_800D035C(1)>=_sujiggy_entrypoint_2(7)))
     {
         func_800DA544(0x399);
     }
@@ -45,7 +45,7 @@ void func_80800000_chbubbleelevator(Actor* arg0)
     }
     sp24 = var_a1;
     //Check the world 7 unlock flag if false
-    if ((func_800DA298(0x399) == 0) && (var_a1 == 0))
+    if ((func_800DA298(0x399) == 0) && (var_a1 == 0) && (func_800EA05C() != MAP_136_CCL_CLOUD_CUCKOOLAND))
     {
         func_808004DC_chbubbleelevator(arg0, 8);
     }

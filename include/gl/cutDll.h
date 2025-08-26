@@ -3,7 +3,7 @@
 
 #include "common.h"
 
-void _glcutDll_entrypoint_6(u32, u32);
+void _glcutDll_entrypoint_6(MapId, u32);
 void _glcutDll_entrypoint_17();
 s32 _glcutDll_entrypoint_19(u32);
 s32 _glcutDll_entrypoint_20();

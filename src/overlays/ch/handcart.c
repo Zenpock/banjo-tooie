@@ -1020,7 +1020,7 @@ void func_80802120_chhandcart(Actor* arg0)
     }
     else
     {
-        if ((func_800DA298(0x66) == 0) || (func_800D0A9C(4, 4) != 0))
+        if ((func_800DA298(0x66) == 0) || (func_800D0A9C(0x4, 0x4) != 0))
         {
             func_80103140(arg0, 0x68BU, arg0->unk0->unk16);
             return;
@@ -1122,12 +1122,12 @@ s32 func_80802468_chhandcart(Actor* arg0, s32 arg1, s32 arg2)
         {
             if (arg2 == 0x1D)
             {
-                var_v1 = 0xF85;
+                var_v1 = 0xF85; //Canary Mary wants another race
             }
         }
         else
         {
-            var_v1 = 0xFAF;
+            var_v1 = 0xFAF; //Canary Mary Leave CCL
         }
         if (var_v1 != 0)
         {
@@ -1953,9 +1953,10 @@ void func_80803794_chhandcart(Actor* arg0)
         if (func_80105A5C(arg0) != 0)
         {
             func_80105634(arg0);
+            func_800DA544(0x504);
             if (_gclevel_entrypoint_3(0x18) != 0)
             {
-                _glcutDll_entrypoint_6(0x136, 0x55);
+                //Removed Cutscene because it was breaking
             }
             else
             {
@@ -2001,7 +2002,7 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
     case 14:
         func_80802400_chhandcart(arg0, arg2);
         return 3;
-    case 47:
+    case 47: //Dialog End Callback
         temp_t0 = (HandcartMemory*)func_80100094(func_80106790(arg0->unk3C), 0U);
         switch (*(s16*)&arg2)
         {
@@ -2017,19 +2018,21 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
             break;
         }
         break;
-    case 13:
+    case 13: //Just Spawned an object
         temp_s0 = func_80106790(arg0->unk3C);
-        switch (arg2 & 0xFFFF)
+        if (func_800D0A9C(0x4, 0x4) == 1)
         {
-        case 1:
-            func_8080090C_chhandcart(temp_s0, 0x1D, 0x2000, func_80101080());
-            break;
-        case 4:
             func_8080090C_chhandcart(temp_s0, 0x19, 0x2000, func_80101080());
             break;
         }
+        else if (func_800D0A9C(0xC, 0x1) == 1)
+        {
+            func_8080090C_chhandcart(temp_s0, 0x1D, 0x2000, func_80101080());
+            break;
+        }
         break;
-    case 46:
+
+    case 46: //Dialog End Callback
         if (arg0->unk3C != 0)
         {
             var_a2 = func_80106790(arg0->unk3C);
@@ -2048,10 +2051,12 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
             break;
         case 0xF80:
         case 0xFB7:
+            //Canary Mary talk before race 1
             func_80800AB0_chhandcart(var_a2);
             func_808031D0_chhandcart(arg0, 2);
             break;
         case 0xCEC:
+            //3..2..1..Go
             func_808031D0_chhandcart(arg0, 6);
             break;
         case 0xF83:
@@ -2062,20 +2067,24 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
             func_800904C8(0x28U);
             break;
         case 0xF82:
+            //Mary Wins
             func_80800AB0_chhandcart(var_a2);
             func_808031D0_chhandcart(arg0, 2);
             break;
         case 0xF87:
+            //Mary Wins
             func_80800AB0_chhandcart(var_a2);
             func_808031D0_chhandcart(arg0, 2);
             break;
         case 0xF85:
+            //Canary Mary Wants another Race
             func_80800AB0_chhandcart(var_a2);
             func_808031D0_chhandcart(arg0, 2);
             arg0->unk64.bits.unk64_19 = 1;
             var_a2->unk64.bits.unk64_19 = 1;
             break;
         case 0xFAF:
+            //Canary Mary Leaves for CCL
             func_80800AB0_chhandcart(var_a2);
             func_808031D0_chhandcart(arg0, 0x12);
             break;

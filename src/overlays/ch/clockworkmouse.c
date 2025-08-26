@@ -688,7 +688,9 @@ void func_808018BC_chclockworkmouse(Actor* actor) {
     actor->unk64.bytes[1] = (actor->unk64.bytes[1] & 0xFFF7) | (((u8)func_800D0A9C(0x4A, 1) * 8) & 8);
     sp24->unkFA = 0;
     sp24->unk4 = 0.0f;
-    if ((func_800D0A9C(4, 4) == 0) || (func_800D0A9C(0x16, 4) != 0)) {
+    //If the last object of canary mary in ggm was not spawned or if the last item of canary mary CCL is spawned
+    if ((func_800D0A9C(4, 4) == 0) || (func_800D0A9C(0x16, 4) != 0)) 
+    {
         func_80103140(actor, 0x8A1, ((u16**)actor)[0][0xB]);
         return;
     }
@@ -771,10 +773,10 @@ s32 func_80801BF0_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
         sp1C = func_80106790(actor->unk3C);
         sp18 = 0;
         switch (arg2) {
-        case 23:
+        case 0x17:
             sp18 = 0x142B;
             break;
-        case 25:
+        case 0x19:
             sp18 = 0x142F;
             break;
         }
@@ -877,12 +879,16 @@ void func_80801FC8_chclockworkmouse(Actor* actor) {
         func_8080019C_chclockworkmouse(actor);
         break;
     }
-    if ((func_800D0A9C(4, 4) != 0) && (func_800DA298(0x504) == 0)) {
+    if ((func_800D0A9C(0x4, 0x4) != 0) && (func_800DA298(0x504) == 0)) 
+    {
         sp28->unkC.shorts[0] = _glsplinefind_entrypoint_0(0x388, actor->position);
         func_801058C4(actor, sp28->unkC.shorts[0], actor->unk24, 0);
-        if (_glcutDll_entrypoint_19(0x55) != 0) {
+        if (_glcutDll_entrypoint_19(0x55) != 0) 
+        {
             func_808026E0_chclockworkmouse(actor, 0x14);
-        } else {
+        } 
+        else 
+        {
             func_808026E0_chclockworkmouse(actor, 0x13);
         }
     }
@@ -1389,48 +1395,50 @@ s32 func_808032F8_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
             break;
         }
         break;
-    case 13:
+    case 13: //Called After Spawning an item
         sp28 = func_80106790(actor->unk3C);
-        switch (*((s32 *)new_var) & 0xFFFF) {
-        case 1:
-            func_80800850_chclockworkmouse(sp28, 0x17, 0x2000, func_80101080());
-            break;
-        case 4:
+        if (func_800D0A9C(0x16, 0x4) == 1)
+        {
             func_80800850_chclockworkmouse(sp28, 0x19, 0x2000, func_80101080());
             break;
         }
+        else if (func_800D0A9C(0x4A, 0x1) == 1)
+        {
+            func_80800850_chclockworkmouse(sp28, 0x17, 0x2000, func_80101080());
+            break;
+        }
         break;
-    case 46:
+    case 46: //Dialog End Callback
         temp_a2 = func_80106790(actor->unk3C);
         switch (*new_var) {
-        case 0x1426:
+        case 0x1426: //Hop on mouse to race again
             func_808009F4_chclockworkmouse(temp_a2);
             func_808026E0_chclockworkmouse(actor, 2);
             break;
-        case 0xCEC:
+        case 0xCEC: //Ready 3..2..1..Go
             func_808026E0_chclockworkmouse(actor, 6);
             break;
         case 0x1429:
-        case 0x142D:
+        case 0x142D: //Where are you start again
             func_80800158_chclockworkmouse(actor, 0);
             func_808000B4_chclockworkmouse(actor);
             func_800904C8(0x28);
             break;
-        case 0x1428:
+        case 0x1428: //Mary just Won
             func_808009F4_chclockworkmouse(temp_a2);
             func_808026E0_chclockworkmouse(actor, 2);
             break;
-        case 0x142C:
+        case 0x142C: //Mary just Won
             func_808009F4_chclockworkmouse(temp_a2);
             func_808026E0_chclockworkmouse(actor, 2);
             break;
-        case 0x142B:
+        case 0x142B: //Race Again for prize 2
             func_808009F4_chclockworkmouse(temp_a2);
             func_808026E0_chclockworkmouse(actor, 2);
             actor->unk64.bytes[1] = (actor->unk64.bytes[1] & 0xFF) | 8;
             temp_a2->unk64.bytes[1] = (temp_a2->unk64.bytes[1] & 0xFF) | 8;
             break;
-        case 0x142F:
+        case 0x142F: //Leaves CCL
             func_808009F4_chclockworkmouse(temp_a2);
             func_808026E0_chclockworkmouse(actor, 0x12);
             break;
