@@ -28,11 +28,22 @@ void func_80800000_chcauldronenergybars(Actor* arg0)
     {
         func_800DA544(var_a1);
     }
-    if (func_800DA298(var_a1) != 0)
+    switch (var_a0)
     {
-        func_800FFAB0(arg0);
-        return;
+        case 8:
+            if (func_800DA298(var_a1) != 0)
+            {
+                func_800FFAB0(arg0);
+                return;
+            }
+        case 9:
+            if (_sujiggy_entrypoint_2(0xA) >= 1)
+            {
+                func_800FFAB0(arg0);
+                return;
+            }
     }
+   
     if ((func_800D3E40(0xB) != 0) && (_glcutDll_entrypoint_19(sp18) == 0))
     {
         func_800FFAB0(arg0);

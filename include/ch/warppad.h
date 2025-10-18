@@ -3,6 +3,9 @@
 
 #include "common.h"
 #include "core2/1E691A0.h"
+#include "core2/1E6B900.h"
+
+#include "core2/1E7BFA0.h"
 
 #include "core2/1EB3750.h"
 
@@ -17,6 +20,7 @@
 #include "core2/1EA0AA0.h"
 #include "core2/1EE4020.h"
 #include "core2/1EE5DF0.h"
+#include "overlays/bs/state.h"
 
 #include "gc/goto.h"
 #include "gc/dialogcamera.h"

@@ -7739,6 +7739,7 @@ bahold_entrypoint_3 = 0x80800158; // segment:bahold rom:0x01F65B98
 bsmum_entrypoint_12 = 0x80800E50; // segment:bsmum rom:0x01F30D10 
 bstnt_entrypoint_12 = 0x80801F48; // segment:bstnt rom:0x01F423D8 
 D_808008E0_sujiggy = 0x808008E0; // segment:sujiggy rom:0x02173500 
+D_808009F0_sujiggy = 0x808009F0; // segment:sujiggy rom:0x02173500 
 D_80801688_chdippy = 0x80801688; // segment:chdippy rom:0x01FF2E38 
 gczoombox_entrypoint_26 = 0x808035E8; // segment:gczoombox rom:0x020FEF48 
 func_808002D4_bsbansack = 0x808002D4; // segment:bsbansack rom:0x01F02D34 type:func

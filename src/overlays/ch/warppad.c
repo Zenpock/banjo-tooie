@@ -244,25 +244,114 @@ void func_80800748_chwarppad(Actor* arg0)
                 func_80800418_chwarppad(arg0, 3U);
             }
             //Handles when you press the B button while standing near the warppad
-            else if ((func_80016B30(0, 1) == 1) && (func_800F8004(controlledCharacter) == 0) && (func_800F4BB8(controlledCharacter, -1, 4) != 0))
+            else if ((numUnlockedWarppads > 0)&&(func_80016B30(0, 1) == 1) && (func_800F8004(controlledCharacter) == 0) && (func_800F4BB8(controlledCharacter, -1, 4) != 0))
             {
-                if (numUnlockedWarppads > 0)
+                func_80800418_chwarppad(arg0, 3U);
+            }
+            //*(s32*)&arg0->unk2C
+            //Switch to humba transformation
+            else if(func_80016B30(0, 7) == 1)
+            {
+                PlayerState* state = func_800F53D0(func_800F54E4());
+                u8 transformation = func_8008FD48();
+                switch (transformation)
                 {
-                    if (func_800F64A4(controlledCharacter, *(s32*)&(D_80801080_chwarppad - 0x220)[(WARPPAD_DATA(arg0)->unk10) * 0xC + ((arg0->unk74_7)) * 0xC]) != 0) 
-                    {
-                        sp34 = func_808006C0_chwarppad((s32)arg0);
-                    }
-                    else
-                    {
-                        sp34 = 0xCF0;
-                    }
+                    case 0x1: //BK
+                        if (func_800DA298(FLAG_0D6_PAID_GLOWBO_WUMBA_MT + WARPPAD_DATA(arg0)->unk10) == 1)
+                        {
+                            u8 transformResult = 0;
+                            switch (WARPPAD_DATA(arg0)->unk10)
+                            {
+                                case 0://MT
+                                    transformResult = 0x8;
+                                    break;
+                                case 1://GGM
+                                    transformResult = 0xF;
+                                    break;
+                                case 2://WW
+                                    transformResult = 0x10;
+                                    break;
+                                case 3://JRL
+                                    transformResult = 0xC;
+                                    break;
+                                case 4://TDL
+                                    transformResult = func_800DA298(FLAG_18A_TDL_WIGWAM_ENLARGED)?0x13:0x12;
+                                    break;
+                                case 5://GI
+                                    transformResult = 0x7;
+                                    break;
+                                case 6://HFP
+                                    transformResult = 0x2;
+                                    break;
+                                case 7://CCL
+                                    transformResult = 0x6;
+                                    break;
+                            default:
+                                break;
+                            }
+                            func_800A3410(state, transformResult);
+                        }
+                        break;
+                    case 0x2: //Snowball
+                    case 0x6: //Bee
+                    case 0x7: //Washing Machine
+                    case 0x8: //Stony
+                    case 0xC: //Sub
+                    case 0xF: //Plunger
+                    case 0x10: //Van
+                    case 0x12: //Small T-Rex
+                    case 0xD: //Mumbo
+                        func_800A3410(state, 1);
+                        break;
+                    case 0x13: //Big T-Rex
+                        func_800A3410(state, 0x12);
+                        break;
+                    case 0xE: //Golden Goliath
+                    case 0x11: //Clockwork
+                    case 0xA: //Banjo
+                    case 0xB: //Kazooie
+                        break;
                 }
-                else
+                func_80092778(state);
+                bs_setState(state,0x74);
+            }
+            //Switch to mumbo
+            else if (func_80016B30(0, 8) == 1)
+            {
+                PlayerState* state = func_800F53D0(func_800F54E4());
+                u8 transformation = func_8008FD48();
+                switch (transformation)
                 {
-                    sp34 = 0xCEF;
+                case 0x1: //BK
+                    if (WARPPAD_DATA(arg0)->unk10 != 0x5 &&(func_800DA298(FLAG_37F_PAID_GLOWBO_MUMBO_MT + WARPPAD_DATA(arg0)->unk10) == 1))
+                    {
+                        func_800A3410(state, 0xD);
+                    }
+                    else if (WARPPAD_DATA(arg0)->unk10 == 0x5 && (func_800DA298(FLAG_387_PAID_GLOWBO_MUMBO_GI) == 1))
+                    {
+                        func_800A3410(state, 0xD);
+                    }
+                    break;
+                case 0x2: //Snowball
+                case 0x6: //Bee
+                case 0x7: //Washing Machine
+                case 0x8: //Stony
+                case 0xC: //Sub
+                case 0xF: //Plunger
+                case 0x10: //Van
+                case 0x12: //Small T-Rex
+                case 0x13: //Big T-Rex
+                case 0xD: //Mumbo
+                    func_800A3410(state, 1);
+                    break;
+                case 0xE: //Golden Goliath
+                case 0x11: //Clockwork
+                case 0xA: //Banjo
+                case 0xB: //Kazooie
+                    break;
                 }
-                func_80800F34_chwarppad(arg0, 5, 1);
-                _subaddiedialog_entrypoint_11(arg0->unk0, sp34, 0xF, NULL, 0);
+                func_80092778(state);
+                bs_setState(state, 0x74);
             }
         }
         break;
