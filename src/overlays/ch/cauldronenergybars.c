@@ -37,7 +37,7 @@ void func_80800000_chcauldronenergybars(Actor* arg0)
                 return;
             }
         case 9:
-            if (_sujiggy_entrypoint_2(0xA) >= 1)
+            if (_sujiggy_entrypoint_2(0x1A) >= 1)
             {
                 func_800FFAB0(arg0);
                 return;
