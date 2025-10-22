@@ -24,7 +24,7 @@ void func_80800000_chcauldronenergybars(Actor* arg0)
         var_a1 = FLAG_39B_PROGRESS_OPENED_WORLD_HAG_1_BATTLE;
         sp18 = 0x83;
     }
-    if (_sujiggy_entrypoint_20(var_a0) != 0)
+    if (_sujiggy_entrypoint_20(var_a0) != 0 || (func_800DA298(0x3D8) == 1 && func_800D035C(1) >= _sujiggy_entrypoint_2(var_a0)))
     {
         func_800DA544(var_a1);
     }

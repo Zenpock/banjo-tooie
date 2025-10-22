@@ -241,8 +241,8 @@ PauseState* gcnewpause_entrypoint_0(u32 arg0)
 	u8 dummy[0x8];
 	PauseState* pauseMemory;
 	u32 index;
-	pauseMemory = heap_alloc(_gcnewoption_entrypoint_2() + 0x30);
-	bzero(pauseMemory, 0x30);
+	pauseMemory = heap_alloc(_gcnewoption_entrypoint_2() + 0x34);
+	bzero(pauseMemory, 0x34);
 	pauseMemory->unkC = arg0;
 	func_80800534_gcnewpause(pauseMemory, 1U);
 	pauseMemory->HeaderAndButtonOffset += D_80802124_gcnewpause[0];
