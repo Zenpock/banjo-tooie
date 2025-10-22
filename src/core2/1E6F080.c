@@ -1,6 +1,9 @@
 #include "core2/1E6F080.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_80095790.s")
+s32 func_80095790() 
+{
+    return 0xAC;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_80095798.s")
 
@@ -22,7 +25,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_80095A08.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_80095A40.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_80095A40.s") 
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_80095A64.s")
 
@@ -104,7 +107,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_80096670.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_80096694.s")
+void func_80096694(PlayerState* a0)
+{
+    func_800C84B0(func_80096628(a0));
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_800966BC.s")
 
@@ -118,7 +124,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_8009679C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_800967C0.s")
+s32 func_800967C0() 
+{
+    return 0x28;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_800967C8.s")
 

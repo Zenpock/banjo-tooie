@@ -1,6 +1,6 @@
 #include <ultra64.h>
 #include "memory.h"
-#include "core2/1E29B60.h"
+#include "core1/1E29B60.h"
 #include "core2/1EB3750.h"
 
 void _gldbDll_entrypoint_1(void);
@@ -15,9 +15,6 @@ s32 D_8011B994 = 0x6C9;
 u8* D_8012C770[3];
 u8 D_8012C780[12];
 u8 D_8012C78C[6];
-
-void func_800DA544(s32);
-void func_800DA524(s32);
 
 // length of D_8012C770[0]
 #define D_8012C770_0_LENGTH (1408 / 8)
@@ -147,30 +144,33 @@ void func_800DA268(void) {
     }
 }
 
-s32 func_800DA298(s32 index) {
-    if ((index >= 0) && (index < 32)) {
+//Get Flag Value
+s32 func_800DA298(GameFlag index) {
+    if ((index >= 0) && (index < 0x20)) {
         return ((1 << index) & D_8011B990) ? 1 : 0;
     }
-    if ((index > 40) && (index < 1445)) {
-        return bitfield_get_bit(D_8012C770[0], index - 40);
+    if ((index > 0x28) && (index < 0x5A5)) {
+        return bitfield_get_bit(D_8012C770[0], index - 0x28);
     }
-    if ((index > 1600) && (index < 1773)) {
-        return bitfield_get_bit(D_8012C770[1], index - 1600);
+    if ((index > 0x640) && (index < 0x6ED)) {
+        return bitfield_get_bit(D_8012C770[1], index - 0x640);
     }
-    if ((index > 2500) && (index < 2756)) {
-        return bitfield_get_bit(D_8012C770[2], index - 2500);
+    if ((index > 0x9C4) && (index < 0xAC4)) {
+        return bitfield_get_bit(D_8012C770[2], index - 0x9C4);
     }
-    if ((index > 3000) && (index < 3094)) {
-        return bitfield_get_bit(D_8012C780, index - 3000);
+    if ((index > 0xBB8) && (index < 0xC16)) {
+        return bitfield_get_bit(D_8012C780, index - 0xBB8);
     }
-    if ((index > 3400) && (index < 3445)) {
-        return bitfield_get_bit(D_8012C78C, index - 3400);
+    if ((index > 0xD48) && (index < 0xD75)) {
+        return bitfield_get_bit(D_8012C78C, index - 0xD48);
     }
     return 0;
 }
 
-void func_800DA3B8(s32 index, s32 set) {
-    if ((index >= 0) && (index < 32)) {
+//Set Flag Value
+void func_800DA3B8(GameFlag index, s32 set) {
+    //Flag Block 0
+    if ((index >= 0) && (index < 0x20)) {
         if (set != 0) {
             D_8011B990 |= 1 << index;
         }
@@ -178,36 +178,45 @@ void func_800DA3B8(s32 index, s32 set) {
             D_8011B990 &= ~(1 << index);
         }
     }
-    else if ((index > 40) && (index < 1445)) {
-        bitfield_set_bit(D_8012C770[0], index - 40, set);
+    //Flag Block 1
+    else if ((index > 0x28) && (index < 0x5A5)) {
+        bitfield_set_bit(D_8012C770[0], index - 0x28, set);
     }
-    else if ((index > 1600) && (index < 1773)) {
-        bitfield_set_bit(D_8012C770[1], index - 1600, set);
+    //Flag Block 2
+    else if ((index > 0x640) && (index < 0x6ED)) {
+        bitfield_set_bit(D_8012C770[1], index - 0x640, set);
     }
-    else if ((index > 2500) && (index < 2756)) {
-        bitfield_set_bit(D_8012C770[2], index - 2500, set);
+    //Flag Block 3
+    else if ((index > 0x9C4) && (index < 0xAC4)) {
+        bitfield_set_bit(D_8012C770[2], index - 0x9C4, set);
     }
-    else if ((index > 3000) && (index < 3094)) {
-        if (bitfield_get_bit(D_8012C780, index - 3000) != set) {
-            func_800DA544(3412);
+    //Global Flags
+    else if ((index > 0xBB8) && (index < 0xC16)) {
+        if (bitfield_get_bit(D_8012C780, index - 0xBB8) != set) {
+            func_800DA544(FLAG5_D54_IF_GLOBALFLAGS_CHANGED);
         }
-        bitfield_set_bit(D_8012C780, index - 3000, set);
+        bitfield_set_bit(D_8012C780, index - 0xBB8, set);
     }
-    else if ((index > 3400) && (index < 3445)) {
-        bitfield_set_bit(D_8012C78C, index - 3400, set);
+    //Flag Block 5
+    else if ((index > 0xD48) && (index < 0xD75)) {
+        bitfield_set_bit(D_8012C78C, index - 0xD48, set);
     }
 }
 
-void func_800DA524(s32 index) {
+//Set Flag False
+void func_800DA524(GameFlag index) {
     func_800DA3B8(index, 0);
 }
 
-void func_800DA544(s32 index) {
+//Set Flag True
+void func_800DA544(GameFlag index) 
+{
     func_800DA3B8(index, 1);
 }
 
-s32 func_800DA564(s32 startIndex, s32 length) {
-    if ((startIndex >= 0) && (startIndex < 32)) {
+//Get Number of True flags in range
+s32 func_800DA564(GameFlag startIndex, s32 length) {
+    if ((startIndex >= 0) && (startIndex < 0x20)) {
         s32 ret = 0;
         s32 i;
 
@@ -216,59 +225,60 @@ s32 func_800DA564(s32 startIndex, s32 length) {
         }
         return ret;
     }
-    else if ((startIndex > 40) && (startIndex < 1445)) {
-        return bitfield_get_n_bits(D_8012C770[0], startIndex - 40, length);
+    else if ((startIndex > 0x28) && (startIndex < 0x5A5)) {
+        return bitfield_get_n_bits(D_8012C770[0], startIndex - 0x28, length);
     }
-    else if ((startIndex > 1600) && (startIndex < 1773)) {
-        return bitfield_get_n_bits(D_8012C770[1], startIndex - 1600, length);
+    else if ((startIndex > 0x640) && (startIndex < 0x6ED)) {
+        return bitfield_get_n_bits(D_8012C770[1], startIndex - 0x640, length);
     }
-    else if ((startIndex > 2500) && (startIndex < 2756)) {
-        return bitfield_get_n_bits(D_8012C770[2], startIndex - 2500, length);
+    else if ((startIndex > 0x9C4) && (startIndex < 0xAC4)) {
+        return bitfield_get_n_bits(D_8012C770[2], startIndex - 0x9C4, length);
     }
-    else if ((startIndex > 3000) && (startIndex < 3094)) {
-        return bitfield_get_n_bits(D_8012C780, startIndex - 3000, length);
+    else if ((startIndex > 0xBB8) && (startIndex < 0xC16)) {
+        return bitfield_get_n_bits(D_8012C780, startIndex - 0xBB8, length);
     }
-    else if ((startIndex > 3400) && (startIndex < 3445)) {
-        return bitfield_get_n_bits(D_8012C78C, startIndex - 3400, length);
+    else if ((startIndex > 0xD48) && (startIndex < 0xD75)) {
+        return bitfield_get_n_bits(D_8012C78C, startIndex - 0xD48, length);
     }
     else {
         return 0;
     }
 }
 
-void func_800DA7A8(s32 startIndex, s32 set, s32 length) {
-    if ((startIndex >= 0) && (startIndex < 32)) {
+//Set Flags Value
+void func_800DA7A8(GameFlag startIndex, s32 set, s32 length) {
+    if ((startIndex >= 0) && (startIndex < 0x20)) {
         s32 i = 0;
         for (i = 0; i < length; i++) {
             func_800DA3B8(startIndex + i, (1 << i) & set);
         }
-    } else if ((startIndex > 40) && (startIndex < 1445)) {
-        bitfield_set_n_bits(D_8012C770[0], startIndex - 40, set, length);
+    } else if ((startIndex > 0x28) && (startIndex < 0x5A5)) {
+        bitfield_set_n_bits(D_8012C770[0], startIndex - 0x28, set, length);
     }
-    else if ((startIndex > 1600) && (startIndex < 1773)) {
-        bitfield_set_n_bits(D_8012C770[1], startIndex - 1600, set, length);
+    else if ((startIndex > 0x640) && (startIndex < 0x6ED)) {
+        bitfield_set_n_bits(D_8012C770[1], startIndex - 0x640, set, length);
     }
-    else if ((startIndex > 2500) && (startIndex < 2756)) {
-        bitfield_set_n_bits(D_8012C770[2], startIndex - 2500, set, length);
+    else if ((startIndex > 0x9C4) && (startIndex < 0xAC4)) {
+        bitfield_set_n_bits(D_8012C770[2], startIndex - 0x9C4, set, length);
     }
-    else if ((startIndex > 3000) && (startIndex < 3094)) {
-        if (bitfield_get_n_bits(D_8012C780, startIndex - 3000, length) != set) {
-            func_800DA544(0xD54);
+    else if ((startIndex > 0xBB8) && (startIndex < 0xC16)) {
+        if (bitfield_get_n_bits(D_8012C780, startIndex - 0xBB8, length) != set) {
+            func_800DA544(FLAG5_D54_IF_GLOBALFLAGS_CHANGED);
         }
-        bitfield_set_n_bits(D_8012C780, startIndex - 3000, set, length);
+        bitfield_set_n_bits(D_8012C780, startIndex - 0xBB8, set, length);
     }
-    else if ((startIndex > 3400) && (startIndex < 3445)) {
-        bitfield_set_n_bits(D_8012C78C, startIndex - 3400, set, length);
+    else if ((startIndex > 0xD48) && (startIndex < 0xD75)) {
+        bitfield_set_n_bits(D_8012C78C, startIndex - 0xD48, set, length);
     }
 }
 
-s32 func_800DA944(s32 startIndex, s32 length) {
+s32 func_800DA944(GameFlag startIndex, s32 length) {
     s32 ret = func_800DA564(startIndex, length) + 1;
     func_800DA7A8(startIndex, ret, length);
     return ret;
 }
 
-s32 func_800DA980(s32 startIndex, s32 length) {
+s32 func_800DA980(GameFlag startIndex, s32 length) {
     s32 ret = 0;
     s32 i;
 
@@ -279,7 +289,8 @@ s32 func_800DA980(s32 startIndex, s32 length) {
     return ret;
 }
 
-s32 func_800DA9E4(s32 index, s32 set) {
+//Return Previous Flag State and Set New Flag State
+s32 func_800DA9E4(GameFlag index, s32 set) {
     s32 ret = func_800DA298(index);
     func_800DA3B8(index, set);
     return ret;

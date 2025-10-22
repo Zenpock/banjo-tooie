@@ -1,8 +1,14 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6E760/func_80094E70.s")
+s32 func_80094E70(void)
+{
+	return 0x1C;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6E760/func_80094E78.s")
+void func_80094E78()
+{
+    func_800964D0();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6E760/func_80094E98.s")
 

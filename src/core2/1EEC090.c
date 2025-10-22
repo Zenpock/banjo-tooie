@@ -1,8 +1,14 @@
-#include "common.h"
+#include "core2/1EEC090.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_801127A0.s")
+s32 func_801127A0() 
+{
+    return 0x24;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_801127A8.s")
+void func_801127A8(PlayerState* arg0, f32* arg1)
+{
+    func_80112550(arg0, arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_801127C8.s")
 
@@ -22,7 +28,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80112E84.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80112E90.s")
+s32 func_80112E90() 
+{
+    return 0x80;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80112E98.s")
 
@@ -80,14 +89,18 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114BD4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114C7C.s")
-
+void func_80114C7C(void* arg0) 
+{
+    heap_free(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114C9C.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114CB0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114CC0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114CD4.s")
-
+void* func_80114CD4(void* arg0) 
+{
+    return defrag(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114CF4.s")

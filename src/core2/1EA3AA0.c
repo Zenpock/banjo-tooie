@@ -6,14 +6,21 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA2A8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA314.s")
+void func_800CA314(s32 arg0,s32 arg1)
+{
+    aligned4_memcpy(arg0,arg1,0x168);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA334.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA364.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA384.s")
-
+void func_800CA364(void* arg0) 
+{
+    heap_free(arg0);
+}
+void* func_800CA384(void* arg0) 
+{
+    return defrag(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA3A4.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA3F4.s")
@@ -24,9 +31,15 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA558.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA5B8.s")
+void func_800CA5B8()
+{
+    func_800EE7F8();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA5D8.s")
+void func_800CA5D8()
+{
+    func_800EE84C();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA5F8.s")
 
