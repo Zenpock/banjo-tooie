@@ -993,7 +993,8 @@ void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
 	{
 		_fxkern_entrypoint_2();
 		func_800B8CE0(0xC27);
-		_fxkern_entrypoint_0(a1, 0x20, 0xC0, Version);
+		_fxkern_entrypoint_0(a1, 0x15, 0xBA, Version);
+		func_80801844_gcnewpause(_sujiggy_entrypoint_2(0x1A), _sujiggy_entrypoint_2(0x1B), 0x2B, func_800D27A4(0x63), 1, pauseMenu->unk3);
 	}
 	return;
 }

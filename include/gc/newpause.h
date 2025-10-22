@@ -6,6 +6,7 @@
 #include "maps.h"
 
 #include "gc/newoption.h"
+#include "su/jiggy.h"
 
 typedef struct {
 	u8 PageIndex; //0x0

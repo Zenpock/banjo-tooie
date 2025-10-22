@@ -1,6 +1,6 @@
 #include "su/jiggy.h"
 
-u16 D_808009F0_sujiggy[8] = {0x2A,0x0,0x0,0x0,0x0,0x0,0x0,0x0};
+u16 D_808009F0_sujiggy[16] = {FLAG_39B_PROGRESS_OPENED_WORLD_HAG_1_BATTLE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 JiggyData D_808008E0_sujiggy[] = {
     {0x01,0x00,0x00,0x00,0x09400CC0,0x01,0x64,0x00,0x00,0x05400B74,0x7A,0x0F,0x00,0x00,0x0391,0x0000},//MT
@@ -72,7 +72,7 @@ u8 sujiggy_entrypoint_2(s32 arg0)
     {
         default :
             return D_808008E0_sujiggy[arg0].WorldCost;
-        case 0x1A:
+        case 0x1A: //Get how many of the goal flags have been set
             for (i = 0; i < 2; i++)
             {
                 if (func_800DA298(D_808009F0_sujiggy[i]))
@@ -81,6 +81,8 @@ u8 sujiggy_entrypoint_2(s32 arg0)
                 }
             }
             return found;
+        case 0x1B: //Return the minimum number of goals
+            return 0x1;
     }
 }
 
