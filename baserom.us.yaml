@@ -13120,13 +13120,8 @@ segments:
     start: 0x02112AE0
     bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02112AE0, c, newpause]
-      - [0x02114A50, .rodata, newpause]
-      - [0x02114AC0, data, newpause]
-      - [0x02114CE0, bss, newpause]
+      - [auto, c, newpause]
   - name: gclevel_header
     dir: overlays/gclevel
     type: bin

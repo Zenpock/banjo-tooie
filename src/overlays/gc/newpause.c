@@ -68,6 +68,12 @@ Option D_80802064_gcnewpause[] = {
 	{0xC,0,0,0,0},
 	{0xD,1,4,0,1}
 };
+Option D_80802200_gcnewpause[] = {
+	{0xD,0x8,0x6,0,0x2},
+	{0xE,0x9,0x7,0x0,0x0},
+	{0x14,0xA,0x8,0x1,0x0},
+	{0x1,0x3,0x1,0xE,0x0}
+};
 PauseOption D_80802070_gcnewpause[] = {
 	{0x1863,0x1,0x3,D_80802030_gcnewpause},
 	{0x1863,0x1,0x4,D_80802000_gcnewpause},
@@ -228,30 +234,26 @@ AbilityCheck D_80802294_gcnewpause[] = {
 };
 AbilityCheck* D_80802218_gcnewpause[] = { D_80802224_gcnewpause,D_8080225C_gcnewpause,D_80802294_gcnewpause};
 extern u8 D_8012762D;
-
+extern u32 D_80127658;
 //Setup Pause Menu
 PauseState* gcnewpause_entrypoint_0(u32 arg0)
 {
 	u8 dummy[0x8];
 	PauseState* pauseMemory;
-	s8* var_0;
 	u32 index;
-	pauseMemory = heap_alloc(_gcnewoption_entrypoint_2() + 0x34);
-	bzero(pauseMemory, 0x34);
+	pauseMemory = heap_alloc(_gcnewoption_entrypoint_2() + 0x30);
+	bzero(pauseMemory, 0x30);
 	pauseMemory->unkC = arg0;
 	func_80800534_gcnewpause(pauseMemory, 1U);
-	pauseMemory->HeaderAndButtonOffset += *D_80802124_gcnewpause;
-	pauseMemory->HeaderAndButtonOffset += D_80802125_gcnewpause;
-	index = 0;
-	do
+	pauseMemory->HeaderAndButtonOffset += D_80802124_gcnewpause[0];
+	pauseMemory->HeaderAndButtonOffset += D_80802124_gcnewpause[1];
+	for (index = 0; index < 2; index++)
 	{
 		pauseMemory->HeaderAndButtonOffset += D_80802126_gcnewpause[index].a1;
 		pauseMemory->HeaderAndButtonOffset += D_80802126_gcnewpause[index].a2;
 		pauseMemory->HeaderAndButtonOffset += D_80802126_gcnewpause[index].a3;
 		pauseMemory->HeaderAndButtonOffset += D_80802126_gcnewpause[index].a4;
-		index++;
-		var_0 = (&D_80802126_gcnewpause[index].a1);
-	} while (&D_8080212E_gcnewpause != var_0);
+	}
 
 	return pauseMemory;
 }
@@ -751,7 +753,7 @@ void func_80800CE4_gcnewpause(PauseState* pauseMenu, OptionState *arg1, s32 sele
 		pauseMenu->PageIndex = 1;
 		break;
 	case 6: //Return to Jinjo Village
-		func_800A7990(0x142, 0x3, 0x2, 0x1);
+		func_800A7990(0x142, 0x3, 0x2);
 		break;
 	case 7: //View Moves
 		func_808017C8_gcnewpause(pauseMenu, 0xE);
@@ -975,7 +977,7 @@ u8 func_80801248_gcnewpause(s16* a0, u8* a1, u32 a2) {
 //Draw Page Titles
 void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
 {
-	char* Version = "V.1 .0.1 3"; //I dont know where the kerning option is so I'm doing it manually
+	char* Version = "V.1 .0.1 5"; //I dont know where the kerning option is so I'm doing it manually
 	if (pauseMenu->DrawPageHeader != 0)
 	{
 		_fxkern_entrypoint_2();
