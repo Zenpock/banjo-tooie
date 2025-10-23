@@ -7,6 +7,7 @@
 
 #include "gc/newoption.h"
 #include "su/jiggy.h"
+#include "fx/dialog.h"
 
 typedef struct {
 	u8 PageIndex; //0x0
