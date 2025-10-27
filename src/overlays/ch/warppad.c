@@ -254,44 +254,56 @@ void func_80800748_chwarppad(Actor* arg0)
             {
                 PlayerState* state = func_800F53D0(func_800F54E4());
                 u8 transformation = func_8008FD48();
+                
                 switch (transformation)
                 {
-                    case 0x1: //BK
-                        if (func_800DA298(FLAG_0D6_PAID_GLOWBO_WUMBA_MT + WARPPAD_DATA(arg0)->unk10) == 1)
-                        {
-                            u8 transformResult = 0;
-                            switch (WARPPAD_DATA(arg0)->unk10)
-                            {
-                                case 0://MT
-                                    transformResult = 0x8;
-                                    break;
-                                case 1://GGM
-                                    transformResult = 0xF;
-                                    break;
-                                case 2://WW
-                                    transformResult = 0x10;
-                                    break;
-                                case 3://JRL
-                                    transformResult = 0xC;
-                                    break;
-                                case 4://TDL
-                                    transformResult = func_800DA298(FLAG_18A_TDL_WIGWAM_ENLARGED)?0x13:0x12;
-                                    break;
-                                case 5://GI
-                                    transformResult = 0x7;
-                                    break;
-                                case 6://HFP
-                                    transformResult = 0x2;
-                                    break;
-                                case 7://CCL
-                                    transformResult = 0x6;
-                                    break;
-                            default:
-                                break;
-                            }
-                            func_800A3410(state, transformResult);
-                        }
+                case 0x1: //BK
+                {
+                    u8 transformResult = 0;
+                    GameFlag flag = 0;
+                    switch (D_8012762C)
+                    {
+                    case 0x10://MT
+                        transformResult = 0x8;
+                        flag = FLAG_0D6_PAID_GLOWBO_WUMBA_MT;
                         break;
+                    case 0xF://GGM
+                        transformResult = 0xF;
+                        flag = FLAG_0D7_PAID_GLOWBO_WUMBA_GGM;
+                        break;
+                    case 0x12://WW
+                        transformResult = 0x10;
+                        flag = FLAG_0D8_PAID_GLOWBO_WUMBA_WW;
+                        break;
+                    case 0x14://JRL
+                        transformResult = 0xC;
+                        flag = FLAG_0D9_PAID_GLOWBO_WUMBA_JRL;
+                        break;
+                    case 0x15://TDL
+                        transformResult = func_800DA298(FLAG_18A_TDL_WIGWAM_ENLARGED) ? 0x13 : 0x12;
+                        flag = FLAG_0DA_PAID_GLOWBO_WUMBA_TDL;
+                        break;
+                    case 0x16://GI
+                        transformResult = 0x7;
+                        flag = FLAG_0DB_PAID_GLOWBO_WUMBA_GI;
+                        break;
+                    case 0x17://HFP
+                        transformResult = 0x2;
+                        flag = FLAG_0DC_PAID_GLOWBO_WUMBA_HFP;
+                        break;
+                    case 0x18://CCL
+                        transformResult = 0x6;
+                        flag = FLAG_0DD_PAID_GLOWBO_WUMBA_CCL;
+                        break;
+                    default:
+                        break;
+                    }
+                    if (func_800DA298(flag) == 1)
+                    {
+                        func_800A3410(state, transformResult);
+                    }
+                    break;
+                }
                     case 0x2: //Snowball
                     case 0x6: //Bee
                     case 0x7: //Washing Machine
@@ -323,15 +335,43 @@ void func_80800748_chwarppad(Actor* arg0)
                 switch (transformation)
                 {
                 case 0x1: //BK
-                    if (WARPPAD_DATA(arg0)->unk10 != 0x5 &&(func_800DA298(FLAG_37F_PAID_GLOWBO_MUMBO_MT + WARPPAD_DATA(arg0)->unk10) == 1))
+                {
+                    GameFlag flag = 0;
+                    switch (D_8012762C)
                     {
-                        func_800A3410(state, 0xD);
+                    case 0x10://MT
+                        flag = FLAG_37F_PAID_GLOWBO_MUMBO_MT;
+                        break;
+                    case 0xF://GGM
+                        flag = FLAG_380_PAID_GLOWBO_MUMBO_GGM;
+                        break;
+                    case 0x12://WW
+                        flag = FLAG_381_PAID_GLOWBO_MUMBO_WW;
+                        break;
+                    case 0x14://JRL
+                        flag = FLAG_382_PAID_GLOWBO_MUMBO_JRL;
+                        break;
+                    case 0x15://TDL
+                        flag = FLAG_383_PAID_GLOWBO_MUMBO_TDL;
+                        break;
+                    case 0x16://GI
+                        flag = FLAG_387_PAID_GLOWBO_MUMBO_GI;
+                        break;
+                    case 0x17://HFP
+                        flag = FLAG_384_PAID_GLOWBO_MUMBO_HFP;
+                        break;
+                    case 0x18://CCL
+                        flag = FLAG_385_PAID_GLOWBO_MUMBO_CCL;
+                        break;
+                    default:
+                        break;
                     }
-                    else if (WARPPAD_DATA(arg0)->unk10 == 0x5 && (func_800DA298(FLAG_387_PAID_GLOWBO_MUMBO_GI) == 1))
+                    if (func_800DA298(flag) == 1)
                     {
                         func_800A3410(state, 0xD);
                     }
                     break;
+                }
                 case 0x2: //Snowball
                 case 0x6: //Bee
                 case 0x7: //Washing Machine
