@@ -6,7 +6,11 @@ extern u32 D_80800194_chmineentrygrille;
 
 s32 func_80800000_chmineentrygrille(Unk80800000MineEntryGrilleArg0* arg0, s32 arg1, u32 arg2) {
     s32 temp_v0;
-
+    if (func_800DA298(FLAG_393_PROGRESS_OPENED_WORLD_GGM)==1||(func_800DA298(0x3D8) == 1 && func_800D035C(1) >= _sujiggy_entrypoint_2(1)))
+    {
+        func_800DA544(FLAG_393_PROGRESS_OPENED_WORLD_GGM);
+        func_800FFAB0(arg0);
+    }
     switch (arg1) 
     {
     case 0x7:
