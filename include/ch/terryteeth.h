@@ -1,5 +1,5 @@
-#ifndef __CH_LAVA_ENTRY_DOOR_H__
-#define __CH_LAVA_ENTRY_DOOR_H__
+#ifndef __CH_TERRY_TEETH_H__
+#define __CH_TERRY_TEETH_H__
 
 #include "common.h"
 #include "ch/exploder.h"
