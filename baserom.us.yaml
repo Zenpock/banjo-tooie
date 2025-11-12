@@ -12681,15 +12681,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020F9C50
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020F9C50, c, game]
-      - [0x020F9D70, .rodata, game]
-      - [0x020F9D70, data, game]
-      - [0x020F9D70, bss, game]
+      - [auto, c, game]
   - name: gcgoto_header
     dir: overlays/gcgoto
     type: bin

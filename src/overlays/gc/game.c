@@ -1,5 +1,11 @@
 #include "gc/game.h"
 
+typedef struct {
+    u16 isActive;
+    u16 flag;
+} FlagHolder;
+FlagHolder flags[] = { {0,0} };
+void gcgame_func_Custom();
 void gcgame_entrypoint_0(s32 arg0) 
 {
     func_80016864();
@@ -13,6 +19,7 @@ void gcgame_entrypoint_0(s32 arg0)
     func_800D2438();
     func_800D1510();
     func_800DACD0();
+    gcgame_func_Custom();
     _gccollectDll_entrypoint_2();
     func_800CB618();
     func_800D2014();
@@ -36,4 +43,23 @@ void gcgame_entrypoint_1(void)
     func_8009E8B4();
     func_800F8DD8();
     func_800DA188();
+}
+
+void gcgame_func_Custom(void)
+{
+    int i = 0;
+    while (0 == 0)
+    {
+        if (i == 2)
+            break;
+        if (flags[i].isActive)
+        {
+            func_800DA544(flags[i].flag);
+        }
+        else
+        {
+            func_800DA524(flags[i].flag);
+        }
+        i++;
+    }
 }
