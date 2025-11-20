@@ -95,7 +95,7 @@ TotalsFlags D_808020A8_gcnewpause[] = {
 	{0x18,0xC},
 	{0x19,0xD},
 	{0x1A,0x4},
-	{0x23,0x3},
+	{0x13,0x3},
 	{0x0,0x2},
 };
 
@@ -977,7 +977,7 @@ u8 func_80801248_gcnewpause(s16* a0, u8* a1, u32 a2) {
 //Draw Page Titles
 void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
 {
-	char* Version = "V.1 .0.1 5"; //I dont know where the kerning option is so I'm doing it manually
+	char* Version = "V.1 .0.1 8"; //I dont know where the kerning option is so I'm doing it manually
 	if (pauseMenu->DrawPageHeader != 0)
 	{
 		_fxkern_entrypoint_2();
