@@ -248,62 +248,71 @@ void func_80800748_chwarppad(Actor* arg0)
             {
                 func_80800418_chwarppad(arg0, 3U);
             }
-            //*(s32*)&arg0->unk2C
             //Switch to humba transformation
             else if(func_80016B30(0, 7) == 1)
             {
                 PlayerState* state = func_800F53D0(func_800F54E4());
                 u8 transformation = func_8008FD48();
-                
+                int transformed = 0;
+                MapId temp_v0 = func_800EA05C();
+               
+
                 switch (transformation)
                 {
-                case 0x1: //BK
-                {
-                    u8 transformResult = 0;
-                    GameFlag flag = 0;
-                    switch (D_8012762C)
+                    case 0x1: //BK
                     {
-                    case 0x10://MT
-                        transformResult = 0x8;
-                        flag = FLAG_0D6_PAID_GLOWBO_WUMBA_MT;
-                        break;
-                    case 0xF://GGM
-                        transformResult = 0xF;
-                        flag = FLAG_0D7_PAID_GLOWBO_WUMBA_GGM;
-                        break;
-                    case 0x12://WW
-                        transformResult = 0x10;
-                        flag = FLAG_0D8_PAID_GLOWBO_WUMBA_WW;
-                        break;
-                    case 0x14://JRL
-                        transformResult = 0xC;
-                        flag = FLAG_0D9_PAID_GLOWBO_WUMBA_JRL;
-                        break;
-                    case 0x15://TDL
-                        transformResult = func_800DA298(FLAG_18A_TDL_WIGWAM_ENLARGED) ? 0x13 : 0x12;
-                        flag = FLAG_0DA_PAID_GLOWBO_WUMBA_TDL;
-                        break;
-                    case 0x16://GI
-                        transformResult = 0x7;
-                        flag = FLAG_0DB_PAID_GLOWBO_WUMBA_GI;
-                        break;
-                    case 0x17://HFP
-                        transformResult = 0x2;
-                        flag = FLAG_0DC_PAID_GLOWBO_WUMBA_HFP;
-                        break;
-                    case 0x18://CCL
-                        transformResult = 0x6;
-                        flag = FLAG_0DD_PAID_GLOWBO_WUMBA_CCL;
-                        break;
-                    default:
+                        u8 transformResult = 0;
+                        GameFlag flag = 0;
+                        
+                        if ((temp_v0 == MAP_10B_GI_FLOOR_4) || (temp_v0 == MAP_100_GI_OUTSIDE))
+                        {
+                            break;
+                        }
+
+                        switch (D_8012762C)
+                        {
+                        case 0x10://MT
+                            transformResult = 0x8;
+                            flag = FLAG_0D6_PAID_GLOWBO_WUMBA_MT;
+                            break;
+                        case 0xF://GGM
+                            transformResult = 0xF;
+                            flag = FLAG_0D7_PAID_GLOWBO_WUMBA_GGM;
+                            break;
+                        case 0x12://WW
+                            transformResult = 0x10;
+                            flag = FLAG_0D8_PAID_GLOWBO_WUMBA_WW;
+                            break;
+                        case 0x14://JRL
+                            transformResult = 0xC;
+                            flag = FLAG_0D9_PAID_GLOWBO_WUMBA_JRL;
+                            break;
+                        case 0x15://TDL
+                            transformResult = func_800DA298(FLAG_18A_TDL_WIGWAM_ENLARGED) ? 0x13 : 0x12;
+                            flag = FLAG_0DA_PAID_GLOWBO_WUMBA_TDL;
+                            break;
+                        case 0x16://GI
+                            transformResult = 0x7;
+                            flag = FLAG_0DB_PAID_GLOWBO_WUMBA_GI;
+                            break;
+                        case 0x17://HFP
+                            transformResult = 0x2;
+                            flag = FLAG_0DC_PAID_GLOWBO_WUMBA_HFP;
+                            break;
+                        case 0x18://CCL
+                            transformResult = 0x6;
+                            flag = FLAG_0DD_PAID_GLOWBO_WUMBA_CCL;
+                            break;
+                        default:
+                            break;
+                        }
+                        if (func_800DA298(flag) == 1)
+                        {
+                            func_800A3410(state, transformResult);
+                            transformed = 1;
+                        }
                         break;
                     }
-                    if (func_800DA298(flag) == 1)
-                    {
-                        func_800A3410(state, transformResult);
-                    }
-                    break;
-                }
                     case 0x2: //Snowball
                     case 0x6: //Bee
                     case 0x7: //Washing Machine
@@ -314,9 +323,11 @@ void func_80800748_chwarppad(Actor* arg0)
                     case 0x12: //Small T-Rex
                     case 0xD: //Mumbo
                         func_800A3410(state, 1);
+                        transformed = 1;
                         break;
                     case 0x13: //Big T-Rex
                         func_800A3410(state, 0x12);
+                        transformed = 1;
                         break;
                     case 0xE: //Golden Goliath
                     case 0x11: //Clockwork
@@ -324,14 +335,21 @@ void func_80800748_chwarppad(Actor* arg0)
                     case 0xB: //Kazooie
                         break;
                 }
-                func_80092778(state);
-                bs_setState(state,0x74);
+                if (transformed)
+                {
+                    func_80092778(state);
+                    bs_setState(state, 0x74);
+                }
             }
             //Switch to mumbo
             else if (func_80016B30(0, 8) == 1)
             {
                 PlayerState* state = func_800F53D0(func_800F54E4());
                 u8 transformation = func_8008FD48();
+                int transformed = 0;
+                MapId temp_v0 = func_800EA05C();
+                
+
                 switch (transformation)
                 {
                 case 0x1: //BK
@@ -366,9 +384,14 @@ void func_80800748_chwarppad(Actor* arg0)
                     default:
                         break;
                     }
+                    if (D_8012762C == 0x14 && temp_v0 != MAP_1A7_JRL_JOLLY_ROGERS_LAGOON)
+                    {
+                        break;
+                    }
                     if (func_800DA298(flag) == 1)
                     {
                         func_800A3410(state, 0xD);
+                        transformed = 1;
                     }
                     break;
                 }
@@ -383,6 +406,7 @@ void func_80800748_chwarppad(Actor* arg0)
                 case 0x13: //Big T-Rex
                 case 0xD: //Mumbo
                     func_800A3410(state, 1);
+                    transformed = 1;
                     break;
                 case 0xE: //Golden Goliath
                 case 0x11: //Clockwork
@@ -390,8 +414,11 @@ void func_80800748_chwarppad(Actor* arg0)
                 case 0xB: //Kazooie
                     break;
                 }
-                func_80092778(state);
-                bs_setState(state, 0x74);
+                if (transformed)
+                {
+                    func_80092778(state);
+                    bs_setState(state, 0x74);
+                }
             }
         }
         break;
