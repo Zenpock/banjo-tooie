@@ -1456,9 +1456,14 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
             break;
 
         case 7:
-            //Win the Race
+            //Win the Race (hitting the end gate)
             func_80800024_chhandcart(2);
             func_80090658(1);
+            func_80800214_chhandcart(arg0);
+            if (func_800DA298(0x3D7)) //If we have the speed cap removed play crash noise
+            {
+                func_800172D4(0x1, 0x74);
+            }
             break;
 
         case 8:
@@ -1954,16 +1959,14 @@ void func_80803794_chhandcart(Actor* arg0)
         {
             func_80105634(arg0);
             func_800DA544(0x504);
-            if (_gclevel_entrypoint_3(0x18) != 0)
-            {
-                //Removed Cutscene because it was breaking
-            }
-            else
-            {
-                func_80800AB0_chhandcart(sp40);
-                sp40->unk3C = 0;
-                func_800FFAB0(arg0);
-            }
+
+            //Removed Cutscene because it was breaking
+
+           
+            func_80800AB0_chhandcart(sp40);
+            sp40->unk3C = 0;
+            func_800FFAB0(arg0);
+            
         }
         break;
     }
@@ -2009,12 +2012,12 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
         case 0xF84:
             //Won Race 1
             //Spawn jiggy of flag C
-            func_800D1000(0xC, 0x1, temp_t0->rewardSpawn, 1, arg0->unk0);
+            func_800D1000(0xC, 0x1, arg0->position, 0, arg0->unk0);
             break;
         case 0xF89:
             //Won Race 2
             //Spawn Cheato page of flag 4
-            func_800D1000(0x4, 0x4, temp_t0->rewardSpawn, 1, arg0->unk0);
+            func_800D1000(0x4, 0x4, arg0->position, 0, arg0->unk0);
             break;
         }
         break;
