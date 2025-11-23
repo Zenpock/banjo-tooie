@@ -616,7 +616,7 @@ f32 func_8080115C_chhandcart(f32* arg0, f32 arg1)
         }
     }
     //Cap the player speed at 90
-    if (arg1 > 90.0f)
+    if (arg1 > 90.0f && !func_800DA298(0x3D7))
     {
         arg1 = 90.0f;
     }
@@ -1126,12 +1126,12 @@ s32 func_80802468_chhandcart(Actor* arg0, s32 arg1, s32 arg2)
         {
             if (arg2 == 0x1D)
             {
-                var_v1 = 0xF85;
+                var_v1 = 0xF85; //Canary Mary wants another race
             }
         }
         else
         {
-            var_v1 = 0xFAF;
+            var_v1 = 0xFAF; //Canary Mary Leave CCL
         }
         if (var_v1 != 0)
         {
@@ -1953,9 +1953,10 @@ void func_80803794_chhandcart(Actor* arg0)
         if (func_80105A5C(arg0) != 0)
         {
             func_80105634(arg0);
+            func_800DA544(0x504);
             if (_gclevel_entrypoint_3(0x18) != 0)
             {
-                _glcutDll_entrypoint_6(0x136, 0x55);
+                //Removed Cutscene because it was breaking
             }
             else
             {
@@ -2017,15 +2018,16 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
             break;
         }
         break;
-    case 13:
+    case 13: //Just Spawned an object
         temp_s0 = func_80106790(arg0->unk3C);
-        switch (arg2 & 0xFFFF)
+        if (func_800D0A9C(0x4, 0x4) == 1)
         {
-        case 1:
-            func_8080090C_chhandcart(temp_s0, 0x1D, 0x2000, func_80101080());
-            break;
-        case 4:
             func_8080090C_chhandcart(temp_s0, 0x19, 0x2000, func_80101080());
+            break;
+        }
+        else if (func_800D0A9C(0xC, 0x1) == 1)
+        {
+            func_8080090C_chhandcart(temp_s0, 0x1D, 0x2000, func_80101080());
             break;
         }
         break;
