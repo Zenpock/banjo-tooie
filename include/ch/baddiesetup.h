@@ -4,5 +4,6 @@
 #include "common.h"
 
 u32 _chbaddiesetup_entrypoint_0(u32*);
+void _chbaddiesetup_entrypoint_6(s32*, s32, s32, s32, s32, u32, Unk80132ED0*); /* extern */
 
 #endif

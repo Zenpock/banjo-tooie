@@ -2,6 +2,8 @@
 #define __CORE2_1EA9160_H__
 
 #include "common.h"
+#include "ch/baddiesetup.h"
+#include "core2/1EC8070.h"
 
 s32 func_800CF87C();
 s32 func_800CFA90();
@@ -16,6 +18,7 @@ s32 func_800D0634(u32, u32);
 //Get Associated Level Id of given item
 s32 func_800D06D4(s32 itemIndex, s32 itemType);
 void func_800D0778(s32, s32, s32*);
+void func_800D07CC(u32, u32, f32*);
 //Check if collectable is valid type
 s32 func_800D0820(s32 itemType);
 void func_800CF870(s32);
@@ -26,6 +29,7 @@ s32 func_800D0908(s32, s32);
 s32 func_800D0A80(s32, s32);
 //Is Item Spawned
 s32 func_800D0A9C(u32, u32);
+void func_800D0B08(u32, u32);
 void func_800D0B38(s16, s16);
 //Is Item Collected
 s32 func_800D0B68(u32, u32);
@@ -33,6 +37,7 @@ void func_800D0BD4(s32, u32);
 void func_800D0C78(u32, u32, u32);
 //Set Item Collected Flag
 void func_800D0BD4(s32, u32);
+void func_800D0DAC(s32, f32*, s32, s32);
 //Spawn Collectable
 void func_800D1000(u32, u32, f32*, u32, Unk80132ED0*);
 //Get Total Number of Jinjos of Type
