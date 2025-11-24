@@ -31,6 +31,7 @@
 #include "su/baddieDll.h"
 #include "su/baddiefade.h"
 #include "su/baddiesect.h"
+#include "su/restart.h"
 
 #include "ch/appearfx.h"
 

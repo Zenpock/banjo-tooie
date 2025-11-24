@@ -16447,13 +16447,8 @@ segments:
     start: 0x02173A00
     bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02173A00, c, restart]
-      - [0x02173AD0, .rodata, restart]
-      - [0x02173AD0, data, restart]
-      - [0x02173B50, bss, restart]
+      - [auto, c, restart]
   - name: subaddiezone_header
     dir: overlays/subaddiezone
     type: bin
