@@ -1,4 +1,4 @@
-#include "common.h"
+#include "su/mole.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/mole/func_80800000_sumole.s")
 
@@ -10,7 +10,21 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/mole/func_808002E0_sumole.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/mole/func_8080037C_sumole.s")
+void func_8080037C_sumole(Actor* arg0, s32 arg1, s32 arg2, s32 arg3)
+{
+    u32 temp_t8;
+
+    switch (arg0->unk7A_11)
+    {                              /* irregular */
+    case 0:
+        //_capod_entrypoint_2(arg0->unk0, 4, 0x800);
+    case 2:
+        arg0->unk7A_11 = 1;
+    case 1:
+        //_capod_entrypoint_6(arg3, arg1, arg2);
+        return;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/mole/func_80800408_sumole.s")
 

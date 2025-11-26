@@ -3,6 +3,21 @@
 
 #include "common.h"
 
+#include "gl/cutDll.h"
+#include "ca/pod.h"
+
+#include "ch/bounce.h"
+#include "ch/molehill.h"
+#include "ch/appearfx.h"
+
+#include "nc/poddialog.h"
+
+#include "core2/1EA0690.h"
+#include "core2/1EDA900.h"
+#include "core2/1EDFED0.h"
+#include "core2/1EE1510.h"
+
+
 typedef struct {
 	u32 charactersAllowed;
 	u16 CannotAffordDialog;
