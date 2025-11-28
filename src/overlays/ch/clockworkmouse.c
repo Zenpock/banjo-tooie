@@ -1017,14 +1017,14 @@ void func_808022E4_chclockworkmouse(Actor* actor, s32 arg1) {
         func_8080079C_chclockworkmouse(sp2C, actor, 2, 1);
         temp_v0 = func_80800090_chclockworkmouse();
         switch (temp_v0) {                          /* switch 2; irregular */
-        case 1:                                     /* switch 2 */
+        case 1:
             if (func_800D0A9C(0x4A, 1) != 0) {
                 sp20 = 0x142C;
             } else {
                 sp20 = 0x1428;
             }
             break;
-        case 2:                                     /* switch 2 */
+        case 2:
             if (func_800D0A9C(0x4A, 1) != 0) {
                 sp20 = 0x142E;
             } else {

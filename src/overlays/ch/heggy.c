@@ -59,7 +59,7 @@ void func_8080015C_chheggy(Actor* arg0)
     sp60 = 0;
     sp5C = 0;
     switch (func_801022E4(arg0))
-    {                              /* irregular */
+    {
     case 0x4A5:
         sp5C = func_80101E14(arg0, 0.0f) != 0 || func_80101E14(arg0, 0.8f) != 0;
         sp60 = func_80101E14(arg0, 0.35f);
@@ -699,7 +699,7 @@ s32 func_80801A00_chheggy(Actor* arg0, s32 arg1, s32 arg2)
     Actor* sp34;
 
     switch (arg1)
-    {                                 /* irregular */
+    {   
     default:
         if (arg1 == 0x40)
         {
