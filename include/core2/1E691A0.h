@@ -21,7 +21,7 @@ f32 func_80090010(void);
 void func_800900D0(s32);
 s32 func_80090128();
 //Does the current character match given transformation
-s32 func_80090178(s32);
+s32 func_80090178(AllowedTransformation);
 s32 func_80090248(void);
 s32 func_80090270(void);
 void func_800903D0(f32[3]);

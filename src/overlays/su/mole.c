@@ -41,13 +41,13 @@ void sumole_entrypoint_0(Actor* arg0, s32 arg1)
     _subaddieDll_entrypoint_4(arg0, 1U);
 }
 
-s32 sumole_entrypoint_1(Actor* arg0, s32 arg1, u32 arg2, s32 arg3)
+s32 sumole_entrypoint_1(Actor* arg0, s32 arg1, u32 arg2, s32 ability)
 {
-    if (func_80090178(0x1701) == 0)
+    if (func_80090178(ALLOW_BK | ALLOW_BANJO | ALLOW_KAZOOIE | ALLOW_MUMBO | ALLOW_FIRSTPERSON) == 0)
     {
         return 0;
     }
-    if ((arg2 != 0) && (func_8010CAC0(arg0->position, 0x177U) != 0) && ((arg3 == -1) || (func_800C6E38(arg3) == 0)))
+    if ((arg2 != 0) && (func_8010CAC0(arg0->position, 0x177U) != 0) && ((ability == -1) || (func_800C6E38(ability) == 0)))
     {
         func_800D2498(0xD0U, func_800D035C(6), 0U);
         func_800D2498(0xEAU, arg2, 0U);
@@ -302,7 +302,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
             if (sumole_entrypoint_1(arg0, -1, func_80800000_sumole(arg0, arg1), (s32)arg1[(s32)arg0->unk54].AbilityToLearn) != 0)
             {
                 //Allow all characters to talk
-                if (sumole_entrypoint_5(arg0, arg1[(s32)arg0->unk54].charactersAllowed, -1, -1) != 0)
+                //if (sumole_entrypoint_5(arg0, arg1[(s32)arg0->unk54].charactersAllowed, -1, -1) != 0)
                 {
                     if (func_800DA298(FLAG_40C_FTT_JAMJARS) == 0)
                     {
@@ -327,7 +327,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
                     return;
                 }
                 sumole_entrypoint_2(arg0, 0xE);
-                if (func_80090178(0x601) != 0)
+                if (func_80090178(ALLOW_BK | ALLOW_KAZOOIE | ALLOW_BANJO) != 0)
                 {
                     if ((arg1[(s32)arg0->unk54].AbilityToLearn != -1) && (func_800C6E38(arg1[(s32)arg0->unk54].AbilityToLearn) == 0))
                     {
@@ -458,21 +458,21 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
     }
 }
 
-s32 sumole_entrypoint_5(Actor* arg0, s32 arg1, s32 arg2, s32 arg3)
+s32 sumole_entrypoint_5(Actor* arg0, AllowedTransformation arg1, s32 success, s32 failure)
 {
-    if (arg2 != -1)
+    if (success != -1)
     {
         if (arg1 == -1U)
         {
-            arg0->unk70_10 = arg2;
+            arg0->unk70_10 = success;
         }
         else if (func_80090178(arg1) != 0)
         {
-            arg0->unk70_10 = arg2;
+            arg0->unk70_10 = success;
         }
         else
         {
-            arg0->unk70_10 = arg3;
+            arg0->unk70_10 = failure;
         }
         return 0;
     }
@@ -670,7 +670,7 @@ void sumole_entrypoint_16(Actor* arg0, s32 arg1)
         sumole_entrypoint_2(arg0, 0xA);
         return;
     case 2:
-        if (func_80090178(0x601) != 0)
+        if (func_80090178(ALLOW_BK | ALLOW_KAZOOIE | ALLOW_BANJO) != 0)
         {
             sumole_entrypoint_2(arg0, 0x11);
             return;
