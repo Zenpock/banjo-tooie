@@ -110,15 +110,15 @@ void func_808002E0_sumole(Actor* arg0, s32 arg1, s32 arg2, s32 arg3)
 void func_8080037C_sumole(Actor* arg0, s32 arg1, s32 arg2, s32 arg3)
 {
     u32 temp_t8;
-
+    //Disable the cutscenes for new things
     switch (arg0->unk7A_11)
     {
     case 0:
-        _capod_entrypoint_2(arg0->unk0, 4, 0x800);
+        //_capod_entrypoint_2(arg0->unk0, 4, 0x800);
     case 2:
         arg0->unk7A_11 = 1;
     case 1:
-        _capod_entrypoint_6(arg3, arg1, arg2);
+        //_capod_entrypoint_6(arg3, arg1, arg2);
         return;
     }
 }
@@ -301,6 +301,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
         case 1:
             if (sumole_entrypoint_1(arg0, -1, func_80800000_sumole(arg0, arg1), (s32)arg1[(s32)arg0->unk54].AbilityToLearn) != 0)
             {
+                //Allow all characters to talk
                 //if (sumole_entrypoint_5(arg0, arg1[(s32)arg0->unk54].charactersAllowed, -1, -1) != 0)
                 {
                     if (func_800DA298(FLAG_40C_FTT_JAMJARS) == 0)
@@ -717,15 +718,20 @@ void sumole_entrypoint_16(Actor* arg0, s32 arg1)
         {
             func_800C7074((s32)temp_v0[(s32)arg0->unk54].AbilityToLearn, func_800DA298(FLAG2_660_UNK));
         }
-        for (sp28 = 0; sp28 < 8; sp28++) {
+        for (sp28 = 0; sp28 < 8; sp28++) 
+        {
             if (D_808025B4_sumole[sp28 * 2 + 0] == (s16)temp_v0[(s32)arg0->unk54].MoveTutorialDialog)
             {
-                func_80108B04(arg0, D_808025B4_sumole[sp28 * 2 + 1]);
-                sumole_entrypoint_2(arg0, 0x16);
+                //1DD4
+                //Disable the egg nest spawning
+                //func_80108B04(arg0, D_808025B4_sumole[sp28 * 2 + 1]);
+                //sumole_entrypoint_2(arg0, 0x16);
                 break;
             }
         }
-        if (sp28 >= 8U)
+        //1E00
+        // Forces progression of the cutscene since the item doesn't spawn
+        //if (sp28 >= 8U)
         {
             sumole_entrypoint_2(arg0, 0x11);
         }
@@ -746,6 +752,7 @@ s32 sumole_entrypoint_17(Actor* arg0, s16 message, s32 arg2, s32 arg3)
     switch ((s32)arg0->unk58)
     {
     case 0:
+        //Try and play new message
         if (temp_v0 != NULL)
         {
             func_800C05B8(message, 7, arg0->position, temp_a3, 0, 0, 0);
@@ -758,14 +765,17 @@ s32 sumole_entrypoint_17(Actor* arg0, s16 message, s32 arg2, s32 arg3)
     default:
         break;
     case 1:
+        //If the message being played is our message progress to "Is Playing" mode
         if (func_800C064C() == message)
         {
             arg0->unk58 = 2.0f;
         }
         break;
     case 2:
+        //Is there any dialog playing right now?
         if (func_800C064C() == -1)
         {
+            //Set that we're ready to play next message
             arg0->unk58 = 0.0f;
             if (arg2 != -1)
             {
