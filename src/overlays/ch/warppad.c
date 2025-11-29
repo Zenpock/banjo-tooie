@@ -201,7 +201,7 @@ void func_80800418_chwarppad(Actor* arg0, u32 arg1)
 
 s16 func_808006C0_chwarppad(s32 arg0)
 {
-    s32 temp_v0;
+    TransformationId temp_v0;
     u32 temp_a2;
     s32 var_a1;
 
@@ -260,7 +260,7 @@ void func_80800748_chwarppad(Actor* arg0)
 
                 switch (currentTransformation)
                 {
-                    case 0x1: //BK
+                    case TRANSFORM_1_BK: //BK
                     {
                         GameFlag flag = 0;
                         
@@ -272,35 +272,35 @@ void func_80800748_chwarppad(Actor* arg0)
                         switch (D_8012762C)
                         {
                         case 0x10://MT
-                            targetTransformation = 0x8;
+                            targetTransformation = TRANSFORM_8_STONY;
                             flag = FLAG_0D6_PAID_GLOWBO_WUMBA_MT;
                             break;
                         case 0xF://GGM
-                            targetTransformation = 0xF;
+                            targetTransformation = TRANSFORM_F_PLUNGER;
                             flag = FLAG_0D7_PAID_GLOWBO_WUMBA_GGM;
                             break;
                         case 0x12://WW
-                            targetTransformation = 0x10;
+                            targetTransformation = TRANSFORM_10_VAN;
                             flag = FLAG_0D8_PAID_GLOWBO_WUMBA_WW;
                             break;
                         case 0x14://JRL
-                            targetTransformation = 0xC;
+                            targetTransformation = TRANSFORM_C_SUB;
                             flag = FLAG_0D9_PAID_GLOWBO_WUMBA_JRL;
                             break;
                         case 0x15://TDL
-                            targetTransformation = func_800DA298(FLAG_18A_TDL_WIGWAM_ENLARGED) ? 0x13 : 0x12;
+                            targetTransformation = func_800DA298(FLAG_18A_TDL_WIGWAM_ENLARGED) ? TRANSFORM_13_BIGTREX : TRANSFORM_12_SMALLTREX;
                             flag = FLAG_0DA_PAID_GLOWBO_WUMBA_TDL;
                             break;
                         case 0x16://GI
-                            targetTransformation = 0x7;
+                            targetTransformation = TRANSFORM_7_WASHINGMACHINE;
                             flag = FLAG_0DB_PAID_GLOWBO_WUMBA_GI;
                             break;
                         case 0x17://HFP
-                            targetTransformation = 0x2;
+                            targetTransformation = TRANSFORM_2_SNOWBALL;
                             flag = FLAG_0DC_PAID_GLOWBO_WUMBA_HFP;
                             break;
                         case 0x18://CCL
-                            targetTransformation = 0x6;
+                            targetTransformation = TRANSFORM_6_BEE;
                             flag = FLAG_0DD_PAID_GLOWBO_WUMBA_CCL;
                             break;
                         default:
@@ -313,27 +313,27 @@ void func_80800748_chwarppad(Actor* arg0)
                         }
                         break;
                     }
-                    case 0x2: //Snowball
-                    case 0x6: //Bee
-                    case 0x7: //Washing Machine
-                    case 0x8: //Stony
-                    case 0xC: //Sub
-                    case 0xF: //Plunger
-                    case 0x10: //Van
-                    case 0x12: //Small T-Rex
-                    case 0xD: //Mumbo
+                    case TRANSFORM_2_SNOWBALL: //Snowball
+                    case TRANSFORM_6_BEE: //Bee
+                    case TRANSFORM_7_WASHINGMACHINE: //Washing Machine
+                    case TRANSFORM_8_STONY: //Stony
+                    case TRANSFORM_C_SUB: //Sub
+                    case TRANSFORM_F_PLUNGER: //Plunger
+                    case TRANSFORM_10_VAN: //Van
+                    case TRANSFORM_12_SMALLTREX: //Small T-Rex
+                    case TRANSFORM_D_MUMBO: //Mumbo
                         targetTransformation = 1;
-                        func_800A3410(state, 1);
+                        func_800A3410(state, TRANSFORM_1_BK);
                         transformed = 1;
                         break;
-                    case 0x13: //Big T-Rex
-                        func_800A3410(state, 0x12);
+                    case TRANSFORM_13_BIGTREX: //Big T-Rex
+                        func_800A3410(state, TRANSFORM_12_SMALLTREX);
                         transformed = 1;
                         break;
-                    case 0xE: //Golden Goliath
-                    case 0x11: //Clockwork
-                    case 0xA: //Banjo
-                    case 0xB: //Kazooie
+                    case TRANSFORM_E_GOLDENGOLIATH: //Golden Goliath
+                    case TRANSFORM_11_CLOCKWORK: //Clockwork
+                    case TRANSFORM_A_BANJO: //Banjo
+                    case TRANSFORM_B_KAZOOIE: //Kazooie
                         break;
                 }
                 if (transformed)
@@ -356,7 +356,7 @@ void func_80800748_chwarppad(Actor* arg0)
 
                 switch (currentTransformation)
                 {
-                case 0x1: //BK
+                case TRANSFORM_1_BK: //BK
                 {
                     GameFlag flag = 0;
                     switch (D_8012762C)
@@ -394,30 +394,30 @@ void func_80800748_chwarppad(Actor* arg0)
                     }
                     if (func_800DA298(flag) == 1)
                     {
-                        targetTransformation = 0xD;
+                        targetTransformation = TRANSFORM_D_MUMBO;
                         func_800A3410(state, targetTransformation);
                         transformed = 1;
                     }
                     break;
                 }
-                case 0x2: //Snowball
-                case 0x6: //Bee
-                case 0x7: //Washing Machine
-                case 0x8: //Stony
-                case 0xC: //Sub
-                case 0xF: //Plunger
-                case 0x10: //Van
-                case 0x12: //Small T-Rex
-                case 0x13: //Big T-Rex
-                case 0xD: //Mumbo
-                    targetTransformation = 0x1;
+                case TRANSFORM_2_SNOWBALL: //Snowball
+                case TRANSFORM_6_BEE: //Bee
+                case TRANSFORM_7_WASHINGMACHINE: //Washing Machine
+                case TRANSFORM_8_STONY: //Stony
+                case TRANSFORM_C_SUB: //Sub
+                case TRANSFORM_F_PLUNGER: //Plunger
+                case TRANSFORM_10_VAN: //Van
+                case TRANSFORM_12_SMALLTREX: //Small T-Rex
+                case TRANSFORM_13_BIGTREX: //Big T-Rex
+                case TRANSFORM_D_MUMBO: //Mumbo
+                    targetTransformation = TRANSFORM_1_BK;
                     func_800A3410(state, targetTransformation);
                     transformed = 1;
                     break;
-                case 0xE: //Golden Goliath
-                case 0x11: //Clockwork
-                case 0xA: //Banjo
-                case 0xB: //Kazooie
+                case TRANSFORM_E_GOLDENGOLIATH: //Golden Goliath
+                case TRANSFORM_11_CLOCKWORK: //Clockwork
+                case TRANSFORM_A_BANJO: //Banjo
+                case TRANSFORM_B_KAZOOIE: //Kazooie
                     break;
                 }
                 if (transformed)
@@ -436,7 +436,7 @@ void func_80800748_chwarppad(Actor* arg0)
             {
                 arg0->unk74_30 = 1;
                 func_808003B8_chwarppad(arg0);
-                if (func_800F64A4(func_800F54E4(), 0x42000) == 0)
+                if (func_800F64A4(func_800F54E4(), ALLOW_BIGTREX| ALLOW_GOLDENGOLIATH) == 0)
                 {
                     func_80800F34_chwarppad(arg0, 4, 1);
                 }

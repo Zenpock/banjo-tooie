@@ -302,7 +302,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
             if (sumole_entrypoint_1(arg0, -1, func_80800000_sumole(arg0, arg1), (s32)arg1[(s32)arg0->unk54].AbilityToLearn) != 0)
             {
                 //Allow all characters to talk
-                //if (sumole_entrypoint_5(arg0, arg1[(s32)arg0->unk54].charactersAllowed, -1, -1) != 0)
+                if (sumole_entrypoint_5(arg0, arg1[(s32)arg0->unk54].charactersAllowed, -1, -1) != 0)
                 {
                     if (func_800DA298(FLAG_40C_FTT_JAMJARS) == 0)
                     {
@@ -583,9 +583,9 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
     var_a1 = func_800DC128(0xD7B, 0xD7D);
     switch (arg1)
     {
-    case 0x200: //Banjo Moves
+    case ALLOW_BANJO: //Banjo Moves
         sp1E = var_a1;
-        if (func_8010D278() == 0xB)
+        if (func_8010D278() == TRANSFORM_B_KAZOOIE)
         {
             //Randomize kazooie Refusal message to use for Banjo Move
             var_a1 = func_800DC128(0xD71, 0xD73);
@@ -593,16 +593,16 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
         else
         {
             sp1E = var_a1;
-            if (func_8010D278() == 1)
+            if (func_8010D278() == TRANSFORM_1_BK)
             {
                 //Randomize message saying to get rid of kazooie
                 var_a1 = func_800DC128(0xD6F, 0xD71);
             }
         }
         break;
-    case 0x400: //Kazooie Moves
+    case ALLOW_KAZOOIE: //Kazooie Moves
         sp1E = var_a1;
-        if (func_8010D278() == 0xA)
+        if (func_8010D278() == TRANSFORM_A_BANJO)
         {
             //Randomize Banjo Refusal message to use for Kazooie Move
             var_a1 = func_800DC128(0xD73, 0xD75);
@@ -610,16 +610,16 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
         else
         {
             sp1E = var_a1;
-            if (func_8010D278() == 1)
+            if (func_8010D278() == TRANSFORM_1_BK)
             {
                 //Randomize message saying to get rid of Banjo
                 var_a1 = func_800DC128(0xD75, 0xD77);
             }
         }
         break;
-    case 0x1: //BK Moves
+    case ALLOW_BK: //BK Moves
         sp1E = var_a1;
-        if (func_8010D278() == 0xB)
+        if (func_8010D278() == TRANSFORM_B_KAZOOIE)
         {
             //Randomize Kazooie Refusal message to use for BK Move
             var_a1 = func_800DC128(0xD79, 0xD7B);
@@ -627,7 +627,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
         else
         {
             sp1E = var_a1;
-            if (func_8010D278() == 0xA)
+            if (func_8010D278() == TRANSFORM_A_BANJO)
             {
                 //Randomize Banjo Refusal message to use for BK Move
                 var_a1 = func_800DC128(0xD77, 0xD79);
