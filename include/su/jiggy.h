@@ -2,14 +2,17 @@
 #define __SU_JIGGY_H__
 
 #include "common.h"
-#include "core2/1EA9160.h"
-#include "core2/1EB3750.h"
-#include "core2/1EAB8B0.h"
 #include "core2/1E831D0.h"
+#include "core2/1EA0690.h"
+#include "core2/1EA9160.h"
+#include "core2/1EAB8B0.h"
+#include "core2/1EABAC0.h"
+#include "core2/1EB3750.h"
 #include "core2/1ED4E30.h"
 #include "core2/1ED68A0.h"
 #include "gl/cutDll.h"
 #include "gl/reflight.h"
+#include "gc/gamefix.h"
 
 typedef struct
 {

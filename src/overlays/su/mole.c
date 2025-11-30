@@ -13,6 +13,7 @@ extern s32 D_808025B4_sumole[];
 extern s32 _sumole_entrypoint_21;
 s32 sumole_entrypoint_17(Actor* arg0, s16 arg1, s32 arg2, s32 arg3);
 Unk80132ED0* func_80802178_sumole(Actor* arg0);
+s32 func_IsCollected(Actor*, MoveData*);
 
 s32 func_80800000_sumole(Actor* arg0, MoveData* arg1)
 {
@@ -41,13 +42,13 @@ void sumole_entrypoint_0(Actor* arg0, s32 arg1)
     _subaddieDll_entrypoint_4(arg0, 1U);
 }
 
-s32 sumole_entrypoint_1(Actor* arg0, s32 arg1, u32 arg2, s32 ability)
+s32 sumole_entrypoint_1(Actor* arg0, s32 arg1, u32 arg2, MoveData* moveData)
 {
     if (func_80090178(ALLOW_BK | ALLOW_BANJO | ALLOW_KAZOOIE | ALLOW_MUMBO | ALLOW_FIRSTPERSON) == 0)
     {
         return 0;
     }
-    if ((arg2 != 0) && (func_8010CAC0(arg0->position, 0x177U) != 0) && ((ability == -1) || (func_800C6E38(ability) == 0)))
+    if ((arg2 != 0) && (func_8010CAC0(arg0->position, 0x177U) != 0) && ((moveData[(s32)arg0->unk54].AbilityToLearn == -1) || (func_IsCollected(arg0, moveData) == 0)))
     {
         func_800D2498(0xD0U, func_800D035C(6), 0U);
         func_800D2498(0xEAU, arg2, 0U);
@@ -287,7 +288,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
             var_v1 = arg1[(s32)arg0->unk54].AbilityToLearn == 0x18;
             if (var_v1 == 0)
             {
-                var_v1 = func_800C6E38(arg1[(s32)arg0->unk54].AbilityToLearn) != 0;
+                var_v1 = func_IsCollected(arg0,arg1) != 0;
             }
             if (var_v1 != arg0->unk74_29)
             {
@@ -299,7 +300,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
         switch (arg0->unk70_10)
         {
         case 1:
-            if (sumole_entrypoint_1(arg0, -1, func_80800000_sumole(arg0, arg1), (s32)arg1[(s32)arg0->unk54].AbilityToLearn) != 0)
+            if (sumole_entrypoint_1(arg0, -1, func_80800000_sumole(arg0, arg1), arg1) != 0)
             {
                 //Allow all characters to talk
                 //if (sumole_entrypoint_5(arg0, arg1[(s32)arg0->unk54].charactersAllowed, -1, -1) != 0)
@@ -309,7 +310,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
                         sumole_entrypoint_2(arg0, 3);
                         return;
                     }
-                    if ((arg1[(s32)arg0->unk54].AbilityToLearn != -1) && (func_800C6E38((s32)arg1[(s32)arg0->unk54].AbilityToLearn) == 0))
+                    if ((arg1[(s32)arg0->unk54].AbilityToLearn != -1) && (func_IsCollected(arg0, arg1) == 0))
                     {
                         var_v1 = func_80800000_sumole(arg0, arg1);
                         if (var_v1 > func_800D035C(6))
@@ -329,7 +330,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
                 sumole_entrypoint_2(arg0, 0xE);
                 if (func_80090178(ALLOW_BK | ALLOW_KAZOOIE | ALLOW_BANJO) != 0)
                 {
-                    if ((arg1[(s32)arg0->unk54].AbilityToLearn != -1) && (func_800C6E38(arg1[(s32)arg0->unk54].AbilityToLearn) == 0))
+                    if ((arg1[(s32)arg0->unk54].AbilityToLearn != -1) && (func_IsCollected(arg0,arg1) == 0))
                     {
                         arg0->unk6C_0 = 2;
                         return;
@@ -651,7 +652,7 @@ void sumole_entrypoint_16(Actor* arg0, s32 arg1)
     case 16:
         if (temp_v0[(s32)arg0->unk54].AbilityToLearn != -1)
         {
-            if (func_800C6E38(temp_v0[(s32)arg0->unk54].AbilityToLearn) == 0)
+            if (func_IsCollected(arg0, temp_v0) == 0)
             {
                 if (func_80800000_sumole(arg0, temp_v0) > func_800D035C(6))
                 {
@@ -714,10 +715,18 @@ void sumole_entrypoint_16(Actor* arg0, s32 arg1)
         return;
     case 7:
         func_800FC6B0(0x10U);
-        if (temp_v0[(s32)arg0->unk54].AbilityToLearn != -1)
+
+        if (temp_v0[(s32)arg0->unk54].AbilityToLearn == 0x55)
+        {
+            s32 type = temp_v0[(s32)arg0->unk54].charactersAllowed >> 16;
+            s32 flag = temp_v0[(s32)arg0->unk54].charactersAllowed & 0xFFFF;
+            _sujiggy_entrypoint_2(type<<16|flag|0x15000000);
+        }
+        else if (temp_v0[(s32)arg0->unk54].AbilityToLearn != -1)
         {
             func_800C7074((s32)temp_v0[(s32)arg0->unk54].AbilityToLearn, func_800DA298(FLAG2_660_UNK));
         }
+
         for (sp28 = 0; sp28 < 8; sp28++) 
         {
             if (D_808025B4_sumole[sp28 * 2 + 0] == (s16)temp_v0[(s32)arg0->unk54].MoveTutorialDialog)
@@ -965,5 +974,24 @@ void sumole_entrypoint_21(Unk80132ED0* arg0, s32 arg1)
     if (arg1 != 0)
     {
         func_80103140(sp20, 0x629U, sp24->unk0->unk16);
+    }
+}
+
+//Used to determine if the move is already learned or if the item is already collected
+s32 func_IsCollected(Actor* arg0, MoveData* moveData)
+{
+    if (moveData[(s32)arg0->unk54].AbilityToLearn != 0x55 && moveData[(s32)arg0->unk54].AbilityToLearn != -1)
+    {
+        return func_800C6E38(moveData[(s32)arg0->unk54].AbilityToLearn);
+    }
+    else if (moveData[(s32)arg0->unk54].AbilityToLearn == 0x55)
+    {
+        s32 type = moveData[(s32)arg0->unk54].charactersAllowed >> 16;
+        s32 flag = moveData[(s32)arg0->unk54].charactersAllowed & 0xFFFF;
+        return func_800D0B68(flag,type);
+    }
+    else
+    {
+        return 1;
     }
 }

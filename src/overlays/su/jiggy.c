@@ -68,6 +68,39 @@ u8 sujiggy_entrypoint_2(s32 arg0)
 {
     u8 found = 0;
     s32 i = 0;
+    if (arg0 >> 24 == 0x15)
+    {
+        s32 type = (arg0 >> 16) & 0xFF;
+        s32 flag = arg0 & 0xFFFF;
+
+        func_800D0BD4(flag, type);
+        switch (type)
+        {
+        case 0:
+        {
+            s32 jinjoColor = func_800D0CC8(flag);
+            _gcgamefix_entrypoint_1(0);
+            func_800D24E8(jinjoColor + 0xE1, func_800D1338(jinjoColor), func_800D129C(jinjoColor));
+            break;
+        }
+        case 2: //Honeycomb
+            func_800D1844(0x49);
+            break;
+        case 3: //Cheato
+            func_800D1844(0x4A);
+            break;
+        case 4: //Glowbo
+            func_800D1844(0x48);
+            break;
+        case 7: //Doubloon
+            func_800D1844(0x4E);
+            break;
+        case 8: //Ticket
+            func_800D1844(0x4D);
+            break;
+        }
+        return 0;
+    }
     switch (arg0)
     {
         default :

@@ -11,6 +11,7 @@
 #include "ch/appearfx.h"
 #include "ch/introtext.h"
 #include "ch/baddiesetup.h"
+#include "su/jiggy.h"
 
 #include "gc/cubesearch.h"
 #include "gc/dialogcamera.h"
