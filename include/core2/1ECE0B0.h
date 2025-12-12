@@ -4,7 +4,6 @@
 #include "../../src/overlays/ba/playerstate.h"
 #include "overlays/ba/yaw.h"
 #include "transformations.h"
-
 #include "core2/1E7BFA0.h"
 #include "core2/1E7AB30.h"
 
@@ -12,7 +11,6 @@
 #include "overlays/ba/key.h"
 #include "overlays/ba/drone.h"
 #include "ba/hold.h"
-
 
 #include <ultra64.h>
 void func_800F497C(s32);
@@ -41,11 +39,11 @@ s32 func_800F6774(u32);
 
 typedef enum
 {
-	ALLOW_BIGTREX = 1 << (TRANSFORM_13_BIGTREX + 0x1F),
-	ALLOW_SMALLTREX = 1 << (TRANSFORM_12_SMALLTREX + 0x1F),
+	ALLOW_TREXLARGE = 1 << (TRANSFORM_13_TREXLARGE + 0x1F),
+	ALLOW_TREXSMALL = 1 << (TRANSFORM_12_TREXSMALL + 0x1F),
 	ALLOW_CLOCKWORK = 1 << (TRANSFORM_11_CLOCKWORK + 0x1F),
 	ALLOW_VAN = 1 << (TRANSFORM_10_VAN + 0x1F),
-	ALLOW_PLUNGER = 1 << (TRANSFORM_F_PLUNGER + 0x1F),
+	ALLOW_DETONATOR = 1 << (TRANSFORM_F_DETONATOR + 0x1F),
 	ALLOW_GOLDENGOLIATH = 1 << (TRANSFORM_E_GOLDENGOLIATH + 0x1F),
 	ALLOW_MUMBO = 1 << (TRANSFORM_D_MUMBO + 0x1F),
 	ALLOW_SUB = 1 << (TRANSFORM_C_SUB + 0x1F),
@@ -74,6 +72,7 @@ void func_800F82C0(s32);
 void func_800F82D4(s32, s32);
 void func_800F832C(s32, f32*);
 s32 func_800F8B64(void);
+void func_800F8850();
 void func_800F8DD8();
 void func_800F8E08();
 void func_800F911C(s32);

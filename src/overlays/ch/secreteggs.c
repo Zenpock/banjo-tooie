@@ -1,10 +1,18 @@
 #include "ch/secreteggs.h"
 
+typedef struct unkEggData
+{
+    u16 unk0;
+    u16 unk4;
+    u16 unk8;
+    u16 unkC;
+} unkEggData;
+
 extern unkEggData D_80800494_chsecreteggs[0x3];
 extern s32 D_808004A8_chsecreteggs;
 extern f32 D_808004EC_chsecreteggs[5];
 extern f32 D_80800500_chsecreteggs[3];
-extern u32 D_8080050C_chsecreteggs;
+extern ActorData D_8080050C_chsecreteggs;
 
 void func_80800000_chsecreteggs(Actor* arg0)
 {
@@ -148,7 +156,7 @@ s32 func_80800328_chsecreteggs(Actor* arg0, s32 arg1, s32 arg2)
     }
 }
 
-u32* chsecreteggs_entrypoint_0(void) 
+ActorData* chsecreteggs_entrypoint_0(void)
 {
     return &D_8080050C_chsecreteggs;
 }

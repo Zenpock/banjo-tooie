@@ -47,21 +47,12 @@
 
 #include "ch/skeletonexplode.h"
 
-typedef struct Unk80100094 {
-    Vec3f unk0[1]; // unknown size, could be up to 5
-    u8 padC[0x3C - 0xC];
-    Vec3f unk3C;
-    s32 unk48[7]; // unknown size
-    f32 unk64[3];
-    f32 unk70[3];
-} Unk80100094;
 
+ActorData* chheggy_entrypoint_0(void);
+ActorData* _chheggy_entrypoint_0(void);
 
-s32* chheggy_entrypoint_0(void);
-s32* _chheggy_entrypoint_0(void);
-
-s32* chheggy_entrypoint_1(void);
-s32* _chheggy_entrypoint_1(void);
+ActorData* chheggy_entrypoint_1(void);
+ActorData* _chheggy_entrypoint_1(void);
 
 
 #endif

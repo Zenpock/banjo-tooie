@@ -3,6 +3,6 @@
 
 #include "common.h"
 
-void _chelectricfence_entrypoint_1(Actor*, f32 *);
+void _chelectricfence_entrypoint_1(Actor*, f32*);
 
 #endif

@@ -4,12 +4,21 @@ extern s32 D_80801E08_chheggy;
 extern s32 D_80801E38_chheggy;
 extern s32 D_80801E60_chheggy;
 extern u32 D_80801E8C_chheggy;
-extern s32 D_80801E9C_chheggy;
+extern ActorData D_80801E9C_chheggy;
 extern s32 D_80801EE4_chheggy[14];
 extern s32 D_80801F1C_chheggy[15];
-extern s32 D_80801F58_chheggy;
+extern ActorData D_80801F58_chheggy;
 
 extern void* func_8010D5DC;
+
+typedef struct Unk80100094 {
+    Vec3f unk0[1]; // unknown size, could be up to 5
+    u8 padC[0x3C - 0xC];
+    Vec3f unk3C;
+    s32 unk48[7]; // unknown size
+    f32 unk64[3];
+    f32 unk70[3];
+} Unk80100094;
 
 void func_80800ECC_chheggy(Actor*, s32);
 
@@ -59,7 +68,7 @@ void func_8080015C_chheggy(Actor* arg0)
     sp60 = 0;
     sp5C = 0;
     switch (func_801022E4(arg0))
-    {
+    {                              /* irregular */
     case 0x4A5:
         sp5C = func_80101E14(arg0, 0.0f) != 0 || func_80101E14(arg0, 0.8f) != 0;
         sp60 = func_80101E14(arg0, 0.35f);
@@ -681,7 +690,7 @@ s32 func_80801570_chheggy(Actor* arg0, s32 arg1, s32 arg2)
     }
 }
 
-s32* chheggy_entrypoint_0(void) 
+ActorData* chheggy_entrypoint_0(void)
 {
     return &D_80801E9C_chheggy;
 }
@@ -733,7 +742,7 @@ s32 func_80801A00_chheggy(Actor* arg0, s32 arg1, s32 arg2)
     return 0;
 }
 
-s32* chheggy_entrypoint_1(void) 
+ActorData* chheggy_entrypoint_1(void) 
 {
     return &D_80801F58_chheggy;
 }

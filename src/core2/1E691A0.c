@@ -113,7 +113,7 @@ void func_8008FD20()
     func_800F5378(func_800F54E4());
 }
 
-s32 func_8008FD48()
+TransformationId func_8008FD48()
 {
     return func_800F5410(func_800F54E4());
 }

@@ -6,9 +6,12 @@
 
 void func_800FFA88(Unk80132ED0*);
 void func_800FFAB0(Actor*);
+void func_800FFC14();
 u32* func_80100074(Actor*, u32, u32);
 void* func_80100094(Actor*, u32);
 s32 func_801000D8(Actor*, s32, s32);
 void func_80100120(Actor*);
+
+ActorData* func_80100368(Actor*);
 
 #endif

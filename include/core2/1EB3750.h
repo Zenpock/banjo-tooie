@@ -11,9 +11,11 @@ void func_800DA524(GameFlag);
 void func_800DA544(GameFlag);
 s32 func_800DA564(GameFlag, s32);
 void func_800DA7A8(GameFlag startIndex, s32 set, s32 length);
+s32 func_800DA944(GameFlag startIndex, s32 length);
 s32 func_800DA9E4(GameFlag, s32);
 void func_800DA0B4();
 void func_800DA0D8();
 void func_800DA188();
-s32 func_800DA944(GameFlag startIndex, s32 length);
+s32 func_800DAA1C();
+s32 func_800DAC78(u8*, s32);
 #endif

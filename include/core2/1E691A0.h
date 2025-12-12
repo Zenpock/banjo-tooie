@@ -14,7 +14,7 @@ void func_8008FBE0(u32 a0);
 s32 func_8008FC00();
 s32 func_8008FC28();
 void func_8008FC50();
-s32 func_8008FD48();
+TransformationId func_8008FD48();
 Unk80132ED0* func_8008FDEC();
 void func_8008FE94(s32, f32*);
 f32 func_80090010(void);

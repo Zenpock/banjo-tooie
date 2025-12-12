@@ -4,7 +4,7 @@
 
 extern u8 D_8012762C;
 
-extern u32 D_808012FC_chwarppad;
+extern ActorData D_808012FC_chwarppad;
 extern f32 D_8080134C_chwarppad[3];
 extern u8 D_80801080_chwarppad[0x20];
 extern D_808010A0 D_808010A0_chwarppad[4];
@@ -12,7 +12,7 @@ extern D_808010B0 D_808010B0_chwarppad[31];
 extern u32 D_80801344_chwarppad;
 extern u32 _gcnewoption_entrypoint_35;
 
-u32* chwarppad_entrypoint_0(void) {
+ActorData* chwarppad_entrypoint_0(void) {
     return &D_808012FC_chwarppad;
 }
 
@@ -276,7 +276,7 @@ void func_80800748_chwarppad(Actor* arg0)
                             flag = FLAG_0D6_PAID_GLOWBO_WUMBA_MT;
                             break;
                         case 0xF://GGM
-                            targetTransformation = TRANSFORM_F_PLUNGER;
+                            targetTransformation = TRANSFORM_F_DETONATOR;
                             flag = FLAG_0D7_PAID_GLOWBO_WUMBA_GGM;
                             break;
                         case 0x12://WW
@@ -288,7 +288,7 @@ void func_80800748_chwarppad(Actor* arg0)
                             flag = FLAG_0D9_PAID_GLOWBO_WUMBA_JRL;
                             break;
                         case 0x15://TDL
-                            targetTransformation = func_800DA298(FLAG_18A_TDL_WIGWAM_ENLARGED) ? TRANSFORM_13_BIGTREX : TRANSFORM_12_SMALLTREX;
+                            targetTransformation = func_800DA298(FLAG_18A_TDL_WIGWAM_ENLARGED) ? TRANSFORM_13_TREXLARGE : TRANSFORM_12_TREXSMALL;
                             flag = FLAG_0DA_PAID_GLOWBO_WUMBA_TDL;
                             break;
                         case 0x16://GI
@@ -318,16 +318,16 @@ void func_80800748_chwarppad(Actor* arg0)
                     case TRANSFORM_7_WASHINGMACHINE: //Washing Machine
                     case TRANSFORM_8_STONY: //Stony
                     case TRANSFORM_C_SUB: //Sub
-                    case TRANSFORM_F_PLUNGER: //Plunger
+                    case TRANSFORM_F_DETONATOR: //Plunger
                     case TRANSFORM_10_VAN: //Van
-                    case TRANSFORM_12_SMALLTREX: //Small T-Rex
+                    case TRANSFORM_12_TREXSMALL: //Small T-Rex
                     case TRANSFORM_D_MUMBO: //Mumbo
                         targetTransformation = 1;
                         func_800A3410(state, TRANSFORM_1_BK);
                         transformed = 1;
                         break;
-                    case TRANSFORM_13_BIGTREX: //Big T-Rex
-                        func_800A3410(state, TRANSFORM_12_SMALLTREX);
+                    case TRANSFORM_13_TREXLARGE: //Big T-Rex
+                        func_800A3410(state, TRANSFORM_12_TREXSMALL);
                         transformed = 1;
                         break;
                     case TRANSFORM_E_GOLDENGOLIATH: //Golden Goliath
@@ -405,10 +405,10 @@ void func_80800748_chwarppad(Actor* arg0)
                 case TRANSFORM_7_WASHINGMACHINE: //Washing Machine
                 case TRANSFORM_8_STONY: //Stony
                 case TRANSFORM_C_SUB: //Sub
-                case TRANSFORM_F_PLUNGER: //Plunger
+                case TRANSFORM_F_DETONATOR: //Plunger
                 case TRANSFORM_10_VAN: //Van
-                case TRANSFORM_12_SMALLTREX: //Small T-Rex
-                case TRANSFORM_13_BIGTREX: //Big T-Rex
+                case TRANSFORM_12_TREXSMALL: //Small T-Rex
+                case TRANSFORM_13_TREXLARGE: //Big T-Rex
                 case TRANSFORM_D_MUMBO: //Mumbo
                     targetTransformation = TRANSFORM_1_BK;
                     func_800A3410(state, targetTransformation);
@@ -436,7 +436,7 @@ void func_80800748_chwarppad(Actor* arg0)
             {
                 arg0->unk74_30 = 1;
                 func_808003B8_chwarppad(arg0);
-                if (func_800F64A4(func_800F54E4(), ALLOW_BIGTREX| ALLOW_GOLDENGOLIATH) == 0)
+                if (func_800F64A4(func_800F54E4(), ALLOW_TREXLARGE | ALLOW_GOLDENGOLIATH) == 0)
                 {
                     func_80800F34_chwarppad(arg0, 4, 1);
                 }

@@ -1,7 +1,7 @@
 #include "ch/terryteeth.h"
 extern s32 D_80800150_chterryteeth;
 extern s32 D_80800190_chterryteeth;
-extern u32 D_808001A4_chterryteeth;
+extern ActorData D_808001A4_chterryteeth;
 
 void func_80800000_chterryteeth(Actor* arg0)
 {
@@ -43,6 +43,7 @@ s32 func_8080006C_chterryteeth(Actor* arg0, s32 arg1, s32 arg2) {
     return 1;
 }
 
-void* chterryteeth_entrypoint_0(void) {
+ActorData* chterryteeth_entrypoint_0(void)
+{
     return &D_808001A4_chterryteeth;
 }

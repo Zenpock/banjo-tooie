@@ -4,6 +4,9 @@ extern u8 D_8012762C;
 extern s8 D_8012762D;
 extern u8 D_808003C0_gclevel[];
 
+void func_8080016C_gclevel(s32, s32, s32, s32);
+s32 func_80800270_gclevel(s32, s32, s32);
+
 void gclevel_entrypoint_0(s32 arg0, s32 arg1)
 {
     s32 sp1C;

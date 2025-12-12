@@ -11,5 +11,6 @@ s32 func_800C064C();
 void func_800C06C4();
 void func_800C0710();
 void func_800C0850();
-
+s32 func_800C0948();
+s32 func_800C0A34();
 #endif

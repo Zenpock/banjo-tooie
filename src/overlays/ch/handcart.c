@@ -1060,11 +1060,11 @@ void func_80802120_chhandcart(Actor* arg0)
         case 2:
             if (arg0->unk64_19)
             {
-                var_v0_2 = _gccubesearch_entrypoint_0(0x201, arg0);
+                var_v0_2 = _gccubesearch_entrypoint_0(PROP_201_CHEATOPAGE_SPAWN, arg0);
             }
             else
             {
-                var_v0_2 = _gccubesearch_entrypoint_0(0x1F6, arg0);
+                var_v0_2 = _gccubesearch_entrypoint_0(PROP_1F6_JIGGY_SPAWN, arg0);
             }
             func_800EE88C(sp34->rewardSpawn, var_v0_2->position);
             func_80802068_chhandcart(arg0, arg0->unk64_19);
@@ -1178,7 +1178,7 @@ void func_8080256C_chhandcart(Actor* arg0, u32 arg1)
     }
 }
 
-void* chhandcart_entrypoint_0(void) 
+ActorData* chhandcart_entrypoint_0(void) 
 {
     return &D_80804DC4_chhandcart;
 }
@@ -1749,7 +1749,7 @@ void func_80803794_chhandcart(Actor* arg0)
         }
         else if (func_800DA298(FLAG0_001_STATE_CANARY_MARY_CAGE_BROKEN) == 0) //If we haven't spoken to canary mary in the cage
         {
-            if ((_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0x1F4, 0x46, 6) != 0) && (func_80090178(ALLOW_BK | ALLOW_PLUNGER) != 0))
+            if ((_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0x1F4, 0x46, 6) != 0) && (func_80090178(ALLOW_BK | ALLOW_DETONATOR) != 0))
             {
                 if (func_800DA9E4(FLAG_42A_FTT_CANARY_MARY_CANARY_CAVE, 1) == 0) //If we havent spoken to canary mary set flag to true
                 {
@@ -2130,7 +2130,7 @@ void chhandcart_entrypoint_1(Actor* arg0)
     func_80101F24(func_80106790((Unk80132ED0*)arg0));
 }
 
-void* chhandcart_entrypoint_2(void) 
+ActorData* chhandcart_entrypoint_2(void) 
 {
     return &D_80804E6C_chhandcart;
 }

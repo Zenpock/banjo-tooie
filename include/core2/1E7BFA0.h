@@ -4,8 +4,6 @@
 #include "common.h"
 #include "transformations.h"
 
-#include <ultra64.h>
-
 #include "overlays/ba/playerstate.h"
 
 void func_800A2CE8(PlayerState *, f32, s32);

@@ -3,7 +3,7 @@
 #define CAULDRONENERGYBARS_DATA(arg0) ((CauldronEnergyBarsData*)(arg0->actorData))
 
 extern s32 D_808002C0_chcauldronenergybars;
-extern s32 D_808002D4_chcauldronenergybars;
+extern ActorData D_808002D4_chcauldronenergybars;
 
 void func_80800000_chcauldronenergybars(Actor* arg0)
 {
@@ -75,7 +75,11 @@ void func_808000B8_chcauldronenergybars(Actor* arg0)
 
 s32 func_808001C4_chcauldronenergybars(Actor* arg0, s32 arg1, s32 arg2)
 {
-    f32 temp;
+    union {
+        f32 f;
+        s32 s;
+        void* p;
+    } temp;
     f32 sp30[3];
     s32 new_var[1];
     f32 pad;
@@ -83,9 +87,9 @@ s32 func_808001C4_chcauldronenergybars(Actor* arg0, s32 arg1, s32 arg2)
     switch (arg1)
     {
     case 0x7:
-        temp = arg2;
-        ((CauldronEnergyBarsData*)arg0->actorData)->unk1C = temp;
-        arg0->unk58 = temp;
+        temp.f = arg2;
+        CAULDRONENERGYBARS_DATA(arg0)->unk1C = temp.f;
+        arg0->unk58 = temp.f;
         func_80101FDC(arg0, 2);
         _subaddieDll_entrypoint_4(arg0, 1);
         func_8010A570(arg0);
@@ -96,7 +100,7 @@ s32 func_808001C4_chcauldronenergybars(Actor* arg0, s32 arg1, s32 arg2)
         new_var[0] = *(s32*)&arg2;
         func_800EC75C(new_var[0], sp30);
         _chelectricfence_entrypoint_1(arg0, sp30);
-        ((CauldronEnergyBarsData*)arg0->actorData)->unk10 = 0.2f;
+        CAULDRONENERGYBARS_DATA(arg0)->unk10 = 0.2f;
         func_8010A570(arg0);
         return 1;
     }
@@ -104,7 +108,7 @@ s32 func_808001C4_chcauldronenergybars(Actor* arg0, s32 arg1, s32 arg2)
     return 0;
 }
 
-s32* chcauldronenergybars_entrypoint_0(void) 
+ActorData* chcauldronenergybars_entrypoint_0(void)
 {
     return &D_808002D4_chcauldronenergybars;
 }
