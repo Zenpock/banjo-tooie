@@ -115,7 +115,7 @@ typedef struct Actor {
 typedef struct ActorData {
     s16 unk0;
     s16 unk2;
-    s16 unk4;
+    s16 Model;
     s16 unk6;
     void *unk8;
     void (*unkC_func)(Actor* actor); //Update?
@@ -144,7 +144,7 @@ typedef struct ActorData {
 
 typedef struct {
     /* 0x0 */ s16 position[3];
-    /* 0x6 */ u16 unk6_7 : 9;
+    /* 0x6 */ u16 unk6_7 : 9; //Directly moved into unk74_7 in Actor
     /* 0x6 */ u16 unk6_1 : 6; //unk4 << 0x19 >> 0x1A
     /* 0x6 */ u16 unk6_0 : 1; //unk6 >> 0x7 << 0x7
     /* 0x8 */ u16 ItemID;

@@ -71,6 +71,7 @@ s32 func_800CF87C()
     return D_8011AE60;
 }
 
+//Is this Mr Patch or SSLUMBER Jiggy
 s32 func_800CF888(s32 arg0, s32 arg1)
 {
     s32 index;
@@ -84,6 +85,7 @@ s32 func_800CF888(s32 arg0, s32 arg1)
     return 0;
 }
 
+//Is this King Coal or Mingy Jongo Reward
 s32 func_800CF8D0(s32 arg0, s32 arg1)
 {
     s32 index;
@@ -97,6 +99,7 @@ s32 func_800CF8D0(s32 arg0, s32 arg1)
     return 0;
 }
 
+//Is this a glowing Jiggy retrieve the index if so
 s32 func_800CF918(s32 arg0, s32 arg1)
 {
     s32 i = 1;
@@ -120,7 +123,22 @@ s32 func_800CFA70(s32 arg0,s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800CFA90.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800CFBC8.s")
+void func_800CFBC8(Actor* arg0, u32 itemFlag, s32 itemType, s32 arg3)
+{
+    func_8010108C(arg0, 0x13, (s32)itemFlag);
+    if (func_800CF888((s32)itemFlag, itemType) != 0)
+    {
+        _subaddieDll_entrypoint_4(arg0, 1);
+    }
+    if (func_800CF8D0((s32)itemFlag, itemType) != 0)
+    {
+        func_8010108C(arg0, 0x12, 1);
+    }
+    if (func_800CF918((s32)itemFlag, itemType) != -1)
+    {
+        func_8010108C(arg0, 0x55, 1);
+    }
+}
 
 //Return the relative jiggy index within the level
 s32 func_800CFC5C(s32 jiggyIndex)

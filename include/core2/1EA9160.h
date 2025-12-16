@@ -7,6 +7,7 @@
 #include "ch/baddiesetup.h"
 #include "ch/bounce.h"
 #include "ch/nests.h"
+#include "su/baddieDll.h"
 
 #include "core2/1EA1DA0.h"
 #include "core2/1EB3750.h"

@@ -1,19 +1,99 @@
-#include "common.h"
+#include "ch/jadestatue.h"
+extern ActorData D_80800310_chjadestatue;
+extern ActorData D_80800358_chjadestatue;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jadestatue/chjadestatue_entrypoint_0.s")
+void func_808001C0_chjadestatue(Actor*);
+
+ActorData* chjadestatue_entrypoint_0(void) {
+    return &D_80800310_chjadestatue;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jadestatue/func_8080000C_chjadestatue.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jadestatue/func_80800098_chjadestatue.s")
+void func_80800098_chjadestatue(Actor* arg0) {
+    arg0->rotation[1] -= func_800D8FF8() * 120.0f;
+    func_80103110(arg0, 0U);
+    if (arg0->unk64_20)
+    {
+        func_808001C0_chjadestatue(arg0);
+        func_800FFA88(arg0->unk0);
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jadestatue/func_80800104_chjadestatue.s")
+void func_80800104_chjadestatue(Actor* arg0, void* arg1)
+{
+    func_80101870(arg0, arg1);
+    if (arg0->unk7C_12) {
+        func_80103110(arg0, 1U);
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jadestatue/func_80800140_chjadestatue.s")
+s32 func_80800140_chjadestatue(Actor* arg0, s32 arg1, s32 arg2)
+{
+    switch (arg1)
+    {
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jadestatue/func_808001C0_chjadestatue.s")
+    case 0x95:
+        func_80109EEC(arg0, 0x44);
+        break;
+    case 0x3E:
+        arg0->unk64_20 = 1;
+        _subaddieDll_entrypoint_4(arg0, 1U);
+        break;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jadestatue/func_8080026C_chjadestatue.s")
+    case 0x2C:
+        func_800FFAB0(arg0);
+        return 1;
+    default:
+        return 0;
+    }
+    return 1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jadestatue/func_808002A4_chjadestatue.s")
+void func_808001C0_chjadestatue(Actor* arg0)
+{
+    s32 temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jadestatue/chjadestatue_entrypoint_1.s")
+    _fxsparkle_entrypoint_1(arg0->position, 0xCU);
+    func_800D0BD4((arg0->unk74_7) - 0x32, 5U);
+    temp_v0 = func_800D035C(5);
+    func_800D24E8(0xEE, temp_v0, 0);
+    func_800FC63C(0xEU, 0x3E80U);
+    switch (temp_v0)
+    {
+    case 10:
+        func_80101180(0x2B4, 7, 0);
+        return;
+    case 20:
+        func_80101180(0x2B4, 7, 1);
+        return;
+    }
+}
+
+void func_8080026C_chjadestatue(Actor* arg0)
+{
+    if (func_800D035C(5) >= 0x14)
+    {
+        func_800FFAB0(arg0);
+    }
+}
+
+void func_808002A4_chjadestatue(Actor* arg0)
+{
+    s32 sp1C;
+    s32 temp_v0;
+
+    temp_v0 = func_800D035C(5);
+    sp1C = temp_v0;
+    func_800D24E8(0xEE, temp_v0, 0);
+    if (sp1C >= 0x14) 
+    {
+        func_80101180(PROP_2B3_JADETOTEM, 0x2C, 0);
+        func_800FFAB0(arg0);
+    }
+}
+
+ActorData* chjadestatue_entrypoint_1(void)
+{
+    return &D_80800358_chjadestatue;
+}

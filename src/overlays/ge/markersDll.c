@@ -3,6 +3,8 @@
 typedef ActorData*(*GetActorData)();
 
 ActorData* _chjamjarsdummy_entrypoint_0();
+ActorData* _chjigsawdance_entrypoint_0();
+
 ActorData* _chjadesnake_entrypoint_0();
 ActorData* _chgoldsnakehead_entrypoint_0();
 ActorData* _chgoldsnakehead_entrypoint_1();
@@ -857,7 +859,7 @@ GetActorData D_80800090_gemarkersDll[0x490] =
 	/*0x108*/ 0x00000000,
 	/*0x109*/ 0x00000000,
 	/*0x10a*/ 0x00000000,
-	/*0x10b*/ 0x00000000,
+	/*0x10b*/ 0x8008A988,
 	/*0x10c*/ _chjadesnake_entrypoint_0,
 	/*0x10d*/ _chgoldsnakehead_entrypoint_0,
 	/*0x10e*/ _chgoldsnakehead_entrypoint_1,
@@ -981,7 +983,7 @@ GetActorData D_80800090_gemarkersDll[0x490] =
 	/*0x184*/ _chmole_hailfire_entrypoint_0,
 	/*0x185*/ _chmole_factory_entrypoint_0,
 	/*0x186*/ _chmole_prehist_entrypoint_0,
-	/*0x187*/ 0x00000000,
+	/*0x187*/ _chjigsawdance_entrypoint_0, //Holds the move item
 	/*0x188*/ 0x00000000,
 	/*0x189*/ 0x00000000,
 	/*0x18a*/ _chcheatomenu_entrypoint_0,
@@ -1129,7 +1131,7 @@ GetActorData D_80800090_gemarkersDll[0x490] =
 	/*0x218*/ 0x00000000,
 	/*0x219*/ 0x00000000,
 	/*0x21a*/ _chfootwear_entrypoint_0,
-	/*0x21b*/ _chglowbo_entrypoint_0,
+	/*0x21b*/ 0x8008A988, //Reference the duplicate code for the glowbo replacement script
 	/*0x21c*/ 0x00000000,
 	/*0x21d*/ 0x00000000,
 	/*0x21e*/ 0x00000000,

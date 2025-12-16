@@ -1,6 +1,7 @@
 #include "gc/collectDLL.h"
 
-s16 D_80800BE0_gccollectDll[0x16] = { 0x31,0x1,0x26,0x1,0xB,0x4,0xA,0x1,0x16,0x2,0x3D,0x1,0x4C,0x01,0xA,0x2,0x14,0x0,0x36,0x1,0x6,0x2 };
+//Add the jingaling item as a virtual item
+s16 D_80800BE0_gccollectDll[0x18] = { 0x31,0x1,0x26,0x1,0xB,0x4,0xA,0x1,0x16,0x2,0x3D,0x1,0x4C,0x01,0xA,0x2,0x14,0x0,0x36,0x1,0x6,0x2,0x5A, 0x1 };
 s32 D_80800C0C_gccollectDll[3] = { 0,0,0};
 u32 D_80800C18_gccollectDll[0x9] = { PROP_1F4_JINJO_REAL,PROP_21F_JIGGY_REAL,PROP_220_HONEYCOMB_REAL,PROP_21B_GLOWBO_REAL,PROP_136_CHEATOPAGE_REAL,0x0,0x0,PROP_4E5_DOUBLOON_REAL,PROP_3C6_TICKET_REAL };
 extern u8 D_8012762C;
@@ -113,7 +114,7 @@ void gccollectDll_entrypoint_5(void)
     if (func_800CF87C() != -1)
     {
         //Iterate through the list of collectables that are virtual objects e.g. they do not exist in the map file
-        for (var_s0 = 0; var_s0 < 0x16; var_s0 += 2)
+        for (var_s0 = 0; var_s0 < 0x18; var_s0 += 2)
         {
             //If the item hasn't been collected but has been spawned
             if ((func_800D0B68((u32)D_80800BE0_gccollectDll[var_s0], (u32)D_80800BE0_gccollectDll[var_s0 + 1]) == 0) && (func_800D0A9C((u32)D_80800BE0_gccollectDll[var_s0], (u32)D_80800BE0_gccollectDll[var_s0 + 1]) != 0))
@@ -129,7 +130,7 @@ void gccollectDll_entrypoint_5(void)
 s32 func_808002C4_gccollectDll(s32 arg0, s32 arg1)
 {
     u32 var_s0;
-    for (var_s0 = 0; var_s0 < 0x16; var_s0 += 2)
+    for (var_s0 = 0; var_s0 < 0x18; var_s0 += 2)
     {
         if ((arg0 == D_80800BE0_gccollectDll[var_s0]) && (arg1 == D_80800BE0_gccollectDll[var_s0 + 1]))
         {
@@ -372,8 +373,9 @@ void gccollectDll_entrypoint_8(s16* arg0)
 
                 if (func_800CFFBC(var_s1->FlagOrRotation, var_s0) != 0)
                 {
-                    temp_v0_2 = func_800D06D4(var_s1->FlagOrRotation, var_s0);
-                    if (temp_v0_2 == sp34 || temp_v0_2 == -1)
+                    //Turn off this check since Items will not be in vanilla locations
+                    //temp_v0_2 = func_800D06D4(var_s1->FlagOrRotation, var_s0);
+                    //if (temp_v0_2 == sp34 || temp_v0_2 == -1)
                     {
                         switch (var_s0)
                         {
@@ -397,6 +399,7 @@ void gccollectDll_entrypoint_8(s16* arg0)
                         }
                         if (var_s2 != NULL)
                         {
+                            //Setup Flag for Item
                             func_800CFBC8(var_s2, var_s1->FlagOrRotation, var_s0, 0);
                         }
                     }

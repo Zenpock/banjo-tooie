@@ -3848,15 +3848,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F764D0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F764D0, c, dance]
-      - [0x01F76910, .rodata, dance]
-      - [0x01F76930, data, dance]
-      - [0x01F769A0, bss, dance]
+      - [auto, c, dance]
   - name: chbounce_header
     dir: overlays/chbounce
     type: bin
