@@ -121,7 +121,63 @@ s32 func_800CFA70(s32 arg0,s32 arg1)
     return func_800CF918(arg0,arg1);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800CFA90.s")
+//Set jinjo pattern
+s32 func_800CFA90()
+{
+    s32 var_v0[0x9];
+    s32 var_a0;
+
+    s32* var_v1;
+
+
+    s32 var_s0;
+
+    u8 var_v0_2;
+
+
+    s32 index;
+    if (func_800DA9E4(FLAG2_6A0_JINJO_PATTERN_ALREADY_APPLIED_TO_GAME, 1) != 0)
+    {
+        return 0;
+    }
+    if (func_800DA298(FLAG_379_RANDOMISER_JINJO_SET) == 0)
+    {
+        //Get Random int between 0 and 0x21
+        var_s0 = func_800DC128(0, 0x21);
+        func_800DA7A8(FLAG_37A_RANDOMISER_JINJO_1, (u32)var_s0, 5);
+        func_800DA544(FLAG_379_RANDOMISER_JINJO_SET);
+    }
+    else
+    {
+        var_s0 = func_800DA564(FLAG_37A_RANDOMISER_JINJO_1, 5);
+    }
+    func_800DC330();
+    func_800DC324((s32)var_s0);
+    //Zero out 0x24 from sp
+    for (index = 0; index < 0x9; index++)
+    {
+        var_v0[index] = 0;
+    }
+    for (index = 0; index < 0x87; index += 3)
+    {
+        //Get Random int between 0 and 9
+        var_v0_2 = func_800DC128(0, 9);
+        var_v1 = &(&var_v0[0])[var_v0_2];
+        var_a0 = *var_v1;
+        if ((s32)var_v0_2 < var_a0)
+        {
+            do {
+                var_v0_2 = func_800DC128(0, 9);
+                var_v1 = &(&var_v0[0])[var_v0_2];
+                var_a0 = *var_v1;
+            } while ((s32)var_v0_2 < var_a0);
+        }
+        *var_v1 = var_a0 + 1;
+        D_8011AB40[index + 1] = var_v0_2;
+    }
+    func_800DC354(var_a0);
+    return 1;
+}
 
 void func_800CFBC8(Actor* arg0, u32 itemFlag, s32 itemType, s32 arg3)
 {

@@ -66,7 +66,37 @@ void func_80015410()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80015430.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_8001546C.s")
+void func_8001546C(s32 arg0)
+{
+    s32 temp2;
+    OSMesg sp50;
+    s32 temp3;
+    s32 index;
+    s32 temp;
+
+    while (1) {
+        osRecvMesg(&D_80078FD0, &sp50, 1);
+        func_80014A54();
+        D_80079138++;
+        temp2 = D_80079138 == 0x558;
+        temp = func_8001E7C0() == 0;
+        temp3 = D_8003F5D0;
+        if (temp2 && temp && temp3)
+        {
+            //This Tries to trigger the debug screen for being in an infinite loop (also can be caused by really long loads)
+            func_8001E5DC(2);
+            D_8003F5D0 = 0;
+        }
+        osSendMesg(&D_80079030, NULL, 0);
+        for (index = 0; index < 8; index++)
+        {
+            if (D_80078F90[index].queue != NULL)
+            {
+                osSendMesg(D_80078F90[index].queue, D_80078F90[index].mesg, 0);
+            }
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_8001559C.s")
 
