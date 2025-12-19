@@ -53,6 +53,7 @@ void func_800C6E60(void) {
 
 //Give all Abilities
 void func_800C7010(void) {
+    //Overwrite with 
     s32 var_s0 = 0;
     while (var_s0 < 0x3C)
     {

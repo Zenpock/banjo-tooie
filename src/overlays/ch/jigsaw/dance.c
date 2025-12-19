@@ -48,6 +48,8 @@ f32 D_808003EC_chmoveitem[2] =
     350.0f
 };
 
+u8 moveSpawnable[0x32] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+
 void func_80800210_chmoveitem(Actor*);
 void func_80800260_chmoveitem(Actor*);
 void func_80800380_chmoveitem(Actor*, void*);
@@ -131,11 +133,130 @@ ActorData* chjigsawdance_entrypoint_0(void)
     return &NewItem_chmoveitem;
 }
 
-void chjigsawdance_entrypoint_1(void)
+Unk80132ED0* chjigsawdance_entrypoint_1(s32 arg0, f32* arg1, s32 spawnStyle, u16* arg3)
 {
+    s32 itemType;
+    s32 itemFlag;
+    Actor* sp2C;
+    s32 sp28;
+
+    itemFlag = (arg0 >> 0x10) & 0xFFFF;
+    itemType = arg0 & 0xFFFF;
+    switch (itemType)
+    {
+    case 1:
+        sp2C = func_800D0CE0(PROP_21F_JIGGY_REAL, arg1, spawnStyle, &sp28);
+        if (sp28 == 0)
+        {
+            func_8010108C(sp2C, 0x14, 1);
+        }
+        func_800D05E4(itemFlag, itemType, sp2C->unk0);
+        break;
+    case 0:
+        sp2C = func_800D0CE0(PROP_1F4_JINJO_REAL, arg1, spawnStyle, &sp28);
+        if (sp28 == 0)
+        {
+            func_8010108C(sp2C, 0x14, 1);
+        }
+        break;
+    case 4:
+        sp2C = func_800D0CE0(PROP_136_CHEATOPAGE_REAL, arg1, spawnStyle, &sp28);
+        if (sp28 == 0)
+        {
+            func_8010108C(sp2C, 0x14, 1);
+        }
+        break;
+    case 2:
+        sp2C = func_800D0CE0(PROP_220_HONEYCOMB_REAL, arg1, spawnStyle, &sp28);
+        break;
+    case 3:
+        sp2C = func_800D0CE0(PROP_21B_GLOWBO_REAL, arg1, spawnStyle, &sp28);
+        break;
+    case 7:
+        sp2C = func_800D0CE0(PROP_4E5_DOUBLOON_REAL, arg1, spawnStyle, &sp28);
+        break;
+    case 8:
+        sp2C = func_800D0CE0(PROP_3C6_TICKET_REAL, arg1, spawnStyle, &sp28);
+        break;
+    case 9:
+        sp2C = func_800D0CE0(0x187, arg1, spawnStyle, &sp28);
+        break;
+    default:
+        break;
+    }
+    func_800CFBC8(sp2C, itemFlag, itemType, 0);
+    if ((arg3 != NULL) && (arg3[12] & 1))
+    {
+        func_80101074(sp2C->unk0);
+        func_8010114C(arg3, 0xD, arg0);
+    }
+    return sp2C->unk0;
 }
-void chjigsawdance_entrypoint_2(void)
+
+extern u8 D_8011AB3F[];
+extern u8 D_8011ABC7[];
+extern u8 D_8011AC7B[];
+extern u8 D_8011ACAF[];
+extern u8 D_8011ACD3[];
+extern u8 D_8011AE3B[];
+extern u8 D_8011AE5B[];
+extern u32 D_8011AF28[];
+//800D0908 Replacement
+s32 chjigsawdance_entrypoint_2(s32 arg0, s32 arg1)
 {
+    switch (arg1)
+    {
+    case 0:
+        if (D_8011AB3F[arg0 * 3] != 0)
+        {
+            return (D_8011AF28[arg1] + D_8011AB3F[arg0 * 3]) - 1;
+        }
+    default:
+        break;
+    case 1:
+        if (D_8011ABC7[arg0 * 2] != 0)
+        {
+            return (D_8011AF28[arg1] + D_8011ABC7[arg0 * 2]) - 1;
+        }
+        break;
+    case 4:
+        if (D_8011ACD3[arg0 * 2] != 0)
+        {
+            return (D_8011AF28[arg1] + D_8011ACD3[arg0 * 2]) - 1;
+        }
+        break;
+    case 2:
+        if (D_8011AC7B[arg0 * 2] != 0)
+        {
+            return (D_8011AF28[arg1] + D_8011AC7B[arg0 * 2]) - 1;
+        }
+        break;
+    case 3:
+        if (D_8011ACAF[arg0 * 2] != 0)
+        {
+            return (D_8011AF28[arg1] + D_8011ACAF[arg0 * 2]) - 1;
+        }
+        break;
+    case 7:
+        if (D_8011AE3B[arg0] != 0)
+        {
+            return (D_8011AF28[arg1] + D_8011AE3B[arg0]) - 1;
+        }
+        break;
+    case 8:
+        if (D_8011AE5B[arg0] != 0)
+        {
+            return D_8011AF28[arg1] + D_8011AE5B[arg0] - 1;
+        }
+        break;
+    case 9:
+        if (moveSpawnable[arg0] != 0)
+        {
+            return D_8011AF28[arg1] + moveSpawnable[arg0] - 1;
+        }
+        break;
+    }
+    return 0;
 }
 
 s32 moveItem_Touched(Actor* arg0, unkStructMoveItem* arg1)

@@ -5,6 +5,11 @@ extern s32 D_80078F88;
 extern s32 D_8007913C;
 extern OSMesgQueue D_80079010;
 
+extern s32 D_8003F5D0;
+extern OSMesgQueue D_80078FD0;
+extern OSMesgQueue D_80079030;
+extern volatile s32 D_80079138;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014E10.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014E6C.s")

@@ -2,6 +2,7 @@
 #define __CORE2_1EC2350_H__
 
 #include "common.h"
+#include "memory.h"
 
 void func_800E8A68(void);
 u8 func_800E8B74(u32);
