@@ -6,6 +6,8 @@
 
 #include "tooie_utils.h"
 
+bool encryptHeaders = true;
+
 // Reads a binary file and returns a vector containing its contents
 std::vector<char> read_file(const char* path) {
     std::vector<char> ret;
@@ -93,8 +95,12 @@ void apply_xors(size_t overlay_index, char* rom_start, char* overlay_header, cha
     bk_crc(overlay_header + 0x10, decompressed_size - 0x10, crc1, crc2);
 
     // Apply the CRC xor in the overlay
-    *reinterpret_cast<uint32_t*>(overlay_header + 0) ^= byteswap32(crc1);
-    *reinterpret_cast<uint32_t*>(overlay_header + 8) ^= byteswap32(crc2);
+    
+    if (encryptHeaders)
+    {
+        *reinterpret_cast<uint32_t*>(overlay_header + 0) ^= byteswap32(crc1);
+        *reinterpret_cast<uint32_t*>(overlay_header + 8) ^= byteswap32(crc2);
+    }
 }
 
 const char* get_symbol_rom_pointer(const std::vector<char>& decompressed_rom_contents, const Segment& core1, const Segment& core2, uint32_t vram_address) {
@@ -172,7 +178,7 @@ void patch_crc_values(std::ofstream& compressed_rom, const std::vector<char>& de
 }
 
 int main(int argc, const char** argv) {
-    if (argc != 6) {
+    if (argc != 6 && argc != 7) {
         fmt::print(stderr,
             "Compresses a decompressed Banjo Tooie ROM, using the elf file to find sections and adjust certain symbols.\n"
             "Usage: {} [decompressed ROM] [elf file] [output compressed ROM path] [base ROM path] [decompressed base ROM path]\n", argv[0]);
@@ -189,6 +195,11 @@ int main(int argc, const char** argv) {
     const char* compressed_rom_path = argv[3];
     const char* baserom_path = argv[4];
     const char* decompressed_baserom_path = argv[5];
+    if (argc == 7 && strcmp(argv[6], "F") == 0)
+    {
+        encryptHeaders = false;
+        fmt::print("Headers Decrypted {}\n", argv[6]);
+    }
 
     // Read the input roms
     std::vector<char> decompressed_rom_contents = read_file(decompressed_rom_path);
@@ -322,7 +333,7 @@ int main(int argc, const char** argv) {
             // Because of difficulties with matching compression for some overlays, compare the built overlay to
             // the decompressed base ROM contents at the same location. If the overlay is not shift and its contents
             // match that of the decompressed base ROM, copy the original compressed overlay as-is.
-            if (decompressed_baserom_contents.size() >= ovl_header_start_address + ovl_size && memcmp(base_ovl_header_start, ovl_header_start, ovl_size) == 0) {
+            if (encryptHeaders == true && decompressed_baserom_contents.size() >= ovl_header_start_address + ovl_size && memcmp(base_ovl_header_start, ovl_header_start, ovl_size) == 0) {
                 uint32_t compressed_overlay_start = byteswap32(*reinterpret_cast<uint32_t*>(baserom_contents.data() + us_v10.overlay_table_offset + (i) * sizeof(uint32_t)));
                 uint32_t compressed_overlay_end = byteswap32(*reinterpret_cast<uint32_t*>(baserom_contents.data() + us_v10.overlay_table_offset + (i + 1) * sizeof(uint32_t)));
                 compressed_rom.write(baserom_contents.data() + us_v10.overlay_table_offset + compressed_overlay_start, compressed_overlay_end - compressed_overlay_start);

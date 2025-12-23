@@ -9,6 +9,13 @@ BASEROM              := baserom.us.z64
 ULTRALIB_VERSION     := J
 ULTRALIB_TARGET      := libultra_rom
 PYTHON3_BIN          ?= python3
+ENCRYPT_HEADERS ?= 1
+
+ROM_COMPRESSOR_ARGS := $(UNCOMPRESSED_ROM) $(ELF) $(ROM) $(BASEROM) $(DECOMPRESSED_BASEROM)
+
+ifeq ($(ENCRYPT_HEADERS),0)
+    ROM_COMPRESSOR_ARGS := $(UNCOMPRESSED_ROM) $(ELF) $(ROM) $(BASEROM) $(DECOMPRESSED_BASEROM) F
+endif
 
 SRC_ROOT     := src
 ASM_ROOT     := asm
@@ -19,6 +26,8 @@ C_SRCS     := $(shell find $(SRC_ROOT) -type f -iname '*.c' 2> /dev/null)
 S_SRCS     := $(shell find $(ASM_ROOT) -type f -iname "*.s" -not -path "asm/$(NONMATCHINGS)/*" 2> /dev/null)
 HASM_SRCS  := $(shell find $(SRC_ROOT) -type f -iname '*.s' 2> /dev/null)
 BIN_SRCS   := $(shell find $(ASSETS_ROOT) -type f -iname '*.bin' -not -iname "relocs.bin" 2> /dev/null)
+OVERLAYS   := $(shell $(PYTHON3_BIN) tools/list_overlays.py overlays.us.toml)
+
 OVERLAYS   := $(shell $(PYTHON3_BIN) tools/list_overlays.py overlays.us.toml)
 
 C_OBJS         := $(addprefix $(BUILD_ROOT)/,$(C_SRCS:.c=.c.o))
@@ -73,7 +82,7 @@ $(UNCOMPRESSED_ROM): $(ELF)
 	$(OBJCOPY) $(Z64OFLAGS) $< $@
 
 $(ROM) : $(UNCOMPRESSED_ROM) $(ELF)
-	tools/rom_compressor $(UNCOMPRESSED_ROM) $(ELF) $(ROM) $(BASEROM) $(DECOMPRESSED_BASEROM)
+	tools/rom_compressor $(ROM_COMPRESSOR_ARGS)
 	tools/n64crc $@ > /dev/null
 
 $(PRELIM_LD_SCRIPT): $(LD_SCRIPT)

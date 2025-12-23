@@ -78,7 +78,7 @@ s32 advance_crc_check(void) {
         crc2 = calculated_crc2;
 
         // Read the word from ROM or RAM depending on the entry
-        if (crc_entries[crc_symbol_index].in_rom != 0) { /* Needs to be on the same line to match, a backslash achieves this */ \
+        if (crc_entries[crc_symbol_index].in_rom != 0) { /* Needs to be on the same line to match, a backslash achieves this this can break in CLRF file endings*/ \
             rom_read_word((uintptr_t)next_crc_word, (u32*)data);
         } else {
             *(u32*)data = *next_crc_word;

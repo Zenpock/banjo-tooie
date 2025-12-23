@@ -49,6 +49,59 @@ f32 D_808003EC_chmoveitem[2] =
 };
 
 u8 moveSpawnable[0x32] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+typedef struct {
+    u8 DialogIndex;
+    u8 AbilityId;
+} MoveNames;
+MoveNames D_MOVENAMES[] = {
+    {0x0D,0x14},
+    {0x0E,0x15},
+    {0x0F,0x16},
+    {0x0B,0x19},
+    {0x0C,0x1A},
+    {0x04,0x1B},
+    {0x05,0x1C},
+    {0x12,0x1D},
+    {0x10,0x1E},
+    {0x11,0x1F},
+    {0x1A,0x20},
+    {0x13,0x21},
+    {0x14,0x22},
+    {0x16,0x23},
+    {0x17,0x24},
+    {0x15,0x25},
+    {0x07,0x26},
+    {0x08,0x27},
+    {0x09,0x28},
+    {0x06,0x29},
+    {0x18,0x2A},
+    {0x19,0x2B},
+    {0x00,0x2C},
+    {0x01,0x2D},
+    {0x1B,0x30},
+    {0x02,0x2E},
+    {0x03,0x2F},
+    {0x1C,0x32},
+    //BK Moves
+    {0x1D,0x0},
+    {0x1E,0x1},
+    {0x1F,0x2},
+    {0x20,0x4},
+    {0x21,0x5},
+    {0x22,0x6},
+    {0x23,0x7},
+    {0x24,0x8},
+    {0x25,0x9},
+    {0x26,0xA},
+    {0x27,0xB},
+    {0x28,0xC},
+    {0x29,0xD},
+    {0x2A,0xE},
+    {0x2B,0xF},
+    {0x2C,0x10},
+    {0x2D,0x11},
+    {0x2E,0x12}
+};
 
 void func_80800210_chmoveitem(Actor*);
 void func_80800260_chmoveitem(Actor*);
@@ -252,7 +305,8 @@ s32 chjigsawdance_entrypoint_2(s32 arg0, s32 arg1)
     case 9:
         if (moveSpawnable[arg0] != 0)
         {
-            return D_8011AF28[arg1] + moveSpawnable[arg0] - 1;
+            //Share the spawn flag start with Jinjo
+            return D_8011AF28[0] + moveSpawnable[arg0] - 1;
         }
         break;
     }
@@ -270,9 +324,23 @@ s32 moveItem_Touched(Actor* arg0, unkStructMoveItem* arg1)
     //Play collected sound effect
     func_800FC63C(0x10, 0x6D60);
     //Show the Move Title
-    _chintrotext_entrypoint_1(0x18BB, 0x1 - 1, 0, 1);
-    _fxsparkle_entrypoint_1(arg0->position, 0);
+
+    { 
+        u8 dialogIndex = 0;
+        s32 index = 0;
+        for (index = 0; index < 46; index++)
+        {
+            if (D_MOVENAMES[index].AbilityId == arg0->unk74_7)
+            {
+                _chintrotext_entrypoint_1(0x18BB, D_MOVENAMES[index].DialogIndex, 0, 1);
+                _fxsparkle_entrypoint_1(arg0->position, 0);
+                break;
+            }
+        }
+    
+    }
     func_800FFA88(arg0->unk0);
+    
 }
 
 s32 moveItem_Handler(Actor* arg0, s32 arg1, s32 arg2)
