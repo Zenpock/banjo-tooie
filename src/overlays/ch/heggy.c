@@ -537,7 +537,19 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
         else
         {
             func_800DA544(FLAG_3E6_SNS_EGG_HATCHED_PINK);
-            func_800C7074(0x32, 1);
+            //Teach Breegull Bash
+            {
+                volatile s32 type = 9;
+                s32 flag = 16;
+                if (type == 9)
+                {
+                    func_800C7074(0x32, 1);
+                }
+                else
+                {
+                    _sujiggy_entrypoint_2(type << 16 | flag | 0x15000000);
+                }
+            }
             _subaddiedialog_entrypoint_11(arg0->unk0, 0x1542U, 0xEU, arg0->position, 0xCBU);
         }
         break;

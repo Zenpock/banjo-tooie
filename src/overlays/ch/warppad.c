@@ -461,6 +461,7 @@ s32 func_80800A1C_chwarppad(Actor* arg0, u32 arg1, s32 arg2)
 {
     switch (arg1)
     {
+        //Standing on the warppad
     case 0x91:
         arg0->unk64_19 = 1;
     case 0x95:

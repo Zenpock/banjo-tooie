@@ -1212,7 +1212,7 @@ s32 func_80801844_gcnewpause(u32 arg0, u32 arg1, s32 arg2, s32 arg3, s32 arg4, u
 {
 	if (arg5 == 1) {
 		if (arg1 != 0) {
-			func_800FA9B4(arg2);
+			func_800FA9B4(arg2,arg1);
 			func_800FA708(arg0, (s32)arg2, (s32)arg3, (u32)arg4);
 			return 1;
 		}

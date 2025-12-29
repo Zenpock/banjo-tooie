@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/lagoon/bits.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/bits/chlagoonbits_entrypoint_0.s")
 

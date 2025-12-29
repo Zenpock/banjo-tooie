@@ -5,6 +5,7 @@
 
 #include "gl/cutDll.h"
 #include "ca/pod.h"
+#include "fx/dialog.h"
 
 #include "ch/bounce.h"
 #include "ch/molehill.h"
@@ -31,8 +32,10 @@
 #include "core2/1EABAC0.h"
 #include "core2/1EB2840.h"
 #include "core2/1EB5980.h"
+#include "core2/1EBB4F0.h"
 #include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
+#include "core2/1ED3900.h"
 #include "core2/1ED4E30.h"
 #include "core2/1EDA900.h"
 #include "core2/1EDCA30.h"

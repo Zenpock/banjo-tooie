@@ -9,5 +9,6 @@
 void _fxdialog_entrypoint_1(s32 arg0, s32 arg1);
 void _fxdialog_entrypoint_2(f32);
 void _fxdialog_entrypoint_3(void*, f32, u8, s8);
+void _fxdialog_entrypoint_4(void*, s32);
 
 #endif

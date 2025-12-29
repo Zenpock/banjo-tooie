@@ -24,6 +24,7 @@ s32 func_80090128();
 s32 func_80090178(AllowedTransformation);
 s32 func_80090248(void);
 s32 func_80090270(void);
+void func_8009032C(s32);
 void func_800903D0(f32[3]);
 void func_800904C8(s32);
 void func_800904F4(s32, Unk80132ED0*);

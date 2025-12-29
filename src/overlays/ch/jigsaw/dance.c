@@ -109,8 +109,8 @@ void func_80800380_chmoveitem(Actor*, void*);
 s32 moveItem_Handler(Actor*, s32, s32);
 ActorData NewItem_chmoveitem =
 {
-    /*0x0*/ 0x53,
-    /*0x2*/ 0x220,
+    /*0x0*/ 0x37A,
+    /*0x2*/ 0x4BA,
     /*0x4*/ 0x859,
     /*0x6*/ 0x1,
     /*0x8*/ 0,
@@ -123,15 +123,15 @@ ActorData NewItem_chmoveitem =
     /*0x20*/ 0,
     /*0x22*/ 0,
     /*0x24*/ 0,
-    /*0x26*/ 0x4,
+    /*0x26*/ 0x0,
     /*0x28*/ 0,
     /*0x2C*/ func_80108ED0,
     /*0x30*/ 0,
-    /*0x32*/ 0,
+    /*0x32*/ 0x14,
     /*0x34*/ func_80800210_chmoveitem,
     /*0x38*/ func_80107C2C,
-    /*0x3C*/ 0x8800,
-    /*0x3E*/ 0x3000,
+    /*0x3C*/ 0x8040,
+    /*0x3E*/ 0x5404,
     /*0x40*/ moveItem_Handler,
     /*0x44*/ 0,
     /*0x46*/ 0,
@@ -350,6 +350,13 @@ s32 moveItem_Handler(Actor* arg0, s32 arg1, s32 arg2)
     {
     case 0x3E: //Touched Item
         moveItem_Touched(arg0, (unkStructMoveItem*)arg2);
+        break;
+    //Start
+    case 0x95:
+        if (func_800C6E38(arg0->unk74_7) || (func_800D0A9C(arg0->unk74_7,0x9) == 0))
+        {
+            func_800FFA88(arg0->unk0);
+        }
         break;
     case 0x13: //Just Spawned
         arg0->unk74_7 = arg2;

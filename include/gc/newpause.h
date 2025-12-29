@@ -151,7 +151,7 @@ s32 func_808016A4_gcnewpause(s32 a0);
 s32 func_808016F0_gcnewpause(s32 a0);
 s32 func_80801718_gcnewpause(s32, s32);
 void func_808017C8_gcnewpause(PauseState* pauseMenu, u32 arg1);
-s32 func_80801844_gcnewpause(u32 arg0, u32 arg1, s32 arg2, s32 arg3, s32 arg4, u32 arg5);
+s32 func_80801844_gcnewpause(u32 , u32 , s32 , s32 , s32 , u32 );
 s32 func_8080190C_gcnewpause(u32 arg0, s32 arg1, s32 arg2, u32 arg3, u32 arg4);
 s32 func_808019A4_gcnewpause(u32 arg0, u32 arg1);
 s32 func_80801AF8_gcnewpause(u32 arg0);

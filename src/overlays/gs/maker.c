@@ -1,16 +1,23 @@
-#include "common.h"
+#include "gs/maker.h"
 
 // void stuff() {
     
 // }
+void gsmaker_entrypoint_1(s32);
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gs/maker/gsmaker_entrypoint_0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gs/maker/gsmaker_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gs/maker/gsmaker_entrypoint_2.s")
+void gsmaker_entrypoint_2(s32 arg0)
+{
+    gsmaker_entrypoint_1(arg0 + 0x955);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gs/maker/gsmaker_entrypoint_3.s")
+void gsmaker_entrypoint_3(s32 arg0, s32 arg1)
+{
+    gsmaker_entrypoint_1(arg0 + arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gs/maker/gsmaker_entrypoint_4.s")
 

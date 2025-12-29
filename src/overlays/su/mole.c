@@ -2,13 +2,13 @@
 
 #define MOLE_DATA(arg0) ((MoleActorData*)(arg0->actorData))
 
-extern u32 D_80802510_sumole;
-extern u32 D_80802520_sumole;
-extern s32 D_80802530_sumole[];
-extern s32 D_8080254C_sumole[];
-extern s32 D_8080255C_sumole[];
-extern s32 D_8080256C_sumole[27];
-extern s32 D_808025B4_sumole[];
+s32 D_80802510_sumole[] = { 0x43480000, 0x43480000, 0x43480000,0x0 };
+u32 D_80802520_sumole[] = {0x42A00000,0x42B40000, 0x42C80000, 0x42A00000};
+s32 D_80802530_sumole[] = { 0x42A00000,0x42B40000, 0x42C80000, 0x0,0x42,0x1E,0x25 };
+s32 D_8080254C_sumole[] = {0xD,0x21,0x7,0xF};
+s32 D_8080255C_sumole[] = {0x1C9,0x1CA,0x1CB,0x1CC};
+s32 D_8080256C_sumole[] = {0xD8D,0x4,0x42,0xD8E,0x4,0x42,0xD9C,0x5,0x1E,0xD9D,0x5,0x1E,0xD68,0x6,0x25,0xD67,0x6,0x25};
+s32 D_808025B4_sumole[] = {0xDAB,0x0,0xDB1,0x1,0xDAD,0x2,0xDAF,0x3,0x0,0x0,0x0};
 
 extern s32 _sumole_entrypoint_21;
 s32 sumole_entrypoint_17(Actor* arg0, s16 arg1, s32 arg2, s32 arg3);
@@ -41,6 +41,7 @@ void sumole_entrypoint_0(Actor* arg0, s32 arg1)
     }
     _subaddieDll_entrypoint_4(arg0, 1U);
 }
+extern u32 D_80127658;
 
 s32 sumole_entrypoint_1(Actor* arg0, s32 arg1, u32 arg2, MoveData* moveData)
 {
@@ -50,6 +51,48 @@ s32 sumole_entrypoint_1(Actor* arg0, s32 arg1, u32 arg2, MoveData* moveData)
     }
     if ((arg2 != 0) && (func_8010CAC0(arg0->position, 0x177U) != 0) && ((moveData[(s32)arg0->unk54].AbilityToLearn == -1) || (func_IsCollected(arg0, moveData) == 0)))
     {
+        //Show the note ui and the price
+        if (moveData[(s32)arg0->unk54].AbilityToLearn == 0x55)
+        {
+            s32 type = moveData[(s32)arg0->unk54].charactersAllowed >> 16;
+            s32 flag = moveData[(s32)arg0->unk54].charactersAllowed & 0xFFFF;
+            s32 UIToShow = 0xD6;
+            switch (type)
+            {
+            case 0:
+            {
+                u8 jinjoIcons[] = {0x18,0x17,0xB,0x1a,0x16,0x14,0x13,0x15,0x19};
+                s32 jinjoColor = func_800D0CC8(flag);
+
+                //Jinjo Type 6 Blue 8 Black
+                func_800FA708(func_800D035C(type), 0xE, jinjoIcons[jinjoColor], 0x2);
+                //blue 0x13 yellow 0xB red 0x14 purple 0x15 green 0x16 orange 0x17 white 0x18 black 0x19 brown 0x1A
+                break;
+            }
+            case 1:
+                UIToShow = 0x8;
+                break;
+            case 2: //Honeycomb
+                UIToShow = 0xC;
+                break;
+            case 3: //Cheato
+                UIToShow = 0x3B;
+                break;
+            case 4: //Glowbo
+                UIToShow = 0xD;
+                break;
+            case 7: //Doubloon
+                UIToShow = 0x2B;
+                break;
+            case 8: //Ticket
+                UIToShow = 0x2A;
+                break;
+            }
+            if (type != 0)
+            {
+                func_800FA708(func_800D035C(type), 0x10, UIToShow, 0x2);
+            }
+        }
         func_800D2498(0xD0U, func_800D035C(6), 0U);
         func_800D2498(0xEAU, arg2, 0U);
     }
@@ -132,8 +175,111 @@ void func_80800408_sumole(Actor* arg0)
         arg0->unk7A_11 = 0;
     }
 }
+void sumole_entrypoint_9(Actor*);
+void sumole_entrypoint_13(Actor*);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/mole/sumole_entrypoint_2.s")
+void sumole_entrypoint_2(Actor* arg0, s32 arg1)
+{
+
+    while (1)
+    {
+        switch (arg0->unk70_10)
+        {
+        case 1:
+            if (arg1 != 0xC)
+            {
+                func_800C78CC(1);
+            }
+            break;
+        case 7:
+        case 22:
+            func_800DA544(FLAG3_9F1_UNK);
+            func_808002E0_sumole(arg0, 2, 1, 2);
+            break;
+        case 3:
+            func_808002E0_sumole(arg0, 2, 0, 2);
+            break;
+        case 8:
+            sumole_entrypoint_19(arg0, 3);
+            break;
+        }
+
+        arg0->unk70_10 = arg1;
+        switch (arg0->unk70_10)
+        {
+        case 13:
+            _chmolehill_entrypoint_1(func_80106790(arg0->unk3C), 7);
+            return;
+        case 3:
+            func_808002E0_sumole(arg0, 2, 1, 3);
+            sumole_entrypoint_7(arg0);
+            sumole_entrypoint_19(arg0, 3);
+            return;
+        case 14:
+            func_808002E0_sumole(arg0, 2, 1, 0);
+            sumole_entrypoint_9(arg0);
+            sumole_entrypoint_19(arg0, 3);
+            return;
+        case 7:
+            if ((s32)arg0->unk58 == 0) {
+                return;
+            }
+        default:
+            return;
+        case 11:
+            func_808002E0_sumole(arg0, 2, 1, 1);
+            sumole_entrypoint_13(arg0);
+            return;
+        case 17:
+            if (func_8008FC28() > func_8008FC00())
+            {
+                if (func_800DA9E4(FLAG_422_FTT_JAMJARS_HEALTH_REFILL, 1) != 0)
+                {
+                    arg1 = 0x14;
+                    break;
+                }
+            }
+            else
+            {
+                if (_chmolehill_entrypoint_3(func_80106790(arg0->unk3C)) != 0)
+                {
+                    arg1 = 9;
+                }
+                else
+                {
+                    arg1 = 0x12;
+                    func_800C0850();
+                }
+                break;
+            }
+            return;
+        case 20:
+            if (func_8008FC00() >= func_8008FC28())
+            {
+                if (_chmolehill_entrypoint_3(func_80106790(arg0->unk3C)) != 0)
+                {
+                    arg1 = 9;
+                }
+                else
+                {
+                    arg1 = 0x12;
+                    func_800C0850();
+                }
+                break;
+            }
+            (f32)arg0->actorData[6] = 0.2f;
+            return;
+        case 1:
+            func_800C78CC(0U);
+            func_800DA524(FLAG3_9F1_UNK);
+            func_80800408_sumole(arg0);
+            sumole_entrypoint_19(arg0, 0);
+            arg0->unk54 = (s32)arg0->unk74_7;
+            return;
+        }
+
+    }
+}
 
 typedef union {
     s32 i;

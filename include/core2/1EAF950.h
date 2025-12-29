@@ -8,6 +8,7 @@ typedef struct {
 	s16 unkA;
 } ImageStruct;
 ImageStruct *func_800D674C(s32 a0);
+u8 func_800D731C(u16);
 void *func_800D7520(s32);
 
 #endif

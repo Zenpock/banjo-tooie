@@ -44,6 +44,7 @@
 #include "su/baddiefind.h"
 #include "su/baddieitem.h"
 #include "su/deflect.h"
+#include "su/jiggy.h"
 
 #include "ch/skeletonexplode.h"
 

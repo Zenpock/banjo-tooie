@@ -10298,15 +10298,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x0209EB40
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x0209EB40, c, fish]
-      - [0x0209ED50, .rodata, fish]
-      - [0x0209ED50, data, fish]
-      - [0x0209EDB0, bss, fish]
+      - [auto, c, fish]
   - name: chjrinnlight_header
     dir: overlays/chjrinnlight
     type: bin
@@ -15424,15 +15418,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02154460
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02154460, c, mole]
-      - [0x021566A0, .rodata, mole]
-      - [0x02156970, data, mole]
-      - [0x02156A40, bss, mole]
+      - [auto, c, mole]
   - name: subaddiebounce_header
     dir: overlays/subaddiebounce
     type: bin
