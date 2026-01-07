@@ -257,60 +257,69 @@ extern u32 D_8011AF28[];
 //800D0908 Replacement
 s32 chjigsawdance_entrypoint_2(s32 arg0, s32 arg1)
 {
+    s32 returnFlag = 0;
     switch (arg1)
     {
     case 0:
         if (D_8011AB3F[arg0 * 3] != 0)
         {
-            return (D_8011AF28[arg1] + D_8011AB3F[arg0 * 3]) - 1;
+            returnFlag = (D_8011AF28[0] + D_8011AB3F[arg0 * 3]) - 1;
         }
     default:
         break;
     case 1:
         if (D_8011ABC7[arg0 * 2] != 0)
         {
-            return (D_8011AF28[arg1] + D_8011ABC7[arg0 * 2]) - 1;
+            returnFlag = (D_8011AF28[0] + D_8011ABC7[arg0 * 2]) - 1;
         }
         break;
     case 4:
         if (D_8011ACD3[arg0 * 2] != 0)
         {
-            return (D_8011AF28[arg1] + D_8011ACD3[arg0 * 2]) - 1;
+            returnFlag = (D_8011AF28[0] + D_8011ACD3[arg0 * 2]) - 1;
         }
         break;
     case 2:
         if (D_8011AC7B[arg0 * 2] != 0)
         {
-            return (D_8011AF28[arg1] + D_8011AC7B[arg0 * 2]) - 1;
+            returnFlag = (D_8011AF28[0] + D_8011AC7B[arg0 * 2]) - 1;
         }
         break;
     case 3:
         if (D_8011ACAF[arg0 * 2] != 0)
         {
-            return (D_8011AF28[arg1] + D_8011ACAF[arg0 * 2]) - 1;
+            returnFlag = (D_8011AF28[0] + D_8011ACAF[arg0 * 2]) - 1;
         }
         break;
     case 7:
         if (D_8011AE3B[arg0] != 0)
         {
-            return (D_8011AF28[arg1] + D_8011AE3B[arg0]) - 1;
+            returnFlag = (D_8011AF28[0] + D_8011AE3B[arg0]) - 1;
         }
         break;
     case 8:
         if (D_8011AE5B[arg0] != 0)
         {
-            return D_8011AF28[arg1] + D_8011AE5B[arg0] - 1;
+            returnFlag = D_8011AF28[0] + D_8011AE5B[arg0] - 1;
         }
         break;
     case 9:
         if (moveSpawnable[arg0] != 0)
         {
             //Share the spawn flag start with Jinjo
-            return D_8011AF28[0] + moveSpawnable[arg0] - 1;
+            returnFlag = D_8011AF28[0] + moveSpawnable[arg0] - 1;
         }
         break;
     }
-    return 0;
+    //Use the doubloon/Ticket Spawning Block as overflow
+    if (returnFlag >= 0x315)
+    {
+        if (returnFlag >= 0x510) //So we Dont Overlap just force it to be 0x50F
+            returnFlag = 0x50F;
+        else
+            returnFlag = 0x509 + (returnFlag - 0x315);
+    }
+    return returnFlag;
 }
 
 s32 moveItem_Touched(Actor* arg0, unkStructMoveItem* arg1)

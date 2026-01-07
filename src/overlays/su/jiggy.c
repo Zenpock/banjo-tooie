@@ -86,11 +86,11 @@ u8 sujiggy_entrypoint_2(s32 arg0)
         case 2: //Honeycomb
             func_800D1844(0x49);
             break;
-        case 3: //Cheato
-            func_800D1844(0x4A);
-            break;
-        case 4: //Glowbo
+        case 3: //Glowbo
             func_800D1844(0x48);
+            break;
+        case 4: //Cheato
+            func_800D1844(0x4A);
             break;
         case 7: //Doubloon
             func_800D1844(0x4E);

@@ -75,11 +75,11 @@ s32 sumole_entrypoint_1(Actor* arg0, s32 arg1, u32 arg2, MoveData* moveData)
             case 2: //Honeycomb
                 UIToShow = 0xC;
                 break;
-            case 3: //Cheato
-                UIToShow = 0x3B;
-                break;
-            case 4: //Glowbo
+            case 3: //Glowbo
                 UIToShow = 0xD;
+                break;
+            case 4: //Cheato
+                UIToShow = 0x3B;
                 break;
             case 7: //Doubloon
                 UIToShow = 0x2B;

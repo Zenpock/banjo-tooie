@@ -651,7 +651,7 @@ s32 func_80801570_chheggy(Actor* arg0, s32 arg1, s32 arg2)
             return 1;
         case 0x1542:
             func_80800ECC_chheggy(arg0, 0x12);
-            func_800C7074(0x32, 1);
+            //func_800C7074(0x32, 1);
             return 1;
         case 0x1543:
             func_800DA544(GFLAG_C0B_JINJO_IN_MULTIPLAYER);

@@ -39,7 +39,7 @@ void gccollectDll_entrypoint_0(s32 arg0)
     s32 temp_v0;
     s32 temp_v0_2;
     s32 var_s0;
-
+    //Get the starting index based on item Type
     var_s0 = func_800D0820(arg0);
     if (var_s0 < func_800D0894(arg0)) 
     {

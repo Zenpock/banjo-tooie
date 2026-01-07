@@ -54,15 +54,15 @@ typedef struct {
 }MoleActorData;
 
 typedef struct {
-	AllowedTransformation charactersAllowed;
-	u16 CannotAffordDialog;
-	s16 MoveTutorialDialog;
-	u16 AlreadyLearnedDialog;
-	s8 AbilityToLearn;
-	u8 unk11;
-	u16 price;
-	u8 titleToShow;
-	u8 unkF;
+	AllowedTransformation charactersAllowed; //0
+	u16 CannotAffordDialog;//4
+	s16 MoveTutorialDialog;//6
+	u16 AlreadyLearnedDialog;//8
+	s8 AbilityToLearn;//A
+	u8 unk11;//B
+	u16 price;//C
+	u8 titleToShow;//E
+	u8 unkF;//F
 } MoveData;
 void _sumole_entrypoint_0(Actor*, u32);
 void sumole_entrypoint_2(Actor*, s32);
