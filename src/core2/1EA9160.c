@@ -1,5 +1,13 @@
 #include "core2/1EA9160.h"
 
+typedef struct {
+    u8 unk0;
+    u8 color;
+    u8 unk2;
+} JinjoData;
+
+extern JinjoData D_8011AB40[];
+
 extern s32 D_8011AE60;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800CF870.s")
@@ -124,6 +132,24 @@ void func_800D1000(u32 arg0, u32 arg1, f32* arg2, u32 arg3, Unk80132ED0* arg4)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D129C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D1338.s")
+u32 func_800D1338(u32 JinjoColor)
+{
+    s32 var_s0;
+    u32 var_s2;
+
+    var_s2 = 0;
+    var_s0 = func_800D0820(0);
+
+    while (func_800D0894(0) >= var_s0)
+    {
+        if ((JinjoColor == D_8011AB40[var_s0 - 1].color) && (func_800D0B68((u32)var_s0, 0U) != 0))
+        {
+            var_s2 += 1;
+        }
+        var_s0 += 1;
+    }
+
+    return var_s2;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D13E8.s")
