@@ -2,7 +2,7 @@
 
 extern s32 D_8011A3F0;
 
-extern s32 D_80807FD8_chgameselect;
+extern ActorData D_80807FD8_chgameselect;
 extern s32 D_80808038_chgameselect;
 extern s32 D_808080C8_chgameselect;
 extern s32 D_80808298_chgameselect;
@@ -55,10 +55,11 @@ s32 func_808014F0_chgameselect(Actor*, u8*);
 void func_80803638_chgameselect();
 void func_80800478_chgameselect(Actor*, s32);
 void func_808016E8_chgameselect(s32, u32, Actor*);
+void func_808036D8_chgameselect();
 void func_80803C80_chgameselect();
 s32 func_80803E40_chgameselect();
 
-s32* chgameselect_entrypoint_0(void)
+ActorData* chgameselect_entrypoint_0(void)
 {
     return &D_80807FD8_chgameselect;
 }
@@ -207,7 +208,16 @@ s32 func_80800228_chgameselect(Actor* arg0, s32 arg1, s32 arg2)
     return 1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80800440_chgameselect.s")
+void func_80800440_chgameselect(Actor* arg0) {
+    s32 temp_a0;
+
+    func_808036D8_chgameselect();
+    temp_a0 = *(f32**)&arg0->unk50;
+    if (temp_a0 != 0)
+    {
+        heap_free(temp_a0);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80800478_chgameselect.s")
 

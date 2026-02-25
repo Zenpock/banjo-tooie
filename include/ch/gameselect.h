@@ -2,6 +2,7 @@
 #define __CH_GAMESELECT_H__
 
 #include "common.h"
+#include "memory.h"
 #include "gc/zoombox.h"
 #include "gc/statusDLL.h"
 #include "gc/frontend.h"
