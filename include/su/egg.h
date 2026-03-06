@@ -4,13 +4,14 @@
 #include "common.h"
 
 void _suegg_entrypoint_1(Actor*, f32);
-Actor* _suegg_entrypoint_11(s32, s32, s32);
-s32 _suegg_entrypoint_12(Actor*);                   /* extern */
-s32 _suegg_entrypoint_13(Actor*);                   /* extern */
-s32 _suegg_entrypoint_14(Actor*);                   /* extern */
-void _suegg_entrypoint_16(Actor*);                     /* extern */
-void _suegg_entrypoint_23(Actor*);                     /* extern */
-void _suegg_entrypoint_3(Actor*);                      /* extern */
+void _suegg_entrypoint_3(Actor*);
+void _suegg_entrypoint_5();
 s32 _suegg_entrypoint_8(Actor*);
-
+Actor* _suegg_entrypoint_11(s32, s32, s32);
+s32 _suegg_entrypoint_12(Actor*);
+s32 _suegg_entrypoint_13(Actor*);
+s32 _suegg_entrypoint_14(Actor*);
+void _suegg_entrypoint_16(Actor*);
+void _suegg_entrypoint_23(Actor*);
+void _suegg_entrypoint_21(s32, s32*);
 #endif
