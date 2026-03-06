@@ -19,8 +19,8 @@ void gcgame_entrypoint_0(s32 arg0)
     func_800D2438();
     func_800D1510();
     func_800DACD0();
-    gcgame_func_Custom();
     _gccollectDll_entrypoint_2();
+    gcgame_func_Custom();
     func_800CB618();
     func_800D2014();
     func_800CEF6C();
