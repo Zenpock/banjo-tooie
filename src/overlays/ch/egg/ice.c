@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/egg/ice.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/ice/func_80800000_cheggice.s")
 

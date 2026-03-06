@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/egg/splode.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/splode/cheggsplode_entrypoint_0.s")
 

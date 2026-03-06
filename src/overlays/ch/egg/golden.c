@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/egg/golden.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/golden/func_80800000_chegggolden.s")
 

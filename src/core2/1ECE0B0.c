@@ -499,9 +499,9 @@ void func_800F6690(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F690C.s")
 
-void func_800F693C(s32 arg0)
+s32 func_800F693C(s32 arg0)
 {
-    func_8008DD70(D_80135490[arg0]);
+    return func_8008DD70(D_80135490[arg0]);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6968.s")

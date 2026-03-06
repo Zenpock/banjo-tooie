@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/egg/clockwork.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/clockwork/func_80800000_cheggclockwork.s")
 

@@ -36,6 +36,7 @@ void func_800F6388(s32, s32);
 void func_800F63E0(s32, u32);
 s32 func_800F6438(u32);
 s32 func_800F6774(u32);
+s32 func_800F693C(s32);
 
 typedef enum
 {
