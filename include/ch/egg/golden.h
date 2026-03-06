@@ -2,7 +2,18 @@
 #define __CH_EGG_GOLDEN_H__
 
 #include "common.h"
-
+#include "fx/egg.h"
+#include "su/egg.h"
+#include "su/eggmisc.h"
+#include "su/eggmove.h"
+#include "core2/1E82660.h"
+#include "core2/1E9A960.h"
+#include "core2/1EB2840.h"
+#include "core2/1EB5980.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECE0B0.h"
+#include "core2/1ED8C80.h"
 
 
 #endif
