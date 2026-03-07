@@ -3,6 +3,6 @@
 
 #include "common.h"
 
-
+void _cheggsplode_entrypoint_1(Actor*, s32, s32);
 
 #endif
