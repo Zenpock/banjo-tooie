@@ -10,7 +10,10 @@ typedef struct {
     u8 unk39_6 : 1;
     u8 unk39_5 : 1;
     u8 unk39_4 : 1;
-    u8 unk39_0 : 4;
+    u8 unk39_3 : 1;
+    u8 unk39_2 : 1;
+    u8 unk39_1 : 1;
+    u8 unk39_0 : 1;
     s16 unk3A;
 } EggNormalData;
 
