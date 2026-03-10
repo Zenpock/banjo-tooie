@@ -7,6 +7,7 @@
 #include "core2/1E66990.h"
 #include "core2/1E7BFA0.h"
 #include "core2/1E7AB30.h"
+#include "core2/1ECD170.h"
 
 #include "overlays/ba/anim.h"
 #include "overlays/ba/key.h"
@@ -58,6 +59,7 @@ void func_800F608C(s32, s32);
 void func_800F6388(s32, s32);
 void func_800F63E0(s32, u32);
 s32 func_800F6438(u32);
+s32 func_800F6478(s32);
 //Does the character match the given transformation type
 s32 func_800F64A4(s32 characterIndex, AllowedTransformation transformationType);
 s32 func_800F6774(u32);

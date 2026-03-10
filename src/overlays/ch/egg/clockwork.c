@@ -211,7 +211,16 @@ Actor* cheggclockwork_entrypoint_1(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 a
     return temp_v0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/clockwork/cheggclockwork_entrypoint_2.s")
+void cheggclockwork_entrypoint_2(Vec3f arg0, f32 arg3, s32 arg4, s32 arg5)
+{
+    Vec3f sp24;
+    f32 temp;
+    sp24.f[0] = arg0.f[0];
+    sp24.f[1] = arg0.f[1];
+    sp24.f[2] = arg0.f[2];
+    temp = *(f32*)&arg3;
+    _cheggsplode_entrypoint_2(sp24.f, temp, arg4, 5, arg5);
+}
 
 void cheggclockwork_entrypoint_3(s32* arg0, s32 arg1, u32 arg2, s32 arg3)
 {

@@ -450,9 +450,9 @@ void func_800F640C(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6438.s")
 
-void func_800F6478(s32 arg0)
+s32 func_800F6478(s32 arg0)
 {
-    func_800F424C(D_80135490[arg0]);
+    return func_800F424C(D_80135490[arg0]);
 }
 
 //Tranformation Type is a bitfield so you can check multiple transformations at once
