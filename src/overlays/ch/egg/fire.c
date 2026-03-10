@@ -1,7 +1,38 @@
 #include "ch/egg/fire.h"
 
-extern s32 D_808003B0_cheggfire;
-extern ActorData D_808003BC_cheggfire;
+s32 D_808003B0_cheggfire[3] = {0xE0,0xC0,0x64};
+void func_808000B8_cheggfire(Actor* arg0);
+void func_80800228_cheggfire(Actor* arg0);
+ActorData D_808003BC_cheggfire =
+{
+    /*0x0*/ 0x26D,
+    /*0x2*/ 0x15B,
+    /*0x4*/ 0x9C1,
+    /*0x6*/ 0x1,
+    /*0x8*/ 0,
+    /*0xC*/ func_808000B8_cheggfire,
+    /*0x10*/ func_80105834,
+    /*0x14*/ _subaddiedraw25d_entrypoint_2,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 1.0f,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x0000,
+    /*0x26*/ 0x4,
+    /*0x28*/ _suegg_entrypoint_2,
+    /*0x2C*/ _suegg_entrypoint_0,
+    /*0x30*/ 0x4C,
+    /*0x32*/ 0,
+    /*0x34*/ func_80800228_cheggfire,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8800,
+    /*0x3E*/ 0,
+    /*0x40*/ _suegg_entrypoint_17,
+    /*0x44*/ 0x0000,
+    /*0x46*/ 0x0000,
+    /*0x48*/ 0x00000000
+};
 
 typedef struct {
     s32 unk0[10];
@@ -95,10 +126,10 @@ void func_808000B8_cheggfire(Actor* arg0)
     }
 }
 
-void func_80800228_cheggfire(s32 arg0)
+void func_80800228_cheggfire(Actor* arg0)
 {
     _suegg_entrypoint_5();
-    _suegg_entrypoint_21(arg0, &D_808003B0_cheggfire);
+    _suegg_entrypoint_21(arg0, D_808003B0_cheggfire);
 }
 
 ActorData* cheggfire_entrypoint_0(void) {

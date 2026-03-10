@@ -17,8 +17,37 @@ typedef struct {
     u8 unk39_0 : 1;
 } EggNormalData;
 
-extern ActorData D_808003E0_cheggice;
-
+void func_80800114_cheggice(Actor* arg0);
+ActorData D_808003E0_cheggice =
+{
+    /*0x0*/ 0x26E,
+    /*0x2*/ 0x15C,
+    /*0x4*/ 0x9C0,
+    /*0x6*/ 0x1,
+    /*0x8*/ 0,
+    /*0xC*/ func_80800114_cheggice,
+    /*0x10*/ func_80105834,
+    /*0x14*/ _subaddiedraw25d_entrypoint_2,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 1.0f,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x0000,
+    /*0x26*/ 0x4,
+    /*0x28*/ _suegg_entrypoint_2,
+    /*0x2C*/ _suegg_entrypoint_0,
+    /*0x30*/ 0x4C,
+    /*0x32*/ 0,
+    /*0x34*/ _suegg_entrypoint_5,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8800,
+    /*0x3E*/ 0,
+    /*0x40*/ _suegg_entrypoint_17,
+    /*0x44*/ 0x0000,
+    /*0x46*/ 0x0000,
+    /*0x48*/ 0x00000000
+};
 void func_80800000_cheggice(Actor* arg0)
 {
     f32 temp_f24;

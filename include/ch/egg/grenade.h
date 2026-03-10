@@ -9,6 +9,7 @@
 #include "gc/egg.h"
 #include "ch/egg/splode.h"
 #include "ch/baddiesetup.h"
+#include "su/baddiedraw25d.h"
 
 #include "core2/1EB2840.h"
 #include "core2/1EB5980.h"
@@ -16,7 +17,8 @@
 #include "core2/1ECA640.h"
 #include "core2/1ECE0B0.h"
 #include "core2/1ED8C80.h"
-
+#include "core2/1EDED00.h"
+#include "core2/1EE1510.h"
 
 void _chegggrenade_entrypoint_0(Unk80132ED0* arg0);
 
