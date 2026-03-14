@@ -1,99 +1,282 @@
 #include "core2/1E66990.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D0A0.s")
+extern f32 D_80124AD4;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D0E0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D14C.s")
-
-void func_8008D18C(s32 arg0)
+//Can Beak Barge
+int func_8008D0A0(PlayerState* arg0)
 {
-    func_800C6E38(0x3);
+    return func_800C6E38(0) && (func_800A3304(arg0) != 0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D1B0.s")
-
-void func_8008D1F0(s32 arg0)
+//Can Beak Bomb
+int func_8008D0E0(PlayerState* arg0)
 {
-    func_800C6E38(0x5);
+    return func_800C6E38(0x1) && baflag_isFalse(arg0, 0x39) && (func_800A3304(arg0) || func_800A3274(arg0) == TRANSFORM_B_KAZOOIE);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D214.s")
+//Can Beak Bust
+int func_8008D14C(PlayerState* arg0) {
+    return func_800C6E38(0x2) && (func_800A3304(arg0) != 0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D280.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D304.s")
+int func_8008D18C(PlayerState* arg0)
+{
+    return func_800C6E38(0x3);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D370.s")
+//Can Peck
+int func_8008D1B0(PlayerState* arg0) {
+    return func_800C6E38(0x4) && (func_800A3304(arg0) != 0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D3B0.s")
+//Can Climb
+int func_8008D1F0(PlayerState* arg0)
+{
+    return func_800C6E38(0x5);
+}
+
+//Can Dive
+int func_8008D214(PlayerState* arg0) {
+
+    return func_800C6E38(0xF) && func_800964DC(arg0) - func_80096364(arg0) > 100.0f;
+
+}
+
+//Can Use Eggs
+s32 func_8008D280(PlayerState* arg0)
+{
+    enum transform_e temp_v0;
+
+    if (func_800C6E38(6) == 0)
+    {
+        return 0;
+    }
+    if (func_800DA298(FLAG2_6B6_UNK) != 0)
+    {
+        return 0;
+    }
+    temp_v0 = func_800A3274(arg0);
+    if (((temp_v0 == TRANSFORM_1_BK) || (temp_v0 == TRANSFORM_A_BANJO)) && (func_800A3304(arg0) == 0)) {
+        return 0;
+    }
+    return 1;
+}
+
+//Can use feathery flap
+int func_8008D304(PlayerState* arg0) {
+    return baflag_isFalse(arg0, BA_FLAG_12_HAS_FLAPPED)
+        && baflag_isFalse(arg0, BA_FLAG_5_HAS_PECKED)
+        && func_800C6E38(7)
+        && func_800A3304(arg0);
+}
+
+//Can use flap flip
+int func_8008D370(s32 arg0) {
+    return func_800C6E38(8) && func_800A3304(arg0);
+}
+
+//Can Fly
+int func_8008D3B0(PlayerState* arg0) {
+    return baflag_isTrue(arg0, BA_FLAG_1_ON_FLIGHT_PAD) && func_800C6E38(9) && func_800F64A4(arg0->unk184, ALLOW_KAZOOIE | ALLOW_BK);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D40C.s")
 
+//Can Full Jump Height
 s32 func_8008D544(PlayerState* arg0)
 {
     return func_800C6E38(0xA);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D568.s")
+//Can Pack Whack
+int func_8008D568(PlayerState* arg0) {
+    return func_800C6E38(0x29) != 0 && baflag_isFalse(arg0, BA_FLAG_5_HAS_PECKED) != 0 && baflag_isFalse(arg0, BA_FLAG_12_HAS_FLAPPED) != 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D5C4.s")
+//Can Rat a Tat Rap
+int func_8008D5C4(PlayerState* arg0) {
+    return baflag_isFalse(arg0, BA_FLAG_5_HAS_PECKED)
+        && baflag_isFalse(arg0, BA_FLAG_12_HAS_FLAPPED)
+        && func_800C6E38(0xB)
+        && func_800A3304(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D630.s")
+s32 func_8008D630(PlayerState* arg0) {
+    if ((baflag_isTrue(arg0, BA_FLAG_14_LOSE_BOGGY_RACE) != 0) || (baflag_isTrue(arg0, BA_FLAG_19) != 0))
+    {
+        return 0;
+    }
+    if (bs_getCurrentState(arg0) == 0x56)
+    {
+        return 0;
+    }
+    return 1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D694.s")
+//Can Roll
+int func_8008D694(s32 arg0)
+{
+    return func_800C6E38(0xC) && func_800A3304(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D6D4.s")
+//Can Shock Spring Jump
+int func_8008D6D4(PlayerState* arg0) {
+    return func_800C6E38(0xD) && func_800A3304(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D714.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D750.s")
+int func_8008D714(PlayerState* arg0)
+{
+    return _baduo_entrypoint_3(arg0) && func_800A3304(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D790.s")
+//Can Wading Boots
+int func_8008D750(PlayerState* arg0) {
+    return func_800C6E38(0xE) && func_800A3304(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D850.s")
+int func_8008D790(PlayerState* arg0) {
+    return _baduo_entrypoint_4(arg0)
+        && func_8008E39C(arg0) == 0
+        && player_isStable(arg0) != 0
+        && func_800C954C() == 0
+        && func_800DB9B0() == 0
+        && func_800F8004(arg0->unk184) == 0
+        && func_800F6D24(arg0->unk184) == 0
+        && baflag_isFalse(arg0, 0x34) != 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D8E4.s")
+//Can Talon Torpedo
+s32 func_8008D850(PlayerState* arg0)
+{
+    f32 sp1C[3];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D924.s")
+    if ((func_800C6E38(0x1E) != 0) && (func_800A3304(arg0) != 0) && (_bafpctrl_entrypoint_5(arg0) == 0))
+    {
+        func_8009C128(arg0, sp1C);
+        //Restrict Talon Torpedo when in the waterfall
+        if ((func_800EA05C() == MAP_117_TDL_RIVER_PASSAGE) && (sp1C[2] < D_80124AD4))
+        {
+            return 0;
+        }
+        return 1;
+    }
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D964.s")
+//Can Talon Trot
+int func_8008D8E4(PlayerState* arg0) {
+    return func_800C6E38(0x10) && func_800A3304(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D9A4.s")
+//Can Talon Trot Duplicate?
+int func_8008D924(PlayerState* arg0) {
+    return func_800C6E38(0x10) && func_800A3304(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DA24.s")
+//Can Wonderwing
+int func_8008D964(PlayerState* arg0) {
+    return func_800C6E38(0x12) && func_800A3304(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DAA8.s")
+s32 func_8008D9A4(PlayerState* arg0) {
+    if (_ncba1p_entrypoint_10(func_800A4CA8(arg0)) == 3) {
+        return 0;
+    }
+    if (func_800A4D40(arg0) == 0) {
+        return 0;
+    }
+    if ((player_isStable(arg0) == 0) && (player_inWater(arg0) == 0)) {
+        return 0;
+    }
+    return 1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DAC8.s")
+//Can Grip Grab
+int func_8008DA24(PlayerState* arg0) {
+    return func_800C6E38(0x14)
+        && baphysics_get_vertical_velocity(arg0) < 100.0f
+        && func_800A0FCC(arg0) == 0
+        && func_800976DC(arg0) != 0;
+}
+
+s32 func_8008DAA8(PlayerState* arg0) {
+    return func_800F65D0(arg0->unk184);
+}
+
+s32 func_8008DAC8(s32 arg0) {
+    return func_800DB9B0();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DAE8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DC90.s")
+int func_8008DC90(PlayerState* arg0, f32* arg1, f32 arg2)
+{
+    f32 sp2C[3];
+    f32 sp20[3];
+    f32 sp18[2];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DD04.s")
+    func_8009C128(arg0, sp20);
+    func_8008FF40(sp2C);
+    func_800F18FC(sp20, arg1, sp18);
+    return func_800F20BC(sp2C[0], sp18[0], arg2) && func_800F20BC(sp2C[1], sp18[1], arg2);
+}
+
+int func_8008DD04(PlayerState* arg0)
+{
+    return (func_8009C150(arg0) - func_80096364(arg0)) > 60.0f
+        && player_isStable(arg0) == 0;
+}
 
 void func_8008DD70(s32 arg0)
 {
     func_8009E71C(arg0,0x5);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DD90.s")
+s32 func_8008DD90(PlayerState* arg0) {
+    if (func_8009E674(arg0, 0x10) != 0)
+    {
+        return 1;
+    }
+    if (func_8009E674(arg0, 8) != 0) {
+        return _badrone_entrypoint_1(arg0) == 0;
+    }
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DDEC.s")
+void func_8008DDEC(PlayerState* arg0, s32 arg1, s32 arg2) {
+    f32 sp1C[3];
+
+    func_8009C128(arg0, sp1C);
+    func_800F0064(arg1, arg2, sp1C);
+}
 
 s32 func_8008DE24(PlayerState* arg0)
 {
     func_80096568(arg0,0xE00);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DE44.s")
+s32 func_8008DE44(s32 arg0) {
+    return 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DE50.s")
+s32 func_8008DE50(PlayerState* arg0) {
+    return func_80096694(arg0) == 3;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DE74.s")
+s32 func_8008DE74(PlayerState* arg0) {
+    return func_8009CA70(arg0, bs_getCurrentState(arg0), 0x4000);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DEA4.s")
+int func_8008DEA4(PlayerState* arg0, f32* arg1, f32 arg2)
+{
+    f32 sp1C[3];
+
+    func_8009C128(arg0, sp1C);
+    return ((arg1[1] - arg2) <= sp1C[1]) && (sp1C[1] <= (arg1[1] + arg2));
+
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DF18.s")
 
@@ -101,9 +284,9 @@ s32 func_8008DE24(PlayerState* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/player_isStable.s")
 
-void func_8008E0C8()
+s32 func_8008E0C8(s32 arg0)
 {
-    _bapackctrl_entrypoint_1();
+    return _bapackctrl_entrypoint_1(arg0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E0E8.s")
@@ -124,9 +307,9 @@ void func_8008E0C8()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E300.s")
 
-void player_inWater()
+s32 player_inWater(PlayerState* arg0)
 {
-    func_800A0FD8();
+    return func_800A0FD8(arg0);
 }
 
 void func_8008E37C()

@@ -14,6 +14,8 @@ s32 func_800A0DA0(PlayerState *, s32);
 void func_800A0DAC(PlayerState *, s32);
 void func_800A0DC4(PlayerState *, s32);
 void func_800A0DD0(PlayerState *, s32);
+s32 func_800A0FCC(PlayerState*);
+s32 func_800A0FD8(PlayerState*);
 void func_800A1040(PlayerState *);
 void func_800A106C(PlayerState *, f32, f32);
 

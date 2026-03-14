@@ -4,6 +4,7 @@
 #include "../../src/overlays/ba/playerstate.h"
 #include "overlays/ba/yaw.h"
 #include "transformations.h"
+#include "core2/1E66990.h"
 #include "core2/1E7BFA0.h"
 #include "core2/1E7AB30.h"
 
@@ -35,8 +36,8 @@ void func_800F608C(s32, s32);
 void func_800F6388(s32, s32);
 void func_800F63E0(s32, u32);
 s32 func_800F6438(u32);
+s32 func_800F65D0(s32);
 s32 func_800F6774(u32);
-
 typedef enum
 {
 	ALLOW_TREXLARGE = 1 << (TRANSFORM_13_TREXLARGE + 0x1F),
@@ -59,6 +60,8 @@ typedef enum
 
 //Does the character match the given transformation type
 s32 func_800F64A4(s32 characterIndex, AllowedTransformation transformationType);
+s32 func_800F6D24(s32);
+
 void func_800F7700(u32, s32, f32*);
 //The moving object is moved towards/away from the target
 void func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
