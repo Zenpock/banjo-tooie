@@ -6,7 +6,7 @@
 
 void func_80800130_chintrotext(s32 arg0)
 {
-    func_800DA524(FLAG2_6AD_CURRENTLY_SHOWING_INTROTEXT);
+    flag_setValueFalse(FLAG2_6AD_CURRENTLY_SHOWING_INTROTEXT);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/text/func_80800154_chintrotext.s")

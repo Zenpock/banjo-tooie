@@ -97,7 +97,7 @@ s32 func_800A7D84(void)
     s32 sp1C;
     s32 temp_v0;
 
-    D_80127630.unk8 += func_800D8FF8();
+    D_80127630.unk8 += time_getDelta();
 
 
     if (func_800C9510() == 0)
@@ -144,7 +144,7 @@ s32 func_800A7D84(void)
         func_800A9A14();
         break;
     case 3:
-        D_80127630.unkC += func_800D8FF8();
+        D_80127630.unkC += time_getDelta();
         if ((D_801255F8 < D_80127630.unkC) && (func_800C0A34() != 0))
         {
             func_800A759C(4, 0U);

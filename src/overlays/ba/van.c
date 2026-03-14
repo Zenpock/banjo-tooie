@@ -62,7 +62,7 @@ void bavan_entrypoint_8(PlayerState *self) {
     f32 sp38[3];
     f32 dt;
     
-    dt = func_800D8FF8();
+    dt = time_getDelta();
     self->van->unk8 += self->van->unkC* dt;
     self->van->unk0 = func_800F15F8(self->van->unk0, self->van->unk4, dt*200.0f);
     tmp_s1 = func_80092AD8(self);

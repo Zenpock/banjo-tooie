@@ -336,6 +336,17 @@ vector_pop_back_n = 0x800B2EFC;
 vector_assign = 0x800B2F18;
 vector_defrag = 0x800B2F58;
 vector_update_pointers = 0x800B2FB0;
+ability_getValue = 0x800C6E38;
+ability_setValueTrue = 0x800C70B0;
+ability_offsetSetValueTrue = 0x800C70D0;
+time_getDelta = 0x800D8FF8;
+flag_getValue = 0x800DA298;
+flag_setValue = 0x800DA3B8;
+flag_setValueTrue = 0x800DA544;
+flag_setValueFalse = 0x800DA524;
+flag_getMultipleValue = 0x800DA564;
+flag_setMultipleValue = 0x800DA7A8;
+position_isWithinRangeOf = 0x800EFFB4;
 mlAbsF = 0x800F2100;
 
 // Actual size is 0x26 without file alignment padding

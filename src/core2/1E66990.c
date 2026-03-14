@@ -5,41 +5,41 @@ extern f32 D_80124AD4;
 //Can Beak Barge
 int func_8008D0A0(PlayerState* arg0)
 {
-    return func_800C6E38(0) && (func_800A3304(arg0) != 0);
+    return ability_getValue(0) && (func_800A3304(arg0) != 0);
 }
 
 //Can Beak Bomb
 int func_8008D0E0(PlayerState* arg0)
 {
-    return func_800C6E38(0x1) && baflag_isFalse(arg0, 0x39) && (func_800A3304(arg0) || func_800A3274(arg0) == TRANSFORM_B_KAZOOIE);
+    return ability_getValue(0x1) && baflag_isFalse(arg0, 0x39) && (func_800A3304(arg0) || func_800A3274(arg0) == TRANSFORM_B_KAZOOIE);
 }
 
 //Can Beak Bust
 int func_8008D14C(PlayerState* arg0) {
-    return func_800C6E38(0x2) && (func_800A3304(arg0) != 0);
+    return ability_getValue(0x2) && (func_800A3304(arg0) != 0);
 }
 
 
 int func_8008D18C(PlayerState* arg0)
 {
-    return func_800C6E38(0x3);
+    return ability_getValue(0x3);
 }
 
 //Can Peck
 int func_8008D1B0(PlayerState* arg0) {
-    return func_800C6E38(0x4) && (func_800A3304(arg0) != 0);
+    return ability_getValue(0x4) && (func_800A3304(arg0) != 0);
 }
 
 //Can Climb
 int func_8008D1F0(PlayerState* arg0)
 {
-    return func_800C6E38(0x5);
+    return ability_getValue(0x5);
 }
 
 //Can Dive
 int func_8008D214(PlayerState* arg0) {
 
-    return func_800C6E38(0xF) && func_800964DC(arg0) - func_80096364(arg0) > 100.0f;
+    return ability_getValue(0xF) && func_800964DC(arg0) - func_80096364(arg0) > 100.0f;
 
 }
 
@@ -48,11 +48,11 @@ s32 func_8008D280(PlayerState* arg0)
 {
     enum transform_e temp_v0;
 
-    if (func_800C6E38(6) == 0)
+    if (ability_getValue(6) == 0)
     {
         return 0;
     }
-    if (func_800DA298(FLAG2_6B6_UNK) != 0)
+    if (flag_getValue(FLAG2_6B6_UNK) != 0)
     {
         return 0;
     }
@@ -67,18 +67,18 @@ s32 func_8008D280(PlayerState* arg0)
 int func_8008D304(PlayerState* arg0) {
     return baflag_isFalse(arg0, BA_FLAG_12_HAS_FLAPPED)
         && baflag_isFalse(arg0, BA_FLAG_5_HAS_PECKED)
-        && func_800C6E38(7)
+        && ability_getValue(7)
         && func_800A3304(arg0);
 }
 
 //Can use flap flip
 int func_8008D370(s32 arg0) {
-    return func_800C6E38(8) && func_800A3304(arg0);
+    return ability_getValue(8) && func_800A3304(arg0);
 }
 
 //Can Fly
 int func_8008D3B0(PlayerState* arg0) {
-    return baflag_isTrue(arg0, BA_FLAG_1_ON_FLIGHT_PAD) && func_800C6E38(9) && func_800F64A4(arg0->unk184, ALLOW_KAZOOIE | ALLOW_BK);
+    return baflag_isTrue(arg0, BA_FLAG_1_ON_FLIGHT_PAD) && ability_getValue(9) && func_800F64A4(arg0->unk184, ALLOW_KAZOOIE | ALLOW_BK);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D40C.s")
@@ -86,19 +86,19 @@ int func_8008D3B0(PlayerState* arg0) {
 //Can Full Jump Height
 s32 func_8008D544(PlayerState* arg0)
 {
-    return func_800C6E38(0xA);
+    return ability_getValue(0xA);
 }
 
 //Can Pack Whack
 int func_8008D568(PlayerState* arg0) {
-    return func_800C6E38(0x29) != 0 && baflag_isFalse(arg0, BA_FLAG_5_HAS_PECKED) != 0 && baflag_isFalse(arg0, BA_FLAG_12_HAS_FLAPPED) != 0;
+    return ability_getValue(0x29) != 0 && baflag_isFalse(arg0, BA_FLAG_5_HAS_PECKED) != 0 && baflag_isFalse(arg0, BA_FLAG_12_HAS_FLAPPED) != 0;
 }
 
 //Can Rat a Tat Rap
 int func_8008D5C4(PlayerState* arg0) {
     return baflag_isFalse(arg0, BA_FLAG_5_HAS_PECKED)
         && baflag_isFalse(arg0, BA_FLAG_12_HAS_FLAPPED)
-        && func_800C6E38(0xB)
+        && ability_getValue(0xB)
         && func_800A3304(arg0);
 }
 
@@ -117,12 +117,12 @@ s32 func_8008D630(PlayerState* arg0) {
 //Can Roll
 int func_8008D694(s32 arg0)
 {
-    return func_800C6E38(0xC) && func_800A3304(arg0);
+    return ability_getValue(0xC) && func_800A3304(arg0);
 }
 
 //Can Shock Spring Jump
 int func_8008D6D4(PlayerState* arg0) {
-    return func_800C6E38(0xD) && func_800A3304(arg0);
+    return ability_getValue(0xD) && func_800A3304(arg0);
 }
 
 
@@ -133,7 +133,7 @@ int func_8008D714(PlayerState* arg0)
 
 //Can Wading Boots
 int func_8008D750(PlayerState* arg0) {
-    return func_800C6E38(0xE) && func_800A3304(arg0);
+    return ability_getValue(0xE) && func_800A3304(arg0);
 }
 
 int func_8008D790(PlayerState* arg0) {
@@ -152,7 +152,7 @@ s32 func_8008D850(PlayerState* arg0)
 {
     f32 sp1C[3];
 
-    if ((func_800C6E38(0x1E) != 0) && (func_800A3304(arg0) != 0) && (_bafpctrl_entrypoint_5(arg0) == 0))
+    if ((ability_getValue(0x1E) != 0) && (func_800A3304(arg0) != 0) && (_bafpctrl_entrypoint_5(arg0) == 0))
     {
         func_8009C128(arg0, sp1C);
         //Restrict Talon Torpedo when in the waterfall
@@ -167,17 +167,17 @@ s32 func_8008D850(PlayerState* arg0)
 
 //Can Talon Trot
 int func_8008D8E4(PlayerState* arg0) {
-    return func_800C6E38(0x10) && func_800A3304(arg0);
+    return ability_getValue(0x10) && func_800A3304(arg0);
 }
 
 //Can Talon Trot Duplicate?
 int func_8008D924(PlayerState* arg0) {
-    return func_800C6E38(0x10) && func_800A3304(arg0);
+    return ability_getValue(0x10) && func_800A3304(arg0);
 }
 
 //Can Wonderwing
 int func_8008D964(PlayerState* arg0) {
-    return func_800C6E38(0x12) && func_800A3304(arg0);
+    return ability_getValue(0x12) && func_800A3304(arg0);
 }
 
 s32 func_8008D9A4(PlayerState* arg0) {
@@ -195,7 +195,7 @@ s32 func_8008D9A4(PlayerState* arg0) {
 
 //Can Grip Grab
 int func_8008DA24(PlayerState* arg0) {
-    return func_800C6E38(0x14)
+    return ability_getValue(0x14)
         && baphysics_get_vertical_velocity(arg0) < 100.0f
         && func_800A0FCC(arg0) == 0
         && func_800976DC(arg0) != 0;

@@ -8,7 +8,7 @@ void func_80800000_chterryteeth(Actor* arg0)
 {
     if (_sujiggy_entrypoint_20(4U) != 0)
     {
-        func_800DA544(FLAG_396_PROGRESS_OPENED_WORLD_TDL);
+        flag_setValueTrue(FLAG_396_PROGRESS_OPENED_WORLD_TDL);
         func_800FFAB0(arg0);
         return;
     }
@@ -34,7 +34,7 @@ s32 func_8080006C_chterryteeth(Actor* arg0, s32 arg1, s32 arg2)
         _chexploder_entrypoint_15(temp_v0, 2U, 1.0f);
         func_800BABB8(0, arg0->position, arg0->position, arg0->scale, &D_80800150_chterryteeth);
         func_800C4AF0(arg0->position, &D_80800190_chterryteeth);
-        func_800DA544(FLAG_396_PROGRESS_OPENED_WORLD_TDL);
+        flag_setValueTrue(FLAG_396_PROGRESS_OPENED_WORLD_TDL);
         break;
     default:
         return 0;

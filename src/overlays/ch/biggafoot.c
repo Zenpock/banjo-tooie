@@ -10,7 +10,7 @@
 
 void func_808004B0_chbiggafoot(s32 arg0)
 {
-    func_800DA524(FLAG2_6CD_UNK);
+    flag_setValueFalse(FLAG2_6CD_UNK);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/biggafoot/func_808004D4_chbiggafoot.s")

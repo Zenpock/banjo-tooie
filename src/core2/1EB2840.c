@@ -14,7 +14,7 @@ u32 func_800D8FEC()
 	return D_8012C764;
 }
 //Get Gamespeed
-f32 func_800D8FF8()
+f32 time_getDelta()
 {
 	return D_8012C760;
 }
