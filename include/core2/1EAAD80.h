@@ -2,6 +2,8 @@
 #define __CORE2_1EAAD80_H__
 
 #include "common.h"
+#include "memory.h"
+
 void func_800D1510();
 void func_800D1604();
 void func_800D162C();
