@@ -24,7 +24,38 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECA640/func_800F1074.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECA640/func_800F10B4.s")
+f32 func_800F10B4(f32 val, f32 in_min, f32 in_max, f32 out_min, f32 out_max)
+{
+    f32 result;
+
+    if (in_max != in_min)
+    {
+        if (out_min < out_max)
+        {
+            result = (((val - in_min) / (in_max - in_min)) * (out_max - out_min)) + out_min;
+
+            if (result > out_max)
+                return out_max;
+
+            if (result < out_min)
+                return out_min;
+        }
+        else
+        {
+            result = (((val - in_min) / (in_max - in_min)) * (out_max - out_min)) + out_min;
+
+            if (result < out_max)
+                return out_max;
+
+            if (result > out_min)
+                return out_min;
+        }
+
+        return result;
+    }
+
+    return out_max;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECA640/func_800F1198.s")
 
