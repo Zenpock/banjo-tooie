@@ -1,7 +1,4 @@
-#include <ultra64.h>
-#include <PR/gbi.h>
-#include "core1/mlmtx.h"
-#include "gfx.h"
+#include "core2/1EBCFC0.h"
 
 typedef struct {
     Gfx* unk0;
@@ -83,15 +80,30 @@ void func_800E37E8(s32 min[3], s32 max[3], s32 ratio) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E39D8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3A08.s")
+void func_800E3A08(s32 arg0)
+{
+    func_800CA810(D_8012D500, arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3A30.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3A58.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3A80.s")
+f32 func_800E3A80(void) {
+    return func_800CAA1C(D_8012D500);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3AA4.s")
+s32 func_800E3AA4(f32 x) {
+    f32 val = (s32)(func_800E3A80() - x);
+
+    while (val < 0)
+        val += 360;
+
+    while (val >= 360)
+        val -= 360;
+
+    return val;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3B50.s")
 

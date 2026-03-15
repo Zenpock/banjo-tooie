@@ -2,6 +2,7 @@
 #define __CORE2_1EC4CC0_H__
 
 #include "common.h"
+#include "vector.h"
 
 s32 func_800EB854();
 void func_800EBB5C();
