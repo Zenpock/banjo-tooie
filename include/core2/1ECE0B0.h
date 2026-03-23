@@ -70,6 +70,7 @@ void func_800F822C(s32, f32, f32);
 void func_800F8294(s32, f32*);
 void func_800F82C0(s32);
 void func_800F82D4(s32, s32);
+void func_800F8300(s32, s32, f32*);
 void func_800F832C(s32, f32*);
 s32 func_800F8B64(void);
 void func_800F8850();

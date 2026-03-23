@@ -731,9 +731,9 @@ void func_800F82D4(s32 arg0,s32 arg1)
     func_800F457C(D_80135490[arg0],arg1);
 }
 
-void func_800F8300(s32 arg0)
+void func_800F8300(s32 arg0, s32 arg1, f32* arg2)
 {
-    func_800F45B0(D_80135490[arg0]);
+    func_800F45B0(D_80135490[arg0],arg1,arg2);
 }
 
 void func_800F832C(s32 arg0,f32* a1)

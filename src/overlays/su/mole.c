@@ -94,13 +94,13 @@ void func_808001E0_sumole(Actor* arg0, s32 arg1)
 
 void func_808002E0_sumole(Actor* arg0, s32 arg1, s32 arg2, s32 arg3)
 {
-    switch (arg0->unk7A_11)
+    switch (arg0->unk7A_9)
     {
     case 0:
         _capod_entrypoint_2(arg0->unk0, 4U, 0x800);
     case 1:
         _capod_entrypoint_8(1);
-        arg0->unk7A_11 = 2;
+        arg0->unk7A_9 = 2;
     case 2:
         func_808001E0_sumole(arg0, arg3);
         _capod_entrypoint_7(arg1, arg2);
@@ -112,12 +112,12 @@ void func_8080037C_sumole(Actor* arg0, s32 arg1, s32 arg2, s32 arg3)
 {
     u32 temp_t8;
 
-    switch (arg0->unk7A_11)
+    switch (arg0->unk7A_9)
     {
     case 0:
         _capod_entrypoint_2(arg0->unk0, 4, 0x800);
     case 2:
-        arg0->unk7A_11 = 1;
+        arg0->unk7A_9 = 1;
     case 1:
         _capod_entrypoint_6(arg3, arg1, arg2);
         return;
@@ -126,10 +126,10 @@ void func_8080037C_sumole(Actor* arg0, s32 arg1, s32 arg2, s32 arg3)
 
 void func_80800408_sumole(Actor* arg0)
 {
-    if (arg0->unk7A_11 != 0)
+    if (arg0->unk7A_9 != 0)
     {
         _capod_entrypoint_3(0U);
-        arg0->unk7A_11 = 0;
+        arg0->unk7A_9 = 0;
     }
 }
 

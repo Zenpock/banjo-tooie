@@ -9,8 +9,6 @@ extern s32 D_80801EE4_chheggy[14];
 extern s32 D_80801F1C_chheggy[15];
 extern s32 D_80801F58_chheggy;
 
-extern void* func_8010D5DC;
-
 typedef struct Unk80100094 {
     Vec3f unk0[1]; // unknown size, could be up to 5
     u8 padC[0x3C - 0xC];
