@@ -163,7 +163,7 @@ void func_80800364_chpickups(Actor* arg0)
     f32 var_f12;
     f32 temp_f0;
 
-    temp_f0 = func_800D8FF8();
+    temp_f0 = time_getDelta();
     var_f12 = PICKUPS_DATA(arg0)->unk0[1];
     PICKUPS_DATA(arg0)->unk10[1] -= 150.0f * (30.0f * temp_f0);
     arg0->position[0] += PICKUPS_DATA(arg0)->unk10[0] * temp_f0;
@@ -260,7 +260,7 @@ void func_80800638_chpickups(Actor* arg0)
         }
         if (((u32)arg0->unk0->unk24 >> 0x16) == 0x1DD)
         {
-            if (func_800DA298(0x5A) != 0)
+            if (flag_getValue(0x5A) != 0)
             {
                 func_808005B8_chpickups(arg0, 0);
                 return;

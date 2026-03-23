@@ -22,6 +22,7 @@ f32 func_800EEB40(f32 a[3], f32 b[3]); // ml_vec3f_distance_sq
 void func_800EEBF0(f32*, f32*, f32);
 s32 func_800EEEA8(u32*);
 void func_800EF1B8(f32*, f32, f32);
+void func_800EF8BC(f32*, f32*, f32);
 s32 func_800EEF24(f32[3]);
 f32 func_800EEF94(f32*);
 void func_800EF214(f32[3], f32, f32, f32);

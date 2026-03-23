@@ -4,7 +4,7 @@
 #include "gameflags.h"
 
 void baairbar_entrypoint_0(PlayerState *self, s32 arg1) {
-    if (func_800DA298(FLAG_0E9_MAGIC_SUNLIGHT_OXYGENATED_WATER) && _gclevel_entrypoint_4(0x10)) {
+    if (flag_getValue(FLAG_0E9_MAGIC_SUNLIGHT_OXYGENATED_WATER) && _gclevel_entrypoint_4(0x10)) {
         return;
     }
     

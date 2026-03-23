@@ -63,7 +63,7 @@ void func_80800000_chegggolden(Actor* arg0)
     if (func_800A946C() < 3)
     {
         func_800EFA20(&sp64, &arg0->actorData[4], 0.5f);
-        temp_s1->unk28 = (f32)(temp_s1->unk28 - func_800D8FF8());
+        temp_s1->unk28 = (f32)(temp_s1->unk28 - time_getDelta());
         temp_f20 = func_800F10B4(temp_s1->unk30, 0, 1.8f, 0.0333f, 0.1f);
 
         while (temp_s1->unk28 <= 0.0f)

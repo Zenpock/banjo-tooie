@@ -2,6 +2,7 @@
 #define __CORE2_1E8F430_H__
 
 #include "common.h"
+#include "vector.h"
 
 #include <ultra64.h>
 

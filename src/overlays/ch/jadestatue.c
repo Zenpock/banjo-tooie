@@ -11,7 +11,7 @@ ActorData* chjadestatue_entrypoint_0(void) {
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jadestatue/func_8080000C_chjadestatue.s")
 
 void func_80800098_chjadestatue(Actor* arg0) {
-    arg0->rotation[1] -= func_800D8FF8() * 120.0f;
+    arg0->rotation[1] -= time_getDelta() * 120.0f;
     func_80103110(arg0, 0U);
     if (arg0->unk64_20)
     {

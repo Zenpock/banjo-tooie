@@ -1,6 +1,6 @@
 #include "core2/1EA1DA0.h"
 
-extern s32 D_8012AB00;
+extern Vector* D_8012AB00;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C84B0.s")
 
@@ -66,7 +66,11 @@ extern s32 D_8012AB00;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C9044.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C9074.s")
+void func_800C9074(void) {
+    if (D_8012AB00 != 0) {
+        D_8012AB00 = vector_defrag(D_8012AB00);
+    }
+}
 
 void func_800C90AC()
 {

@@ -28,7 +28,7 @@ s32 func_808004AC_chgoldfish(Actor* arg0, s32 arg1, s32 arg2)
                 s32 flag = 16;
                 if (type == 9)
                 {
-                    func_800C7074(0x30, !func_800DA298(FLAG2_648_UNK)); //Give Fast Swimming                
+                    func_800C7074(0x30, !flag_getValue(FLAG2_648_UNK)); //Give Fast Swimming                
                 }
                 else
                 {
@@ -47,7 +47,7 @@ s32 func_808004AC_chgoldfish(Actor* arg0, s32 arg1, s32 arg2)
         switch (split0)
         {
         case 0x15C0:
-            if (split2 == 1 && func_800DA298(FLAG2_649_UNK))
+            if (split2 == 1 && flag_getValue(FLAG2_649_UNK))
             {
                 func_800CF700();
             }

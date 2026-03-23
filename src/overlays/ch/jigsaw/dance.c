@@ -154,7 +154,7 @@ void func_80800260_chmoveitem(Actor* arg0)
     s32 var_s1 = 0;
     f32 sp58[3];
 
-    arg0->rotation[1] += func_800D8FF8() * arg0->unk58;
+    arg0->rotation[1] += time_getDelta() * arg0->unk58;
     arg0->rotation[1] = func_800136E4(arg0->rotation[1]);
     if (arg0->unk7C_12)
     {
@@ -329,7 +329,7 @@ s32 moveItem_Touched(Actor* arg0, unkStructMoveItem* arg1)
         func_800C8B84(arg0->unk6C_0);
     }
     //Set the ability flag
-    func_800C70B0(arg0->unk74_7, 1);
+    ability_setValueTrue(arg0->unk74_7, 1);
     //Play collected sound effect
     func_800FC63C(0x10, 0x6D60);
     //Show the Move Title
@@ -362,7 +362,7 @@ s32 moveItem_Handler(Actor* arg0, s32 arg1, s32 arg2)
         break;
     //Start
     case 0x95:
-        if (func_800C6E38(arg0->unk74_7) || (func_800D0A9C(arg0->unk74_7,0x9) == 0))
+        if (ability_getValue(arg0->unk74_7) || (func_800D0A9C(arg0->unk74_7,0x9) == 0))
         {
             func_800FFA88(arg0->unk0);
         }

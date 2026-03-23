@@ -193,7 +193,7 @@ void sumole_entrypoint_2(Actor* arg0, s32 arg1)
             break;
         case 7:
         case 22:
-            func_800DA544(FLAG3_9F1_UNK);
+            flag_setValueTrue(FLAG3_9F1_UNK);
             func_808002E0_sumole(arg0, 2, 1, 2);
             break;
         case 3:
@@ -271,7 +271,7 @@ void sumole_entrypoint_2(Actor* arg0, s32 arg1)
             return;
         case 1:
             func_800C78CC(0U);
-            func_800DA524(FLAG3_9F1_UNK);
+            flag_setValueFalse(FLAG3_9F1_UNK);
             func_80800408_sumole(arg0);
             sumole_entrypoint_19(arg0, 0);
             arg0->unk54 = (s32)arg0->unk74_7;
@@ -395,7 +395,7 @@ s32 sumole_entrypoint_3(Actor* arg0, s32 arg1, Arg2 arg2, MoveData* arg3)
         case 15:
         case 33:
             func_808002E0_sumole(arg0, 2, 1, 2);
-            if (func_800C6E38(0x18) != 0)
+            if (ability_getValue(0x18) != 0)
             {
                 sumole_entrypoint_2(arg0, 0x11);
                 return 4;
@@ -451,7 +451,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
                 //Allow all characters to talk
                 //if (sumole_entrypoint_5(arg0, arg1[(s32)arg0->unk54].charactersAllowed, -1, -1) != 0)
                 {
-                    if (func_800DA298(FLAG_40C_FTT_JAMJARS) == 0)
+                    if (flag_getValue(FLAG_40C_FTT_JAMJARS) == 0)
                     {
                         sumole_entrypoint_2(arg0, 3);
                         return;
@@ -586,7 +586,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
                 sumole_entrypoint_2(arg0, 0x12);
                 return;
             }
-            MOLE_DATA(arg0)->unk18 -= func_800D8FF8();
+            MOLE_DATA(arg0)->unk18 -= time_getDelta();
             if (MOLE_DATA(arg0)->unk18 <= 0.0f)
             {
                 temp_a1 = func_800F10B4((f32)(func_8008FC00() + 1), 1.0f, 10.0f, 0.8f, 1.5f);
@@ -870,7 +870,7 @@ void sumole_entrypoint_16(Actor* arg0, s32 arg1)
         }
         else if (temp_v0[(s32)arg0->unk54].AbilityToLearn != -1)
         {
-            func_800C7074((s32)temp_v0[(s32)arg0->unk54].AbilityToLearn, func_800DA298(FLAG2_660_UNK));
+            func_800C7074((s32)temp_v0[(s32)arg0->unk54].AbilityToLearn, flag_getValue(FLAG2_660_UNK));
         }
 
         for (sp28 = 0; sp28 < 8; sp28++) 
@@ -914,7 +914,7 @@ s32 sumole_entrypoint_17(Actor* arg0, s16 message, s32 arg2, s32 arg3)
         }
         else
         {
-            func_800C05B8(message, 7, arg0->position, NULL, 0, 0, func_800DA298(FLAG_578_PROGRESS_BOTTLES_ENERGY_RESTORED) != 0 ? 0xF : 0x84);
+            func_800C05B8(message, 7, arg0->position, NULL, 0, 0, flag_getValue(FLAG_578_PROGRESS_BOTTLES_ENERGY_RESTORED) != 0 ? 0xF : 0x84);
         }
         arg0->unk58 = 1.0f;
     default:
@@ -1128,7 +1128,7 @@ s32 func_IsCollected(Actor* arg0, MoveData* moveData)
 {
     if (moveData[(s32)arg0->unk54].AbilityToLearn != 0x55 && moveData[(s32)arg0->unk54].AbilityToLearn != -1)
     {
-        return func_800C6E38(moveData[(s32)arg0->unk54].AbilityToLearn);
+        return ability_getValue(moveData[(s32)arg0->unk54].AbilityToLearn);
     }
     else if (moveData[(s32)arg0->unk54].AbilityToLearn == 0x55)
     {

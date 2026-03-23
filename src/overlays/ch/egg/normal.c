@@ -58,7 +58,7 @@ void func_80800000_cheggnormal(Actor* arg0)
     EggNormalData* temp_s3;
 
     temp_s3 = (EggNormalData*)func_80100094(arg0, 0U);
-    temp_s3->unk28 = (f32)(temp_s3->unk28 - func_800D8FF8());
+    temp_s3->unk28 = (f32)(temp_s3->unk28 - time_getDelta());
     temp_f24 = func_800F10B4(temp_s3->unk30, 0, 2.0f, 0.0333f, 0.1f);
     while (temp_s3->unk28 <= 0.0f)
     {

@@ -66,6 +66,7 @@ s32 func_800F6774(u32);
 s32 func_800F693C(s32);
 s32 func_800F6D24(s32);
 s32 func_800F6DE0(f32*);
+s32 func_800F65D0(s32);
 
 void func_800F7700(u32, s32, f32*);
 //The moving object is moved towards/away from the target

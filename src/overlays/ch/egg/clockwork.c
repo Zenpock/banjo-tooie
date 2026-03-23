@@ -48,7 +48,7 @@ void func_80800048_cheggclockwork(Actor* arg0)
     f32 sp4C[3];
 
     temp_s1 = (EggNormalData*)func_80100094(arg0, 0U);
-    temp_s1->unk28 -= func_800D8FF8();
+    temp_s1->unk28 -= time_getDelta();
     temp_f20 = func_800F10B4(temp_s1->unk30, 0.0f, 2.0f, 0.0333f, 0.1f);
     while (temp_s1->unk28 <= 0)
     {

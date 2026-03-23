@@ -2,6 +2,7 @@
 #define __CORE2_1E99980_H__
 
 #include "common.h"
+#include "memory.h"
 
 void func_800C0438(void);
 u32 func_800C0534(u32, u32, f32*, Unk80132ED0*, s32, s32, s32, s32);

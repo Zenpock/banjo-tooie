@@ -57,7 +57,7 @@ void func_80800000_cheggfire(Actor* arg0)
     f32 temp_f0;
 
     sp24 = (EggNormalData*)func_80100094(arg0, 0U);
-    sp24->unk28 = (f32)(sp24->unk28 - func_800D8FF8());
+    sp24->unk28 = (f32)(sp24->unk28 - time_getDelta());
     temp_f0 = func_800F10B4(sp24->unk30, 0.0f, 2.0f, 0.0333f, 0.1f);
 
     while (sp24->unk28 <= 0)

@@ -140,16 +140,16 @@ s32 func_800CFA90()
     {
         return 0;
     }
-    if (func_800DA298(FLAG_379_RANDOMISER_JINJO_SET) == 0)
+    if (flag_getValue(FLAG_379_RANDOMISER_JINJO_SET) == 0)
     {
         //Get Random int between 0 and 0x21
         var_s0 = func_800DC128(0, 0x21);
-        func_800DA7A8(FLAG_37A_RANDOMISER_JINJO_1, (u32)var_s0, 5);
-        func_800DA544(FLAG_379_RANDOMISER_JINJO_SET);
+        flag_setMultipleValue(FLAG_37A_RANDOMISER_JINJO_1, (u32)var_s0, 5);
+        flag_setValueTrue(FLAG_379_RANDOMISER_JINJO_SET);
     }
     else
     {
-        var_s0 = func_800DA564(FLAG_37A_RANDOMISER_JINJO_1, 5);
+        var_s0 = flag_getMultipleValue(FLAG_37A_RANDOMISER_JINJO_1, 5);
     }
     func_800DC330();
     func_800DC324((s32)var_s0);
@@ -636,7 +636,7 @@ void func_800D0B08(s32 arg0, s32 arg1)
     temp_v0 = func_800D0908(arg0, arg1);
     if (temp_v0 != FLAG0_000_STATE_CANARY_MARY_CAGE_TRIGGER_DIALOG)
     {
-        func_800DA544(temp_v0);
+        flag_setValueTrue(temp_v0);
     }
 }
 
@@ -647,7 +647,7 @@ void func_800D0B38(s32 arg0, s32 arg1)
     temp_v0 = func_800D0908(arg0, arg1);
     if (temp_v0 != FLAG0_000_STATE_CANARY_MARY_CAGE_TRIGGER_DIALOG)
     {
-        func_800DA524(temp_v0);
+        flag_setValueFalse(temp_v0);
     }
 }
 

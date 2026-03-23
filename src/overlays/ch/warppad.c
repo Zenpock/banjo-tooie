@@ -41,7 +41,7 @@ s32 func_80800064_chwarppad(Actor* arg0, s32 warppadIndex)
     {
         return 0;
     }
-    return func_800DA298((WARPPAD_DATA(arg0)->unk14 * 5) + warppadIndex + 0x3AB);
+    return flag_getValue((WARPPAD_DATA(arg0)->unk14 * 5) + warppadIndex + 0x3AB);
 }
 //Get the number of warppads unlocked in the level
 s32 func_808000B4_chwarppad(Actor* arg0)
@@ -122,13 +122,13 @@ s32 func_808002F4_chwarppad(Actor* arg0, s32 arg1)
 //Is this warp pad active
 s32 func_80800380_chwarppad(Actor* arg0)
 {
-    return func_800DA298(WARPPAD_DATA(arg0)->unk14 * 5 + (arg0->unk74_7) + 0x379);
+    return flag_getValue(WARPPAD_DATA(arg0)->unk14 * 5 + (arg0->unk74_7) + 0x379);
 }
 
 //Enable warppad
 void func_808003B8_chwarppad(Actor* arg0)
 {
-    func_800DA544(WARPPAD_DATA(arg0)->unk14 * 5 + (arg0->unk74_7) + 0x379);
+    flag_setValueTrue(WARPPAD_DATA(arg0)->unk14 * 5 + (arg0->unk74_7) + 0x379);
     _subaddiefade_entrypoint_4(arg0);
     _chappearfx_entrypoint_1(arg0, 2, 3, 0.8f);
 }
@@ -143,14 +143,14 @@ void func_80800418_chwarppad(Actor* arg0, u32 arg1)
         switch (arg0->unk70_10) //Check previous state
         {
         case 2: //We Just activated a warp pad
-            if (func_800DA298(FLAG_3EE_FTT_FIRST_WARP_AVAILABLE) == 0)
+            if (flag_getValue(FLAG_3EE_FTT_FIRST_WARP_AVAILABLE) == 0)
             {
                 //Enable Movement
                 func_80090708(0);
             }
             if (func_808000B4_chwarppad(arg0) > 0)
             {
-                func_800DA544(FLAG_3EE_FTT_FIRST_WARP_AVAILABLE);
+                flag_setValueTrue(FLAG_3EE_FTT_FIRST_WARP_AVAILABLE);
             }
             break;
         case 3: //Close the option menu
@@ -164,7 +164,7 @@ void func_80800418_chwarppad(Actor* arg0, u32 arg1)
         switch (arg1)
         {
         case 2: //This warp pad was disabled and someone walked near it
-            if (func_800DA298(FLAG_3EE_FTT_FIRST_WARP_AVAILABLE) == 0)
+            if (flag_getValue(FLAG_3EE_FTT_FIRST_WARP_AVAILABLE) == 0)
             {
                 //Disable Movement
                 func_80090708(1);
@@ -192,7 +192,7 @@ void func_80800418_chwarppad(Actor* arg0, u32 arg1)
             func_8010A828(arg0, 0xA);
             return;
         case 4: //Actually Warp
-            func_800DA544(FLAG3_9FE_WARPING_VIA_WARPPAD);
+            flag_setValueTrue(FLAG3_9FE_WARPING_VIA_WARPPAD);
             _gcgoto_entrypoint_1(func_80800E10_chwarppad(D_808010B0_chwarppad[WARPPAD_DATA(arg0)->unk18 + WARPPAD_DATA(arg0)->unk10].unk0), D_808010B0_chwarppad[WARPPAD_DATA(arg0)->unk18 + WARPPAD_DATA(arg0)->unk10].unk4);
             break;
         }
@@ -225,7 +225,7 @@ void func_80800748_chwarppad(Actor* arg0)
     s32 controlledCharacter;
     s32 sp34;
 
-    func_800DA524(FLAG3_9FE_WARPING_VIA_WARPPAD);
+    flag_setValueFalse(FLAG3_9FE_WARPING_VIA_WARPPAD);
     switch (arg0->unk70_10)
     {
     case 1: //If we are standing near the warppad
@@ -288,7 +288,7 @@ void func_80800748_chwarppad(Actor* arg0)
                             flag = FLAG_0D9_PAID_GLOWBO_WUMBA_JRL;
                             break;
                         case 0x15://TDL
-                            targetTransformation = func_800DA298(FLAG_18A_TDL_WIGWAM_ENLARGED) ? TRANSFORM_13_TREXLARGE : TRANSFORM_12_TREXSMALL;
+                            targetTransformation = flag_getValue(FLAG_18A_TDL_WIGWAM_ENLARGED) ? TRANSFORM_13_TREXLARGE : TRANSFORM_12_TREXSMALL;
                             flag = FLAG_0DA_PAID_GLOWBO_WUMBA_TDL;
                             break;
                         case 0x16://GI
@@ -306,7 +306,7 @@ void func_80800748_chwarppad(Actor* arg0)
                         default:
                             break;
                         }
-                        if (func_800DA298(flag) == 1)
+                        if (flag_getValue(flag) == 1)
                         {
                             func_800A3410(state, targetTransformation);
                             transformed = 1;
@@ -392,7 +392,7 @@ void func_80800748_chwarppad(Actor* arg0)
                     {
                         break;
                     }
-                    if (func_800DA298(flag) == 1)
+                    if (flag_getValue(flag) == 1)
                     {
                         targetTransformation = TRANSFORM_D_MUMBO;
                         func_800A3410(state, targetTransformation);
@@ -430,7 +430,7 @@ void func_80800748_chwarppad(Actor* arg0)
         }
         break;
     case 2:
-        if ((func_800DA298(FLAG_3EE_FTT_FIRST_WARP_AVAILABLE) == 0) && !(arg0->unk74_30))
+        if ((flag_getValue(FLAG_3EE_FTT_FIRST_WARP_AVAILABLE) == 0) && !(arg0->unk74_30))
         {
             if (_subaddiedialog_entrypoint_11(arg0->unk0, func_808000B4_chwarppad(arg0) == 0 ? 0xCED : 0xCEE, 0xA, arg0->position, 0) != 0)
             {
@@ -577,7 +577,7 @@ void func_80800C00_chwarppad(Actor* arg0)
         _subaddiesect_entrypoint_2(arg0, WARPPAD_DATA(arg0)->unk8, 1);
     }
     func_8010A828(arg0, 2);
-    if ((func_800DA298(FLAG3_9FE_WARPING_VIA_WARPPAD) != 0) && (func_800EA090() == (D_80801080_chwarppad - 0x224)[(WARPPAD_DATA(arg0)->unk10) * 0xC + arg0->unk74_7 * 0xC]))
+    if ((flag_getValue(FLAG3_9FE_WARPING_VIA_WARPPAD) != 0) && (func_800EA090() == (D_80801080_chwarppad - 0x224)[(WARPPAD_DATA(arg0)->unk10) * 0xC + arg0->unk74_7 * 0xC]))
     {
         func_800EE7F8(sp30, arg0->position);
         sp30[1] += 15.0f * arg0->scale;
@@ -585,7 +585,7 @@ void func_80800C00_chwarppad(Actor* arg0)
         func_800F8294(sp3C, sp30);
         func_800F497C(sp3C);
         func_800C78CC(0U);
-        func_800DA524(FLAG3_9FE_WARPING_VIA_WARPPAD);
+        flag_setValueFalse(FLAG3_9FE_WARPING_VIA_WARPPAD);
     }
 }
 

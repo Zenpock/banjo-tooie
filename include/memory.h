@@ -87,7 +87,7 @@ void* heap_realloc(void* mem, s32 size);
 void heap_free(void* mem);
 void* defrag(void* mem);
 
-// round_up_16
-u32 func_8001BD30(u32);
+//__heap_align
+s32 func_8001BD30(s32);
 
 #endif

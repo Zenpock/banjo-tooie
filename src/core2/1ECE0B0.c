@@ -58,9 +58,9 @@ void func_800F4A2C(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F4AC0.s")
 
-void func_800F4AF4(s32 arg0)
+void func_800F4AF4(s32 arg0,s32 arg1)
 {
-    func_800A4DA4(D_80135490[arg0]);
+    func_800A4DA4(D_80135490[arg0],arg1);
 }
 
 void func_800F4B20(s32 arg0)
@@ -221,9 +221,9 @@ void func_800F5654(s32 arg0)
     func_80096670(D_80135490[arg0]);
 }
 
-void func_800F5680(s32 arg0)
+void func_800F5680(s32 arg0,f32 arg1[3])
 {
-    func_800963C0(D_80135490[arg0]);
+    func_800963C0(D_80135490[arg0],arg1);
 }
 
 void func_800F56AC(s32 arg0)
@@ -356,9 +356,9 @@ void func_800F5D44(s32 arg0, f32* arg1)
     func_800A33CC(D_80135490[arg0],arg1);
 }
 
-void func_800F5D70(s32 arg0)
+void func_800F5D70(s32 arg0,f32* arg1)
 {
-    func_8009BB24(D_80135490[arg0]);
+    func_8009BB24(D_80135490[arg0],arg1);
 }
 
 void func_800F5D9C(s32 arg0)

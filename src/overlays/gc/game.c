@@ -54,11 +54,11 @@ void gcgame_func_Custom(void)
             break;
         if (flags[i].isActive)
         {
-            func_800DA544(flags[i].flag);
+            flag_setValueTrue(flags[i].flag);
         }
         else
         {
-            func_800DA524(flags[i].flag);
+            flag_setValueFalse(flags[i].flag);
         }
         i++;
     }

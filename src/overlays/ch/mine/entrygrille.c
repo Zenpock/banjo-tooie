@@ -6,9 +6,9 @@ extern ActorData D_80800194_chmineentrygrille;
 
 s32 func_80800000_chmineentrygrille(Actor* arg0, s32 arg1, u32 arg2) {
     Actor* temp_v0;
-    if (func_800DA298(FLAG_393_PROGRESS_OPENED_WORLD_GGM)==0&&(func_800DA298(0x3D8) == 1 && func_800D035C(1) >= _sujiggy_entrypoint_2(1)))
+    if (flag_getValue(FLAG_393_PROGRESS_OPENED_WORLD_GGM)==0&&(flag_getValue(0x3D8) == 1 && func_800D035C(1) >= _sujiggy_entrypoint_2(1)))
     {
-        func_800DA544(FLAG_393_PROGRESS_OPENED_WORLD_GGM);
+        flag_setValueTrue(FLAG_393_PROGRESS_OPENED_WORLD_GGM);
         func_800FFAB0(arg0);
     }
     switch (arg1) 
@@ -16,7 +16,7 @@ s32 func_80800000_chmineentrygrille(Actor* arg0, s32 arg1, u32 arg2) {
     case 0x7:
         _chexploder_entrypoint_3(arg0, arg0->position, 8);
         //Set Flag True
-        func_800DA544(FLAG_393_PROGRESS_OPENED_WORLD_GGM);
+        flag_setValueTrue(FLAG_393_PROGRESS_OPENED_WORLD_GGM);
         return 1;
     case 0x90:
         temp_v0 = func_80106790(func_80101080());
@@ -35,7 +35,7 @@ void func_808000C4_chmineentrygrille(s32 arg0)
 {
     if (_sujiggy_entrypoint_20(1) != 0)
     {
-        func_800DA544(FLAG_393_PROGRESS_OPENED_WORLD_GGM);
+        flag_setValueTrue(FLAG_393_PROGRESS_OPENED_WORLD_GGM);
         func_800FFAB0(arg0);
         return;
     }

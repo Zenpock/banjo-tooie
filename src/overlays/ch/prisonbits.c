@@ -30,7 +30,7 @@ void func_808001E0_chprisonbits(s32 arg0)
 
 void func_80800280_chprisonbits()
 {
-    func_800DA298();
+    flag_getValue();
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/func_808002A0_chprisonbits.s")

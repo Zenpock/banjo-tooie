@@ -51,7 +51,7 @@ void func_80800000_chboggyfish(Actor* arg0, unkStructBoggyFish* arg1)
 		func_800F6388(func_800F54E4(), 0x4BA);
 		func_800D1844(0x51);
 		func_800FC6B0(0xEU);
-		func_800DA544(FLAG_438_UNK);
+		flag_setValueTrue(FLAG_438_UNK);
 		func_800FFA88(arg0->unk0);
 	}
 }
@@ -81,7 +81,7 @@ s32 func_80800064_chboggyfish(Actor* arg0, s32 arg1, s32 arg2)
         break;
     //Start
     case 0x95:
-        if ((func_800DA298(FLAG_438_UNK) != 0) && (_glcutDll_entrypoint_20() == 0))
+        if ((flag_getValue(FLAG_438_UNK) != 0) && (_glcutDll_entrypoint_20() == 0))
         {
             func_800FFAB0(arg0);
             return 0;

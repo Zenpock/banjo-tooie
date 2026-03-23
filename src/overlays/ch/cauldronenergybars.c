@@ -24,14 +24,14 @@ void func_80800000_chcauldronenergybars(Actor* arg0)
         var_a1 = FLAG_39B_PROGRESS_OPENED_WORLD_HAG_1_BATTLE;
         sp18 = 0x83;
     }
-    if (_sujiggy_entrypoint_20(var_a0) != 0 || (func_800DA298(0x3D8) == 1 && func_800D035C(1) >= _sujiggy_entrypoint_2(var_a0)))
+    if (_sujiggy_entrypoint_20(var_a0) != 0 || (flag_getValue(0x3D8) == 1 && func_800D035C(1) >= _sujiggy_entrypoint_2(var_a0)))
     {
-        func_800DA544(var_a1);
+        flag_setValueTrue(var_a1);
     }
     switch (var_a0)
     {
         case 8:
-            if (func_800DA298(var_a1) != 0)
+            if (flag_getValue(var_a1) != 0)
             {
                 func_800FFAB0(arg0);
                 return;
@@ -93,7 +93,7 @@ s32 func_808001C4_chcauldronenergybars(Actor* arg0, s32 arg1, s32 arg2)
         func_80101FDC(arg0, 2);
         _subaddieDll_entrypoint_4(arg0, 1);
         func_8010A570(arg0);
-        func_800DA544((arg0->unk74_7 == 0x32) ? (0x39A) : (0x39B));
+        flag_setValueTrue((arg0->unk74_7 == 0x32) ? (0x39A) : (0x39B));
         return 1;
 
     case 0x3F:

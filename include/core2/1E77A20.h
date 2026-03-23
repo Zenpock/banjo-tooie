@@ -15,6 +15,7 @@ void func_8009E4AC(PlayerState *);
 void func_8009E53C(PlayerState *, s32, f32);
 void func_8009E55C(PlayerState *, s32, f32);
 void func_8009E5A4(PlayerState *, s32, s32);
+s32 func_8009E674(PlayerState*, s32);
 s16 func_8009E6EC(PlayerState *);
 s32 bs_getCurrentState(PlayerState *);
 s32 bs_getNextState(PlayerState *);

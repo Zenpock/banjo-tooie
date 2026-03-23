@@ -1,12 +1,18 @@
 #include "core2/1EAAD80.h"
 
+extern void* D_8012B250;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAAD80/func_800D1490.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAAD80/func_800D1510.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAAD80/func_800D154C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAAD80/func_800D15CC.s")
+void func_800D15CC(void) {
+    if (D_8012B250 != 0) {
+        D_8012B250 = defrag(D_8012B250);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAAD80/func_800D1604.s")
 

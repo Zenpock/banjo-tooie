@@ -2,6 +2,7 @@
 #define __CORE2_1EDFED0_H__
 
 #include "common.h"
+#include "freelist.h"
 
 Actor* func_80106790(Unk80132ED0 *);
 
