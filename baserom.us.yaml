@@ -10444,15 +10444,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020A0590
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020A0590, c, fire]
-      - [0x020A0930, .rodata, fire]
-      - [0x020A0940, data, fire]
-      - [0x020A09A0, bss, fire]
+      - [auto, c, fire]
   - name: chegggolden_header
     dir: overlays/chegggolden
     type: bin
@@ -10463,15 +10457,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020A0A10
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020A0A10, c, golden]
-      - [0x020A0DF0, .rodata, golden]
-      - [0x020A0E00, data, golden]
-      - [0x020A0E50, bss, golden]
+      - [auto, c, golden]
   - name: chegggrenade_header
     dir: overlays/chegggrenade
     type: bin
@@ -10482,15 +10470,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020A0EC0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020A0EC0, c, grenade]
-      - [0x020A1300, .rodata, grenade]
-      - [0x020A1310, data, grenade]
-      - [0x020A1360, bss, grenade]
+      - [auto, c, grenade]
   - name: cheggice_header
     dir: overlays/cheggice
     type: bin
@@ -10501,15 +10483,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020A13D0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020A13D0, c, ice]
-      - [0x020A17A0, .rodata, ice]
-      - [0x020A17B0, data, ice]
-      - [0x020A1800, bss, ice]
+      - [auto, c, ice]
   - name: cheggnormal_header
     dir: overlays/cheggnormal
     type: bin
@@ -10520,15 +10496,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020A1870
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020A1870, c, normal]
-      - [0x020A1D30, .rodata, normal]
-      - [0x020A1D40, data, normal]
-      - [0x020A1D90, bss, normal]
+      - [auto, c, normal]
   - name: chfaircoin_header
     dir: overlays/chfaircoin
     type: bin

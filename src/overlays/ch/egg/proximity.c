@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/egg/proximity.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/proximity/cheggproximity_entrypoint_0.s")
 
