@@ -19,12 +19,129 @@ typedef struct {
     s16 unk3A;
 } EggNormalData;
 
-extern ActorData D_808008C0_cheggclockwork;
-extern s32 D_80800908_cheggclockwork;
-extern s32 D_80800950_cheggclockwork;
-extern s32 D_80800998_cheggclockwork;
-extern s32 D_808009E0_cheggclockwork;
-extern s32 _cheggclockwork_entrypoint_2;
+void func_80800000_cheggclockwork(Actor*);
+void func_80800124_cheggclockwork(Actor*);
+s32 func_808003B4_cheggclockwork(Actor*, s32, s32);
+
+ActorData D_808008C0_cheggclockwork = 
+{
+    /*0x0*/ 0x270,
+    /*0x2*/ 0x15E,
+    /*0x4*/ 0x9C4,
+    /*0x6*/ 0x1,
+    /*0x8*/ 0,
+    /*0xC*/ func_80800124_cheggclockwork,
+    /*0x10*/ func_80105834,
+    /*0x14*/ _subaddiedraw25d_entrypoint_2,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 1.0f,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x0000,
+    /*0x26*/ 0x4,
+    /*0x28*/ func_80800000_cheggclockwork,
+    /*0x2C*/ _suegg_entrypoint_0,
+    /*0x30*/ 0x4C,
+    /*0x32*/ 0,
+    /*0x34*/ _suegg_entrypoint_5,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8800,
+    /*0x3E*/ 0,
+    /*0x40*/ func_808003B4_cheggclockwork,
+    /*0x44*/ 0x0000,
+    /*0x46*/ 0x0000,
+    /*0x48*/ 0x00000000
+};
+
+//I don't know the real data type so it's just s32s for now
+s32 D_80800908_cheggclockwork[]=
+{
+    0x001D0834,
+    0x00160002,
+    0x00150019,
+    0x00B3001E,
+    0x001E001E,
+    0x002EFFB0,
+    0x00000258,
+    0xFFB00167,
+    0x0258001B,
+    0xFA24FA24,
+    0x00040099,
+    0x00070003,
+    0x002B0280,
+    0x02800026,
+    0x038400C8,
+    0x00000384,
+    0x00C80000,
+    0x00000000
+};
+s32 D_80800950_cheggclockwork[] =
+{
+    0x001D0833,
+    0x000B001E,
+    0x00320050,
+    0x001E0015,
+    0x001900B3,
+    0x002EFFC4,
+    0x000000C8,
+    0xFFD80167,
+    0x0190001B,
+    0xFA24FA24,
+    0x00040099,
+    0x00070003,
+    0x002B0200,
+    0x02800026,
+    0xFF38FF38,
+    0xFF3800C8,
+    0x00C800C8,
+    0x00000000
+};
+s32 D_80800998_cheggclockwork[]=
+{
+    0x001D0835,
+    0x00160002,
+    0x00150019,
+    0x00B3001E,
+    0x001E001E,
+    0x002EFFD8,
+    0x0000012C,
+    0xFFE20167,
+    0x0190001B,
+    0xFA24FA24,
+    0x00040099,
+    0x00070003,
+    0x002B0200,
+    0x02800026,
+    0x000A00C8,
+    0x0014000A,
+    0x00C80014,
+    0x00000000
+};
+s32 D_808009E0_cheggclockwork[]=
+{
+    0x001D0836,
+    0x00160002,
+    0x00150019,
+    0x00B3001E,
+    0x001E001E,
+    0x002C0000,
+    0x01F40000,
+    0x000001F4,
+    0x0000001B,
+    0xFA24FA24,
+    0x000400B3,
+    0x00070005,
+    0x002B0300,
+    0x03000027,
+    0x00320064,
+    0x00320064,
+    0x00000000,
+    0x00000000,
+    0x00000000,
+    0x00000000
+};
+
 
 s32 func_80800270_cheggclockwork(Actor*);
 void func_808006E8_cheggclockwork(Actor*);
@@ -225,10 +342,10 @@ void cheggclockwork_entrypoint_2(Vec3f arg0, f32 arg3, s32 arg4, s32 arg5)
 void cheggclockwork_entrypoint_3(s32* arg0, s32 arg1, u32 arg2, s32 arg3)
 {
     func_800C9C70(0.4f, 0x5F3U, 1.0f, 0x4E20U, arg0, 250.0f, 5400.0f);
-    func_800BBCB8(arg0, 0, 1.0f, 1, &D_80800908_cheggclockwork);
-    func_800BBCB8(arg0, 0, 1.0f, 6, &D_80800950_cheggclockwork);
-    func_800BBCB8(arg0, 0, 1.0f, 2, &D_80800998_cheggclockwork);
-    func_800BBCB8(arg0, 0, 1.0f, 1, &D_808009E0_cheggclockwork);
+    func_800BBCB8(arg0, 0, 1.0f, 1, D_80800908_cheggclockwork);
+    func_800BBCB8(arg0, 0, 1.0f, 6, D_80800950_cheggclockwork);
+    func_800BBCB8(arg0, 0, 1.0f, 2, D_80800998_cheggclockwork);
+    func_800BBCB8(arg0, 0, 1.0f, 1, D_808009E0_cheggclockwork);
     _chbaddiesetup_entrypoint_6(&_cheggclockwork_entrypoint_2, arg0[0], arg0[1], arg0[2], arg1, arg2, arg3);
 }
 

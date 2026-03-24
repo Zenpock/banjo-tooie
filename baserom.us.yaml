@@ -10425,15 +10425,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x0209FAF0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x0209FAF0, c, clockwork]
-      - [0x020A03A0, .rodata, clockwork]
-      - [0x020A03B0, data, clockwork]
-      - [0x020A0520, bss, clockwork]
+      - [auto, c, clockwork]
   - name: cheggfire_header
     dir: overlays/cheggfire
     type: bin
