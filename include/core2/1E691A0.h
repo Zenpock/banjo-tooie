@@ -9,19 +9,24 @@ void func_8008F8D8(s32);
 void func_8008F904(void*, s32);
 void func_8008F938(s32);
 void func_8008F990(s32, f32);
+void func_8008FB10(f32*, f32, f32, f32);
 void func_8008FB58(f32[3], f32, f32);
 void func_8008FBE0(u32 a0);
 s32 func_8008FC00();
 s32 func_8008FC28();
 void func_8008FC50();
 TransformationId func_8008FD48();
+s32 func_8008FD70();
 Unk80132ED0* func_8008FDEC();
+s32 func_8008FE14();
 void func_8008FE94(s32, f32*);
+f32 func_8008FEF0();
 f32 func_80090010(void);
 void func_800900D0(s32);
 s32 func_80090128();
 //Does the current character match given transformation
 s32 func_80090178(AllowedTransformation);
+s32 func_800902E4(f32*, f32, s32, Actor**);
 s32 func_80090248(void);
 s32 func_80090270(void);
 void func_800903D0(f32[3]);
@@ -31,7 +36,8 @@ void func_80090590(s32, f32*);
 void func_80090658(s32);
 void func_800906DC(f32[3]);
 void func_80090708(s32);
+void func_80090768(void*);
 void func_800907C0(f32[3]);
 void func_80090734(s32, f32[3]);
-
+s32 func_80090818();
 #endif
