@@ -7,6 +7,8 @@
 void* func_800DE448(f32* position, f32* arg1, f32 scale, f32* arg3, s32 arg4);
 void func_800DF410(s32 a0);
 void func_800DF41C(s32);
+void func_800DF428(f32);
+void func_800DF440(s32);
 void func_800DF5D8(u32, u32, u32, s32);
 void func_800DF744(s32, s32);
 
