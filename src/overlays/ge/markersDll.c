@@ -859,7 +859,7 @@ GetActorData D_80800090_gemarkersDll[0x490] =
 	/*0x108*/ 0x00000000,
 	/*0x109*/ 0x00000000,
 	/*0x10a*/ 0x00000000,
-	/*0x10b*/ 0x8008A988,
+	/*0x10b*/ 0x00000000,
 	/*0x10c*/ _chjadesnake_entrypoint_0,
 	/*0x10d*/ _chgoldsnakehead_entrypoint_0,
 	/*0x10e*/ _chgoldsnakehead_entrypoint_1,
@@ -1131,7 +1131,7 @@ GetActorData D_80800090_gemarkersDll[0x490] =
 	/*0x218*/ 0x00000000,
 	/*0x219*/ 0x00000000,
 	/*0x21a*/ _chfootwear_entrypoint_0,
-	/*0x21b*/ 0x8008A988, //Reference the duplicate code for the glowbo replacement script
+	/*0x21b*/ _chglowbo_entrypoint_0, //Reference the duplicate code for the glowbo replacement script
 	/*0x21c*/ 0x00000000,
 	/*0x21d*/ 0x00000000,
 	/*0x21e*/ 0x00000000,

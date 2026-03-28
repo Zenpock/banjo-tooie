@@ -981,7 +981,7 @@ u8 func_80801248_gcnewpause(s16* a0, u8* a1, u32 a2) {
 //Draw Page Titles
 void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
 {
-	char* Version = "V.1 .0.1 9"; //I dont know where the kerning option is so I'm doing it manually
+	char* Version = "V.1 .2.0"; //I dont know where the kerning option is so I'm doing it manually
 	if (pauseMenu->DrawPageHeader != 0)
 	{
 		_fxkern_entrypoint_2();

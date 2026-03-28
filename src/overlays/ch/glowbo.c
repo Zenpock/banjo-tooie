@@ -11,7 +11,7 @@ extern u32 D_80801454_chglowbo;
 extern s32 D_80801460_chglowbo[3];
 extern f32 D_8080146C_chglowbo[18];
 extern Vec3s32 D_808014B4_chglowbo;
-extern u32 D_808014C0_chglowbo;
+extern ActorData D_808014C0_chglowbo;
 extern u32 D_80801508_chglowbo;
 extern u32 D_80801540_chglowbo;
 extern u32 D_80801588_chglowbo;
@@ -103,11 +103,13 @@ void func_8080013C_chglowbo(Actor* arg0)
         break;
 
     }
-    _subaddierouteDll_entrypoint_3(arg0, func_80100094(arg0, 1U), arg0->position);
+    //_subaddierouteDll_entrypoint_3(arg0, func_80100094(arg0, 1U), arg0->position);
 }
 
+//update
 void func_808002F4_chglowbo(Actor* arg0)
 {
+    
     glowboStruct* sp74;
     glowboStruct2* sp70;
     f32 gamespeed;
@@ -127,9 +129,11 @@ void func_808002F4_chglowbo(Actor* arg0)
         func_8010D254(GLOWBO_DATA(arg0)->unk0);
         if (arg0->unk70_10 != 1)
         {
+            /*
             switch (arg0->unk70_10)
             {
             case 2:
+                
                 if (_subaddierouteDll_entrypoint_4(arg0) != 0)
                 {
                     if ((func_80090128() != 0) && ((func_8010C500(arg0) != 0) || (func_8010C710(arg0) < 0x9C400)))
@@ -144,6 +148,7 @@ void func_808002F4_chglowbo(Actor* arg0)
                     sp74->unk14 = (u16)sp70->unk6;
                 }
                 _subaddierouteDll_entrypoint_5(arg0, sp70, sp74->unk14, 0.15f, 8.0f, 200.0f);
+                
                 if (func_8010CB84(arg0->position, 0x320) != 0)
                 {
                     sp74->unk10 = (f32)arg0->unk58;
@@ -197,7 +202,7 @@ void func_808002F4_chglowbo(Actor* arg0)
                 }
 
             }
-
+            */
         }
         else
         {
@@ -218,9 +223,10 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
     switch (arg1)
     {
     case 0x95:
-        _subaddierouteDll_entrypoint_1(arg0);
+        //_subaddierouteDll_entrypoint_1(arg0);
         func_8010A5B0(arg0, flag_getValue(FLAG2_64E_UNK));
         break;
+    //Collide with the Glowbo
     case 0x3E:
         _fxsparkle_entrypoint_1(arg0->position, 6U);
         if (arg0->unk74_29) {
@@ -255,7 +261,8 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
     return 1;
 }
 
-u32* chglowbo_entrypoint_0(void) {
+ActorData* chglowbo_entrypoint_0(void) 
+{
     return &D_808014C0_chglowbo;
 }
 
