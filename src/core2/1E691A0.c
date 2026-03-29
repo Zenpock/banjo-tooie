@@ -252,9 +252,9 @@ void func_800901CC(s32 arg0,s32 arg1)
     func_800F66BC(func_800F54E4(),arg0,arg1);
 }
 
-void func_80090200()
+s32 func_80090200()
 {
-    func_800F5310();
+    return func_800F5310();
 }
 
 void func_80090220()

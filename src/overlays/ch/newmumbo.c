@@ -64,7 +64,7 @@ void func_808000DC_chnewmumbo(Actor* arg0, u32 arg1, u32 arg2)
 	arg0->unk74_30 = 1;
 	_subaddiedialog_entrypoint_11(arg0->unk0, arg1, arg2, arg0->position, 0x10U);
 }
-
+//Get Paid Flag
 GameFlag func_8080011C_chnewmumbo(void) {
 
 	if (flag_getValue(0x9C5) == 0) {
@@ -157,15 +157,16 @@ void func_80800264_chnewmumbo(Actor* arg0, s32 arg1) {
 			}
 			func_808000DC_chnewmumbo(arg0, 0x11DAU, 7U);
 			return;
-		case 18:
+		case 0x12:
 			temp_v1->unk1 = 0;
 			func_800EE7F8(arg0->position, &D_808019F4_chnewmumbo);
 			return;
-		case 19:
+		case 0x13:
 			temp_v1->unk2 = 1;
 			temp_v1->unk1 = 0;
 			return;
-		case 14:
+		case 0xE:
+			
 			func_8080009C_chnewmumbo(arg0);
 			func_800904C8(0x8D);
 			func_80090590(0x3C, arg0->position);
@@ -177,8 +178,8 @@ void func_80800264_chnewmumbo(Actor* arg0, s32 arg1) {
 				return;
 			}
 			break;
-		case 10:
-		case 11:
+		case 0xA:
+		case 0xB:
 			temp_v1->unk1 = 1;
 			temp_v1->unk2 = 0;
 			func_8080009C_chnewmumbo(arg0);
@@ -272,7 +273,7 @@ void func_8080073C_chnewmumbo(Actor* arg0, s32 arg1)
 	{
 		if (arg1 != 0)
 		{
-			func_800F7B9C(_plsu_entrypoint_1(1), 0x8DU);
+			//func_800F7B9C(_plsu_entrypoint_1(1), 0x8DU);
 		}
 		func_800F8300(func_800F54E4(), 2, arg0->position);
 		arg0->unk64_19 = 1;
@@ -353,14 +354,16 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 	{
 		func_800D1824(0x48);
 	}
-	if (func_8010D278() == 0xD)
+
+	if (func_8010D278() == TRANSFORM_D_MUMBO)
 	{
 		func_8010D254(sp4C);
+		/*
 		temp_v0 = _plsu_entrypoint_1(1);
 		if (func_800F6D24(temp_v0) != 0)
 		{
 			func_800F8804(temp_v0, sp4C);
-		}
+		}*/
 	}
 	if (sp5C->unk0 == 0)
 	{
@@ -586,11 +589,15 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 		if ((func_800EFED0(D_80801AFC_chnewmumbo, D_80801B08_chnewmumbo, sp60) != 0) && (func_80090248() != 0))
 		{
 			func_8010D254(sp38);
-			func_800F7B9C(_plsu_entrypoint_1(1), 0x3DU);
-			sp5C->unk0 = 0U;
-			func_80800264_chnewmumbo(arg0, 0x10);
-			func_800EE7F8(arg0->position, sp38);
-			func_808007B0_chnewmumbo(arg0);
+			//Try and find BK and if it can't dont do any of these things
+			if (func_8010D278() == TRANSFORM_D_MUMBO && _plsu_entrypoint_1(1) != -1)
+			{
+				func_800F7B9C(_plsu_entrypoint_1(1), 0x3DU);
+				sp5C->unk0 = 0U;
+				func_80800264_chnewmumbo(arg0, 0x10);
+				func_800EE7F8(arg0->position, sp38);
+				func_808007B0_chnewmumbo(arg0);
+			}
 			return;
 		}
 		break;
@@ -744,7 +751,8 @@ void func_80801760_chnewmumbo(Actor* arg0)
 	func_800EE7F8(arg0->position, &D_80801A00_chnewmumbo);
 	arg0->scale = 0.5f;
 	_suexpression_entrypoint_7(arg0, 1U, 0x10U);
-	if (func_8010D278() == 0xD)
+	// If we are already mumbo or if there is more than 1 character in this room and we're not clockworks
+	if (func_8010D278() == TRANSFORM_D_MUMBO || (func_8008FD48() != TRANSFORM_11_CLOCKWORK && func_80090200() > 1))
 	{
 		sp2C->unk0 = 1;
 		func_80800264_chnewmumbo(arg0, 0xF);
@@ -752,6 +760,7 @@ void func_80801760_chnewmumbo(Actor* arg0)
 	else
 	{
 		sp2C->unk0 = 0;
+		//If we have paid mumbo
 		if ((flag_getValue(func_8080011C_chnewmumbo()) != 0) || (_glcutDll_entrypoint_20() != 0))
 		{
 			func_800EE7F8(arg0->position, &D_808019F4_chnewmumbo);
