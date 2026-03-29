@@ -20,7 +20,7 @@ void func_8008F938(s32 arg0)
     func_800F4A00(func_800F54E4(),arg0);
 }
 
-void func_8008F964(s32 arg0)
+void func_8008F964(f32* arg0)
 {
     func_800F4A2C(func_800F54E4(),arg0);
 }
@@ -35,7 +35,7 @@ void func_8008F9C4(s32 arg0,s32 arg1)
     func_800F4A8C(func_800F54E4(),arg0,arg1);
 }
 
-void func_8008F9F8(s32 arg0,f32 arg1)
+void func_8008F9F8(f32* arg0,f32 arg1)
 {
     func_800F4AC0(func_800F54E4(),arg0,arg1);
 }
@@ -45,9 +45,9 @@ void func_8008FA2C(s32 arg0,s32 arg1)
     func_800F4B8C(func_800F54E4(),arg0,arg1);
 }
 
-void func_8008FA60(s32 arg0,s32 arg1)
+s32 func_8008FA60(s32 arg0,s32 arg1)
 {
-    func_800F4BB8(func_800F54E4(),arg0,arg1);
+    return func_800F4BB8(func_800F54E4(),arg0,arg1);
 }
 
 void func_8008FA94(s32 arg0,s32 arg1)
@@ -113,12 +113,13 @@ void func_8008FD20()
     func_800F5378(func_800F54E4());
 }
 
+//Get Transformation state of active character
 TransformationId func_8008FD48()
 {
     return func_800F5410(func_800F54E4());
 }
 
-s32 func_8008FD70()
+AllowedTransformation func_8008FD70()
 {
     return func_800F543C(func_800F54E4());
 }
@@ -148,7 +149,7 @@ void func_8008FE3C(s32 arg0)
     func_800F57F0(func_800F54E4(),arg0);
 }
 
-void func_8008FE68(s32 arg0)
+void func_8008FE68(f32* arg0)
 {
     func_800F5A00(func_800F54E4(),arg0);
 }
@@ -173,7 +174,7 @@ void func_8008FF18()
     func_800F5B0C(func_800F54E4());
 }
 
-void func_8008FF40(s32 arg0)
+void func_8008FF40(f32* arg0)
 {
     func_800F5B38(func_800F54E4(),arg0);
 }
@@ -205,9 +206,9 @@ f32 func_80090010()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_80090038.s")
 
-void func_80090080()
+s32 func_80090080()
 {
-    func_800F5FA8(func_800F54E4());
+    return func_800F5FA8(func_800F54E4());
 }
 
 void func_800900A8()
@@ -395,7 +396,7 @@ void func_800907C0(f32* arg0)
     func_800F8418(func_800F54E4(),arg0);
 }
 
-void func_800907EC(s32 arg0)
+void func_800907EC(TransformationId arg0)
 {
     func_800F8730(func_800F54E4(),arg0);
 }

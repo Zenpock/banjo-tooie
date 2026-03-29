@@ -41,7 +41,7 @@ typedef enum
 void func_800F497C(s32);
 void func_800F49D4(s32 arg0, void* arg1, s32 arg2);
 void func_800F4A58(s32,s32,f32);
-void func_800F4AC0(u32, void*, f32);
+void func_800F4AC0(u32, f32*, f32);
 s32 func_800F4B4C(s32);
 s32 func_800F4B8C(u32, u32, s32);
 s32 func_800F4BB8(u32, u32, s32);
@@ -70,12 +70,14 @@ s32 func_800F693C(s32);
 s32 func_800F6D24(s32);
 s32 func_800F6DE0(f32*);
 s32 func_800F65D0(s32);
+s32 func_800F71D4(u32);
 void func_800F7700(u32, s32, f32*);
 //The moving object is moved towards/away from the target
 void func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
 void func_800F7B9C(s32, u32);
 void func_800F7BC8(s32, s32, Unk80132ED0*);
 void func_800F7CF4(s32, s32, f32*);
+void func_800F7F50(u32, f32*, f32*, f32, s32, s32);
 s32 func_800F8004(s32);
 s32 func_800F8088(s16);
 void func_800F80E4(s32, u32);

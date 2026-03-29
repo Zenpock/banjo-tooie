@@ -127,7 +127,7 @@ void func_80800264_chnewmumbo(Actor* arg0, s32 arg1) {
 			func_80800210_chnewmumbo((s32*)arg0);
 			return;
 		case 5:
-			func_8080073C_chnewmumbo(arg0, func_80090178(1));
+			func_8080073C_chnewmumbo(arg0, func_80090178(ALLOW_BK));
 			func_80800000_chnewmumbo(arg0, 2, 1);
 			return;
 		case 6:
@@ -327,9 +327,6 @@ void func_80800898_chnewmumbo(Actor* arg0)
 	}
 }
 
-#ifndef NON_MATCHING
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newmumbo/func_8080092C_chnewmumbo.s")
-#else
 void func_8080092C_chnewmumbo(Actor* arg0)
 {
 	f32 sp6C[3] = D_80801AD4_chnewmumbo;
@@ -376,13 +373,13 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 	case 19:
 		switch (func_8008FD70())
 		{
-		case 0x1:
+		case ALLOW_BK:
 			if (!(arg0->unk74_30) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x2EEU, 0x5AU, 6) != 0)) {
 				func_80800264_chnewmumbo(arg0, 4);
 			}
 			return;
-		case 0x200:
-		case 0x400:
+		case ALLOW_BANJO:
+		case ALLOW_KAZOOIE:
 			if (!(arg0->unk74_30) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x2EEU, 0x5AU, 6) != 0)) {
 				func_80800000_chnewmumbo(arg0, 2, 1);
 				func_808000DC_chnewmumbo(arg0, 0x11EBU, 0xFU);
@@ -403,9 +400,9 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 		}
 		switch (func_8008FD70())
 		{
-		case 0x1:
-		case 0x200:
-		case 0x400:
+		case ALLOW_BK:
+		case ALLOW_BANJO:
+		case ALLOW_KAZOOIE:
 			if (_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0x1F4U, 0x5AU, 6) != 0)
 			{
 				func_80800264_chnewmumbo(arg0, 2);
@@ -466,11 +463,11 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 		{
 			switch (func_8008FD70())
 			{
-			case 0x1:
+			case ALLOW_BK:
 				func_80800264_chnewmumbo(arg0, 7);
 				return;
-			case 0x200:
-			case 0x400:
+			case ALLOW_BANJO:
+			case ALLOW_KAZOOIE:
 				func_808007B0_chnewmumbo(arg0);
 				func_808000DC_chnewmumbo(arg0, 0x11EBU, 0xFU);
 				func_80800264_chnewmumbo(arg0, 0xB);
@@ -627,15 +624,15 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 	case 11:
 		switch (func_8008FD70())
 		{
-		case 0x1:
+		case ALLOW_BK:
 			if (!(arg0->unk74_30) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x2EEU, 0x5AU, 6) != 0))
 			{
 				func_80800264_chnewmumbo(arg0, 3);
 				return;
 			}
 			break;
-		case 0x200:
-		case 0x400:
+		case ALLOW_BANJO:
+		case ALLOW_KAZOOIE:
 			if (!(arg0->unk74_30) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x2EEU, 0x5AU, 6) != 0))
 			{
 				func_80800000_chnewmumbo(arg0, 2, 1);
@@ -646,7 +643,6 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 		break;
 	}
 }
-#endif
 
 void func_808014FC_chnewmumbo(Actor* arg0, s32 arg1, s32 arg2)
 {

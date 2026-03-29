@@ -1397,9 +1397,9 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
 
         case 25:
             temp_v0 = func_8008FD70();
-            if (temp_v0 != 1)
+            if (temp_v0 != ALLOW_BANJO)
             {
-                if (temp_v0 == 0x4000)
+                if (temp_v0 == ALLOW_DETONATOR)
                 {
                     func_808023B4_chhandcart(arg0, 0xFA9, 0xB);
                     break;

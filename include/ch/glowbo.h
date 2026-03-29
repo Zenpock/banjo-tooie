@@ -73,5 +73,5 @@ typedef struct {
 
 void func_80800000_chglowbo(Actor* arg0);
 void func_80801258_chglowbo(Actor*);
-
+Actor* _chglowbo_entrypoint_4();
 #endif

@@ -45,7 +45,7 @@ s32 func_80800000_chlagoonufoext(Actor* arg0, s32 arg1, s32 arg2)
         func_808002A4_chlagoonufoext(arg0);
         return 1;
     case 0x95:
-        if ((flag_getValue(FLAG3_9F0_UNK) != 0) && (func_80090178(1) != 0) && (func_800EA090() == 9))
+        if ((flag_getValue(FLAG3_9F0_UNK) != 0) && (func_80090178(ALLOW_BK) != 0) && (func_800EA090() == 9))
         {
             temp_v0 = func_800F54E4();
             func_800F608C(temp_v0, 1);

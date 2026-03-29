@@ -47,9 +47,9 @@ void func_800F4A00(s32 arg0)
     _badrone_entrypoint_12(D_80135490[arg0]);
 }
 
-void func_800F4A2C(s32 arg0)
+void func_800F4A2C(s32 arg0,f32* arg1)
 {
-    _badrone_entrypoint_13(D_80135490[arg0]);
+    _badrone_entrypoint_13(D_80135490[arg0],arg1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F4A58.s")
@@ -161,7 +161,7 @@ s32 func_800F5410(s32 arg0)
     return func_800A3274(D_80135490[arg0]);
 }
 
-s32 func_800F543C(s32 arg0)
+AllowedTransformation func_800F543C(s32 arg0)
 {
     return 1 << (func_800A3274(D_80135490[arg0]) + 0x1F);
 }
@@ -574,9 +574,9 @@ void func_800F6E80(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F7180.s")
 
-void func_800F71D4(s32 arg0)
+s32 func_800F71D4(u32 arg0)
 {
-    func_8008E37C(D_80135490[arg0]);
+    return func_8008E37C(D_80135490[arg0]);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F7200.s")

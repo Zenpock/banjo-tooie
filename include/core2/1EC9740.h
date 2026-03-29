@@ -6,7 +6,7 @@
 void func_800EFE50(f32*, void*, void*, f32);
 s32 func_800EFED0(f32*, f32*, f32*);
 s32 position_isWithinRangeOf(f32*, f32, f32[3]);
-void func_800F0064(s32, s32, f32*);
+s32 func_800F0064(f32*, f32, f32*);
 
 
 #endif 
