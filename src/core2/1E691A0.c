@@ -119,7 +119,8 @@ TransformationId func_8008FD48()
     return func_800F5410(func_800F54E4());
 }
 
-AllowedTransformation func_8008FD70()
+//Return the bit mask for the Allow transformation value for the active character
+s32 func_8008FD70()
 {
     return func_800F543C(func_800F54E4());
 }
