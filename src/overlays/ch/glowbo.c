@@ -2,22 +2,168 @@
 
 #define GLOWBO_DATA(arg0) ((GlowboActorData*)(arg0->actorData))
 
-extern u32 D_808013B0_chglowbo;
-extern u32 D_80801420_chglowbo;
-extern u32 D_80801430_chglowbo;
-extern u32 D_8080143C_chglowbo;
-extern u32 D_80801448_chglowbo;
-extern u32 D_80801454_chglowbo;
-extern s32 D_80801460_chglowbo[3];
-extern f32 D_8080146C_chglowbo[18];
-extern Vec3s32 D_808014B4_chglowbo;
-extern ActorData D_808014C0_chglowbo;
-extern u32 D_80801508_chglowbo;
-extern u32 D_80801540_chglowbo;
-extern u32 D_80801588_chglowbo;
-extern u32 D_808015D0_chglowbo;
-extern f32 D_80801618_chglowbo;
-extern u32 _chglowbo_entrypoint_5;
+f32 D_808013B0_chglowbo[] = {0,0,0.5f,1.0f,1.0f,1.0f,0.0f};
+s32 D_808013C8_chglowbo[] = {0,0,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F666666,0x02130000,0x3F333333,0x02120000 };
+u32 D_80801420_chglowbo[] = { 0x00130661 ,0x001655F0 ,0x000105DC ,0x09C40000 };
+u32 D_80801430_chglowbo[] = { 0x001304D5 ,0x00161770 ,0x00000000 };
+u32 D_8080143C_chglowbo[] = { 0x00130402 ,0x00162EE0 ,0x00000000 };
+u32 D_80801448_chglowbo[] = { 0x00130402 ,0x00166590 ,0x00000000 };
+u32 D_80801454_chglowbo[] = {0x001304DD ,0x001661A8,0x00000000};
+s32 D_80801460_chglowbo[3] = { 0x000000FF ,0x00000060 ,0x00000060 };
+f32 D_8080146C_chglowbo[18] = {400.0f,200.0f,200.0f,230.0f,230.0f ,260.0f ,260.0f,290.0f,290.0f,320.0f,320.0f,350.0f,350.0f,380.0f,380.0f,410.0f,410.0f,300.0f };
+Vec3s32 D_808014B4_chglowbo = { 0x3F800000 ,0xBB03126F,0x3EB33333 };
+
+void func_8080013C_chglowbo(Actor*);
+void func_808002F4_chglowbo(Actor*);
+s32 func_80800880_chglowbo(Actor*, s32, s32);
+void func_80800A48_chglowbo(Actor*);
+void func_80800B10_chglowbo(Actor*);
+void func_80800E28_chglowbo(Actor*);
+void func_80800F64_chglowbo(Actor*);
+void func_80801118_chglowbo(Actor*, s32);
+s32 func_8080115C_chglowbo(Actor*, s32, u32);
+ActorData D_808014C0_chglowbo = {
+        /*0x0*/ 0x39,
+        /*0x2*/ 0x21B,
+        /*0x4*/ 0x766,
+        /*0x6*/ 0x2,
+        /*0x8*/ D_808013C8_chglowbo,
+        /*0xC*/ func_808002F4_chglowbo,
+        /*0x10*/ func_80105834,
+        /*0x14*/ func_80101870,
+        /*0x18*/ 0x1388,
+        /*0x1A*/ 0,
+        /*0x1C*/ 1.5f,
+        /*0x20*/ 0,
+        /*0x22*/ 0,
+        /*0x24*/ 0x4,
+        /*0x26*/ 0x144,
+        /*0x28*/ 0,
+        /*0x2C*/ func_80108ED0,
+        /*0x30*/ 0x18,
+        /*0x32*/ 0xC,
+        /*0x34*/ func_8080013C_chglowbo,
+        /*0x38*/ func_80107C2C,
+        /*0x3C*/ 0x8800,
+        /*0x3E*/ 0x3000,
+        /*0x40*/ func_80800880_chglowbo,
+        /*0x44*/ 0,
+        /*0x46*/ 0,
+        /*0x48*/ 0,
+};
+ u32 D_80801508_chglowbo[] = { 0x001D09E4 ,0x00220026 ,0x00330019 ,0x00140027 ,0x000000C8 ,0x000000F0 ,0x00161000 ,0x00150033 ,0x0099002B ,0x00330066,0x002CFFCE,0x0028FFCE,0x00320050,0x00320000 };
+ ActorData D_80801540_chglowbo = {
+     /*0x0*/ 0x1FF,
+     /*0x2*/ 0x29F,
+     /*0x4*/ 0x766,
+     /*0x6*/ 0x4,
+     /*0x8*/ D_808013C8_chglowbo,
+     /*0xC*/ func_80800B10_chglowbo,
+     /*0x10*/ func_80105834,
+     /*0x14*/ func_80101870,
+     /*0x18*/ 0,
+     /*0x1A*/ 0,
+     /*0x1C*/ 1.5f,
+     /*0x20*/ 0,
+     /*0x22*/ 0,
+     /*0x24*/ 0x0,
+     /*0x26*/ 0x144,
+     /*0x28*/ 0,
+     /*0x2C*/ 0,
+     /*0x30*/ 0x18,
+     /*0x32*/ 0x0,
+     /*0x34*/ func_80800A48_chglowbo,
+     /*0x38*/ func_80107C2C,
+     /*0x3C*/ 0x8000,
+     /*0x3E*/ 0x0002,
+     /*0x40*/ 0,
+     /*0x44*/ 0,
+     /*0x46*/ 0,
+     /*0x48*/ 0,
+ };
+ ActorData D_80801588_chglowbo = {
+     /*0x0*/ 0x1FF,
+     /*0x2*/ 0x523,
+     /*0x4*/ 0x766,
+     /*0x6*/ 0x4,
+     /*0x8*/ D_808013C8_chglowbo,
+     /*0xC*/ func_80800B10_chglowbo,
+     /*0x10*/ func_80105834,
+     /*0x14*/ func_80101870,
+     /*0x18*/ 0,
+     /*0x1A*/ 0,
+     /*0x1C*/ 1.5f,
+     /*0x20*/ 0,
+     /*0x22*/ 0,
+     /*0x24*/ 0,
+     /*0x26*/ 0x144,
+     /*0x28*/ 0,
+     /*0x2C*/ 0,
+     /*0x30*/ 0x18,
+     /*0x32*/ 0,
+     /*0x34*/ func_80800A48_chglowbo,
+     /*0x38*/ func_80107C2C,
+     /*0x3C*/ 0x8000,
+     /*0x3E*/ 0x0002,
+     /*0x40*/ 0,
+     /*0x44*/ 0,
+     /*0x46*/ 0,
+     /*0x48*/ 0,
+ };
+ ActorData D_808015D0_chglowbo = {
+     /*0x0*/ 0x200,
+     /*0x2*/ 0x2A0,
+     /*0x4*/ 0x766,
+     /*0x6*/ 0x8,
+     /*0x8*/ D_808013C8_chglowbo,
+     /*0xC*/ func_80800F64_chglowbo,
+     /*0x10*/ func_80105834,
+     /*0x14*/ func_80801118_chglowbo,
+     /*0x18*/ 0,
+     /*0x1A*/ 0,
+     /*0x1C*/ 1.5f,
+     /*0x20*/ 0,
+     /*0x22*/ 0,
+     /*0x24*/ 0x4,
+     /*0x26*/ 0x104,
+     /*0x28*/ 0,
+     /*0x2C*/ 0,
+     /*0x30*/ 0,
+     /*0x32*/ 0,
+     /*0x34*/ func_80800E28_chglowbo,
+     /*0x38*/ func_80107C2C,
+     /*0x3C*/ 0x8000,
+     /*0x3E*/ 0x0002,
+     /*0x40*/ func_8080115C_chglowbo,
+     /*0x44*/ 0,
+     /*0x46*/ 0,
+     /*0x48*/ 0,
+ };
+ f32 D_80801618_chglowbo[] = {0,-26.0f,0,0,0,0};
+
+
+u8 D_GlOWBOREWARDNAMES[] = 
+    {
+        0x2F, //MT MUMBO
+        0x30, //MT Humba
+        0x31, //GGM MUMBO
+        0x32, //GGM Humba
+        0x33, //WW MUMBO
+        0x34, //WW Humba
+        0x35, //JRL MUMBO
+        0x36, //JRL Humba
+        0x37, //TDL MUMBO
+        0x38, //TDL Humba
+        0x39, //GI MUMBO
+        0x3A, //GI Humba
+        0x3B, //HFP MUMBO
+        0x3C, //HFP Humba
+        0x3D, //CCL MUMBO
+        0x3E, //CCL Humba
+        0x3F, //IOH MUMBO
+        0x40  //IOH Humba
+    
+};
 
 void func_80800000_chglowbo(Actor* arg0) 
 {
@@ -228,6 +374,13 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
         break;
     //Collide with the Glowbo
     case 0x3E:
+
+        //Spawn text header to show what reward you get from the glowbo
+        {
+            _chintrotext_entrypoint_1(0x18BB, D_GlOWBOREWARDNAMES[sp2C->unk0], 0, 1);
+            _fxsparkle_entrypoint_1(arg0->position, 0);        
+        }
+
         _fxsparkle_entrypoint_1(arg0->position, 6U);
         if (arg0->unk74_29) {
             _subaddiedialog_entrypoint_11(arg0->unk0, 0xD03U, 0U, arg0->position, 0U);
@@ -369,11 +522,11 @@ void func_80800B10_chglowbo(Actor* arg0)
     }
 }
 
-u32* chglowbo_entrypoint_1(void) {
+ActorData* chglowbo_entrypoint_1(void) {
     return &D_80801540_chglowbo;
 }
 
-u32* chglowbo_entrypoint_2(void) {
+ActorData* chglowbo_entrypoint_2(void) {
     return &D_80801588_chglowbo;
 }
 

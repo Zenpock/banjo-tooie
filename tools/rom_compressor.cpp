@@ -327,6 +327,7 @@ int main(int argc, const char** argv) {
             char* ovl_start = decompressed_rom_contents.data() + overlay.rom_start.value;
             char* ovl_end = decompressed_rom_contents.data() + overlay.rom_end.value;
             size_t ovl_size = ovl_end - ovl_header_start;
+            
 
             char* base_ovl_header_start = decompressed_baserom_contents.data() + ovl_header_start_address;
 
@@ -343,8 +344,19 @@ int main(int argc, const char** argv) {
                 // Set the compressed flag(?)
                 *reinterpret_cast<uint32_t*>(ovl_header_start + ovl_header_offsets::flags) |= byteswap32(0x80);
 
+                std::string overlayHeaderName = "CodeOutput/" + overlay.name + "_Header.bin";
+                std::ofstream overlayHeaderFile{ overlayHeaderName.c_str(), std::ios_base::binary };
+                overlayHeaderFile.write(decompressed_rom_contents.data() + ovl_header_start_address, 0x10);
+
                 // Apply the xors to the overlay
                 apply_xors(i + 1, decompressed_rom_contents.data(), ovl_header_start, ovl_start, ovl_end - ovl_header_start);
+
+                std::string overlayName = "CodeOutput/" + overlay.name + ".bin";
+                std::ofstream overlayFile{ overlayName.c_str(), std::ios_base::binary };
+                overlayFile.write(decompressed_rom_contents.data() + ovl_header_start_address + 0x10, overlay.rom_end.value - (ovl_header_start_address + 0x10));
+                fmt::print(stderr, "Attempt to write file {} OverlayRomStart{} OverlayRomEnd{} OverlayHeader {}\n", overlayName, overlay.rom_start.value, overlay.rom_end.value, ovl_header_start_address);
+
+                
 
                 // Write the header
                 compressed_rom.write(ovl_header_start, 0x10);

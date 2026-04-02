@@ -80,7 +80,7 @@ GameFlag func_8080011C_chnewmumbo(void) {
 			return FLAG_381_PAID_GLOWBO_MUMBO_WW;
 		case MAP_EF_JRL_MUMBO:
 			return FLAG_382_PAID_GLOWBO_MUMBO_JRL;
-		case MAP_171_GGM_MUMBO:
+		case MAP_171_TDL_MUMBO:
 			return FLAG_383_PAID_GLOWBO_MUMBO_TDL;
 		case MAP_172_GI_MUMBO:
 			return FLAG_387_PAID_GLOWBO_MUMBO_GI;
@@ -150,11 +150,12 @@ void func_80800264_chnewmumbo(Actor* arg0, s32 arg1) {
 			_suexpression_entrypoint_12(func_80100094(arg0, 1U), 60.0f, 0.0f);
 			return;
 		case 8:
+			/* Disable the ability to pay
 			if (func_800D1A04(0x48) > 0)
 			{
 				func_808000DC_chnewmumbo(arg0, 0x11D7U, 0x46U);
 				return;
-			}
+			}*/
 			func_808000DC_chnewmumbo(arg0, 0x11DAU, 7U);
 			return;
 		case 0x12:
@@ -751,6 +752,49 @@ void func_80801760_chnewmumbo(Actor* arg0)
 	func_800EE7F8(arg0->position, &D_80801A00_chnewmumbo);
 	arg0->scale = 0.5f;
 	_suexpression_entrypoint_7(arg0, 1U, 0x10U);
+
+	if (1)
+	{
+		int GlowboFlag=0;
+		switch (func_800EA05C())
+		{
+		case MAP_B7_MT_MUMBO:
+			GlowboFlag = 1;
+			break;
+		case MAP_D9_GGM_MUMBO:
+			GlowboFlag = 3;
+			break;
+		case MAP_176_WW_MUMBO:
+			GlowboFlag = 5;
+			break;
+		case MAP_EF_JRL_MUMBO:
+			GlowboFlag = 7;
+			break;
+		case MAP_171_TDL_MUMBO:
+			GlowboFlag = 9;
+			break;
+		case MAP_172_GI_MUMBO:
+			GlowboFlag = 0xB;
+			break;
+		case MAP_134_HP_MUMBO:
+			GlowboFlag = 0xD;
+			break;
+		case MAP_13E_CCL_MUMBO:
+		case MAP_13F_CCL_MINGY_JONGO:
+			GlowboFlag = 0xF;
+			break;
+		case MAP_156_IOH_MUMBO:
+			GlowboFlag = 0x11;
+			break;
+		}
+		if (func_800D0B68(GlowboFlag, 3))
+		{
+			flag_setValueTrue(func_8080011C_chnewmumbo());
+		}
+	}
+
+
+
 	// If we are already mumbo or if there is more than 1 character in this room and we're not clockworks
 	if (func_8010D278() == TRANSFORM_D_MUMBO || (func_8008FD48() != TRANSFORM_11_CLOCKWORK && func_80090200() > 1))
 	{

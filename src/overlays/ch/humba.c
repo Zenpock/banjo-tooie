@@ -704,19 +704,21 @@ void func_808015DC_chhumba(Actor* arg0)
             {
                 if (arg0->unk74_29)
                 {
+                    /* Disable Payment
                     if (func_800D1A04(0x54) >= func_808007EC_chhumba(arg0))
                     {
                         func_80800338_chhumba(arg0, 0x11BE, 0x4E);
                         return;
-                    }
+                    }*/
                     func_80800338_chhumba(arg0, 0x11BF, 0xF);
                     return;
                 }
+                /* Disable Payment
                 if (func_800D1A04(0x48) >= func_808007EC_chhumba(arg0))
                 {
                     func_80800338_chhumba(arg0, 0x11B0, 0x4E);
                     return;
-                }
+                }*/
                 func_80800338_chhumba(arg0, 0x11B3, 0xF);
                 return;
             }
@@ -912,6 +914,44 @@ void func_80801F74_chhumba(Actor* arg0)
     Prop* sp24;
     enum map_e currentMap;
 
+    if (1)
+    {
+        s32 GlowboFlag=0;
+        switch (func_800EA05C())
+        {
+        case MAP_B6_MT_WUMBAS:
+            GlowboFlag = 0x2;
+            break;
+        case MAP_E9_GGM_WUMBA:
+            GlowboFlag = 0x4;
+            break;
+        case MAP_D5_WW_WUMBA:
+            GlowboFlag = 0x6;
+            break;
+        case MAP_120_JRL_WUMBA:
+            GlowboFlag = 0x8;
+            break;
+        case MAP_11E_TDL_SMALL_WUMBA:
+        case MAP_122_TDL_BIG_WUMBA:
+            GlowboFlag = 0xA;
+            break;
+        case MAP_11F_GI_WUMBA:
+            GlowboFlag = 0xC;
+            break;
+        case MAP_135_HP_WUMBA:
+            GlowboFlag = 0xE;
+            break;
+        case MAP_140_CCL_WUMBA:
+            GlowboFlag = 0x10;
+            break;
+        }
+
+        if (func_800D0B68(GlowboFlag, 3) || (GlowboFlag == 0 && flag_getValue(FLAG_056_STATE_MEGA_GLOWBO)))
+        {
+            flag_setValueTrue((func_8080071C_chhumba(arg0)) + 0xD5);
+        }
+    }
+
     sp24 = _gccubesearch_entrypoint_1(0x226, arg0->position);
     currentMap = func_800EA05C();
     arg0->unk74_7 = 0;
@@ -985,6 +1025,7 @@ void func_808021F4_chhumba(Actor* arg0)
         _suexpression_entrypoint_8(arg0, 1);
     }
 }
+//Humba
 ActorData* chhumba_entrypoint_0(void) {
     return &D_80802738_chhumba;
 }
@@ -996,7 +1037,7 @@ void func_80802234_chhumba(Actor* arg0) {
     }
     arg0->scale = 1.0f;
 }
-
+//Wall
 ActorData* chhumba_entrypoint_1(void) {
     return &D_80802780_chhumba;
 }

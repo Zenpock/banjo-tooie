@@ -8206,15 +8206,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020427F0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020427F0, c, glowbo]
-      - [0x02043B50, .rodata, glowbo]
-      - [0x02043BA0, data, glowbo]
-      - [0x02043E20, bss, glowbo]
+      - [auto, c, glowbo]
   - name: chhandcart_header
     dir: overlays/chhandcart
     type: bin

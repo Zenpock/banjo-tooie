@@ -3,6 +3,8 @@
 
 #include "common.h"
 #include "ch/baddiesetup.h"
+#include "ch/introtext.h"
+
 #include "fx/sparkle.h"
 #include "fx/twinkle.h"
 
@@ -38,6 +40,7 @@
 #include "core2/1ED8C80.h"
 #include "core2/1EDAEA0.h"
 #include "core2/1EDB4D0.h"
+#include "core2/1EDED00.h"
 
 #include "core2/1EE1510.h"
 #include "core2/1EE27C0.h"
@@ -74,4 +77,5 @@ typedef struct {
 void func_80800000_chglowbo(Actor* arg0);
 void func_80801258_chglowbo(Actor*);
 Actor* _chglowbo_entrypoint_4();
+Actor* _chglowbo_entrypoint_5();
 #endif
