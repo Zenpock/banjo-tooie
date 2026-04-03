@@ -32,47 +32,47 @@
 
 
 Option D_80801FE0_gcnewpause[] = {
-	{0xC,0,0,0,0},
-	{0x0,1,1,0,0},
-	{0x13,2,1,1,0},
-	{0x12,7,5,0xE,0},
-	{0x9E,4,2,0,1}
+	{ICON_C_BANJO,0,0,0,0},
+	{ICON_0_GLOWBO,1,1,0,0},
+	{ICON_13_BLUE_JINJO,2,1,1,0},
+	{ICON_A4_CAULDRON,7,5,0xE,0}, //Open Randomizer
+	{ICON_9E_DEAD_BOTTLES,4,2,0,1}
 };
 Option D_80802000_gcnewpause[] = {
-	{0xC,0,0,0,0},
-	{0x0,1,1,0,0},
-	{0x12,7,5,0xE,0},
-	{0x9E,4,2,0,1}
+	{ICON_C_BANJO,0,0,0,0},
+	{ICON_0_GLOWBO,1,1,0,0},
+	{ICON_A4_CAULDRON,7,5,0xE,0}, //Open Randomizer Menu
+	{ICON_9E_DEAD_BOTTLES,4,2,0,1}
 };
 Option D_80802018_gcnewpause[] = {
-	{0xC,0,0,0,0},
-	{0x13,2,1,1,0},
-	{0x12,7,5,0xE,0},
-	{0x9E,4,2,0,1}
+	{ICON_C_BANJO,0,0,0,0},
+	{ICON_13_BLUE_JINJO,2,1,1,0},
+	{ICON_A4_CAULDRON,7,5,0xE,0}, //Open Randomizer Menu
+	{ICON_9E_DEAD_BOTTLES,4,2,0,1}
 };
 Option D_80802030_gcnewpause[] = {
-	{0xC,0,0,0,0},
-	{0x12,7,5,0xE,0},
-	{0x9E,4,2,0,1}
+	{ICON_C_BANJO,0,0,0,0},
+	{ICON_A4_CAULDRON,7,5,0xE,0}, //Open Randomizer Menu
+	{ICON_9E_DEAD_BOTTLES,4,2,0,1}
 };
 Option D_80802044_gcnewpause[] = {
-	{0xC,0,0,0,0},
-	{0x10,1,3,0x0,1},
-	{0xD,2,4,0,1}
+	{ICON_C_BANJO,0,0,0,0},
+	{ICON_10_MUMBO,1,3,0x0,1},
+	{ICON_D_KAZOOIE,2,4,0,1}
 };
 Option D_80802058_gcnewpause[] = {
-	{0xC,0,0,0,0},
-	{0xD,1,4,0,1}
+	{ICON_C_BANJO,0,0,0,0},
+	{ICON_D_KAZOOIE,1,4,0,1}
 };
 Option D_80802064_gcnewpause[] = {
-	{0xC,0,0,0,0},
-	{0xD,1,4,0,1}
+	{ICON_C_BANJO,0,0,0,0},
+	{ICON_D_KAZOOIE,1,4,0,1}
 };
-Option D_80802200_gcnewpause[] = {
-	{0xD,0x8,0x6,0,0x2},
-	{0xE,0x9,0x7,0x0,0x0},
-	{0x14,0xA,0x8,0x1,0x0},
-	{0x1,0x3,0x1,0xE,0x0}
+Option D_80802200_gcnewpause[] = { //Randomizer Menu
+	{ICON_AE_JINGALING,0x8,0x6,0,0x2}, //Return to Jinjo Village
+	{ICON_6F_JAMJARS,0x9,0x7,0x0,0x0}, //View Moves
+	{ICON_9F_GRUNTY_TIMER,0xA,0x8,0x1,0x3}, //Perish
+	{ICON_1_JIGGY,0x3,0x1,0xE,0x0} //View Totals
 };
 PauseOption D_80802070_gcnewpause[] = {
 	{0x1863,0x1,0x3,D_80802030_gcnewpause},
@@ -567,18 +567,36 @@ void gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3)
 		break;
 
 	case 4: //Handle any Are You Sure Popups/Start Closing Options Page
-		if (D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].AreYouSure == 2 && func_8008FD48() != 0x1) //Ensure We Are Banjo and kazooie Otherwise we cannot use this option
+	{
+		u32 failed = 0;
+		switch (func_800EA05C())
+		{
+			default:
+				break;
+			case MAP_161_CCL_RACE:
+			case MAP_16F_GGM_RACE_1:
+			case MAP_170_GGM_RACE_2:
+			case MAP_DE_WW_DODGEM_1V1:
+			case MAP_DF_WW_DODGEM_1V2:
+			case MAP_E0_WW_DODGEM_1V3:
+			case MAP_124_WW_SAUCER_OF_PERIL:
+			case MAP_13B_WW_CRAZY_CASTLE_SOP:
+			case MAP_13C_WW_STAR_SPINNER_SOP:
+				failed = 1;
+		}
+		if (D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].AreYouSure == 2 && (func_8008FD48() != TRANSFORM_1_BK || failed != 0)) //Ensure We Are Banjo and kazooie Otherwise we cannot use this option
 		{
 			//Play Failure Sound
 			func_800172D4(0x1, 0xF);
 			break;
 		}
-		if (D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].AreYouSure == 3 && func_800D395C() == 0x1) //If we are in a minigame we cannot use this option
+		if (D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].AreYouSure == 3 && (failed !=0)) //If we are in a minigame we cannot use this option
 		{
 			//Play Failure Sound
 			func_800172D4(0x1, 0xF);
 			break;
 		}
+	}
 		if ((D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].AreYouSure == 0) || (pauseMenu->unkE != 0))
 		{
 			if (_gcnewoption_entrypoint_37(arg1, 0))
@@ -757,7 +775,7 @@ void func_80800CE4_gcnewpause(PauseState* pauseMenu, OptionState *arg1, s32 sele
 		pauseMenu->PageIndex = 1;
 		break;
 	case 6: //Return to Jinjo Village
-		func_800A7990(0x142, 0x3, 0x2);
+		func_800A7990(MAP_142_JV_JINJO_VILLAGE, 0x3, 0x2);
 		break;
 	case 7: //View Moves
 		func_808017C8_gcnewpause(pauseMenu, 0xE);
@@ -765,7 +783,14 @@ void func_80800CE4_gcnewpause(PauseState* pauseMenu, OptionState *arg1, s32 sele
 		break;
 	case 8: //Perish
 		pauseMenu->ExitType = 1;
-		bs_setState(func_800F53D0(func_800F54E4()), 0x41);
+		{
+			u32 deathState = 0x41;
+			if (func_8008FD48() == TRANSFORM_9_FIRSTPERSON)
+			{
+				deathState = 0xDC;
+			}
+			bs_setState(func_800F53D0(func_800F54E4()), deathState);
+		}
 		break;
 	}
 
@@ -981,7 +1006,7 @@ u8 func_80801248_gcnewpause(s16* a0, u8* a1, u32 a2) {
 //Draw Page Titles
 void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
 {
-	char* Version = "V.1 .2.0"; //I dont know where the kerning option is so I'm doing it manually
+	char* Version = "V.1 . 2 .0"; //I dont know where the kerning option is so I'm doing it manually
 	if (pauseMenu->DrawPageHeader != 0)
 	{
 		_fxkern_entrypoint_2();
@@ -1166,7 +1191,10 @@ s32 func_80801718_gcnewpause(s32 subPage, s32 movementDirection) {
 		{
 			var_s0 = subPage;
 		}
-
+		if (var_s0 == 0x12) //Check if the next page would be 0x12 and return the current page which indicates you cannot go in that direction
+		{
+			var_s0 = subPage;
+		}
 	}
 	else if (movementDirection > 0) //Moving Right
 	{
@@ -1182,6 +1210,10 @@ s32 func_80801718_gcnewpause(s32 subPage, s32 movementDirection) {
 			var_s0 = subPage;
 		}
 		if (var_s0 == 0x12) //Check if the next page would be 0x12 and return the current page which indicates you cannot go in that direction
+		{
+			var_s0 = subPage;
+		}
+		if (var_s0 == 0x13)
 		{
 			var_s0 = subPage;
 		}

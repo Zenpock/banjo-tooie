@@ -4,6 +4,7 @@
 #include "common.h"
 #include "memory.h"
 #include "maps.h"
+#include "icons.h"
 
 #include "gc/newoption.h"
 #include "su/jiggy.h"

@@ -48,11 +48,11 @@ void func_808000B4_chclockworkmouse(Actor *actor) {
 
     switch (((Unk80100094 *)func_80100094(actor, 0))->unkC.bytes[3]) {
     case 1:
-        _gcgoto_entrypoint_1(0x161, 1);
+        _gcgoto_entrypoint_1(MAP_161_CCL_RACE, 1);
         return;
     case 0:
     case 2:
-        _gcgoto_entrypoint_1(0x136, 0x1F);
+        _gcgoto_entrypoint_1(MAP_136_CCL_CLOUD_CUCKOOLAND, 0x1F);
         return;
     }
 }
