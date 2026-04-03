@@ -36,7 +36,7 @@ BanjoStateId bskazcrouch_entrypoint_0(PlayerState* self, BanjoStateId arg1) {
             arg1 = _bskaz_entrypoint_3(self);
         }
     } else {
-        if ((bakey_pressed(self, BUTTON_B) != 0) && (ability_getValue(0x28) != 0)) {
+        if ((bakey_pressed(self, BUTTON_B) != 0) && (ability_getValue(ABILITY_28_HATCH_EGGS) != 0)) {
             arg1 = BS_STATE_C5;
         }
         if (bakey_pressed(self, BUTTON_A) != 0) {

@@ -127,7 +127,7 @@ int bainput_should_flap_flip(PlayerState *self) {
 
 int bainput_func_80097E74(PlayerState *self) {
     return bakey_held(self, BUTTON_Z) 
-        && ability_getValue(0x22) 
+        && ability_getValue(ABILITY_22_GLIDE) 
         && !func_8008E39C(self);
 }
 
@@ -147,7 +147,7 @@ int bainput_should_dive(PlayerState *self) {
 
 int bainput_func_80097FB8(PlayerState *self) {
     return bakey_pressed(self, BUTTON_B)
-        && ability_getValue(0x1D)
+        && ability_getValue(ABILITY_1D_WING_WHACK)
         && baflag_isFalse(self,BA_FLAG_5_HAS_PECKED)
         && !func_8008E39C(self);
 }

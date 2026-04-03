@@ -395,7 +395,7 @@ s32 sumole_entrypoint_3(Actor* arg0, s32 arg1, Arg2 arg2, MoveData* arg3)
         case 15:
         case 33:
             func_808002E0_sumole(arg0, 2, 1, 2);
-            if (ability_getValue(0x18) != 0)
+            if (ability_getValue(ABILITY_18_UNK) != 0)
             {
                 sumole_entrypoint_2(arg0, 0x11);
                 return 4;

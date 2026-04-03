@@ -125,7 +125,7 @@ void bskazjump_entrypoint_1(PlayerState *self) {
 }
 
 void bskazjump_entrypoint_2(PlayerState *self) {
-    if (ability_getValue(0xA) != 0) {
+    if (ability_getValue(ABILITY_0A_BK_FULL_JUMP_HEIGHT) != 0) {
         func_800C6DA0(0x3C);
     }
     baphysics_reset_gravity(self);
