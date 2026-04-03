@@ -381,7 +381,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
                 func_808002A0_gcsectionskip(temp_v0, arg0);
                 return 0;
             }
-            if ((ability_getValue(ABILITY_1F_SUB_AQUA_EGG_AIM) == 0) || (ability_getValue(ABILITY_2D_EGGS_GRENADE) == 0))
+            if (((ability_getValue(ABILITY_1F_SUB_AQUA_EGG_AIM) == 0) || (ability_getValue(ABILITY_2D_EGGS_GRENADE) == 0)) && sp24 != TRANSFORM_C_SUB)
             {
                 func_80800EF8_gcsectionskip(0x1226, 0x6F);
                 func_808002A0_gcsectionskip(temp_v0, arg0);
