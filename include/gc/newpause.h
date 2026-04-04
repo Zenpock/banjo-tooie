@@ -83,9 +83,16 @@ typedef struct {
 	u8 AbilityId;
 } AbilityCheck;
 
+
 typedef struct {
-	AbilityCheck* checks;
-} AbilityPage;
+	u8 x;
+	u8 y;
+	u8 DialogIndex;
+	//Partial Color Scheme and Full
+	u8 GlowboFlag; 
+	
+	u16 PaidFlag; 
+} FlagCheck;
 
 
 typedef struct {

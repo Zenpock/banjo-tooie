@@ -377,7 +377,7 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
 
         //Spawn text header to show what reward you get from the glowbo
         {
-            _chintrotext_entrypoint_1(0x18BB, D_GlOWBOREWARDNAMES[sp2C->unk0], 0, 1);
+            _chintrotext_entrypoint_1(0x18BB, D_GlOWBOREWARDNAMES[sp2C->unk0-1], 0, 1);
             _fxsparkle_entrypoint_1(arg0->position, 0);        
         }
 

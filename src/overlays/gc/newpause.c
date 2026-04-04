@@ -14,6 +14,7 @@
 #include "core1/1E2D890.h"
 #include "core2/1E691A0.h"
 #include "core2/1E82660.h"
+#include "core2/1E8F430.h"
 #include "core2/1E9A960.h"
 #include "core2/1EA78C0.h"
 #include "core2/1EA0690.h"
@@ -70,9 +71,10 @@ Option D_80802064_gcnewpause[] = {
 };
 Option D_80802200_gcnewpause[] = { //Randomizer Menu
 	{ICON_AE_JINGALING,0x8,0x6,0,0x2}, //Return to Jinjo Village
-	{ICON_6F_JAMJARS,0x9,0x7,0x0,0x0}, //View Moves
+	{ICON_6F_JAMJARS,0x9,0x7,0xE,0x0}, //View Moves
 	{ICON_9F_GRUNTY_TIMER,0xA,0x8,0x1,0x3}, //Perish
-	{ICON_1_JIGGY,0x3,0x1,0xE,0x0} //View Totals
+	{ICON_1_JIGGY,0x3,0x1,0xE,0x0}, //View Totals
+	{ICON_40_HUMBA_WUMBA,0xA,0x7,0x12,0x0} //MUMBO/HUMBA
 };
 PauseOption D_80802070_gcnewpause[] = {
 	{0x1863,0x1,0x3,D_80802030_gcnewpause},
@@ -82,7 +84,7 @@ PauseOption D_80802070_gcnewpause[] = {
 	{0x1867,0x1,0x3,D_80802044_gcnewpause},
 	{0x1868,0x0,0x2,D_80802058_gcnewpause},
 	{0x186E,0x0,0x2,D_80802064_gcnewpause},
-	{0x1863,0x1,0x4,D_80802200_gcnewpause}
+	{0x1863,0x1,0x5,D_80802200_gcnewpause}
 };
 TotalsFlags D_808020A8_gcnewpause[] = {
 	{0x10,0x5},
@@ -235,8 +237,33 @@ AbilityCheck D_BKMovesPage2[] = {
 	{0x8D,0x4C,0x2D,0x11},
 	{0x8D,0x62,0x2E,0x12}
 };
-AbilityCheck* D_80802218_gcnewpause[] = { D_BTMovesPage1,D_BTMovesPage2,D_BKMovesPage1,D_BKMovesPage2};
-u8 abilitySizes[] = {14,14,12,6};
+
+FlagCheck D_MUMBO_HUMBAPAGE[] = {
+	{0x10,0x36,0x2F,0x1,FLAG_37F_PAID_GLOWBO_MUMBO_MT},
+	{0x8D,0x36,0x30,0x2,FLAG_0D6_PAID_GLOWBO_WUMBA_MT},
+	{0x10,0x4C,0x31,0x3,FLAG_380_PAID_GLOWBO_MUMBO_GGM},
+	{0x8D,0x4C,0x32,0x4,FLAG_0D7_PAID_GLOWBO_WUMBA_GGM},
+	{0x10,0x62,0x33,0x5,FLAG_381_PAID_GLOWBO_MUMBO_WW},
+	{0x8D,0x62,0x34,0x6,FLAG_0D8_PAID_GLOWBO_WUMBA_WW},
+	{0x10,0x78,0x35,0x7,FLAG_382_PAID_GLOWBO_MUMBO_JRL},
+	{0x8D,0x78,0x36,0x8,FLAG_0D9_PAID_GLOWBO_WUMBA_JRL},
+	{0x10,0x8E,0x37,0x9,FLAG_383_PAID_GLOWBO_MUMBO_TDL},
+	{0x8D,0x8E,0x38,0xA,FLAG_0DA_PAID_GLOWBO_WUMBA_TDL}
+};
+FlagCheck D_MUMBO_HUMBAPAGE2[] = {
+	{0x10,0x36,0x39,0xB,FLAG_387_PAID_GLOWBO_MUMBO_GI},
+	{0x8D,0x36,0x3A,0xC,FLAG_0DB_PAID_GLOWBO_WUMBA_GI},
+	{0x10,0x4C,0x3B,0xD,FLAG_384_PAID_GLOWBO_MUMBO_HFP},
+	{0x8D,0x4C,0x3C,0xE,FLAG_0DC_PAID_GLOWBO_WUMBA_HFP},
+	{0x10,0x62,0x3D,0xF,FLAG_385_PAID_GLOWBO_MUMBO_CCL},
+	{0x8D,0x62,0x3E,0x10,FLAG_0DD_PAID_GLOWBO_WUMBA_CCL},
+	{0x10,0x78,0x3F,0x11,FLAG_386_PAID_GLOWBO_MUMBO_IoH},
+	{0x8D,0x78,0x40,0x12,FLAG_0DE_PAID_GLOWBO_WUMBA_IoH}
+};
+void* D_80802218_gcnewpause[] = { D_BTMovesPage1,D_BTMovesPage2,D_BKMovesPage1,D_BKMovesPage2,D_MUMBO_HUMBAPAGE,D_MUMBO_HUMBAPAGE2 };
+
+
+u8 elementSizes[] = {14,14,12,6,10,8};
 extern u8 D_8012762D;
 extern u32 D_80127658;
 //Setup Pause Menu
@@ -424,11 +451,41 @@ void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu)
 		func_80801DA0_gcnewpause(pauseMenu, arg0);
 		break;
 	case 3:
+		if (pauseMenu->SubPage == 0x12|| pauseMenu->SubPage == 0x13)
+		{
+			for (index = 0; index < elementSizes[pauseMenu->SubPage - 0xE]; index++)
+			{
+				FlagCheck checkBox = ((FlagCheck*)D_80802218_gcnewpause[pauseMenu->SubPage - 0xE])[index];
+				char* titleString = _gldbstring_entrypoint_1(pauseMenu->movesTextPointer, checkBox.DialogIndex);
+
+				if (flag_getValue(checkBox.PaidFlag))
+				{
+					func_800B7B8C(0x4F, 0xF4, 0x2F);//GREEN
+				}
+				else if (func_800D0B68(checkBox.GlowboFlag, 3))
+				{
+					func_800B7BA4(0.9f);
+					func_800B7B8C(0xFF, 0xFF, 0x0);//YELLOW
+				}
+				else
+				{
+					func_800B7BA4(0.8f);
+					func_800B7B8C(0xFF, 0x44, 0x3F);//RED
+				}
+
+				func_800B798C(checkBox.x, checkBox.y, titleString);
+				_fxdialog_entrypoint_1(checkBox.x, checkBox.y);
+				_fxdialog_entrypoint_2(0.60546875f);
+				_fxdialog_entrypoint_3(&D_80127658, (8.0f * strlen(titleString)) + 3.078125f, 0, 0xFF);
+				func_800B7BA4(1.0f);
+			}
+			break;
+		}
 		if (pauseMenu->SubPage >= 0xE)
 		{
-			for (index = 0; index < abilitySizes[pauseMenu->SubPage - 0xE]; index++)
+			for (index = 0; index < elementSizes[pauseMenu->SubPage - 0xE]; index++)
 			{
-				AbilityCheck ability = D_80802218_gcnewpause[pauseMenu->SubPage - 0xE][index];
+				AbilityCheck ability = ((AbilityCheck*)D_80802218_gcnewpause[pauseMenu->SubPage - 0xE])[index];
 				char* titleString = _gldbstring_entrypoint_1(pauseMenu->movesTextPointer, ability.DialogIndex);
 
 				if (ability_getValue(ability.AbilityId))
@@ -437,6 +494,7 @@ void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu)
 				}
 				else
 				{
+					func_800B7BA4(0.85f);
 					func_800B7B8C(0xFF, 0x44, 0x3F);
 				}
 
@@ -444,6 +502,7 @@ void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu)
 				_fxdialog_entrypoint_1(ability.x, ability.y);
 				_fxdialog_entrypoint_2(0.60546875f);
 				_fxdialog_entrypoint_3(&D_80127658, (8.0f * strlen(titleString)) + 3.078125f, 0, 0xFF);
+				func_800B7BA4(1.0f);
 			}
 		}
 		break;
@@ -649,6 +708,7 @@ void gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3)
 		if (pauseMenu->unk13 != 0) //Exit Randomizer Options
 		{
 			pauseMenu->ActivePauseMenuVariant = pauseMenu->unk13 - 1;
+			pauseMenu->LastOptionSelected = 0;
 			pauseMenu->unk13 = 0;
 			pauseMenu->PageIndex = 1;
 			break;
@@ -778,7 +838,7 @@ void func_80800CE4_gcnewpause(PauseState* pauseMenu, OptionState *arg1, s32 sele
 		func_800A7990(MAP_142_JV_JINJO_VILLAGE, 0x3, 0x2);
 		break;
 	case 7: //View Moves
-		func_808017C8_gcnewpause(pauseMenu, 0xE);
+		func_808017C8_gcnewpause(pauseMenu, new_var[selectedOption].SubOption);
 		func_80800534_gcnewpause(pauseMenu, 3U);
 		break;
 	case 8: //Perish
@@ -859,13 +919,18 @@ s32 func_80800F2C_gcnewpause(PauseState* arg1, u32 arg2, u32 arg3)
 		return func_80800FA8_gcnewpause(arg3);
 	case 2:
 		return func_80801AF8_gcnewpause(arg3);
+		//BT MOVE PAGES
 	case 0xE:
 	case 0xF:
 		return 0;
+		//BK MOVE PAGES
 	case 0x10:
 	case 0x11:
 		return 0;
-
+		//MUMBO/HUMBA PAGES
+	case 0x12: 
+	case 0x13:
+		return 0;
 	default:
 		return func_808019A4_gcnewpause(func_808016A4_gcnewpause(arg2), arg3);
 	}
@@ -1015,8 +1080,10 @@ void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
 			_fxkern_entrypoint_1(a1, pauseMenu->pageTitleOffset + 0x20, _gldbstring_entrypoint_1(pauseMenu->textPointer, pauseMenu->SubPage));
 		else if (pauseMenu->SubPage < 0x10) //BT
 			_fxkern_entrypoint_1(a1, pauseMenu->pageTitleOffset + 0x20, _gldbstring_entrypoint_1(pauseMenu->textPointer, 0xE));
-		else //BK
+		else if (pauseMenu->SubPage < 0x12)//BK
 			_fxkern_entrypoint_1(a1, pauseMenu->pageTitleOffset + 0x20, _gldbstring_entrypoint_1(pauseMenu->textPointer, 0xF));
+		else //MUMBO/HUMBA
+			_fxkern_entrypoint_1(a1, pauseMenu->pageTitleOffset + 0x20, _gldbstring_entrypoint_1(pauseMenu->textPointer, 0x10));
 	}
 	else
 	{
@@ -1191,7 +1258,7 @@ s32 func_80801718_gcnewpause(s32 subPage, s32 movementDirection) {
 		{
 			var_s0 = subPage;
 		}
-		if (var_s0 == 0x12) //Check if the next page would be 0x12 and return the current page which indicates you cannot go in that direction
+		if (var_s0 == 0x11) //Check if the next page would be 0x12 and return the current page which indicates you cannot go in that direction
 		{
 			var_s0 = subPage;
 		}
@@ -1213,7 +1280,7 @@ s32 func_80801718_gcnewpause(s32 subPage, s32 movementDirection) {
 		{
 			var_s0 = subPage;
 		}
-		if (var_s0 == 0x13)
+		if (var_s0 == 0x14)
 		{
 			var_s0 = subPage;
 		}
