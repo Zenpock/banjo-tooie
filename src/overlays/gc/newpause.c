@@ -74,7 +74,7 @@ Option D_80802200_gcnewpause[] = { //Randomizer Menu
 	{ICON_6F_JAMJARS,0x9,0x7,0xE,0x0}, //View Moves
 	{ICON_9F_GRUNTY_TIMER,0xA,0x8,0x1,0x3}, //Perish
 	{ICON_1_JIGGY,0x3,0x1,0xE,0x0}, //View Totals
-	{ICON_40_HUMBA_WUMBA,0xA,0x7,0x12,0x0} //MUMBO/HUMBA
+	{ICON_40_HUMBA_WUMBA,0xB,0x7,0x12,0x0} //MUMBO/HUMBA
 };
 PauseOption D_80802070_gcnewpause[] = {
 	{0x1863,0x1,0x3,D_80802030_gcnewpause},
@@ -462,7 +462,7 @@ void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu)
 				{
 					func_800B7B8C(0x4F, 0xF4, 0x2F);//GREEN
 				}
-				else if (func_800D0B68(checkBox.GlowboFlag, 3))
+				else if (func_800D0B68(checkBox.GlowboFlag, 3) && checkBox.GlowboFlag != 0x12|| checkBox.GlowboFlag == 0x12 && flag_getValue(FLAG_056_STATE_MEGA_GLOWBO))
 				{
 					func_800B7BA4(0.9f);
 					func_800B7B8C(0xFF, 0xFF, 0x0);//YELLOW
