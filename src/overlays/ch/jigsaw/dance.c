@@ -369,8 +369,6 @@ s32 moveItem_Handler(Actor* arg0, s32 arg1, s32 arg2)
         break;
     case 0x13: //Just Spawned
         arg0->unk74_7 = arg2;
-        arg0->position[1] += 75.0f;
-        arg0->scale = 0.25f;
         break;
     default:
         return 0;
