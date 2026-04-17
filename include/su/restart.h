@@ -7,6 +7,7 @@
 #include "core2/1EC3810.h"
 
 #include "maps.h"
+#include "transformations.h"
 
 void _surestart_entrypoint_0(s32 arg0);
 

@@ -327,6 +327,7 @@ void func_80800748_chwarppad(Actor* arg0)
                         transformed = 1;
                         break;
                     case TRANSFORM_13_TREXLARGE: //Big T-Rex
+                        targetTransformation = 0x12;
                         func_800A3410(state, TRANSFORM_12_TREXSMALL);
                         transformed = 1;
                         break;

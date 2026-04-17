@@ -64,6 +64,7 @@ s32 _subaddiedialog_entrypoint_3(f32*, s32, u32, u32, s32);
 s32 _subaddiedialog_entrypoint_4(f32*, s32, s32);
 s32 _subaddiedialog_entrypoint_5(f32*, u32, u32, u32);
 s32 _subaddiedialog_entrypoint_6(f32*, s32, u32, u32, s32);
+s32 _subaddiedialog_entrypoint_7(Actor*, s32, s32*);
 u32 subaddiedialog_entrypoint_11(Unk80132ED0*, u32, u32, f32*, s16);
 s32 _subaddiedialog_entrypoint_11(Unk80132ED0*, u32, u32, f32*, u32);
 

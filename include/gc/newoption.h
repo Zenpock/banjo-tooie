@@ -36,6 +36,7 @@ void _gcnewoption_entrypoint_12(OptionState* a0, u32 optionIndex, s16 textIndex)
 void _gcnewoption_entrypoint_13(OptionState*, u32, u32*);
 void _gcnewoption_entrypoint_14(OptionState*, u32, u32, u32, f32);
 s32 _gcnewoption_entrypoint_19(OptionState*, s32);
+void _gcnewoption_entrypoint_21(OptionState*, u32);
 void _gcnewoption_entrypoint_23(OptionState*, u32);
 
 void _gcnewoption_entrypoint_31(OptionState*, s32, s16);

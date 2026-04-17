@@ -104,6 +104,7 @@ u8 func_800F8B88();
 void func_800F8DD8();
 void func_800F8E08();
 void func_800F911C(s32);
+void func_800F9178();
 // Might take in a PlayerState *
 void func_800F9BC4(void);
 

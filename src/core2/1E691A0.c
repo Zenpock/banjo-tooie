@@ -237,7 +237,7 @@ void func_80090150()
     func_800F6478(func_800F54E4());
 }
 
-s32 func_80090178(AllowedTransformation arg0)
+s32 func_80090178(s32 arg0)
 {
     return func_800F64A4(func_800F54E4(),arg0);
 }
