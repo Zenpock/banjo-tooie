@@ -6,5 +6,6 @@
 #include <ultra64.h>
 
 s32 func_800B5BE4(s32);
+void func_800B7BA4(f32);
 
 #endif // __CORE2_1E8F430_H__

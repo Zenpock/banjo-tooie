@@ -158,7 +158,9 @@ typedef struct {
     /* 0x0C */ u32 FlagOrRotation : 9; //unkC >> 0x17
     /* 0x0C */ u32 unkC_0 : 23; //0xC
     /* 0x10 */ u16 unk10; //0x10
-    /* 0x12 */ u16 unk12; //0x12
+    /* 0x12 */ u16 unk12_8 : 8;
+    /* 0x12 */ u16 unk12_7 : 1;
+    /* 0x12 */ u16 unk12_0 : 7;
 } Prop;
 
 

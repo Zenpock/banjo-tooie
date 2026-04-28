@@ -156,7 +156,7 @@ void func_800F53A4(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F53E4.s")
 
-s32 func_800F5410(s32 arg0)
+TransformationId func_800F5410(s32 arg0)
 {
     return func_800A3274(D_80135490[arg0]);
 }
@@ -356,14 +356,14 @@ void func_800F5D44(s32 arg0, f32* arg1)
     func_800A33CC(D_80135490[arg0],arg1);
 }
 
-void func_800F5D70(s32 arg0)
+void func_800F5D70(s32 arg0, f32* arg1)
 {
-    func_8009BB24(D_80135490[arg0]);
+    func_8009BB24(D_80135490[arg0],arg1);
 }
 
-void func_800F5D9C(s32 arg0)
+void func_800F5D9C(s32 arg0, f32* arg1)
 {
-    func_800F4200(D_80135490[arg0]);
+    func_800F4200(D_80135490[arg0],arg1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F5DC8.s")
@@ -450,9 +450,9 @@ void func_800F640C(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6438.s")
 
-void func_800F6478(s32 arg0)
+s32 func_800F6478(s32 arg0)
 {
-    func_800F424C(D_80135490[arg0]);
+    return func_800F424C(D_80135490[arg0]);
 }
 
 //Tranformation Type is a bitfield so you can check multiple transformations at once
@@ -499,9 +499,9 @@ void func_800F6690(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F690C.s")
 
-void func_800F693C(s32 arg0)
+s32 func_800F693C(s32 arg0)
 {
-    func_8008DD70(D_80135490[arg0]);
+    return func_8008DD70(D_80135490[arg0]);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6968.s")
@@ -542,9 +542,9 @@ s32 func_800F6D24(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6DA0.s")
 
-void func_800F6DE0()
+s32 func_800F6DE0(f32* arg0)
 {
-    _bsbabykaz_entrypoint_14();
+    return _bsbabykaz_entrypoint_14(arg0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6E00.s")
@@ -574,7 +574,7 @@ void func_800F6E80(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F7180.s")
 
-s32 func_800F71D4(s32 arg0)
+s32 func_800F71D4(u32 arg0)
 {
     return func_8008E37C(D_80135490[arg0]);
 }
@@ -755,9 +755,9 @@ void func_800F83B8(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F83E4.s")
 
-void func_800F8418(s32 arg0)
+void func_800F8418(s32 arg0, f32* arg1)
 {
-    func_800F4648(D_80135490[arg0]);
+    func_800F4648(D_80135490[arg0],arg1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F8444.s")

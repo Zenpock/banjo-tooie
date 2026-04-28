@@ -283,7 +283,7 @@ void func_80800BDC_bskazfly(PlayerState *self) {
     f32 unk1[3];
     s32 pad2;
     f32 unk2;
-    s32 unk3;
+    f32 unk3;
 
     func_800EE7F8(unk1, self->kazfly->unk10);
     func_800CA9D8(func_800A4C48(self), &unk3);
