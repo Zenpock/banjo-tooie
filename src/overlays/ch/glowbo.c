@@ -17,7 +17,6 @@ extern u32 D_80801540_chglowbo;
 extern u32 D_80801588_chglowbo;
 extern u32 D_808015D0_chglowbo;
 extern f32 D_80801618_chglowbo;
-extern u32 _chglowbo_entrypoint_5;
 
 void func_80800000_chglowbo(Actor* arg0) 
 {
