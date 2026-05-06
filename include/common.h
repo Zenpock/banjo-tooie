@@ -49,7 +49,7 @@ typedef struct Actor {
     /* 0x58 */ f32 unk58;
     /* 0x5C */ u8 pad5C;
     /* 0x5D */ u8 pad5D;
-    /* 0x5E */ u8 pad5E;
+    /* 0x5E */ u8 unk5E;
     /* 0x5F */ u8 unk5F;
     /* 0x60 */ s32 pad60;
     /* 0x64 */ u32 pad64_29 : 3;

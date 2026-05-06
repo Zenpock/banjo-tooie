@@ -60,6 +60,7 @@ f32 func_800F5AE0(s32);
 void func_800F5D44(s32, f32*);
 void func_800F5D70(s32, f32*);
 void func_800F5D9C(s32, f32*);
+s32 func_800F5EF8(s32);
 f32 func_800F5F24(u32);
 s32 func_800F5FE0(s32);
 void func_800F608C(s32, s32);

@@ -193,9 +193,9 @@ void func_8008FFBC(f32* arg0)
     func_800F5D70(func_800F54E4(),arg0);
 }
 
-void func_8008FFE8()
+s32 func_8008FFE8()
 {
-    func_800F5EF8(func_800F54E4());
+    return func_800F5EF8(func_800F54E4());
 }
 
 f32 func_80090010()
