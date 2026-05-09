@@ -1,7 +1,7 @@
 #include "gc/collectDLL.h"
 
 //Add the jingaling item as a virtual item
-s16 D_80800BE0_gccollectDll[0x18] = { 0x31,0x1,0x26,0x1,0xB,0x4,0xA,0x1,0x16,0x2,0x3D,0x1,0x4C,0x01,0xA,0x2,0x14,0x0,0x36,0x1,0x6,0x2,0x5A, 0x1 };
+s16 D_80800BE0_gccollectDll[0x18] = { 0x31,0x1,0x26,0x1,0xB,0x4,0xA,0x1,0x16,0x2,0x3D,0x1,0x4C,0x01,0xA,0x2,0x14,0x0,0x36,0x1,0x6,0x2,IoH_JV_KING_JINGALING_INTRO, 0x1 };
 s32 D_80800C0C_gccollectDll[3] = { 0,0,0};
 u32 D_80800C18_gccollectDll[0x9] = { PROP_1F4_JINJO_REAL,PROP_21F_JIGGY_REAL,PROP_220_HONEYCOMB_REAL,PROP_21B_GLOWBO_REAL,PROP_136_CHEATOPAGE_REAL,0x0,0x0,PROP_4E5_DOUBLOON_REAL,PROP_3C6_TICKET_REAL };
 extern u8 D_8012762C;
@@ -127,12 +127,12 @@ void gccollectDll_entrypoint_5(void)
 }
 
 //Is the given item a virtual object (it is only spawned through code and does not exist in the map file)
-s32 func_808002C4_gccollectDll(s32 arg0, s32 arg1)
+s32 func_808002C4_gccollectDll(s32 arg0, s32 arg1) 
 {
     u32 var_s0;
     for (var_s0 = 0; var_s0 < 0x18; var_s0 += 2)
     {
-        if ((arg0 == D_80800BE0_gccollectDll[var_s0]) && (arg1 == D_80800BE0_gccollectDll[var_s0 + 1]))
+        if ((arg0 == D_80800BE0_gccollectDll[var_s0]) && (arg1 == D_80800BE0_gccollectDll[var_s0+1])) 
         {
             return 1;
         }
@@ -157,7 +157,7 @@ s32 func_808003E0_gccollectDll(s32* arg0, s32* arg1)
     //Gets the starting index for whatever the current level's jiggy index is so 0x1 for MT and 0xB for GGM
     levelIndexStart = func_800CF87C();
     itemIndex = levelIndexStart;
-    for (itemIndex = levelIndexStart; itemIndex < (levelIndexStart + 0xA); itemIndex++)
+    /*for (itemIndex = levelIndexStart; itemIndex < (levelIndexStart + 0xA); itemIndex++)
     {
         //Have we collected this jiggy
         if (func_800D0B68(itemIndex, 1) == 0)
@@ -176,6 +176,7 @@ s32 func_808003E0_gccollectDll(s32* arg0, s32* arg1)
             }
         }
     }
+    */
     size = activeJiggiesInCurrentMap * 8 + 2;
 
     sp64 = heap_realloc(arg0, *arg1 + size);
@@ -187,7 +188,7 @@ s32 func_808003E0_gccollectDll(s32* arg0, s32* arg1)
     var_s2 += 2;
 
     activeJiggiesInCurrentMap = 0;
-
+    /*
     for (itemIndex = levelIndexStart; itemIndex < (levelIndexStart + 0xA); itemIndex++, activeJiggiesInCurrentMap++)
     {
         //Item not collected
@@ -213,7 +214,7 @@ s32 func_808003E0_gccollectDll(s32* arg0, s32* arg1)
             }
         }
     }
-
+    */
     *arg1 = (s32*)var_s2 - (s32*)sp64;
     return sp64;
 }
