@@ -367,7 +367,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
             }
             break;
         case 22:
-            if (func_800F64A4((s32)temp_v0, 0x601) == 0)
+            if (func_800F64A4((s32)temp_v0, ALLOW_BANJO | ALLOW_KAZOOIE | ALLOW_BK) == 0)
             {
                 func_80800EF8_gcsectionskip(0x1211, 0x6F);
                 func_808002A0_gcsectionskip(temp_v0, arg0);
@@ -375,7 +375,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
             }
             break;
         case 23:
-            if (func_800F64A4((s32)temp_v0, 0x801) == 0)
+            if (func_800F64A4((s32)temp_v0, ALLOW_SUB | ALLOW_BK) == 0)
             {
                 func_80800EF8_gcsectionskip(0x1223, 0x6F);
                 func_808002A0_gcsectionskip(temp_v0, arg0);
