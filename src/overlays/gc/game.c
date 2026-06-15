@@ -19,6 +19,7 @@ void gcgame_entrypoint_0(s32 arg0)
     func_800CEF6C();
     func_800C7170();
     if (arg0 != 0) {
+        //Load Save Data
         func_800D37FC();
         _gcgamefix_entrypoint_0();
     }
@@ -33,6 +34,7 @@ void gcgame_entrypoint_1(void)
     func_800CB610();
     _gccollectDll_entrypoint_3();
     func_800D1604();
+    //Do Nothing
     func_8009E8B4();
     func_800F8DD8();
     func_800DA188();

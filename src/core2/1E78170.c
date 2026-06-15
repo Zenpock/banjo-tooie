@@ -1,5 +1,31 @@
 #include "core2/1E78170.h"
 
+typedef struct {
+    f32 unk0[3];
+    s8 unkC;
+}D_80127040_STRUCT;
+
+extern D_80127040_STRUCT D_80127040;
+
+typedef struct {
+    f32 unk0[3];
+    s8 unkC;
+    s8 unkD;
+    s8 unkE;
+    s8 unkF;
+    s8 unk10;
+    s8 unk11;
+    s8 unk12;
+    s8 unk13;
+    s8 unk14;
+    s8 unk15;
+    s8 unk16;
+    s8 unk17;
+    s32 unk18;
+}D_80127068_STRUCT;
+
+extern D_80127068_STRUCT D_80127068;
+
 extern s32 D_80127080;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78170/func_8009E880.s")
@@ -8,7 +34,27 @@ void func_8009E8B4(void)
 {
     func_800C6E58();
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78170/func_8009E8D4.s")
+
+void func_8009E8D4(void) 
+{
+    //Setup BK Ability Flags
+    func_800C6E60();
+    D_80127040.unkC = func_800D3B60();
+    D_80127068.unk18 = 0;
+    D_80127068.unkC = 0;
+    D_80127068.unkD = 0;
+    D_80127068.unkE = 0;
+    D_80127068.unkF = 0;
+    D_80127068.unk10 = 1;
+    D_80127040.unk0[0] = 0.0f;
+    D_80127040.unk0[1] = 0.0f;
+    D_80127040.unk0[2] = 0.0f;
+    D_80127068.unk0[0] = 0.0f;
+    D_80127068.unk0[1] = 0.0f;
+    D_80127068.unk0[2] = 0.0f;
+    func_800DA524(FLAG_3EC_ABILITY_DRAGON_KAZOOIE);
+    func_8009EAE8(0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78170/func_8009E958.s")
 
