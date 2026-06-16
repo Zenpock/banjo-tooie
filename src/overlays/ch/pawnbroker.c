@@ -1,5 +1,9 @@
 #include "ch/pawnbroker.h"
 
+extern s32 D_80800ED0_chpawnbroker;
+extern s32 D_80800F08_chpawnbroker;
+extern s32 D_80800F40_chpawnbroker;
+
 extern u32 D_80800F60_chpawnbroker;
 
 extern ActorData D_80800FD0_chpawnbroker;
@@ -7,6 +11,9 @@ extern ActorData D_80800FD0_chpawnbroker;
 extern ActorData D_80801018_chpawnbroker;
 
 extern ActorData D_80801060_chpawnbroker;
+
+extern s32 D_808010A8_chpawnbroker;
+extern f32 D_808010B8_chpawnbroker;
 
 extern u32 D_808010C4_chpawnbroker;
 extern u32 D_808010CC_chpawnbroker;
@@ -21,7 +28,16 @@ extern u32 D_80801144_chpawnbroker;
 extern u32 D_8080114C_chpawnbroker;
 extern u32 D_80801154_chpawnbroker;
 
+void func_80800664_chpawnbroker(Actor*);
+void func_80800694_chpawnbroker(Actor*);
+void func_808006FC_chpawnbroker(Actor*, s32);
+s32 func_808007BC_chpawnbroker(Actor*, s16*, s32, s32, s32);
+void func_8080083C_chpawnbroker(Actor*, s32, s32);
+s32 func_80800A50_chpawnbroker(Actor*, s32, s32);
+void func_80800AA8_chpawnbroker(Actor*);
 void func_80800AE4_chpawnbroker(Actor*, s32, s32);
+void func_80800B88_chpawnbroker(Actor*, s32, s32);
+s32 func_80800C00_chpawnbroker(s32, s32);
 void func_80800CB4_chpawnbroker();
 void func_80800E3C_chpawnbroker(Actor*);
 
@@ -38,17 +54,191 @@ ActorData* chpawnbroker_entrypoint_2(void) {
     return &D_80801060_chpawnbroker;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pawnbroker/func_80800024_chpawnbroker.s")
+void func_80800024_chpawnbroker(Actor* arg0)
+{
+    u32* sp3C;
+    f32 temp[3];
+    sp3C = func_80100094(arg0, 1U);
+    func_800D1824(0x4E);
+    _sudeflect_entrypoint_1(&D_808010B8_chpawnbroker, 60.0f, 0.0f, 60.0f, 2);
+    _sudeflect_entrypoint_1(arg0->position, 250.0f, 0.0f, 100.0f, 0xA);
+    _suexpression_entrypoint_10(sp3C, arg0->unk0, 0U);
+    if ((func_801022E4(arg0) != 0x115) || (func_80102320(arg0, 0.55f, 0.99f) == 0))
+    {
+        _suexpression_entrypoint_18((s32)sp3C, 1);
+    }
+    switch (arg0->unk70_10)
+    {
+    case 2:
+        func_80800694_chpawnbroker(arg0);
+        if (func_808007BC_chpawnbroker(arg0, &D_808010A8_chpawnbroker, &D_80800ED0_chpawnbroker, 7, 0x6A5) != 0)
+        {
+            func_80800AE4_chpawnbroker(arg0, 3, 0);
+            return;
+        }
+        return;
+    case 6:
+        func_80800694_chpawnbroker(arg0);
+        if (func_808007BC_chpawnbroker(arg0, &D_808010A8_chpawnbroker, &D_80800F08_chpawnbroker, 7, 0x6A6) != 0)
+        {
+            func_80800AE4_chpawnbroker(arg0, 3, 0);
+            return;
+        }
+        break;
+    case 5:
+        func_80800694_chpawnbroker(arg0);
+        if (func_808007BC_chpawnbroker(arg0, &D_808010A8_chpawnbroker, &D_80800F40_chpawnbroker, 4, 0) != 0)
+        {
+            func_80800AE4_chpawnbroker(arg0, 5, 1);
+            return;
+        }
+        break;
+    case 8:
+        func_80800694_chpawnbroker(arg0);
+        if (func_808007BC_chpawnbroker(arg0, &D_808010A8_chpawnbroker, &D_80800F40_chpawnbroker, 4, 0) != 0)
+        {
+            func_80800AE4_chpawnbroker(arg0, 5, 1);
+            return;
+        }
+        break;
+    case 4:
+        func_80800664_chpawnbroker(arg0);
+        if (func_80101DDC(arg0) != 0)
+        {
+            func_80102424(arg0, 5);
+            func_80101180(0x353, 5, 0);
+            func_800DA544(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED);
+            return;
+        }
+        break;
+    case 3:
+        func_80800694_chpawnbroker(arg0);
+        func_80103DFC(arg0, &temp);
+        if (_subaddieitem_entrypoint_3(arg0, &temp, func_80100094(arg0, 0U)) != 0)
+        {
+            _subaddiedialog_entrypoint_11(arg0->unk0, 0xFE8U, 0xEU, arg0->position, 0x53U);
+            func_80102424(arg0, 1);
+            return;
+        }
+        break;
+    case 7:
+        func_80800664_chpawnbroker(arg0);
+        if (func_80101DDC(arg0) != 0)
+        {
+            func_80102424(arg0, 8);
+            func_80101180(0x353, 5, 0);
+            func_800DA544(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED);
+            return;
+        }
+        break;
+    default:
+        func_80800694_chpawnbroker(arg0);
+        break;
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pawnbroker/func_80800320_chpawnbroker.s")
+void func_80800320_chpawnbroker(Actor* arg0)
+{
+    u32 sp44;
+    Prop* temp_a1;
+    s32 pad_sp3C;
+    s32 pad_sp38;
+    f32 sp34;
+    s32 sp30;
+
+    temp_a1 = _gccubesearch_entrypoint_0(0x154U, arg0);
+    func_800EE88C((f32*)arg0->actorData, temp_a1->position);
+    if ((func_800D0B68(0x27U, 1U) != 0) && (func_800D0B68(0xAU, 4U) != 0))
+    {
+        sp44 = 8;
+    }
+    else if (func_800D0B68(0x27U, 1U) != 0)
+    {
+        sp30 = 1;
+        if ((_plsu_entrypoint_0(&sp34, arg0->actorData) != -1) && (func_800EEAD4(&sp34, (f32*)arg0->actorData) < 250.0f))
+        {
+            sp30 = 0;
+        }
+        if (func_800DA298(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED) != 0)
+        {
+            if (func_800D0A9C(0xAU, 4U) == 0)
+            {
+                func_800D1000(0xAU, 4U, (f32*)arg0->actorData, 3U, NULL);
+            }
+            sp44 = 8;
+        }
+        else if (sp30 != 0)
+        {
+            if (func_800D0A9C(0xAU, 4U) == 0)
+            {
+                func_800D1000(0xAU, 4U, (f32*)arg0->actorData, 3U, NULL);
+            }
+            sp44 = 6;
+        }
+        else
+        {
+            sp44 = 5;
+        }
+    }
+    else if (func_800DA298(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0)
+    {
+        sp44 = 5;
+    }
+    else
+    {
+        sp44 = 2;
+    }
+    if ((sp44 != 5) && (sp44 != 8))
+    {
+        func_80108B04(arg0, 0x353U);
+    }
+    _subaddieitem_entrypoint_0(func_80100094(arg0, 0U), 0x4E4U, -1, 3);
+    _subaddieitem_entrypoint_1(func_80100094(arg0, 0U), func_800DA298(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0 ? 5 : 0x14);
+    func_80101FDC(arg0, sp44);
+    func_8010A3E8(arg0, 0.8f);
+}
 
 void func_80800514_chpawnbroker(Actor* arg0) 
 {
     _suexpression_entrypoint_8(arg0, 1);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pawnbroker/func_80800534_chpawnbroker.s")
 
-void func_80800664_chpawnbroker(Actor* arg0) {
+s32 func_80800534_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
+{
+    s32 sp1C;
+    s16* temp = &arg2;
+
+    switch (arg1)
+    {
+    case 0x2E:
+        func_8080083C_chpawnbroker(arg0, temp[0], temp[1]);
+        break;
+    case 0x3D:
+        func_808006FC_chpawnbroker(arg0, arg2);
+        break;
+    case 0x52:
+        _gcdialogcamera_entrypoint_3(&D_80800F60_chpawnbroker, arg0->scale);
+        break;
+    case 0x57:
+        return func_80800A50_chpawnbroker(arg0, arg2 & 0xFFFF, (arg2 & 0xFFFF0000) >> 0x10);
+    case 0xB:
+        func_80800AA8_chpawnbroker(arg0);
+        return 4;
+    case 0x95:
+        sp1C = _suexpression_entrypoint_7(arg0, 1U, 0x53U);
+        _suexpression_entrypoint_12((void*)sp1C, 70.0f, 30.0f);
+        _suexpression_entrypoint_17(sp1C, 0x3E8);
+        func_80108B04(arg0, 0x354U);
+        break;
+    default:
+        return 0;
+    }
+
+    return 1;
+}
+
+void func_80800664_chpawnbroker(Actor* arg0) 
+{
     _subaddieaudioquick_entrypoint_3(arg0, arg0->position, &D_808010C4_chpawnbroker, 0.52f);
 }
 
@@ -80,9 +270,100 @@ void func_808006FC_chpawnbroker(Actor* arg0, s32 arg1)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pawnbroker/func_808007BC_chpawnbroker.s")
+s32 func_808007BC_chpawnbroker(Actor* arg0, s16* arg1, s32 arg2, s32 arg3, s32 arg4)
+{
+    s32 temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pawnbroker/func_8080083C_chpawnbroker.s")
+    arg1[0] = arg4;
+    temp_v0 = _subaddiedialog_entrypoint_8(arg0, arg0->position, arg1, arg2, arg3);
+    if (temp_v0 == 0)
+    {
+        return 0;
+    }
+    if (_subaddiedialog_entrypoint_9(arg0, temp_v0, arg2, arg3) != 3)
+    {
+        return 1;
+    }
+    return 0;
+}
+
+void func_8080083C_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
+{
+    s32 temp_v0;
+    s32 temp_v0_2;
+    s32 var_a1;
+
+    switch (arg1)
+    {
+    case 0xFE4:
+    case 0xFE6:
+    case 0x105B:
+        _subaddiedialog_entrypoint_11(arg0->unk0, 0xFEAU, 0x4EU, arg0->position, 0x53U);
+        return;
+    case 0xFEA:
+        if (func_800DA298(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0)
+        {
+            temp_v0 = func_80800C00_chpawnbroker(5, arg2);
+            _subaddiedialog_entrypoint_11(arg0->unk0, (u32)temp_v0, 0xEU, arg0->position, 0x53U);
+            if (temp_v0 == 0x1040)
+            {
+                arg0->unk64_20 = 0;
+            }
+        }
+        else
+        {
+            temp_v0_2 = func_80800C00_chpawnbroker(0x14, arg2);
+            _subaddiedialog_entrypoint_11(arg0->unk0, temp_v0_2, 0xEU, arg0->position, 0x53U);
+            if (temp_v0_2 == 0x1040)
+            {
+                arg0->unk64_20 = 1;
+            }
+        }
+        return;
+    case 0x1040:
+        _subaddieitem_entrypoint_2(func_80100094(arg0, 0U));
+        func_80102424(arg0, 3);
+        return;
+
+    case 0xFE8:
+        if (arg0->unk64_20)
+        {
+            var_a1 = 4;
+        }
+        else
+        {
+            var_a1 = 7;
+        }
+        func_80102424(arg0, var_a1);
+        func_80102424(func_80106790(arg0->unk3C), 2);
+        func_80800B88_chpawnbroker(arg0, 3, 0x30);
+        return;
+    }
+    if (func_800DA298(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED) != 0)
+    {
+        var_a1 = 8;
+    }
+    else
+    {
+        if (func_800DA298(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0)
+        {
+            if ((func_800D0B68(0x27U, 1U) != 0) && (func_800D0A9C(0xAU, 4U) != 0))
+            {
+                var_a1 = 6;
+            }
+            else
+            {
+                var_a1 = 5;
+            }
+        }
+        else
+        {
+            var_a1 = 2;
+        }
+    }
+    func_80800AA8_chpawnbroker(arg0);
+    func_80102424(arg0, var_a1);
+}
 
 s32 func_80800A50_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
 {

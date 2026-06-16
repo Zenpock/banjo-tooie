@@ -3,6 +3,7 @@
 
 #include "common.h"
 
+s32 _plsu_entrypoint_0(f32*, u32*);
 s32 _plsu_entrypoint_1(s32);
 s32 _plsu_entrypoint_3(Unk80132ED0*);
 
