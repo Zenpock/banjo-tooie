@@ -12,6 +12,7 @@ f32 func_80101F24(Actor *);
 void func_80101FDC(Actor*, u32);
 s32 func_801022E4(Actor*);
 s32 func_80102320(Actor*, f32, f32);
+//Set actor state 
 void func_80102424(Actor*, s32);
 s32 func_8010262C(Unk80132ED0*, u32);
 

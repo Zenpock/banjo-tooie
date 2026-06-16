@@ -4,7 +4,9 @@
 #include "common.h"
 
 void func_8010A3E8(Actor*, f32);
+//Disable Actor Collision
 void func_8010A570(Actor*);
+//Enable Actor Collision
 void func_8010A590(s32 arg0);
 void func_8010A5B0(Actor*, s32);
 void func_8010A624(Actor*);

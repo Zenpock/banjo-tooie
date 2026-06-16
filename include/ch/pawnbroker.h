@@ -2,6 +2,8 @@
 #define __CH_PAWNBROKER_H__
 
 #include "common.h"
+#include "jiggies.h"
+
 #include "ca/pod.h"
 #include "gc/cubesearch.h"
 #include "gc/dialogcamera.h"

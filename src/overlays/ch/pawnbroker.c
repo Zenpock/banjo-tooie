@@ -38,22 +38,26 @@ void func_80800AA8_chpawnbroker(Actor*);
 void func_80800AE4_chpawnbroker(Actor*, s32, s32);
 void func_80800B88_chpawnbroker(Actor*, s32, s32);
 s32 func_80800C00_chpawnbroker(s32, s32);
-void func_80800CB4_chpawnbroker();
+void func_80800CB4_chpawnbroker(Actor*);
 void func_80800E3C_chpawnbroker(Actor*);
 
+//Pawno
 ActorData* chpawnbroker_entrypoint_0(void)
 {
     return &D_80800FD0_chpawnbroker;
 }
 
+//Glass Cabinet
 ActorData* chpawnbroker_entrypoint_1(void) {
     return &D_80801018_chpawnbroker;
 }
 
+//Cash Register
 ActorData* chpawnbroker_entrypoint_2(void) {
     return &D_80801060_chpawnbroker;
 }
 
+//Pawno Update
 void func_80800024_chpawnbroker(Actor* arg0)
 {
     u32* sp3C;
@@ -69,74 +73,85 @@ void func_80800024_chpawnbroker(Actor* arg0)
     }
     switch (arg0->unk70_10)
     {
-    case 2:
-        func_80800694_chpawnbroker(arg0);
-        if (func_808007BC_chpawnbroker(arg0, &D_808010A8_chpawnbroker, &D_80800ED0_chpawnbroker, 7, 0x6A5) != 0)
-        {
-            func_80800AE4_chpawnbroker(arg0, 3, 0);
+        //Exit Dialog
+        case 2:
+            func_80800694_chpawnbroker(arg0);
+            if (func_808007BC_chpawnbroker(arg0, &D_808010A8_chpawnbroker, &D_80800ED0_chpawnbroker, 7, 0x6A5) != 0)
+            {
+                func_80800AE4_chpawnbroker(arg0, 3, 0);
+                return;
+            }
             return;
-        }
-        return;
-    case 6:
-        func_80800694_chpawnbroker(arg0);
-        if (func_808007BC_chpawnbroker(arg0, &D_808010A8_chpawnbroker, &D_80800F08_chpawnbroker, 7, 0x6A6) != 0)
-        {
-            func_80800AE4_chpawnbroker(arg0, 3, 0);
-            return;
-        }
-        break;
-    case 5:
-        func_80800694_chpawnbroker(arg0);
-        if (func_808007BC_chpawnbroker(arg0, &D_808010A8_chpawnbroker, &D_80800F40_chpawnbroker, 4, 0) != 0)
-        {
-            func_80800AE4_chpawnbroker(arg0, 5, 1);
-            return;
-        }
-        break;
-    case 8:
-        func_80800694_chpawnbroker(arg0);
-        if (func_808007BC_chpawnbroker(arg0, &D_808010A8_chpawnbroker, &D_80800F40_chpawnbroker, 4, 0) != 0)
-        {
-            func_80800AE4_chpawnbroker(arg0, 5, 1);
-            return;
-        }
-        break;
-    case 4:
-        func_80800664_chpawnbroker(arg0);
-        if (func_80101DDC(arg0) != 0)
-        {
-            func_80102424(arg0, 5);
-            func_80101180(0x353, 5, 0);
-            func_800DA544(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED);
-            return;
-        }
-        break;
-    case 3:
-        func_80800694_chpawnbroker(arg0);
-        func_80103DFC(arg0, &temp);
-        if (_subaddieitem_entrypoint_3(arg0, &temp, func_80100094(arg0, 0U)) != 0)
-        {
-            _subaddiedialog_entrypoint_11(arg0->unk0, 0xFE8U, 0xEU, arg0->position, 0x53U);
-            func_80102424(arg0, 1);
-            return;
-        }
-        break;
-    case 7:
-        func_80800664_chpawnbroker(arg0);
-        if (func_80101DDC(arg0) != 0)
-        {
-            func_80102424(arg0, 8);
-            func_80101180(0x353, 5, 0);
-            func_800DA544(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED);
-            return;
-        }
-        break;
-    default:
-        func_80800694_chpawnbroker(arg0);
-        break;
+        //Second Item Available Idle
+        case 6:
+            func_80800694_chpawnbroker(arg0);
+            if (func_808007BC_chpawnbroker(arg0, &D_808010A8_chpawnbroker, &D_80800F08_chpawnbroker, 7, 0x6A6) != 0)
+            {
+                func_80800AE4_chpawnbroker(arg0, 3, 0);
+                return;
+            }
+            break;
+        //Just Sold First Item
+        case 5:
+            func_80800694_chpawnbroker(arg0);
+            if (func_808007BC_chpawnbroker(arg0, &D_808010A8_chpawnbroker, &D_80800F40_chpawnbroker, 4, 0) != 0)
+            {
+                func_80800AE4_chpawnbroker(arg0, 5, 1);
+                return;
+            }
+            break;
+        //Everything has been sold
+        case 8:
+            func_80800694_chpawnbroker(arg0);
+            if (func_808007BC_chpawnbroker(arg0, &D_808010A8_chpawnbroker, &D_80800F40_chpawnbroker, 4, 0) != 0)
+            {
+                func_80800AE4_chpawnbroker(arg0, 5, 1);
+                return;
+            }
+            break;
+        //Purchasing First Item
+        case 4:
+            func_80800664_chpawnbroker(arg0);
+            if (func_80101DDC(arg0) != 0)
+            {
+                func_80102424(arg0, 5);
+                //Explode the glass cage
+                func_80101180(0x353, 5, 0);
+                func_800DA544(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED);
+                return;
+            }
+            break;
+        //Throwing the gold to Pawno
+        case 3:
+            func_80800694_chpawnbroker(arg0);
+            func_80103DFC(arg0, &temp);
+            if (_subaddieitem_entrypoint_3(arg0, &temp, func_80100094(arg0, 0U)) != 0)
+            {
+                //Start Sale Complete Dialog
+                _subaddiedialog_entrypoint_11(arg0->unk0, 0xFE8U, 0xEU, arg0->position, 0x53U);
+                func_80102424(arg0, 1);
+                return;
+            }
+            break;
+        //Purchasing Second Item
+        case 7:
+            func_80800664_chpawnbroker(arg0);
+            if (func_80101DDC(arg0) != 0)
+            {
+                func_80102424(arg0, 8);
+                //Explode the glass cage
+                func_80101180(0x353, 5, 0);
+                func_800DA544(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED);
+                return;
+            }
+            break;
+        default:
+            func_80800694_chpawnbroker(arg0);
+            break;
     }
 }
 
+//Pawno
 void func_80800320_chpawnbroker(Actor* arg0)
 {
     u32 sp44;
@@ -198,40 +213,43 @@ void func_80800320_chpawnbroker(Actor* arg0)
     func_8010A3E8(arg0, 0.8f);
 }
 
+//Pawno
 void func_80800514_chpawnbroker(Actor* arg0) 
 {
     _suexpression_entrypoint_8(arg0, 1);
 }
 
-s32 func_80800534_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
+//Pawno Event Handler
+s32 func_80800534_chpawnbroker(Actor* actor, s32 eventType, s32 arg2)
 {
     s32 sp1C;
     s16* temp = &arg2;
 
-    switch (arg1)
+    switch (eventType)
     {
-    case 0x2E:
-        func_8080083C_chpawnbroker(arg0, temp[0], temp[1]);
-        break;
-    case 0x3D:
-        func_808006FC_chpawnbroker(arg0, arg2);
-        break;
-    case 0x52:
-        _gcdialogcamera_entrypoint_3(&D_80800F60_chpawnbroker, arg0->scale);
-        break;
-    case 0x57:
-        return func_80800A50_chpawnbroker(arg0, arg2 & 0xFFFF, (arg2 & 0xFFFF0000) >> 0x10);
-    case 0xB:
-        func_80800AA8_chpawnbroker(arg0);
-        return 4;
-    case 0x95:
-        sp1C = _suexpression_entrypoint_7(arg0, 1U, 0x53U);
-        _suexpression_entrypoint_12((void*)sp1C, 70.0f, 30.0f);
-        _suexpression_entrypoint_17(sp1C, 0x3E8);
-        func_80108B04(arg0, 0x354U);
-        break;
-    default:
-        return 0;
+        //Just Finished a dialog
+        case 0x2E:
+            func_8080083C_chpawnbroker(actor, temp[0], temp[1]);
+            break;
+        case 0x3D:
+            func_808006FC_chpawnbroker(actor, arg2);
+            break;
+        case 0x52:
+            _gcdialogcamera_entrypoint_3(&D_80800F60_chpawnbroker, actor->scale);
+            break;
+        case 0x57:
+            return func_80800A50_chpawnbroker(actor, arg2 & 0xFFFF, (arg2 & 0xFFFF0000) >> 0x10);
+        case 0xB:
+            func_80800AA8_chpawnbroker(actor);
+            return 4;
+        case 0x95:
+            sp1C = _suexpression_entrypoint_7(actor, 1U, 0x53U);
+            _suexpression_entrypoint_12((void*)sp1C, 70.0f, 30.0f);
+            _suexpression_entrypoint_17(sp1C, 0x3E8);
+            func_80108B04(actor, 0x354U);
+            break;
+        default:
+            return 0;
     }
 
     return 1;
@@ -255,18 +273,18 @@ void func_808006FC_chpawnbroker(Actor* arg0, s32 arg1)
 
     switch (arg1)
     {
-    case 0x136:
-        func_80108528(arg1, (f32*)arg0->actorData, 0xA, &arg0);
-        return;
-    case 0x353:
-        func_80108528(arg1, (f32*)arg0->actorData, 0, &arg0);
-        return;
-    case 0x354:
-        temp_v0 = func_801084B0(arg1, &arg0);
-        func_80102FDC(temp_v0, arg0->scale);
-        func_80108944(temp_v0, arg0);
-        arg0->unk3C = temp_v0->unk0;
-        return;
+        case 0x136:
+            func_80108528(arg1, (f32*)arg0->actorData, 0xA, &arg0);
+            return;
+        case 0x353:
+            func_80108528(arg1, (f32*)arg0->actorData, 0, &arg0);
+            return;
+        case 0x354:
+            temp_v0 = func_801084B0(arg1, &arg0);
+            func_80102FDC(temp_v0, arg0->scale);
+            func_80108944(temp_v0, arg0);
+            arg0->unk3C = temp_v0->unk0;
+            return;
     }
 }
 
@@ -287,82 +305,93 @@ s32 func_808007BC_chpawnbroker(Actor* arg0, s16* arg1, s32 arg2, s32 arg3, s32 a
     return 0;
 }
 
-void func_8080083C_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
+//Returned from a dialog
+void func_8080083C_chpawnbroker(Actor* arg0, s32 dialogEnded, s32 choiceResult)
 {
-    s32 temp_v0;
-    s32 temp_v0_2;
-    s32 var_a1;
+    s32 SecondSaleResponse;
+    s32 FirstSaleResponse;
+    s32 NextState;
 
-    switch (arg1)
+    switch (dialogEnded)
     {
-    case 0xFE4:
-    case 0xFE6:
-    case 0x105B:
-        _subaddiedialog_entrypoint_11(arg0->unk0, 0xFEAU, 0x4EU, arg0->position, 0x53U);
-        return;
-    case 0xFEA:
-        if (func_800DA298(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0)
-        {
-            temp_v0 = func_80800C00_chpawnbroker(5, arg2);
-            _subaddiedialog_entrypoint_11(arg0->unk0, (u32)temp_v0, 0xEU, arg0->position, 0x53U);
-            if (temp_v0 == 0x1040)
+        case 0xFE4:
+        case 0xFE6:
+        case 0x105B:
+            _subaddiedialog_entrypoint_11(arg0->unk0, 0xFEAU, 0x4EU, arg0->position, 0x53U);
+            return;
+        case 0xFEA:
+            if (func_800DA298(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0)
             {
-                arg0->unk64_20 = 0;
+                SecondSaleResponse = func_80800C00_chpawnbroker(5, choiceResult);
+                _subaddiedialog_entrypoint_11(arg0->unk0, (u32)SecondSaleResponse, 0xEU, arg0->position, 0x53U);
+                //If we are going through with the sale
+                if (SecondSaleResponse == 0x1040)
+                {
+                    arg0->unk64_20 = 0;
+                }
             }
-        }
-        else
-        {
-            temp_v0_2 = func_80800C00_chpawnbroker(0x14, arg2);
-            _subaddiedialog_entrypoint_11(arg0->unk0, temp_v0_2, 0xEU, arg0->position, 0x53U);
-            if (temp_v0_2 == 0x1040)
+            else
             {
-                arg0->unk64_20 = 1;
+                FirstSaleResponse = func_80800C00_chpawnbroker(20, choiceResult);
+                _subaddiedialog_entrypoint_11(arg0->unk0, FirstSaleResponse, 0xEU, arg0->position, 0x53U);
+                //If we are going through with the sale
+                if (FirstSaleResponse == 0x1040)
+                {
+                    arg0->unk64_20 = 1;
+                }
             }
-        }
-        return;
-    case 0x1040:
-        _subaddieitem_entrypoint_2(func_80100094(arg0, 0U));
-        func_80102424(arg0, 3);
-        return;
-
-    case 0xFE8:
-        if (arg0->unk64_20)
-        {
-            var_a1 = 4;
-        }
-        else
-        {
-            var_a1 = 7;
-        }
-        func_80102424(arg0, var_a1);
-        func_80102424(func_80106790(arg0->unk3C), 2);
-        func_80800B88_chpawnbroker(arg0, 3, 0x30);
-        return;
+            return;
+        //Let's see some gold
+        case 0x1040:
+            _subaddieitem_entrypoint_2(func_80100094(arg0, 0U));
+            func_80102424(arg0, 3);
+            return;
+        //Pleasure doing business
+        case 0xFE8:
+            if (arg0->unk64_20 != 0)
+            {
+                //Sell First Item
+                NextState = 4;
+            }
+            else
+            {
+                //Sell Second Item
+                NextState = 7;
+            }
+            func_80102424(arg0, NextState);
+            func_80102424(func_80106790(arg0->unk3C), 2);
+            func_80800B88_chpawnbroker(arg0, 3, 0x30);
+            return;
     }
     if (func_800DA298(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED) != 0)
     {
-        var_a1 = 8;
+        //Already sold everything state
+        NextState = 8;
     }
     else
     {
         if (func_800DA298(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0)
         {
+            //If we have collected the jiggy and have spawned the second item
             if ((func_800D0B68(0x27U, 1U) != 0) && (func_800D0A9C(0xAU, 4U) != 0))
             {
-                var_a1 = 6;
+                //Go Collect item 2
+                NextState = 6;
             }
             else
             {
-                var_a1 = 5;
+                //Go Collect item 1
+                NextState = 5;
             }
         }
         else
         {
-            var_a1 = 2;
+            //End Dialog
+            NextState = 2;
         }
     }
     func_80800AA8_chpawnbroker(arg0);
-    func_80102424(arg0, var_a1);
+    func_80102424(arg0, NextState);
 }
 
 s32 func_80800A50_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
@@ -389,10 +418,7 @@ void func_80800AA8_chpawnbroker(Actor* arg0)
 
 void func_80800AE4_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
 {
-    u32 temp_v0;
-
-    temp_v0 = arg0->actorData[4];
-    switch (temp_v0) 
+    switch (arg0->actorData[4])
     {
     case 0:
         _capod_entrypoint_2(arg0->unk0, 0x11U, 0);
@@ -423,55 +449,66 @@ void func_80800B88_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
     }
 }
 
-s32 func_80800C00_chpawnbroker(s32 arg0, s32 arg1)
+//Get the Dialog Response for trying to pay for an item
+s32 func_80800C00_chpawnbroker(s32 NumDoubloons, s32 SaleConfirmation)
 {
-    if (arg1 > 0)
+    if (SaleConfirmation > 0)
     {
-        if (func_800D1A04(0x4E) >= arg0)
+        //Check if we have enough doubloons
+        if (func_800D1A04(0x4E) >= NumDoubloons)
         {
+            //Check the current player's transformation if valid
             if (func_800F64A4(func_800F54E4(), ALLOW_BANJO | ALLOW_BK) != 0)
             {
+                //Sure
                 return 0x1040;
             }
+            //Not Correct Transformation
             return 0x1225;
         }
+        //Cannot Afford it
         return 0xFE9;
     }
+    //Player Declined to sell
     return 0xFE7;
 }
 
+//Glass Cabinet Update
 void func_80800C70_chpawnbroker(Actor* arg0)
 {
     switch (arg0->unk70_10)
     {
-    case 1:
-        func_80800CB4_chpawnbroker();
-    case 2:
-        return;
+        case 1:
+            func_80800CB4_chpawnbroker(arg0);
+        case 2:
+            return;
     }
 }
 
+//Glass Cabinet
 void func_80800CB4_chpawnbroker(Actor* arg0)
 {
-    Actor* sp24;
-    Actor* var_v0;
+    Actor* ItemForSale;
 
     arg0->position[1] -= 40.0f;
-    if (func_800D0B68(0x27U, 1U) == 0)
+    //Have we collected the jiggy
+    if (func_800D0B68(JRL_PAWNOS, 1U) == 0)
     {
-        var_v0 = func_80106790(func_800D0634(0x27U, 1U));
-        sp24 = var_v0;
+        ItemForSale = func_80106790(func_800D0634(JRL_PAWNOS, 1U));
     }
+    //Have we collected the Cheato page
     else if (func_800D0B68(0xAU, 4U) == 0)
     {
-        var_v0 = _subaddiefind_entrypoint_0(arg0->position, 0x136, -1, 0);
-        sp24 = var_v0;
+        ItemForSale = _subaddiefind_entrypoint_0(arg0->position, 0x136, -1, 0);
     }
-    arg0->unk3C = sp24->unk0;
-    func_8010A570(sp24);
+
+    arg0->unk3C = ItemForSale->unk0;
+    //Disable Collision
+    func_8010A570(ItemForSale);
     func_80102424(arg0, 2);
 }
 
+//Glass Cabinet Event Handler
 s32 func_80800D5C_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
 {
     if (arg1 == 5)
@@ -485,6 +522,7 @@ s32 func_80800D5C_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
     return 0;
 }
 
+//Cash Register Update
 void func_80800DE8_chpawnbroker(Actor* arg0)
 {
     if (arg0->unk70_10 == 2)
@@ -497,10 +535,12 @@ void func_80800DE8_chpawnbroker(Actor* arg0)
     }
 }
 
+//Cash Register
 void func_80800E34_chpawnbroker(s32 arg0) 
 {
 }
 
+//Cash Register
 void func_80800E3C_chpawnbroker(Actor* arg0)
 {
     _subaddieaudioquick_entrypoint_4(arg0, arg0->position, &D_80801144_chpawnbroker, &D_80801154_chpawnbroker);
