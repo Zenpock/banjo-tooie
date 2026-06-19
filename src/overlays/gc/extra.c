@@ -1,8 +1,8 @@
 #include "gc/extra.h"
 
-void gcextra_entrypoint_0(void)
+s32 gcextra_entrypoint_0(void)
 {
-    func_800DA564(FLAG_4EA_HONEY_B_HONEY_UPGRADES_1, 3);
+    return func_800DA564(FLAG_4EA_HONEY_B_HONEY_UPGRADES_1, 3);
 }
 
 s32 gcextra_entrypoint_1() 
@@ -10,4 +10,17 @@ s32 gcextra_entrypoint_1()
     return 0x5;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/extra/gcextra_entrypoint_2.s")
+void gcextra_entrypoint_2(s32 arg0)
+{
+    s32 var_a1;
+    s32 temp_v0;
+
+    var_a1 = gcextra_entrypoint_0() + arg0;
+    temp_v0 = gcextra_entrypoint_1();
+    if (temp_v0 < var_a1)
+    {
+        var_a1 = temp_v0;
+    }
+    func_800DA7A8(0x4EA, var_a1, 3);
+    func_800D517C();
+}

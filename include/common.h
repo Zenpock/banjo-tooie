@@ -141,7 +141,7 @@ typedef struct ActorData {
     void (*unk38_func)(void* arg0, s32 arg1, void* arg2, s32 arg3, void* arg4); // argument types unknown currently
     s16 unk3C;
     s16 unk3E;
-    void (*unk40_func)(Actor* actor, s32 arg1, s32 arg2);
+    s32 (*eventHandler)(Actor* actor, s32 arg1, s32 arg2);
     s16 unk44;
     s16 unk46;
     void (*unk48_func)(Actor* actor, s32 arg1, s32 arg2);
