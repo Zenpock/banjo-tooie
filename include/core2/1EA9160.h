@@ -37,6 +37,8 @@ void func_800D0C78(u32, u32, u32);
 void func_800D0BD4(s32, u32);
 //Spawn Collectable
 void func_800D1000(u32, u32, f32*, u32, Unk80132ED0*);
+//Despawn Collectable
+void func_800D119C(s32, s32);
 //Get Total Number of Jinjos of Type
 s32 func_800D129C(u32);
 //Get Total Number of Jinjos Collected of Type

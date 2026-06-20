@@ -226,9 +226,9 @@ void func_800F5680(s32 arg0)
     func_800963C0(D_80135490[arg0]);
 }
 
-void func_800F56AC(s32 arg0)
+s32 func_800F56AC(s32 arg0)
 {
-    func_80096694(D_80135490[arg0]);
+    return func_80096694(D_80135490[arg0]);
 }
 
 Unk80132ED0* func_800F56D8(s32 arg0)
@@ -524,9 +524,9 @@ u8 func_800F6B34(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6C1C.s")
 
-void func_800F6C5C(s32 arg0)
+s32 func_800F6C5C(s32 arg0)
 {
-    player_isStable(D_80135490[arg0]);
+    return player_isStable(D_80135490[arg0]);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6C88.s")

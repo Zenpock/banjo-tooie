@@ -54,6 +54,8 @@ TransformationId func_800F5410(s32);
 //Get the character control index
 u32 func_800F54E4(void);
 s32 func_800F5578(s32);
+s32 func_800F56AC(s32);
+
 Unk80132ED0* func_800F56D8(s32 arg0);
 void func_800F5A00(s32, f32[3]);
 f32 func_800F5AE0(s32);
@@ -68,6 +70,8 @@ void func_800F6388(s32, s32);
 void func_800F63E0(s32, u32);
 s32 func_800F6438(u32);
 s32 func_800F6478(s32);
+//Get the given player's horizontal velocity
+f32 func_800F651C(u32);
 s32 func_800F6774(u32);
 
 //Does the character match the given transformation type
@@ -75,12 +79,14 @@ s32 func_800F64A4(s32 characterIndex, AllowedTransformation transformationType);
 s32 func_800F66F0(u32);
 s32 func_800F6774(u32);
 s32 func_800F693C(s32);
+s32 func_800F6C5C(s32);
 s32 func_800F6CC8(u32);
 s32 func_800F6D24(s32);
 s32 func_800F6DE0(f32*);
 s32 func_800F65D0(s32);
 s32 func_800F70BC(u32);
 s32 func_800F71D4(u32);
+s32 func_800F72DC(u32);
 void func_800F7700(u32, s32, f32*);
 //The moving object is moved towards/away from the target
 void func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);

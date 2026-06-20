@@ -5,5 +5,6 @@
 
 void func_8010A800(Actor*, s32);
 u32 func_8010A828(Actor*, u32);
+void func_8010A85C(Actor*, s32);
 
 #endif
