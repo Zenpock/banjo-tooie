@@ -1,7 +1,7 @@
 #include "gc/newpause.h"
 #include "gl/dbstring.h"
 #include "fx/kern.h"
-#include "core2/1E2F380.h"
+#include "core1/1E2F380.h"
 #include "core2/1E91790.h"
 #include "core2/1EAD060.h"
 #include "core2/1EC2350.h"

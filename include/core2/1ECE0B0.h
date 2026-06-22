@@ -96,6 +96,7 @@ void func_800F7C9C(u32, s32, s32, s32);
 void func_800F7CF4(s32, s32, f32*);
 s32 func_800F7E3C(s32, s32);
 void func_800F7F50(u32, f32*, f32*, f32, s32, s32);
+void func_800F7F98(u32, s32);
 s32 func_800F8004(s32);
 s32 func_800F8088(s16);
 void func_800F80E4(s32, u32);

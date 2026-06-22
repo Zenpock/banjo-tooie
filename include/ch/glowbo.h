@@ -14,7 +14,7 @@
 #include "su/baddiedialog.h"
 #include "su/dialog.h"
 
-#include "core2/1E2B200.h"
+#include "core1/1E2B200.h"
 
 #include "core2/1E691A0.h"
 #include "core2/1E93440.h"
