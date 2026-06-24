@@ -1,25 +1,97 @@
 #include "ch/factory/robot.h"
 
+typedef struct
+{
+    s16 unk0[3];
+    s16 unk6;
+    u8 unk8[2];
+    s16 unkA;
+    f32 unkC;
+    f32 unk10;
+    s32 unk14;
+    s16 unk18;
+    s16 unk1A;
+    f32 unk1C;
+    f32 unk20;
+    f32 unk24;
+    f32 unk28;
+    f32 unk2C;
+    f32 unk30;
+    f32 unk34;
+}FactoryRobotStruct;
+
+typedef struct
+{
+    s16 unk0[3];
+    s16 unk6;
+    s8 unk8[3];
+    s8 unkB;
+    f32 unkC;
+    s8 unk10;
+    s8 unk11;
+    s8 unk12;
+    s8 unk13;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    f32 unk20;
+    f32 unk24;
+    f32 unk28;
+    f32 unk2C;
+    f32 unk30;
+    f32 unk34;
+}FactoryRobotTubeStruct;
+
 extern ActorData D_80802928_chfactoryrobot;
 extern ActorData D_80802970_chfactoryrobot;
 extern ActorData D_808029B8_chfactoryrobot;
+extern s32 D_80802A00_chfactoryrobot;
+extern s32 D_80802A38_chfactoryrobot;
+extern s32 D_80802A6C_chfactoryrobot;
+extern s32 D_80802A7C_chfactoryrobot;
+extern s32 D_80802AB8_chfactoryrobot;
 extern s32 D_80802AD4_chfactoryrobot;
 
+extern s32 D_80802890_chfactoryrobot[][3];
+extern u32 D_80802A8C_chfactoryrobot;
+extern s32 D_80802A9C_chfactoryrobot;
+extern s32 D_80802AAC_chfactoryrobot;
+
+void func_80800264_chfactoryrobot(Actor*);
+void func_80800424_chfactoryrobot(Actor*, s32);
+void func_80800508_chfactoryrobot(Actor*);
+void func_808005D4_chfactoryrobot(Actor*);
+s32 func_808006DC_chfactoryrobot(Actor*, f32, f32);
+void func_80801160_chfactoryrobot(Actor*, s32);
+s32 func_80801278_chfactoryrobot(Actor*);
+void func_8080183C_chfactoryrobot(Actor*);
+void func_80801954_chfactoryrobot(Actor*);
+void func_80801A80_chfactoryrobot(Actor*);
+s32 func_80801B3C_chfactoryrobot(Actor*);
+s32 func_80801BB0_chfactoryrobot(Actor*);
+s32 func_80801C50_chfactoryrobot(s32);
+void func_80801C7C_chfactoryrobot(Actor*);
+void func_80802470_chfactoryrobot(Actor*, s32);
+
+//Camera
 ActorData* chfactoryrobot_entrypoint_0(void)
 {
     return &D_80802928_chfactoryrobot;
 }
 
+//Robot
 ActorData* chfactoryrobot_entrypoint_1(void)
 {
     return &D_80802970_chfactoryrobot;
 }
 
+//Robot Tube
 ActorData* chfactoryrobot_entrypoint_2(void)
 {
     return &D_808029B8_chfactoryrobot;
 }
 
+//Camera
 void func_80800024_chfactoryrobot(Actor* arg0)
 {
     ((f32*)arg0->actorData)[5] = 0.0f;
@@ -28,43 +100,696 @@ void func_80800024_chfactoryrobot(Actor* arg0)
     func_80105010(arg0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80800058_chfactoryrobot.s")
+//Camera Update
+void func_80800058_chfactoryrobot(Actor* arg0)
+{
+    f32 sp3C[3];
+    s32 temp[2];
+    f32 sp28[3];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80800264_chfactoryrobot.s")
+    func_800EE7F8(sp3C, arg0->position);
+    func_800EF1B8(sp3C, arg0->rotation[1], 40.0f);
+    func_800F4F34(func_800F54E4(), sp3C, 30.0f, 100.0f);
+    switch (arg0->unk70_10)
+    {
+    case 1:
+        func_80800264_chfactoryrobot(arg0);
+        arg0->unk54 = 50.0f;
+        arg0->unk50 = 20.0f;
+        if (func_808006DC_chfactoryrobot(arg0, 1.0f, 15.0f) != 0)
+        {
+            ((f32*)arg0->actorData)[0] = func_800DC178(1.0f, 1.2f);
+            func_80101FDC(arg0, 2U);
+            return;
+        }
+    default:
+        return;
+    case 2:
+        func_80800264_chfactoryrobot(arg0);
+        if (func_800D9078((f32*)arg0->actorData) != 0)
+        {
+            func_80101FDC(arg0, 3U);
+            return;
+        }
+        break;
+    case 3:
+        func_80800264_chfactoryrobot(arg0);
+        arg0->unk54 = -50.0f;
+        arg0->unk50 = 20.0f;
+        if (func_808006DC_chfactoryrobot(arg0, 1.0f, 15.0f) != 0)
+        {
+            ((f32*)arg0->actorData)[0] = func_800DC178(1.0f, 1.2f);
+            func_80101FDC(arg0, 4U);
+            return;
+        }
+        break;
+    case 4:
+        func_80800264_chfactoryrobot(arg0);
+        if (func_800D9078((f32*)arg0->actorData) != 0)
+        {
+            func_80101FDC(arg0, 1U);
+            return;
+        }
+        break;
+    case 5:
+        func_80800264_chfactoryrobot(arg0);
+        func_8010D254(&sp28[2]);
+        func_800F18FC(arg0->position, &sp28[2], sp28);
+        arg0->unk54 = sp28[1] - arg0->rotation[1];
+        arg0->unk50 = -sp28[0];
+        func_808006DC_chfactoryrobot(arg0, 4.0f, 40.0f);
+        if (arg0->unk58 == 0.0f)
+        {
+            func_80101FDC(arg0, 3U);
+        }
+        break;
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80800360_chfactoryrobot.s")
+//Camera
+void func_80800264_chfactoryrobot(Actor* arg0)
+{
+    s32 var;
+    func_800D9078(&arg0->unk58);
+    if ((_subaddierouteDll_entrypoint_4(arg0) != 0) && (func_8010D248() != 0) && (func_8010C500(arg0) != 0))
+    {
+        arg0->unk58 = 4.0f;
+    }
+    if (arg0->unk58 > 0.0f)
+    {
+        var = 1;
+    }
+    else
+    {
+        var = 0;
+    }
+    _subaddieDll_entrypoint_4(arg0, var);
+    ((f32*)arg0->actorData)[4] = _subaddieaudioloop_entrypoint_8(arg0, arg0->position, arg0->unk58 > 0.0f, ((f32*)arg0->actorData)[4]);
+    if (((arg0->unk70_10) != 5) && (arg0->unk58 > 0.0f))
+    {
+        func_80101FDC(arg0, 5U);
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80800424_chfactoryrobot.s")
+//Camera Event Handler
+s32 func_80800360_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
+{
+    switch (arg1)
+    {
+    case 0x40:
+        func_80106790(arg0->unk3C)->unk3C = NULL;
+        func_808005D4_chfactoryrobot(arg0);
+        func_80107070(arg0, 3);
+        break;
+    case 0x1F:
+        func_80800424_chfactoryrobot(arg0, arg2);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80800508_chfactoryrobot.s")
+        break;
+    case 0x8F:
+        //Ugly
+        if (*((s32*)&arg2) == 0)
+        {
+            func_80800508_chfactoryrobot(arg0);
+        }
+        break;
+    case 0x95:
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_808005D4_chfactoryrobot.s")
+        func_80800508_chfactoryrobot(arg0);
+        break;
+    default:
+        return 0;
+    }
+    return 1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_808006DC_chfactoryrobot.s")
+//Camera
+void func_80800424_chfactoryrobot(Actor* arg0, s32 arg1)
+{
+    s32 temp2;
+    f32 sp38[3];
+    s32 temp_s0;
+    f32 sp28[3];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_808007C4_chfactoryrobot.s")
+    temp_s0 = func_801040D0();
+    func_801015D0(arg0);
+    func_800DF41C(temp_s0);
+    func_800EFA4C(sp38, 0U, ((f32*)arg0->actorData)[5], 0);
+    func_800D93A0(sp28, sp38);
+    func_800DFF2C(temp_s0, 0x12, sp28);
+    func_800EFA4C(sp38, ((f32*)arg0->actorData)[6], 0U, 0);
+    func_800D93A0(sp28, sp38);
+    func_800DFF2C(temp_s0, 0x6C, sp28);
+    func_800AE1E8(arg0->unk0->unk10, func_800B27E0(arg1), temp_s0);
+    func_800DF72C(func_800AE080(arg0->unk0->unk10));
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80800920_chfactoryrobot.s")
+//Camera
+void func_80800508_chfactoryrobot(Actor* arg0)
+{
+    Actor* temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80800DC4_chfactoryrobot.s")
+    //Find Robot Tube
+    _subaddiefind_entrypoint_10(arg0, 0x3BF, arg0->unk74_7);
+    temp_v0 = func_80106790(arg0->unk3C);
+    temp_v0->unk3C = arg0->unk0;
+    func_80101FDC(temp_v0, 1U);
+    func_80103110(temp_v0, 1U);
+    arg0->unk70_25 = temp_v0->unk70_25;
+    arg0->unk70_4 = (temp_v0->unk70_4 > 0) ? temp_v0->unk70_4 & 0xFFFF : 1;
+    func_80107200(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80800E40_chfactoryrobot.s")
+//Camera
+void func_808005D4_chfactoryrobot(Actor* arg0)
+{
+    f32 sp44[3];
+    f32 sp38[3];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80800FFC_chfactoryrobot.s")
+    func_800EE7F8(sp44, arg0->position);
+    func_800EF214(sp44, -arg0->rotation[0], arg0->rotation[1], 20.0f);
+    func_800BBCB8(sp44, arg0->position, 1.0f, 8, &D_80802A38_chfactoryrobot);
+    func_800BBCB8(sp44, arg0->position, 1.0f, 0xC, &D_80802A00_chfactoryrobot);
+    func_8010D930(6, arg0->unk70_0, sp44, &D_80802A6C_chfactoryrobot);
+    _subaddieaudioquick_entrypoint_2(arg0, sp44, &D_80802A7C_chfactoryrobot);
+    func_800EE7F8(sp38, arg0->position);
+    func_800EF1B8(sp38, arg0->rotation[1], -50.0f);
+    _chexploder_entrypoint_3(arg0, sp38, 0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80801160_chfactoryrobot.s")
+//Camera
+s32 func_808006DC_chfactoryrobot(Actor* arg0, f32 arg1, f32 arg2)
+{
+    f32 gamespeed;
+    gamespeed = func_800D8FF8();
+    arg0->unk54 = func_800F0D50(func_80013728(arg0->unk54), -80.0f, 80.0f);
+    arg0->unk50 = func_800F0D50(func_80013728(arg0->unk50), -60.0f, 60.0f);
+    ((f32*)arg0->actorData)[5] = func_800F1FF0(((f32*)arg0->actorData)[5], arg0->unk54, 0.15f, gamespeed * arg1, gamespeed * arg2);
+    ((f32*)arg0->actorData)[6] = func_800F1FF0(((f32*)arg0->actorData)[6], arg0->unk50, 0.15f, gamespeed * arg1, gamespeed * arg2);
+    return func_800F20BC(((f32*)arg0->actorData)[5], arg0->unk54, 4.0f);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80801278_chfactoryrobot.s")
+//Robot
+void func_808007C4_chfactoryrobot(Actor* arg0)
+{
+    f32 temp_f0;
 
+    f32 sp38;
+    FactoryRobotStruct* temp_s1;
+
+    temp_s1 = func_80100094(arg0, 0U);
+    func_8010A3E8(arg0, 0.4f);
+    func_8010A590(arg0);
+    func_800EE940(temp_s1->unk0, arg0->position);
+    temp_f0 = arg0->rotation[1];
+    temp_s1->unkC = temp_f0;
+    temp_s1->unk10 = temp_f0;
+    temp_s1->unk28 = 1.0f;
+    temp_s1->unk24 = 0.0f;
+    func_800EE7F8((f32*)arg0->actorData, arg0->position);
+    if (arg0->unk7A_5)
+    {
+        if (func_80105138(arg0, arg0->position, 0, -500.0f, &sp38) != 0)
+        {
+            temp_s1->unk0[1] = (s16)(s32)sp38;
+        }
+        _subaddieDll_entrypoint_1(arg0);
+        _subaddierouteDll_entrypoint_3(arg0, &temp_s1->unk34, arg0->position);
+        func_80107200(arg0);
+        func_80801160_chfactoryrobot(arg0, 3);
+        temp_s1->unk6 = func_800DC178(100.0f, 200.0f);
+        return;
+    }
+    func_80801160_chfactoryrobot(arg0, 1);
+    arg0->unk64_24 = 0;
+    ((f32*)arg0->actorData)[1] = ((f32*)arg0->actorData)[1] + 300.0f;
+    arg0->unk58 = 1.0f;
+}
+
+//Robot Update
+void func_80800920_chfactoryrobot(Actor* arg0)
+{
+    s32 pad;
+    s32 pad2;
+    s32 pad3;
+    FactoryRobotStruct* temp_v0;
+    f32 sp4C;
+    f32 sp48;
+    s32 temp_v0_3;
+    f32 sp40;
+    f32 sp3C;
+    s32 sp38;
+
+    temp_v0 = func_80100094(arg0, 0U);
+    if (!(arg0->unk7A_2))
+    {
+
+        temp_v0->unk8[1] = _subaddieaudioloop_entrypoint_6(temp_v0->unk8[1], arg0->position, temp_v0->unk20 > 0.0f, -1, &D_80802AAC_chfactoryrobot, arg0->unk70_0);
+        temp_v0->unk8[0] = _subaddieaudioloop_entrypoint_6(temp_v0->unk8[0], arg0->position, 1, -1, &D_80802A9C_chfactoryrobot, arg0->unk70_0);
+        if (temp_v0->unk8[0])
+        {
+            func_800C31DC(temp_v0->unk8[0], temp_v0->unk28);
+        }
+        func_800D9078(&temp_v0->unk1C);
+        temp_v0_3 = func_800D9078(&temp_v0->unk20);
+        if (temp_v0->unk20 > 0.0f)
+        {
+            if (temp_v0->unk1C == 0.0f)
+            {
+                if ((func_8010CFBC(arg0->position, (s32)(arg0->scale * 80.0f), (s32)(arg0->scale * 175.0f)) != 0) && (func_800F7B9C(func_800F54E4(), 0x51U) == 2))
+                {
+                    if (arg0->unk64_29)
+                    {
+                        temp_v0->unk1C = 1.5f;
+                    }
+                    else
+                    {
+                        temp_v0->unk1C = 6.0f;
+                    }
+                    temp_v0->unk18 = arg0->unk64_29;
+                    temp_v0->unk20 = 0.4f;
+                    func_800F57F0(func_800F54E4(), &sp4C);
+                    _chelectricfence_entrypoint_1(arg0, &sp4C);
+                }
+            }
+            func_800C8CB8(temp_v0->unk14, arg0->position);
+            func_800C8E84(temp_v0->unk14, D_80802890_chfactoryrobot[func_800DC298(0.35f)]);
+        }
+        else if (temp_v0_3 != 0)
+        {
+            func_800C8FE0(temp_v0->unk14, 0);
+        }
+        switch (arg0->unk70_10)
+        {
+        case 1:
+            sp38 = func_800D9078(&arg0->unk58);
+            sp48 = func_800F12D4(arg0->unk58, 0.0f, 1.0f, 1.0f, 0.0f);
+            func_800EE88C(&sp3C, temp_v0);
+            func_800EFE50(arg0->position, &sp3C, arg0->actorData, sp48);
+            if (sp38 != 0)
+            {
+                _subaddieDll_entrypoint_1(arg0);
+                _subaddierouteDll_entrypoint_3(arg0, &temp_v0->unk34, arg0->position);
+                _subaddierouteDll_entrypoint_1(arg0);
+                func_80107200(arg0);
+                func_80801160_chfactoryrobot(arg0, 2);
+                arg0->unk64_24 = 1;
+            }
+            break;
+        case 2:
+            if (func_80801278_chfactoryrobot(arg0) != 0)
+            {
+                _subaddieaudioquick_entrypoint_3(arg0, arg0->position, &D_80802A8C_chfactoryrobot, 0.0f);
+                if (func_80101DDC(arg0) != 0)
+                {
+                    func_80801160_chfactoryrobot(arg0, 3);
+                    arg0->unk58 = func_800DC178(2.0f, 4.0f);
+                    func_80801C7C_chfactoryrobot(arg0);
+                }
+            }
+            break;
+        case 3:
+            if (func_80801278_chfactoryrobot(arg0) != 0)
+            {
+                func_80801BB0_chfactoryrobot(arg0);
+                func_80801A80_chfactoryrobot(arg0);
+            }
+            break;
+        case 4:
+            if (func_80801278_chfactoryrobot(arg0) != 0)
+            {
+                _subaddieaudioquick_entrypoint_3(arg0, arg0->position, &D_80802A8C_chfactoryrobot, 0.0f);
+                if (func_80101DDC(arg0) != 0)
+                {
+                    func_80801160_chfactoryrobot(arg0, 5);
+                    if (arg0->unk64_29)
+                    {
+                        arg0->unk58 = func_800DC178(2.0f, 3.0f);
+                    }
+                    else
+                    {
+                        arg0->unk58 = func_800DC178(4.0f, 5.0f);
+                    }
+                }
+            }
+            break;
+        case 5:
+            if (func_80801278_chfactoryrobot(arg0) != 0)
+            {
+                func_80801B3C_chfactoryrobot(arg0);
+            }
+            break;
+        case 6:
+            break;
+        }
+        if (!(arg0->unk64_29) && (temp_v0->unk18 != 0) && (temp_v0->unk20 == 0.0f) && (func_800EEB40(arg0->position, (f32*)arg0->actorData) < 62500.0f))
+        {
+            func_800C8FE0(temp_v0->unk14, 1);
+            temp_v0->unk20 = func_800DC178(1.2f, 1.6f);
+        }
+    }
+}
+
+//Robot
+void func_80800DC4_chfactoryrobot(Actor* arg0)
+{
+    FactoryRobotStruct* temp_v0;
+    s32 var_s1;
+
+    temp_v0 = func_80100094(arg0, 0U);
+    for (var_s1 = 0; var_s1 < 2; var_s1++)
+    {
+        temp_v0->unk8[var_s1] = _subaddieaudioloop_entrypoint_3(temp_v0->unk8[var_s1]);
+    }
+    if (temp_v0->unk14 != 0)
+    {
+        func_800C8B84(temp_v0->unk14);
+        temp_v0->unk14 = 0;
+    }
+}
+
+//Robot Event Handler
+s32 func_80800E40_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
+{
+    FactoryRobotStruct* temp_v0;
+    Actor* temp_v0_2;
+
+    temp_v0 = func_80100094(arg0, 0U);
+    switch (arg1)
+    {
+    case 0x40:
+        func_80801160_chfactoryrobot(arg0, 7);
+        break;
+    case 0x2:
+        if (_subaddieDll_entrypoint_3(arg0) == 0)
+        {
+            func_80107070(arg0, 1);
+        }
+        break;
+    case 0x3E:
+
+        temp_v0->unk1C = arg0->unk64_29 ? 1.5f : 6.0f;
+
+        temp_v0->unk18 = arg0->unk64_29;
+        break;
+    case 0x90:
+        temp_v0_2 = func_80106790(func_80101080());
+        _chexploder_entrypoint_9(temp_v0_2, 3, 0);
+        _chexploder_entrypoint_13(temp_v0_2, 0xAU);
+        if (func_80107070(arg0, 3) == 0)
+        {
+            func_800FFAB0(arg0);
+        }
+        break;
+    case 0x93:
+        func_80802470_chfactoryrobot(arg0, 0);
+        break;
+    case 0x95:
+        func_8080183C_chfactoryrobot(arg0);
+        break;
+    case 0x38:
+        return func_80801C50_chfactoryrobot((s32)arg0);
+    case 0x8F:
+        if (arg2 == 0)
+        {
+            func_8010A590(arg0);
+            func_80109FE8(arg0, 1);
+        }
+        break;
+    default:
+        return 0;
+    }
+    return 1;
+}
+
+//Robot
+void func_80800FFC_chfactoryrobot(Actor* arg0, void* arg1)
+{
+    FactoryRobotStruct* temp_v0;
+    s32 var_s0;
+    s32 sp34[3];
+    s32 sp28[3];
+    FactoryRobotStruct* temp_s0;
+
+    temp_v0 = func_80100094(arg0, 0U);
+    if ((temp_v0->unk20 > 0.0f) && !(arg0->unk7A_2))
+    {
+        temp_s0 = func_80100094(arg0, 0U);
+        temp_s0->unkA = func_800DC128(0, 4);
+    }
+
+
+    var_s0 = temp_v0->unk20 > 0.0f ? ((FactoryRobotStruct*)func_80100094(arg0, 0U))->unkA : 0;
+
+    func_800DF744(3, var_s0);
+    _subaddiefade_entrypoint_9(arg0, &sp34);
+    var_s0 = temp_v0->unk14 != 0;
+    if (var_s0 != 0)
+    {
+        var_s0 = func_800C9044(temp_v0->unk14) != 0;
+    }
+    if (arg0->unk74_24)
+    {
+        _subaddiefade_entrypoint_12(arg0, 0xFF, 0xFF, 0xFF);
+    }
+    else if (var_s0 != 0)
+    {
+        func_800C8900(temp_v0->unk14, &sp28);
+        _subaddiefade_entrypoint_11(arg0, &sp28);
+    }
+    func_80101870(arg0, arg1);
+    if ((var_s0 != 0) || (arg0->unk74_24))
+    {
+        _subaddiefade_entrypoint_11(arg0, &sp34);
+    }
+}
+
+//Robot
+void func_80801160_chfactoryrobot(Actor* arg0, s32 arg1)
+{
+    f32 sp2C[3];
+
+    func_80102424(arg0, arg1);
+    switch (arg1)
+    {
+        case 2:
+        case 4:
+            func_80109FE8(arg0, 1);
+            return;
+        case 5:
+            func_80109FE8(arg0, 0);
+            return;
+        case 1:
+            func_80109FE8(arg0, 0);
+            return;
+        case 7:
+            func_80103DFC(arg0, sp2C);
+            func_80802470_chfactoryrobot(arg0, 1);
+            arg0->unk64_24 = 0;
+            func_800BBCB8(sp2C, sp2C, 0.8f, 1, _fxgenlist_entrypoint_2());
+            func_8010D930(6, arg0->unk70_0, sp2C, &D_80802AB8_chfactoryrobot);
+            _chexploder_entrypoint_3(arg0, arg0->position, 0x124);
+            return;
+        default:
+            func_80109FE8(arg0, 1);
+            return;
+    }
+}
+
+//Robot
+s32 func_80801278_chfactoryrobot(Actor* arg0)
+{
+    FactoryRobotStruct* temp_s1;
+    f32 gamespeed;
+    s32 pad;
+    f32 sp50;
+    s32 pad2;
+    f32 temp_f0_2;
+    s32 sp44;
+    f32 var_f14;
+    f32 temp_f0_3;
+
+    temp_s1 = func_80100094(arg0, 0U);
+    gamespeed = func_800D8FF8();
+    sp50 = 1.0f;
+    if (_subaddierouteDll_entrypoint_4(arg0) != 0)
+    {
+        if (temp_s1->unk18 == 0)
+        {
+            if ((temp_s1->unk1C == 0.0f) && (func_800C0638() == 0)
+                && ((arg0->unk64_29) || ((func_8010D248() != 0) && (func_8010C500(arg0) != 0) && (_suchase_entrypoint_0() == arg0->unk0)))) {
+                temp_s1->unk18 = 1;
+                temp_s1->unk24 = func_800DC178(2.0f, 4.0f);
+
+                switch (arg0->unk70_10)
+                {
+                case 4:
+                case 5:
+                    func_80801160_chfactoryrobot(arg0, 2);
+                    temp_s1->unk6 = func_800DC178(100.0f, 200.0f);
+                    break;
+                }
+            }
+        }
+        else if (!(arg0->unk64_29) && ((func_8010C500(arg0) == 0) || (_suchase_entrypoint_0() != arg0->unk0)))
+        {
+            temp_s1->unk18 = 0;
+            func_80801C7C_chfactoryrobot(arg0);
+        }
+    }
+    if (temp_s1->unk18 != 0)
+    {
+        var_f14 = 420.0f;
+    }
+    else
+    {
+        var_f14 = (f32)temp_s1->unk6;
+    }
+    ((f32*)arg0->actorData)[3] = func_800F15F8(((f32*)arg0->actorData)[3], var_f14, gamespeed * 150.0f);
+    if (((f32*)arg0->actorData)[3] != 0.0f)
+    {
+        if (temp_s1->unk18 != 0)
+        {
+            func_8008FE94(5, arg0->actorData);
+            if (arg0->unk64_29 != 0) {
+                sp50 = _subaddiejoy_entrypoint_9(arg0, &arg0->unk54, 1);
+                if (temp_s1->unk1C == 0.0f)
+                {
+                    func_800EEB9C((f32*)&arg0->actorData[4], arg0->unk54, ((f32*)arg0->actorData)[3] * sp50);
+                    ((f32*)arg0->actorData)[5] = func_800F0D50(((f32*)arg0->actorData)[1] - arg0->position[1], -300.0f, 300.0f);
+                }
+                else {
+                    func_800EFD24((f32*)&arg0->actorData[4]);
+                }
+            }
+            else {
+                temp_f0_2 = func_80102D78(arg0, arg0->actorData);
+                if (_subaddierouteDll_entrypoint_4(arg0) != 0)
+                {
+                    _subaddierouteDll_entrypoint_7(arg0, &temp_s1->unk34, temp_f0_2, temp_f0_2, 400.0f, 0x5000);
+                    temp_s1->unk30 = (f32)arg0->unk54;
+                }
+                temp_s1->unk2C = func_800F1FF0(temp_s1->unk2C, temp_s1->unk30, 0.15f, func_800D8FF8() * 10.0f, func_800D8FF8() * 150.0f);
+                arg0->unk54 = temp_f0_2;
+                func_800EEB9C((f32*)&arg0->actorData[4], temp_s1->unk2C, ((f32*)arg0->actorData)[3]);
+                ((f32*)arg0->actorData)[5] = func_800F0D50(((f32*)arg0->actorData)[1] - arg0->position[1], -300.0f, 300.0f);
+            }
+
+            func_80801954_chfactoryrobot(arg0);
+            func_8010B990(arg0, arg0->unk64_29 ? 0x204027 : 0x504427);
+        }
+        else
+        {
+            sp44 = (((u32)(u16)arg0->unk0->unk12) >> 1) & 0xF;
+            if ((func_8001210C(0xF) == sp44) && (func_800DC298(0.6f) != 0))
+            {
+                arg0->unk54 = func_800DC178(0.0f, 359.0f);
+            }
+            func_80801954_chfactoryrobot(arg0);
+            func_800D9078(&temp_s1->unk24);
+            if (temp_s1->unk24 == 0.0f)
+            {
+                if (func_800EEB40((f32*)arg0->actorData, arg0->position) > 6400.0f)
+                {
+                    temp_f0_3 = func_80102D78(arg0, arg0->actorData);
+                    if (_subaddierouteDll_entrypoint_4(arg0) != 0)
+                    {
+                        _subaddierouteDll_entrypoint_7(arg0, &temp_s1->unk34, temp_f0_3, temp_f0_3, 400.0f, 0x5000);
+                        temp_s1->unk30 = (f32)arg0->unk54;
+                    }
+
+                    temp_s1->unk2C = func_800F1FF0(temp_s1->unk2C, temp_s1->unk30, 0.15f, func_800D8FF8() * 10.0f, func_800D8FF8() * 120.0f);
+                    arg0->unk54 = temp_f0_3;
+                    func_800EEB9C((f32*)&arg0->actorData[4], temp_s1->unk2C, ((f32*)arg0->actorData)[3]);
+                    ((f32*)arg0->actorData)[5] = func_800F0D50(((f32*)arg0->actorData)[1] - arg0->position[1], -300.0f, 300.0f);
+                    if (func_8010B990(arg0, 0x504427) & 0x26)
+                    {
+                        func_80801C7C_chfactoryrobot(arg0);
+                    }
+                }
+                else
+                {
+                    func_80801C7C_chfactoryrobot(arg0);
+                    temp_s1->unk24 = func_800DC178(2.0f, 4.0f);
+                }
+            }
+            else
+            {
+                sp50 = 0.0f;
+            }
+        }
+    }
+    else
+    {
+        func_80104580(arg0);
+    }
+
+    temp_s1->unk28 += 0.7f * (func_800F12D4(((f32*)arg0->actorData)[3] * sp50, 0.0f, 420.0f, 1.0f, 1.1f) - temp_s1->unk28);
+    return 1;
+}
+
+//Robot
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_8080183C_chfactoryrobot.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80801954_chfactoryrobot.s")
+void func_80801954_chfactoryrobot(Actor* arg0)
+{
+    s32 temp_v0;
+    f32 gamespeed;
+    FactoryRobotStruct* temp_s0;
 
+    temp_s0 = func_80100094(arg0, 0U);
+    gamespeed = func_800D8FF8();
+    if ((arg0->unk70_10) != 5)
+    {
+        temp_s0->unk10 = func_800F1FF0(temp_s0->unk10, arg0->unk54, 0.1f, gamespeed * 0.5f, gamespeed * 150.0f);
+        temp_s0->unkC = func_800F1FF0(temp_s0->unkC, arg0->unk54, 0.2f, gamespeed * 4.0f, gamespeed * 400.0f);
+    }
+    temp_v0 = func_8010262C(arg0->unk0, 2U);
+    if (temp_v0 != 0)
+    {
+        func_800E0AFC(temp_v0, 3, 1.0f, 0.0f, temp_s0->unk10, 0.0f);
+        func_800E0AFC(temp_v0, 0x12, 1.0f, 0.0f, func_800136E4(temp_s0->unkC - temp_s0->unk10), 0.0f);
+    }
+}
+
+//Robot
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80801A80_chfactoryrobot.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80801B3C_chfactoryrobot.s")
+//Robot
+s32 func_80801B3C_chfactoryrobot(Actor* arg0)
+{
+    s32 var_v1;
+    if (arg0->unk64_29)
+    {
+        var_v1 = _subaddiejoy_entrypoint_6(arg0, 0);
+    }
+    else
+    {
+        var_v1 = 0;
+    }
+    if (var_v1 != 0 || func_800D9078(&arg0->unk58) != 0)
+    {
+        func_80801160_chfactoryrobot(arg0, 2);
+    }
+    return var_v1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80801BB0_chfactoryrobot.s")
+s32 func_80801BB0_chfactoryrobot(Actor* arg0)
+{
+    FactoryRobotStruct* temp_v0;
+
+    temp_v0 = func_80100094(arg0, 0U);
+    if (temp_v0->unk20 > 0.0f)
+    {
+        return 1;
+    }
+    if ((arg0->unk64_29) && (_subaddiejoy_entrypoint_6(arg0, 1) != 0))
+    {
+        func_800C8FE0(temp_v0->unk14, 1);
+        temp_v0->unk20 = func_800DC178(1.2f, 1.6f);
+        return 1;
+    }
+    return 0;
+}
 
 s32 func_80801C50_chfactoryrobot(s32 arg0)
 {
@@ -72,12 +797,37 @@ s32 func_80801C50_chfactoryrobot(s32 arg0)
     return 2;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80801C7C_chfactoryrobot.s")
+void func_80801C7C_chfactoryrobot(Actor* arg0)
+{
+    FactoryRobotStruct* temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80801D08_chfactoryrobot.s")
+    temp_v0 = func_80100094(arg0, 0U);
+    func_800CD1E0(arg0->unk70_25 - 1, arg0->actorData, (f32)temp_v0->unk0[1] + 60.0f, arg0);
+    temp_v0->unk6 = func_800DC178(100.0f, 200.0f);
+}
 
+//Robot Tube
+void func_80801D08_chfactoryrobot(Actor* arg0)
+{
+    FactoryRobotTubeStruct* temp_v1;
+
+    temp_v1 = func_80100094(arg0, 0U);
+    if (arg0->unk70_4 == 0)
+    {
+        arg0->unk70_4 = 1;
+    }
+    if (func_800EA05C() == MAP_101_GI_INSIDE)
+    {
+        temp_v1->unk12 = 1;
+        return;
+    }
+    temp_v1->unk12 = 0;
+}
+
+//Robot Tube Update
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80801D7C_chfactoryrobot.s")
 
+//Robot Tube
 void func_8080219C_chfactoryrobot(Actor* arg0)
 {
     u8 temp_a1;
@@ -108,6 +858,7 @@ void func_808021D4_chfactoryrobot(Actor* arg0, s32 arg1)
     }
 }
 
+//Robot Tube Event Handler
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80802240_chfactoryrobot.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80802398_chfactoryrobot.s")

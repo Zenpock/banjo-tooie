@@ -48,6 +48,7 @@ s32 func_800F4BB8(u32, u32, s32);
 s32 func_800F4BE4(s32);
 void func_800F4CC0(s32);
 void func_800F4CEC(s32, u32);
+void func_800F4F34(s32, f32*, f32, f32);
 PlayerState* func_800F53D0(s32 arg0);
 PlayerState* func_800F53E4(s32 arg0);
 TransformationId func_800F5410(s32);
@@ -76,6 +77,7 @@ s32 func_800F6774(u32);
 
 //Does the character match the given transformation type
 s32 func_800F64A4(s32 characterIndex, AllowedTransformation transformationType);
+void func_800F57F0(s32, f32*);
 s32 func_800F66F0(u32);
 s32 func_800F6774(u32);
 s32 func_800F693C(s32);
@@ -90,7 +92,7 @@ s32 func_800F72DC(u32);
 void func_800F7700(u32, s32, f32*);
 //The moving object is moved towards/away from the target
 void func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
-void func_800F7B9C(s32, u32);
+s32 func_800F7B9C(s32, u32);
 void func_800F7BC8(s32, s32, Unk80132ED0*);
 void func_800F7C9C(u32, s32, s32, s32);
 void func_800F7CF4(s32, s32, f32*);

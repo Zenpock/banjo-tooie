@@ -5,5 +5,5 @@
 
 void func_800CBB80(s32, s32);
 s32 func_800CBDD4(f32*, s32, s32);
-
+void func_800CD1E0(s32, u32*, f32, Actor*);
 #endif

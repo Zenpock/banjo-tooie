@@ -10,7 +10,6 @@ void func_800C05B8(s32, s32, f32*, Unk80132ED0*, s32, s32, s32);
 s32 func_800C0638();
 void func_800C06C4();
 void func_800C0710();
-s32 func_800C0638(void);
 s32 func_800C064C();
 void func_800C0850();
 s32 func_800C0948();

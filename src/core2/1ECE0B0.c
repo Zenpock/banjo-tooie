@@ -247,9 +247,9 @@ void func_800F5794(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F57C0.s")
 
-void func_800F57F0(s32 arg0)
+void func_800F57F0(s32 arg0, f32* arg1)
 {
-    func_800F3B90(D_80135490[arg0]);
+    func_800F3B90(D_80135490[arg0],arg1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F581C.s")
@@ -637,9 +637,9 @@ void func_800F796C(s32 arg0,s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F7B1C.s")
 
-void func_800F7B9C(s32 arg0,u32 a1)
+s32 func_800F7B9C(s32 arg0,u32 a1)
 {
-    func_8009E7C8(D_80135490[arg0],a1);
+    return func_8009E7C8(D_80135490[arg0],a1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F7BC8.s")
