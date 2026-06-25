@@ -22,16 +22,18 @@ typedef struct
 
 typedef struct
 {
-    s16 unk0[3];
-    s16 unk6;
+    s32 unk0[2];
     s8 unk8[3];
     s8 unkB;
     f32 unkC;
-    s8 unk10;
-    s8 unk11;
-    s8 unk12;
-    s8 unk13;
-    s32 unk14;
+    u8 unk10;
+    u8 unk11;
+    u8 unk12;
+    u8 unk13;
+    s8 unk14;
+    s8 unk15;
+    s8 unk16;
+    s8 unk17;
     s32 unk18;
     s32 unk1C;
     f32 unk20;
@@ -56,6 +58,7 @@ extern s32 D_80802890_chfactoryrobot[][3];
 extern u32 D_80802A8C_chfactoryrobot;
 extern s32 D_80802A9C_chfactoryrobot;
 extern s32 D_80802AAC_chfactoryrobot;
+extern f32 D_80802ACC_chfactoryrobot[2];
 
 void func_80800264_chfactoryrobot(Actor*);
 void func_80800424_chfactoryrobot(Actor*, s32);
@@ -71,7 +74,9 @@ s32 func_80801B3C_chfactoryrobot(Actor*);
 s32 func_80801BB0_chfactoryrobot(Actor*);
 s32 func_80801C50_chfactoryrobot(s32);
 void func_80801C7C_chfactoryrobot(Actor*);
+s32 func_80802398_chfactoryrobot(Actor*);
 void func_80802470_chfactoryrobot(Actor*, s32);
+void func_808025D4_chfactoryrobot(Actor*);
 
 //Camera
 ActorData* chfactoryrobot_entrypoint_0(void)
@@ -728,7 +733,31 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
 }
 
 //Robot
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_8080183C_chfactoryrobot.s")
+void func_8080183C_chfactoryrobot(Actor* arg0)
+{
+    FactoryRobotStruct* temp_v0 = func_80100094(arg0, 0U);
+    f32 sp2C[2] = D_80802ACC_chfactoryrobot;
+    s32 i;
+
+    for (i = 0; i < 2; i++)
+    {
+        temp_v0->unk8[i] = 0;
+    }
+    func_80802398_chfactoryrobot(arg0);
+    sp2C[0] *= arg0->scale;
+    sp2C[1] *= arg0->scale;
+    temp_v0->unk14 = func_800C8A98();
+    func_800C8E84(temp_v0->unk14, &D_80802890_chfactoryrobot);
+    func_800C8CB8(temp_v0->unk14, arg0->position);
+    func_800C8F64(temp_v0->unk14, 3);
+    func_800C8D4C(temp_v0->unk14, sp2C);
+
+    func_800C8FE0(temp_v0->unk14, temp_v0->unk20 > 0.0f);
+    if ((arg0->unk70_10) != 1)
+    {
+        _subaddierouteDll_entrypoint_1(arg0);
+    }
+}
 
 void func_80801954_chfactoryrobot(Actor* arg0)
 {
@@ -861,8 +890,70 @@ void func_808021D4_chfactoryrobot(Actor* arg0, s32 arg1)
 //Robot Tube Event Handler
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80802240_chfactoryrobot.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80802398_chfactoryrobot.s")
+//Robot
+s32 func_80802398_chfactoryrobot(Actor* arg0)
+{
+    Actor* sp24;
+    FactoryRobotTubeStruct* var_v1;
 
+    if (arg0->unk7A_5) {
+        return 0;
+    }
+    if (_subaddiefind_entrypoint_10(arg0, 0x3BF, arg0->unk74_7) == 0)
+    {
+        return 0;
+    }
+    //I think this is getting the tube
+    sp24 = func_80106790(arg0->unk3C);
+    var_v1 = func_80100094(sp24, 0U);
+    if (sp24->unk7C_15 == 0)
+    {
+        func_808025D4_chfactoryrobot(sp24);
+        sp24->unk7C_15 = 1;
+    }
+    var_v1->unk0[var_v1->unk10] = arg0->unk0;
+    var_v1->unk10++;
+    return 1;
+}
+
+//Robot
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80802470_chfactoryrobot.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_808025D4_chfactoryrobot.s")
+//Tube?
+void func_808025D4_chfactoryrobot(Actor* arg0)
+{
+    s32 index;
+    FactoryRobotTubeStruct* temp_v0;
+
+    f32 sp2C[3];
+    s32* var_v0;
+
+    temp_v0 = func_80100094(arg0, 0U);
+    if (temp_v0->unk12 != 0)
+    {
+        _subaddieDll_entrypoint_4(arg0, 1U);
+        temp_v0->unk13 = 6;
+        func_80101FDC(arg0, func_800DA298(FLAG_1BB_UNK) ? 0xA : 4);
+        func_800EE7F8(sp2C, arg0->position);
+        sp2C[1] += 300.0f;
+        func_800D1254(0x39, 1, sp2C);
+    }
+    else if (_subaddiefind_entrypoint_10(arg0, 0x3BD, arg0->unk74_7) == 0)
+    {
+        func_80101FDC(arg0, 3U);
+        func_80103110(arg0, 0U);
+    }
+    temp_v0->unk11 = func_800F0D90((s32)arg0->rotation[1], 1, 4);
+    temp_v0->unk10 = 0;
+    temp_v0->unk14 = 1;
+    index = 0;
+    for (index = 0; index < temp_v0->unk11; index++)
+    {
+        temp_v0->unk0[index] = 0;
+    }
+    if ((temp_v0->unk12 != 0) && (func_800DA298(FLAG2_6A3_UNK) == 0) && (func_800EA090() == 3))
+    {
+        _capod_entrypoint_13(arg0->unk0, NULL, 8U, 0x10U);
+        func_800DA544(FLAG2_6A3_UNK);
+    }
+}

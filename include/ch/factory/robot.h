@@ -29,6 +29,7 @@
 #include "core2/1ECA640.h"
 #include "core2/1ECB0F0.h"
 #include "core2/1ECE0B0.h"
+#include "core2/1ED4E30.h"
 #include "core2/1EDA900.h"
 #include "core2/1EDAEA0.h"
 #include "core2/1EDB4D0.h"
