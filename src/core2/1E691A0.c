@@ -128,9 +128,9 @@ void func_8008FD98(s32 arg0)
     func_800F549C(func_800F54E4(),arg0);
 }
 
-void func_8008FDC4()
+s32 func_8008FDC4()
 {
-    func_800F55FC(func_800F54E4());
+    return func_800F55FC(func_800F54E4());
 }
 
 Unk80132ED0* func_8008FDEC()
