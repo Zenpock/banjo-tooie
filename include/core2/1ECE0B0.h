@@ -71,8 +71,7 @@ void func_800F6388(s32, s32);
 void func_800F63E0(s32, u32);
 s32 func_800F6438(u32);
 s32 func_800F6478(s32);
-//Get the given player's horizontal velocity
-f32 func_800F651C(u32);
+s32 func_800F651C(u32);
 s32 func_800F6774(u32);
 
 //Does the character match the given transformation type

@@ -11,7 +11,7 @@ extern u32 D_80800958_chjadesnake;
 extern s32 D_80800964_chjadesnake;
 extern f32 D_808009C0_chjadesnake;
 extern u32 D_808009DC_chjadesnake;
-
+extern u32 D_808009E4_chjadesnake;
 
 void func_80800000_chjadesnake(Actor* arg0)
 {
@@ -29,7 +29,29 @@ void func_80800048_chjadesnake(Actor* arg0)
     _subaddieaudioquick_entrypoint_2(arg0, &arg0->actorData[4], &D_80800938_chjadesnake);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jadesnake/func_8080009C_chjadesnake.s")
+int func_8080009C_chjadesnake(s32 arg0)
+{
+    s32 currentPlayerIndex;
+    s32 playerHorizontalUnk;
+    s32 isGrounded;
+    s32 justLanded;
+    s32 currentHitbox;
+    s32 unk;
+
+    currentPlayerIndex = func_800F54E4();
+    playerHorizontalUnk = func_800F651C(currentPlayerIndex);
+    isGrounded = func_800F6C5C(currentPlayerIndex);
+    justLanded = func_800F72DC(currentPlayerIndex);
+    currentHitbox = func_800F56AC(currentPlayerIndex) == 0x10;
+    unk = func_800F6478(currentPlayerIndex);
+    //This is if we're in the hitbox or above it something to that effect
+    if (!currentHitbox) {
+        return 0;
+    }
+
+    //Wake up the snake
+    return unk && (justLanded || isGrounded && !playerHorizontalUnk);
+}
 
 void func_80800150_chjadesnake(Actor* arg0)
 {
@@ -225,7 +247,36 @@ void func_80800770_chjadesnake(Actor* arg0, void* arg1)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jadesnake/func_808007DC_chjadesnake.s")
+s32 func_808007DC_chjadesnake(Actor* arg0, s32 arg1, u32 arg2)
+{
+    Actor* temp_v0;
+    // FAKE
+    if (arg0);
+
+    switch (arg1)
+    {
+    case 0xD:
+        if ((arg0->unk70_10) != 1)
+        {
+            temp_v0 = func_80106790(func_80101080());
+            func_800EFB24(&temp_v0->actorData[4], &arg0->actorData[0], &arg0->actorData[4]);
+            //Apply Scale
+            func_800EF334(&temp_v0->actorData[4], 0.14285715f);
+            arg0->unk6C_0 = 7;
+            func_80102FE8(temp_v0, 0);
+        }
+        break;
+    case 0x2E:
+        func_80800728_chjadesnake(arg0, ((s16*)(&arg2))[0], ((s16*)(&arg2))[1]);
+        break;
+    case 0x52:
+        _gcdialogcamera_entrypoint_3(&D_808009E4_chjadesnake, arg0->scale);
+        break;
+    default:
+        return 0;
+    }
+    return 1;
+}
 
 ActorData* chjadesnake_entrypoint_0(void) 
 {

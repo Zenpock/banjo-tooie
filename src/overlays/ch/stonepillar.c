@@ -3,21 +3,17 @@
 extern ActorData D_808013F0_chstonepillar;
 extern ActorData D_80801438_chstonepillar;
 extern s16 D_80801480_chstonepillar[];
+extern s32 D_8080148C_chstonepillar;
 extern s32 D_80801498_chstonepillar;
 extern s32 D_808014B8_chstonepillar;
 extern u32 D_808014F0_chstonepillar;
 
 typedef struct StonePillarStruct {
-    u8 unk0;
-    u8 unk1;
-    u8 unk2;
-    u8 unk3;
-    s32 unk4;
-    s32 unk8;
+    f32 unk0[3];
     f32 unkC[3];
     f32 unk18[3];
     f32 unk24;
-    f32 unk28;
+    s32 unk28;
     s16 unk2C;
     u8 unk2E;
     u8 unk2F;
@@ -34,10 +30,12 @@ void func_80800ADC_chstonepillar(Actor*, s32);
 s32 func_80800B58_chstonepillar(Actor*);
 void func_80800BDC_chstonepillar(f32*);
 void func_80800C10_chstonepillar(f32*);
+void func_80800C44_chstonepillar(Actor*);
+void func_80800CC8_chstonepillar(Actor*, s32);
 void func_80800DA4_chstonepillar(Actor*);
-s32 func_80800DD8_chstonepillar(Actor*);
+int func_80800DD8_chstonepillar(Actor*);
 void func_80800E30_chstonepillar(Actor*);
-s32 func_80800EE0_chstonepillar(Actor*);
+void func_80800EE0_chstonepillar(Actor*);
 void func_80800FE0_chstonepillar(Actor*);
 void func_808010CC_chstonepillar(Actor*);
 s32 func_8080112C_chstonepillar(Actor*);
@@ -172,9 +170,35 @@ s32 func_8080031C_chstonepillar(Actor* arg0, s32 arg1, s32 arg2)
     return 1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stonepillar/func_80800390_chstonepillar.s")
+s32 func_80800390_chstonepillar(Actor* arg0, s32 arg1, s32 arg2)
+{
+    switch (arg1)
+    {
+    case 0x3F:
+        func_80800CC8_chstonepillar(arg0, *(s32*)&arg2);
+        break;
+    case 0x95:
+        func_80800C44_chstonepillar(arg0);
+        break;
+    default:
+        return 0;
+    }
+    return 1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stonepillar/func_808003F4_chstonepillar.s")
+void func_808003F4_chstonepillar(Actor* arg0, s32 arg1)
+{
+    StonePillarStruct* sp28;
+    s32 s0;
+
+    for (s0 = 0; s0 < 5; s0++)
+    {
+        func_800DF744(s0 + 1, 0);
+    }
+    sp28 = (StonePillarStruct*)func_80100094(arg0, 0U);
+    func_800DF744(sp28->unk2E + 1, 1);
+    func_80101808(arg0, func_801015D0);
+}
 
 s32 func_80800474_chstonepillar(Actor* arg0)
 {
@@ -193,7 +217,16 @@ s32 func_80800474_chstonepillar(Actor* arg0)
     return 1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stonepillar/func_80800520_chstonepillar.s")
+void func_80800520_chstonepillar(Actor* arg0)
+{
+    StonePillarStruct* temp_v0;
+    func_80800EE0_chstonepillar(arg0);
+    temp_v0 = (StonePillarStruct*)func_80100094(arg0, 0U);
+    func_808005B4_chstonepillar(arg0, temp_v0->unk28, temp_v0->unk0);
+    func_808005B4_chstonepillar(arg0, temp_v0->unk28 + 1, temp_v0->unkC);
+    arg0->position[1] -= (temp_v0->unk28 * 200.0f);
+    ((f32*)arg0->actorData)[1] = arg0->position[1];
+}
 
 void func_808005B4_chstonepillar(Actor* arg0, s32 arg1, f32* arg2)
 {
@@ -277,7 +310,71 @@ void func_808007C8_chstonepillar(Actor* arg0)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stonepillar/func_80800870_chstonepillar.s")
+s32 func_80800870_chstonepillar(Actor* arg0)
+{
+    f32 temp_f2;
+    f32 gameSpeed;
+    f32 sp2C[3];
+    f32 temp_f0;
+
+
+    StonePillarStruct* temp_s0;
+
+    gameSpeed = func_800D8FF8();
+    temp_s0 = func_80100094(arg0, 0U);
+    func_800D1218(8, 1, sp2C);
+    _fxsparkle_entrypoint_1(sp2C, 0x12U);
+    if (temp_s0->unk2F == 0)
+    {
+        temp_f0 = temp_s0->unkC[1];
+        if (sp2C[1] < temp_f0)
+        {
+            sp2C[1] = temp_f0;
+            temp_s0->unk30[2] *= -0.54f;
+            temp_s0->unk30[1] *= 0.08f;
+            func_800D1254(8, 1, sp2C);
+            temp_s0->unk2F = 1U;
+            func_8010D930(3, 0, sp2C, &D_8080148C_chstonepillar);
+            return 1;
+        }
+        else
+        {
+            temp_f2 = temp_s0->unk30[2];
+            temp_s0->unk30[2] -= (1200.0f * gameSpeed);
+            sp2C[1] += temp_s0->unk30[2] * gameSpeed;
+            if ((temp_f2 >= 0.0f) && (temp_s0->unk30[2] < 0.0f))
+            {
+                temp_s0->unk30[0] = func_800F1DF4(sp2C, temp_s0->unkC);
+            }
+            func_800EF1B8(sp2C, temp_s0->unk30[0], temp_s0->unk30[1] * gameSpeed);
+        }
+
+    }
+    else
+    {
+        temp_f2 = 1200.0f * gameSpeed;
+        temp_s0->unk30[2] -= temp_f2;
+        sp2C[1] += temp_s0->unk30[2] * gameSpeed;
+        func_800EF1B8(sp2C, temp_s0->unk30[0], temp_s0->unk30[1] * gameSpeed);
+        if (temp_s0->unk30[2] < 0.0f)
+        {
+            temp_f0 = temp_s0->unkC[1];
+            if (sp2C[1] < temp_f0)
+            {
+                sp2C[1] = temp_f0;
+                temp_s0->unk30[2] = (f32)(temp_s0->unk30[2] * -0.6f);
+                func_8010D930(3, 0, sp2C, &D_8080148C_chstonepillar);
+                if (temp_s0->unk30[2] < (2.0f * temp_f2))
+                {
+                    func_800D1254(8, 1, sp2C);
+                    return 0;
+                }
+            }
+        }
+    }
+    func_800D1254(8, 1, sp2C);
+    return 1;
+}
 
 void func_80800ADC_chstonepillar(Actor* arg0, s32 arg1)
 {
@@ -363,8 +460,14 @@ void func_80800DA4_chstonepillar(Actor* arg0)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stonepillar/func_80800DD8_chstonepillar.s")
+int func_80800DD8_chstonepillar(Actor* arg0)
+{
+    StonePillarStruct* sp1C;
 
+    sp1C = (StonePillarStruct*)func_80100094(arg0, 0U);
+    return (func_800DA564(FLAG3_9CD_UNK, 3) == sp1C->unk2C && !func_800DA298(sp1C->unk2C + 0x65C));
+
+}
 void func_80800E30_chstonepillar(Actor* arg0)
 {
     StonePillarStruct* sp1C;
@@ -385,7 +488,31 @@ void func_80800E30_chstonepillar(Actor* arg0)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stonepillar/func_80800EE0_chstonepillar.s")
+void func_80800EE0_chstonepillar(Actor* arg0)
+{
+    StonePillarStruct* temp_v0;
+
+    temp_v0 = func_80100094(arg0, 0U);
+    temp_v0->unk2C = ((s32)arg0->rotation[1]) - 1;
+    temp_v0->unk2F = 0;
+    temp_v0->unk24 = 0.0f;
+    temp_v0->unk28 = temp_v0->unk2C;
+    temp_v0->unk2E = (s8)((s32)arg0->rotation[1] - 1);
+    if ((arg0->unk0->unk24 >> 0x16) == 0x19F)
+    {
+        arg0->rotation[1] = func_800136E4(arg0->rotation[1] - ((f32)temp_v0->unk2C * 18.0f));
+    }
+    else
+    {
+        arg0->rotation[1] = 0.0f;
+    }
+    func_800EE7F8((f32*)arg0->actorData, arg0->position);
+    func_800EE7F8(temp_v0->unk18, arg0->position);
+    if (func_800D0B68(8U, 1U) != 0) 
+    {
+        temp_v0->unk2C = -1;
+    }
+}
 
 void func_80800FE0_chstonepillar(Actor* arg0)
 {

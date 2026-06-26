@@ -25,6 +25,7 @@
 #include "core2/1EDB4D0.h"
 #include "core2/1EDC070.h"
 #include "core2/1EDCA30.h"
+#include "core2/1EE7080.h"
 
 
 #endif
