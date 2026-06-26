@@ -20,6 +20,7 @@ s32 func_8008FC28();
 void func_8008FC50();
 TransformationId func_8008FD48();
 s32 func_8008FD70();
+s32 func_8008FDC4();
 Unk80132ED0* func_8008FDEC();
 s32 func_8008FE14();
 void func_8008FE68(f32*);

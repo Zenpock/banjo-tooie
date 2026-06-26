@@ -30,7 +30,7 @@ typedef struct
     u8 unk11;
     u8 unk12;
     u8 unk13;
-    s8 unk14;
+    u8 unk14;
     s8 unk15;
     s8 unk16;
     s8 unk17;
@@ -53,12 +53,13 @@ extern s32 D_80802A6C_chfactoryrobot;
 extern s32 D_80802A7C_chfactoryrobot;
 extern s32 D_80802AB8_chfactoryrobot;
 extern s32 D_80802AD4_chfactoryrobot;
-
+extern s32 D_80802AEC_chfactoryrobot;
 extern s32 D_80802890_chfactoryrobot[][3];
 extern u32 D_80802A8C_chfactoryrobot;
 extern s32 D_80802A9C_chfactoryrobot;
 extern s32 D_80802AAC_chfactoryrobot;
 extern f32 D_80802ACC_chfactoryrobot[2];
+extern s32 D_80802AF4_chfactoryrobot;
 
 void func_80800264_chfactoryrobot(Actor*);
 void func_80800424_chfactoryrobot(Actor*, s32);
@@ -69,13 +70,13 @@ void func_80801160_chfactoryrobot(Actor*, s32);
 s32 func_80801278_chfactoryrobot(Actor*);
 void func_8080183C_chfactoryrobot(Actor*);
 void func_80801954_chfactoryrobot(Actor*);
-void func_80801A80_chfactoryrobot(Actor*);
+s32 func_80801A80_chfactoryrobot(Actor*);
 s32 func_80801B3C_chfactoryrobot(Actor*);
 s32 func_80801BB0_chfactoryrobot(Actor*);
 s32 func_80801C50_chfactoryrobot(s32);
 void func_80801C7C_chfactoryrobot(Actor*);
 s32 func_80802398_chfactoryrobot(Actor*);
-void func_80802470_chfactoryrobot(Actor*, s32);
+s32 func_80802470_chfactoryrobot(Actor*, s32);
 void func_808025D4_chfactoryrobot(Actor*);
 
 //Camera
@@ -781,7 +782,38 @@ void func_80801954_chfactoryrobot(Actor* arg0)
 }
 
 //Robot
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80801A80_chfactoryrobot.s")
+s32 func_80801A80_chfactoryrobot(Actor* arg0)
+{
+    FactoryRobotStruct* temp_v0;
+    u32 var_v0;
+
+    temp_v0 = func_80100094(arg0, 0U);
+    if (temp_v0->unk20 > 0.0f)
+    {
+        return 0;
+    }
+
+    if (arg0->unk64_29 != 0)
+    {
+        var_v0 = _subaddiejoy_entrypoint_6(arg0, 0);
+    }
+    else if (temp_v0->unk18 != 0)
+    {
+        return 0;
+    }
+    else
+    {
+        var_v0 = func_800D9078(&arg0->unk58);
+    }
+
+    if (var_v0 != 0)
+    {
+        func_80801160_chfactoryrobot(arg0, 4);
+        temp_v0->unk20 = 0.0f;
+        return 1;
+    }
+    return 0;
+}
 
 //Robot
 s32 func_80801B3C_chfactoryrobot(Actor* arg0)
@@ -854,7 +886,130 @@ void func_80801D08_chfactoryrobot(Actor* arg0)
 }
 
 //Robot Tube Update
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80801D7C_chfactoryrobot.s")
+void func_80801D7C_chfactoryrobot(Actor* arg0)
+{
+    FactoryRobotTubeStruct* temp_s2;
+    u32 temp_v0;
+    s32 sp6C;
+    s32 sp68;
+    s32 pad;
+    f32 sp58[3];
+    s32 pad2;
+    f32 sp50;
+    f32 sp44[3];
+    s32 temp_s0;
+    f32 sp3C;
+
+    temp_s2 = func_80100094(arg0, 0U);
+    func_800F4F34(func_800F54E4(), arg0->position, 100.0f, 80.0f);
+    switch (arg0->unk70_10)
+    {
+    case 1:
+        if (arg0->unk3C == NULL)
+        {
+            func_80101FDC(arg0, 3U);
+            break;
+        }
+        if ((func_80106790(arg0->unk3C)->unk58 > 0.0f) && (temp_s2->unk14 == 0))
+        {
+            _sudialog_entrypoint_0(0x364, 4);
+            pad = temp_s2->unk10;
+            if (pad < temp_s2->unk11)
+            {
+                sp68 = 0;
+                for (sp6C = 0; sp6C < temp_s2->unk10; sp6C++)
+                {
+                    if (
+                        func_800F00A4(
+                            arg0->position,
+                            150.0f,
+                            800.0f,
+                            0,
+                            func_80106790(((s32*)temp_s2)[sp6C])->position
+                        ) != 0
+                        )
+                    {
+                        sp68 = 1;
+                        break;
+                    }
+                }
+                if (sp68 == 0)
+                {
+                    func_80108B04(arg0, 0U);
+                    func_80101FDC(arg0, 2U);
+                    arg0->unk58 = func_800DC178(1.5f, 2.5f);
+                }
+            }
+        }
+        break;
+    case 2:
+        if (func_800D9078(&arg0->unk58) != 0)
+        {
+            func_80101FDC(arg0, 1U);
+        }
+        break;
+    case 4:
+        if ((func_8010D23C() != 0) && (func_8010C500(arg0) != 0) && (func_8008FDC4() & 0x08000000))
+        {
+            _capod_entrypoint_13(arg0->unk0, NULL, 0xCU, 0x30U);
+            func_80101FDC(arg0, 6U);
+            arg0->unk64_20 = 0;
+            arg0->unk58 = 1.0f;
+            _chmrtannoy_entrypoint_0();
+            _subaddiedialog_entrypoint_11(arg0->unk0, 0x133BU, 7U, arg0->position, 0xA3U);
+        }
+        break;
+    case 6:
+        temp_s0 = func_800D9078(&arg0->unk58);
+        sp50 = func_800F12D4(arg0->unk58, 0.0f, 1.0f, -200.0f, 300.0f);
+        func_800EE7F8(sp58, arg0->position);
+        sp58[1] += sp50;
+        func_800D1254(0x39, 1, sp58);
+        if (!(arg0->unk64_20) && (arg0->unk58 < 0.7f))
+        {
+            _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80802AEC_chfactoryrobot);
+            arg0->unk64_20 = 1;
+        }
+        if (temp_s0 != 0)
+        {
+            func_80101FDC(arg0, 9U);
+        }
+        break;
+    case 7:
+        temp_s0 = func_800D9078(&arg0->unk58);
+        sp3C = func_800F12D4(arg0->unk58, 0.0f, 1.0f, 300.0f, -200.0f);
+        func_800EE7F8(sp44, arg0->position);
+        sp44[1] += sp3C;
+        func_800D1254(0x39, 1, sp44);
+        if (temp_s0 != 0)
+        {
+            func_80101FDC(arg0, 0xAU);
+            func_800DA544(FLAG_1BB_UNK);
+        }
+        break;
+    case 8:
+        func_800D2498(0x101, temp_s2->unk13, 0);
+        if (func_800D9078(&arg0->unk58) != 0)
+        {
+            func_80101FDC(arg0, 9U);
+        }
+        break;
+    case 9:
+        func_800D2498(0x101, temp_s2->unk13, 0);
+        if (((s32)temp_s2->unk10 < func_800F1418((s32)temp_s2->unk11, (s32)temp_s2->unk13)) && (temp_s2->unk14 == 0))
+        {
+            func_80108B04(arg0, 0U);
+            func_80101FDC(arg0, 8U);
+            arg0->unk58 = func_800DC178(1.5f, 2.5f);
+        }
+        break;
+    case 3:
+    case 5:
+    case 10:
+        break;
+    }
+    temp_s2->unk14 = 0U;
+}
 
 //Robot Tube
 void func_8080219C_chfactoryrobot(Actor* arg0)
@@ -888,7 +1043,49 @@ void func_808021D4_chfactoryrobot(Actor* arg0, s32 arg1)
 }
 
 //Robot Tube Event Handler
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80802240_chfactoryrobot.s")
+s32 func_80802240_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
+{
+    Actor* temp_v0;
+    u8 temp_a0;
+
+    switch (arg1)
+    {
+        case 0x3D:
+            //Get Robot
+            temp_v0 = func_80108528(0x3BE, arg0->position, 0, &arg0);
+            if (temp_v0 != NULL)
+            {
+                temp_v0->unk74_7 = arg0->unk74_7;
+            }
+            break;
+        case 0x2E:
+            _capod_entrypoint_14();
+            break;
+        case 0x1F:
+            func_808021D4_chfactoryrobot(arg0, *(s32*)&arg2);
+            break;
+        case 0x95:
+            func_808025D4_chfactoryrobot(arg0);
+            break;
+        case 0x29:
+            ((u8*)&arg0->actorData)[0x10] = func_800E8B74(0U);
+            func_800E8DB0(((u8*)&arg0->actorData)[0x10], 6);
+            func_800E8D28(((u8*)&arg0->actorData)[0x10], 1.2f);
+            func_800E8D5C(((u8*)&arg0->actorData)[0x10], &D_80802AF4_chfactoryrobot, 3U);
+            break;
+        case 0x2A:
+            temp_a0 = ((u8*)&arg0->actorData)[0x10];
+            if (temp_a0 != 0)
+            {
+                func_800E8C08(temp_a0);
+                ((u8*)&arg0->actorData)[0x10] = 0U;
+            }
+            break;
+        default:
+            return 0;
+    }
+    return 1;
+}
 
 //Robot
 s32 func_80802398_chfactoryrobot(Actor* arg0)
@@ -917,7 +1114,51 @@ s32 func_80802398_chfactoryrobot(Actor* arg0)
 }
 
 //Robot
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/robot/func_80802470_chfactoryrobot.s")
+s32 func_80802470_chfactoryrobot(Actor* arg0, s32 arg1)
+{
+    Actor* temp_v0;
+    FactoryRobotTubeStruct* sp28;
+    s32 index;
+
+    if (arg0->unk7A_5)
+    {
+        return 0;
+    }
+
+    if (arg0->unk3C == NULL)
+    {
+        return 0;
+    }
+
+    temp_v0 = func_80106790(arg0->unk3C);
+    sp28 = func_80100094(temp_v0, 0U);
+    if ((arg1 != 0) && (sp28->unk12 != 0))
+    {
+        sp28->unk13--;
+        if (!(sp28->unk13))
+        {
+            _capod_entrypoint_13(temp_v0->unk0, NULL, 0xFU, 0x30U);
+            func_80101FDC(temp_v0, 7U);
+            temp_v0->unk64_20 = 0;
+            temp_v0->unk58 = 1.0f;
+            func_800FC660(0x10U);
+            _subaddiedialog_entrypoint_11(temp_v0->unk0, 0x137BU, 0x44U, temp_v0->position, 0xA3U);
+        }
+    }
+
+    arg0->unk3C = NULL;
+
+    for (index = 0; index < sp28->unk10; index++)
+    {
+        if ((s32)arg0->unk0 == sp28->unk0[index])
+        {
+            sp28->unk0[index] = sp28->unk0[--sp28->unk10];
+            return 1;
+        }
+    }
+
+    return 0;
+}
 
 //Tube?
 void func_808025D4_chfactoryrobot(Actor* arg0)

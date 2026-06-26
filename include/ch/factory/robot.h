@@ -13,6 +13,7 @@
 #include "core2/1EA1DA0.h"
 #include "core2/1EA5180.h"
 #include "core2/1EA9160.h"
+#include "core2/1EABAC0.h"
 #include "core2/1EAF950.h"
 #include "core2/1EB2840.h"
 #include "core2/1EB2C90.h"
