@@ -498,7 +498,7 @@ void func_80800EE0_chstonepillar(Actor* arg0)
     temp_v0->unk24 = 0.0f;
     temp_v0->unk28 = temp_v0->unk2C;
     temp_v0->unk2E = (s8)((s32)arg0->rotation[1] - 1);
-    if ((arg0->unk0->unk24 >> 0x16) == 0x19F)
+    if ((arg0->unk0->unk24_22) == 0x19F)
     {
         arg0->rotation[1] = func_800136E4(arg0->rotation[1] - ((f32)temp_v0->unk2C * 18.0f));
     }
@@ -526,7 +526,7 @@ void func_80800FE0_chstonepillar(Actor* arg0)
         if (func_800DA298(FLAG3_9D9_UNK) != 0)
         {
             func_80801174_chstonepillar(arg0);
-            if (((u32)arg0->unk0->unk24 >> 0x16) != 0x19F)
+            if (((u32)arg0->unk0->unk24_22) != 0x19F)
             {
                 func_800DA524(FLAG3_9D7_UNK);
             }
@@ -587,7 +587,7 @@ s32 func_80801238_chstonepillar(Actor* arg0)
     StonePillarStruct* sp28;
 
     sp28 = func_80100094(arg0, 0U);
-    if ((func_800D9078(&arg0->unk58) != 0) && (((u32)arg0->unk0->unk24 >> 0x16) != 0x19F) && (func_800D0B68(8U, 1U) == 0) && (sp28->unk2C != 4) && (func_8080112C_chstonepillar(arg0) != 0))
+    if ((func_800D9078(&arg0->unk58) != 0) && (((u32)arg0->unk0->unk24_22) != 0x19F) && (func_800D0B68(8U, 1U) == 0) && (sp28->unk2C != 4) && (func_8080112C_chstonepillar(arg0) != 0))
     {
         func_800FC660(0xEU);
     }

@@ -86,8 +86,10 @@ s32 func_800F6D24(s32);
 s32 func_800F6DE0(f32*);
 s32 func_800F65D0(s32);
 s32 func_800F70BC(u32);
+s32 func_800F7150(s32);
 s32 func_800F71D4(u32);
 s32 func_800F72DC(u32);
+void func_800F7664(u32, u8, u8);
 void func_800F7700(u32, s32, f32*);
 //The moving object is moved towards/away from the target
 void func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);

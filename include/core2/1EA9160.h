@@ -45,5 +45,6 @@ void func_800D1254(s32, s32, void*);
 s32 func_800D129C(u32);
 //Get Total Number of Jinjos Collected of Type
 u32 func_800D1338(u32 JinjoColor);
+s32 func_800D13E8(s32, s32);
 
 #endif

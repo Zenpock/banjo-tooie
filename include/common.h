@@ -29,7 +29,10 @@ typedef struct {
     /* 0x18 */ u32 unk18;
     /* 0x1C */ u32 unk1C;
     /* 0x20 */ u32 unk20;
-    /* 0x24 */ u32 unk24;
+    /* 0x24 */ u32 unk24_22 : 10;
+    /* 0x24 */ u32 unk24_16 : 6;
+    /* 0x24 */ u32 unk24_6 : 6;
+    /* 0x24 */ u32 unk24_0 : 10;
     /* 0x28 */ u32 unk28;
     /* 0x2C */ u32 unk2C;
 } Unk80132ED0;
@@ -100,8 +103,7 @@ typedef struct Actor {
     /* 0x79 */ u8 unk79_4 : 4;
     /* 0x79 */ u8 unk79_3 : 1; 
     /* 0x79 */ u8 unk79_2 : 1;
-    /* 0x79 */ u8 unk79_1 : 1;
-    /* 0x79 */ u8 unk79_0 : 1;
+    /* 0x79 */ u8 unk79_0 : 2;
     /* 0x7A */ u16 unk7A_14 : 2;
     /* 0x7A */ u16 unk7A_12 : 2;
 	/* 0x7A */ u16 unk7A_9 : 3;
@@ -139,7 +141,7 @@ typedef struct ActorData {
     s16 unk4;
     s16 unk6;
     void *unk8;
-    void (*unkC_func)(Actor* actor);
+    void (*unkC_func)(Actor* actor); //Update
     void (*unk10_func)(Actor* actor);
     void (*unk14_func)(s32 arg0, s32 arg1);
     s32 unk18;

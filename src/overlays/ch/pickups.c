@@ -191,7 +191,7 @@ void func_80800364_chpickups(Actor* arg0)
         arg0->position[1] = var_f12;
         if (arg0->unk70_10 == 4)
         {
-            if ((arg0->unk0->unk24 >> 0x16 != 0x37) && (arg0->unk0->unk24 >> 0x16 == 0x67))
+            if ((arg0->unk0->unk24_22 != 0x37) && (arg0->unk0->unk24_22 == 0x67))
             {
                 func_80101180(0x4A5, 0x7D, 0);
                 func_800FFAB0(arg0);
@@ -258,7 +258,7 @@ void func_80800638_chpickups(Actor* arg0)
             func_80800364_chpickups(arg0);
             break;
         }
-        if (((u32)arg0->unk0->unk24 >> 0x16) == 0x1DD)
+        if (((u32)arg0->unk0->unk24_22) == 0x1DD)
         {
             if (func_800DA298(0x5A) != 0)
             {
