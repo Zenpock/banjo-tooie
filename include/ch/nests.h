@@ -27,4 +27,6 @@
 #include "fx/sparkle.h"
 #include "gl/eeprom.h"
 
+s32 _chnests_entrypoint_13(s32);
+
 #endif

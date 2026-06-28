@@ -41,7 +41,7 @@ typedef struct {
 typedef struct Actor {
     /* 0x00 */ Unk80132ED0* unk0;
     /* 0x04 */ f32 position[3];
-    /* 0x10 */ u32* pointerToSyscallEntry;
+    /* 0x10 */ void* (*pointerToSyscallEntry)();
     /* 0x14 */ u32 unk14;
     /* 0x18 */ u32 actorData[8]; //Cast this array to struct in actor
     /* 0x38 */ f32 scale;
@@ -163,7 +163,6 @@ typedef struct ActorData {
     s16 unk44;
     s16 unk46;
     void (*unk48_func)(Actor* actor, s32 arg1, s32 arg2);
-    s32 unk4C;
 } ActorData;
 
 typedef struct {
