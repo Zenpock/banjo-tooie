@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/egg/proximity.h"
 
 extern ActorData D_80800CE0_cheggproximity;
 ActorData* cheggproximity_entrypoint_0()

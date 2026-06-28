@@ -13,6 +13,7 @@
 #include "overlays/ba/key.h"
 #include "overlays/ba/drone.h"
 #include "ba/hold.h"
+#include "bs/babykaz.h"
 
 #include <ultra64.h>
 

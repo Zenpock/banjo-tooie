@@ -138,20 +138,21 @@ typedef struct Actor {
 typedef struct ActorData {
     s16 unk0;
     s16 unk2;
-    s16 unk4;
+    s16 Model;
     s16 unk6;
     void *unk8;
     void (*unkC_func)(Actor* actor); //Update
     void (*unk10_func)(Actor* actor);
-    void (*unk14_func)(s32 arg0, s32 arg1);
-    s32 unk18;
-    s32 unk1C;
+    void (*unk14_func)(Actor* arg0, void* arg1);
+    u16 unk18;
+    u16 unk1A;
+    f32 unk1C;
     s16 unk20;
     s16 unk22;
     s16 unk24;
     s16 unk26;
     void (*unk28_func)(Actor* actor);
-    s32 unk2C;
+    void* (*unk2C_func)();
     s16 unk30;
     s16 unk32;
     void (*unk34_func)(Actor* actor);

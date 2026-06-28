@@ -229,9 +229,9 @@ int func_8008DD04(PlayerState* arg0)
         && player_isStable(arg0) == 0;
 }
 
-void func_8008DD70(s32 arg0)
+s32 func_8008DD70(s32 arg0)
 {
-    func_8009E71C(arg0,0x5);
+    return func_8009E71C(arg0,0x5);
 }
 
 s32 func_8008DD90(PlayerState* arg0) {
@@ -255,7 +255,7 @@ void func_8008DDEC(PlayerState* arg0, s32 arg1, f32 arg2)
 
 s32 func_8008DE24(PlayerState* arg0)
 {
-    func_80096568(arg0,0xE00);
+    return func_80096568(arg0,0xE00);
 }
 
 s32 func_8008DE44(s32 arg0) {
