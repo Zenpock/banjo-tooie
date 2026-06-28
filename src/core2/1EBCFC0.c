@@ -1,7 +1,4 @@
-#include <ultra64.h>
-#include <PR/gbi.h>
-#include "core1/mlmtx.h"
-#include "gfx.h"
+#include "core2/1EBCFC0.h"
 
 typedef struct {
     Gfx* unk0;
@@ -33,9 +30,43 @@ void func_800CA7E4(s32, f32[3]);
 u16 func_800CB124(s32, MtxF*);
 void func_800E443C(MtxF*, f32[3], f32);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E36D0.s")
+s32 func_800E36D0(s32 min[3], s32 max[3], f32 position[3], f32 direction[3]) {
+    f32 corner[3];
+    f32 dot_product;
+    f32 result;
+    s32 ix;
+    s32 iy;
+    s32 iz;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E37E8.s")
+    result = 0.0f;
+
+    for (ix = 0; ix < 2; ix++) {
+        for (iy = 0; iy < 2; iy++) {
+            for (iz = 0; iz < 2; iz++) {
+                corner[0] = (ix ? min[0] : max[0]) - position[0];
+                corner[1] = (iy ? min[1] : max[1]) - position[1];
+                corner[2] = (iz ? min[2] : max[2]) - position[2];
+
+                dot_product = (direction[0] * corner[0]) + (direction[1] * corner[1]) + (direction[2] * corner[2]);
+
+                if (result < dot_product) {
+                    result = dot_product;
+                }
+            }
+        }
+    }
+
+    return (s32)result;
+}
+
+void func_800E37E8(s32 min[3], s32 max[3], s32 ratio) {
+    int i;
+
+    for (i = 0; i < 3; i++) {
+        min[i] = (min[i] >= 0) ? min[i] / ratio : min[i] / ratio - 1;
+        max[i] = (max[i] >= 0) ? max[i] / ratio : max[i] / ratio - 1;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3900.s")
 
@@ -49,15 +80,30 @@ void func_800E443C(MtxF*, f32[3], f32);
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E39D8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3A08.s")
+void func_800E3A08(s32 arg0)
+{
+    func_800CA810(D_8012D500, arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3A30.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3A58.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3A80.s")
+f32 func_800E3A80(void) {
+    return func_800CAA1C(D_8012D500);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3AA4.s")
+s32 func_800E3AA4(f32 x) {
+    f32 val = (s32)(func_800E3A80() - x);
+
+    while (val < 0)
+        val += 360;
+
+    while (val >= 360)
+        val -= 360;
+
+    return val;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3B50.s")
 

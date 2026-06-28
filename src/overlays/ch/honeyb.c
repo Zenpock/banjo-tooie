@@ -126,7 +126,7 @@ void func_808002AC_chhoneyb(Actor* arg0)
                 func_80800018_chhoneyb(arg0, 0x1521, 0xF);
                 return;
             }
-            if (func_800DA298(0) != 0)
+            if (flag_getValue(0) != 0)
             {
                 func_80800744_chhoneyb(arg0, 0x1519, 0);
                 return;
@@ -159,7 +159,7 @@ void func_808002AC_chhoneyb(Actor* arg0)
         {
             if (*(f32*)&arg0->actorData[7] < 1.0f)
             {
-                *(f32*)&arg0->actorData[7] += (func_800D8FF8() * 2/*.0f*/);
+                *(f32*)&arg0->actorData[7] += (time_getDelta() * 2/*.0f*/);
                 if (*(f32*)&arg0->actorData[7] > 1.0f)
                 {
                     *(f32*)&arg0->actorData[7] = 1.0f;
@@ -229,9 +229,9 @@ void func_80800744_chhoneyb(Actor* arg0, s32 arg1, s32 arg2)
     switch (arg1)
     {
     case 0x1518:
-        func_800DA544(FLAG_4E9_FTT_HONEY_B);
+        flag_setValueTrue(FLAG_4E9_FTT_HONEY_B);
     case 0x1519:
-        func_800DA544(0);
+        flag_setValueTrue(0);
         temp_v0 = arg0->actorData[4];
         if (temp_v0 == 0)
         {
@@ -321,7 +321,7 @@ s32 func_80800968_chhoneyb(Actor* arg0, s32 arg1, s32 arg2)
         return 3;
     case 0x95:
         _suexpression_entrypoint_12(_suexpression_entrypoint_7(arg0, 0, 0x9B), 60.0f, 20.0f);
-        if ((func_800DA298(0x4E9) == 0) && (_glcutDll_entrypoint_20() == 0))
+        if ((flag_getValue(0x4E9) == 0) && (_glcutDll_entrypoint_20() == 0))
         {
             func_8008F8B0();
             func_8008F904(&func_8010D5DC, arg0->unk0);

@@ -25,13 +25,13 @@ void func_80800058_chsignpost(Actor* arg0)
     switch (arg0->unk70_10)
     {
     case 1:
-        if (func_800DA298(FLAG_03A_FTT_SIGNPOST) == 0)
+        if (flag_getValue(FLAG_03A_FTT_SIGNPOST) == 0)
         {
             if ((func_8010CAC0(arg0->position, 0x15EU) != 0) && (func_8010CD88(arg0, 360.0f, 70.0f) != 0) && (func_800F4B8C(func_800F54E4(), -1U, 0) != 0))
             {
                 _subaddiedialog_entrypoint_11(arg0->unk0, 0x16C2U, 0xEU, arg0->position, 0x28U);
                 func_80101FDC(arg0, 2U);
-                func_800DA544(FLAG_03A_FTT_SIGNPOST);
+                flag_setValueTrue(FLAG_03A_FTT_SIGNPOST);
                 return;
             }
         }

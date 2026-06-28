@@ -32,8 +32,8 @@ void func_80800000_chheggy(Actor* arg0, Unk80100094* arg1, s32 arg2)
 s32 func_8080006C_chheggy(void) 
 {
     return
-        (func_800DA298(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE) != 0 ? 1 : 0) +
-        (func_800DA298(FLAG_3E5_SNS_EGG_ACQUIRED_PINK) != 0 ? 1 : 0);
+        (flag_getValue(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE) != 0 ? 1 : 0) +
+        (flag_getValue(FLAG_3E5_SNS_EGG_ACQUIRED_PINK) != 0 ? 1 : 0);
 }
 
 s32 func_808000C0_chheggy(Actor* arg0)
@@ -190,7 +190,7 @@ void func_808007D4_chheggy(Actor* arg0, s32 arg1, s32 arg2)
 
 void func_8080087C_chheggy(Actor* arg0)
 {
-    if ((arg0->actorData[4] != 0) && (func_800DA298(FLAG2_64B_UNK) != 0))
+    if ((arg0->actorData[4] != 0) && (flag_getValue(FLAG2_64B_UNK) != 0))
     {
         _capod_entrypoint_3(0);
         arg0->actorData[4] = 0;
@@ -261,9 +261,9 @@ void func_808009DC_chheggy(Actor* arg0)
         {
             if (arg0->actorData[7] == 0x515)
             {
-                func_800DA524(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE);
+                flag_setValueFalse(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE);
                 arg0->unk64_20 = 1;
-                if (func_800DA298(FLAG_3E5_SNS_EGG_ACQUIRED_PINK) != 0)
+                if (flag_getValue(FLAG_3E5_SNS_EGG_ACQUIRED_PINK) != 0)
                 {
                     func_80800ECC_chheggy(arg0, 6);
                 }
@@ -274,7 +274,7 @@ void func_808009DC_chheggy(Actor* arg0)
             }
             else
             {
-                func_800DA524(FLAG_3E5_SNS_EGG_ACQUIRED_PINK);
+                flag_setValueFalse(FLAG_3E5_SNS_EGG_ACQUIRED_PINK);
                 arg0->unk64_19 = 1;
                 func_80800ECC_chheggy(arg0, 9);
             }
@@ -348,14 +348,14 @@ void func_808009DC_chheggy(Actor* arg0)
         _sudeflect_entrypoint_1(arg0->position, func_80103EF4(arg0), 0.0f, func_80103EAC(arg0) * 0.8f, 0xE);
         if (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x258U, 0x3CU, 0) != 0)
         {
-            if ((func_800DA298(FLAG_3E4_SNS_EGG_HATCHED_BLUE) == 0) && (func_800DA298(FLAG_3E6_SNS_EGG_HATCHED_PINK) == 0))
+            if ((flag_getValue(FLAG_3E4_SNS_EGG_HATCHED_BLUE) == 0) && (flag_getValue(FLAG_3E6_SNS_EGG_HATCHED_PINK) == 0))
             {
                 var_a1 = 0x1546;
             }
-            else if ((func_800DA298(FLAG_3E4_SNS_EGG_HATCHED_BLUE) != 0) && (func_800DA298(FLAG_3E6_SNS_EGG_HATCHED_PINK) != 0))
+            else if ((flag_getValue(FLAG_3E4_SNS_EGG_HATCHED_BLUE) != 0) && (flag_getValue(FLAG_3E6_SNS_EGG_HATCHED_PINK) != 0))
             {
 
-                if (func_800DA298(FLAG_3E7_SNS_EGG_HATCHED_YELLOW) != 0)
+                if (flag_getValue(FLAG_3E7_SNS_EGG_HATCHED_YELLOW) != 0)
                 {
                     var_a1 = 0x1549;
                 }
@@ -382,7 +382,7 @@ void func_808009DC_chheggy(Actor* arg0)
         break;
     }
     func_8080015C_chheggy(arg0);
-    if (((func_800DA298(FLAG_3E4_SNS_EGG_HATCHED_BLUE) == 0) || (func_800DA298(FLAG_3E6_SNS_EGG_HATCHED_PINK) == 0)) && (_glcutDll_entrypoint_20() == 0))
+    if (((flag_getValue(FLAG_3E4_SNS_EGG_HATCHED_BLUE) == 0) || (flag_getValue(FLAG_3E6_SNS_EGG_HATCHED_PINK) == 0)) && (_glcutDll_entrypoint_20() == 0))
     {
         func_800D1824(0x52);
     }
@@ -414,14 +414,14 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
     {
     case 1:
         func_80800000_chheggy(arg0, func_80100094(arg0, 0U), 0);
-        func_800DA544(FLAG_3E8_FTT_IoH_HEGGY);
+        flag_setValueTrue(FLAG_3E8_FTT_IoH_HEGGY);
         func_80800750_chheggy(arg0, arg0->unk0, 8, 0x40);
         break;
     case 3:
         _subaddiedialog_entrypoint_11(arg0->unk0, 0x153CU, 0xEU, arg0->position, 0xCBU);
         break;
     case 4:
-        if ((func_800DA298(FLAG_3E4_SNS_EGG_HATCHED_BLUE) != 0) || (func_800DA298(FLAG_3E6_SNS_EGG_HATCHED_PINK) != 0))
+        if ((flag_getValue(FLAG_3E4_SNS_EGG_HATCHED_BLUE) != 0) || (flag_getValue(FLAG_3E6_SNS_EGG_HATCHED_PINK) != 0))
         {
             _subaddiedialog_entrypoint_11(arg0->unk0, 0x153EU, 0xEU, arg0->position, 0xCBU);
         }
@@ -434,7 +434,7 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
         _subaddiedialog_entrypoint_11(arg0->unk0, 0x153FU, 0xEU, arg0->position, 0xCBU);
         break;
     case 6:
-        if (func_800DA298(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE) != 0)
+        if (flag_getValue(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE) != 0)
         {
             arg0->actorData[7] = 0x515;
         }
@@ -443,7 +443,7 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
             arg0->actorData[7] = 0x516;
         }
         func_80800000_chheggy(arg0, sp34, arg0->actorData[7] == 0x515 ? 1 : 2);
-        func_80800750_chheggy(arg0, arg0->unk0, func_800DA298(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE) != 0 ? 3 : 1, 0x40);
+        func_80800750_chheggy(arg0, arg0->unk0, flag_getValue(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE) != 0 ? 3 : 1, 0x40);
         break;
     case 7:
         func_80090734(2, sp34->unk0[arg0->actorData[7] == 0x515 ? 3 : 4].f);
@@ -471,7 +471,7 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
         func_800F82D4(func_800F54E4(), 2);
         if (arg0->unk64_20)
         {
-            if (func_800DA298(FLAG_3E4_SNS_EGG_HATCHED_BLUE) != 0)
+            if (flag_getValue(FLAG_3E4_SNS_EGG_HATCHED_BLUE) != 0)
             {
                 arg0->unk3C = sp34->unk48[6];
                 func_801058C4(arg0, sp34->unk48[4], 500.0f, 1U);
@@ -528,13 +528,13 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
         func_800F82D4(func_800F54E4(), 0);
         if (arg0->unk64_20)
         {
-            func_800DA544(FLAG_3E4_SNS_EGG_HATCHED_BLUE);
+            flag_setValueTrue(FLAG_3E4_SNS_EGG_HATCHED_BLUE);
             func_800D3EF4(0xC);
             _subaddiedialog_entrypoint_11(arg0->unk0, 0x1541U, 0xEU, arg0->position, 0xCBU);
         }
         else
         {
-            func_800DA544(FLAG_3E6_SNS_EGG_HATCHED_PINK);
+            flag_setValueTrue(FLAG_3E6_SNS_EGG_HATCHED_PINK);
             func_800C7074(0x32, 1);
             _subaddiedialog_entrypoint_11(arg0->unk0, 0x1542U, 0xEU, arg0->position, 0xCBU);
         }
@@ -576,9 +576,9 @@ s32 func_80801570_chheggy(Actor* arg0, s32 arg1, s32 arg2)
             func_80800ECC_chheggy(arg0, 0x14);
             return 1;
         }
-        if (func_800DA298(FLAG_3E8_FTT_IoH_HEGGY) != 0)
+        if (flag_getValue(FLAG_3E8_FTT_IoH_HEGGY) != 0)
         {
-            if ((func_800DA298(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE) != 0) || (func_800DA298(FLAG_3E5_SNS_EGG_ACQUIRED_PINK) != 0))
+            if ((flag_getValue(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE) != 0) || (flag_getValue(FLAG_3E5_SNS_EGG_ACQUIRED_PINK) != 0))
             {
                 func_80800ECC_chheggy(arg0, 1);
                 return 1;
@@ -593,7 +593,7 @@ s32 func_80801570_chheggy(Actor* arg0, s32 arg1, s32 arg2)
         {
         case 1:
             func_808007D4_chheggy(arg0, 2, 0);
-            _subaddiedialog_entrypoint_11(arg0->unk0, func_800DA298(FLAG_3E8_FTT_IoH_HEGGY) != 0 ? 0x153B : 0x153A, 0xEU, arg0->position, 0xCBU);
+            _subaddiedialog_entrypoint_11(arg0->unk0, flag_getValue(FLAG_3E8_FTT_IoH_HEGGY) != 0 ? 0x153B : 0x153A, 0xEU, arg0->position, 0xCBU);
             return 1;
         case 6:
             func_80800ECC_chheggy(arg0, 7);
@@ -640,7 +640,7 @@ s32 func_80801570_chheggy(Actor* arg0, s32 arg1, s32 arg2)
             func_800C7074(0x32, 1);
             return 1;
         case 0x1543:
-            func_800DA544(GFLAG_C0B_JINJO_IN_MULTIPLAYER);
+            flag_setValueTrue(GFLAG_C0B_JINJO_IN_MULTIPLAYER);
             return 1;
         case 0x153C:
             func_80800ECC_chheggy(arg0, 0x13);
@@ -717,7 +717,7 @@ s32 func_80801A00_chheggy(Actor* arg0, s32 arg1, s32 arg2)
         }
         break;
     case 0x3D:
-        func_800DA544(FLAG_581_PHYSICAL_IoH_HeggySplitUpCoverBroken);
+        flag_setValueTrue(FLAG_581_PHYSICAL_IoH_HeggySplitUpCoverBroken);
         _chskeletonexplode_entrypoint_7(arg0, arg0->position);
         func_8010A570(arg0);
         func_8010A624(arg0);

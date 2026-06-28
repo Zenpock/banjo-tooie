@@ -123,14 +123,14 @@ void bsbbuster_update(PlayerState *self) {
                 bsbbuster_setSubstate(self, 2);
             }
 
-            if (baanim_isAt(self, 0.3637f) && bakey_held(self, BUTTON_Z) && func_800C6E38(0x19)) {
+            if (baanim_isAt(self, 0.3637f) && bakey_held(self, BUTTON_Z) && ability_getValue(0x19)) {
                 next_state = BS_STATE_B6_BILL_DRILL;
             }
             break;
         
         case 2:
             _bswalk_entrypoint_1(self);
-            self->unk16C -= func_800D8FF8();
+            self->unk16C -= time_getDelta();
             if (self->unk16C <= 0.0f) {
                 bsbbuster_setSubstate(self, 3);
             }
@@ -177,7 +177,7 @@ void bsbbuster_update(PlayerState *self) {
             if (func_8009BD44(self) == 1) {
                 func_8009BDAC(self, 0.9f);
             }
-            self->unk16C -= func_800D8FF8();
+            self->unk16C -= time_getDelta();
             if (self->unk16C <= 0.0f) {
                 bsbbuster_setSubstate(self, 5);
             }

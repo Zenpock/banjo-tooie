@@ -16,7 +16,7 @@ ActorData* chfireicestorm_entrypoint_1()
 
 void func_80800360_chfireicestorm(s32 arg0)
 {
-    func_800DA524(FLAG3_9FB_UNK);
+    flag_setValueFalse(FLAG3_9FB_UNK);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fire/icestorm/func_80800384_chfireicestorm.s")

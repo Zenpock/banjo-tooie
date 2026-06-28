@@ -87,7 +87,7 @@ void func_808000E8_chnests(Actor* arg0)
     sp1C = &D_80801118_chnests[arg0->actorData[1]];
     if (sp1C->firstTimeFlag != 0)
     {
-        if (func_800DA298((enum flag_e)sp1C->firstTimeFlag) == 0)
+        if (flag_getValue((enum flag_e)sp1C->firstTimeFlag) == 0)
         {
             _sudialog_entrypoint_0(sp1C->firstTimeFlag, 0);
         }
@@ -235,7 +235,7 @@ void func_808007C8_chnests(Actor* arg0)
 {
     if ((arg0->unk70_10 == 2) && (arg0->unk74_27))
     {
-        arg0->rotation[1] += ((f32*)arg0->actorData)[5] * func_800D8FF8();
+        arg0->rotation[1] += ((f32*)arg0->actorData)[5] * time_getDelta();
         func_80103110(arg0, 0U);
     }
 }
@@ -323,7 +323,7 @@ s32 func_80800A74_chnests(s32 arg0)
             }
         }
         associatedAbility = D_80801118_chnests[arg0].abilityId;
-        if (associatedAbility == 0 || func_800C6E38(associatedAbility) != 0)
+        if (associatedAbility == 0 || ability_getValue(associatedAbility) != 0)
         {
             break;
         }

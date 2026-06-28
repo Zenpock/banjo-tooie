@@ -70,19 +70,19 @@ void func_80800018_chstonepillar(Actor* arg0)
             func_80800ADC_chstonepillar(arg0, 0);
         }
     }
-    else if ((func_800DA298(FLAG3_9D7_UNK) != 0) || (func_8080112C_chstonepillar(arg0) != 0))
+    else if ((flag_getValue(FLAG3_9D7_UNK) != 0) || (func_8080112C_chstonepillar(arg0) != 0))
     {
         func_80801374_chstonepillar(arg0, 2);
         switch (arg0->unk70_10)
         {
         case 1:
-            if ((func_800DA298(FLAG3_9D7_UNK) != 0) && (sp2C->unk2C == 0))
+            if ((flag_getValue(FLAG3_9D7_UNK) != 0) && (sp2C->unk2C == 0))
             {
                 func_80801174_chstonepillar(arg0);
                 func_80800B58_chstonepillar(arg0);
                 sp2C->unk24 = 0.5f;
-                func_800DA524(FLAG3_9D7_UNK);
-                if (func_800DA298(FLAG3_9D9_UNK) == 0)
+                flag_setValueFalse(FLAG3_9D7_UNK);
+                if (flag_getValue(FLAG3_9D9_UNK) == 0)
                 {
                     var_a3 = 0x810;
                     if (_glcutDll_entrypoint_19(0xBU) != 0)
@@ -90,7 +90,7 @@ void func_80800018_chstonepillar(Actor* arg0)
                         var_a3 = 0x910;
                     }
                     _capod_entrypoint_13(arg0->unk0, NULL, 0xCU, var_a3);
-                    func_800DA544(FLAG3_9D9_UNK);
+                    flag_setValueTrue(FLAG3_9D9_UNK);
                     return;
                 }
             }
@@ -132,11 +132,11 @@ void func_80800224_chstonepillar(Actor* arg0)
     func_80801374_chstonepillar(arg0, 2);
     if (((arg0->unk70_10) == 2) && (func_80800C10_chstonepillar(arg0->position), (func_80801238_chstonepillar(arg0) == 0)) && (func_80101FDC(arg0, 1U), (func_800D0B68(8U, 1U) == 0)))
     {
-        if ((func_800DA298(FLAG3_9D8_UNK) == 0) && (sp24->unk2C == 0))
+        if ((flag_getValue(FLAG3_9D8_UNK) == 0) && (sp24->unk2C == 0))
         {
-            func_800DA544(FLAG3_9D8_UNK);
+            flag_setValueTrue(FLAG3_9D8_UNK);
         }
-        if (func_800DA298(FLAG3_9D8_UNK) != 0)
+        if (flag_getValue(FLAG3_9D8_UNK) != 0)
         {
             if ((func_8080112C_chstonepillar(arg0) != 0) && (sp24->unk2C != 4))
             {
@@ -206,7 +206,7 @@ s32 func_80800474_chstonepillar(Actor* arg0)
     f32 sp28;
 
     temp_s0 = func_80100094(arg0, 0U);
-    if ((func_8080112C_chstonepillar(arg0) == 0) || (func_800DA298(FLAG3_9D5_UNK) == 0))
+    if ((func_8080112C_chstonepillar(arg0) == 0) || (flag_getValue(FLAG3_9D5_UNK) == 0))
     {
         return 0;
     }
@@ -255,9 +255,9 @@ void func_808005B4_chstonepillar(Actor* arg0, s32 arg1, f32* arg2)
 
 void func_808006AC_chstonepillar(Actor* arg0)
 {
-    if (func_800DA298(FLAG3_9D5_UNK) != 0)
+    if (flag_getValue(FLAG3_9D5_UNK) != 0)
     {
-        _capod_entrypoint_13(arg0->unk0, NULL, D_80801480_chstonepillar[func_800DA564(FLAG3_9CD_UNK, 3)], 0x810U);
+        _capod_entrypoint_13(arg0->unk0, NULL, D_80801480_chstonepillar[flag_getMultipleValue(FLAG3_9CD_UNK, 3)], 0x810U);
     }
 }
 
@@ -277,12 +277,12 @@ void func_80800704_chstonepillar(Actor* arg0)
     }
     if (temp_v0->unk2C == 0)
     {
-        func_808005B4_chstonepillar(arg0, func_800DA564(FLAG3_9CD_UNK, 3), sp28);
+        func_808005B4_chstonepillar(arg0, flag_getMultipleValue(FLAG3_9CD_UNK, 3), sp28);
         func_800D1254(8, 1, sp28);
-        if (func_800DA298(FLAG3_9D7_UNK) != 0)
+        if (flag_getValue(FLAG3_9D7_UNK) != 0)
         {
             func_80801174_chstonepillar(arg0);
-            func_800DA544(FLAG3_9D7_UNK);
+            flag_setValueTrue(FLAG3_9D7_UNK);
         }
     }
 }
@@ -320,7 +320,7 @@ s32 func_80800870_chstonepillar(Actor* arg0)
 
     StonePillarStruct* temp_s0;
 
-    gameSpeed = func_800D8FF8();
+    gameSpeed = time_getDelta();
     temp_s0 = func_80100094(arg0, 0U);
     func_800D1218(8, 1, sp2C);
     _fxsparkle_entrypoint_1(sp2C, 0x12U);
@@ -381,10 +381,10 @@ void func_80800ADC_chstonepillar(Actor* arg0, s32 arg1)
     StonePillarStruct* sp1C;
 
     sp1C = func_80100094(arg0, 0U);
-    func_800DA524(FLAG3_9D5_UNK);
+    flag_setValueFalse(FLAG3_9D5_UNK);
     if (arg1 != 0)
     {
-        func_800DA7A8(FLAG3_9CD_UNK, sp1C->unk2C + 1, 3);
+        flag_setMultipleValue(FLAG3_9CD_UNK, sp1C->unk2C + 1, 3);
     }
     func_80101FDC(arg0, 1U);
     if (_glcutDll_entrypoint_19(0xBU) != 0)
@@ -437,11 +437,11 @@ void func_80800CC8_chstonepillar(Actor* arg0, s32 arg1)
     temp_v0 = func_80100094(arg0, 0U);
     if ((arg0->unk70_10) != 2)
     {
-        if ((temp_v0->unk2C == 0) && (func_800DA298(FLAG3_9D6_UNK) == 0) && (func_800D0B68(8U, 1U) == 0))
+        if ((temp_v0->unk2C == 0) && (flag_getValue(FLAG3_9D6_UNK) == 0) && (func_800D0B68(8U, 1U) == 0))
         {
             func_800CE8D8(0, 45.0f, 0x2D);
             func_800CE88C(0, 1);
-            func_800DA544(FLAG3_9D6_UNK);
+            flag_setValueTrue(FLAG3_9D6_UNK);
         }
         if (func_80800DD8_chstonepillar(arg0) != 0)
         {
@@ -454,9 +454,9 @@ void func_80800CC8_chstonepillar(Actor* arg0, s32 arg1)
 
 void func_80800DA4_chstonepillar(Actor* arg0)
 {
-    if (func_800DA298(FLAG3_9D8_UNK) == 0)
+    if (flag_getValue(FLAG3_9D8_UNK) == 0)
     {
-        func_800DA544(FLAG3_9D8_UNK);
+        flag_setValueTrue(FLAG3_9D8_UNK);
     }
 }
 
@@ -465,7 +465,7 @@ int func_80800DD8_chstonepillar(Actor* arg0)
     StonePillarStruct* sp1C;
 
     sp1C = (StonePillarStruct*)func_80100094(arg0, 0U);
-    return (func_800DA564(FLAG3_9CD_UNK, 3) == sp1C->unk2C && !func_800DA298(sp1C->unk2C + 0x65C));
+    return (flag_getMultipleValue(FLAG3_9CD_UNK, 3) == sp1C->unk2C && !flag_getValue(sp1C->unk2C + 0x65C));
 
 }
 void func_80800E30_chstonepillar(Actor* arg0)
@@ -475,15 +475,15 @@ void func_80800E30_chstonepillar(Actor* arg0)
     sp1C = func_80100094(arg0, 0U);
     if (func_80800DD8_chstonepillar(arg0) == 0)
     {
-        func_800DA524(FLAG3_9D5_UNK);
-        func_800DA7A8(FLAG3_9CD_UNK, sp1C->unk2C + 1, 3);
+        flag_setValueFalse(FLAG3_9D5_UNK);
+        flag_setMultipleValue(FLAG3_9CD_UNK, sp1C->unk2C + 1, 3);
         return;
     }
     func_800F7F98(func_800F54E4(), 0);
     if (func_800F6CC8(func_800F54E4()) == 0)
     {
-        func_800DA544(FLAG3_9D5_UNK);
-        func_800DA544(sp1C->unk2C + 0x65C);
+        flag_setValueTrue(FLAG3_9D5_UNK);
+        flag_setValueTrue(sp1C->unk2C + 0x65C);
         _glcutDll_entrypoint_6(0xB9U, 0xBU);
     }
 }
@@ -516,19 +516,19 @@ void func_80800EE0_chstonepillar(Actor* arg0)
 
 void func_80800FE0_chstonepillar(Actor* arg0)
 {
-    if ((func_800DA298(FLAG3_9D6_UNK) != 0) && (func_800DA298(FLAG3_9D7_UNK) == 0) && (func_8080112C_chstonepillar(arg0) != 0) && ((func_800CEAD0(0) != 0) || (func_800D0B68(8U, 1U) != 0)))
+    if ((flag_getValue(FLAG3_9D6_UNK) != 0) && (flag_getValue(FLAG3_9D7_UNK) == 0) && (func_8080112C_chstonepillar(arg0) != 0) && ((func_800CEAD0(0) != 0) || (func_800D0B68(8U, 1U) != 0)))
     {
         if (func_800CEAA8(0) != 0)
         {
             func_800CE88C(0, 0);
         }
-        func_800DA544(FLAG3_9D7_UNK);
-        if (func_800DA298(FLAG3_9D9_UNK) != 0)
+        flag_setValueTrue(FLAG3_9D7_UNK);
+        if (flag_getValue(FLAG3_9D9_UNK) != 0)
         {
             func_80801174_chstonepillar(arg0);
             if (((u32)arg0->unk0->unk24_22) != 0x19F)
             {
-                func_800DA524(FLAG3_9D7_UNK);
+                flag_setValueFalse(FLAG3_9D7_UNK);
             }
         }
         if (func_800D0B68(8U, 1U) == 0)
@@ -541,7 +541,7 @@ void func_80800FE0_chstonepillar(Actor* arg0)
 
 void func_808010CC_chstonepillar(Actor* arg0)
 {
-    if ((func_800DA298(FLAG3_9D9_UNK) == 0) && (func_800EA05C() != MAP_B9_MT_PRISON_COMPOUND) && (func_800F6CC8(func_800F54E4()) == 0))
+    if ((flag_getValue(FLAG3_9D9_UNK) == 0) && (func_800EA05C() != MAP_B9_MT_PRISON_COMPOUND) && (func_800F6CC8(func_800F54E4()) == 0))
     {
         _glcutDll_entrypoint_6(0xB9U, 0xBU);
     }
@@ -552,7 +552,7 @@ s32 func_8080112C_chstonepillar(Actor* arg0)
     StonePillarStruct* sp1C;
 
     sp1C = (StonePillarStruct*)func_80100094(arg0, 0U);
-    if (func_800DA564(FLAG3_9CD_UNK, 3) == sp1C->unk2C)
+    if (flag_getMultipleValue(FLAG3_9CD_UNK, 3) == sp1C->unk2C)
     {
         return 1;
     }
@@ -561,10 +561,10 @@ s32 func_8080112C_chstonepillar(Actor* arg0)
 
 void func_80801174_chstonepillar(Actor* arg0)
 {
-    func_800DA7A8(FLAG3_9CD_UNK, 0, 3);
-    func_800DA7A8(FLAG3_9CD_UNK, 0, 3);
-    func_800DA524(FLAG3_9D6_UNK);
-    func_800DA524(FLAG3_9D5_UNK);
+    flag_setMultipleValue(FLAG3_9CD_UNK, 0, 3);
+    flag_setMultipleValue(FLAG3_9CD_UNK, 0, 3);
+    flag_setValueFalse(FLAG3_9D6_UNK);
+    flag_setValueFalse(FLAG3_9D5_UNK);
     func_80101FDC(arg0, 1U);
 }
 
@@ -593,7 +593,7 @@ s32 func_80801238_chstonepillar(Actor* arg0)
     }
     if (sp28->unk24 > 0.0f)
     {
-        sp28->unk24 = (f32)(sp28->unk24 - func_800D8FF8());
+        sp28->unk24 = (f32)(sp28->unk24 - time_getDelta());
         func_800EE7F8(&sp2C, (f32*)arg0->actorData);
         sp2C[0] += func_800DC178(-7.5f, 7.5f);
         sp2C[2] += func_800DC178(-7.5f, 7.5f);

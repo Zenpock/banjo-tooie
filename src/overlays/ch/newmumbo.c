@@ -67,7 +67,7 @@ void func_808000DC_chnewmumbo(Actor* arg0, u32 arg1, u32 arg2)
 
 GameFlag func_8080011C_chnewmumbo(void) {
 
-	if (func_800DA298(0x9C5) == 0) {
+	if (flag_getValue(0x9C5) == 0) {
 		return 0;
 	}
 	switch (func_800EA05C())
@@ -112,7 +112,7 @@ void func_80800264_chnewmumbo(Actor* arg0, s32 arg1) {
 	{
 		arg0->unk74_0 = 1;
 	}
-	if (func_800DA298(FLAG3_9C6_UNK) != 0)
+	if (flag_getValue(FLAG3_9C6_UNK) != 0)
 	{
 		func_80102424(arg0, arg1);
 		switch (arg0->unk70_10)
@@ -202,7 +202,7 @@ s32 func_808004E8_chnewmumbo(Actor* arg0, s32 arg1, s32 arg2)
 			func_80800264_chnewmumbo(arg0, 5);
 			break;
 		case 3:
-			if (func_800DA298(func_8080011C_chnewmumbo()) != 0)
+			if (flag_getValue(func_8080011C_chnewmumbo()) != 0)
 			{
 				func_8080073C_chnewmumbo(arg0, 1);
 				func_80800000_chnewmumbo(arg0, 2, 1U);
@@ -349,10 +349,10 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 	}
 	else if (MUMBO_DATA(arg0)->unkC > 0.0f)
 	{
-		MUMBO_DATA(arg0)->unkC -= func_800D8FF8();
+		MUMBO_DATA(arg0)->unkC -= time_getDelta();
 	}
 
-	if ((func_800DA298(func_8080011C_chnewmumbo()) == 0) && (MUMBO_DATA(arg0)->unkC <= 0.0f))
+	if ((flag_getValue(func_8080011C_chnewmumbo()) == 0) && (MUMBO_DATA(arg0)->unkC <= 0.0f))
 	{
 		func_800D1824(0x48);
 	}
@@ -489,7 +489,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 		}
 		break;
 	case 8:
-		if (func_800DA298(func_8080011C_chnewmumbo()) == 0)
+		if (flag_getValue(func_8080011C_chnewmumbo()) == 0)
 		{
 			switch (sp5C->unk3)
 			{
@@ -537,7 +537,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 			func_800FC6B0(0x10U);
 			func_80800264_chnewmumbo(arg0, 0x11);
 			func_80800000_chnewmumbo(arg0, 2, 1);
-			func_800DA544(func_8080011C_chnewmumbo());
+			flag_setValueTrue(func_8080011C_chnewmumbo());
 			func_800D175C(0x48, -1);
 			return;
 		}
@@ -545,7 +545,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 	case 17:
 		if (func_80101E14(arg0, 0.05f) != 0)
 		{
-			func_800DA544(FLAG3_9F3_UNK);
+			flag_setValueTrue(FLAG3_9F3_UNK);
 			return;
 		}
 		if (func_80101DDC(arg0) != 0) {
@@ -756,12 +756,12 @@ void func_80801760_chnewmumbo(Actor* arg0)
 	else
 	{
 		sp2C->unk0 = 0;
-		if ((func_800DA298(func_8080011C_chnewmumbo()) != 0) || (_glcutDll_entrypoint_20() != 0))
+		if ((flag_getValue(func_8080011C_chnewmumbo()) != 0) || (_glcutDll_entrypoint_20() != 0))
 		{
 			func_800EE7F8(arg0->position, &D_808019F4_chnewmumbo);
 			func_80800264_chnewmumbo(arg0, 0x13);
 		}
-		else if (func_800DA298(FLAG_07D_FTT_MUMBO) != 0)
+		else if (flag_getValue(FLAG_07D_FTT_MUMBO) != 0)
 		{
 			func_80800264_chnewmumbo(arg0, 0xA);
 		}

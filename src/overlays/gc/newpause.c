@@ -628,7 +628,7 @@ s32 func_8080105C_gcnewpause(s32 a0, s32 a1, u32 a2, u32 a3)
 	
 	for (index = a0; index < (a0 + a1); index++)
 	{
-		if ((D_808020D8_gcnewpause[index].AbilityID != 0x3C) && (func_800C6E38(D_808020D8_gcnewpause[index].AbilityID) == 0))
+		if ((D_808020D8_gcnewpause[index].AbilityID != 0x3C) && (ability_getValue(D_808020D8_gcnewpause[index].AbilityID) == 0))
 		{
 			continue;
 		}
@@ -1051,7 +1051,7 @@ s32 func_80801C3C_gcnewpause(s32 a0)
 	{
 		if (a0 == 0x0||D_8080215C_gcnewpause[index].SubPageToShow == a0)
 		{
-			if (func_800C6E38(D_8080215C_gcnewpause[index].AbilityId))
+			if (ability_getValue(D_8080215C_gcnewpause[index].AbilityId))
 			{
 				MoveCount++;
 			}
@@ -1071,7 +1071,7 @@ void func_80801CCC_gcnewpause(PauseState* pauseMenu)
 //Handle the Fade in/out speed of the gameover text
 void func_80801CDC_gcnewpause(PauseState* pauseMenu)
 {
-	f32 speed = func_800D8FF8();
+	f32 speed = time_getDelta();
 	s16 temp_v0;
 	if (pauseMenu->GameOverFadingIn != 0) {
 		temp_v0 = pauseMenu->GameOverTransparency;

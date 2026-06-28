@@ -47,12 +47,12 @@ void gccollectDll_entrypoint_0(s32 arg0)
             temp_v0 = func_800D0A80(var_s0, arg0);
             if (temp_v0 != 0) 
             {
-                func_800DA524(temp_v0);
+                flag_setValueFalse(temp_v0);
             }
             temp_v0_2 = func_800D0908(var_s0, arg0);
             if (temp_v0_2 != 0) 
             {
-                func_800DA524(temp_v0_2);
+                flag_setValueFalse(temp_v0_2);
             }
             var_s0 += 1;
         } while (var_s0 < func_800D0894(arg0));

@@ -82,7 +82,7 @@ void func_8080015C_chhumba(Actor* arg0, s32 arg1, s32 arg2, Unk80132ED0* arg3)
 
 void func_808001E4_chhumba(Actor* arg0)
 {
-    if ((func_800DA298(FLAG3_9C7_UNK) != 0) && (arg0->unk74_7 != 0))
+    if ((flag_getValue(FLAG3_9C7_UNK) != 0) && (arg0->unk74_7 != 0))
     {
         _capod_entrypoint_3(0U);
         arg0->unk74_7 = 0;
@@ -96,7 +96,7 @@ void func_80800238_chhumba(Actor* arg0, f32* arg1)
 
 void func_80800294_chhumba(Actor* arg0, s32 arg1)
 {
-    if ((arg1 != 0) && (func_800DA298(FLAG3_9C8_UNK) != 0))
+    if ((arg1 != 0) && (flag_getValue(FLAG3_9C8_UNK) != 0))
     {
         func_800904C8(0x8D);
     }
@@ -107,12 +107,12 @@ void func_80800294_chhumba(Actor* arg0, s32 arg1)
             func_80090734(1, arg0->position);
             return;
         }
-        if (func_800DA298(FLAG3_9C8_UNK) != 0)
+        if (flag_getValue(FLAG3_9C8_UNK) != 0)
         {
             func_80090708(0);
         }
     }
-    else if (func_800DA298(FLAG3_9C8_UNK) != 0)
+    else if (flag_getValue(FLAG3_9C8_UNK) != 0)
     {
         func_80090658(arg1);
     }
@@ -278,7 +278,7 @@ s32 func_808007EC_chhumba(s32 arg0)
 
 void func_808007F8_chhumba(Actor* arg0)
 {
-    func_800DA544((arg0->unk6C_0) + 0xD5);
+    flag_setValueTrue((arg0->unk6C_0) + 0xD5);
     if (arg0->unk74_29)
     {
         func_800D175C(0x54, -func_808007EC_chhumba((s32)arg0));
@@ -292,7 +292,7 @@ void func_808007F8_chhumba(Actor* arg0)
 
 s32 func_80800878_chhumba(Actor* arg0)
 {
-    return func_800DA298((arg0->unk6C_0) + 0xD5);
+    return flag_getValue((arg0->unk6C_0) + 0xD5);
 }
 
 s32 func_808008A0_chhumba(Actor* arg0)
@@ -659,7 +659,7 @@ void func_808015DC_chhumba(Actor* arg0)
     }
     else if (HUMBA_DATA(arg0)->unkC > 0.0f)
     {
-        HUMBA_DATA(arg0)->unkC = (HUMBA_DATA(arg0)->unkC - func_800D8FF8());
+        HUMBA_DATA(arg0)->unkC = (HUMBA_DATA(arg0)->unkC - time_getDelta());
     }
     if (func_80800878_chhumba(arg0) != 0)
     {
@@ -769,7 +769,7 @@ void func_808015DC_chhumba(Actor* arg0)
             return;
         case 9:
             if (arg0->unk58 > 0.0f) {
-                arg0->unk58 -= func_800D8FF8();
+                arg0->unk58 -= time_getDelta();
                 if ((arg0->unk64_20) && (arg0->unk58 < 1.5f)) {
                     _chbaddiesetup_entrypoint_0(&_chglowbo_entrypoint_4);
                     arg0->unk64_20 = 0;
@@ -794,7 +794,7 @@ void func_808015DC_chhumba(Actor* arg0)
             return;
         case 14:
             if (arg0->unk58 > 0.0f) {
-                arg0->unk58 -= func_800D8FF8();
+                arg0->unk58 -= time_getDelta();
             }
             else if (func_800903D0(&HUMBA_DATA(arg0)->unk10) != 0)
             {

@@ -2,8 +2,10 @@
 #define __CORE2_1EA1DA0_H__
 
 #include "common.h"
+#include "gc/lightsDll.h"
 
 #include "overlays/ba/playerstate.h"
+#include "vector.h"
 
 void func_800C8900(s32, s32*);
 s32 func_800C8A98(void);
@@ -17,6 +19,7 @@ void func_800C8FE0(s32, s32);
 s32 func_800C9044(s32);
 void func_800C92A8();
 s32 func_800C9510();
+s32 func_800C954C();
 void func_800C9BB4(f32, s32, s32, s32);
 void func_800C9C70(f32, u32, f32, u32, f32*, f32, f32);
 void func_800C8D4C(s32, f32*);

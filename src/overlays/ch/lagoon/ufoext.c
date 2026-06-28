@@ -32,7 +32,7 @@ s32 func_80800000_chlagoonufoext(Actor* arg0, s32 arg1, s32 arg2)
     case 0xB:
         if (arg2 == 0x32)
         {
-            func_800DA544(FLAG_0B6_PROGRESS_JRL_UFO_LEFT_JRL);
+            flag_setValueTrue(FLAG_0B6_PROGRESS_JRL_UFO_LEFT_JRL);
             _susubgame_entrypoint_4(arg0, func_80100094(arg0, 0U));
             if (_gclevel_entrypoint_3(0x17) != 0)
             {
@@ -45,7 +45,7 @@ s32 func_80800000_chlagoonufoext(Actor* arg0, s32 arg1, s32 arg2)
         func_808002A4_chlagoonufoext(arg0);
         return 1;
     case 0x95:
-        if ((func_800DA298(FLAG3_9F0_UNK) != 0) && (func_80090178(1) != 0) && (func_800EA090() == 9))
+        if ((flag_getValue(FLAG3_9F0_UNK) != 0) && (func_80090178(1) != 0) && (func_800EA090() == 9))
         {
             temp_v0 = func_800F54E4();
             func_800F608C(temp_v0, 1);
@@ -84,7 +84,7 @@ void func_808001D8_chlagoonufoext(Actor* arg0)
     f32 sp28[3];
 
     arg0->actorData[3] = func_800CBDD4(arg0->position, 0x64, 6);
-    if (func_800DA298(0xB6) != 0)
+    if (flag_getValue(0xB6) != 0)
     {
         temp_a0 = arg0->actorData[3];
         if (temp_a0 != -1)
@@ -140,7 +140,7 @@ void func_8080032C_chlagoonufoext(Actor* arg0)
         }
         UFO_DATA(arg0)->unk1C = _subaddieaudioloop_entrypoint_7(UFO_DATA(arg0)->unk1C, arg0->actorData, sp34, &D_80800500_chlagoonufoext, arg0->unk70_0);
         _subaddieaudioquick_entrypoint_4(arg0, &UFO_DATA(arg0)->unk0, &D_80800524_chlagoonufoext, &D_808005A0_chlagoonufoext);
-        if (func_800DA298(FLAG_0B6_PROGRESS_JRL_UFO_LEFT_JRL) != 0)
+        if (flag_getValue(FLAG_0B6_PROGRESS_JRL_UFO_LEFT_JRL) != 0)
         {
             if (UFO_DATA(arg0)->unkC != -1U)
             {

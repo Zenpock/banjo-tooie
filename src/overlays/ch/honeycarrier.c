@@ -7,7 +7,7 @@ extern u32 D_808003F4_chhoneycarrier;
 //Called when the object is touched
 void func_80800000_chhoneycarrier(Actor* arg0, unkStructHoneyCarrier* arg1)
 {
-    if ((func_800F4B4C((u32)arg1->unk1A >> 5) != 0) && (func_800DA298(FLAG2_663_EMPTY_HONEYCOMB_COLLISION) == 0))
+    if ((func_800F4B4C((u32)arg1->unk1A >> 5) != 0) && (flag_getValue(FLAG2_663_EMPTY_HONEYCOMB_COLLISION) == 0))
     {
         if (arg0->unk6C_0 != 0)
         {
@@ -74,7 +74,7 @@ void func_80800260_chhoneycarrier(Actor* arg0)
     s32 var_s1 = 0;
     f32 sp58[3];
 
-    arg0->rotation[1] += func_800D8FF8() * arg0->unk58;
+    arg0->rotation[1] += time_getDelta() * arg0->unk58;
     arg0->rotation[1] = func_800136E4(arg0->rotation[1]);
     if (arg0->unk7C_12)
     {

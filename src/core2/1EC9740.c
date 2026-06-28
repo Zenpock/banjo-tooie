@@ -4,7 +4,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC9740/func_800EFED0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC9740/func_800EFFB4.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC9740/position_isWithinRangeOf.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC9740/func_800F0008.s")
 

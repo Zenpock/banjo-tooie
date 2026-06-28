@@ -15,7 +15,7 @@ void __yaw_update_limitless(PlayerState *self, f32 velocity_degPerSec) {
     f32 dYaw_deg;
     f32 sp20;
 
-    velocity_degPerSec *= func_800D8FF8();
+    velocity_degPerSec *= time_getDelta();
     dYaw_deg = self->yaw->ideal - self->yaw->value;
     if (mlAbsF(dYaw_deg) > 180.0f) {
         dYaw_deg += (dYaw_deg < 0.0f) ? 360.0f : -360.0f;
@@ -44,7 +44,7 @@ void __yaw_update_limited(PlayerState *self, f32 limit_degPerSec, f32 step_perce
         f32 dyaw_deg;
         f32 dt_s;
 
-        dt_s = func_800D8FF8();
+        dt_s = time_getDelta();
         pYaw = self->yaw;
         dyaw_deg = func_80013728(pYaw->ideal - pYaw->value);
 

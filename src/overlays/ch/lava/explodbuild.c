@@ -6,7 +6,7 @@
 
 void func_80800084_chlavaexplodbuild(s32 arg0)
 {
-    func_800DA524(FLAG3_A24_UNK);
+    flag_setValueFalse(FLAG3_A24_UNK);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/explodbuild/func_808000A8_chlavaexplodbuild.s")

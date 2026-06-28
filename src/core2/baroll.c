@@ -22,7 +22,7 @@ void __baroll_update(PlayerState *self, f32 limit, f32 rate) {
     f32 dt;
     f32 max;
 
-    dt = func_800D8FF8();
+    dt = time_getDelta();
     max = limit*dt;
     diff = self->roll->ideal - self->roll->value;
     if(180.0f < mlAbsF(diff)){

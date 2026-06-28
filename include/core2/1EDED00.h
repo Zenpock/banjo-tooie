@@ -2,7 +2,9 @@
 #define __CORE2_1EDED00_H__
 
 #include "common.h"
+#include "freelist.h"
 
+void func_801054D4(Actor*);
 void func_80105634(Actor*);
 void func_80105834(Actor*);
 void func_801058C4(Actor*, s32, f32, u32);

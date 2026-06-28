@@ -186,7 +186,7 @@ void func_80800434_chcheato(Actor* arg0, s32 arg1, s32 arg2)
         func_80102424(arg0, 4);
         return;
     case 0x1148:
-        func_800DA544(0x69);
+        flag_setValueTrue(0x69);
         if (func_80800C0C_chcheato() != 0)
         {
             func_80102424(arg0, 4);
@@ -206,7 +206,7 @@ void func_80800434_chcheato(Actor* arg0, s32 arg1, s32 arg2)
             func_80102424(arg0, 3);
             return;
         }
-        if (func_800DA298(0x69) == 0)
+        if (flag_getValue(0x69) == 0)
         {
             _subaddiedialog_entrypoint_11(arg0->unk0, 0x1148U, 0xEU, arg0->position, 0x37U);
             return;

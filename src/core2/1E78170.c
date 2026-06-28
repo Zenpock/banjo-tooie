@@ -52,7 +52,7 @@ void func_8009E8D4(void)
     D_80127068.unk0[0] = 0.0f;
     D_80127068.unk0[1] = 0.0f;
     D_80127068.unk0[2] = 0.0f;
-    func_800DA524(FLAG_3EC_ABILITY_DRAGON_KAZOOIE);
+    flag_setValueFalse(FLAG_3EC_ABILITY_DRAGON_KAZOOIE);
     func_8009EAE8(0);
 }
 
@@ -89,7 +89,7 @@ void func_8009E9A0(void) {
 
 s32 func_8009EA2C()
 {
-    return func_800DA298(FLAG_3EC_ABILITY_DRAGON_KAZOOIE);
+    return flag_getValue(FLAG_3EC_ABILITY_DRAGON_KAZOOIE);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78170/func_8009EA4C.s")

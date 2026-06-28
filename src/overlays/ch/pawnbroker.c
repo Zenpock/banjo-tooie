@@ -117,7 +117,7 @@ void func_80800024_chpawnbroker(Actor* arg0)
                 func_80102424(arg0, 5);
                 //Explode the glass cage
                 func_80101180(0x353, 5, 0);
-                func_800DA544(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED);
+                flag_setValueTrue(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED);
                 return;
             }
             break;
@@ -141,7 +141,7 @@ void func_80800024_chpawnbroker(Actor* arg0)
                 func_80102424(arg0, 8);
                 //Explode the glass cage
                 func_80101180(0x353, 5, 0);
-                func_800DA544(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED);
+                flag_setValueTrue(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED);
                 return;
             }
             break;
@@ -174,7 +174,7 @@ void func_80800320_chpawnbroker(Actor* arg0)
         {
             sp30 = 0;
         }
-        if (func_800DA298(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED) != 0)
+        if (flag_getValue(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED) != 0)
         {
             if (func_800D0A9C(0xAU, 4U) == 0)
             {
@@ -195,7 +195,7 @@ void func_80800320_chpawnbroker(Actor* arg0)
             sp44 = 5;
         }
     }
-    else if (func_800DA298(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0)
+    else if (flag_getValue(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0)
     {
         sp44 = 5;
     }
@@ -208,7 +208,7 @@ void func_80800320_chpawnbroker(Actor* arg0)
         func_80108B04(arg0, 0x353U);
     }
     _subaddieitem_entrypoint_0(func_80100094(arg0, 0U), 0x4E4U, -1, 3);
-    _subaddieitem_entrypoint_1(func_80100094(arg0, 0U), func_800DA298(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0 ? 5 : 0x14);
+    _subaddieitem_entrypoint_1(func_80100094(arg0, 0U), flag_getValue(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0 ? 5 : 0x14);
     func_80101FDC(arg0, sp44);
     func_8010A3E8(arg0, 0.8f);
 }
@@ -320,7 +320,7 @@ void func_8080083C_chpawnbroker(Actor* arg0, s32 dialogEnded, s32 choiceResult)
             _subaddiedialog_entrypoint_11(arg0->unk0, 0xFEAU, 0x4EU, arg0->position, 0x53U);
             return;
         case 0xFEA:
-            if (func_800DA298(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0)
+            if (flag_getValue(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0)
             {
                 SecondSaleResponse = func_80800C00_chpawnbroker(5, choiceResult);
                 _subaddiedialog_entrypoint_11(arg0->unk0, (u32)SecondSaleResponse, 0xEU, arg0->position, 0x53U);
@@ -363,14 +363,14 @@ void func_8080083C_chpawnbroker(Actor* arg0, s32 dialogEnded, s32 choiceResult)
             func_80800B88_chpawnbroker(arg0, 3, 0x30);
             return;
     }
-    if (func_800DA298(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED) != 0)
+    if (flag_getValue(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED) != 0)
     {
         //Already sold everything state
         NextState = 8;
     }
     else
     {
-        if (func_800DA298(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0)
+        if (flag_getValue(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0)
         {
             //If we have collected the jiggy and have spawned the second item
             if ((func_800D0B68(0x27U, 1U) != 0) && (func_800D0A9C(0xAU, 4U) != 0))

@@ -3,7 +3,9 @@
 
 #include <ultra64.h>
 void* func_800CA384(void*);
+void func_800CA810(s32, s32);
 void func_800CA9D8(f32 *, s32 *);
+f32 func_800CAA1C(s32);
 f32 func_800CAF00(f32 [3], f32);
 
 #endif // __CORE2_1EA3AA0_H__

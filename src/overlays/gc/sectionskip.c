@@ -106,7 +106,7 @@ void func_808002A0_gcsectionskip(s32 arg0, Prop* arg1)
         temp_t9 = arg1->unk6_7;
         func_800F5D9C(arg0, &sp30);
         func_800F5D70(arg0, &sp3C);
-        func_800EF334(&sp3C, func_800D8FF8());
+        func_800EF334(&sp3C, time_getDelta());
         func_800EFB24(&sp48, &sp30, &sp3C);
         func_800EE88C(&sp54, arg1);
         func_8080019C_gcsectionskip(&sp48, &sp30, &sp54, temp_t9, sp2C);
@@ -123,7 +123,7 @@ void gcsectionskip_entrypoint_0(s32 arg0, s32 arg1, s32 arg2)
 {
     if (arg1 == 0xDAA)
     {
-        func_800DA524(FLAG2_6C9_UNK);
+        flag_setValueFalse(FLAG2_6C9_UNK);
     }
 }
 
@@ -186,7 +186,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
             sp2C = 0;
             break;
         case 3:
-            if (func_800DA298(FLAG_0B2_UNK) == 0)
+            if (flag_getValue(FLAG_0B2_UNK) == 0)
             {
                 return 0;
             }
@@ -222,22 +222,22 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
             sp2C = 0;
             break;
         case 7:
-            if (func_800DA298(FLAG_0B6_PROGRESS_JRL_UFO_LEFT_JRL) != 0)
+            if (flag_getValue(FLAG_0B6_PROGRESS_JRL_UFO_LEFT_JRL) != 0)
             {
                 return 0;
             }
             break;
         case 8:
-            if (func_800DA564(FLAG3_A34_UNK, 3) != 0)
+            if (flag_getMultipleValue(FLAG3_A34_UNK, 3) != 0)
             {
                 return 0;
             }
             break;
         case 14:
-            mapEntranceToUse = D_80801040_gcsectionskip[func_800DA564(FLAG_3A4_RANDOMISER_JRL_DAVY_LOCKER_1, 4)];
+            mapEntranceToUse = D_80801040_gcsectionskip[flag_getMultipleValue(FLAG_3A4_RANDOMISER_JRL_DAVY_LOCKER_1, 4)];
             break;
         case 11:
-            if (func_800DA298(FLAG_327_UNK) != 0)
+            if (flag_getValue(FLAG_327_UNK) != 0)
             {
                 mapEntranceToUse += 1;
             }
@@ -245,7 +245,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
         case 12:
             if (func_800DA9E4(FLAG_409_RANDOMISER_CCL_SKULL_SET, 1) == 0)
             {
-                func_800DA3B8(FLAG_40A_RANDOMISER_CCL_SKULL_1, func_800DC298(0.5f) != 0 ? 0 : 1);
+                flag_setValue(FLAG_40A_RANDOMISER_CCL_SKULL_1, func_800DC298(0.5f) != 0 ? 0 : 1);
             }
             switch (func_800EA05C())
             {
@@ -253,13 +253,13 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
                 switch (mapToEnter)
                 {
                 case MAP_13E_CCL_MUMBO:
-                    if (func_800DA298(FLAG_40A_RANDOMISER_CCL_SKULL_1) == 0)
+                    if (flag_getValue(FLAG_40A_RANDOMISER_CCL_SKULL_1) == 0)
                     {
                         mapToEnter = MAP_13F_CCL_MINGY_JONGO;
                     }
                     break;
                 case MAP_13F_CCL_MINGY_JONGO:
-                    if (func_800DA298(FLAG_40A_RANDOMISER_CCL_SKULL_1) == 0)
+                    if (flag_getValue(FLAG_40A_RANDOMISER_CCL_SKULL_1) == 0)
                     {
                         mapToEnter = MAP_13E_CCL_MUMBO;
                     }
@@ -269,13 +269,13 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
                 }
                 break;
             case MAP_13E_CCL_MUMBO:
-                if (func_800DA298(FLAG_40A_RANDOMISER_CCL_SKULL_1) == 0)
+                if (flag_getValue(FLAG_40A_RANDOMISER_CCL_SKULL_1) == 0)
                 {
                     mapEntranceToUse = 9;
                 }
                 break;
             case MAP_13F_CCL_MINGY_JONGO:
-                if (func_800DA298(FLAG_40A_RANDOMISER_CCL_SKULL_1) == 0)
+                if (flag_getValue(FLAG_40A_RANDOMISER_CCL_SKULL_1) == 0)
                 {
                     mapEntranceToUse = 0x16;
                 }
@@ -295,7 +295,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
                 func_808002A0_gcsectionskip(temp_v0, arg0);
                 return 0;
             }
-            if (func_800C6E38(ABILITY_1B_AIRBORNE_EGG_AIM) == 0)
+            if (ability_getValue(ABILITY_1B_AIRBORNE_EGG_AIM) == 0)
             {
                 func_808002A0_gcsectionskip(temp_v0, arg0);
                 func_80800EF8_gcsectionskip(0x10FB, 0x22);
@@ -344,25 +344,25 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
                 func_80800EF8_gcsectionskip(0x1221, 0x22);
                 return 0;
             }
-            if (func_800C6E38(ABILITY_15_BREEGULL_BLASTER) == 0) {
+            if (ability_getValue(ABILITY_15_BREEGULL_BLASTER) == 0) {
                 func_808002A0_gcsectionskip(temp_v0, arg0);
                 func_80800EF8_gcsectionskip(0x1227, 0x22);
                 return 0;
             }
-            if (func_800C6E38(ABILITY_2E_EGGS_CLOCKWORK) == 0)
+            if (ability_getValue(ABILITY_2E_EGGS_CLOCKWORK) == 0)
             {
                 func_808002A0_gcsectionskip(temp_v0, arg0);
                 func_80800EF8_gcsectionskip(0x122A, 0x22);
                 return 0;
             }
-            if ((func_800DA298(FLAG_044_RETRY_BOSS_HAG_1) != 0) && (func_800DA298(FLAG_043_PROGRESS_DEFEATED_HAG_1) == 0))
+            if ((flag_getValue(FLAG_044_RETRY_BOSS_HAG_1) != 0) && (flag_getValue(FLAG_043_PROGRESS_DEFEATED_HAG_1) == 0))
             {
                 mapToEnter = 0x19A;
                 mapEntranceToUse = 1;
             }
             break;
         case 21:
-            if (func_800DA298(FLAG_360_PROGRESS_JINGALING_LIFE_SAPPED) != 0) {
+            if (flag_getValue(FLAG_360_PROGRESS_JINGALING_LIFE_SAPPED) != 0) {
                 mapToEnter = 0x19B;
             }
             break;
@@ -381,7 +381,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
                 func_808002A0_gcsectionskip(temp_v0, arg0);
                 return 0;
             }
-            if (((func_800C6E38(ABILITY_1F_SUB_AQUA_EGG_AIM) == 0) || (func_800C6E38(ABILITY_2D_EGGS_GRENADE) == 0)))
+            if (((ability_getValue(ABILITY_1F_SUB_AQUA_EGG_AIM) == 0) || (ability_getValue(ABILITY_2D_EGGS_GRENADE) == 0)))
             {
                 func_80800EF8_gcsectionskip(0x1226, 0x6F);
                 func_808002A0_gcsectionskip(temp_v0, arg0);
@@ -429,7 +429,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
                 func_808002A0_gcsectionskip(temp_v0, arg0);
                 return 0;
             }
-            if (func_800C6E38(ABILITY_2D_EGGS_GRENADE) == 0)
+            if (ability_getValue(ABILITY_2D_EGGS_GRENADE) == 0)
             {
                 if (func_800F7E3C(temp_v0, 0x122B) != 0)
                 {
@@ -456,14 +456,14 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
             }
             break;
         case 31:
-            if ((func_800DA298(FLAG_360_PROGRESS_JINGALING_LIFE_SAPPED) == 0) && (func_800DA298(FLAG_03B_PROGRESS_FINISHED_TOWER_OF_TRAGEDY) == 0)) {
+            if ((flag_getValue(FLAG_360_PROGRESS_JINGALING_LIFE_SAPPED) == 0) && (flag_getValue(FLAG_03B_PROGRESS_FINISHED_TOWER_OF_TRAGEDY) == 0)) {
                 func_800F7E3C(temp_v0, 0x1566);
                 func_808002A0_gcsectionskip(temp_v0, arg0);
                 return 0;
             }
             break;
         case 32:
-            if (func_800C6E38(ABILITY_2F_EGGS_ICE) == 0)
+            if (ability_getValue(ABILITY_2F_EGGS_ICE) == 0)
             {
                 func_800F7E3C(temp_v0, 0x122C);
                 func_808002A0_gcsectionskip(temp_v0, arg0);
@@ -511,14 +511,14 @@ s32 func_80800D3C_gcsectionskip(MapId* arg0, s32* arg1)
     switch (func_800EA05C())
     {
     case MAP_AF_SM_SPIRAL_MOUNTAIN:
-        if (func_800DA298(FLAG_318_PROGRESS_DEFEATED_KLUNGO_1) != 0)
+        if (flag_getValue(FLAG_318_PROGRESS_DEFEATED_KLUNGO_1) != 0)
         {
             *arg0 = MAP_142_JV_JINJO_VILLAGE;
             *arg1 = 3;
         }
         break;
     case MAP_142_JV_JINJO_VILLAGE:
-        if (func_800DA298(FLAG_318_PROGRESS_DEFEATED_KLUNGO_1) != 0) {
+        if (flag_getValue(FLAG_318_PROGRESS_DEFEATED_KLUNGO_1) != 0) {
             *arg0 = MAP_AF_SM_SPIRAL_MOUNTAIN;
             *arg1 = 3;
         }
@@ -527,7 +527,7 @@ s32 func_80800D3C_gcsectionskip(MapId* arg0, s32* arg1)
         }
         break;
     case MAP_15A_IOH_WASTELAND:
-        if (func_800DA298(FLAG_319_PROGRESS_DEFEATED_KLUNGO_2) != 0) {
+        if (flag_getValue(FLAG_319_PROGRESS_DEFEATED_KLUNGO_2) != 0) {
             *arg0 = MAP_154_IOH_PINE_GROVE;
             *arg1 = 3;
         }
@@ -536,15 +536,15 @@ s32 func_80800D3C_gcsectionskip(MapId* arg0, s32* arg1)
         }
         break;
     case MAP_154_IOH_PINE_GROVE:
-        if (func_800DA298(FLAG_319_PROGRESS_DEFEATED_KLUNGO_2) != 0) {
+        if (flag_getValue(FLAG_319_PROGRESS_DEFEATED_KLUNGO_2) != 0) {
             *arg0 = MAP_15A_IOH_WASTELAND;
             *arg1 = 1;
         }
         break;
     case MAP_15D_CK_CAULDRON_KEEP:
-        if (func_800DA298(FLAG_31A_PROGRESS_DEFEATED_KLUNGO_3) != 0) {
+        if (flag_getValue(FLAG_31A_PROGRESS_DEFEATED_KLUNGO_3) != 0) {
             *arg0 = MAP_15F_CK_QUIZ;
-            if (func_800DA298(FLAG_441_UNK) != 0) {
+            if (flag_getValue(FLAG_441_UNK) != 0) {
                 *arg1 = 3;
             }
             else {
@@ -553,7 +553,7 @@ s32 func_80800D3C_gcsectionskip(MapId* arg0, s32* arg1)
         }
         break;
     case MAP_15F_CK_QUIZ:
-        if (func_800DA298(FLAG_31A_PROGRESS_DEFEATED_KLUNGO_3) != 0) {
+        if (flag_getValue(FLAG_31A_PROGRESS_DEFEATED_KLUNGO_3) != 0) {
             *arg0 = MAP_15D_CK_CAULDRON_KEEP;
             *arg1 = 2;
         }

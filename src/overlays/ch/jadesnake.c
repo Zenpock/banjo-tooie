@@ -110,14 +110,14 @@ void func_80800150_chjadesnake(Actor* arg0)
         }
         if (func_80101DDC(arg0) != 0)
         {
-            if (func_800DA298(FLAG_434_FTT_MT_SSSLUMBER) != 0)
+            if (flag_getValue(FLAG_434_FTT_MT_SSSLUMBER) != 0)
             {
                 func_80102424(arg0, 3);
                 func_80090708(0);
             }
             else
             {
-                func_800DA544(FLAG_434_FTT_MT_SSSLUMBER);
+                flag_setValueTrue(FLAG_434_FTT_MT_SSSLUMBER);
                 _subaddiedialog_entrypoint_11(arg0->unk0, 0xF3CU, 0xCU, arg0->position, 0x46U);
                 func_80102424(arg0, 5);
             }
@@ -148,20 +148,20 @@ void func_80800150_chjadesnake(Actor* arg0)
     case 4:
         if ((func_80101E14(arg0, 0.18f) != 0) && (sp4C == 0))
         {
-            if (func_800DA298(FLAG_435_UNK) != 0)
+            if (flag_getValue(FLAG_435_UNK) != 0)
             {
                 func_80800048_chjadesnake(arg0);
             }
             else
             {
-                func_800DA544(FLAG_435_UNK);
+                flag_setValueTrue(FLAG_435_UNK);
                 _subaddiedialog_entrypoint_11(arg0->unk0, 0xF3DU, 0xCU, arg0->position, 0x46U);
                 func_80102424(arg0, 7);
             }
         }
         if (func_80101DDC(arg0) != 0)
         {
-            if (func_800DA298(FLAG_435_UNK) == 0)
+            if (flag_getValue(FLAG_435_UNK) == 0)
             {
                 func_80102424(arg0, 7);
             }

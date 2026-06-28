@@ -2,7 +2,7 @@
 
 s32 gcextra_entrypoint_0(void)
 {
-    return func_800DA564(FLAG_4EA_HONEY_B_HONEY_UPGRADES_1, 3);
+    return flag_getMultipleValue(FLAG_4EA_HONEY_B_HONEY_UPGRADES_1, 3);
 }
 
 s32 gcextra_entrypoint_1() 
@@ -21,6 +21,6 @@ void gcextra_entrypoint_2(s32 arg0)
     {
         var_a1 = temp_v0;
     }
-    func_800DA7A8(0x4EA, var_a1, 3);
+    flag_setMultipleValue(0x4EA, var_a1, 3);
     func_800D517C();
 }

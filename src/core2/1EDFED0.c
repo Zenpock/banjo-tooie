@@ -6,8 +6,13 @@ extern Vector* D_80136EE0;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_80106608.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_80106630.s")
-
+void func_80106630()
+{
+    if(D_80136EE0)
+    {
+       D_80136EE0 = vector_defrag(D_80136EE0);
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_80106668.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_801066C0.s")

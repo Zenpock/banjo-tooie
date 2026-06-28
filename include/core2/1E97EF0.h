@@ -2,6 +2,7 @@
 #define __CORE2_1E97EF0_H__
 
 #include "common.h"
+#include "core2/1EB5980.h"
 
 #include "core2/1EB5980.h"
 

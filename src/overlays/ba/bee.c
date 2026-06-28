@@ -99,6 +99,6 @@ void babee_entrypoint_7(PlayerState *self, f32 arg1, f32 cooldown, f32 arg3) {
 void babee_entrypoint_8(PlayerState *self) {
     BaBee *bee = self->bee;
     if (0.0f < bee->cooldown) {
-        bee->cooldown -= func_800D8FF8();
+        bee->cooldown -= time_getDelta();
     }
 }

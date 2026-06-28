@@ -70,7 +70,7 @@ void func_8080013C_chglowbo(Actor* arg0)
     {
         arg0->scale = 0.4f;
     }
-    if ((arg0->unk74_29) && (func_800DA298(FLAG_056_STATE_MEGA_GLOWBO) != 0))
+    if ((arg0->unk74_29) && (flag_getValue(FLAG_056_STATE_MEGA_GLOWBO) != 0))
     {
         func_800FFAB0(arg0);
         return;
@@ -117,7 +117,7 @@ void func_808002F4_chglowbo(Actor* arg0)
     sp70 = (glowboStruct2*)func_80100094(arg0, 1U);
     if ((!arg0->unk64_19) || (_subaddiesect_entrypoint_0(arg0, sp74->unk17, 0xB) != 0))
     {
-        gamespeed = func_800D8FF8();
+        gamespeed = time_getDelta();
         if (arg0->unk7C_12 && (func_800DC298(0.05f) != 0))
         {
             func_800EFA4C(sp60, arg0->position[0] + func_800DC178(-30.0f, 30.0f), arg0->position[1] + func_800DC178(25.0f, 55.0f), arg0->position[2] + func_800DC178(-30.0f, 30.0f));
@@ -168,7 +168,7 @@ void func_808002F4_chglowbo(Actor* arg0)
                 }
                 else
                 {
-                    sp74->unkC = (f32)(sp74->unkC - func_800D8FF8());
+                    sp74->unkC = (f32)(sp74->unkC - time_getDelta());
                 }
                 _subaddieaudioquick_entrypoint_3(arg0, arg0->position, &D_80801430_chglowbo, 0.3f);
                 _subaddieaudioquick_entrypoint_3(arg0, arg0->position, &D_8080143C_chglowbo, 0.8f);
@@ -177,7 +177,7 @@ void func_808002F4_chglowbo(Actor* arg0)
             case 0xa:
                 func_800EE7F8(arg0->position, &GLOWBO_DATA(arg0)->unk10);
                 func_800EF1B8(arg0->position, arg0->rotation[1] - 90.0f, arg0->unk74_7);
-                arg0->rotation[1] += (func_800D8FF8() * 100.0f) * func_800F3780(func_80101F24(arg0), &D_808013B0_chglowbo, 3);
+                arg0->rotation[1] += (time_getDelta() * 100.0f) * func_800F3780(func_80101F24(arg0), &D_808013B0_chglowbo, 3);
                 if (sp74->unk4 != 0)
                 {
                     sp48[0] = arg0->position[0];
@@ -218,13 +218,13 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
     {
     case 0x95:
         _subaddierouteDll_entrypoint_1(arg0);
-        func_8010A5B0(arg0, func_800DA298(FLAG2_64E_UNK));
+        func_8010A5B0(arg0, flag_getValue(FLAG2_64E_UNK));
         break;
     case 0x3E:
         _fxsparkle_entrypoint_1(arg0->position, 6U);
         if (arg0->unk74_29) {
             _subaddiedialog_entrypoint_11(arg0->unk0, 0xD03U, 0U, arg0->position, 0U);
-            func_800DA544(FLAG_056_STATE_MEGA_GLOWBO);
+            flag_setValueTrue(FLAG_056_STATE_MEGA_GLOWBO);
             func_800D1844(0x54U);
         }
         else {
@@ -316,7 +316,7 @@ void func_80800B10_chglowbo(Actor* arg0)
         func_80801258_chglowbo(arg0);
         if ((GLOWBO_DATA(arg0)->unk0[1] < arg0->position[1]) || (GLOWBO_DATA(arg0)->unk14 > 0.0f))
         {
-            GLOWBO_DATA(arg0)->unk14 += GLOWBO_DATA(arg0)->unk1C * func_800D8FF8();
+            GLOWBO_DATA(arg0)->unk14 += GLOWBO_DATA(arg0)->unk1C * time_getDelta();
             func_800EFCD8(&GLOWBO_DATA(arg0)->unk10, arg0->unk54, GLOWBO_DATA(arg0)->unkC);
             func_800EF04C(arg0->position, &GLOWBO_DATA(arg0)->unk10);
             arg0->unk6C_0 += 1;
@@ -408,7 +408,7 @@ void func_80800F64_chglowbo(Actor* arg0)
         arg0->rotation[0] = (f32)(arg0->rotation[0] + 18.0f);
         if ((GLOWBO_DATA(arg0)->unk0[1] < arg0->position[1]) || (GLOWBO_DATA(arg0)->unk14 > 0.0f))
         {
-            GLOWBO_DATA(arg0)->unk14 += (GLOWBO_DATA(arg0)->unk1C * func_800D8FF8());
+            GLOWBO_DATA(arg0)->unk14 += (GLOWBO_DATA(arg0)->unk1C * time_getDelta());
             func_800EF1B8(arg0->position, arg0->rotation[1], GLOWBO_DATA(arg0)->unkC);
             arg0->position[1] = (f32)(arg0->position[1] + GLOWBO_DATA(arg0)->unk14);
         }
@@ -485,7 +485,7 @@ void func_80801258_chglowbo(Actor* arg0)
 
     while ((GLOWBO_DATA(arg0)->unk0[1] < sp44[1]) || (var_f20 > 0.0f))
     {
-        var_f20 += GLOWBO_DATA(arg0)->unk1C * func_800D8FF8();
+        var_f20 += GLOWBO_DATA(arg0)->unk1C * time_getDelta();
         var_s1++;
         sp44[1] = sp44[1] + var_f20;
     }

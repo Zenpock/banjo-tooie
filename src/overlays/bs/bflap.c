@@ -71,7 +71,7 @@ void func_808001D8_bsbflap(PlayerState *self) {
 
 void func_80800210_bsbflap(PlayerState *self) {
     self->unk16C = self->unk170;
-    self->unk170 += func_800D8FF8();
+    self->unk170 += time_getDelta();
 }
 
 int func_80800248_bsbflap(PlayerState *self, f32 value) {

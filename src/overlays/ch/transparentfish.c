@@ -16,7 +16,7 @@
 
 void func_80800B30_chtransparentfish(s32 arg0)
 {
-    func_800DA524(FLAG3_9F4_UNK);
+    flag_setValueFalse(FLAG3_9F4_UNK);
 }
 
 extern ActorData D_80801098_chtransparentfish;
