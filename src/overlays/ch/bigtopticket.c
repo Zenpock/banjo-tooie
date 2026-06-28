@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bigtopticket/chbigtopticket_entrypoint_0.s")
-
+extern ActorData D_80800120_chbigtopticket;
+ActorData* chbigtopticket_entrypoint_0()
+{
+    return &D_80800120_chbigtopticket;
+}
 void func_8080000C_chbigtopticket(s32 arg0) 
 {
 }

@@ -1,7 +1,10 @@
 #include "ch/introtext.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/text/chintrotext_entrypoint_0.s")
-
+extern ActorData D_808007D0_chintrotext;
+ActorData* chintrotext_entrypoint_0()
+{
+    return &D_808007D0_chintrotext;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/text/func_8080000C_chintrotext.s")
 
 void func_80800130_chintrotext(s32 arg0)

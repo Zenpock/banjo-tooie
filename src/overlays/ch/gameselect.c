@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/chgameselect_entrypoint_0.s")
-
+extern ActorData D_80807FD8_chgameselect;
+ActorData* chgameselect_entrypoint_0()
+{
+    return &D_80807FD8_chgameselect;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_8080000C_chgameselect.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_8080015C_chgameselect.s")
@@ -36,8 +39,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80800D3C_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/chgameselect_entrypoint_1.s")
-
+extern ActorData D_80808038_chgameselect;
+ActorData* chgameselect_entrypoint_1()
+{
+    return &D_80808038_chgameselect;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80800D74_chgameselect.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80800E24_chgameselect.s")
@@ -66,8 +72,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80801758_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/chgameselect_entrypoint_2.s")
-
+extern ActorData D_808080C8_chgameselect;
+ActorData* chgameselect_entrypoint_2()
+{
+    return &D_808080C8_chgameselect;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_8080179C_chgameselect.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80801AC4_chgameselect.s")
@@ -82,10 +91,16 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_8080218C_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/chgameselect_entrypoint_3.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/chgameselect_entrypoint_4.s")
-
+extern ActorData D_80808298_chgameselect;
+ActorData* chgameselect_entrypoint_3()
+{
+    return &D_80808298_chgameselect;
+}
+extern ActorData D_808082E0_chgameselect;
+ActorData* chgameselect_entrypoint_4()
+{
+    return &D_808082E0_chgameselect;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_808021E4_chgameselect.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80802248_chgameselect.s")
@@ -112,8 +127,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80802780_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/chgameselect_entrypoint_5.s")
-
+extern ActorData D_80808328_chgameselect;
+ActorData* chgameselect_entrypoint_5()
+{
+    return &D_80808328_chgameselect;
+}
 void func_808027D4_chgameselect(s32 arg0) 
 {
 }
@@ -428,8 +446,11 @@ void func_80806AD4_chgameselect()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80806BD4_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/chgameselect_entrypoint_6.s")
-
+extern ActorData D_808084B4_chgameselect;
+ActorData* chgameselect_entrypoint_6()
+{
+    return &D_808084B4_chgameselect;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80806C54_chgameselect.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80806D98_chgameselect.s")
@@ -452,8 +473,11 @@ void func_80806AD4_chgameselect()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80807824_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/chgameselect_entrypoint_7.s")
-
+extern ActorData D_80808504_chgameselect;
+ActorData* chgameselect_entrypoint_7()
+{
+    return &D_80808504_chgameselect;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_808078F0_chgameselect.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80807900_chgameselect.s")

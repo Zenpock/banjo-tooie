@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/poolkids/chpoolkids_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/poolkids/chpoolkids_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/poolkids/chpoolkids_entrypoint_2.s")
-
+extern ActorData D_808013F0_chpoolkids;
+ActorData* chpoolkids_entrypoint_0()
+{
+    return &D_808013F0_chpoolkids;
+}
+extern ActorData D_80801438_chpoolkids;
+ActorData* chpoolkids_entrypoint_1()
+{
+    return &D_80801438_chpoolkids;
+}
+extern ActorData D_80801480_chpoolkids;
+ActorData* chpoolkids_entrypoint_2()
+{
+    return &D_80801480_chpoolkids;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/poolkids/func_80800024_chpoolkids.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/poolkids/func_80800058_chpoolkids.s")

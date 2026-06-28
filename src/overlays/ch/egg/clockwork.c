@@ -12,8 +12,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/clockwork/func_808003B4_cheggclockwork.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/clockwork/cheggclockwork_entrypoint_0.s")
-
+extern ActorData D_808008C0_cheggclockwork;
+ActorData* cheggclockwork_entrypoint_0()
+{
+    return &D_808008C0_cheggclockwork;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/clockwork/cheggclockwork_entrypoint_1.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/clockwork/cheggclockwork_entrypoint_2.s")

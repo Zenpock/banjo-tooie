@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/splode/cheggsplode_entrypoint_0.s")
-
+extern ActorData D_80800994_cheggsplode;
+ActorData* cheggsplode_entrypoint_0()
+{
+    return &D_80800994_cheggsplode;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/splode/func_8080000C_cheggsplode.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/splode/func_808002A8_cheggsplode.s")

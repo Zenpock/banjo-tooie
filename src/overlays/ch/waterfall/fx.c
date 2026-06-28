@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/waterfall/fx/chwaterfallfx_entrypoint_0.s")
-
+extern ActorData D_80800410_chwaterfallfx;
+ActorData* chwaterfallfx_entrypoint_0()
+{
+    return &D_80800410_chwaterfallfx;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/waterfall/fx/func_8080000C_chwaterfallfx.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/waterfall/fx/func_80800148_chwaterfallfx.s")

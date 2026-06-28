@@ -34,4 +34,8 @@ void func_80800144_chmole_maya(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mole/_maya/func_80800180_chmole_maya.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mole/_maya/chmole_maya_entrypoint_1.s")
+extern ActorData D_80800258_chmole_maya;
+ActorData* chmole_maya_entrypoint_1()
+{
+    return &D_80800258_chmole_maya;
+}

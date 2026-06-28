@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/family/chbottlesfamily_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/family/chbottlesfamily_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/family/chbottlesfamily_entrypoint_2.s")
-
+extern ActorData D_80800DE0_chbottlesfamily;
+ActorData* chbottlesfamily_entrypoint_0()
+{
+    return &D_80800DE0_chbottlesfamily;
+}
+extern ActorData D_80800E28_chbottlesfamily;
+ActorData* chbottlesfamily_entrypoint_1()
+{
+    return &D_80800E28_chbottlesfamily;
+}
+extern ActorData D_80800E70_chbottlesfamily;
+ActorData* chbottlesfamily_entrypoint_2()
+{
+    return &D_80800E70_chbottlesfamily;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/family/func_80800024_chbottlesfamily.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/family/func_80800080_chbottlesfamily.s")

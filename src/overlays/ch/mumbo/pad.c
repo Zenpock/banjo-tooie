@@ -20,4 +20,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mumbo/pad/func_808008CC_chmumbopad.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mumbo/pad/chmumbopad_entrypoint_1.s")
+extern ActorData D_80801110_chmumbopad;
+ActorData* chmumbopad_entrypoint_1()
+{
+    return &D_80801110_chmumbopad;
+}

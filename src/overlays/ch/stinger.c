@@ -19,4 +19,8 @@ void func_8080025C_chstinger(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stinger/func_80800774_chstinger.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stinger/chstinger_entrypoint_1.s")
+extern ActorData D_80800870_chstinger;
+ActorData* chstinger_entrypoint_1()
+{
+    return &D_80800870_chstinger;
+}

@@ -10,4 +10,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/wumbawigwam/func_80800FEC_chwumbawigwam.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/wumbawigwam/chwumbawigwam_entrypoint_0.s")
+extern ActorData D_8080116C_chwumbawigwam;
+ActorData* chwumbawigwam_entrypoint_0()
+{
+    return &D_8080116C_chwumbawigwam;
+}

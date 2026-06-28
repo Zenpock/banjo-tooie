@@ -32,6 +32,13 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jinjo/func_80801098_chjinjo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jinjo/chjinjo_entrypoint_5.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jinjo/chjinjo_entrypoint_6.s")
+extern ActorData D_808013A4_chjinjo;
+ActorData* chjinjo_entrypoint_5()
+{
+    return &D_808013A4_chjinjo;
+}
+extern ActorData D_808013EC_chjinjo;
+ActorData* chjinjo_entrypoint_6()
+{
+    return &D_808013EC_chjinjo;
+}

@@ -13,4 +13,8 @@ void func_80800084_chlavaexplodbuild(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/explodbuild/func_80800138_chlavaexplodbuild.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/explodbuild/chlavaexplodbuild_entrypoint_0.s")
+extern ActorData D_808002E0_chlavaexplodbuild;
+ActorData* chlavaexplodbuild_entrypoint_0()
+{
+    return &D_808002E0_chlavaexplodbuild;
+}
