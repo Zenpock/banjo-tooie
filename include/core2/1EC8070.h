@@ -2,6 +2,9 @@
 #define __CORE2_1EC8070_H__
 
 #include "common.h"
+#include "core1/1E2B200.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECB9F0.h"
 
 void func_800EE780(f32 dst[3], f32 a[3], f32 b[3]); // ml_vec3f_sum
 void func_800EE7B4(f32 dst[3], f32 a[3], f32 b[3], f32 scale); // ml_vec3f_scaled_sum
@@ -20,17 +23,17 @@ f32 func_800EEAA4(f32 a[3], f32 b[3]); // ml_vec3f_dot_product
 f32 func_800EEAD4(f32 a[3], f32 b[3]); // ml_vec3f_distance
 f32 func_800EEB40(f32 a[3], f32 b[3]); // ml_vec3f_distance_sq
 void func_800EEBF0(f32*, f32*, f32);
-s32 func_800EECE0(f32*, f32*);
-s32 func_800EEEA8(u32*);
+int func_800EECE0(f32*, f32*);
+int func_800EEEA8(f32*);
 void func_800EF1B8(f32*, f32, f32);
 void func_800EF8BC(f32*, f32*, f32);
-s32 func_800EEF24(f32[3]);
+int func_800EEF24(f32[3]);
 f32 func_800EEF94(f32*);
 void func_800EF214(f32[3], f32, f32, f32);
 void func_800EF334(f32 vec[3], f32 scale); // ml_vec3f_apply_scale
 void func_800EF368(f32 vec[3], f32 target_length); // ml_vec3f_set_length
 void func_800EF3DC(f32 dst[3], f32 src[3]); // ml_vec3f_subtract
-void func_800EFA20(f32*, u32*, f32);
+void func_800EFA20(f32*, f32*, f32);
 void func_800EFB24(f32*, f32*, f32*);
 f32 func_800EFB8C(f32*, f32*);
 void func_800EFD24(f32 vec[3]); // ml_vec3f_clear

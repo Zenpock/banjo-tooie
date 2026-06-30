@@ -5,6 +5,10 @@
 
 f32 func_800136E4(f32); // mlNormalizeAngle()
 f32 func_80013728(f32);  //mlAbsNormalized()
+f32 func_80013788();
+f32 func_800137AC(f32);
+f32 func_800137C4();
+f32 func_800137F4(f32);
 f32 func_80013B70(f32 y, f32 x, f32 amplitude); //atan2?
 
 #endif // __CORE1_1E2B200_H__
