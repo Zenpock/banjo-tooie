@@ -4,9 +4,11 @@
 #include "../../src/overlays/ba/playerstate.h"
 #include "overlays/ba/yaw.h"
 #include "transformations.h"
+#include "core2/1E82660.h"
 #include "core2/1E66990.h"
 #include "core2/1E7BFA0.h"
 #include "core2/1E7AB30.h"
+#include "core2/1EB2840.h"
 #include "core2/1ECD170.h"
 
 #include "overlays/ba/anim.h"

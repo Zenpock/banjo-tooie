@@ -191,6 +191,7 @@ f32 func_800EEF94(f32* arg0)
     return sqrtf(arg0[0] * arg0[0] + arg0[1] * arg0[1] + arg0[2] * arg0[2]);
 }
 
+//ml_distanceSquared_vec3f
 f32 func_800EEFD4(f32* arg0)
 {
     return (arg0[0] * arg0[0] + arg0[1] * arg0[1] + arg0[2] * arg0[2]);
@@ -379,9 +380,44 @@ void func_800EF6A8(f32* arg0, f32* arg1, f32 arg2, f32 arg3, f32 arg4)
     arg0[0] = (f32)((temp_f2_2 * cosf) + (sp2C * sinf));
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC8070/func_800EF7B0.s")
+void func_800EF7B0(f32* arg0, f32* arg1, f32 arg2, f32 arg3, f32 arg4)
+{
+    f32 cosf;
+    f32 sinf;
+    f32 temp_fv1;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC8070/func_800EF8BC.s")
+
+    sinf = func_800137AC(arg1[1]);
+    cosf = func_800137C4();
+    arg0[1] = arg3;
+    arg0[2] = arg4 * sinf - arg2 * cosf;
+    arg0[0] = arg4 * cosf + arg2 * sinf;
+    sinf = func_800137AC(arg1[0]);
+    cosf = func_800137C4();
+    temp_fv1 = arg0[1] * sinf - arg0[2] * cosf;
+    arg0[2] = arg0[1] * cosf + arg0[2] * sinf;
+    arg0[1] = temp_fv1;
+    sinf = func_800137AC(arg1[2]);
+    cosf = func_800137C4();
+    temp_fv1 = ((arg0[0] * sinf) - (arg0[1] * cosf));
+    arg0[1] = ((arg0[0] * cosf) + (arg0[1] * sinf));
+    arg0[0] = temp_fv1;
+}
+
+void func_800EF8BC(f32* arg0, f32* arg1, f32 arg2)
+{
+    f32 sp1C;
+    f32 temp_f0;
+    f32 temp_fa1;
+
+    sp1C = func_800137AC(arg2);
+    temp_f0 = func_800137C4();
+    arg0[0] = arg1[0];
+
+    temp_fa1 = arg1[1] * sp1C - arg1[2] * temp_f0;
+    arg0[2] = arg1[1] * temp_f0 + arg1[2] * sp1C;
+    arg0[1] = temp_fa1;
+}
 
 void func_800EF934(f32* arg0, f32* arg1, f32 arg2)
 {
@@ -396,7 +432,19 @@ void func_800EF934(f32* arg0, f32* arg1, f32 arg2)
     arg0[0] = val;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC8070/func_800EF9A8.s")
+void func_800EF9A8(f32* arg0, f32* arg1, f32 arg2)
+{
+    f32 sp1C;
+    f32 temp_f0;
+    f32 temp_fa1;
+
+    sp1C = func_800137AC(arg2);
+    temp_f0 = func_800137C4();
+    temp_fa1 = arg1[0] * sp1C - arg1[1] * temp_f0;
+    arg0[1] = arg1[0] * temp_f0 + arg1[1] * sp1C;
+    arg0[2] = arg1[2];
+    arg0[0] = temp_fa1;
+}
 
 void func_800EFA20(f32* arg0, f32* arg1, f32 arg2)
 {
@@ -439,6 +487,7 @@ void func_800EFA98(f32* arg0, f32* arg1, f32 arg2)
     func_800EE7F8(arg0, arg1);
 }
 
+//ml_getdiff_vec3f
 void func_800EFB24(f32* arg0, f32* arg1, f32* arg2)
 {
     arg0[0] = arg1[0] - arg2[0];

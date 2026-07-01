@@ -11,11 +11,49 @@ extern u8 D_801354FD;
 
 extern f32 D_8013550C;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F47C0.s")
+//Call a function on all active players
+void func_800F47C0(void (*arg0)(PlayerState*))
+{
+    PlayerState* temp_a0;
+    s32 index;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F482C.s")
+    for (index = 0; index < 0x8; index++)
+    {
+        if (D_80135490[index] != NULL && D_80135490[index]->unk17C)
+            arg0(D_80135490[index]);
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F48BC.s")
+void func_800F482C(s32 arg0)
+{
+    s32 index;
+
+    for (index = 0; index < 8; index++)
+    {
+        if (D_80135490[index] != NULL)
+        {
+            if (arg0 == 0 || func_800A3274(D_80135490[index]) == arg0)
+            {
+                func_800F3880(D_80135490[index]);
+                func_800A91F4(index);
+                D_80135490[index] = NULL;
+            }
+        }
+    }
+}
+
+void func_800F48BC(s32 arg0, f32* arg1)
+{
+    f32 sp2C[3];
+    f32 sp20[3];
+    PlayerState* sp1C;
+
+    sp1C = D_80135490[arg0];
+    func_800F4200(sp1C, sp2C);
+    func_800EFA20(sp20, arg1, time_getDelta());
+    func_800EF04C(sp2C, sp20);
+    func_800F4648(sp1C, sp2C);
+}
 
 void func_800F4924(s32 arg0,s32 a1)
 {

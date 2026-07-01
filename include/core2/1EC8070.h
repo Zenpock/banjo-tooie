@@ -44,11 +44,13 @@ void func_800EEB9C(f32[3], f32, f32);
 void func_800EEC30(f32[3], f32, f32, f32);
 f32 func_800EEFD4(f32[3]);
 void func_800EF04C(f32[3], f32[3]);
+void func_800EF174(f32*, f32*, f32);
 void func_800EF934(f32[3], f32[3], f32);
 void func_800EF2A0(f32[3]);
 void func_800EF4E4(f32[3], f32, f32, f32, f32, f32);
 void func_800EF5A0(f32*, f32*, f32, f32, f32);
 void func_800EFA4C(f32[3], f32, f32, f32);
 void func_800EFA98(f32[3], f32[3], f32);
+f32 func_800EFC7C(f32*, f32*);
 void func_800EFCD8(f32[3], f32, f32);
 #endif // __CORE2_1EC8070_H__
