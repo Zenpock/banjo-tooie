@@ -3,6 +3,7 @@
 
 #include "common.h"
 
+void func_8001B754(s16);
 void* func_8001B798(s16);
 
 s16 func_8001B668(s32 , s32);

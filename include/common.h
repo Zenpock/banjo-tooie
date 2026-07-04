@@ -18,7 +18,19 @@ typedef union {
 
 // size: unknown
 typedef struct {
-    /* 0x00 */ u32* unk0;
+    /* 0x00 */ u32 unk0;
+    /* 0x04 */ u32 unk4;
+    /* 0x08 */ u32 unk8_16 : 22;
+    /* 0x08 */ u32 unk8_14 : 2;
+    /* 0x08 */ u32 unk8_4 : 4;
+    /* 0x08 */ u32 unk8_7 : 1;
+    /* 0x08 */ u32 unk8_0 : 3;
+    /* 0x0C */ u32 unkC;
+} Unk80132ED0_2;
+
+// size: unknown
+typedef struct {
+    /* 0x00 */ Unk80132ED0_2* unk0;
     /* 0x04 */ u32* unk4;
     /* 0x08 */ u32* unk8;
     /* 0x0C */ u32 unkC;
@@ -33,7 +45,9 @@ typedef struct {
     /* 0x24 */ u32 unk24_16 : 6;
     /* 0x24 */ u32 unk24_6 : 6;
     /* 0x24 */ u32 unk24_0 : 10;
-    /* 0x28 */ u32 unk28;
+    /* 0x28 */ u32 unk28_10 : 22;
+    /* 0x28 */ u32 unk28_9 : 1;
+    /* 0x28 */ u32 unk28_0 : 9;
     /* 0x2C */ u32 unk2C;
 } Unk80132ED0;
 
@@ -127,7 +141,8 @@ typedef struct Actor {
     /* 0x84 */ u32 pad84;
     /* 0x88 */ u32 pad88;
     /* 0x8C */ u32 pad8C;
-    /* 0x90 */ u32 pad90;
+    /* 0x90 */ s16 pad90;
+    /* 0x92 */ s16 unk92;
     /* 0x94 */ u32 pad94;
     /* 0x98 */ u8 pad98;
     /* 0x99 */ u8 pad99;
