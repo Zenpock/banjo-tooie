@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dippy/chdippy_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dippy/chdippy_entrypoint_1.s")
-
+extern ActorData D_80801580_chdippy;
+ActorData* chdippy_entrypoint_0()
+{
+    return &D_80801580_chdippy;
+}
+extern ActorData D_808015C8_chdippy;
+ActorData* chdippy_entrypoint_1()
+{
+    return &D_808015C8_chdippy;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dippy/func_80800018_chdippy.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dippy/func_808000D8_chdippy.s")

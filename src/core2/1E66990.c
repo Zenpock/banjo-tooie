@@ -245,7 +245,8 @@ s32 func_8008DD90(PlayerState* arg0) {
     return 0;
 }
 
-s32 func_8008DDEC(PlayerState* arg0, f32* arg1, f32 arg2) {
+s32 func_8008DDEC(PlayerState* arg0, f32* arg1, f32 arg2) 
+{
     f32 sp1C[3];
 
     func_8009C128(arg0, sp1C);

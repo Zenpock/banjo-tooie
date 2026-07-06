@@ -3,7 +3,7 @@
 
 #include "common.h"
 #include "overlays/ba/playerstate.h"
-#include "core2/1E2B200.h"
+#include "core1/1E2B200.h"
 #include "core2/1EB2840.h"
 #include "core2/1ECA640.h"
 #include "core2/1ECB0F0.h"

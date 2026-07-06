@@ -13,8 +13,11 @@ typedef struct {
 f32 func_80800548_cheggsplode(s32);
 extern u32 D_808009DC_cheggsplode[3];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/splode/cheggsplode_entrypoint_0.s")
-
+extern ActorData D_80800994_cheggsplode;
+ActorData* cheggsplode_entrypoint_0()
+{
+    return &D_80800994_cheggsplode;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/splode/func_8080000C_cheggsplode.s")
 
 s32 func_808002A8_cheggsplode(Actor* arg0, s32 arg1, s32 arg2)

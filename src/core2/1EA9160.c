@@ -1,6 +1,13 @@
 #include "core2/1EA9160.h"
 
-extern u8 D_8011AB40[];
+typedef struct {
+    u8 unk0;
+    u8 color;
+    u8 unk2;
+} JinjoData;
+
+extern JinjoData D_8011AB40[];
+
 extern u8 D_8011ABC8[];
 extern u8 D_8011AC7C[];
 extern u8 D_8011ACB0[];
@@ -221,7 +228,7 @@ s32 func_800CFC8C(s32 itemType, s32 Level)
         var_s1 = func_800D0820(itemType);
         while (func_800D0894(itemType) >= var_s1)
         {
-            if (Level == D_8011AB40[var_s1 * 3 - 3])
+            if (Level == D_8011AB40[var_s1 - 1].unk0)
             {
                 var_s2 += 1;
             }
@@ -670,7 +677,7 @@ void func_800D0C78(u32 arg0, u32 arg1, u32 arg2)
 
 s32 func_800D0CC8(s32 arg0)
 {
-    return D_8011AB40[arg0 * 3 - 2];
+    return D_8011AB40[arg0 - 1].color;
 }
 
 
@@ -792,7 +799,7 @@ void func_800D1000(u32 arg0, u32 arg1, f32* spawnCoords, u32 spawnStyle, Unk8013
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D119C.s")
 
-void func_800D1218(u32 arg0, u32 arg1, f32* arg2)
+void func_800D1218(s32 arg0, s32 arg1, f32* arg2)
 {
     s32 temp_v0;
 
@@ -803,7 +810,7 @@ void func_800D1218(u32 arg0, u32 arg1, f32* arg2)
     }
 }
 
-void func_800D1254(u32 arg0, u32 arg1, f32* arg2)
+void func_800D1254(s32 arg0, s32 arg1, f32* arg2)
 {
     s32 pad;
     Actor* temp_v0_2;
@@ -820,6 +827,24 @@ void func_800D1254(u32 arg0, u32 arg1, f32* arg2)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D129C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D1338.s")
+u32 func_800D1338(u32 JinjoColor)
+{
+    s32 var_s0;
+    u32 var_s2;
+
+    var_s2 = 0;
+    var_s0 = func_800D0820(0);
+
+    while (func_800D0894(0) >= var_s0)
+    {
+        if ((JinjoColor == D_8011AB40[var_s0 - 1].color) && (func_800D0B68((u32)var_s0, 0U) != 0))
+        {
+            var_s2 += 1;
+        }
+        var_s0 += 1;
+    }
+
+    return var_s2;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D13E8.s")

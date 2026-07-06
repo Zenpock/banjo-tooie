@@ -11,7 +11,8 @@ ActorData* chsignpost_entrypoint_0(void) {
     return &D_808002E0_chsignpost;
 }
 
-void func_8080000C_chsignpost(Actor* arg0) {
+void func_8080000C_chsignpost(Actor* arg0) 
+{
     func_80102FDC(arg0, arg0->scale * 0.75f);
     arg0->actorData[4] = arg0->unk74_7 - 0x32;
 }
@@ -93,6 +94,7 @@ void func_80800230_chsignpost(Actor* arg0, s16 arg1, s16 arg2)
 
 void func_80800264_chsignpost(s32 arg0, s32 arg1, s32 arg2) {
 }
+
 s32 func_80800274_chsignpost(Actor* arg0)
 {
     s32 sp20;

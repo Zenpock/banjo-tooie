@@ -75,7 +75,7 @@ void chegggrenade_entrypoint_0(Unk80132ED0* arg0)
     s32 sp1C;
     temp_v0 = func_80106790(arg0);
     sp1C = ((EggNormalData*)func_80100094(temp_v0, 0U))->unk3A;
-    _cheggsplode_entrypoint_1(&temp_v0, sp1C, _gcegg_entrypoint_0((u32)arg0->unk24 >> 0x16));
+    _cheggsplode_entrypoint_1(&temp_v0, sp1C, _gcegg_entrypoint_0((u32)arg0->unk24_22));
     _suegg_entrypoint_4(temp_v0, 0);
 }
 

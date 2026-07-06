@@ -3,6 +3,8 @@
 
 #include "common.h"
 #include "gameflags.h"
+#include "core2/1EA0690.h"
+#include "core2/1EAD060.h"
 #include "core2/1EB3750.h"
 
 void func_8009E8B4();
@@ -11,10 +13,13 @@ void func_8009E9A0();
 void func_8009E9A8();
 f32  func_8009EA14(void);
 u8 func_8009EA20(void);
+s32 func_8009EA2C(void);
 void func_8009EAAC(s32);
 void func_8009EB24(s16, s16);
 s32 func_8009EA64(void);
 void func_8009EA94(f32);
-s32 func_8009EA2C(void);
+void func_8009EAAC(s32);
+void func_8009EAE8(s32);
+void func_8009EB24(s16, s16);
 
 #endif // __CORE2_1E78170_H__

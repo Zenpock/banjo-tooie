@@ -8,10 +8,16 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_8080041C_chdiggerboss.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/chdiggerboss_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/chdiggerboss_entrypoint_1.s")
-
+extern ActorData D_80809E44_chdiggerboss;
+ActorData* chdiggerboss_entrypoint_0()
+{
+    return &D_80809E44_chdiggerboss;
+}
+extern ActorData D_80809E8C_chdiggerboss;
+ActorData* chdiggerboss_entrypoint_1()
+{
+    return &D_80809E8C_chdiggerboss;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80800508_chdiggerboss.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80800568_chdiggerboss.s")

@@ -83,7 +83,9 @@ typedef struct player_state_s {
     f32 unk16C;
     f32 unk170;
     f32 unk174;
-    u8 pad178[0xC];
+    s32 unk178;
+    s32 unk17C;
+    s32 unk180;
     s32 unk184;
     /* 0x188 */ struct bs_kazfly_s *kazfly;
 } PlayerState;

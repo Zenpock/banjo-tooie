@@ -2,6 +2,6 @@
 #define __CORE2_1EA0210_H__
 #include "common.h"
 
-void func_8001B754(s16);
+s32 func_800C6A7C(f32*, f32*, f32*, s32);
 
 #endif

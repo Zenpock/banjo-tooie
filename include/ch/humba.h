@@ -28,6 +28,7 @@
 #include "core2/1EB5E70.h"
 #include "core2/1EC3810.h"
 #include "core2/1EC8070.h"
+#include "core2/1EC9740.h"
 #include "core2/1ECB0F0.h"
 #include "core2/1ECE0B0.h"
 #include "core2/1ED4E30.h"

@@ -426,7 +426,8 @@ s32 func_80800D2C_chhumba(Actor* arg0)
     return 0;
 }
 
-void func_80800D74_chhumba(Actor* arg0) {
+void func_80800D74_chhumba(Actor* arg0) 
+{
     u32 temp_v0;
     s32 sp38;
     f32 sp2C[3];
@@ -570,8 +571,8 @@ void func_80800E44_chhumba(Actor* arg0, u32 arg1)
         break;
     }
 }
-
-void func_80801260_chhumba(Actor* arg0) {
+void func_80801260_chhumba(Actor* arg0) 
+{
     f32 sp44[3] = D_808026F0_chhumba;
     s32 index;
 
@@ -1013,7 +1014,7 @@ void func_80801F74_chhumba(Actor* arg0)
             return;
         }
         func_80800E44_chhumba(arg0, 1);
-    case 0x10000:
+    case ALLOW_CLOCKWORK:
         return;
     }
 }

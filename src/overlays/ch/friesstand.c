@@ -1,13 +1,25 @@
 #include "ch/friesstand.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/chfriesstand_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/chfriesstand_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/chfriesstand_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/chfriesstand_entrypoint_3.s")
-
+extern ActorData D_80800EC8_chfriesstand;
+ActorData* chfriesstand_entrypoint_0()
+{
+    return &D_80800EC8_chfriesstand;
+}
+extern ActorData D_80800F10_chfriesstand;
+ActorData* chfriesstand_entrypoint_1()
+{
+    return &D_80800F10_chfriesstand;
+}
+extern ActorData D_80800F58_chfriesstand;
+ActorData* chfriesstand_entrypoint_2()
+{
+    return &D_80800F58_chfriesstand;
+}
+extern ActorData D_80800FA0_chfriesstand;
+ActorData* chfriesstand_entrypoint_3()
+{
+    return &D_80800FA0_chfriesstand;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/func_80800030_chfriesstand.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/func_808000C4_chfriesstand.s")

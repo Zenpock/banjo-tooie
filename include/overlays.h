@@ -2,6 +2,7 @@
 #define __OVERLAYS_H__
 
 #include <ultra64.h>
+#include "core1/heap.h"
 
 struct OverlayFields {
     u32 entry_hook[6]; // Holds the instructions of initial jump point for all entrypoints
@@ -31,8 +32,20 @@ struct Overlay {
     u8 data[1]; // Variable length
 };
 
-void func_800819B4(void*);
-s32 func_80081D34(u32*);
+typedef struct {
+    union {
+        s32 unk0;
+        struct {
+            s32 pad0_26 : 6;
+            s32 unk0_25 : 1;
+        };
+    };
+    s32 unk4;
+} Syscall;
+
+void func_800819B4(Syscall*);
+//Return the syscall index of the given syscall entry
+s32 func_80081D34(void*);
 s32 func_80081D80(s32);
 
 #endif

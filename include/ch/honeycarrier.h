@@ -2,7 +2,7 @@
 #define __CH_HONEY_CARRIER_H__
 
 #include "common.h"
-#include "core2/1E2B200.h"
+#include "core1/1E2B200.h"
 
 #include "core2/1EB2840.h"
 #include "core2/1EB3750.h"

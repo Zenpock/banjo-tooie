@@ -53,8 +53,11 @@ void func_808023E8_chevilmumbo(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80802618_chevilmumbo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/chevilmumbo_entrypoint_0.s")
-
+extern ActorData D_80804460_chevilmumbo;
+ActorData* chevilmumbo_entrypoint_0()
+{
+    return &D_80804460_chevilmumbo;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_8080300C_chevilmumbo.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_808030AC_chevilmumbo.s")
@@ -67,8 +70,11 @@ void func_808023E8_chevilmumbo(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_808035A8_chevilmumbo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/chevilmumbo_entrypoint_1.s")
-
+extern ActorData D_808044F0_chevilmumbo;
+ActorData* chevilmumbo_entrypoint_1()
+{
+    return &D_808044F0_chevilmumbo;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_8080362C_chevilmumbo.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80803700_chevilmumbo.s")
@@ -80,8 +86,11 @@ void func_80803918_chevilmumbo(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_8080395C_chevilmumbo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/chevilmumbo_entrypoint_2.s")
-
+extern ActorData D_80804544_chevilmumbo;
+ActorData* chevilmumbo_entrypoint_2()
+{
+    return &D_80804544_chevilmumbo;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_8080398C_chevilmumbo.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80803A24_chevilmumbo.s")
@@ -98,4 +107,8 @@ void func_80803B48_chevilmumbo(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80803C88_chevilmumbo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/chevilmumbo_entrypoint_3.s")
+extern ActorData D_8080458C_chevilmumbo;
+ActorData* chevilmumbo_entrypoint_3()
+{
+    return &D_8080458C_chevilmumbo;
+}
