@@ -45,7 +45,10 @@ s32 func_8010108C(Actor* actor, s32 eventId, s32 arg2)
     return -1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDA900/func_8010114C.s")
+s32 func_8010114C(s32 arg0, s32 eventId, s32 arg2)
+{
+    return func_8010108C(func_80106790((Unk80132ED0*)arg0), eventId, arg2);
+}
 
 s32 func_80101180(s32 propId, s32 eventId, s32 arg2)
 {

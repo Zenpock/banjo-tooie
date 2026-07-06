@@ -39,7 +39,6 @@ f32 func_800EFB8C(f32*, f32*);
 void func_800EFD24(f32 vec[3]); // ml_vec3f_clear
 void func_800EFD3C(s32 vec[3]); // ml_vec3i_clear
 void func_800EFD4C(s16 vec[3]); // ml_vec3s_clear
-
 void func_800EEB9C(f32[3], f32, f32);
 void func_800EEC30(f32[3], f32, f32, f32);
 f32 func_800EEFD4(f32[3]);

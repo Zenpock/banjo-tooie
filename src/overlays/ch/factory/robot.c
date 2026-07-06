@@ -685,7 +685,7 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
         }
         else
         {
-            sp44 = (((u32)(u16)arg0->unk0->unk12) >> 1) & 0xF;
+            sp44 = (((u32)(u16)arg0->unk0->unk12_1)) & 0xF;
             if ((func_8001210C(0xF) == sp44) && (func_800DC298(0.6f) != 0))
             {
                 arg0->unk54 = func_800DC178(0.0f, 359.0f);

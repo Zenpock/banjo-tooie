@@ -1,10 +1,23 @@
 #include "core2/1EE27C0.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE27C0/func_80108ED0.s")
+extern s32 D_801245D0;
+extern s32 D_801245E4;
+extern s32 D_801245F8;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE27C0/func_80108EDC.s")
+void* func_80108ED0(void)
+{
+    return &D_801245D0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE27C0/func_80108EE8.s")
+void* func_80108EDC(void)
+{
+    return &D_801245E4;
+}
+
+void* func_80108EE8(void) 
+{
+    return &D_801245F8;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE27C0/func_80108EF4.s")
 
