@@ -889,6 +889,7 @@ void func_80801D08_chfactoryrobot(Actor* arg0)
 void func_80801D7C_chfactoryrobot(Actor* arg0)
 {
     FactoryRobotTubeStruct* temp_s2;
+    Actor* foundJiggy;
     u32 temp_v0;
     s32 sp6C;
     s32 sp68;
@@ -964,7 +965,13 @@ void func_80801D7C_chfactoryrobot(Actor* arg0)
         sp50 = func_800F12D4(arg0->unk58, 0.0f, 1.0f, -200.0f, 300.0f);
         func_800EE7F8(sp58, arg0->position);
         sp58[1] += sp50;
-        func_800D1254(0x39, 1, sp58);
+        //This should be able to find the jiggy
+        foundJiggy = _subaddiefind_entrypoint_0(sp58, PROP_21F_JIGGY_REAL, -1, 0);
+        if (foundJiggy != NULL)
+        {
+            func_800EE7F8(foundJiggy->position, sp58);
+            func_80103014(foundJiggy);
+        }
         if (!(arg0->unk64_20) && (arg0->unk58 < 0.7f))
         {
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80802AEC_chfactoryrobot);
@@ -980,7 +987,13 @@ void func_80801D7C_chfactoryrobot(Actor* arg0)
         sp3C = func_800F12D4(arg0->unk58, 0.0f, 1.0f, 300.0f, -200.0f);
         func_800EE7F8(sp44, arg0->position);
         sp44[1] += sp3C;
-        func_800D1254(0x39, 1, sp44);
+        //This should be able to find the jiggy
+        foundJiggy = _subaddiefind_entrypoint_0(sp44, PROP_21F_JIGGY_REAL, -1, 0);
+        if (foundJiggy != NULL)
+        {
+            func_800EE7F8(foundJiggy->position, sp44);
+            func_80103014(foundJiggy);
+        }
         if (temp_s0 != 0)
         {
             func_80101FDC(arg0, 0xAU);
@@ -1165,7 +1178,7 @@ void func_808025D4_chfactoryrobot(Actor* arg0)
 {
     s32 index;
     FactoryRobotTubeStruct* temp_v0;
-
+    Actor* foundJiggy;
     f32 sp2C[3];
     s32* var_v0;
 
@@ -1177,7 +1190,13 @@ void func_808025D4_chfactoryrobot(Actor* arg0)
         func_80101FDC(arg0, flag_getValue(FLAG_1BB_UNK) ? 0xA : 4);
         func_800EE7F8(sp2C, arg0->position);
         sp2C[1] += 300.0f;
-        func_800D1254(0x39, 1, sp2C);
+        //This should be able to find the jiggy
+        foundJiggy = _subaddiefind_entrypoint_0(sp2C, PROP_21F_JIGGY_REAL, -1, 0);
+        if (foundJiggy != NULL)
+        {
+            func_800EE7F8(foundJiggy->position, sp2C);
+            func_80103014(foundJiggy);
+        }
     }
     else if (_subaddiefind_entrypoint_10(arg0, 0x3BD, arg0->unk74_7) == 0)
     {
