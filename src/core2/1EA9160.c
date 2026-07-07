@@ -165,7 +165,7 @@ s32 func_800CFA90()
     {
         var_v0[index] = 0;
     }
-    for (index = 0; index < 0x87; index += 3)
+    for (index = 0; index < 0x2D; index++)
     {
         //Get Random int between 0 and 9
         var_v0_2 = func_800DC128(0, 9);
@@ -180,7 +180,7 @@ s32 func_800CFA90()
             } while ((s32)var_v0_2 < var_a0);
         }
         *var_v1 = var_a0 + 1;
-        D_8011AB40[index + 1] = var_v0_2;
+        D_8011AB40[index].color = var_v0_2;
     }
     func_800DC354(var_a0);
     return 1;

@@ -494,12 +494,12 @@ void func_80800CB4_chpawnbroker(Actor* arg0)
     //Have we collected the jiggy
     if (func_800D0B68(JRL_PAWNOS, 1U) == 0)
     {
-        ItemForSale = func_80106790(func_800D0634(JRL_PAWNOS, 1U));
+        ItemForSale = _subaddiefind_entrypoint_0(arg0->position, PROP_21F_JIGGY_REAL, -1, 0);
     }
     //Have we collected the Cheato page
     else if (func_800D0B68(0xAU, 4U) == 0)
     {
-        ItemForSale = _subaddiefind_entrypoint_0(arg0->position, 0x136, -1, 0);
+        ItemForSale = _subaddiefind_entrypoint_0(arg0->position, PROP_136_CHEATOPAGE_REAL, -1, 0);
     }
 
     arg0->unk3C = ItemForSale->unk0;
