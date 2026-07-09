@@ -110,7 +110,7 @@ s32 moveItem_Handler(Actor*, s32, s32);
 ActorData NewItem_chmoveitem =
 {
     /*0x0*/ 0x37A,
-    /*0x2*/ 0x4BA,
+    /*0x2*/ PROP_187_CUSTOM_MOVE_ITEM,
     /*0x4*/ 0x859,
     /*0x6*/ 0x1,
     /*0x8*/ 0,

@@ -2,7 +2,12 @@
 #define __CORE2_1ED8C80_H__
 
 #include "common.h"
+#include "core2/1EB57A0.h"
+#include "core2/1EDDA60.h"
+#include "core2/1EDDC40.h"
+#include "core2/1EDED00.h"
 #include "core2/1EDFED0.h"
+#include "core2/1EE06E0.h"
 
 void func_800FFA88(Unk80132ED0*);
 void func_800FFAB0(Actor*);

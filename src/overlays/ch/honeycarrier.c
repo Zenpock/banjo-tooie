@@ -15,7 +15,7 @@ f32 D_808003EC_chhoneycarrier[2] =
 ActorData D_808003F4_chhoneycarrier=
 {
     /*0x0*/ 0x53,
-    /*0x2*/ 0x220,
+    /*0x2*/ PROP_220_HONEYCOMB_REAL,
     /*0x4*/ 0x612,
     /*0x6*/ 0x1,
     /*0x8*/ 0,

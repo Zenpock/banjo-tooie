@@ -2,9 +2,16 @@
 
 extern Vector* D_80136EE0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_801065E0.s")
+void func_801065E0(void)
+{
+    D_80136EE0 = vector_new(0x9CU, 0x1EU);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_80106608.s")
+void func_80106608(void)
+{
+    vector_free(D_80136EE0);
+    D_80136EE0 = NULL;
+}
 
 void func_80106630()
 {
@@ -13,15 +20,53 @@ void func_80106630()
        D_80136EE0 = vector_defrag(D_80136EE0);
     }
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_80106668.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_801066C0.s")
+void* func_80106668(s32* indexCreated)
+{
+    void* newElementAddress;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_80106730.s")
+    *indexCreated = 0;
+    newElementAddress = vector_push_back(&D_80136EE0);
+    *indexCreated = vector_index_of(D_80136EE0, newElementAddress);
+    bzero(newElementAddress, 0x9C);
+    return newElementAddress;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_80106768.s")
+//Erase an actor at index
+void func_801066C0(u32 index)
+{
+    Unk80132ED0* temp_v1;
+    //Erase the Actor
+    vector_erase_unordered(D_80136EE0, index);
+    if ((s32)index < vector_size(D_80136EE0))
+    {
+        //Get the new actor that is at this index
+        temp_v1 = ((Actor*)vector_at(D_80136EE0, index))->unk0;
+        //Update the actor's index array reference
+        temp_v1->unk18_5 = index;
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_80106790.s")
+//Get Number of Active Actors
+s32 func_80106730(void)
+{
+    if (D_80136EE0 == NULL)
+    {
+        return 0;
+    }
+    return vector_size(D_80136EE0);
+}
+
+//Get Actor at index
+Actor* func_80106768(s32 arg0)
+{
+    return vector_at(D_80136EE0, arg0);
+}
+
+Actor* func_80106790(Unk80132ED0* arg0)
+{
+    return vector_at(D_80136EE0, arg0->unk18_5);
+}
 
 Actor* func_801067C4(s32* lastIndex)
 {
@@ -62,8 +107,58 @@ Actor* func_8010682C(s32* currentIndex)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_801068A8.s")
+Actor* func_801068A8(s32* index)
+{
+    s32 numActors;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_80106920.s")
+    if (D_80136EE0 == NULL)
+    {
+        return NULL;
+    }
+    numActors = vector_size(D_80136EE0);
+    if (numActors > 0)
+    {
+        if ((*index < 0) || (*index >= numActors))
+        {
+            *index = 0;
+        }
+        return vector_at(D_80136EE0, *index);
+    }
+    return NULL;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDFED0/func_801069A4.s")
+void* func_80106920(s32* arg0)
+{
+    s32 numActors;
+
+    if (D_80136EE0 == NULL)
+    {
+        return NULL;
+    }
+    numActors = vector_size(D_80136EE0);
+    (*arg0)--;
+    if ((*arg0 < 0) || (*arg0 >= numActors))
+    {
+        *arg0 = numActors - 1;
+    }
+    if (*arg0 >= 0)
+    {
+        return vector_at(D_80136EE0, *arg0);
+    }
+    return NULL;
+}
+
+s32 func_801069A4(Unk80132ED0* arg0)
+{
+    s32 isActorOutsideActorArrayBounds;
+    if (D_80136EE0 == NULL)
+    {
+        return 0;
+    }
+    if ((arg0 == NULL) || !arg0->unk18_16)
+    {
+        return 0;
+    }
+    isActorOutsideActorArrayBounds = (s32)arg0->unk18_5 < vector_size(D_80136EE0);
+    return isActorOutsideActorArrayBounds;
+}

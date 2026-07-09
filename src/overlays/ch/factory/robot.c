@@ -960,7 +960,7 @@ void func_80801D7C_chfactoryrobot(Actor* arg0)
             _subaddiedialog_entrypoint_11(arg0->unk0, 0x133BU, 7U, arg0->position, 0xA3U);
         }
         break;
-    case 6:
+    case 6: //Hide the Jiggy
         temp_s0 = func_800D9078(&arg0->unk58);
         sp50 = func_800F12D4(arg0->unk58, 0.0f, 1.0f, -200.0f, 300.0f);
         func_800EE7F8(sp58, arg0->position);
@@ -983,6 +983,7 @@ void func_80801D7C_chfactoryrobot(Actor* arg0)
         }
         break;
     case 7:
+        //Fight Won
         temp_s0 = func_800D9078(&arg0->unk58);
         sp3C = func_800F12D4(arg0->unk58, 0.0f, 1.0f, 300.0f, -200.0f);
         func_800EE7F8(sp44, arg0->position);
@@ -997,7 +998,7 @@ void func_80801D7C_chfactoryrobot(Actor* arg0)
         if (temp_s0 != 0)
         {
             func_80101FDC(arg0, 0xAU);
-            flag_setValueTrue(FLAG_1BB_UNK);
+            flag_setValueTrue(FLAG_1BB_TINTOP_FIGHT_ENDED);
         }
         break;
     case 8:
@@ -1187,7 +1188,7 @@ void func_808025D4_chfactoryrobot(Actor* arg0)
     {
         _subaddieDll_entrypoint_4(arg0, 1U);
         temp_v0->unk13 = 6;
-        func_80101FDC(arg0, flag_getValue(FLAG_1BB_UNK) ? 0xA : 4);
+        func_80101FDC(arg0, flag_getValue(FLAG_1BB_TINTOP_FIGHT_ENDED) ? 0xA : 4);
         func_800EE7F8(sp2C, arg0->position);
         sp2C[1] += 300.0f;
         //This should be able to find the jiggy

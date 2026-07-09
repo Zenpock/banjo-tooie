@@ -343,7 +343,7 @@ void gccollectDll_entrypoint_8(s16* arg0)
         {
             if (var_s1->unk6_1 == 6)
             {
-                temp_v0_2 = var_s1->ItemID;
+                temp_v0_2 = var_s1->PropID;
                 var_s2 = NULL;
                 switch (temp_v0_2)
                 {

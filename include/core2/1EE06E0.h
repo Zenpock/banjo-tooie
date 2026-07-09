@@ -3,6 +3,7 @@
 
 #include "common.h"
 #include "freelist.h"
+#include "gc/cubesearch.h"
 
 s32 func_80107070(Actor*, s32);
 void func_80107200(Actor*);

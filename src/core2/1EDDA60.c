@@ -2,7 +2,10 @@
 
 extern FreeList* D_80136E70;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDDA60/func_80104170.s")
+void func_80104170(void)
+{
+    D_80136E70 = freelist_new(func_8008B4F4(), 0x20);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDDA60/func_801041A0.s")
 

@@ -39,7 +39,10 @@ typedef struct {
     /* 0x12 */ u16 unk12_0 : 1;
     /* 0x14 */ u16 unk14;
     /* 0x16 */ u16 unk16;
-    /* 0x18 */ u32 unk18;
+    /* 0x18 */ u32 unk18_17 : 15;
+    /* 0x18 */ u32 unk18_16 : 1;
+    /* 0x18 */ u32 unk18_5 : 11;
+    /* 0x18 */ u32 unk18_0 : 5;
     /* 0x1C */ u32 unk1C;
     /* 0x20 */ u32 unk20;
     /* 0x24 */ u32 unk24_22 : 10;
@@ -153,7 +156,7 @@ typedef struct Actor {
 
 typedef struct ActorData {
     s16 unk0;
-    s16 unk2;
+    s16 unk2; //PropId
     s16 Model;
     s16 unk6;
     void *unk8;
@@ -172,7 +175,7 @@ typedef struct ActorData {
     s16 unk30;
     s16 unk32;
     void (*unk34_func)(Actor* actor);
-    void (*unk38_func)(void* arg0, s32 arg1, void* arg2, s32 arg3, void* arg4); // argument types unknown currently
+    Actor* (*unk38_func)(void* arg0, s32 arg1, void* arg2, s32 arg3, void* arg4); // argument types unknown currently
     s16 unk3C;
     s16 unk3E;
     s32 (*eventHandler)(Actor* actor, s32 arg1, s32 arg2);
@@ -186,7 +189,7 @@ typedef struct {
     /* 0x6 */ u16 unk6_7 : 9; //Directly moved into unk74_7 in Actor
     /* 0x6 */ u16 unk6_1 : 6; //unk4 << 0x19 >> 0x1A
     /* 0x6 */ u16 unk6_0 : 1; //unk6 >> 0x7 << 0x7
-    /* 0x8 */ u16 ItemID;
+    /* 0x8 */ u16 PropID;
     /* 0x0A */ u16 unkA; //0xA
     /* 0x0C */ u32 FlagOrRotation : 9; //unkC >> 0x17
     /* 0x0C */ u32 unkC_0 : 23; //0xC
