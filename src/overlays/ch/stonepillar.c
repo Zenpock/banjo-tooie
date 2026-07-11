@@ -54,6 +54,7 @@ ActorData* chstonepillar_entrypoint_1(void)
     return &D_80801438_chstonepillar;
 }
 
+//AboveGround Update
 void func_80800018_chstonepillar(Actor* arg0)
 {
     StonePillarStruct* sp2C;
@@ -75,44 +76,44 @@ void func_80800018_chstonepillar(Actor* arg0)
         func_80801374_chstonepillar(arg0, 2);
         switch (arg0->unk70_10)
         {
-        case 1:
-            if ((flag_getValue(FLAG3_9D7_UNK) != 0) && (sp2C->unk2C == 0))
-            {
-                func_80801174_chstonepillar(arg0);
-                func_80800B58_chstonepillar(arg0);
-                sp2C->unk24 = 0.5f;
-                flag_setValueFalse(FLAG3_9D7_UNK);
-                if (flag_getValue(FLAG3_9D9_UNK) == 0)
+            case 1:
+                if ((flag_getValue(FLAG3_9D7_UNK) != 0) && (sp2C->unk2C == 0))
                 {
-                    var_a3 = 0x810;
-                    if (_glcutDll_entrypoint_19(0xBU) != 0)
+                    func_80801174_chstonepillar(arg0);
+                    func_80800B58_chstonepillar(arg0);
+                    sp2C->unk24 = 0.5f;
+                    flag_setValueFalse(FLAG3_9D7_UNK);
+                    if (flag_getValue(FLAG3_9D9_UNK) == 0)
                     {
-                        var_a3 = 0x910;
+                        var_a3 = 0x810;
+                        if (_glcutDll_entrypoint_19(0xBU) != 0)
+                        {
+                            var_a3 = 0x910;
+                        }
+                        _capod_entrypoint_13(arg0->unk0, NULL, 0xCU, var_a3);
+                        flag_setValueTrue(FLAG3_9D9_UNK);
+                        return;
                     }
-                    _capod_entrypoint_13(arg0->unk0, NULL, 0xCU, var_a3);
-                    flag_setValueTrue(FLAG3_9D9_UNK);
+                }
+                else if (func_80800474_chstonepillar(arg0) != 0)
+                {
+                    func_808011CC_chstonepillar(arg0, 2U, 1.0f, 1.0f);
                     return;
                 }
-            }
-            else if (func_80800474_chstonepillar(arg0) != 0)
-            {
-                func_808011CC_chstonepillar(arg0, 2U, 1.0f, 1.0f);
-                return;
-            }
-            break;
-        case 2:
-            if (func_80801238_chstonepillar(arg0) == 0)
-            {
-                func_80101FDC(arg0, 3U);
-                return;
-            }
-            break;
-        case 3:
-            if (func_80800870_chstonepillar(arg0) == 0)
-            {
-                func_80800ADC_chstonepillar(arg0, 1);
-            }
-            break;
+                break;
+            case 2:
+                if (func_80801238_chstonepillar(arg0) == 0)
+                {
+                    func_80101FDC(arg0, 3U);
+                    return;
+                }
+                break;
+            case 3:
+                if (func_80800870_chstonepillar(arg0) == 0)
+                {
+                    func_80800ADC_chstonepillar(arg0, 1);
+                }
+                break;
         }
     }
 }
@@ -123,6 +124,7 @@ void func_808001FC_chstonepillar(Actor* arg0)
     func_80800EE0_chstonepillar(arg0);
 }
 
+//Below Ground Update
 void func_80800224_chstonepillar(Actor* arg0)
 {
     StonePillarStruct* sp24;
@@ -149,31 +151,34 @@ void func_80800224_chstonepillar(Actor* arg0)
         }
     }
 }
+
+//AboveGround Event Handler
 s32 func_8080031C_chstonepillar(Actor* arg0, s32 arg1, s32 arg2)
 {
     StonePillarStruct* sp1C;
 
     switch (arg1)
     {
-    case 0x95:
+        case 0x95:
 
-        sp1C = (StonePillarStruct*)func_80100094(arg0, 0U);
-        func_80800704_chstonepillar(arg0);
-        if ((_glcutDll_entrypoint_19(0xBU) != 0) && (sp1C->unk2C == 0))
-        {
-            func_808006AC_chstonepillar(arg0);
-        }
-        break;
-    default:
-        return 0;
+            sp1C = (StonePillarStruct*)func_80100094(arg0, 0U);
+            func_80800704_chstonepillar(arg0);
+            if ((_glcutDll_entrypoint_19(0xBU) != 0) && (sp1C->unk2C == 0))
+            {
+                func_808006AC_chstonepillar(arg0);
+            }
+            break;
+        default:
+            return 0;
     }
     return 1;
 }
-
+//Below Pillar Event Handler
 s32 func_80800390_chstonepillar(Actor* arg0, s32 arg1, s32 arg2)
 {
     switch (arg1)
     {
+        //Rolled Into
     case 0x3F:
         func_80800CC8_chstonepillar(arg0, *(s32*)&arg2);
         break;
@@ -227,7 +232,7 @@ void func_80800520_chstonepillar(Actor* arg0)
     arg0->position[1] -= (temp_v0->unk28 * 200.0f);
     ((f32*)arg0->actorData)[1] = arg0->position[1];
 }
-
+//Get the location of the top of the stone pillar as designated by arg1
 void func_808005B4_chstonepillar(Actor* arg0, s32 arg1, f32* arg2)
 {
     Actor* stonePillar;
@@ -261,8 +266,10 @@ void func_808006AC_chstonepillar(Actor* arg0)
     }
 }
 
+//Above Ground Startup
 void func_80800704_chstonepillar(Actor* arg0)
 {
+    Actor* foundJiggy;
     StonePillarStruct* temp_v0;
     f32 sp28[3];
 
@@ -278,7 +285,14 @@ void func_80800704_chstonepillar(Actor* arg0)
     if (temp_v0->unk2C == 0)
     {
         func_808005B4_chstonepillar(arg0, flag_getMultipleValue(FLAG3_9CD_UNK, 3), sp28);
-        func_800D1254(8, 1, sp28);
+        
+        foundJiggy = _subaddiefind_entrypoint_0(arg0->position, PROP_21F_JIGGY_REAL, -1, 0);
+        if (foundJiggy != NULL)
+        {
+            func_800EE7F8(foundJiggy->position, sp28);
+            func_80103014(foundJiggy);
+        }
+
         if (flag_getValue(FLAG3_9D7_UNK) != 0)
         {
             func_80801174_chstonepillar(arg0);
@@ -316,13 +330,17 @@ s32 func_80800870_chstonepillar(Actor* arg0)
     f32 gameSpeed;
     f32 sp2C[3];
     f32 temp_f0;
-
+    Actor* foundJiggy;
 
     StonePillarStruct* temp_s0;
 
     gameSpeed = time_getDelta();
     temp_s0 = func_80100094(arg0, 0U);
-    func_800D1218(8, 1, sp2C);
+    foundJiggy = _subaddiefind_entrypoint_0(arg0->position, PROP_21F_JIGGY_REAL, -1, 0);
+    if (foundJiggy != NULL)
+    {
+        func_800EE7F8(sp2C,foundJiggy->position);
+    }
     _fxsparkle_entrypoint_1(sp2C, 0x12U);
     if (temp_s0->unk2F == 0)
     {
@@ -332,7 +350,11 @@ s32 func_80800870_chstonepillar(Actor* arg0)
             sp2C[1] = temp_f0;
             temp_s0->unk30[2] *= -0.54f;
             temp_s0->unk30[1] *= 0.08f;
-            func_800D1254(8, 1, sp2C);
+            if (foundJiggy != NULL)
+            {
+                func_800EE7F8(foundJiggy->position, sp2C);
+                func_80103014(foundJiggy);
+            }
             temp_s0->unk2F = 1U;
             func_8010D930(3, 0, sp2C, &D_8080148C_chstonepillar);
             return 1;
@@ -366,13 +388,21 @@ s32 func_80800870_chstonepillar(Actor* arg0)
                 func_8010D930(3, 0, sp2C, &D_8080148C_chstonepillar);
                 if (temp_s0->unk30[2] < (2.0f * temp_f2))
                 {
-                    func_800D1254(8, 1, sp2C);
+                    if (foundJiggy != NULL)
+                    {
+                        func_800EE7F8(foundJiggy->position, sp2C);
+                        func_80103014(foundJiggy);
+                    }
                     return 0;
                 }
             }
         }
     }
-    func_800D1254(8, 1, sp2C);
+    if (foundJiggy != NULL)
+    {
+        func_800EE7F8(foundJiggy->position, sp2C);
+        func_80103014(foundJiggy);
+    }
     return 1;
 }
 
@@ -397,13 +427,22 @@ s32 func_80800B58_chstonepillar(Actor* arg0)
 {
     f32 sp2C[3];
     StonePillarStruct* sp28;
+    Actor* foundJiggy;
+    foundJiggy = _subaddiefind_entrypoint_0(arg0->position, PROP_21F_JIGGY_REAL, -1, 0);
 
     sp28 = func_80100094(arg0, 0U);
-    func_800D1218(8, 1, sp2C);
+    if (foundJiggy != NULL)
+    {
+        func_800EE7F8(sp2C,foundJiggy->position);
+    }
     func_800BBCB8(sp2C, (s32)sp2C, 1.0f, 0xE, _fxgenlist_entrypoint_0());
     sp2C[1] += 40.0f;
     func_80800BDC_chstonepillar(sp2C);
-    func_800D1254(8, 1, sp28);
+    if (foundJiggy != NULL)
+    {
+        func_800EE7F8(foundJiggy->position, sp28->unk0);
+        func_80103014(foundJiggy);
+    }
     return 0;
 }
 
