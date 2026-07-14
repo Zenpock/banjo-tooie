@@ -23,6 +23,7 @@ void func_80800000_chjadesnake(Actor* arg0)
     }
 }
 
+//Respawn the Item after deleting it
 void func_80800048_chjadesnake(Actor* arg0)
 {
     func_800D1000(MT_SSSLUMBER, 1U, &arg0->actorData[4], 3U, arg0->unk0);
@@ -56,21 +57,22 @@ int func_8080009C_chjadesnake(s32 arg0)
 void func_80800150_chjadesnake(Actor* arg0)
 {
     f32 sp54[3];
-    s32 sp50;
-    s32 sp4C;
+    s32 itemIsCollected;
+    s32 itemSpawned;
     s32 temp_v0;
     f32 sp44;
     f32 sp38[3];
     Actor* temp_v0_2;
 
-    sp50 = func_800D0B68(0xAU, 1U);
-    sp4C = func_800D0A9C(0xAU, 1U);
+    itemIsCollected = func_800D0B68(0xAU, 1U);
+    itemSpawned = func_800D0A9C(0xAU, 1U);
     func_8010D254(sp54);
     switch (arg0->unk70_10)
     {
     case 1:
-        if ((arg0->unk7C_12) && (sp50 == 0) && (sp4C == 0))
+        if ((arg0->unk7C_12) && (itemIsCollected == 0) && (itemSpawned == 0))
         {
+            //Spawn the Item Initially
             func_800D1000(0xAU, 1U, &arg0->actorData[0], 3U, arg0->unk0);
         }
         temp_v0 = func_80101E4C(arg0, &D_808009C0_chjadesnake);
@@ -79,7 +81,7 @@ void func_80800150_chjadesnake(Actor* arg0)
             func_800C4B7C(temp_v0 & 1 ? 0x5C6 : 0x5C7);
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80800964_chjadesnake);
         }
-        if ((sp50 == 0) && (sp4C != 0) && (func_8080009C_chjadesnake(arg0) != 0))
+        if ((itemIsCollected == 0) && (itemSpawned != 0) && (func_8080009C_chjadesnake(arg0) != 0))
         {
             _subaddieaudioquick_entrypoint_2(arg0, &sp54, &D_80800910_chjadesnake);
             func_80090734(2, arg0->position);
@@ -97,7 +99,7 @@ void func_80800150_chjadesnake(Actor* arg0)
         }
         break;
     case 2:
-        if (sp50 != 0)
+        if (itemIsCollected != 0)
         {
             func_8010A85C(arg0, 2);
             func_80102424(arg0, 1);
@@ -105,7 +107,12 @@ void func_80800150_chjadesnake(Actor* arg0)
         }
         if (func_80101E14(arg0, 0.73f) != 0)
         {
-            func_800D119C(0xA, 1);
+            s32 spawnFlag;
+            Actor* jiggyActor;
+            spawnFlag = func_800D0908(0xA,1);
+            jiggyActor = _subaddiefind_entrypoint_0(arg0->position, PROP_21F_JIGGY_REAL, -1, 0);
+            func_800FFAB0(jiggyActor);
+            flag_setValueFalse(spawnFlag);
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_8080092C_chjadesnake);
         }
         if (func_80101DDC(arg0) != 0)
@@ -146,7 +153,7 @@ void func_80800150_chjadesnake(Actor* arg0)
         _subaddieaudioquick_entrypoint_4(arg0, arg0->position, &D_80800958_chjadesnake, &D_808009DC_chjadesnake);
         break;
     case 4:
-        if ((func_80101E14(arg0, 0.18f) != 0) && (sp4C == 0))
+        if ((func_80101E14(arg0, 0.18f) != 0) && (itemSpawned == 0))
         {
             if (flag_getValue(FLAG_435_UNK) != 0)
             {
@@ -171,7 +178,7 @@ void func_80800150_chjadesnake(Actor* arg0)
                 func_80102424(arg0, 1);
             }
         }
-        if ((sp50 == 0) && (sp4C != 0) && (func_8080009C_chjadesnake(arg0) != 0))
+        if ((itemIsCollected == 0) && (itemSpawned != 0) && (func_8080009C_chjadesnake(arg0) != 0))
         {
             _subaddieaudioquick_entrypoint_2(arg0, &sp54, &D_80800910_chjadesnake);
             func_80090734(2, arg0->position);
@@ -181,7 +188,7 @@ void func_80800150_chjadesnake(Actor* arg0)
         }
         break;
     case 7:
-        if (sp4C == 0)
+        if (itemSpawned == 0)
         {
             func_80800048_chjadesnake(arg0);
         }
@@ -189,7 +196,7 @@ void func_80800150_chjadesnake(Actor* arg0)
     case 8:
         if (func_80101DDC(arg0) != 0)
         {
-            if (sp4C != 0)
+            if (itemSpawned != 0)
             {
                 func_8010A85C(arg0, 2);
                 func_80102424(arg0, 1);
@@ -203,9 +210,10 @@ void func_80800150_chjadesnake(Actor* arg0)
         }
         break;
     }
-    if ((arg0->unk6C_0) && (func_800D0634(0xAU, 1U) != 0))
+
+    if (arg0->unk6C_0)
     {
-        temp_v0_2 = func_80106790(func_800D0634(0xAU, 1U));
+        temp_v0_2 = _subaddiefind_entrypoint_0(arg0->position, PROP_21F_JIGGY_REAL, -1, 0);
         func_800EF04C(temp_v0_2->position, (f32*)&temp_v0_2->actorData[4]);
         arg0->unk6C_0--;
         if (arg0->unk6C_0 == 2)

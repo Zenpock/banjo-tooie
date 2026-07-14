@@ -20,6 +20,7 @@
 #include "su/baddieaudioquick.h"
 #include "su/baddieaudioloop.h"
 #include "su/baddiedialog.h"
+#include "su/baddiefind.h"
 
 
 #endif
