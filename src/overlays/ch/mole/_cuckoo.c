@@ -36,8 +36,7 @@ ActorData D_808000D0_chmole_cuckoo =
 	/*0x3E*/ 0x2202,
 	/*0x40*/ func_80800000_chmole_cuckoo,
 	/*0x44*/ 0,
-	/*0x46*/ 0,
-	/*0x48*/ 0
+	/*0x46*/ 0
 };
 
 void func_80800000_chmole_cuckoo(Actor* a0, s32 a1,s32 a2)

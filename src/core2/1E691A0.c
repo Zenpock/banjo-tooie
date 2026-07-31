@@ -322,7 +322,7 @@ void func_800904F4(s32 arg0, Unk80132ED0* arg1)
     func_800F7BC8(func_800F54E4(),arg0,arg1);
 }
 
-void func_80090528(s32 arg0,s32 arg1)
+void func_80090528(s32 arg0,f32 arg1)
 {
     func_800F7C0C(func_800F54E4(),arg0,arg1);
 }

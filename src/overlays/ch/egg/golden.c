@@ -44,8 +44,7 @@ ActorData D_808003F0_chegggolden =
     /*0x3E*/ 0,
     /*0x40*/ _suegg_entrypoint_17,
     /*0x44*/ 0x0000,
-    /*0x46*/ 0x0000,
-    /*0x48*/ 0x00000000
+    /*0x46*/ 0x0000
 };
 
 void func_80800000_chegggolden(Actor* arg0)

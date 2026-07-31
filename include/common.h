@@ -183,7 +183,6 @@ typedef struct ActorData {
     s32 (*eventHandler)(Actor* actor, s32 arg1, s32 arg2);
     s16 unk44;
     s16 unk46;
-    void (*unk48_func)(Actor* actor, s32 arg1, s32 arg2);
 } ActorData;
 
 typedef struct {

@@ -38,8 +38,7 @@ ActorData D_808000F0_chmole_witchy =
 	/*0x3E*/ 0x2202,
 	/*0x40*/ func_80800000_chmole_witchy,
 	/*0x44*/ 0x0000,
-	/*0x46*/ 0x0000,
-	/*0x48*/ 0x00000000
+	/*0x46*/ 0x0000
 };
 
 void func_80800000_chmole_witchy(Actor* a0, s32 a1, s32 a2)
