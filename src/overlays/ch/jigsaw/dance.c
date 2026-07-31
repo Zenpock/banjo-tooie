@@ -134,8 +134,7 @@ ActorData NewItem_chmoveitem =
     /*0x3E*/ 0x5404,
     /*0x40*/ moveItem_Handler,
     /*0x44*/ 0,
-    /*0x46*/ 0,
-    /*0x48*/ 0,
+    /*0x46*/ 0
 };
 
 void func_80800210_chmoveitem(Actor* arg0)

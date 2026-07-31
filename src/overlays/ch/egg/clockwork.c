@@ -50,8 +50,7 @@ ActorData D_808008C0_cheggclockwork =
     /*0x3E*/ 0,
     /*0x40*/ func_808003B4_cheggclockwork,
     /*0x44*/ 0x0000,
-    /*0x46*/ 0x0000,
-    /*0x48*/ 0x00000000
+    /*0x46*/ 0x0000
 };
 
 //I don't know the real data type so it's just s32s for now

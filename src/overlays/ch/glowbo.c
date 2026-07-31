@@ -49,7 +49,6 @@ ActorData D_808014C0_chglowbo = {
         /*0x40*/ func_80800880_chglowbo,
         /*0x44*/ 0,
         /*0x46*/ 0,
-        /*0x48*/ 0,
 };
  u32 D_80801508_chglowbo[] = { 0x001D09E4 ,0x00220026 ,0x00330019 ,0x00140027 ,0x000000C8 ,0x000000F0 ,0x00161000 ,0x00150033 ,0x0099002B ,0x00330066,0x002CFFCE,0x0028FFCE,0x00320050,0x00320000 };
  ActorData D_80801540_chglowbo = {
@@ -79,7 +78,6 @@ ActorData D_808014C0_chglowbo = {
      /*0x40*/ 0,
      /*0x44*/ 0,
      /*0x46*/ 0,
-     /*0x48*/ 0,
  };
  ActorData D_80801588_chglowbo = {
      /*0x0*/ 0x1FF,
@@ -108,7 +106,6 @@ ActorData D_808014C0_chglowbo = {
      /*0x40*/ 0,
      /*0x44*/ 0,
      /*0x46*/ 0,
-     /*0x48*/ 0,
  };
  ActorData D_808015D0_chglowbo = {
      /*0x0*/ 0x200,
@@ -137,7 +134,6 @@ ActorData D_808014C0_chglowbo = {
      /*0x40*/ func_8080115C_chglowbo,
      /*0x44*/ 0,
      /*0x46*/ 0,
-     /*0x48*/ 0,
  };
  f32 D_80801618_chglowbo[] = {0,-26.0f,0,0,0,0};
 
