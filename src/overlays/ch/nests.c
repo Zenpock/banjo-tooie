@@ -20,29 +20,441 @@ typedef struct
     u16 unk1A_0 : 5;
 }UnkArg2ChNest;
 
-extern D_80801118_chnestsUnk D_80801118_chnests[];
-extern s16 D_808011DC_chnests[][2];
+s32 D_808010F0_chnests[] = { 0,0,0x40000000,0x01140401,0x3f1c28f6,0x01cb0d01,0x3f800000,0x01cc0c01,0x0,0x0 };
 
-extern ActorData D_808011E8_chnests;
-extern ActorData D_80801230_chnests;
-extern ActorData D_80801278_chnests;
-extern ActorData D_808012C0_chnests;
-extern ActorData D_80801308_chnests;
-extern ActorData D_80801350_chnests;
-extern ActorData D_80801398_chnests;
-extern ActorData D_808013E0_chnests;
-extern ActorData D_80801428_chnests;
-extern ActorData D_80801470_chnests;
-extern ActorData D_808014B8_chnests;
-extern ActorData D_80801500_chnests;
-extern ActorData D_80801548_chnests;
+void func_80800000_chnests(Actor*);
+void func_80800098_chnests(Actor*);
+void func_808002E0_chnests(Actor*);
+void func_808003AC_chnests(Actor*);
+s32 func_808003F4_chnests(Actor*, s32, s32);
+void func_80800670_chnests(Actor* arg0, UnkArg2ChNest* arg1);
+void func_808006C4_chnests(Actor*);
+void func_808007C8_chnests(Actor*);
+void func_8080082C_chnests(Actor*, s32);
+s32 func_80800898_chnests(Actor*, s32, f32);
+void func_8080093C_chnests(Actor*, s32);
+void func_80800960_chnests(s32);
+void func_80800968_chnests(Actor*, s32);
+void func_808009D4_chnests(s32, s32);
+void func_808009F8_chnests(s32);
+void func_80800A00_chnests(Actor*, s32);
+void func_80800A6C_chnests(s32);
+void func_80800B80_chnests(Actor*);
+void func_80800BD8_chnests(Actor*, s32, f32, f32);
+void func_80800C3C_chnests(Actor*);
+void func_80800D8C_chnests(Actor*, s32);
+void func_80800ED8_chnests(Actor*);
+void func_80800F08_chnests(Actor*);
+
+D_80801118_chnestsUnk D_80801118_chnests[]={ 
+    {0x01CE,ABILITY_31_EGGS_BLUE,0x0003,0x0004,0x002B,0x40,0x14,0x02},
+    {0x01CF,ABILITY_2C_EGGS_FIRE,0x0004,0x006A,0x0000,0x41,0x0A,0x01},
+    {0x01D1,ABILITY_2D_EGGS_GRENADE,0x000C,0x006C,0x0000,0x43,0x0A,0x05},
+    {0x01D0,ABILITY_2F_EGGS_ICE,0x0003,0x006B,0x0000,0x42,0x0A,0x03},
+    {0x01D2,ABILITY_2E_EGGS_CLOCKWORK,0x0004,0x0069,0x0000,0x44,0x01,0x07},
+    {0xFFFF,0x0000,0x0000,0x0000,0x0000,0x0,0x0,0x0},
+    {0x01D5,0x0000,0x0004,0x0003,0x002C,0x46,0x14,0x02},
+    {0x01D6,0x0000,0x0005,0x0006,0x002D,0x47,0x02,0x01},
+    {0xFFFF,0x0000,0x0000,0x0000,0x0000,0x0,0x0,0x0},
+    {0xFFFE,0x0000,0x0000,0x0000,0x0000,0x0,0x0,0x0},
+    {0x01D4,0x0000,0x0005,0x0004,0x0000,0x0,0x0,0x04},
+    {0x01D3,0x0000,0x0003,0x0078,0x0000,0x45,0x05,0x08},
+    {0x01D9,0x0000,0x0005,0x0001,0x0029,0x00,0x05,0x00},
+    {0x01DA,0x0000,0x0005,0x0014,0x002E,0x00,0x14,0x00}
+};
+s16 D_808011DC_chnests[][2] = { {0xA,0xF},{0x14,0x1E},{0x2D,0x3C} };
+
+ActorData D_808011E8_chnests =
+{
+    /*0x0*/ 0x1CE,
+    /*0x2*/ PROP_1C8_NEST_BLUE_EGGS,
+    /*0x4*/ 0x6EA,
+    /*0x6*/ 0x1,
+    /*0x8*/ 0,
+    /*0xC*/ func_808003AC_chnests,
+    /*0x10*/ func_80102EC0,
+    /*0x14*/ func_80800968_chnests,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0x00000000,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x4000,
+    /*0x26*/ 0x0080,
+    /*0x28*/ func_80800960_chnests,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_80800000_chnests,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8400,
+    /*0x3E*/ 0x3010,
+    /*0x40*/ func_808003F4_chnests,
+    /*0x44*/ 0,
+    /*0x46*/ 0
+};
+
+ActorData D_80801230_chnests =
+{
+    /*0x0*/ 0x1CF,
+    /*0x2*/ PROP_1C9_NEST_FIRE_EGGS,
+    /*0x4*/ 0x6EA,
+    /*0x6*/ 0x1,
+    /*0x8*/ 0,
+    /*0xC*/ func_808003AC_chnests,
+    /*0x10*/ func_80102EC0,
+    /*0x14*/ func_80800968_chnests,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0x00000000,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x4000,
+    /*0x26*/ 0x0080,
+    /*0x28*/ func_80800960_chnests,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_80800000_chnests,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8400,
+    /*0x3E*/ 0x3010,
+    /*0x40*/ func_808003F4_chnests,
+    /*0x44*/ 0,
+    /*0x46*/ 0,
+};
+
+ActorData D_80801278_chnests =
+{
+    /*0x0*/ 0x1D0,
+    /*0x2*/ PROP_1CA_NEST_ICE_EGGS,
+    /*0x4*/ 0x6EA,
+    /*0x6*/ 0x1,
+    /*0x8*/ 0,
+    /*0xC*/ func_808003AC_chnests,
+    /*0x10*/ func_80102EC0,
+    /*0x14*/ func_80800968_chnests,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0x00000000,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x4000,
+    /*0x26*/ 0x0080,
+    /*0x28*/ func_80800960_chnests,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_80800000_chnests,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8400,
+    /*0x3E*/ 0x3010,
+    /*0x40*/ func_808003F4_chnests,
+    /*0x44*/ 0,
+    /*0x46*/ 0,
+};
+
+ActorData D_808012C0_chnests =
+{
+    /*0x0*/ 0x1D1,
+    /*0x2*/ PROP_1CB_NEST_GRENADE_EGGS,
+    /*0x4*/ 0x6EA,
+    /*0x6*/ 0x1,
+    /*0x8*/ 0,
+    /*0xC*/ func_808003AC_chnests,
+    /*0x10*/ func_80102EC0,
+    /*0x14*/ func_80800968_chnests,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0x00000000,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x4000,
+    /*0x26*/ 0x0080,
+    /*0x28*/ func_80800960_chnests,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_80800000_chnests,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8400,
+    /*0x3E*/ 0x3010,
+    /*0x40*/ func_808003F4_chnests,
+    /*0x44*/ 0,
+    /*0x46*/ 0,
+};
+
+ActorData D_80801308_chnests =
+{
+    /*0x0*/ 0x1D2,
+    /*0x2*/ PROP_1CC_NEST_CLOCKWORK_EGGS,
+    /*0x4*/ 0x6EA,
+    /*0x6*/ 0x1,
+    /*0x8*/ 0,
+    /*0xC*/ func_808003AC_chnests,
+    /*0x10*/ func_80102EC0,
+    /*0x14*/ func_80800968_chnests,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0x00000000,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x4000,
+    /*0x26*/ 0x0080,
+    /*0x28*/ func_80800960_chnests,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_80800000_chnests,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8400,
+    /*0x3E*/ 0x3010,
+    /*0x40*/ func_808003F4_chnests,
+    /*0x44*/ 0,
+    /*0x46*/ 0,
+};
+
+ActorData D_80801350_chnests =
+{
+    /*0x0*/ 0x1D4,
+    /*0x2*/ PROP_1CD_NEST_GOLD_EGGS,
+    /*0x4*/ 0x6EA,
+    /*0x6*/ 0x1,
+    /*0x8*/ 0,
+    /*0xC*/ func_808003AC_chnests,
+    /*0x10*/ func_80102EC0,
+    /*0x14*/ func_80800968_chnests,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0x00000000,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x4000,
+    /*0x26*/ 0x0080,
+    /*0x28*/ func_80800960_chnests,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_80800098_chnests,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8400,
+    /*0x3E*/ 0x3010,
+    /*0x40*/ func_808003F4_chnests,
+    /*0x44*/ 0,
+    /*0x46*/ 0,
+};
+
+ActorData D_80801398_chnests =
+{
+    /*0x0*/ 0x1D3,
+    /*0x2*/ PROP_2B8_NEST_PROXIMITY_EGGS,
+    /*0x4*/ 0x6EA,
+    /*0x6*/ 0x1,
+    /*0x8*/ 0,
+    /*0xC*/ func_808003AC_chnests,
+    /*0x10*/ func_80102EC0,
+    /*0x14*/ func_80800968_chnests,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0x00000000,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x4000,
+    /*0x26*/ 0x0080,
+    /*0x28*/ func_80800960_chnests,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_80800000_chnests,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8400,
+    /*0x3E*/ 0x3010,
+    /*0x40*/ func_808003F4_chnests,
+    /*0x44*/ 0,
+    /*0x46*/ 0,
+};
+
+ActorData D_808013E0_chnests =
+{
+    /*0x0*/ 0x1D5,
+    /*0x2*/ PROP_1CE_NEST_RED_FEATHERS,
+    /*0x4*/ 0x6EF,
+    /*0x6*/ 0x3,
+    /*0x8*/ 0,
+    /*0xC*/ func_808003AC_chnests,
+    /*0x10*/ func_80102EC0,
+    /*0x14*/ func_80800A00_chnests,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0x00000000,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x4000,
+    /*0x26*/ 0x0080,
+    /*0x28*/ func_808009F8_chnests,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_80800000_chnests,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8400,
+    /*0x3E*/ 0x3010,
+    /*0x40*/ func_808003F4_chnests,
+    /*0x44*/ 0,
+    /*0x46*/ 0,
+};
+
+ActorData D_80801428_chnests =
+{
+    /*0x0*/ 0x1D6,
+    /*0x2*/ PROP_1CF_NEST_GOLD_FEATHERS,
+    /*0x4*/ 0x6EF,
+    /*0x6*/ 0x3,
+    /*0x8*/ 0,
+    /*0xC*/ func_808003AC_chnests,
+    /*0x10*/ func_80102EC0,
+    /*0x14*/ func_80800A00_chnests,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0x00000000,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x4000,
+    /*0x26*/ 0x0000,
+    /*0x28*/ func_808009F8_chnests,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_80800000_chnests,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8400,
+    /*0x3E*/ 0x3410,
+    /*0x40*/ func_808003F4_chnests,
+    /*0x44*/ 0,
+    /*0x46*/ 0,
+};
+
+ActorData D_80801470_chnests =
+{
+    /*0x0*/ 0x1D9,
+    /*0x2*/ PROP_1D7_NOTE,
+    /*0x4*/ 0x6EC,
+    /*0x6*/ 0x2,
+    /*0x8*/ 0,
+    /*0xC*/ func_808007C8_chnests,
+    /*0x10*/ func_80102EC0,
+    /*0x14*/ func_8080082C_chnests,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0x00000000,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x4000,
+    /*0x26*/ 0x0000,
+    /*0x28*/ 0x0,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_808006C4_chnests,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8400,
+    /*0x3E*/ 0x3450,
+    /*0x40*/ func_808003F4_chnests,
+    /*0x44*/ 0,
+    /*0x46*/ 0,
+};
+
+ActorData D_808014B8_chnests =
+{
+    /*0x0*/ 0x1DA,
+    /*0x2*/ PROP_1D8_TREBLE_CLEF,
+    /*0x4*/ 0x6ED,
+    /*0x6*/ 0x2,
+    /*0x8*/ 0,
+    /*0xC*/ func_808007C8_chnests,
+    /*0x10*/ func_80102EC0,
+    /*0x14*/ func_8080082C_chnests,
+    /*0x18*/ 0x0000,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0x00000000,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x4000,
+    /*0x26*/ 0x0000,
+    /*0x28*/ 0x0,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_808006C4_chnests,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8400,
+    /*0x3E*/ 0x3450,
+    /*0x40*/ func_808003F4_chnests,
+    /*0x44*/ 0,
+    /*0x46*/ 0,
+};
+ActorData D_80801500_chnests =
+{
+    /*0x0*/ 0x1C5,
+    /*0x2*/ PROP_1E9_EGGNEST,
+    /*0x4*/ 0x6EA,
+    /*0x6*/ 0x1,
+    /*0x8*/ 0,
+    /*0xC*/ func_80800C3C_chnests,
+    /*0x10*/ func_80102EC0,
+    /*0x14*/ func_80800D8C_chnests,
+    /*0x18*/ 0x01F4,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0x00000000,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x4000,
+    /*0x26*/ 0x0080,
+    /*0x28*/ func_80800A6C_chnests,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_80800ED8_chnests,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8000,
+    /*0x3E*/ 0x7010,
+    /*0x40*/ func_808003F4_chnests,
+    /*0x44*/ 0,
+    /*0x46*/ 0,
+};
+ActorData D_80801548_chnests =
+{
+    /*0x0*/ 0x1C6,
+    /*0x2*/ PROP_4A6_FEATHERNEST,
+    /*0x4*/ 0x6EF,
+    /*0x6*/ 0x3,
+    /*0x8*/ 0,
+    /*0xC*/ func_80800C3C_chnests,
+    /*0x10*/ func_80102EC0,
+    /*0x14*/ func_80800D8C_chnests,
+    /*0x18*/ 0x01F4,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0x00000000,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x4000,
+    /*0x26*/ 0x0080,
+    /*0x28*/ func_80800A6C_chnests,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_80800F08_chnests,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8000,
+    /*0x3E*/ 0x7010,
+    /*0x40*/ func_808003F4_chnests,
+    /*0x44*/ 0,
+    /*0x46*/ 0,
+};
 
 extern u8 D_8012762C;
 
-void func_808002E0_chnests(Actor*);
-s32 func_80800898_chnests(Actor*, s32, f32);
-void func_80800B80_chnests(Actor*);
-void func_80800BD8_chnests(Actor*, s32, f32, f32);
+
 
 void func_80800000_chnests(Actor* arg0)
 {
@@ -182,7 +594,93 @@ void func_808003AC_chnests(Actor* arg0)
 }
 
 //Event Handler
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nests/func_808003F4_chnests.s")
+s32 func_808003F4_chnests(Actor* arg0, s32 eventType, s32 arg2)
+{
+    switch (eventType)
+    {
+
+    case 0x3E:
+    {
+        UnkArg2ChNest* temp2 = arg2;    // = arg2;
+        // FAKE to force saving arg2 / temp2 on stack
+        if (&arg2);
+
+        if (func_800F4B4C(temp2->unk1A_5) == 0)
+        {
+            return 0;
+        }
+        switch (arg0->unk0->unk24_22)
+        {
+        case 0x1D9:
+        case 0x1DA:
+            func_80800670_chnests(arg0, temp2);
+            break;
+        case 0x1D4:
+            func_800F7C0C(temp2->unk1A_5, 0x5F, arg0->rotation[1]);
+            if (arg0->unk74_7 == 0x32)
+            {
+                func_808001F0_chnests(arg0, temp2);
+            }
+            else
+            {
+                func_80800324_chnests(arg0, temp2);
+            }
+            break;
+
+        default:
+            func_808001F0_chnests(arg0, temp2);
+            break;
+        }
+        return 1;
+    }
+    case 0x1F:
+        if (func_80801014_chnests(arg0) != 0)
+        {
+            func_8080093C_chnests(arg0, arg2);
+        }
+        else if (func_808010A0_chnests(arg0) != 0)
+        {
+            func_808009D4_chnests(arg0, arg2);
+        }
+        break;
+    case 0x95:
+        //temp = arg0->unk6C_9;
+        if ((arg0->unk6C_9 != 0x1E9) && (arg0->unk6C_9 != 0x4A6))
+        {
+            func_80103110(arg0, 0U);
+        }
+        func_80109EEC(arg0, 0x44);
+        break;
+    case 0x29:
+        if (func_80801014_chnests(arg0) != 0)
+        {
+            func_8010DC50(0);
+        }
+        else if (func_808010A0_chnests(arg0) != 0)
+        {
+            func_8010DC50(1);
+        }
+        break;
+    case 0x2A:
+        if (func_80801014_chnests(arg0) != 0)
+        {
+            func_8010DCB4(0);
+        }
+        else if (func_808010A0_chnests(arg0) != 0)
+        {
+            func_8010DCB4(1);
+        }
+        break;
+    case 0x76:
+        func_8080034C_chnests(arg0);
+        func_80101FDC(arg0, 1U);
+        break;
+    default:
+        return 0;
+    }
+
+    return 1;
+}
 
 void func_80800670_chnests(Actor* arg0, UnkArg2ChNest* arg1)
 {

@@ -98,6 +98,7 @@ void func_800F7700(u32, s32, f32*);
 void func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
 s32 func_800F7B9C(s32, u32);
 void func_800F7BC8(s32, s32, Unk80132ED0*);
+void func_800F7C0C(s32, s32, f32);
 void func_800F7C9C(u32, s32, s32, s32);
 void func_800F7CF4(s32, s32, f32*);
 s32 func_800F7E3C(s32, s32);

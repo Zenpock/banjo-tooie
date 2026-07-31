@@ -40,7 +40,6 @@ ActorData D_808003F4_chhoneycarrier=
     /*0x40*/ func_808000C4_chhoneycarrier,
     /*0x44*/ 0,
     /*0x46*/ 0,
-    /*0x48*/ 0,
 };
 
 //Called when the object is touched

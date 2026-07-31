@@ -4057,15 +4057,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F7DC00
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F7DC00, c, nests]
-      - [0x01F7ECE0, .rodata, nests]
-      - [0x01F7ECF0, data, nests]
-      - [0x01F7F190, bss, nests]
+      - [auto, c, nests]
   - name: chbanjocurrent_header
     dir: overlays/chbanjocurrent
     type: bin
