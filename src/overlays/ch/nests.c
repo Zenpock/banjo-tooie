@@ -6,8 +6,8 @@ typedef struct {
     s16 unk4;
     s16 unk6;
     s16 firstTimeFlag;
-    u8 unkA;
-    u8 unkB;
+    u8 inventoryId;
+    u8 itemAmount;
     u8 unkC;
 }D_80801118_chnestsUnk;
 
@@ -47,20 +47,20 @@ void func_80800ED8_chnests(Actor*);
 void func_80800F08_chnests(Actor*);
 
 D_80801118_chnestsUnk D_80801118_chnests[]={ 
-    {0x01CE,ABILITY_31_EGGS_BLUE,0x0003,0x0004,0x002B,0x40,0x14,0x02},
-    {0x01CF,ABILITY_2C_EGGS_FIRE,0x0004,0x006A,0x0000,0x41,0x0A,0x01},
-    {0x01D1,ABILITY_2D_EGGS_GRENADE,0x000C,0x006C,0x0000,0x43,0x0A,0x05},
-    {0x01D0,ABILITY_2F_EGGS_ICE,0x0003,0x006B,0x0000,0x42,0x0A,0x03},
-    {0x01D2,ABILITY_2E_EGGS_CLOCKWORK,0x0004,0x0069,0x0000,0x44,0x01,0x07},
+    {0x01CE,ABILITY_31_EGGS_BLUE,0x0003,0x0004,FLAG_02B_FTT_ITEM_EGG,0x40,20,0x02},
+    {0x01CF,ABILITY_2C_EGGS_FIRE,0x0004,0x006A,0x0000,0x41,10,0x01},
+    {0x01D1,ABILITY_2D_EGGS_GRENADE,0x000C,0x006C,0x0000,0x43,10,0x05},
+    {0x01D0,ABILITY_2F_EGGS_ICE,0x0003,0x006B,0x0000,0x42,10,0x03},
+    {0x01D2,ABILITY_2E_EGGS_CLOCKWORK,0x0004,0x0069,0x0000,0x44,1,0x07},
     {0xFFFF,0x0000,0x0000,0x0000,0x0000,0x0,0x0,0x0},
-    {0x01D5,0x0000,0x0004,0x0003,0x002C,0x46,0x14,0x02},
-    {0x01D6,0x0000,0x0005,0x0006,0x002D,0x47,0x02,0x01},
+    {0x01D5,0x0000,0x0004,0x0003,FLAG_02C_FTT_ITEM_FEATHER_RED,0x46,20,0x02},
+    {0x01D6,0x0000,0x0005,0x0006,FLAG_02D_FTT_ITEM_FEATHER_GOLD,0x47,2,0x01},
     {0xFFFF,0x0000,0x0000,0x0000,0x0000,0x0,0x0,0x0},
     {0xFFFE,0x0000,0x0000,0x0000,0x0000,0x0,0x0,0x0},
     {0x01D4,0x0000,0x0005,0x0004,0x0000,0x0,0x0,0x04},
     {0x01D3,0x0000,0x0003,0x0078,0x0000,0x45,0x05,0x08},
-    {0x01D9,0x0000,0x0005,0x0001,0x0029,0x00,0x05,0x00},
-    {0x01DA,0x0000,0x0005,0x0014,0x002E,0x00,0x14,0x00}
+    {0x01D9,0x0000,0x0005,0x0001,FLAG_029_FTT_ITEM_NOTE,0x00,5,0x00},
+    {0x01DA,0x0000,0x0005,0x0014,FLAG_02E_FTT_ITEM_TREBLE_CLEF,0x00,20,0x00}
 };
 s16 D_808011DC_chnests[][2] = { {0xA,0xF},{0x14,0x1E},{0x2D,0x3C} };
 
@@ -520,11 +520,11 @@ void func_80800144_chnests(Actor* arg0, UnkArg2ChNest* arg1) // some struct that
     {
         func_800FC660(var_v1->unk6);
     }
-    if (var_v1->unkA != 0)
+    if (var_v1->inventoryId != 0)
     {
         if ((_gleeprom_entrypoint_0() >> 0x18) == 0x10)
         {
-            func_800F7664((u32)arg1->unk1A_5, var_v1->unkA, var_v1->unkB);
+            func_800F7664((u32)arg1->unk1A_5, var_v1->inventoryId, var_v1->itemAmount);
         }
     }
 }
@@ -805,29 +805,36 @@ void func_80800A6C_chnests(s32 arg0)
 {
 }
 
-s32 func_80800A74_chnests(s32 arg0)
+s32 func_80800A74_chnests(s32 nestIndex)
 {
     s16 associatedAbility;
     s32 temp_s3;
+    //Increment the nestIndex from the current nest being displayed
 
-    temp_s3 = D_80801118_chnests[arg0++].unk0;
-    while (temp_s3 != D_80801118_chnests[arg0].unk0)
+    temp_s3 = D_80801118_chnests[nestIndex++].unk0;
+    while (temp_s3 != D_80801118_chnests[nestIndex].unk0)
     {
-        if (D_80801118_chnests[arg0].unk0 == -1)
+        //Check if the cycle should loop back to the beginning
+        if (D_80801118_chnests[nestIndex].unk0 == -1)
         {
-            while (arg0 > 0 && D_80801118_chnests[arg0 - 1].unk0 != -1)
+            //Traverse the cycle backwards until we hit 0 or another -1
+            while (nestIndex > 0 && D_80801118_chnests[nestIndex - 1].unk0 != -1)
             {
-                arg0--;
+                nestIndex--;
             }
         }
-        associatedAbility = D_80801118_chnests[arg0].abilityId;
+        associatedAbility = D_80801118_chnests[nestIndex].abilityId;
+        //Check if we can cycle to the next nest type
         if (associatedAbility == 0 || ability_getValue(associatedAbility) != 0)
         {
+            //We have found a valid next nest type to go to stop here
             break;
         }
-        arg0++;
+        //Go to the next nest type and see if we can use that
+        nestIndex++;
     }
-    return arg0;
+    //Return the next valid nest type
+    return nestIndex;
 }
 
 void func_80800B4C_chnests(Actor* arg0)
@@ -1014,7 +1021,7 @@ u8 chnests_entrypoint_13(s32 arg0)
     {
         if (arg0 == D_80801118_chnests[index].unk0)
         {
-            return D_80801118_chnests[index].unkB;
+            return D_80801118_chnests[index].itemAmount;
         }
     }
     return 0U;
