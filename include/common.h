@@ -95,7 +95,7 @@ typedef struct Actor {
     /* 0x64 */ u32 unk64_0 : 16;
     /* 0x68 */ s32 pad68;
     /* 0x6C */ u32 unk6C_21 : 11;
-    /* 0x6C */ u32 unk6C_9 : 12;
+    /* 0x6C */ u32 unk6C_9 : 12;//PropId
     /* 0x6C */ u32 unk6C_0 : 9; // if accessed directly: unk6C & 0x1FF, if assigned: ((u16)valueToAssign & 0x1FF) | (unk6E & 0xFE00);
     /* 0x70 */ u32 unk70_25 : 7;//unk70 >> 0x19
     /* 0x70 */ u32 pad70_23 : 2;

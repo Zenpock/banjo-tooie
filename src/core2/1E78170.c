@@ -38,7 +38,7 @@ void func_8009E8B4(void)
 void func_8009E8D4(void) 
 {
     //Setup BK Ability Flags
-    func_800C6E60();
+    //func_800C6E60();
     D_80127040.unkC = func_800D3B60();
     D_80127068.unk18 = 0;
     D_80127068.unkC = 0;

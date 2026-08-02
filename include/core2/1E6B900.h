@@ -4,7 +4,10 @@
 #include <ultra64.h>
 
 #include "overlays/ba/playerstate.h"
+#include "core2/1EAAD80.h"
 #include "core2/1EBA250.h"
+#include "gc/egg.h"
+
 void func_80092778(PlayerState*);
 
 void func_80092864(PlayerState *, f32);
@@ -20,6 +23,10 @@ void func_80093230(PlayerState *, f32);
 void func_8009328C(PlayerState *, f32);
 void func_80093360(PlayerState *, f32);
 s32 func_800944E0(PlayerState *, s32);
+s32 func_800949BC(PlayerState*);
+s32 func_80094C64(PlayerState*, s32);
+void func_80094E40(s32);
+//Get Current Egg Type
 s32 func_80094510(PlayerState *);
 void func_800947EC(PlayerState *, s32, s32);
 s32 func_80094B14(PlayerState *);

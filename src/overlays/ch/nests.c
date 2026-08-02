@@ -644,8 +644,7 @@ s32 func_808003F4_chnests(Actor* arg0, s32 eventType, s32 arg2)
         }
         break;
     case 0x95:
-        //temp = arg0->unk6C_9;
-        if ((arg0->unk6C_9 != 0x1E9) && (arg0->unk6C_9 != 0x4A6))
+        if ((arg0->unk6C_9 != PROP_1E9_EGGNEST) && (arg0->unk6C_9 != PROP_4A6_FEATHERNEST))
         {
             func_80103110(arg0, 0U);
         }
@@ -810,7 +809,6 @@ s32 func_80800A74_chnests(s32 nestIndex)
     s16 associatedAbility;
     s32 temp_s3;
     //Increment the nestIndex from the current nest being displayed
-
     temp_s3 = D_80801118_chnests[nestIndex++].unk0;
     while (temp_s3 != D_80801118_chnests[nestIndex].unk0)
     {
@@ -822,6 +820,7 @@ s32 func_80800A74_chnests(s32 nestIndex)
             {
                 nestIndex--;
             }
+            continue;
         }
         associatedAbility = D_80801118_chnests[nestIndex].abilityId;
         //Check if we can cycle to the next nest type
@@ -1027,12 +1026,14 @@ u8 chnests_entrypoint_13(s32 arg0)
     return 0U;
 }
 
+//IsEggNest
 int func_80801014_chnests(Actor* arg0)
 {
-    return arg0->unk6C_9 == 0x1C8 || arg0->unk6C_9 == 0x1C9 || arg0->unk6C_9 == 0x1CA || arg0->unk6C_9 == 0x1CB || arg0->unk6C_9 == 0x1CC || arg0->unk6C_9 == 0x1CD || arg0->unk6C_9 == 0x2B8 || arg0->unk6C_9 == 0x1E9;
+    return arg0->unk6C_9 == PROP_1C8_NEST_BLUE_EGGS || arg0->unk6C_9 == PROP_1C9_NEST_FIRE_EGGS || arg0->unk6C_9 == PROP_1CA_NEST_ICE_EGGS || arg0->unk6C_9 == PROP_1CB_NEST_GRENADE_EGGS || arg0->unk6C_9 == PROP_1CC_NEST_CLOCKWORK_EGGS || arg0->unk6C_9 == PROP_1CD_NEST_GOLD_EGGS || arg0->unk6C_9 == PROP_2B8_NEST_PROXIMITY_EGGS || arg0->unk6C_9 == PROP_1E9_EGGNEST;
 }
 
+//IsFeatherNest
 int func_808010A0_chnests(Actor* arg0)
 {
-    return (arg0->unk6C_9 == 0x1CE || arg0->unk6C_9 == 0x1CF || arg0->unk6C_9 == 0x4A6);
+    return (arg0->unk6C_9 == PROP_1CE_NEST_RED_FEATHERS || arg0->unk6C_9 == PROP_1CF_NEST_GOLD_FEATHERS || arg0->unk6C_9 == PROP_4A6_FEATHERNEST);
 }
