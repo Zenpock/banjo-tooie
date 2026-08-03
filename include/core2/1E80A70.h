@@ -30,5 +30,6 @@ f32 func_800A8258(void);
 int func_800A8264();
 void func_800A8278();
 void func_800A89BC(s32);
+s32 func_800A89F8();
 void func_800A8B24(s32, s32);
 #endif // __CORE2_1E80A70_H__

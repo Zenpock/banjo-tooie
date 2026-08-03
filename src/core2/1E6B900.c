@@ -5,35 +5,159 @@ s32 func_80092010(void)
 	return 0x118;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092018.s")
+void func_80092018(PlayerState* arg0)
+{
+    f32 sp34[3];
+    f32 sp28[3];
+    f32 var_f0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_800920C8.s")
+    if (arg0->unk50->unkC4 != 0)
+    {
+        var_f0 = arg0->unk50->unkC8;
+    }
+    else
+    {
+        var_f0 = arg0->unk50->unk28;
+    }
+    func_800EFA4C(sp34, arg0->unk50->unk20, var_f0, arg0->unk50->unk24);
+    func_800EE780(sp28, arg0->unk50->unk2C, arg0->unk50->unk44);
+    func_80019CD4();
+    func_80019750(arg0->unk50->unk44, &sp34, arg0->unk50->unk1C, sp28);
+    if (arg0->unk50->unkC4 != 0)
+    {
+        mlMtxRotPitch(arg0->unk50->unk28);
+    }
+    mlMtxGet(&arg0->unk50->unkCC);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_800920F0.s")
+void func_800920C8(PlayerState* arg0)
+{
+    func_80093504(arg0, arg0->unk50->unk64, arg0->unk50->unk50);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_8009216C.s")
+void func_800920F0(PlayerState* arg0)
+{
+    switch (arg0->unk50->unk15)
+    {
+    case 2:
+        arg0->unk50->unk28 = func_800136E4(yaw_get(arg0) + 180.0f);
+        return;
+    default:
+        arg0->unk50->unk28 = yaw_get(arg0);
+    case 3:
+        return;
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_800921E0.s")
+void func_8009216C(PlayerState* arg0, f32* arg1, f32* arg2)
+{
+    BaUnknown50* temp_v0;
+    func_800920F0(arg0);
+    arg0->unk50->unk24 = baroll_get(arg0);
+    arg0->unk50->unk20 = func_8009BFCC(arg0);
+    temp_v0 = arg0->unk50;
+    func_800EFA4C(arg2, temp_v0->unk20, temp_v0->unk28, temp_v0->unk24);
+    func_8009C128(arg0, arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092224.s")
+void func_800921E0(PlayerState* arg0, s32 arg1, f32* arg2)
+{
+    func_8009C2A0(arg0->unk50->unk4, arg1);
+    if (func_800EEEA8(arg2) != 0)
+    {
+        func_8009C128(arg0, arg2);
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092234.s")
+void func_80092224(PlayerState* arg0)
+{
+    arg0->unk50->unk1A = 1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_8009224C.s")
+void func_80092234(PlayerState* arg0)
+{
+    arg0->unk50->unk1A = 1;
+    arg0->unk50->unk16 = 1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092258.s")
+u8 func_8009224C(PlayerState* arg0)
+{
+    return arg0->unk50->unk1A;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_8009239C.s")
+s32 func_80092258(PlayerState* arg0)
+{
+    s32 sp34;
+    u8 sp33;
+    s32 sp2C;
+    f32 var_f20;
+    BaUnknown50* temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_800923A8.s")
+    temp_v0 = arg0->unk50;
+    var_f20 = temp_v0->unk88 != 0 ? temp_v0->unk8C : temp_v0->unk14;
+    if (func_8009AD78(arg0, 0xC) != 0)
+    {
+        sp33 = 0;
+        if (func_80093DF4(arg0, 2) != 0)
+        {
+            sp2C = func_800A89F8();
+            if (func_800A4C68(arg0) == sp2C)
+            {
+                sp33 = 1;
+            }
+        }
+        var_f20 *= _bainvisible_entrypoint_2(arg0, sp33);
+    }
+    return (u32)var_f20 & 0xFF;
+}
+
+u8 func_8009239C(PlayerState* arg0)
+{
+    return arg0->unk50->unk19;
+}
+
+void func_800923A8(PlayerState* arg0, s32 arg1)
+{
+    u8 sp1F;
+    BaUnknown50* temp_v0_2;
+    s32 temp_v0;
+
+    temp_v0 = func_80092258(arg0);
+    sp1F = temp_v0;
+    func_800A2540(arg0, temp_v0);
+    func_800DF464(2.0f);
+    if (arg1 != 0)
+    {
+        temp_v0_2 = arg0->unk50;
+        if (temp_v0_2->unk16 == 0)
+        {
+            func_800DF738(temp_v0_2->unk4);
+        }
+    }
+    func_800DF830(1);
+    temp_v0_2 = arg0->unk50;
+    if (temp_v0_2->unk88 != 0)
+    {
+        func_800DF5D8(temp_v0_2->unk89, temp_v0_2->unk8A, temp_v0_2->unk8B, sp1F);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092444.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_8009272C.s")
+void func_8009272C(PlayerState* arg0, s32 arg1)
+{
+    arg0->unk50->unk11 = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092738.s")
+s32 func_80092738(PlayerState* arg0)
+{
+    return arg0->unk50->unk11;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092744.s")
+void func_80092744(PlayerState* arg0, s32 arg1)
+{
+    arg0->unk50->unk88 = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092750.s")
 
@@ -60,7 +184,10 @@ void func_80092AB0(PlayerState* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092B04.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092B80.s")
+s32 func_80092B80(PlayerState* arg0)
+{
+    return arg0->unk50->unkC;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092B8C.s")
 
@@ -168,9 +295,15 @@ void func_80092E5C(s32 arg0,s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80093360.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80093370.s")
+void func_80093370(PlayerState* arg0, s32 arg1)
+{
+    arg0->unk50->unk17 = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_8009337C.s")
+void func_8009337C(PlayerState* arg0, s32 arg1)
+{
+    arg0->unk50->unk18 = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80093388.s")
 
@@ -186,15 +319,27 @@ void func_80092E5C(s32 arg0,s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_8009359C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_800936CC.s")
+void func_800936CC(PlayerState* arg0, s32 arg1)
+{
+    arg0->unk50->unkA2 = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_800936D8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_800936E8.s")
+void func_800936E8(PlayerState* arg0, s32 arg1) 
+{
+    arg0->unk50->unkA3 = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_800936F4.s")
+s32 func_800936F4(PlayerState* arg0)
+{
+    return arg0->unk50->unkA3;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80093700.s")
+void func_80093700(PlayerState* arg0, s32 arg1)
+{
+    arg0->unk50->unk19 = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_8009370C.s")
 
