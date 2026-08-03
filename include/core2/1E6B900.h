@@ -5,8 +5,11 @@
 
 #include "overlays/ba/playerstate.h"
 #include "core2/1EAAD80.h"
+#include "core2/1EABAC0.h"
 #include "core2/1EBA250.h"
+#include "core2/1ECE0B0.h"
 #include "gc/egg.h"
+#include "overlays/ba/input.h"
 
 void func_80092778(PlayerState*);
 

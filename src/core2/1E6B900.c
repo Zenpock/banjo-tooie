@@ -1,5 +1,11 @@
 #include "core2/1E6B900.h"
 
+s32 func_80094348(PlayerState*, s32);
+void func_80094390(PlayerState*);
+void func_80094824(PlayerState*);
+void func_80094C88(PlayerState*);
+s32 func_80094DA8(PlayerState*);
+
 s32 func_80092010(void)
 {
 	return 0x118;
@@ -258,7 +264,58 @@ void func_80094370(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80094824.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80094864.s")
+void func_80094864(PlayerState* arg0)
+{
+    s32 sp24;
+
+    if (func_800F6774(arg0->unk184) != 0)
+    {
+        if (func_80094348(arg0, 0x10) != 0)
+        {
+            func_80094390(arg0);
+        }
+        if (func_80094348(arg0, 8) != 0)
+        {
+            sp24 = _gcegg_entrypoint_5(func_80094510(arg0));
+            if (func_80094348(arg0, 4) == 0)
+            {
+                func_800D1824(sp24);
+            }
+        }
+        if (func_80094348(arg0, 1) == 0)
+        {
+            switch (arg0->unk64[3])
+            {
+            case 0:
+                if (bainput_func_80097C7C(arg0) != 0)
+                {
+                    arg0->unk64[3] = 1U;
+                    func_80094E40(func_80094510(arg0));
+                    func_80094C88(arg0);
+                    return;
+                }
+                break;
+            case 1:
+                func_80094824(arg0);
+                func_80094DA8(arg0);
+                if (func_80094DA8(arg0) != 0)
+                {
+                    arg0->unk64[3] = 2U;
+                    func_80094C88(arg0);
+                    return;
+                }
+                break;
+            case 2:
+                func_80094824(arg0);
+                if (func_80094DA8(arg0) == 0)
+                {
+                    arg0->unk64[3] = 0U;
+                }
+                break;
+            }
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_800949BC.s")
 
@@ -305,6 +362,24 @@ s32 func_80094A10(PlayerState* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80094D04.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80094DA8.s")
+s32 func_80094DA8(PlayerState* arg0)
+{
+    s32 eggType;
+    s32 eggCycleIndex;
+
+    eggCycleIndex = 0;
+    eggType = func_80094C64(arg0, 0);
+    while (eggType != 0)
+    {
+        //If we have the egg type unlocked and the ui is being shown
+        if ((_gcegg_entrypoint_6(eggType) != 0) && (func_800D27F4(func_800D1C5C(_gcegg_entrypoint_5(eggType))) == 0))
+        {
+            return 0;
+        }
+        eggCycleIndex += 1;
+        eggType = func_80094C64(arg0, eggCycleIndex);
+    }
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80094E40.s")
