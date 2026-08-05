@@ -36,6 +36,12 @@ extern void _bafly_entrypoint_5(PlayerState*);
 extern void _bafpctrl_entrypoint_18(PlayerState*, s32);
 extern void baroll_setAngularVelocity(PlayerState*, f32, f32);
 extern void func_80093360(PlayerState*, f32);
+extern f32 _bafpctrl_entrypoint_3(PlayerState*);
+extern void _ncbafly_entrypoint_4(s32, f32, f32, f32);
+extern void baroll_setIdeal(PlayerState*, f32);
+extern f32 bastick_getX();
+extern s32 func_800A4CA8(PlayerState*);
+extern f32 func_800F10B4(f32, f32, f32, f32, f32);
 
 extern s32 D_80800DC0_bsbeefly;
 extern s32 D_80800DE8_bsbeefly;
@@ -128,7 +134,29 @@ void func_8080039C_bsbeefly(PlayerState* arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_80800480_bsbeefly.s")
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_80800480_bsbeefly.s")
+void func_80800480_bsbeefly(PlayerState* arg0) {
+    f32 sp34;
+    f32 sp30;
+    f32 sp28[3];
+    f32 var_f0;
+
+    sp28[1] = bastick_getX();
+    _ncbafly_entrypoint_4(func_800A4CA8(arg0), 2.0f, 2000.0f, 350.0f);
+    if (bakey_held(arg0, BUTTON_R)) {
+        yaw_setVelocityBounded(arg0, 500.0f, 30.0f);
+        sp30 = 6.0f;
+        var_f0 = 85.0f;
+    } else {
+        yaw_setVelocityBounded(arg0, 500.0f, 2.0f);
+        sp30 = 3.0f;
+        var_f0 = 65.0f;
+    }
+    baroll_setIdeal(arg0, func_800F10B4(sp28[1], -1.0f, 1.0f, -var_f0, var_f0));
+    sp34 = func_800F10B4(sp28[1], -1.0f, 1.0f, sp30, -sp30);
+    sp34 *= _bafpctrl_entrypoint_3(arg0);
+    yaw_setIdeal(arg0, yaw_getIdeal(arg0) + sp34);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_808005B0_bsbeefly.s")
 
