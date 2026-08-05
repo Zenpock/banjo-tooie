@@ -67,12 +67,10 @@ extern s32 D_80800B50_bsbbilldrill;
 
 /* .code */
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800000_bsbbilldrill.s")
 void func_80800000_bsbbilldrill(PlayerState* self) {
     self->unk168.word = 0;
 }
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800008_bsbbilldrill.s")
 void func_80800008_bsbbilldrill(PlayerState* self) {
     f32 sp24[3];
 
@@ -89,7 +87,6 @@ void func_80800008_bsbbilldrill(PlayerState* self) {
     }
 }
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_808000C0_bsbbilldrill.s")
 void func_808000C0_bsbbilldrill(PlayerState *self) {
 
     if (self->unk168.word) {
@@ -97,7 +94,6 @@ void func_808000C0_bsbbilldrill(PlayerState *self) {
     }
 }
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800100_bsbbilldrill.s")
 void func_80800100_bsbbilldrill(PlayerState *self)
 {
     f32 var_f2 = func_80092BF4(self);
@@ -108,12 +104,10 @@ void func_80800100_bsbbilldrill(PlayerState *self)
     func_80093300(self, var_f2);
 }
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800158_bsbbilldrill.s")
 s32 func_80800158_bsbbilldrill(f32 arg0[3]) {
     func_800BABB8(func_800B5BE4(9), arg0, 0, 1.0f, &D_80800AC8_bsbbilldrill);
 }
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_8080019C_bsbbilldrill.s")
 void func_8080019C_bsbbilldrill(PlayerState* self) {
     f32 sp24[3];
     f32 sp20;
@@ -132,7 +126,6 @@ void func_8080019C_bsbbilldrill(PlayerState* self) {
     func_800BA22C(sp1C, 2);
 }
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800250_bsbbilldrill.s")
 void func_80800250_bsbbilldrill(PlayerState* arg0) {
     f32 sp1C[3];
 
@@ -141,13 +134,11 @@ void func_80800250_bsbbilldrill(PlayerState* arg0) {
     func_800BA22C(_fxdlsmoke_entrypoint_0(sp1C), 1);
 }
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800298_bsbbilldrill.s")
 void func_80800298_bsbbilldrill(PlayerState* self) {
     _bswalk_entrypoint_1(self);
     baphysics_set_target_horizontal_velocity(self, baphysics_get_target_horizontal_velocity(self) * 0.1f);
 }
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_808002DC_bsbbilldrill.s")
 void func_808002DC_bsbbilldrill(PlayerState* self, s32 arg1) {
     f32 sp34[3];
 
@@ -202,13 +193,11 @@ void func_808002DC_bsbbilldrill(PlayerState* self, s32 arg1) {
     }
 }
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_808005C0_bsbbilldrill.s")
 void func_808005C0_bsbbilldrill(PlayerState* self) {
     self->unk16C += (self->unk170 * func_800D8FF8());
     func_8009328C(self, self->unk16C);
 }
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/bsbbilldrill_entrypoint_0.s")
 void bsbbilldrill_entrypoint_0(PlayerState* self) {
     func_800931AC(self, 1);
     func_80093300(self, 0);
@@ -222,7 +211,6 @@ void bsbbilldrill_entrypoint_0(PlayerState* self) {
     func_808000C0_bsbbilldrill(self);
 }
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/bsbbilldrill_entrypoint_1.s")
 void bsbbilldrill_entrypoint_1(PlayerState* arg0) {
     AnimCtrl* temp_v0;
 
@@ -250,7 +238,6 @@ void bsbbilldrill_entrypoint_1(PlayerState* arg0) {
     func_80800000_bsbbilldrill(arg0);
 }
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/bsbbilldrill_entrypoint_2.s")
 void bsbbilldrill_entrypoint_2(PlayerState* self) {
     enum bs_state_e sp44;
     f32 sp40;
@@ -324,7 +311,6 @@ void bsbbilldrill_entrypoint_2(PlayerState* self) {
     bs_setState(self, sp44);
 }
 
-// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/bsbbilldrill_entrypoint_3.s")
 s32 bsbbilldrill_entrypoint_3(s32 arg0) {
     return *(&D_80800B68_bsbbilldrill + (arg0));
 }
