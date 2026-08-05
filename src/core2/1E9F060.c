@@ -1,11 +1,38 @@
 #include "common.h"
 
-void func_800C5770(void) {
-}
+/* .data */
+
+extern void func_800BF48C(u8, u8, u8);  
+
+typedef struct {
+    f32 unk0;
+    f32 unk4;
+    u8 unk8;
+    u8 unk9;
+    u8 unkA;
+    u8 unkB;
+    u8 unkC;
+    u8 unkD;
+    u8 unkE;
+    u8 unkF;
+    u8 unk10;
+    u8 unk11;
+} D_8012AA20_Struct;
+
+/* .bss */
+
+extern D_8012AA20_Struct D_8012AA20;
+
+/* .code */
+
+void func_800C5770(void) {}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C5778.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C57C0.s")
+// #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C57C0.s")
+void func_800C57C0(void) {
+    func_800BF48C(D_8012AA20.unk8, D_8012AA20.unk9, D_8012AA20.unkA);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C57F0.s")
 

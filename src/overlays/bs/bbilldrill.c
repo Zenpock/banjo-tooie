@@ -1,29 +1,249 @@
 #include "common.h"
+#include "core2/anctrl.h"
+#include "overlays/ba/anim.h"
+#include "overlays/ba/assets.h"
+#include "overlays/ba/physics.h"
+#include "overlays/ba/timer.h"
+#include "overlays/bs/state.h"
+#include "overlays/ba/dust.h"
+#include "overlays/ba/motor.h"
+#include "overlays/ba/playerstate.h"
+#include "overlays/ba/flag.h"
+#include "core1/1E29B60.h"
+#include "core2/1E72EA0.h"
+#include "core2/1E68670.h"
+#include "core2/1E76880.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E79FD0.h"
+#include "core2/1EA0690.h"
+#include "core2/1ECA640.h"
+#include "core2/1E66990.h"
+#include "core2/1E75620.h"
+#include "core2/1EB2840.h"
+#include "core2/1ECB9F0.h"
+#include "core2/1EA1DA0.h"
+#include "core2/1E93440.h"
+#include "core2/1EB5980.h"
+#include "core2/1E75920.h"
+#include "buttons.h"
+#include "bs.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800000_bsbbilldrill.s")
+extern s32 func_800B5BE4(s32);
+extern s32 func_800BABB8(s32, f32[3], f32[3], f32, s32[]);
+extern void _bswalk_entrypoint_1();
+extern void baphysics_set_target_horizontal_velocity(PlayerState* , f32 vel);
+extern f32 baphysics_get_target_horizontal_velocity(PlayerState *);
+extern void baphysics_set_horizontal_velocity(PlayerState *, f32 yaw, f32 vel);
+extern void func_800931AC(PlayerState *, s32);
+extern void func_80093300(PlayerState*, f32);
+extern void func_80098520(PlayerState*, f32);
+extern void func_8009328C(PlayerState *, f32);
+extern f32 func_800D8FF8(void);
+extern void bs_setState(PlayerState *self, BanjoStateId nextState);
+extern s32 _chlightfader_entrypoint_1(s32, f32, s32);
+extern void func_800BA22C(s32, s32);
+extern void func_800BA7C4(s32, f32, f32);
+extern void func_800BA7FC(s32, f32, f32);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800008_bsbbilldrill.s")
+void func_808000C0_bsbbilldrill(PlayerState*);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_808000C0_bsbbilldrill.s")
+extern s32 D_80800AC8_bsbbilldrill;
+extern u32 D_80800AB0_bsbbilldrill[3];
+extern s32 D_80800B68_bsbbilldrill;
+
+/* .code */
+
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800000_bsbbilldrill.s")
+void func_80800000_bsbbilldrill(PlayerState* self) {
+    self->unk168.word = 0;
+}
+
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800008_bsbbilldrill.s")
+void func_80800008_bsbbilldrill(PlayerState* self) {
+    f32 sp24[3];
+
+    if (func_800BF8E4() > 0) {
+        if (self->unk168.word == 0) {
+            self->unk168.word = func_800C8A98();
+            func_800C8E54(self->unk168.word, 80.0f, 350.0f);
+            func_800C8F64(self->unk168.word, 0xB);
+        }
+        func_8009C128(self, sp24);
+        sp24[1] -= 10.0f;
+        func_800C8CB8(self->unk168.word, sp24);
+        func_800C8E84(self->unk168.word, func_8001210C(1) + &D_80800AB0_bsbbilldrill);
+    }
+}
+
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_808000C0_bsbbilldrill.s")
+void func_808000C0_bsbbilldrill(PlayerState *self) {
+
+    if (self->unk168.word) {
+        self->unk168.word = _chlightfader_entrypoint_1(self->unk168.word, 0.6f, 2);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800100_bsbbilldrill.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800158_bsbbilldrill.s")
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800158_bsbbilldrill.s")
+s32 func_80800158_bsbbilldrill(f32 arg0[3]) {
+    func_800BABB8(func_800B5BE4(9), arg0, 0, 1.0f, &D_80800AC8_bsbbilldrill);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_8080019C_bsbbilldrill.s")
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_8080019C_bsbbilldrill.s")
+void func_8080019C_bsbbilldrill(PlayerState* self) {
+    f32 sp24[3];
+    f32 sp20;
+    s32 sp1C;
+
+    if (func_800DC0C0() <= 0.2f) {
+        sp20 = 0.15f;
+    } else {
+        sp20 = 0.09f;
+    }
+    func_8009C128(self, sp24);
+    sp24[1] -= 80.0f;
+    sp1C = func_80800158_bsbbilldrill(sp24);
+    func_800BA7C4(sp1C, sp20, sp20);
+    func_800BA7FC(sp1C, sp20, sp20);
+    func_800BA22C(sp1C, 2);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800250_bsbbilldrill.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800298_bsbbilldrill.s")
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800298_bsbbilldrill.s")
+void func_80800298_bsbbilldrill(PlayerState* self) {
+    _bswalk_entrypoint_1(self);
+    baphysics_set_target_horizontal_velocity(self, baphysics_get_target_horizontal_velocity(self) * 0.1f);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_808002DC_bsbbilldrill.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_808005C0_bsbbilldrill.s")
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_808005C0_bsbbilldrill.s")
+void func_808005C0_bsbbilldrill(PlayerState* self) {
+    self->unk16C += (self->unk170 * func_800D8FF8());
+    func_8009328C(self, self->unk16C);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/bsbbilldrill_entrypoint_0.s")
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/bsbbilldrill_entrypoint_0.s")
+void bsbbilldrill_entrypoint_0(PlayerState* self) {
+    func_800931AC(self, 1);
+    func_80093300(self, 0);
+    func_80098520(self, 1.0f);
+    baphysics_reset_gravity(self);
+    baphysics_reset_terminal_velocity(self);
+    func_800A0CF4(self, 0);
+    baflag_clear(self, 0x22);
+    baflag_clear(self, 0x26);
+    func_8009E474(self);
+    func_808000C0_bsbbilldrill(self);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/bsbbilldrill_entrypoint_1.s")
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/bsbbilldrill_entrypoint_1.s")
+void bsbbilldrill_entrypoint_1(PlayerState* arg0) {
+    AnimCtrl* temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/bsbbilldrill_entrypoint_2.s")
+    temp_v0 = baanim_getAnimCtrlPtr(arg0);
+    anctrl_reset(temp_v0);
+    anctrl_setSmoothTransition(temp_v0, 0);
+    anctrl_setIndex(temp_v0, 0x61);
+    anctrl_setDuration(temp_v0, 1.02f);
+    anctrl_setStart(temp_v0, 0.3637f);
+    anctrl_setSubrange(temp_v0, 0.0f, 0.4546f);
+    anctrl_setPlaybackType(temp_v0, 1);
+    anctrl_start(temp_v0);
+    func_8009FFD8(arg0, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_6_AIRBORN);
+    baphysics_set_gravity(arg0, 0.0f);
+    baphysics_set_target_horizontal_velocity(arg0, 0.0f);
+    func_800A0CF4(arg0, 1);
+    baflag_clear(arg0, 0x22);
+    baflag_clear(arg0, 0x26);
+    func_800931AC(arg0, 3);
+    func_8009E4AC(arg0);
+    arg0->unk164.bytes[0] = 0;
+    arg0->unk160.bytes[0] = 0;
+    arg0->unk15C.bytes[0] = 0;
+    func_808002DC_bsbbilldrill(arg0, 1);
+    func_80800000_bsbbilldrill(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/bsbbilldrill_entrypoint_3.s")
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/bsbbilldrill_entrypoint_2.s")
+void bsbbilldrill_entrypoint_2(PlayerState* self) {
+    enum bs_state_e sp44;
+    f32 sp40;
+    f32 sp34[3];
+    s32 sp30;
+    f32 temp_f0;
+
+    sp44 = BS_STATE_0_INVALID;
+    switch (self->unk15C.bytes[0]) {
+        case 1:
+            func_80800298_bsbbilldrill(self);
+            temp_f0 = _batimer_get(self, 0);
+            sp40 = temp_f0;
+            self->unk170 = func_800F10B4(temp_f0, 0, 0.3f, 1500.0f, 50.0f);
+            func_808005C0_bsbbilldrill(self);
+            func_80098520(self, func_800F10B4(sp40, 0.0f, 0.3f, 1.0f, 0.0f));
+            if (_batimer_decrement(self, 0) != 0) {
+                func_808002DC_bsbbilldrill(self, 2);
+            }
+            break;
+        case 2:
+            func_80800298_bsbbilldrill(self);
+            func_808005C0_bsbbilldrill(self);
+            if (_batimer_decrement(self, 0) != 0) {
+                func_808002DC_bsbbilldrill(self, 3);
+            }
+            break;
+        case 3:
+            func_80096394(self, sp34);
+            if (mlAbsF(sp34[1]) < 1.0f) {
+                self->unk15C.bytes[1] += 1;
+            } else {
+                self->unk15C.bytes[1] = 0;
+            }
+            func_808005C0_bsbbilldrill(self);
+            if (baphysics_get_vertical_velocity(self) < 0) {
+                baflag_set(self, 0x22);
+            }
+            if (player_inWater(self) != 0) {
+                sp44 = BS_STATE_4C_LANDING_IN_WATER;
+            } else if ((func_8008DF8C(self, 0x50) != 0) || ((s32) self->unk15C.bytes[1] >= 4)) {
+                if (func_800954E8(self, &sp30) != 0) {
+                    sp44 = BS_STATE_72;
+                } else {
+                    func_808002DC_bsbbilldrill(self, 4);
+                }
+            }
+            break;
+        case 4:
+            baflag_clear(self, 0x26);
+            func_808005C0_bsbbilldrill(self);
+            func_80800250_bsbbilldrill(self);
+            func_80800100_bsbbilldrill(self);
+            func_8080019C_bsbbilldrill(self);
+            func_80800008_bsbbilldrill(self);
+            if (_batimer_decrement(self, 0) != 0) {
+                func_808002DC_bsbbilldrill(self, 5);
+            }
+            break;
+        case 5:
+            _bswalk_entrypoint_1(self);
+            if (player_inWater(self) != 0) {
+                sp44 = BS_STATE_4C_LANDING_IN_WATER;
+            }
+            if (player_isStable(self) != 0) {
+                baanim_setEndAndDuration(self, 1.0f, 1.9f);
+                sp44 = BS_STATE_20_LANDING;
+            }
+            break;
+    }
+    bs_setState(self, sp44);
+}
+
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/bsbbilldrill_entrypoint_3.s")
+s32 bsbbilldrill_entrypoint_3(s32 arg0) {
+    return *(&D_80800B68_bsbbilldrill + (arg0));
+}
