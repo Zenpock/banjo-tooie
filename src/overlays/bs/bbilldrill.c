@@ -46,12 +46,24 @@ extern s32 _chlightfader_entrypoint_1(s32, f32, s32);
 extern void func_800BA22C(s32, s32);
 extern void func_800BA7C4(s32, f32, f32);
 extern void func_800BA7FC(s32, f32, f32);
+extern s32 _fxdlsmoke_entrypoint_0(f32*);
+extern void _badust_entrypoint_10(PlayerState*, f32);
+extern void _bamotor_entrypoint_3(PlayerState*, f32, f32, f32, f32, f32, f32);
+extern void _bashake_entrypoint_1(PlayerState*, s32, s32);
+extern f32 func_800962D4(PlayerState*);
+extern void func_8009C1F8(PlayerState*, f32[3]);
+extern s32 func_8009EA2C();
+extern void func_800EFA4C(f32[3], f32, f32, f32);
+extern f32 func_80092BF4(PlayerState *);
 
 void func_808000C0_bsbbilldrill(PlayerState*);
 
 extern s32 D_80800AC8_bsbbilldrill;
 extern u32 D_80800AB0_bsbbilldrill[3];
 extern s32 D_80800B68_bsbbilldrill;
+extern s32 D_80800B10_bsbbilldrill;
+extern s32 D_80800B30_bsbbilldrill;
+extern s32 D_80800B50_bsbbilldrill;
 
 /* .code */
 
@@ -85,7 +97,16 @@ void func_808000C0_bsbbilldrill(PlayerState *self) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800100_bsbbilldrill.s")
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800100_bsbbilldrill.s")
+void func_80800100_bsbbilldrill(PlayerState *self)
+{
+    f32 var_f2 = func_80092BF4(self);
+    if (var_f2 == 0)
+        var_f2 = 8;
+
+    var_f2 = -var_f2;
+    func_80093300(self, var_f2);
+}
 
 // #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800158_bsbbilldrill.s")
 s32 func_80800158_bsbbilldrill(f32 arg0[3]) {
@@ -111,7 +132,14 @@ void func_8080019C_bsbbilldrill(PlayerState* self) {
     func_800BA22C(sp1C, 2);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800250_bsbbilldrill.s")
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800250_bsbbilldrill.s")
+void func_80800250_bsbbilldrill(PlayerState* arg0) {
+    f32 sp1C[3];
+
+    func_8009C128(arg0, sp1C);
+    sp1C[1] -= 80.0f;
+    func_800BA22C(_fxdlsmoke_entrypoint_0(sp1C), 1);
+}
 
 // #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_80800298_bsbbilldrill.s")
 void func_80800298_bsbbilldrill(PlayerState* self) {
@@ -119,7 +147,60 @@ void func_80800298_bsbbilldrill(PlayerState* self) {
     baphysics_set_target_horizontal_velocity(self, baphysics_get_target_horizontal_velocity(self) * 0.1f);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_808002DC_bsbbilldrill.s")
+// #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_808002DC_bsbbilldrill.s")
+void func_808002DC_bsbbilldrill(PlayerState* self, s32 arg1) {
+    f32 sp34[3];
+
+    self->unk15C.bytes[0] = arg1;
+    switch (arg1) {
+        case 1:
+            self->unk16C = yaw_get(self);
+            self->unk170 = 0;
+            func_80098520(self, 0);
+            _batimer_set(self, 0, 0.3f);
+            
+            self->unk164.bytes[0] = (func_8009EA2C() != 0) ? func_8009D454(self, 0, &D_80800B30_bsbbilldrill) : func_8009D454(self, 0, &D_80800B10_bsbbilldrill);
+            self->unk15C.bytes[1] = 0;
+            return;
+        case 2:
+            self->unk170 = 1500.0f;
+            func_80098520(self, 1.0f);
+            _batimer_set(self, 0, 0.15f);
+            return;
+        case 3:
+            func_8009DF18(self, 0x442F, 1.2f, 0x7530);
+            baphysics_set_terminal_velocity(self, -5000.0f);
+            baphysics_set_gravity(self, -20000.0f);
+            baphysics_set_vertical_velocity(self, 2300.0f);
+            baphysics_set_target_horizontal_velocity(self, 0.0f);
+            func_8009E53C(self, 1, -100.0f);
+            return;
+        case 4:
+            func_800EFA4C(sp34, 0, 80.0f - func_800962D4(self), 0);
+            func_8009C1F8(self, sp34);
+            _badust_entrypoint_10(self, -func_800962D4(self));
+            baflag_set(self, 0x26);
+            baphysics_set_gravity(self, 0.0f);
+            func_8009BA9C(self, NULL);
+            _batimer_set(self, 0, 0.8f);
+            _bamotor_entrypoint_3(self, 1.0f, 0.7f, 0.01f, 0.1f, 0.70f, 0.4f);
+            _bashake_entrypoint_1(self, 3, 2);
+            self->unk160.bytes[0] = func_8009D454(self, 0, &D_80800B50_bsbbilldrill);
+            func_8009DE38(self, 0x40D, 1.0f);
+            return;
+        case 5:
+            func_8009E53C(self, 1, 0.0f);
+            baflag_clear(self, 0x22);
+            func_8009328C(self, yaw_get(self));
+            baphysics_set_vertical_velocity(self, 730.0f);
+            baphysics_set_gravity(self, -2400.0f);
+            baanim_setEndAndDuration(self, 0.7299f, 2.1f);
+            func_808000C0_bsbbilldrill(self);
+            /* fallthrough */
+        default:
+            return;
+    }
+}
 
 // #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbilldrill/func_808005C0_bsbbilldrill.s")
 void func_808005C0_bsbbilldrill(PlayerState* self) {
