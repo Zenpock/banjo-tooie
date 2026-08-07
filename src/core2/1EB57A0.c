@@ -16,11 +16,11 @@ void func_800DBFD8(void* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB57A0/func_800DC028.s")
 
-s32 func_800DC060(void* arg0)
+s32 func_800DC060(s32* arg0)
 {
     if (arg0 != 0)
     {
-        arg0 = defrag();
+        arg0 = defrag(arg0);
     }
     return arg0;
 }
