@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: recursive
           ref: ${{ github.event.pull_request.head.ref }}
@@ -35,7 +35,7 @@ jobs:
         run: pip3 install -r tools/splat/requirements.txt
 
       - name: Get extra dependencies
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ${{ secrets.SECRETREPO }}
           token: ${{ secrets.SECRETTOKEN }}
