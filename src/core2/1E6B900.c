@@ -417,15 +417,69 @@ void func_80092EBC(PlayerState* arg0, s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092EC8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80093070.s")
+void func_80093070(PlayerState* arg0, s32 arg1, s32 arg2, u8* arg3)
+{
+    ImageStruct* sp34;
+    ImageStruct* sp30;
+    s32 sp2C;
+    s32 sp20;
+    u8 temp_v1;
+    s32 temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_8009312C.s")
+    sp34 = func_800D674C(arg2);
+    sp30 = func_800D674C(arg1);
+    temp_v0 = func_800A25D0(arg0);
+    temp_v1 = *arg3;
+    if (temp_v1 != 0)
+    {
+        func_80100E18(temp_v1);
+    }
+    *arg3 = func_80100D24(sp34, arg2, 1, temp_v0, 0, 0);
+    sp2C = func_800B2840(sp34);
+    func_800B25D8(func_80100A74(*arg3, 0), sp2C, sp30);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_8009316C.s")
+void func_8009312C(PlayerState* arg0, s32 arg1)
+{
+    if (arg1 != 0)
+    {
+        if (arg1 != arg0->unk50->unkE)
+        {
+            arg0->unk50->unkE = arg1;
+            func_80093070(arg0, (s32)arg1, arg0->unk50->unkC, &arg0->unk50->unk12);
+        }
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_800931AC.s")
+void func_8009316C(PlayerState* arg0, s32 arg1)
+{
+    if (arg1 != 0)
+    {
+        if (arg1 != arg0->unk50->unk9E)
+        {
+            arg0->unk50->unk9E = arg1;
+            func_80093070(arg0, (s32)arg1, (s32)arg0->unk50->unk9C, &arg0->unk50->unkA0);
+        }
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80093230.s")
+void func_800931AC(PlayerState* arg0, s32 arg1)
+{
+    if ((arg1 != arg0->unk50->unk15) && ((arg1 == 2) || (arg0->unk50->unk15 == 2)))
+    {
+        yaw_setIdeal(arg0, func_800136E4(yaw_get(arg0) + 180.0f));
+        yaw_applyIdeal(arg0);
+    }
+    arg0->unk50->unk15 = (u8)arg1;
+}
+
+void func_80093230(PlayerState* arg0, f32 arg1)
+{
+    arg0->unk50->unk1C = arg1;
+    arg0->unk50->unk70 = arg0->unk50->unk5C * arg0->unk50->unk1C;
+    arg0->unk50->unk74 = (arg0->unk50->unk60 * arg0->unk50->unk1C);
+    func_800EF334((f32*)arg0->unk50->unk64, arg0->unk50->unk1C);
+}
 
 void func_8009328C(PlayerState* arg0, f32 arg1)
 {
@@ -482,16 +536,45 @@ void func_8009337C(PlayerState* arg0, s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80093388.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80093448.s")
+void func_80093448(PlayerState* arg0)
+{
+    s32 sp2C[3];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_800934C4.s")
+    if (arg0->unk50->unk84 == 0)
+    {
+        func_8009C128(arg0, &sp2C);
+        _chbaddiesetup_entrypoint_5((s32)func_800927C4, 0x215, sp2C[0], sp2C[1], sp2C[2], arg0->unk184);
+    }
+    func_80093388(arg0);
+    func_80092018(arg0);
+    func_800920C8(arg0);
+}
+
+void func_800934C4(PlayerState* arg0)
+{
+    if (arg0->unk50->unk4 != 0)
+    {
+        arg0->unk50->unk4 = func_800DC060(arg0->unk50->unk4);
+    }
+}
 
 void func_80093504(PlayerState* arg0, s32 arg1, s32 arg2)
 {
     func_800F23D0(&arg0->unk50->unkCC, arg1, arg2);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80093528.s")
+void func_80093528(PlayerState* arg0)
+{
+    u8 temp_v1;
+
+    arg0->unk50->unk1A = 0;
+    func_800DBEB0(arg0->unk50->unk4, arg0);
+    arg0->unk50->unk16 = 0;
+    arg0->unk50->unkA5 = 0U;
+    temp_v1 = arg0->unk50->unkA5;
+    arg0->unk50->unkA1 = temp_v1;
+    arg0->unk50->unk10 = temp_v1;
+}
 
 void func_80093584(PlayerState* arg0)
 {

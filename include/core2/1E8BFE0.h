@@ -1,11 +1,12 @@
-#ifndef __CORE2_1E7BAB0_H__
-#define __CORE2_1E7BAB0_H__
+#ifndef __CORE2_1E8BFE0_H__
+#define __CORE2_1E8BFE0_H__
 
 #include "common.h"
-
 #include "overlays/ba/playerstate.h"
+#include "core2/1EAF950.h"
 
 void func_800A2540(PlayerState*, s32);
 s32 func_800A25D0(PlayerState*);
+s32 func_800B2840(ImageStruct*);
 
 #endif

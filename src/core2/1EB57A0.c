@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1EB57A0.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB57A0/func_800DBEB0.s")
 
@@ -16,4 +16,11 @@ void func_800DBFD8(void* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB57A0/func_800DC028.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB57A0/func_800DC060.s")
+s32 func_800DC060(void* arg0)
+{
+    if (arg0 != 0)
+    {
+        arg0 = defrag();
+    }
+    return arg0;
+}

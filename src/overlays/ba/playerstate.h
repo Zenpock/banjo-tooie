@@ -54,7 +54,7 @@ typedef struct ba_unknown_50_s {
     f32 unk60;
     s32 unk64[3];
     f32 unk70;
-    s32 unk74;
+    f32 unk74;
     f32 unk78;
     u8 unk7C;
     u8 unk7D;
@@ -78,12 +78,14 @@ typedef struct ba_unknown_50_s {
     s32 unk94;
     f32 unk98;
     s16 unk9C;
-    u16 unk9E;
+    s16 unk9E;
     u8 unkA0;
     u8 unkA1;
     u8 unkA2;
     u8 unkA3;
-    s8 padA4[0x20];
+    s8 unkA4;
+    s8 unkA5;
+    s8 padA6[0x1E];
     u8 unkC4;
     u8 unkC5;
     u8 unkC6;

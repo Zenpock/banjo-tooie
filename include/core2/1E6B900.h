@@ -15,6 +15,8 @@
 #include "core2/1E7F6A0.h"
 #include "core2/1E80A70.h"
 #include "core2/1E875C0.h"
+#include "core2/1E8A670.h"
+#include "core2/1E8BFE0.h"
 #include "core2/1EAAD80.h"
 #include "core2/1EABAC0.h"
 #include "core2/1EAF950.h"
@@ -32,6 +34,7 @@
 #include "overlays/ba/roll.h"
 #include "overlays/ba/input.h"
 #include "ba/invisible.h"
+#include "ch/baddiesetup.h"
 
 void func_80092778(PlayerState*);
 
@@ -40,11 +43,11 @@ void func_80092880(PlayerState *, s32);
 Unkfunc_800E0960_1 *func_80092AD8(PlayerState *);
 f32 func_80092BE8(PlayerState *);
 f32 func_80092BF4(PlayerState *);
-void func_80092EC8(PlayerState*, s16);
+void func_80092EC8(PlayerState*, s32);
 void func_80092C00(PlayerState*, f32[3]);
 void func_80092C24(PlayerState*, f32[3]);
 void func_80092C48(PlayerState*, f32[3]);
-void func_8009312C(PlayerState*, s16);
+void func_8009312C(PlayerState*, s32);
 void func_800931AC(PlayerState*, s32);
 void func_80093230(PlayerState*, f32);
 void func_8009328C(PlayerState*, f32);
@@ -52,6 +55,7 @@ void func_8009332C(PlayerState*, f32);
 void func_80093360(PlayerState*, f32);
 void func_80093370(PlayerState*, s32);
 void func_8009337C(PlayerState*, s32);
+void func_80093388(PlayerState*);
 void func_80093504(PlayerState*, s32, s32);
 void func_800936E8(PlayerState*, s32);
 void func_80093700(PlayerState*, s32);
