@@ -7,6 +7,7 @@ typedef struct {
 	s16 unk8;
 	s16 unkA;
 } ImageStruct;
+void func_800D62E4(s32, s32, PlayerState*);
 ImageStruct *func_800D674C(s32 a0);
 s32 func_800D6CEC(s16);
 void func_800D70D0(s32);

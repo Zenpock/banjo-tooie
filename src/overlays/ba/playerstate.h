@@ -23,7 +23,8 @@ typedef struct ba_unknown_2C_s {
 } BaUnknown2C;
 
 typedef struct ba_unknown_50_s {
-    s32 unk0;
+    u16 unk0;
+    u16 unk2;
     s32 unk4;
     s32 unk8;
     s16 unkC;
@@ -52,7 +53,18 @@ typedef struct ba_unknown_50_s {
     f32 unk5C;
     f32 unk60;
     s32 unk64[3];
-    s8 pad70[0x18];
+    f32 unk70;
+    s32 unk74;
+    f32 unk78;
+    u8 unk7C;
+    u8 unk7D;
+    u8 unk7E;
+    u8 unk7F;
+    u8 unk80;
+    u8 unk81;
+    u8 unk82;
+    u8 unk83;
+    s32 unk84;
     u8 unk88;
     u8 unk89;
     u8 unk8A;
@@ -61,7 +73,14 @@ typedef struct ba_unknown_50_s {
     u8 unk8D;
     u8 unk8E;
     u8 unk8F;
-    s8 pad90[0x12];
+    u16 unk90;
+    u16 unk92;
+    s32 unk94;
+    f32 unk98;
+    s16 unk9C;
+    u16 unk9E;
+    u8 unkA0;
+    u8 unkA1;
     u8 unkA2;
     u8 unkA3;
     s8 padA4[0x20];
