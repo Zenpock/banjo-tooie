@@ -28,12 +28,15 @@
 #include "core2/1E7BFA0.h" // extern void func_800A32C4(PlayerState*, f32*);
 #include "core2/1E7D460.h" // extern s32 func_800A4CA8(PlayerState*);
 #include "core2/1ED4E30.h" // extern void func_800FC660(s32);
+#include "core2/1E72EA0.h" // extern f32 func_80099A34(PlayerState*);
+#include "core2/1E75620.h" // extern void func_8009BDAC(PlayerState*, f32);
 
 #include "overlays/bs/bee.h"
 
 extern s32 func_8008DF8C(PlayerState*, s32);
 extern void func_8009D7A4(PlayerState*, f32, f32);
 extern s32 func_800EA068(s32);
+extern void func_80093370(PlayerState*, s32);
 extern enum bs_state_e _badrone_entrypoint_28(PlayerState*);
 
 extern void _bsbee_entrypoint_1(PlayerState*);
@@ -48,6 +51,9 @@ extern s32 D_80801280_bsbeemain[];
 extern s32 D_80801290_bsbeemain[];
 extern s32 D_808012A0_bsbeemain[];
 extern s32 D_808012B0_bsbeemain[];
+extern s32 D_808012C0_bsbeemain[];
+extern s32 D_808012D0_bsbeemain[];
+extern s32 D_808012E0_bsbeemain[];
 
 /* .code */
 
@@ -449,32 +455,122 @@ void func_80800C28_bsbeemain(PlayerState* self)
     self->unk15C.word = 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/func_80800E0C_bsbeemain.s")
+void func_80800E0C_bsbeemain(PlayerState* self) {
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/func_80800FB8_bsbeemain.s")
+    _bsbee_entrypoint_2(self);
+    baphysics_set_target_horizontal_velocity(self, self->unk16C);
+    func_8009D3A8(self, 0);
+    switch (self->unk15C.word) {
+        case 0:
+            if (player_isStable(self)) {
+                baanim_setEnd(self, 0.7453f);
+                func_8009DF18(self, 0x417, 0.8f, 0x4650);
+                func_8009DF18(self, 0x428, 1.8f, 0x4650);
+                baphysics_set_vertical_velocity(self, 400.0f);
+                self->unk15C.word = 1;
+            }
+            break;
+        case 1:
+            if (player_isStable(self)) {
+                baanim_setEnd(self, 1.0f);
+                func_8009DF18(self, 0x417, 0.8f, 0x4650);
+                func_8009DF18(self, 0x428, 1.8f, 0x4650);
+                self->unk15C.word = 2;
+            }
+            break;
+        case 2:
+            self->unk15C.word = 3;
+            break;
+        case 3:
+            if (self->unk16C > 0.0f) {
+                self->unk16C = func_800F0E00(0.0f, self->unk16C - 10.0f);
+            }
+            break;
+    }
+    if (_batimer_decrement(self, 0)) {
+        if (self->unk160.word) {
+            func_80101180(0x2C4, 0x71, self->unk184);
+        } else {
+            _basudie_entrypoint_0(self);
+        }
+    }
+    bs_setState(self, BS_STATE_0_INVALID);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/func_80800FF0_bsbeemain.s")
+void func_80800FB8_bsbeemain(PlayerState* self) {
+    baphysics_reset_gravity(self);
+    func_800A4E30(self);
+    func_800951B4(self);
+    _bsbee_entrypoint_0(self);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/bsbeemain_entrypoint_9.s")
+void func_80800FF0_bsbeemain(PlayerState* arg0) {
+    if (func_8009E6EC(arg0) == 0x83) {
+        func_8009BDAC(arg0, func_80099A34(arg0));
+        func_80093370(arg0, 1);
+        bs_setState(arg0, 0x85);
+        func_8009E830(arg0, 2);
+        return;
+    }
+    _basudie_entrypoint_11(arg0);
+}
+
+s32 bsbeemain_entrypoint_9(s32 arg0) {
+    return D_808012C0_bsbeemain[arg0];
+}
 
 void func_80801080_bsbeemain(PlayerState* self)
 {
     _bsbee_entrypoint_1(self);
     _bsrest_entrypoint_16(self);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/func_808010A8_bsbeemain.s")
+
+void func_808010A8_bsbeemain(PlayerState* arg0) {
+    enum bs_state_e sp1C;
+
+    sp1C = BS_STATE_0_INVALID;
+    _bsbee_entrypoint_2(arg0);
+    if (_bsrest_entrypoint_20(arg0) != 0) {
+        sp1C = _bsrest_entrypoint_13(arg0);
+    }
+    bs_setState(arg0, sp1C);
+}
 
 void func_808010F4_bsbeemain(PlayerState* self)
 {
     _bsrest_entrypoint_14(self);
     _bsbee_entrypoint_0(self);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/bsbeemain_entrypoint_10.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/func_80801130_bsbeemain.s")
+s32 bsbeemain_entrypoint_10(s32 arg0) {
+    return D_808012D0_bsbeemain[arg0];
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/func_8080118C_bsbeemain.s")
+void func_80801130_bsbeemain(PlayerState* self) {
+    _bsbee_entrypoint_1(self);
+    _bsdrone_entrypoint_0(self);
+    if (_badrone_entrypoint_3(self) == 2) {
+        _bafpctrl_entrypoint_10(self, 1);
+        func_800947EC(self, 2, 1);
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/func_808011E8_bsbeemain.s")
+void func_8080118C_bsbeemain(PlayerState* self) {
+    _bsbee_entrypoint_2(self);
+    _bsdrone_entrypoint_1(self);
+    if ((_badrone_entrypoint_3(self) == 2) && bakey_held(self, BUTTON_Z)) {
+        _babee_entrypoint_2(self);
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/bsbeemain_entrypoint_11.s")
+void func_808011E8_bsbeemain(PlayerState* arg0) {
+    if (_badrone_entrypoint_3(arg0) == 2) {
+        func_800947EC(arg0, 2, 0);
+    }
+    _bsdrone_entrypoint_2(arg0);
+    _bsbee_entrypoint_0(arg0);
+}
+
+s32 bsbeemain_entrypoint_11(s32 arg0) {
+    return D_808012E0_bsbeemain[arg0];
+}
