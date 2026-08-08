@@ -3,24 +3,18 @@
 #include "overlays/ba/playerstate.h"
 #include "overlays/ba/flag.h"
 #include "overlays/ba/roll.h"
+#include "overlays/ba/stick.h"
 #include "core2/1E75710.h"
 #include "core2/1E77A20.h"
 #include "core2/1E6F080.h"
 
-extern void _babee_entrypoint_3(PlayerState*);
-extern void baroll_setIdeal(PlayerState*, f32);
-extern void bastick_popZone(PlayerState*);
 extern void func_80092864(PlayerState*, f32);
 extern void func_800947EC(PlayerState*, s32, s32);
 extern void func_8009BF5C(PlayerState*, f32);
-extern void _babee_entrypoint_4(PlayerState*);
-extern void baroll_setAngularVelocity(PlayerState*, f32, f32);
-extern void bastick_pushZone(PlayerState*);
 extern void func_8009590C(PlayerState*, f32);
 extern void func_8009BFE4(PlayerState*, f32, f32);
-extern void baflag_set(PlayerState *, BaFlagId);
-extern void bastick_setZoneMax(PlayerState *, s32, f32);
-extern void _babee_entrypoint_8();
+
+#include "overlays/ba/bee.h"
 
 /* .code */
 
@@ -62,6 +56,6 @@ void bsbee_entrypoint_1(PlayerState* arg0) {
     }
 }
 
-void bsbee_entrypoint_2(void) {
-    _babee_entrypoint_8();
+void bsbee_entrypoint_2(PlayerState* self) {
+    _babee_entrypoint_8(self);
 }

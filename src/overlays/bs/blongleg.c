@@ -83,30 +83,30 @@ void bsblongleg_entrypoint_22()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_23.s")
 
-void bsblongleg_entrypoint_24(s32 arg0)
+void bsblongleg_entrypoint_24(PlayerState* self)
 {
-    _bsrest_entrypoint_14();
-    func_80800204_bsblongleg(arg0);
+    _bsrest_entrypoint_14(self);
+    func_80800204_bsblongleg(self);
 }
-void bsblongleg_entrypoint_25(s32 arg0)
+void bsblongleg_entrypoint_25(PlayerState* self)
 {
-    func_8080013C_bsblongleg();
-    _bsrest_entrypoint_16(arg0);
+    func_8080013C_bsblongleg(self);
+    _bsrest_entrypoint_16(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_26.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_27.s")
 
-void bsblongleg_entrypoint_28(s32 arg0)
+void bsblongleg_entrypoint_28(PlayerState* self)
 {
-    func_8080013C_bsblongleg();
-    _bsdrone_entrypoint_0(arg0);
+    func_8080013C_bsblongleg(self);
+    _bsdrone_entrypoint_0(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_29.s")
 
-void bsblongleg_entrypoint_30(s32 arg0)
+void bsblongleg_entrypoint_30(PlayerState* self)
 {
     _bsdrone_entrypoint_2();
-    func_80800204_bsblongleg(arg0);
+    func_80800204_bsblongleg(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_31.s")

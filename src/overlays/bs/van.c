@@ -1,5 +1,7 @@
 #include "common.h"
 
+#include "overlays/ba/playerstate.h"
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/func_80800000_bsvan.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/func_80800064_bsvan.s")
@@ -16,10 +18,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/bsvan_entrypoint_3.s")
 
-void func_808004F8_bsvan(s32 arg0)
+void func_808004F8_bsvan(PlayerState* self)
 {
     _basudie_entrypoint_6();
-    bsvan_entrypoint_0(arg0);
+    bsvan_entrypoint_0(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/func_80800520_bsvan.s")
 
@@ -27,20 +29,20 @@ void func_808004F8_bsvan(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/bsvan_entrypoint_4.s")
 
-void func_80800760_bsvan(s32 arg0)
+void func_80800760_bsvan(PlayerState* self)
 {
     _bsdrone_entrypoint_2();
-    bsvan_entrypoint_0(arg0);
+    bsvan_entrypoint_0(self);
 }
-void func_80800788_bsvan(s32 arg0)
+void func_80800788_bsvan(PlayerState* self)
 {
     bsvan_entrypoint_1();
-    _bsdrone_entrypoint_0(arg0);
+    _bsdrone_entrypoint_0(self);
 }
-void func_808007B0_bsvan(s32 arg0)
+void func_808007B0_bsvan(PlayerState* self)
 {
     _bsdrone_entrypoint_1();
-    bsvan_entrypoint_3(arg0);
+    bsvan_entrypoint_3(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/bsvan_entrypoint_5.s")
 
@@ -77,10 +79,10 @@ void func_80800F50_bsvan()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/bsvan_entrypoint_10.s")
 
-void func_80801118_bsvan(s32 arg0)
+void func_80801118_bsvan(PlayerState* self)
 {
     _babounce_entrypoint_3();
-    bsvan_entrypoint_0(arg0);
+    bsvan_entrypoint_0(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/func_80801140_bsvan.s")
 
@@ -88,10 +90,10 @@ void func_80801118_bsvan(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/bsvan_entrypoint_11.s")
 
-void func_80801224_bsvan(s32 arg0)
+void func_80801224_bsvan(PlayerState* self)
 {
     _babounce_entrypoint_3();
-    bsvan_entrypoint_0(arg0);
+    bsvan_entrypoint_0(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/func_8080124C_bsvan.s")
 
@@ -99,24 +101,24 @@ void func_80801224_bsvan(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/bsvan_entrypoint_12.s")
 
-void func_8080130C_bsvan(s32 arg0)
+void func_8080130C_bsvan(PlayerState* self)
 {
-    _bsrest_entrypoint_14();
-    bsvan_entrypoint_0(arg0);
+    _bsrest_entrypoint_14(self);
+    bsvan_entrypoint_0(self);
 }
-void func_80801334_bsvan(s32 arg0)
+void func_80801334_bsvan(PlayerState* self)
 {
     bsvan_entrypoint_1();
-    _bsrest_entrypoint_16(arg0);
+    _bsrest_entrypoint_16(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/func_8080135C_bsvan.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/bsvan_entrypoint_13.s")
 
-void func_808013BC_bsvan(s32 arg0)
+void func_808013BC_bsvan(PlayerState* self)
 {
     bsvan_entrypoint_0();
-    func_80090A2C(arg0);
+    func_80090A2C(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/van/func_808013E4_bsvan.s")
 

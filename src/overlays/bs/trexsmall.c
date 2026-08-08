@@ -1,5 +1,7 @@
 #include "bs/trexsmall.h"
 
+#include "overlays/ba/playerstate.h"
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80800000_bstrexsmall.s")
 
 int func_8080003C_bstrexsmall(PlayerState* arg0)
@@ -49,20 +51,20 @@ void func_80800364_bstrexsmall()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/bstrexsmall_entrypoint_4.s")
 
-void func_80800998_bstrexsmall(s32 arg0)
+void func_80800998_bstrexsmall(PlayerState* self)
 {
     bstrexsmall_entrypoint_1();
-    _bsdrone_entrypoint_2(arg0);
+    _bsdrone_entrypoint_2(self);
 }
-void func_808009C0_bstrexsmall(s32 arg0)
+void func_808009C0_bstrexsmall(PlayerState* self)
 {
     bstrexsmall_entrypoint_2();
-    _bsdrone_entrypoint_0(arg0);
+    _bsdrone_entrypoint_0(self);
 }
-void func_808009E8_bstrexsmall(s32 arg0)
+void func_808009E8_bstrexsmall(PlayerState* self)
 {
     _bsdrone_entrypoint_1();
-    bstrexsmall_entrypoint_3(arg0);
+    bstrexsmall_entrypoint_3(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/bstrexsmall_entrypoint_5.s")
 
@@ -83,10 +85,10 @@ void func_80800AF0_bstrexsmall()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80800CA4_bstrexsmall.s")
 
-void func_80800E94_bstrexsmall(s32 arg0)
+void func_80800E94_bstrexsmall(PlayerState* self)
 {
-    func_80800CA4_bstrexsmall(arg0,0);
-    bstrexsmall_entrypoint_1(arg0);
+    func_80800CA4_bstrexsmall(self, 0);
+    bstrexsmall_entrypoint_1(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80800EC0_bstrexsmall.s")
@@ -95,10 +97,10 @@ void func_80800E94_bstrexsmall(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/bstrexsmall_entrypoint_8.s")
 
-void func_80801004_bstrexsmall(s32 arg0)
+void func_80801004_bstrexsmall(PlayerState* self)
 {
     _babounce_entrypoint_3();
-    bstrexsmall_entrypoint_1(arg0);
+    bstrexsmall_entrypoint_1(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_8080102C_bstrexsmall.s")
 
@@ -106,10 +108,10 @@ void func_80801004_bstrexsmall(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/bstrexsmall_entrypoint_9.s")
 
-void func_808010E8_bstrexsmall(s32 arg0)
+void func_808010E8_bstrexsmall(PlayerState* self)
 {
     _babounce_entrypoint_3();
-    bstrexsmall_entrypoint_1(arg0);
+    bstrexsmall_entrypoint_1(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80801110_bstrexsmall.s")
 
@@ -117,15 +119,15 @@ void func_808010E8_bstrexsmall(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/bstrexsmall_entrypoint_10.s")
 
-void func_808011A8_bstrexsmall(s32 arg0)
+void func_808011A8_bstrexsmall(PlayerState* self)
 {
-    _bsrest_entrypoint_14();
-    bstrexsmall_entrypoint_1(arg0);
+    _bsrest_entrypoint_14(self);
+    bstrexsmall_entrypoint_1(self);
 }
-void func_808011D0_bstrexsmall(s32 arg0)
+void func_808011D0_bstrexsmall(PlayerState* self)
 {
     bstrexsmall_entrypoint_2();
-    _bsrest_entrypoint_16(arg0);
+    _bsrest_entrypoint_16(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_808011F8_bstrexsmall.s")
 
@@ -154,11 +156,11 @@ void func_808015BC_bstrexsmall()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/bstrexsmall_entrypoint_13.s")
 
-void func_80801718_bstrexsmall(s32 arg0)
+void func_80801718_bstrexsmall(PlayerState* self)
 {
     func_80090A2C();
-    func_800951B4(arg0);
-    bstrexsmall_entrypoint_1(arg0);
+    func_800951B4(self);
+    bstrexsmall_entrypoint_1(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80801748_bstrexsmall.s")

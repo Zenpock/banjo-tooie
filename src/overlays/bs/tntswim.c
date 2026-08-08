@@ -1,5 +1,7 @@
 #include "common.h"
 
+#include "overlays/ba/playerstate.h"
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tntswim/func_80800000_bstntswim.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tntswim/func_808000B0_bstntswim.s")
@@ -38,33 +40,33 @@ void func_80800830_bstntswim()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tntswim/bstntswim_entrypoint_2.s")
 
-void func_80800864_bstntswim(s32 arg0)
+void func_80800864_bstntswim(PlayerState* self)
 {
-    _bsrest_entrypoint_14();
-    func_80800174_bstntswim(arg0);
+    _bsrest_entrypoint_14(self);
+    func_80800174_bstntswim(self);
 }
-void func_8080088C_bstntswim(s32 arg0)
+void func_8080088C_bstntswim(PlayerState* self)
 {
     func_80800114_bstntswim();
-    _bsrest_entrypoint_16(arg0);
+    _bsrest_entrypoint_16(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tntswim/func_808008B4_bstntswim.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tntswim/bstntswim_entrypoint_3.s")
 
-void func_8080090C_bstntswim(s32 arg0)
+void func_8080090C_bstntswim(PlayerState* self)
 {
     func_80800114_bstntswim();
-    _bsdrone_entrypoint_0(arg0);
+    _bsdrone_entrypoint_0(self);
 }
-void func_80800934_bstntswim(s32 arg0)
+void func_80800934_bstntswim(PlayerState* self)
 {
     _bsdrone_entrypoint_1();
-    _bstnt_entrypoint_4(arg0);
+    _bstnt_entrypoint_4(self);
 }
-void func_8080095C_bstntswim(s32 arg0)
+void func_8080095C_bstntswim(PlayerState* self)
 {
     _bsdrone_entrypoint_2();
-    func_80800174_bstntswim(arg0);
+    func_80800174_bstntswim(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tntswim/bstntswim_entrypoint_4.s")

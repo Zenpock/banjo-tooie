@@ -1,5 +1,7 @@
 #include "overlays/bs/mum/swim.h"
 
+#include "overlays/ba/playerstate.h"
+
 void func_80800000_bsmumswim(PlayerState *self) {
     f32 sp2C[3];
     s32 sp28;

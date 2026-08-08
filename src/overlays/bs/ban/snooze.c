@@ -1,4 +1,5 @@
 #include "common.h"
+
 #include "overlays/ba/playerstate.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/func_80800000_bsbansnooze.s")
@@ -37,15 +38,15 @@ void func_808004C0_bsbansnooze()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/bsbansnooze_entrypoint_2.s")
 
-void func_8080064C_bsbansnooze(s32 arg0)
+void func_8080064C_bsbansnooze(PlayerState* self)
 {
     _bsdrone_entrypoint_2();
-    func_80800000_bsbansnooze(arg0);
+    func_80800000_bsbansnooze(self);
 }
-void func_80800674_bsbansnooze(s32 arg0)
+void func_80800674_bsbansnooze(PlayerState* self)
 {
     func_80800098_bsbansnooze();
-    _bsdrone_entrypoint_0(arg0);
+    _bsdrone_entrypoint_0(self);
 }
 void func_8080069C_bsbansnooze(PlayerState* self)
 {
@@ -53,24 +54,24 @@ void func_8080069C_bsbansnooze(PlayerState* self)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/bsbansnooze_entrypoint_3.s")
 
-void func_808006D0_bsbansnooze(s32 arg0)
+void func_808006D0_bsbansnooze(PlayerState* self)
 {
-    _bsrest_entrypoint_14();
-    func_80800000_bsbansnooze(arg0);
+    _bsrest_entrypoint_14(self);
+    func_80800000_bsbansnooze(self);
 }
-void func_808006F8_bsbansnooze(s32 arg0)
+void func_808006F8_bsbansnooze(PlayerState* self)
 {
     func_80800098_bsbansnooze();
-    _bsrest_entrypoint_16(arg0);
+    _bsrest_entrypoint_16(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/func_80800720_bsbansnooze.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/bsbansnooze_entrypoint_4.s")
 
-void func_8080076C_bsbansnooze(s32 arg0)
+void func_8080076C_bsbansnooze(PlayerState* self)
 {
     func_800951B4();
-    func_80800000_bsbansnooze(arg0);
+    func_80800000_bsbansnooze(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/func_80800794_bsbansnooze.s")
 

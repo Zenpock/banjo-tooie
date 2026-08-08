@@ -1,4 +1,5 @@
 #include "common.h"
+
 #include "overlays/ba/playerstate.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800000_bsbansack.s")
@@ -25,10 +26,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800400_bsbansack.s")
 
-void func_80800434_bsbansack(s32 arg0)
+void func_80800434_bsbansack(PlayerState* self)
 {
     func_80800400_bsbansack();
-    func_80800238_bsbansack(arg0);
+    func_80800238_bsbansack(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_8080045C_bsbansack.s")
 
@@ -46,10 +47,10 @@ void func_80800434_bsbansack(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800710_bsbansack.s")
 
-void func_8080077C_bsbansack(s32 arg0)
+void func_8080077C_bsbansack(PlayerState* self)
 {
     baphysics_reset_gravity();
-    func_80800238_bsbansack(arg0);
+    func_80800238_bsbansack(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_808007A4_bsbansack.s")
 
@@ -65,10 +66,10 @@ void func_8080077C_bsbansack(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800AF4_bsbansack.s")
 
-void func_80800D4C_bsbansack(s32 arg0)
+void func_80800D4C_bsbansack(PlayerState* self)
 {
-    func_80800AF4_bsbansack(arg0,0);
-    func_80800238_bsbansack(arg0);
+    func_80800AF4_bsbansack(self, 0);
+    func_80800238_bsbansack(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800D78_bsbansack.s")
@@ -79,20 +80,20 @@ void func_80800D4C_bsbansack(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_8080101C_bsbansack.s")
 
-void func_80801158_bsbansack(s32 arg0)
+void func_80801158_bsbansack(PlayerState* self)
 {
-    func_8080101C_bsbansack(arg0,0);
+    func_8080101C_bsbansack(self, 0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801178_bsbansack.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_8080119C_bsbansack.s")
 
-void func_80801318_bsbansack(s32 arg0)
+void func_80801318_bsbansack(PlayerState* self)
 {
-    func_80801158_bsbansack(arg0);
-    _babounce_entrypoint_3(arg0);
-    func_80800238_bsbansack(arg0);
+    func_80801158_bsbansack(self);
+    _babounce_entrypoint_3(self);
+    func_80800238_bsbansack(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801348_bsbansack.s")
@@ -101,11 +102,11 @@ void func_80801318_bsbansack(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/bsbansack_entrypoint_4.s")
 
-void func_8080143C_bsbansack(s32 arg0)
+void func_8080143C_bsbansack(PlayerState* self)
 {
-    func_80801158_bsbansack(arg0);
-    _babounce_entrypoint_3(arg0);
-    func_80800238_bsbansack(arg0);
+    func_80801158_bsbansack(self);
+    _babounce_entrypoint_3(self);
+    func_80800238_bsbansack(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_8080146C_bsbansack.s")
@@ -114,15 +115,15 @@ void func_8080143C_bsbansack(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/bsbansack_entrypoint_5.s")
 
-void func_80801560_bsbansack(s32 arg0)
+void func_80801560_bsbansack(PlayerState* self)
 {
     _bsdrone_entrypoint_2();
-    func_80800238_bsbansack(arg0);
+    func_80800238_bsbansack(self);
 }
-void func_80801588_bsbansack(s32 arg0)
+void func_80801588_bsbansack(PlayerState* self)
 {
     func_808002D4_bsbansack();
-    _bsdrone_entrypoint_0(arg0);
+    _bsdrone_entrypoint_0(self);
 }
 void func_808015B0_bsbansack(PlayerState* self)
 {
@@ -130,15 +131,15 @@ void func_808015B0_bsbansack(PlayerState* self)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/bsbansack_entrypoint_6.s")
 
-void func_808015E4_bsbansack(s32 arg0)
+void func_808015E4_bsbansack(PlayerState* self)
 {
-    _bsrest_entrypoint_14();
-    func_80800238_bsbansack(arg0);
+    _bsrest_entrypoint_14(self);
+    func_80800238_bsbansack(self);
 }
-void func_8080160C_bsbansack(s32 arg0)
+void func_8080160C_bsbansack(PlayerState* self)
 {
     func_808002D4_bsbansack();
-    _bsrest_entrypoint_16(arg0);
+    _bsrest_entrypoint_16(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801634_bsbansack.s")
 
@@ -146,10 +147,10 @@ void func_8080160C_bsbansack(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801680_bsbansack.s")
 
-void func_80801A04_bsbansack(s32 arg0)
+void func_80801A04_bsbansack(PlayerState* self)
 {
-    func_80801680_bsbansack(arg0,0);
-    func_80800238_bsbansack(arg0);
+    func_80801680_bsbansack(self, 0);
+    func_80800238_bsbansack(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801A30_bsbansack.s")
