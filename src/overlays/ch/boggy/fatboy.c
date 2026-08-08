@@ -1,9 +1,11 @@
 #include "ch/boggy/fatboy.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/chboggyfatboy_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/chboggyfatboy_entrypoint_1.s")
-
+extern ActorData D_808011DC_chboggyfatboy;
+ActorData* chboggyfatboy_entrypoint_1()
+{
+    return &D_808011DC_chboggyfatboy;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/func_80800018_chboggyfatboy.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/func_80800078_chboggyfatboy.s")

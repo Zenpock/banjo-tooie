@@ -1,13 +1,51 @@
 #include "ch/honeycarrier.h"
 
-extern u32 D_808003E0_chhoneycarrier[3];
-extern f32 D_808003EC_chhoneycarrier[2];
-extern u32 D_808003F4_chhoneycarrier;
+
+s32 D_808003E0_chhoneycarrier[3] = 
+{
+    0xFF,
+    0xFF,
+    0xC0
+};
+f32 D_808003EC_chhoneycarrier[2] = 
+{
+    250.0f,
+    350.0f
+};
+ActorData D_808003F4_chhoneycarrier=
+{
+    /*0x0*/ 0x53,
+    /*0x2*/ 0x220,
+    /*0x4*/ 0x612,
+    /*0x6*/ 0x1,
+    /*0x8*/ 0,
+    /*0xC*/ func_80800260_chhoneycarrier,
+    /*0x10*/ func_80105834,
+    /*0x14*/ func_80800380_chhoneycarrier,
+    /*0x18*/ 0,
+    /*0x1A*/ 0,
+    /*0x1C*/ 0.8f,
+    /*0x20*/ 0,
+    /*0x22*/ 0,
+    /*0x24*/ 0,
+    /*0x26*/ 0x4,
+    /*0x28*/ 0,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0,
+    /*0x32*/ 0,
+    /*0x34*/ func_80800210_chhoneycarrier,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8800,
+    /*0x3E*/ 0x3000,
+    /*0x40*/ func_808000C4_chhoneycarrier,
+    /*0x44*/ 0,
+    /*0x46*/ 0,
+};
 
 //Called when the object is touched
 void func_80800000_chhoneycarrier(Actor* arg0, unkStructHoneyCarrier* arg1)
 {
-    if ((func_800F4B4C((u32)arg1->unk1A >> 5) != 0) && (func_800DA298(FLAG2_663_EMPTY_HONEYCOMB_COLLISION) == 0))
+    if ((func_800F4B4C((u32)arg1->unk1A >> 5) != 0) && (flag_getValue(FLAG2_663_EMPTY_HONEYCOMB_COLLISION) == 0))
     {
         if (arg0->unk6C_0 != 0)
         {
@@ -74,7 +112,7 @@ void func_80800260_chhoneycarrier(Actor* arg0)
     s32 var_s1 = 0;
     f32 sp58[3];
 
-    arg0->rotation[1] += func_800D8FF8() * arg0->unk58;
+    arg0->rotation[1] += time_getDelta() * arg0->unk58;
     arg0->rotation[1] = func_800136E4(arg0->rotation[1]);
     if (arg0->unk7C_12)
     {
@@ -101,7 +139,7 @@ void func_80800380_chhoneycarrier(Actor* arg0,void* arg1)
     }
 }
 
-u32* chhoneycarrier_entrypoint_0(void)
+ActorData* chhoneycarrier_entrypoint_0(void)
 {
     return &D_808003F4_chhoneycarrier;
 }

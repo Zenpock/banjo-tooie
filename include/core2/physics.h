@@ -7,4 +7,6 @@
 
 #include "overlays/ba/playerstate.h"
 
+s32 func_8009AD78(PlayerState*, s32);
+
 #endif // __CORE2_PHYSICS_H__

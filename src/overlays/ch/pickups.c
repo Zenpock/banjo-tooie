@@ -2,71 +2,71 @@
 
 #define PICKUPS_DATA(arg0) ((PickupsData*)(arg0->actorData))
 
-extern s32 D_80800790_chpickups;
-extern s32 D_808007D8_chpickups;
-extern s32 D_80800820_chpickups;
-extern s32 D_80800868_chpickups;
-extern s32 D_808008B0_chpickups;
-extern s32 D_808008F8_chpickups;
-extern s32 D_80800940_chpickups;
-extern s32 D_80800988_chpickups;
-extern s32 D_808009D0_chpickups;
-extern s32 D_80800A18_chpickups;
-extern s32 D_80800A60_chpickups;
+extern ActorData D_80800790_chpickups;
+extern ActorData D_808007D8_chpickups;
+extern ActorData D_80800820_chpickups;
+extern ActorData D_80800868_chpickups;
+extern ActorData D_808008B0_chpickups;
+extern ActorData D_808008F8_chpickups;
+extern ActorData D_80800940_chpickups;
+extern ActorData D_80800988_chpickups;
+extern ActorData D_808009D0_chpickups;
+extern ActorData D_80800A18_chpickups;
+extern ActorData D_80800A60_chpickups;
 extern s32 D_80800AA8_chpickups;
 extern s32 D_80800AB8_chpickups;
 
-s32* chpickups_entrypoint_0(void)
+ActorData* chpickups_entrypoint_0(void)
 {
     return &D_80800790_chpickups;
 }
 
-s32* chpickups_entrypoint_1(void)
+ActorData* chpickups_entrypoint_1(void)
 {
     return &D_808007D8_chpickups;
 }
 
-s32* chpickups_entrypoint_2(void)
+ActorData* chpickups_entrypoint_2(void)
 {
     return &D_80800820_chpickups;
 }
 
-s32* chpickups_entrypoint_3(void)
+ActorData* chpickups_entrypoint_3(void)
 {
     return &D_80800868_chpickups;
 }
 
-s32* chpickups_entrypoint_4(void)
+ActorData* chpickups_entrypoint_4(void)
 {
     return &D_808008B0_chpickups;
 }
 
-s32* chpickups_entrypoint_5(void)
+ActorData* chpickups_entrypoint_5(void)
 {
     return &D_808008F8_chpickups;
 }
 
-s32* chpickups_entrypoint_6(void)
+ActorData* chpickups_entrypoint_6(void)
 {
     return &D_80800940_chpickups;
 }
 
-s32* chpickups_entrypoint_7(void)
+ActorData* chpickups_entrypoint_7(void)
 {
     return &D_80800988_chpickups;
 }
 
-s32* chpickups_entrypoint_8(void)
+ActorData* chpickups_entrypoint_8(void)
 {
     return &D_808009D0_chpickups;
 }
 
-s32* chpickups_entrypoint_9(void)
+ActorData* chpickups_entrypoint_9(void)
 {
     return &D_80800A18_chpickups;
 }
 
-s32* chpickups_entrypoint_10(void)
+ActorData* chpickups_entrypoint_10(void)
 {
     return &D_80800A60_chpickups;
 }
@@ -163,7 +163,7 @@ void func_80800364_chpickups(Actor* arg0)
     f32 var_f12;
     f32 temp_f0;
 
-    temp_f0 = func_800D8FF8();
+    temp_f0 = time_getDelta();
     var_f12 = PICKUPS_DATA(arg0)->unk0[1];
     PICKUPS_DATA(arg0)->unk10[1] -= 150.0f * (30.0f * temp_f0);
     arg0->position[0] += PICKUPS_DATA(arg0)->unk10[0] * temp_f0;
@@ -191,7 +191,7 @@ void func_80800364_chpickups(Actor* arg0)
         arg0->position[1] = var_f12;
         if (arg0->unk70_10 == 4)
         {
-            if ((arg0->unk0->unk24 >> 0x16 != 0x37) && (arg0->unk0->unk24 >> 0x16 == 0x67))
+            if ((arg0->unk0->unk24_22 != 0x37) && (arg0->unk0->unk24_22 == 0x67))
             {
                 func_80101180(0x4A5, 0x7D, 0);
                 func_800FFAB0(arg0);
@@ -258,9 +258,9 @@ void func_80800638_chpickups(Actor* arg0)
             func_80800364_chpickups(arg0);
             break;
         }
-        if (((u32)arg0->unk0->unk24 >> 0x16) == 0x1DD)
+        if (((u32)arg0->unk0->unk24_22) == 0x1DD)
         {
-            if (func_800DA298(0x5A) != 0)
+            if (flag_getValue(0x5A) != 0)
             {
                 func_808005B8_chpickups(arg0, 0);
                 return;

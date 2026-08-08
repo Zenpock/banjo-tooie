@@ -7,5 +7,6 @@ void func_800D37FC();
 void func_800D389C();
 s32 func_800D3948();
 s32 func_800D395C();
+s8 func_800D3B60();
 
 #endif // __CORE2_1EAD060_H__

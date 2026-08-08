@@ -189,7 +189,7 @@ void func_80800540_bskazfly(PlayerState *self) {
         func_8009DFD4(self, 1023, 0.6, 0.7, 10000, 12000);
     }
     _bafly_entrypoint_8(self, 300, 80, 800, -300.0f, -50.0f, -700.0f, -1000.0f);
-    self->kazfly->unk0 = func_800F0E00(self->kazfly->unk0 - func_800D8FF8(), 0);
+    self->kazfly->unk0 = func_800F0E00(self->kazfly->unk0 - time_getDelta(), 0);
     if ((self->kazfly->unk0 == 0.0f) && (bakey_pressed(self, BUTTON_B) != 0) && (func_8008D0E0(self) != 0) && (_bafly_entrypoint_12(self) != 0)) {
         next_state = BS_STATE_174;
     }
@@ -283,7 +283,7 @@ void func_80800BDC_bskazfly(PlayerState *self) {
     f32 unk1[3];
     s32 pad2;
     f32 unk2;
-    s32 unk3;
+    f32 unk3;
 
     func_800EE7F8(unk1, self->kazfly->unk10);
     func_800CA9D8(func_800A4C48(self), &unk3);
@@ -456,7 +456,7 @@ void func_80801248_bskazfly(PlayerState *self) {
         next_state = BS_STATE_DF;
     }
 
-    self->kazfly->unk0 -= func_800D8FF8();
+    self->kazfly->unk0 -= time_getDelta();
     if (self->kazfly->unk0 < 0.0f) {
         self->unk15C.word = 1;
         next_state = BS_STATE_162;

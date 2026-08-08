@@ -6,6 +6,13 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/usefeather/chusefeather_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/usefeather/chusefeather_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/usefeather/chusefeather_entrypoint_3.s")
+extern ActorData D_80800364_chusefeather;
+ActorData* chusefeather_entrypoint_2()
+{
+    return &D_80800364_chusefeather;
+}
+extern ActorData D_808003AC_chusefeather;
+ActorData* chusefeather_entrypoint_3()
+{
+    return &D_808003AC_chusefeather;
+}

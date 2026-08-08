@@ -9,7 +9,7 @@
 #include "overlays/ba/physics.h"
 #include "overlays/ba/yaw.h"
 #include "overlays/bs/kaz.h"
-#include "core2/1E2B200.h"
+#include "core1/1E2B200.h"
 #include "core2/1E66990.h"
 #include "core2/1E6B900.h"
 #include "core2/1E75920.h"

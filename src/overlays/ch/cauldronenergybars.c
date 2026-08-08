@@ -3,7 +3,7 @@
 #define CAULDRONENERGYBARS_DATA(arg0) ((CauldronEnergyBarsData*)(arg0->actorData))
 
 extern s32 D_808002C0_chcauldronenergybars;
-extern s32 D_808002D4_chcauldronenergybars;
+extern ActorData D_808002D4_chcauldronenergybars;
 
 void func_80800000_chcauldronenergybars(Actor* arg0)
 {
@@ -26,9 +26,9 @@ void func_80800000_chcauldronenergybars(Actor* arg0)
     }
     if (_sujiggy_entrypoint_20(var_a0) != 0)
     {
-        func_800DA544(var_a1);
+        flag_setValueTrue(var_a1);
     }
-    if (func_800DA298(var_a1) != 0)
+    if (flag_getValue(var_a1) != 0)
     {
         func_800FFAB0(arg0);
         return;
@@ -82,7 +82,7 @@ s32 func_808001C4_chcauldronenergybars(Actor* arg0, s32 arg1, s32 arg2)
         func_80101FDC(arg0, 2);
         _subaddieDll_entrypoint_4(arg0, 1);
         func_8010A570(arg0);
-        func_800DA544((arg0->unk74_7 == 0x32) ? (0x39A) : (0x39B));
+        flag_setValueTrue((arg0->unk74_7 == 0x32) ? (0x39A) : (0x39B));
         return 1;
 
     case 0x3F:
@@ -97,7 +97,7 @@ s32 func_808001C4_chcauldronenergybars(Actor* arg0, s32 arg1, s32 arg2)
     return 0;
 }
 
-s32* chcauldronenergybars_entrypoint_0(void)
+ActorData* chcauldronenergybars_entrypoint_0(void)
 {
     return &D_808002D4_chcauldronenergybars;
 }

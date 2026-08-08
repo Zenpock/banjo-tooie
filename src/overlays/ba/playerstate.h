@@ -4,6 +4,7 @@
 #include <ultra64.h>
 
 #include "buttons.h"
+#include "core1/mlmtx.h"
 
 typedef struct ba_unknown_c_s {
     u8 pad0[0xC];
@@ -20,6 +21,78 @@ typedef struct ba_unknown_2C_s {
     u8 unk19;
     u8 unk1A;
 } BaUnknown2C;
+
+typedef struct ba_unknown_50_s {
+    u16 unk0;
+    u16 unk2;
+    s32 unk4;
+    s32 unk8;
+    s16 unkC;
+    s16 unkE;
+    u8 unk10;
+    u8 unk11;
+    u8 unk12;
+    u8 unk13;
+    u8 unk14;
+    u8 unk15;
+    u8 unk16;
+    u8 unk17;
+    u8 unk18;
+    u8 unk19;
+    u8 unk1A;
+    f32 unk1C;
+    f32 unk20;
+    f32 unk24;
+    f32 unk28;
+    f32 unk2C[3];
+    f32 unk38;
+    f32 unk3C;
+    f32 unk40;
+    f32 unk44[3];
+    s32 unk50[3];
+    f32 unk5C;
+    f32 unk60;
+    s32 unk64[3];
+    f32 unk70;
+    f32 unk74;
+    f32 unk78;
+    u8 unk7C;
+    u8 unk7D;
+    u8 unk7E;
+    u8 unk7F;
+    u8 unk80;
+    u8 unk81;
+    u8 unk82;
+    u8 unk83;
+    s32 unk84;
+    u8 unk88;
+    u8 unk89;
+    u8 unk8A;
+    u8 unk8B;
+    u8 unk8C;
+    u8 unk8D;
+    u8 unk8E;
+    u8 unk8F;
+    u16 unk90;
+    u16 unk92;
+    s32 unk94;
+    f32 unk98;
+    s16 unk9C;
+    s16 unk9E;
+    u8 unkA0;
+    u8 unkA1;
+    u8 unkA2;
+    u8 unkA3;
+    s8 unkA4;
+    s8 unkA5;
+    s8 padA6[0x1E];
+    u8 unkC4;
+    u8 unkC5;
+    u8 unkC6;
+    u8 unkC7;
+    f32 unkC8;
+    MtxF unkCC;
+} BaUnknown50;
 
 typedef struct player_state_s {
     /* 0x00 */ struct ba_alarm_s *alarm;
@@ -40,7 +113,11 @@ typedef struct player_state_s {
     /* 0x3C */ struct ba_state_timer_list_s *state_timer; // clock?
     /* 0x40 */ struct ba_key_s *key; // controller?
     /* 0x44 */ struct ba_cough_s *cough;
-    u8 pad48[0x38];
+    u8 pad48[0x8];
+    struct ba_unknown_50_s* unk50;
+    u8 pad54[0x10];
+    u8* unk64;
+    u8 pad68[0x18];
     /* 0x80 */ struct ba_flag_s *flag;
     u8 pad84[0x18];
     /* 0x9C */ struct ba_unk_9C* unk9C;
@@ -83,7 +160,9 @@ typedef struct player_state_s {
     f32 unk16C;
     f32 unk170;
     f32 unk174;
-    u8 pad178[0xC];
+    s32 unk178;
+    s32 unk17C;
+    s32 unk180;
     s32 unk184;
     /* 0x188 */ struct bs_kazfly_s *kazfly;
 } PlayerState;

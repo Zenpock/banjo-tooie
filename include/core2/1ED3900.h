@@ -8,6 +8,7 @@ void func_800FA818(s32, s32);
 s32 func_800FA8E8(s32, s32);
 s32 func_800FA934(s32, s32);
 void func_800FA9B4(s32);
+void func_800FA9F4(s32, f32);
 void func_800FAAB4(s32,s32);
 
 #endif

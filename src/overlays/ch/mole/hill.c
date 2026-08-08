@@ -24,4 +24,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mole/hill/func_808009A0_chmolehill.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mole/hill/chmolehill_entrypoint_6.s")
+extern ActorData D_80800B70_chmolehill;
+ActorData* chmolehill_entrypoint_6()
+{
+    return &D_80800B70_chmolehill;
+}

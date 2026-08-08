@@ -16,4 +16,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gold/fish/func_80800BA8_chgoldfish.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gold/fish/chgoldfish_entrypoint_0.s")
+extern ActorData D_80800D94_chgoldfish;
+ActorData* chgoldfish_entrypoint_0()
+{
+    return &D_80800D94_chgoldfish;
+}

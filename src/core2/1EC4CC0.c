@@ -1,4 +1,6 @@
-#include "common.h"
+#include "core2/1EC4CC0.h"
+
+extern Vector* D_80132E80[];
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EB3D0.s")
 
@@ -8,7 +10,17 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EB70C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EB750.s")
+void func_800EB750(void)
+{
+    int i;
+    for (i = 0; i < 0x7; i++)
+    {
+        if (D_80132E80[i]) {
+            vector_free(D_80132E80[i]);
+            D_80132E80[i] = 0;
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EB7A8.s")
 

@@ -6,5 +6,6 @@
 
 extern void _ncba1p_entrypoint_6(PlayerState *self, f32[3]);
 extern void _ncba1p_entrypoint_7(PlayerState *self, f32[3]);
+extern s32 _ncba1p_entrypoint_10(PlayerState* self);
 
 #endif // __NC_BA_1P_H__

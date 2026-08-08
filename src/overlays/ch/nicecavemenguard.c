@@ -1,7 +1,10 @@
 #include "ch/nicecavemenguard.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/chnicecavemenguard_entrypoint_0.s")
-
+extern ActorData D_80800920_chnicecavemenguard;
+ActorData* chnicecavemenguard_entrypoint_0()
+{
+    return &D_80800920_chnicecavemenguard;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/func_8080000C_chnicecavemenguard.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/func_808000D4_chnicecavemenguard.s")

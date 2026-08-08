@@ -19,7 +19,7 @@
 #include "overlays/bs/drone.h"
 #include "overlays/bs/kaz.h"
 #include "overlays/bs/kaz/move.h"
-#include "core2/1E2B200.h"
+#include "core1/1E2B200.h"
 #include "core2/1E66990.h"
 #include "core2/1E67DA0.h"
 #include "core2/1E6B900.h"

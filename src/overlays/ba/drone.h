@@ -4,6 +4,7 @@
 #include "overlays/ba/playerstate.h"
 #include "overlays/bs/state.h"
 
+s32 _badrone_entrypoint_1(PlayerState*);
 extern s32 _badrone_entrypoint_3(PlayerState *self);
 extern void _badrone_entrypoint_11(PlayerState*, void*, s32);
 extern BanjoStateId _badrone_entrypoint_23(PlayerState *self, f32[3]);

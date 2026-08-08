@@ -4,38 +4,22 @@
 #include "../../src/overlays/ba/playerstate.h"
 #include "overlays/ba/yaw.h"
 #include "transformations.h"
+#include "core2/1E82660.h"
+#include "core2/1E66990.h"
 #include "core2/1E7BFA0.h"
 #include "core2/1E7AB30.h"
+#include "core2/1EB2840.h"
+#include "core2/1ECD170.h"
 
 #include "overlays/ba/anim.h"
 #include "overlays/ba/key.h"
 #include "overlays/ba/drone.h"
 #include "ba/hold.h"
+#include "bs/babykaz.h"
 
 #include <ultra64.h>
-void func_800F497C(s32);
-void func_800F49D4(s32 arg0, void* arg1, s32 arg2);
-void func_800F4A58(s32,s32,f32);
-s32 func_800F4B4C(s32);
-s32 func_800F4B8C(u32, u32, s32);
-s32 func_800F4BB8(u32, u32, s32);
-void func_800F4CC0(s32);
-void func_800F4CEC(s32, u32);
-PlayerState* func_800F53D0(s32 arg0);
-PlayerState* func_800F53E4(s32 arg0);
-//Get the character control index
-u32 func_800F54E4(void);
-s32 func_800F5578(s32);
-Unk80132ED0* func_800F56D8(s32 arg0);
-void func_800F5A00(s32, f32[3]);
-void func_800F5D44(s32, f32*);
-f32 func_800F5F24(u32);
-s32 func_800F5FE0(s32);
-void func_800F608C(s32, s32);
-void func_800F6388(s32, s32);
-void func_800F63E0(s32, u32);
-s32 func_800F6438(u32);
-s32 func_800F6774(u32);
+
+#include "core2/1E75710.h"
 
 typedef enum
 {
@@ -57,25 +41,88 @@ typedef enum
 	ALLOW_BK = 1 << (TRANSFORM_1_BK + 0x1F)
 }AllowedTransformation;
 
+void func_800F497C(s32);
+void func_800F49D4(s32 arg0, void* arg1, s32 arg2);
+void func_800F4A58(s32,s32,f32);
+void func_800F4AC0(u32, f32*, f32);
+s32 func_800F4B4C(s32);
+s32 func_800F4B8C(u32, u32, s32);
+s32 func_800F4BB8(u32, u32, s32);
+s32 func_800F4BE4(s32);
+void func_800F4CC0(s32);
+void func_800F4CEC(s32, u32);
+void func_800F4F34(s32, f32*, f32, f32);
+PlayerState* func_800F53D0(s32 arg0);
+PlayerState* func_800F53E4(s32 arg0);
+TransformationId func_800F5410(s32);
+//Get the character control index
+u32 func_800F54E4(void);
+s32 func_800F5578(s32);
+s32 func_800F56AC(s32);
+
+Unk80132ED0* func_800F56D8(s32 arg0);
+void func_800F5A00(s32, f32[3]);
+f32 func_800F5AE0(s32);
+void func_800F5D44(s32, f32*);
+void func_800F5D70(s32, f32*);
+void func_800F5D9C(s32, f32*);
+s32 func_800F5EF8(s32);
+f32 func_800F5F24(u32);
+s32 func_800F5FE0(s32);
+void func_800F608C(s32, s32);
+void func_800F6388(s32, s32);
+void func_800F63E0(s32, u32);
+s32 func_800F6438(u32);
+s32 func_800F6478(s32);
+s32 func_800F651C(u32);
+s32 func_800F6774(u32);
+
 //Does the character match the given transformation type
 s32 func_800F64A4(s32 characterIndex, AllowedTransformation transformationType);
+void func_800F57F0(s32, f32*);
+s32 func_800F66F0(u32);
+s32 func_800F6774(u32);
+s32 func_800F693C(s32);
+s32 func_800F6BE4(s32);
+s32 func_800F6C5C(s32);
+s32 func_800F6CC8(u32);
+s32 func_800F6D24(s32);
+s32 func_800F6DE0(f32*);
+s32 func_800F65D0(s32);
+s32 func_800F70BC(u32);
+s32 func_800F7150(s32);
+s32 func_800F71D4(u32);
+s32 func_800F72DC(u32);
+void func_800F7664(u32, u8, u8);
 void func_800F7700(u32, s32, f32*);
 //The moving object is moved towards/away from the target
 void func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
-void func_800F7B9C(s32, u32);
+s32 func_800F7B9C(s32, u32);
 void func_800F7BC8(s32, s32, Unk80132ED0*);
+void func_800F7C0C(s32, s32, f32);
+void func_800F7C9C(u32, s32, s32, s32);
+void func_800F7CF4(s32, s32, f32*);
+s32 func_800F7E3C(s32, s32);
+void func_800F7F50(u32, f32*, f32*, f32, s32, s32);
+void func_800F7F98(u32, s32);
 s32 func_800F8004(s32);
+s32 func_800F8088(s16);
 void func_800F80E4(s32, u32);
 void func_800F822C(s32, f32, f32);
 void func_800F8294(s32, f32*);
 void func_800F82C0(s32);
 void func_800F82D4(s32, s32);
+void func_800F8300(s32, s32, f32*);
 void func_800F832C(s32, f32*);
+void func_800F8418(s32, f32*);
+void func_800F8804(s32, f32*);
 s32 func_800F8B64(void);
 void func_800F8850();
+u8 func_800F8B88();
 void func_800F8DD8();
 void func_800F8E08();
 void func_800F911C(s32);
+void func_800F9178();
 // Might take in a PlayerState *
 void func_800F9BC4(void);
 

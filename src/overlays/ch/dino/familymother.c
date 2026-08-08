@@ -18,4 +18,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/familymother/func_80801228_chdinofamilymother.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/familymother/chdinofamilymother_entrypoint_0.s")
+extern ActorData D_80801474_chdinofamilymother;
+ActorData* chdinofamilymother_entrypoint_0()
+{
+    return &D_80801474_chdinofamilymother;
+}

@@ -68,7 +68,7 @@ void bawasher_entrypoint_8(PlayerState *self, f32 arg1[3], f32 arg2[3], f32 arg3
 }
 
 void bawasher_entrypoint_9(PlayerState *self) {
-    f32 dt = func_800D8FF8();
+    f32 dt = time_getDelta();
     Unkfunc_800E0960_1 *tmp_s1;
     self->washer->unk8 += self->washer->unkC * dt;
     self->washer->unk0 = func_800F15F8(self->washer->unk0, self->washer->unk4, dt*200.0f);

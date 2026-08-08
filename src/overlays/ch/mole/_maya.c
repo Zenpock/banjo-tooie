@@ -1,7 +1,7 @@
 #include "ch/mole.h"
 
 extern MoveData D_808001E0_chmole_maya[];
-extern D_808000D0 D_80800210_chmole_maya;
+extern ActorData D_80800210_chmole_maya;
 
 void func_80800000_chmole_maya(Actor* a0, u32 a1, u32 a2)
 {
@@ -20,7 +20,7 @@ void func_80800090_chmole_maya(Actor* a0)
 	_sumole_entrypoint_4(a0, D_808001E0_chmole_maya);
 }
 
-void* chmole_maya_entrypoint_0()
+ActorData* chmole_maya_entrypoint_0()
 {
 	return &D_80800210_chmole_maya;
 }
@@ -34,4 +34,8 @@ void func_80800144_chmole_maya(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mole/_maya/func_80800180_chmole_maya.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mole/_maya/chmole_maya_entrypoint_1.s")
+extern ActorData D_80800258_chmole_maya;
+ActorData* chmole_maya_entrypoint_1()
+{
+    return &D_80800258_chmole_maya;
+}

@@ -6,7 +6,7 @@
 #include "overlays/ba/react.h"
 #include "overlays/ba/stick.h"
 #include "overlays/ba/timer.h"
-#include "core2/1E2B200.h"
+#include "core1/1E2B200.h"
 #include "core2/1E67DA0.h"
 #include "core2/1E6E870.h"
 #include "core2/1E72EA0.h"

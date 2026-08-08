@@ -51,7 +51,7 @@ void func_8080016C_bskaztorpedo(PlayerState *self) {
     f32 sp28;
 
     sp30 = bastick_getX(self);
-    sp34 = func_800D8FF8();
+    sp34 = time_getDelta();
     baroll_setIdeal(self, func_800F10B4(sp30, -1.0f, 1.0f, -45.0f, 45.0f));
     if (player_inWater(self) != 0) {
         sp38 = 260.0f;
@@ -369,7 +369,7 @@ void func_80800FB4_bskaztorpedo(PlayerState *self) {
     if ((baanim_isAt(self, 0.0001f) != 0) || (baanim_isAt(self, 0.5f) != 0)) {
         func_8009DF18(self, 0x3FF, 1.0f, 0x3E80);
     }
-    self->unk174 += 1200.0f * func_800D8FF8();
+    self->unk174 += 1200.0f * time_getDelta();
     func_80091290(self, 40.0f, 0, 0xD);
     if (_bamovegoto_entrypoint_4(self) != 0) {
         func_8009C128(self, sp3C);

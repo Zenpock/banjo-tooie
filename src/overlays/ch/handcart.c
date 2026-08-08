@@ -27,13 +27,13 @@ extern u32 D_80804714_chhandcart;
 
 s32 func_80800000_chhandcart(void)
 {
-    return func_800DA564(FLAG3_A4C_UNK, 3);
+    return flag_getMultipleValue(FLAG3_A4C_UNK, 3);
 }
 
 //Start/End
 void func_80800024_chhandcart(s32 arg0)
 {
-    func_800DA7A8(FLAG3_9DC_UNK, arg0, 2);
+    flag_setMultipleValue(FLAG3_9DC_UNK, arg0, 2);
     func_800FDC28(0U);
     switch (arg0) 
     {
@@ -49,7 +49,7 @@ void func_80800024_chhandcart(s32 arg0)
 //Get Cart Progress
 s32 func_80800090_chhandcart(void) 
 {
-    return func_800DA564(FLAG3_9DC_UNK, 2);
+    return flag_getMultipleValue(FLAG3_9DC_UNK, 2);
 }
 
 //Goto Map
@@ -87,7 +87,7 @@ s32 func_80800194_chhandcart(Actor* arg0)
     u8 tempRaceState;
     new_var = (CanaryMaryMemory*)func_80100094(arg0, 0U);
     //Load the Race State into the actor's memory
-    tempRaceState = func_800DA564(FLAG3_A4C_UNK, 3);
+    tempRaceState = flag_getMultipleValue(FLAG3_A4C_UNK, 3);
     return new_var->RaceState = tempRaceState;
 }
 
@@ -97,7 +97,7 @@ void func_808001D0_chhandcart(Actor* arg0, s32 arg1)
     CanaryMaryMemory* sp1C;
 
     sp1C = (CanaryMaryMemory*)func_80100094(arg0, 0U);
-    func_800DA7A8(FLAG3_A4C_UNK, arg1, 3);
+    flag_setMultipleValue(FLAG3_A4C_UNK, arg1, 3);
     sp1C->RaceState = (u8)arg1;
 }
 
@@ -202,7 +202,7 @@ void func_80800528_chhandcart(Actor* arg0)
     f32 sp34[3];
     splineMemory = (SplineMemory*)func_80100094(arg0, 1U);
     handcartMemory = (HandcartMemory*)func_80100094(arg0, 0U);
-    gamespeed = func_800D8FF8();
+    gamespeed = time_getDelta();
     sp78 = NULL;
     if (handcartMemory->unk8F4 == 3)
     {
@@ -577,7 +577,7 @@ f32 func_8080115C_chhandcart(f32* arg0, f32 arg1)
     f32 temp_f2;
     f32 temp_f12;
     s32 temp_v0;
-    gamespeed = func_800D8FF8();
+    gamespeed = time_getDelta();
 
     //Get Button Hold Time
     temp_v0 = func_80016B30(0, 0);
@@ -633,7 +633,7 @@ void func_80801290_chhandcart(Actor* arg0)
     f32 spAC;
     f32 sp7C[4][3];
     spBC = (HandcartMemory*)func_80100094(arg0, 0);
-    gamespeed = func_800D8FF8();
+    gamespeed = time_getDelta();
     func_800EF5A0(sp7C[0], arg0->rotation, -52.0f, 0, -49.0f);
     func_800EF5A0(sp7C[1], arg0->rotation, -52.0f, 0, 30.0f);
     func_800EF5A0(sp7C[2], arg0->rotation, 52.0f, 0, -49.0f);
@@ -828,7 +828,7 @@ void func_80801850_chhandcart(Actor* arg0)
             temp_v0->unk934[1] = 0.1f;
         }
     }
-    sp2C = func_800D8FF8();
+    sp2C = time_getDelta();
     var_s0 = 0;
     f0 = (f32*)temp_v0;
     do {
@@ -886,7 +886,7 @@ void func_80801D50_chhandcart(Actor* arg0)
         func_80800830_chhandcart(arg0);
         return;
     }
-    gameSpeed = func_800D8FF8();
+    gameSpeed = time_getDelta();
     sp3C = func_80106790(arg0->unk3C);
     sp34 = (HandcartMemory*)func_80100094(arg0, 0U);
     switch (arg0->unk70_10)
@@ -897,7 +897,7 @@ void func_80801D50_chhandcart(Actor* arg0)
         if ((func_80090178(ALLOW_BK) != 0) && (func_8010C9B0(arg0->position, 0x64) != 0))
         {
             //Set Flag True Canary Mary Race Intro
-            func_800DA544(FLAG_508_FTT_GGM_CANARY_MARY_RACE_INTRO);
+            flag_setValueTrue(FLAG_508_FTT_GGM_CANARY_MARY_RACE_INTRO);
             func_80800214_chhandcart(sp3C);
         }
         break;
@@ -905,7 +905,7 @@ void func_80801D50_chhandcart(Actor* arg0)
         if (func_8010CB0C(arg0->position, 0x32, 0x32, 0) != 0)
         {
             //Set Flag True Canary Mary Race Intro
-            func_800DA544(FLAG_508_FTT_GGM_CANARY_MARY_RACE_INTRO);
+            flag_setValueTrue(FLAG_508_FTT_GGM_CANARY_MARY_RACE_INTRO);
             func_808010D8_chhandcart(arg0, 4);
         }
         break;
@@ -1024,7 +1024,7 @@ void func_80802120_chhandcart(Actor* arg0)
     }
     else
     {
-        if ((func_800DA298(FLAG_066_PROGRESS_GGM_CANARY_MARY_FREED_1) == 0) || (func_800D0A9C(4, 4) != 0))
+        if ((flag_getValue(FLAG_066_PROGRESS_GGM_CANARY_MARY_FREED_1) == 0) || (func_800D0A9C(4, 4) != 0))
         {
             func_80103140(arg0, 0x68BU, arg0->unk0->unk16);
             return;
@@ -1032,7 +1032,7 @@ void func_80802120_chhandcart(Actor* arg0)
         switch (func_80800000_chhandcart())
         {
         case 0:
-            if (func_800DA298(FLAG_507_PROGRESS_GGM_CANARY_MARY_FREED_READY_TO_RACE) == 0)
+            if (flag_getValue(FLAG_507_PROGRESS_GGM_CANARY_MARY_FREED_READY_TO_RACE) == 0)
             {
                 func_80103140(arg0, 0x68BU, arg0->unk0->unk16);
             }
@@ -1060,11 +1060,11 @@ void func_80802120_chhandcart(Actor* arg0)
         case 2:
             if (arg0->unk64_19)
             {
-                var_v0_2 = _gccubesearch_entrypoint_0(0x201, arg0);
+                var_v0_2 = _gccubesearch_entrypoint_0(PROP_201_CHEATOPAGE_SPAWN, arg0);
             }
             else
             {
-                var_v0_2 = _gccubesearch_entrypoint_0(0x1F6, arg0);
+                var_v0_2 = _gccubesearch_entrypoint_0(PROP_1F6_JIGGY_SPAWN, arg0);
             }
             func_800EE88C(sp34->rewardSpawn, var_v0_2->position);
             func_80802068_chhandcart(arg0, arg0->unk64_19);
@@ -1178,7 +1178,7 @@ void func_8080256C_chhandcart(Actor* arg0, u32 arg1)
     }
 }
 
-void* chhandcart_entrypoint_0(void) 
+ActorData* chhandcart_entrypoint_0(void) 
 {
     return &D_80804DC4_chhandcart;
 }
@@ -1190,7 +1190,7 @@ void func_80802690_chhandcart(Actor* arg0)
 
     temp_v0 = (CanaryMaryMemory*)func_80100094(arg0, 0U);
     //GameSpeed
-    temp_v0->unk0 = temp_v0->unk0 - func_800D8FF8();
+    temp_v0->unk0 = temp_v0->unk0 - time_getDelta();
     switch (func_801022E4(arg0))
     {
     case 0x7D:
@@ -1260,7 +1260,7 @@ void func_808028F0_chhandcart(Actor* arg0)
             return;
         }
     }
-    else if (func_800DA298(FLAG_066_PROGRESS_GGM_CANARY_MARY_FREED_1) != 0) //Canary Mary has been freed from Cage
+    else if (flag_getValue(FLAG_066_PROGRESS_GGM_CANARY_MARY_FREED_1) != 0) //Canary Mary has been freed from Cage
     {
         //Are we in Canary Cave
         if (func_800EA05C() == MAP_DB_GGM_CANARY_CAVE)
@@ -1299,7 +1299,7 @@ void func_808028F0_chhandcart(Actor* arg0)
                 break;
         }
 
-        if (func_800DA298(FLAG_507_PROGRESS_GGM_CANARY_MARY_FREED_READY_TO_RACE) == 0) //If Canary Mary isn't ready yet
+        if (flag_getValue(FLAG_507_PROGRESS_GGM_CANARY_MARY_FREED_READY_TO_RACE) == 0) //If Canary Mary isn't ready yet
         {
             maryMemory->unkC = _glsplinefind_entrypoint_0(0x388, arg0->position);
             func_801058C4(arg0, (s16)maryMemory->unkC, HANDCART_DATA(arg0)->unkC, 0);
@@ -1428,7 +1428,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
         case 20:
             //Loading into GGM from canary cave for cutscene
             //Canary Mary Freed and ready to race
-            func_800DA544(FLAG_507_PROGRESS_GGM_CANARY_MARY_FREED_READY_TO_RACE);
+            flag_setValueTrue(FLAG_507_PROGRESS_GGM_CANARY_MARY_FREED_READY_TO_RACE);
             HANDCART_DATA(arg0)->unkC = 40.0f;
             func_8080090C_chhandcart(sp2C, 0x1F, 0x28B0, arg0->unk0);
             break;
@@ -1581,7 +1581,7 @@ void func_80803218_chhandcart(Actor* arg0, Actor* arg1)
         var_f12 = 1.0f;
     }
     sp18 = func_80105AE8(arg0);
-    gamespeed = func_800D8FF8();
+    gamespeed = time_getDelta();
     if (gamespeed && gamespeed)
     {
     }
@@ -1621,7 +1621,7 @@ s32 func_80803448_chhandcart(Actor* arg0)
     f32 sp2C[3];
     f32 sp20[3];
     f32 gamespeed;
-    gamespeed = func_800D8FF8();
+    gamespeed = time_getDelta();
     func_800EE7F8(sp38, arg0->position);
     sp38[1] = sp38[1] + 50.0f;
     func_800EE7F8(sp2C, arg0->position);
@@ -1720,7 +1720,7 @@ void func_80803794_chhandcart(Actor* arg0)
     HandcartMemory* sp3C;
     s32 pad[2];
 
-    sp44 = func_800D8FF8();
+    sp44 = time_getDelta();
     if (arg0->unk3C != 0)
     {
         sp40 = func_80106790(arg0->unk3C);
@@ -1735,14 +1735,14 @@ void func_80803794_chhandcart(Actor* arg0)
     switch (arg0->unk70_10)
     {
     case 24:
-        if (func_800DA298(FLAG0_000_STATE_CANARY_MARY_CAGE_TRIGGER_DIALOG) != 0) //If we have spoken to canary mary in the cage
+        if (flag_getValue(FLAG0_000_STATE_CANARY_MARY_CAGE_TRIGGER_DIALOG) != 0) //If we have spoken to canary mary in the cage
         {
             if (func_80090270() == 0)
             {
                 func_80802CE8_chhandcart(arg0, 0x19);
             }
         }
-        else if (func_800DA298(FLAG0_001_STATE_CANARY_MARY_CAGE_BROKEN) == 0) //If we haven't spoken to canary mary in the cage
+        else if (flag_getValue(FLAG0_001_STATE_CANARY_MARY_CAGE_BROKEN) == 0) //If we haven't spoken to canary mary in the cage
         {
             if ((_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0x1F4, 0x46, 6) != 0) && (func_80090178(ALLOW_BK | ALLOW_DETONATOR) != 0))
             {
@@ -1762,7 +1762,7 @@ void func_80803794_chhandcart(Actor* arg0)
         if (func_80105A5C(arg0) != 0)
         {
             //Set Canary Mary Freed (Cutscene leaving Canary Cave inside)
-            func_800DA544(FLAG_066_PROGRESS_GGM_CANARY_MARY_FREED_1);
+            flag_setValueTrue(FLAG_066_PROGRESS_GGM_CANARY_MARY_FREED_1);
             _glcutDll_entrypoint_6(MAP_C7_GGM_GLITTER_GULCH_MINE, 0x1A);
         }
         break;
@@ -1804,7 +1804,7 @@ void func_80803794_chhandcart(Actor* arg0)
         {
             if (func_80090178(ALLOW_BK) != 0)
             {
-                if (func_800DA298(FLAG_508_FTT_GGM_CANARY_MARY_RACE_INTRO) != 0)
+                if (flag_getValue(FLAG_508_FTT_GGM_CANARY_MARY_RACE_INTRO) != 0)
                 {
                     if (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
                     {
@@ -1814,9 +1814,9 @@ void func_80803794_chhandcart(Actor* arg0)
                 }
                 else if (_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
                 {
-                    func_800DA544(FLAG_508_FTT_GGM_CANARY_MARY_RACE_INTRO);
+                    flag_setValueTrue(FLAG_508_FTT_GGM_CANARY_MARY_RACE_INTRO);
                     func_80800858_chhandcart(sp40, arg0, 2, 0);
-                    if (func_800DA298(FLAG_57A_PROGRESS_GGM_CANARY_MARY_FREED_3) != 0) //If canary Mary has been freed get the race rules talk
+                    if (flag_getValue(FLAG_57A_PROGRESS_GGM_CANARY_MARY_FREED_3) != 0) //If canary Mary has been freed get the race rules talk
                     {
                         func_808023B4_chhandcart(arg0, 0xF80, 0xB);
                     }
@@ -1826,7 +1826,7 @@ void func_80803794_chhandcart(Actor* arg0)
                     }
                 }
             }
-            else if (func_800DA298(FLAG_054_FTT_GGM_DetonatorTalkToCanaryMary) != 0) //if the Detonator has talked to canary mary
+            else if (flag_getValue(FLAG_054_FTT_GGM_DetonatorTalkToCanaryMary) != 0) //if the Detonator has talked to canary mary
             {
                 if (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
                 {
@@ -1836,7 +1836,7 @@ void func_80803794_chhandcart(Actor* arg0)
             else if (_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
             {
                 //Set Detonator talks to canary mary flag
-                func_800DA544(FLAG_054_FTT_GGM_DetonatorTalkToCanaryMary);
+                flag_setValueTrue(FLAG_054_FTT_GGM_DetonatorTalkToCanaryMary);
                 func_808023B4_chhandcart(arg0, 0xFB0, 0xB);
             }
         }
@@ -2043,7 +2043,7 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
             case 0xF7F:
             case 0xFA9:
                 //Set Canary Mary Cage Opened
-                func_800DA544(FLAG_57A_PROGRESS_GGM_CANARY_MARY_FREED_3);
+                flag_setValueTrue(FLAG_57A_PROGRESS_GGM_CANARY_MARY_FREED_3);
                 func_80802CE8_chhandcart(arg0, 0x1A);
                 break;
             case 0xF80:
@@ -2125,7 +2125,7 @@ void chhandcart_entrypoint_1(Actor* arg0)
     func_80101F24(func_80106790((Unk80132ED0*)arg0));
 }
 
-void* chhandcart_entrypoint_2(void) 
+ActorData* chhandcart_entrypoint_2(void) 
 {
     return &D_80804E6C_chhandcart;
 }
