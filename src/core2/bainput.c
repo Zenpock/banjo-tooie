@@ -127,7 +127,7 @@ int bainput_should_flap_flip(PlayerState *self) {
 
 int bainput_func_80097E74(PlayerState *self) {
     return bakey_held(self, BUTTON_Z) 
-        && func_800C6E38(0x22) 
+        && ability_getValue(0x22) 
         && !func_8008E39C(self);
 }
 
@@ -147,7 +147,7 @@ int bainput_should_dive(PlayerState *self) {
 
 int bainput_func_80097FB8(PlayerState *self) {
     return bakey_pressed(self, BUTTON_B)
-        && func_800C6E38(0x1D)
+        && ability_getValue(0x1D)
         && baflag_isFalse(self,BA_FLAG_5_HAS_PECKED)
         && !func_8008E39C(self);
 }
@@ -194,7 +194,7 @@ void bainput_setDiveCooldown(PlayerState *self, s32 arg1, f32 cooldown) {
 
 void bainput_update(PlayerState *self) {
     if (self->input->dive_cooldown != 0.0f) {
-        self->input->dive_cooldown = func_800F0E00(self->input->dive_cooldown - func_800D8FF8(), 0.0f);
+        self->input->dive_cooldown = func_800F0E00(self->input->dive_cooldown - time_getDelta(), 0.0f);
     }
     bainput_enable(self, 6, 0);
 }

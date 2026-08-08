@@ -1,13 +1,21 @@
 #include "common.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/terryegg/chterryegg_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/terryegg/chterryegg_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/terryegg/chterryegg_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/terryegg/chterryegg_entrypoint_3.s")
-
+extern ActorData D_80801328_chterryegg;
+ActorData* chterryegg_entrypoint_1()
+{
+    return &D_80801328_chterryegg;
+}
+extern ActorData D_80801370_chterryegg;
+ActorData* chterryegg_entrypoint_2()
+{
+    return &D_80801370_chterryegg;
+}
+extern ActorData D_808013B8_chterryegg;
+ActorData* chterryegg_entrypoint_3()
+{
+    return &D_808013B8_chterryegg;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/terryegg/func_80800030_chterryegg.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/terryegg/func_808000A8_chterryegg.s")

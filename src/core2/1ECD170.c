@@ -1,6 +1,6 @@
 #include "core2/1ECD170.h"
 
-void func_800F3880(s32 arg0)
+void func_800F3880(PlayerState* arg0)
 {
     func_80098E64();
     heap_free(arg0);

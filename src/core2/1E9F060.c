@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1E9F060.h"
 
 /* .data */
 
@@ -59,7 +59,28 @@ void* func_800C5BC4(void* arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C5BE4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C5CC0.s")
+void* func_800C5CC0(f32* this, f32 arg1, f32 arg2, u32 arg3, void* arg4) {
+    void* phi_v1;
+
+    if (mlAbsF(arg2 - arg1) > 500.0f) {
+        if (arg1 < arg2) {
+            phi_v1 = func_800C5BE4(this, arg1, arg1 + 500.0f, arg3, arg4);
+            if (phi_v1 == NULL) {
+                phi_v1 = func_800C5BE4(this, arg1 + 500.0f - 1.0f, arg2, arg3, arg4);
+            }
+        }
+        else {
+            phi_v1 = func_800C5BE4(this, arg1, arg1 - 500.0f, arg3, arg4);
+            if (phi_v1 == NULL) {
+                phi_v1 = func_800C5BE4(this, arg1 - 500.0f + 1.0f, arg2, arg3, arg4);
+            }
+        }
+    }
+    else {
+        phi_v1 = func_800C5BE4(this, arg1, arg2, arg3, arg4);
+    }
+    return phi_v1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C5E14.s")
 

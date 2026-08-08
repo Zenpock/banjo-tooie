@@ -9,4 +9,8 @@ void func_80800034_chbottlesdead()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/dead/func_80800054_chbottlesdead.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/dead/chbottlesdead_entrypoint_0.s")
+extern ActorData D_808000C0_chbottlesdead;
+ActorData* chbottlesdead_entrypoint_0()
+{
+    return &D_808000C0_chbottlesdead;
+}

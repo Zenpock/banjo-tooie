@@ -130,7 +130,7 @@ u32 subaddiedialog_entrypoint_7(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
     if (((arg2->unk8 != (-1)) && (arg2->unkC != 0)) && (func_800F64A4(func_800F54E4(), arg2->unk8) == 0))
     {
         var_a2 = arg2->unkE;
-        if ((var_a2 != 0) && (func_800DA298(arg2->unkE) == 0))
+        if ((var_a2 != 0) && (flag_getValue(arg2->unkE) == 0))
         {
             var_a2 = arg2->unk12;
             if (sp34 & 0x20)
@@ -160,7 +160,7 @@ u32 subaddiedialog_entrypoint_7(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
             }
             if (subaddiedialog_entrypoint_11(arg0->unk0, (u32)arg2->unkC, (u32)var_a2, arg1, (s16)((s32)arg2->unk10)) != 0)
             {
-                func_800DA544(arg2->unkE);
+                flag_setValueTrue(arg2->unkE);
                 if (arg0)
                 {
                 }
@@ -394,7 +394,7 @@ s32 subaddiedialog_entrypoint_8(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
     var_v0 = 0;
     if (sp40 != 0)
     {
-        if ((arg2->unk2 != 0) && (func_800DA298(arg2->unk2 ^ 0) == 0))
+        if ((arg2->unk2 != 0) && (flag_getValue(arg2->unk2 ^ 0) == 0))
         {
             temp_v0 = arg2->unk8;
             if (sp3C & 0x20)
@@ -425,7 +425,7 @@ s32 subaddiedialog_entrypoint_8(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
             sp40 = func_808010C8_subaddiedialog(arg0, sp40, 3);
             if (subaddiedialog_entrypoint_11(arg0->unk0, sp40, var_s0, arg1, arg2->unk6) != 0)
             {
-                func_800DA544(arg2->unk2);
+                flag_setValueTrue(arg2->unk2);
                 var_s0 = arg2->unkE;
                 if (arg2->unkE)
                 {
@@ -504,7 +504,7 @@ s32 func_808010C8_subaddiedialog(Actor* a0, s32 arg1, s32 arg2)
 {
     if (arg1 < 0)
     {
-        arg1 = func_8010108C(a0, 0xB8, (arg2 << 0x10) | (-arg1 & 0xFFFF), arg1);
+        arg1 = func_8010108C(a0, 0xB8, (arg2 << 0x10) | (-arg1 & 0xFFFF));
     }
     return arg1;
 }
@@ -602,7 +602,7 @@ s32 func_80801394_subaddiedialog(Actor* arg0, s32 arg1, s32 Flag)
     var_v0 = (Flag != 0) != 0;
     if (var_v0)
     {
-        var_v0 = func_800DA298(Flag) == 0;
+        var_v0 = flag_getValue(Flag) == 0;
         return var_v0;
     }
 }
@@ -614,7 +614,7 @@ void func_808013E4_subaddiedialog(Actor* actor, s32 arg1, u32 Flag) {
         actor->unk74_30 = 1;
         return;
     }
-    func_800DA544(Flag);
+    flag_setValueTrue(Flag);
 }
 
 s32 func_8080141C_subaddiedialog(void)

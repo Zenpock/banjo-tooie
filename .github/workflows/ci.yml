@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: recursive
           ref: ${{ github.event.pull_request.head.ref }}
@@ -35,7 +35,7 @@ jobs:
         run: pip3 install -r tools/splat/requirements.txt
 
       - name: Get extra dependencies
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ${{ secrets.SECRETREPO }}
           token: ${{ secrets.SECRETTOKEN }}
@@ -52,9 +52,9 @@ jobs:
       - name: Print progress
         run: python3 tools/progress.py --version ${{ matrix.version }}
 
-      - name: Upload frogress
-        if: ${{ github.ref == 'refs/heads/master' && github.event_name != 'pull_request_target' }}
-        run: python3 tools/upload_frogress.py ${{ matrix.version }} --apikey ${{ secrets.PROGRESS_API_KEY }}
+      #- name: Upload frogress
+      #  if: ${{ github.ref == 'refs/heads/master' && github.event_name != 'pull_request_target' }}
+      #  run: python3 tools/upload_frogress.py ${{ matrix.version }} --apikey ${{ secrets.PROGRESS_API_KEY }}
 
       - name: Upload map
         uses: actions/upload-artifact@v4

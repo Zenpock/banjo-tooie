@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/masterjiggy/chmasterjiggy_entrypoint_0.s")
-
+extern ActorData D_8080164C_chmasterjiggy;
+ActorData* chmasterjiggy_entrypoint_0()
+{
+    return &D_8080164C_chmasterjiggy;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/masterjiggy/func_8080000C_chmasterjiggy.s")
 
 void func_808001A8_chmasterjiggy(s32 arg0) 
@@ -29,8 +32,11 @@ void func_808001A8_chmasterjiggy(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/masterjiggy/func_808007F0_chmasterjiggy.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/masterjiggy/chmasterjiggy_entrypoint_1.s")
-
+extern ActorData D_808016F8_chmasterjiggy;
+ActorData* chmasterjiggy_entrypoint_1()
+{
+    return &D_808016F8_chmasterjiggy;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/masterjiggy/func_8080095C_chmasterjiggy.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/masterjiggy/func_8080096C_chmasterjiggy.s")

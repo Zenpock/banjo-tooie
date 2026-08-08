@@ -1,7 +1,7 @@
 #include "gc/newpause.h"
 #include "gl/dbstring.h"
 #include "fx/kern.h"
-#include "core2/1E2F380.h"
+#include "core1/1E2F380.h"
 #include "core2/1E91790.h"
 #include "core2/1EAD060.h"
 #include "core2/1EC2350.h"
@@ -628,7 +628,7 @@ s32 func_8080105C_gcnewpause(s32 a0, s32 a1, u32 a2, u32 a3)
 	
 	for (index = a0; index < (a0 + a1); index++)
 	{
-		if ((D_808020D8_gcnewpause[index].AbilityID != 0x3C) && (func_800C6E38(D_808020D8_gcnewpause[index].AbilityID) == 0))
+		if ((D_808020D8_gcnewpause[index].AbilityID != 0x3C) && (ability_getValue(D_808020D8_gcnewpause[index].AbilityID) == 0))
 		{
 			continue;
 		}
@@ -745,11 +745,11 @@ void func_8080136C_gcnewpause(PauseState* pauseMenu)
 
 	temp_v0 = func_800E8B74(0xB59);
 	pauseMenu->ShowBButton = temp_v0;
-	func_800E8D28(temp_v0 & 0xFF, 0x3F19999A);
+	func_800E8D28(temp_v0 & 0xFF, 0.6f);
 	func_800E8D5C(pauseMenu->ShowBButton, &D_808021CC_gcnewpause, 3);
 	temp_v0_2 = func_800E8B74(0xB57);
 	pauseMenu->JoystickIndicator = temp_v0_2;
-	func_800E8D28(temp_v0_2 & 0xFF, 0x3F4CCCCD);
+	func_800E8D28(temp_v0_2 & 0xFF, 0.8f);
 	func_800E8D5C(pauseMenu->JoystickIndicator, &D_808021E4_gcnewpause, 3);
 	pauseMenu->MoveRightJoystickTrigger = 0;
 	pauseMenu->MoveLeftJoystickTrigger = 0;
@@ -1051,7 +1051,7 @@ s32 func_80801C3C_gcnewpause(s32 a0)
 	{
 		if (a0 == 0x0||D_8080215C_gcnewpause[index].SubPageToShow == a0)
 		{
-			if (func_800C6E38(D_8080215C_gcnewpause[index].AbilityId))
+			if (ability_getValue(D_8080215C_gcnewpause[index].AbilityId))
 			{
 				MoveCount++;
 			}
@@ -1071,7 +1071,7 @@ void func_80801CCC_gcnewpause(PauseState* pauseMenu)
 //Handle the Fade in/out speed of the gameover text
 void func_80801CDC_gcnewpause(PauseState* pauseMenu)
 {
-	f32 speed = func_800D8FF8();
+	f32 speed = time_getDelta();
 	s16 temp_v0;
 	if (pauseMenu->GameOverFadingIn != 0) {
 		temp_v0 = pauseMenu->GameOverTransparency;

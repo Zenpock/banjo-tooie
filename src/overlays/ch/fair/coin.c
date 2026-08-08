@@ -4,4 +4,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fair/coin/chfaircoin_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fair/coin/chfaircoin_entrypoint_1.s")
+extern ActorData D_8080015C_chfaircoin;
+ActorData* chfaircoin_entrypoint_1()
+{
+    return &D_8080015C_chfaircoin;
+}

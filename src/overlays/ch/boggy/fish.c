@@ -6,4 +6,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fish/func_8080018C_chboggyfish.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fish/chboggyfish_entrypoint_0.s")
+extern ActorData D_80800220_chboggyfish;
+ActorData* chboggyfish_entrypoint_0()
+{
+    return &D_80800220_chboggyfish;
+}

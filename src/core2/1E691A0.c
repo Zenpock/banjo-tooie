@@ -20,7 +20,7 @@ void func_8008F938(s32 arg0)
     func_800F4A00(func_800F54E4(),arg0);
 }
 
-void func_8008F964(s32 arg0)
+void func_8008F964(f32* arg0)
 {
     func_800F4A2C(func_800F54E4(),arg0);
 }
@@ -35,7 +35,7 @@ void func_8008F9C4(s32 arg0,s32 arg1)
     func_800F4A8C(func_800F54E4(),arg0,arg1);
 }
 
-void func_8008F9F8(s32 arg0,s32 arg1)
+void func_8008F9F8(f32* arg0,f32 arg1)
 {
     func_800F4AC0(func_800F54E4(),arg0,arg1);
 }
@@ -45,9 +45,9 @@ void func_8008FA2C(s32 arg0,s32 arg1)
     func_800F4B8C(func_800F54E4(),arg0,arg1);
 }
 
-void func_8008FA60(s32 arg0,s32 arg1)
+s32 func_8008FA60(s32 arg0,s32 arg1)
 {
-    func_800F4BB8(func_800F54E4(),arg0,arg1);
+    return func_800F4BB8(func_800F54E4(),arg0,arg1);
 }
 
 void func_8008FA94(s32 arg0,s32 arg1)
@@ -118,9 +118,9 @@ TransformationId func_8008FD48()
     return func_800F5410(func_800F54E4());
 }
 
-void func_8008FD70()
+s32 func_8008FD70()
 {
-    func_800F543C(func_800F54E4());
+    return func_800F543C(func_800F54E4());
 }
 
 void func_8008FD98(s32 arg0)
@@ -128,9 +128,9 @@ void func_8008FD98(s32 arg0)
     func_800F549C(func_800F54E4(),arg0);
 }
 
-void func_8008FDC4()
+s32 func_8008FDC4()
 {
-    func_800F55FC(func_800F54E4());
+    return func_800F55FC(func_800F54E4());
 }
 
 Unk80132ED0* func_8008FDEC()
@@ -138,9 +138,9 @@ Unk80132ED0* func_8008FDEC()
     return func_800F56D8(func_800F54E4());
 }
 
-void func_8008FE14()
+s32 func_8008FE14()
 {
-    func_800F5704(func_800F54E4());
+    return func_800F5704(func_800F54E4());
 }
 
 void func_8008FE3C(s32 arg0)
@@ -148,7 +148,7 @@ void func_8008FE3C(s32 arg0)
     func_800F57F0(func_800F54E4(),arg0);
 }
 
-void func_8008FE68(s32 arg0)
+void func_8008FE68(f32* arg0)
 {
     func_800F5A00(func_800F54E4(),arg0);
 }
@@ -163,9 +163,9 @@ void func_8008FEC8()
     func_800F58A0(func_800F54E4());
 }
 
-void func_8008FEF0()
+f32 func_8008FEF0()
 {
-    func_800F5AE0(func_800F54E4());
+    return func_800F5AE0(func_800F54E4());
 }
 
 void func_8008FF18()
@@ -173,7 +173,7 @@ void func_8008FF18()
     func_800F5B0C(func_800F54E4());
 }
 
-void func_8008FF40(s32 arg0)
+void func_8008FF40(f32* arg0)
 {
     func_800F5B38(func_800F54E4(),arg0);
 }
@@ -188,14 +188,14 @@ void func_8008FF94()
     func_800F5D18(func_800F54E4());
 }
 
-void func_8008FFBC(s32 arg0)
+void func_8008FFBC(f32* arg0)
 {
     func_800F5D70(func_800F54E4(),arg0);
 }
 
-void func_8008FFE8()
+s32 func_8008FFE8()
 {
-    func_800F5EF8(func_800F54E4());
+    return func_800F5EF8(func_800F54E4());
 }
 
 f32 func_80090010()
@@ -205,9 +205,9 @@ f32 func_80090010()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_80090038.s")
 
-void func_80090080()
+s32 func_80090080()
 {
-    func_800F5FA8(func_800F54E4());
+    return func_800F5FA8(func_800F54E4());
 }
 
 void func_800900A8()
@@ -235,7 +235,7 @@ void func_80090150()
     func_800F6478(func_800F54E4());
 }
 
-s32 func_80090178(AllowedTransformation arg0)
+s32 func_80090178(s32 arg0)
 {
     return func_800F64A4(func_800F54E4(),arg0);
 }
@@ -320,7 +320,7 @@ void func_800904F4(s32 arg0, Unk80132ED0* arg1)
     func_800F7BC8(func_800F54E4(),arg0,arg1);
 }
 
-void func_80090528(s32 arg0,s32 arg1)
+void func_80090528(s32 arg0,f32 arg1)
 {
     func_800F7C0C(func_800F54E4(),arg0,arg1);
 }
@@ -330,7 +330,7 @@ void func_8009055C(s32 arg0,s32 arg1)
     func_800F7C58(func_800F54E4(),arg0,arg1);
 }
 
-void func_80090590(s32 arg0,s32 arg1)
+void func_80090590(s32 arg0,f32* arg1)
 {
     func_800F7CF4(func_800F54E4(),arg0,arg1);
 }
@@ -380,12 +380,12 @@ void func_80090734(s32 arg0,f32* arg1)
     func_800F8300(func_800F54E4(),arg0,arg1);
 }
 
-void func_80090768(s32 arg0)
+void func_80090768(void* arg0)
 {
     func_800F83B8(func_800F54E4(),arg0);
 }
 
-void func_80090794(s32 arg0)
+void func_80090794(f32* arg0)
 {
     func_800F5D9C(func_800F54E4(),arg0);
 }
@@ -395,14 +395,14 @@ void func_800907C0(f32* arg0)
     func_800F8418(func_800F54E4(),arg0);
 }
 
-void func_800907EC(s32 arg0)
+void func_800907EC(TransformationId arg0)
 {
     func_800F8730(func_800F54E4(),arg0);
 }
 
-void func_80090818()
+s32 func_80090818()
 {
-    func_800F87A4(func_800F54E4());
+    return func_800F87A4(func_800F54E4());
 }
 
 void func_80090840(s32 arg0)

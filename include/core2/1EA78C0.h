@@ -6,6 +6,10 @@
 void func_800C75C0();
 void func_800CE524();
 void func_800CE7DC();
+void func_800CE88C(s32, s32);
+void func_800CE8D8(s32, f32, s32);
+s32 func_800CEAA8(s32);
+s32 func_800CEAD0(s32);
 void func_800CEF6C();
 void func_800CEF7C();
 void func_800CF2B0();

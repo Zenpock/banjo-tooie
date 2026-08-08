@@ -21,4 +21,8 @@ void func_808003BC_chintroticker(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/ticker/func_808005AC_chintroticker.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/ticker/chintroticker_entrypoint_0.s")
+extern ActorData D_80800934_chintroticker;
+ActorData* chintroticker_entrypoint_0()
+{
+    return &D_80800934_chintroticker;
+}

@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/attract/chattract_entrypoint_0.s")
-
+extern ActorData D_808004F4_chattract;
+ActorData* chattract_entrypoint_0()
+{
+    return &D_808004F4_chattract;
+}
 void func_8080000C_chattract(s32 arg0) 
 {
 }

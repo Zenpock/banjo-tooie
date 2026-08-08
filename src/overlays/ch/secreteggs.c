@@ -12,7 +12,7 @@ extern unkEggData D_80800494_chsecreteggs[0x3];
 extern s32 D_808004A8_chsecreteggs;
 extern f32 D_808004EC_chsecreteggs[5];
 extern f32 D_80800500_chsecreteggs[3];
-extern u32 D_8080050C_chsecreteggs;
+extern ActorData D_8080050C_chsecreteggs;
 
 void func_80800000_chsecreteggs(Actor* arg0)
 {
@@ -39,7 +39,7 @@ void func_808000C0_chsecreteggs(Actor* arg0)
 {
     if (arg0->unk7A_5)
     {
-        if (func_800DA298(FLAG_3E7_SNS_EGG_HATCHED_YELLOW) != 0)
+        if (flag_getValue(FLAG_3E7_SNS_EGG_HATCHED_YELLOW) != 0)
         {
             func_800FFA88(arg0->unk0);
             return;
@@ -91,9 +91,9 @@ void func_80800118_chsecreteggs(Actor* arg0)
         }
         else if (func_80101DDC(arg0) != 0)
         {
-            if ((arg0->unk7A_5) && (func_800DA298(FLAG_3E7_SNS_EGG_HATCHED_YELLOW) == 0))
+            if ((arg0->unk7A_5) && (flag_getValue(FLAG_3E7_SNS_EGG_HATCHED_YELLOW) == 0))
             {
-                func_800DA544(FLAG_3E7_SNS_EGG_HATCHED_YELLOW);
+                flag_setValueTrue(FLAG_3E7_SNS_EGG_HATCHED_YELLOW);
 
                 func_80101180(0x514, 0x18, arg0->unk7A_5 ? 1 : 0);
             }
@@ -133,13 +133,13 @@ s32 func_80800328_chsecreteggs(Actor* arg0, s32 arg1, s32 arg2)
         {
             if (arg0->unk0->unk14 == 0x975)
             {
-                func_800DA544(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE);
+                flag_setValueTrue(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE);
                 var_a1 = 0x1551;
             }
         }
         else
         {
-            func_800DA544(FLAG_3E5_SNS_EGG_ACQUIRED_PINK);
+            flag_setValueTrue(FLAG_3E5_SNS_EGG_ACQUIRED_PINK);
             var_a1 = 0x1552;
         }
         if (var_a1 != 0)
@@ -156,7 +156,7 @@ s32 func_80800328_chsecreteggs(Actor* arg0, s32 arg1, s32 arg2)
     }
 }
 
-u32* chsecreteggs_entrypoint_0(void) 
+ActorData* chsecreteggs_entrypoint_0(void)
 {
     return &D_8080050C_chsecreteggs;
 }

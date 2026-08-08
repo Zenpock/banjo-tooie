@@ -2,7 +2,7 @@
 
 typedef struct
 {
-    u8 unk0[0x42C];
+    u32 unk0[0x10B];
     u8 unk42C;
 } UNKD_80127194;
 
@@ -19,7 +19,7 @@ void func_8080011C_gcgoto(s32 arg0, s32 arg1, s32 arg2, s32 arg3)
     {
         if ((arg0 == 0xCE) && (arg1 == 4))
         {
-            func_800DA544(FLAG_503_UNK);
+            flag_setValueTrue(FLAG_503_UNK);
         }
         gcgoto_entrypoint_0(&arg0, &arg1);
         func_800A7990(arg0, arg1, arg3);

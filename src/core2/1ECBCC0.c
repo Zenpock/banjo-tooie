@@ -21,7 +21,25 @@ void func_800F26B0(MtxF* arg0, f32 arg1, f32 arg2, f32 arg3) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBCC0/func_800F274C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBCC0/func_800F27D4.s")
+//guMtxCatF
+void func_800F27D4(f32 lmf[4][4], f32 rmf[4][4], f32 dst[4][4]) {
+    s32 i, j, k;
+    f32 sp1C[4][4];
+
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            sp1C[i][j] = 0.0f;
+            for (k = 0; k < 4; k++) {
+                sp1C[i][j] += lmf[i][k] * rmf[k][j];
+            }
+        }
+    }
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            dst[i][j] = sp1C[i][j];
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBCC0/func_800F293C.s")
 

@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/grunty/fireballbig/chgruntyfireballbig_entrypoint_0.s")
-
+extern ActorData D_80800680_chgruntyfireballbig;
+ActorData* chgruntyfireballbig_entrypoint_0()
+{
+    return &D_80800680_chgruntyfireballbig;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/grunty/fireballbig/func_8080000C_chgruntyfireballbig.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/grunty/fireballbig/func_80800030_chgruntyfireballbig.s")

@@ -32,7 +32,7 @@ BanjoStateId bskaz_entrypoint_3(PlayerState *self) {
         return BS_STATE_161;
     }
     
-    if ((bakey_held(self, BUTTON_Z) != 0) && (func_800C6E38(0x24) != 0)) {
+    if ((bakey_held(self, BUTTON_Z) != 0) && (ability_getValue(0x24) != 0)) {
         return BS_STATE_C6;
     }
     
