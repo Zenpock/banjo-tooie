@@ -1,5 +1,15 @@
 #include "bs/beemain.h"
 
+extern s32 D_80801260_bsbeemain[];
+extern s32 D_80801270_bsbeemain[];
+extern s32 D_80801280_bsbeemain[];
+extern s32 D_80801290_bsbeemain[];
+extern s32 D_808012A0_bsbeemain[];
+extern s32 D_808012B0_bsbeemain[];
+extern s32 D_808012C0_bsbeemain[];
+extern s32 D_808012D0_bsbeemain[];
+extern s32 D_808012E0_bsbeemain[];
+
 /* .code */
 
 void func_80800000_bsbeemain(PlayerState* self) {

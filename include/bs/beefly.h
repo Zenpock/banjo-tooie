@@ -46,17 +46,7 @@ extern f32 _bafpctrl_entrypoint_3(PlayerState*);
 extern void _bafpctrl_entrypoint_18(PlayerState*, s32);
 extern void _bsbee_entrypoint_2(PlayerState*);
 
-// BSS?
-extern s32 D_80800DC0_bsbeefly;
-extern s32 D_80800DE8_bsbeefly;
-extern s32 D_80800E18_bsbeefly[];
-extern s32 D_80800E50_bsbeefly[];
-extern s32 D_80800E60_bsbeefly[];
-extern s32 D_80800E70_bsbeefly[];
-extern s32 D_80800E80_bsbeefly[];
-extern f32 D_80800E28_bsbeefly[5];
-extern f32 D_80800E3C_bsbeefly[5];
-
+// Code
 void func_80800000_bsbeefly(PlayerState*);
 void func_808000A4_bsbeefly(PlayerState*);
 void func_8080010C_bsbeefly(PlayerState*);

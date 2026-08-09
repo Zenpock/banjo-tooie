@@ -45,17 +45,7 @@ extern enum bs_state_e _badrone_entrypoint_28(PlayerState*);
 extern void _bsbee_entrypoint_1(PlayerState*);
 extern void _bsbee_entrypoint_2(PlayerState*);
 
-// BSS?
-extern s32 D_80801260_bsbeemain[];
-extern s32 D_80801270_bsbeemain[];
-extern s32 D_80801280_bsbeemain[];
-extern s32 D_80801290_bsbeemain[];
-extern s32 D_808012A0_bsbeemain[];
-extern s32 D_808012B0_bsbeemain[];
-extern s32 D_808012C0_bsbeemain[];
-extern s32 D_808012D0_bsbeemain[];
-extern s32 D_808012E0_bsbeemain[];
-
+// Code
 void func_80800000_bsbeemain(PlayerState*);
 void func_8080002C_bsbeemain(PlayerState*);
 void func_80800058_bsbeemain(PlayerState*);

@@ -1,5 +1,15 @@
 #include "bs/beefly.h"
 
+extern s32 D_80800DC0_bsbeefly;
+extern s32 D_80800DE8_bsbeefly;
+extern s32 D_80800E18_bsbeefly[];
+extern s32 D_80800E50_bsbeefly[];
+extern s32 D_80800E60_bsbeefly[];
+extern s32 D_80800E70_bsbeefly[];
+extern s32 D_80800E80_bsbeefly[];
+extern f32 D_80800E28_bsbeefly[5];
+extern f32 D_80800E3C_bsbeefly[5];
+
 /* .code */
 
 void func_80800000_bsbeefly(PlayerState* self) {

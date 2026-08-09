@@ -52,14 +52,7 @@ extern s32 _fxdlsmoke_entrypoint_0(f32*);
 extern void _bamotor_entrypoint_3(PlayerState*, f32, f32, f32, f32, f32, f32);
 extern void _bashake_entrypoint_1(PlayerState*, s32, s32);
 
-// BSS?
-extern s32 D_80800AC8_bsbbilldrill;
-extern u32 D_80800AB0_bsbbilldrill[3];
-extern s32 D_80800B68_bsbbilldrill[];
-extern s32 D_80800B10_bsbbilldrill;
-extern s32 D_80800B30_bsbbilldrill;
-extern s32 D_80800B50_bsbbilldrill;
-
+// Code
 void func_80800000_bsbbilldrill(PlayerState*);
 void func_80800008_bsbbilldrill(PlayerState*);
 void func_808000C0_bsbbilldrill(PlayerState*);

@@ -15,6 +15,7 @@
 #include "core2/1E75710.h"
 #include "core2/1E77A20.h"
 
+// Code
 void bsbee_entrypoint_0(PlayerState*);
 void bsbee_entrypoint_1(PlayerState*);
 void bsbee_entrypoint_2(PlayerState*);
