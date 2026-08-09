@@ -2,10 +2,9 @@ name: Build
 
 # Build on every branch push, tag push, and pull request change:
 on:
-  pull_request_target:
-    branches: [master]
   push:
     branches: [master]
+  workflow_dispatch:
 
 jobs:
   build_repo:
@@ -22,8 +21,6 @@ jobs:
         uses: actions/checkout@v6
         with:
           submodules: recursive
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
 
       - name: Install package requirements
         run: sudo apt-get install -y make git build-essential binutils-mips-linux-gnu gcc-mips-linux-gnu python3 python3-pip libfmt-dev libtoml11-dev
