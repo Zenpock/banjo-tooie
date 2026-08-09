@@ -1,5 +1,4 @@
-#include "overlays/bs/bee.h"
-#include "bee.h"
+#include "bs/bee.h"
 
 /* .code */
 
