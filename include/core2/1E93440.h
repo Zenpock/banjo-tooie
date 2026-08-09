@@ -9,6 +9,8 @@ void func_800BA3FC(s32, s32);
 void func_800BA450(s32, s32, s32, s32, s32, s32, s32);
 void func_800BA670(s32, s32);
 void func_800BA77C(s32, s32, s16, s16);
+void func_800BA7C4(s32, f32, f32);
+void func_800BA7FC(s32, f32, f32);
 void func_800BA930(s32, s32, s32, s32, s32, s32, s32);
 s32 func_800BABB8(s32, f32[3], f32[3], f32, s32[]);
 
