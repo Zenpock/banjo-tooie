@@ -32,17 +32,17 @@ void func_80800B90_bsbeemain(PlayerState*);
 void func_80800BD0_bsbeemain(PlayerState*);
 s32 bsbeemain_entrypoint_8(s32);
 void func_80800C28_bsbeemain(PlayerState*);
-void func_80800E0C_bsbeemain(PlayerState*);
-void func_80800FB8_bsbeemain(PlayerState*);
-void func_80800FF0_bsbeemain(PlayerState*);
-s32 bsbeemain_entrypoint_9(s32);
+// func_80800E0C_bsbeemain
+// func_80800FB8_bsbeemain
+// func_80800FF0_bsbeemain
+// bsbeemain_entrypoint_9
 void func_80801080_bsbeemain(PlayerState*);
-void func_808010A8_bsbeemain(PlayerState*);
+// func_808010A8_bsbeemain
 void func_808010F4_bsbeemain(PlayerState*);
-s32 bsbeemain_entrypoint_10(s32);
-void func_80801130_bsbeemain(PlayerState*);
-void func_8080118C_bsbeemain(PlayerState*);
-void func_808011E8_bsbeemain(PlayerState*);
-s32 bsbeemain_entrypoint_11(s32);
+// bsbeemain_entrypoint_10
+// func_80801130_bsbeemain
+// func_8080118C_bsbeemain
+// func_808011E8_bsbeemain
+// bsbeemain_entrypoint_11
 
 #endif // __OVERLAY_BS_BEEMAIN_H__

@@ -16,21 +16,20 @@
 
 #include "nc/ba/die.h"
 
-#include "core1/1E2B200.h"
-
-#include "core2/1E76CC0.h"
-#include "core2/1ECA640.h"
-#include "core2/1E66990.h"
-#include "core2/1E76880.h"
-#include "core2/1E7BFA0.h"
-#include "core2/1E67DA0.h"
-#include "core2/1E6E870.h"
-#include "core2/1E75710.h"
-#include "core2/1E7BFA0.h"
-#include "core2/1E7D460.h"
-#include "core2/1ED4E30.h"
-#include "core2/1E72EA0.h"
-#include "core2/1E75620.h"
+#include "core2/1E76CC0.h" // extern void func_8009DF18(PlayerState *, s32, f32, s32);
+#include "core2/1ECA640.h" // extern f32 func_800F1214(f32, f32, f32);
+#include "core2/1E66990.h" // extern s32 func_8008DD04(PlayerState*);
+#include "core2/1E76880.h" // extern void func_8009D3A8(PlayerState*, s32);
+#include "core2/1E7BFA0.h" // extern void func_800A2CE8(PlayerState*, f32, s32);
+#include "core2/1E2B200.h" // extern f32 func_800136E4(f32);
+#include "core2/1E67DA0.h" // extern void func_8008E944(PlayerState*);
+#include "core2/1E6E870.h" // extern void func_8009514C(PlayerState*);
+#include "core2/1E75710.h" // extern void func_8009BFE4(PlayerState*, f32, f32);
+#include "core2/1E7BFA0.h" // extern void func_800A32C4(PlayerState*, f32*);
+#include "core2/1E7D460.h" // extern s32 func_800A4CA8(PlayerState*);
+#include "core2/1ED4E30.h" // extern void func_800FC660(s32);
+#include "core2/1E72EA0.h" // extern f32 func_80099A34(PlayerState*);
+#include "core2/1E75620.h" // extern void func_8009BDAC(PlayerState*, f32);
 
 #include "overlays/bs/bee.h"
 
@@ -564,12 +563,12 @@ void func_8080118C_bsbeemain(PlayerState* self) {
     }
 }
 
-void func_808011E8_bsbeemain(PlayerState* self) {
-    if (_badrone_entrypoint_3(self) == 2) {
-        func_800947EC(self, 2, 0);
+void func_808011E8_bsbeemain(PlayerState* arg0) {
+    if (_badrone_entrypoint_3(arg0) == 2) {
+        func_800947EC(arg0, 2, 0);
     }
-    _bsdrone_entrypoint_2(self);
-    _bsbee_entrypoint_0(self);
+    _bsdrone_entrypoint_2(arg0);
+    _bsbee_entrypoint_0(arg0);
 }
 
 s32 bsbeemain_entrypoint_11(s32 arg0) {
