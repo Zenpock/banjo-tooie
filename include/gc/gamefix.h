@@ -12,4 +12,5 @@ void _gcgamefix_entrypoint_1(s32 arg0);
 void func_808000D0_gcgamefix(void);
 void func_8080011C_gcgamefix(void);
 void func_80800164_gcgamefix(void);
+
 #endif

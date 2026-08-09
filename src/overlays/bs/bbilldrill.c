@@ -1,15 +1,24 @@
 #include "common.h"
-#include "core2/anctrl.h"
+
+#include "buttons.h"
+#include "bs.h"
+
 #include "overlays/ba/anim.h"
 #include "overlays/ba/assets.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/timer.h"
-#include "overlays/bs/state.h"
 #include "overlays/ba/dust.h"
+#include "overlays/ba/flag.h"
+#include "overlays/ba/physics.h"
 #include "overlays/ba/motor.h"
 #include "overlays/ba/playerstate.h"
-#include "overlays/ba/flag.h"
+#include "overlays/bs/state.h"
+#include "overlays/ba/timer.h"
+
+#include "overlays/bs/walk.h"
+
 #include "core1/1E29B60.h"
+
+#include "core2/anctrl.h"
+
 #include "core2/1E72EA0.h"
 #include "core2/1E68670.h"
 #include "core2/1E76880.h"
@@ -27,34 +36,25 @@
 #include "core2/1E93440.h"
 #include "core2/1EB5980.h"
 #include "core2/1E75920.h"
-#include "buttons.h"
-#include "bs.h"
+#include "core2/1EB2840.h"
+#include "core2/1E8F430.h"
+#include "core2/1E93440.h"
+#include "core2/1E6B900.h"
+#include "core2/1E78170.h"
+#include "core2/1EC8070.h"
+#include "core2/1E6B900.h"
 
-extern s32 func_800B5BE4(s32);
-extern s32 func_800BABB8(s32, f32[3], f32[3], f32, s32[]);
-extern void _bswalk_entrypoint_1();
-extern void baphysics_set_target_horizontal_velocity(PlayerState* , f32 vel);
-extern f32 baphysics_get_target_horizontal_velocity(PlayerState *);
-extern void baphysics_set_horizontal_velocity(PlayerState *, f32 yaw, f32 vel);
-extern void func_800931AC(PlayerState *, s32);
-extern void func_80093300(PlayerState*, f32);
-extern void func_80098520(PlayerState*, f32);
-extern void func_8009328C(PlayerState *, f32);
-extern f32 func_800D8FF8(void);
-extern void bs_setState(PlayerState *self, BanjoStateId nextState);
 extern s32 _chlightfader_entrypoint_1(s32, f32, s32);
-extern void func_800BA22C(s32, s32);
+extern s32 _fxdlsmoke_entrypoint_0(f32*);
+extern void _bashake_entrypoint_1(PlayerState*, s32, s32);
+extern void _bamotor_entrypoint_3(PlayerState*, f32, f32, f32, f32, f32, f32);
+
+extern f32 func_800962D4(PlayerState*);
 extern void func_800BA7C4(s32, f32, f32);
 extern void func_800BA7FC(s32, f32, f32);
-extern s32 _fxdlsmoke_entrypoint_0(f32*);
-extern void _badust_entrypoint_10(PlayerState*, f32);
-extern void _bamotor_entrypoint_3(PlayerState*, f32, f32, f32, f32, f32, f32);
-extern void _bashake_entrypoint_1(PlayerState*, s32, s32);
-extern f32 func_800962D4(PlayerState*);
 extern void func_8009C1F8(PlayerState*, f32[3]);
-extern s32 func_8009EA2C();
-extern void func_800EFA4C(f32[3], f32, f32, f32);
-extern f32 func_80092BF4(PlayerState *);
+extern void func_80093300(PlayerState*, f32);
+extern void func_80098520(PlayerState*, f32);
 
 void func_808000C0_bsbbilldrill(PlayerState*);
 
@@ -194,7 +194,7 @@ void func_808002DC_bsbbilldrill(PlayerState* self, s32 arg1) {
 }
 
 void func_808005C0_bsbbilldrill(PlayerState* self) {
-    self->unk16C += (self->unk170 * func_800D8FF8());
+    self->unk16C += (self->unk170 * time_getDelta());
     func_8009328C(self, self->unk16C);
 }
 
