@@ -51,6 +51,7 @@ void func_8009312C(PlayerState*, s32);
 void func_800931AC(PlayerState*, s32);
 void func_80093230(PlayerState*, f32);
 void func_8009328C(PlayerState*, f32);
+void func_80093300(PlayerState*, f32);
 void func_8009332C(PlayerState*, f32);
 void func_80093360(PlayerState*, f32);
 void func_80093370(PlayerState*, s32);
