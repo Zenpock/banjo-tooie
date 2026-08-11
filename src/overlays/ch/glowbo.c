@@ -291,7 +291,7 @@ void func_80800A48_chglowbo(Actor* arg0)
 void func_80800B10_chglowbo(Actor* arg0)
 {
     glowboStruct* temp_v0 = (glowboStruct*)func_80100094(arg0, 0U);
-    func_800BBCB8(arg0->position, 0, 1.0f, 1, &D_80801508_chglowbo);
+    func_800BBCB8(arg0->position, NULL, 1.0f, 1, &D_80801508_chglowbo);
     switch (arg0->unk70_10)
     {
     case 4:
