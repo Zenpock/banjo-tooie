@@ -7,7 +7,7 @@ void func_80800000_bskazfly(PlayerState *self) {
     sp24[0] += func_800DC178(-30, 30);
     sp24[1] += 50.0f + func_800DC178(0, 30);
     sp24[2] += func_800DC178(-30, 30);
-    func_800BBCB8(sp24, 0, 1, 1, D_80801C10_bskazfly);
+    func_800BBCB8(sp24, NULL, 1, 1, D_80801C10_bskazfly);
 }
 
 void func_808000AC_bskazfly(PlayerState *self) {

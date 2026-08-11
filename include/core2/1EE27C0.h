@@ -12,6 +12,7 @@
 #include "core2/1EDFED0.h"
 
 void* func_80108ED0();
+void func_801094E0(f32*, f32);
 void func_80109FE8(Actor*, s32);
 void func_8010A3E8(Actor*, f32);
 //Disable Actor Collision
@@ -23,5 +24,5 @@ s32 func_8010A5B0(Actor*, s32);
 //Get Actor Collision State
 u32 func_8010A610(Actor*);
 void func_8010A624(Actor*);
-
+u32 func_8010A654(Actor*, s32);
 #endif

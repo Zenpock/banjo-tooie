@@ -225,10 +225,10 @@ void cheggclockwork_entrypoint_2(Vec3f arg0, f32 arg3, s32 arg4, s32 arg5)
 void cheggclockwork_entrypoint_3(s32* arg0, s32 arg1, u32 arg2, s32 arg3)
 {
     func_800C9C70(0.4f, 0x5F3U, 1.0f, 0x4E20U, arg0, 250.0f, 5400.0f);
-    func_800BBCB8(arg0, 0, 1.0f, 1, &D_80800908_cheggclockwork);
-    func_800BBCB8(arg0, 0, 1.0f, 6, &D_80800950_cheggclockwork);
-    func_800BBCB8(arg0, 0, 1.0f, 2, &D_80800998_cheggclockwork);
-    func_800BBCB8(arg0, 0, 1.0f, 1, &D_808009E0_cheggclockwork);
+    func_800BBCB8(arg0, NULL, 1.0f, 1, &D_80800908_cheggclockwork);
+    func_800BBCB8(arg0, NULL, 1.0f, 6, &D_80800950_cheggclockwork);
+    func_800BBCB8(arg0, NULL, 1.0f, 2, &D_80800998_cheggclockwork);
+    func_800BBCB8(arg0, NULL, 1.0f, 1, &D_808009E0_cheggclockwork);
     _chbaddiesetup_entrypoint_6(&_cheggclockwork_entrypoint_2, arg0[0], arg0[1], arg0[2], arg1, arg2, arg3);
 }
 

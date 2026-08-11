@@ -5,6 +5,7 @@
 #include "props.h"
 
 void _chbounce_entrypoint_2(f32);
+void _chbounce_entrypoint_5(u16, s32);
 void _chbounce_entrypoint_6(s32, f32*);
 Actor* _chbounce_entrypoint_7(s32, f32*, PropId);
 
