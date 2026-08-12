@@ -97,6 +97,14 @@ void func_800BABB0(s32 arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E93440/func_800BABB8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E93440/func_800BBCB8.s")
+s32 func_800BBCB8(f32* arg0, f32* arg1, f32 arg2, s32 arg3, s32* arg4)
+{
+    s32 temp_v0;
+
+    temp_v0 = func_800B53A4(arg3);
+    func_800BABB8(temp_v0, arg0, arg1, arg2, arg4);
+    func_800BA22C(temp_v0, arg3);
+    return temp_v0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E93440/func_800BBD18.s")
