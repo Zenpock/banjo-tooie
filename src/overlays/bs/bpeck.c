@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/bpeck.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bpeck/bsbpeck_entrypoint_0.s")
 

@@ -31,7 +31,7 @@ s32 func_80800000_bsblongleg(PlayerState* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_5.s")
 
-void bsblongleg_entrypoint_6()
+void bsblongleg_entrypoint_6(void)
 {
     func_80800204_bsblongleg();
 }
@@ -42,7 +42,7 @@ void bsblongleg_entrypoint_6()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_9.s")
 
-void bsblongleg_entrypoint_10()
+void bsblongleg_entrypoint_10(void)
 {
     func_80800204_bsblongleg();
 }
@@ -76,7 +76,7 @@ void bsblongleg_entrypoint_18(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_21.s")
 
-void bsblongleg_entrypoint_22()
+void bsblongleg_entrypoint_22(void)
 {
     func_80800204_bsblongleg();
 }
@@ -88,6 +88,7 @@ void bsblongleg_entrypoint_24(s32 arg0)
     _bsrest_entrypoint_14();
     func_80800204_bsblongleg(arg0);
 }
+
 void bsblongleg_entrypoint_25(s32 arg0)
 {
     func_8080013C_bsblongleg();
@@ -106,7 +107,7 @@ void bsblongleg_entrypoint_28(s32 arg0)
 
 void bsblongleg_entrypoint_30(s32 arg0)
 {
-    _bsdrone_entrypoint_2();
+    _bsdrone_entrypoint_2(arg0);
     func_80800204_bsblongleg(arg0);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_31.s")

@@ -15,6 +15,8 @@ typedef enum bs_state_e {
 
     BS_STATE_20_LANDING = 0x20,
 
+    BS_STATE_24 = 0x24, // Fly
+
     BS_STATE_2F_FALL = 0x2F,
 
     BS_STATE_3D_FALL_TUMBLING = 0x3D,
