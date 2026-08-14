@@ -32,6 +32,8 @@ typedef struct bs_kazfly_s {
 #include "overlays/ba/boost.h"
 #include "overlays/bs/drone.h"
 
+#include "nc/ba/die.h"
+
 #include "core1/1E29B60.h"
 #include "core1/1E2B200.h"
 
@@ -58,8 +60,6 @@ typedef struct bs_kazfly_s {
 #include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
 #include "core2/1ECB9F0.h"
-
-#include "nc/ba/die.h"
 
 // Code
 void func_80800000_bsbfly(PlayerState*);
