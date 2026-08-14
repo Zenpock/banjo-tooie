@@ -11,19 +11,22 @@ typedef struct bs_kazfly_s {
     u8 unk1C;
 } BsKazFly;
 
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/yaw.h"
-#include "overlays/ba/fpctrl.h"
+#include "overlays/ba/anim.h"
+#include "overlays/ba/dust.h"
 #include "overlays/ba/flag.h"
 #include "overlays/ba/fly.h"
+#include "overlays/ba/fpctrl.h"
+#include "overlays/ba/input.h"
+#include "overlays/ba/key.h"
+#include "overlays/ba/motor.h"
+#include "overlays/ba/physics.h"
+#include "overlays/ba/playerstate.h"
 #include "overlays/ba/roll.h"
 #include "overlays/ba/statemem.h"
-#include "overlays/ba/physics.h"
 #include "overlays/ba/stick.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/key.h"
-#include "overlays/ba/input.h"
+#include "overlays/ba/sudie.h"
 #include "overlays/ba/timer.h"
+#include "overlays/ba/yaw.h"
 
 #include "overlays/bs/state.h"
 #include "overlays/ba/boost.h"
@@ -35,9 +38,12 @@ typedef struct bs_kazfly_s {
 #include "core2/anctrl.h"
 
 #include "core2/1E66990.h"
+#include "core2/1E67DA0.h"
 #include "core2/1E6B900.h"
 #include "core2/1E6F080.h"
 #include "core2/1E75710.h"
+#include "core2/1E76500.h"
+#include "core2/1E76880.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
 #include "core2/1E78BF0.h"
@@ -51,7 +57,9 @@ typedef struct bs_kazfly_s {
 #include "core2/1EB5980.h"
 #include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
+#include "core2/1ECB9F0.h"
 
+#include "nc/ba/die.h"
 
 // Code
 void func_80800000_bsbfly(PlayerState*);
@@ -71,37 +79,38 @@ void func_808009D0_bsbfly(PlayerState*);
 void func_80800A24_bsbfly(PlayerState*, s32);
 void func_80800C38_bsbfly(PlayerState*);
 void func_80800D50_bsbfly(PlayerState*);
-enum bs_state_e func_80800D80_bsbfly(PlayerState*, enum bs_state_e);
+s32 func_80800D80_bsbfly(PlayerState*, s32);
 void func_80800F10_bsbfly(PlayerState*);
 void func_80801138_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_2(s32);
-// func_80801178_bsbfly
-// func_80801208_bsbfly
-// func_80801334_bsbfly
+void func_80801178_bsbfly(PlayerState*);
+void func_80801208_bsbfly(PlayerState*);
+void func_80801334_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_3(s32);
-// func_8080145C_bsbfly
-// func_808014E8_bsbfly
-// func_808015C4_bsbfly
-// func_808016B4_bsbfly
-// func_8080183C_bsbfly
+void func_8080145C_bsbfly(PlayerState*);
+void func_808014E8_bsbfly(PlayerState*);
+void func_808015C4_bsbfly(PlayerState*);
+void func_808016B4_bsbfly(PlayerState*);
+void func_8080183C_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_4(s32);
-// func_8080188C_bsbfly
-// func_808018D0_bsbfly
-// func_808018F4_bsbfly
+void func_8080188C_bsbfly(PlayerState*);
+void func_808018D0_bsbfly(PlayerState*);
+void func_808018F4_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_5(s32);
-// func_8080193C_bsbfly
-// func_80801980_bsbfly
-// func_808019A4_bsbfly
+void func_8080193C_bsbfly(PlayerState*);
+void func_80801980_bsbfly(PlayerState*);
+void func_808019A4_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_6(s32);
-// func_808019EC_bsbfly
-// func_80801A1C_bsbfly
+void func_808019EC_bsbfly(PlayerState*);
+void func_80801A1C_bsbfly(PlayerState*);
 void func_80801A44_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_7(s32);
-// func_80801A80_bsbfly
-// func_80801AEC_bsbfly
+void func_80801A80_bsbfly(PlayerState*);
+void func_80801AEC_bsbfly(PlayerState*);
+void func_80801B80_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_8(s32);
-// func_80801BB4_bsbfly
-// func_80801C58_bsbfly
+void func_80801BB4_bsbfly(PlayerState*);
+void func_80801C58_bsbfly(PlayerState*);
 void func_80801C9C_bsbfly(PlayerState*);
 void func_80801CBC_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_9(s32);
