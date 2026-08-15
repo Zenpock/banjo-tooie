@@ -10,20 +10,30 @@
 
 f32 func_8009E138(PlayerState *, s32);
 void func_8009E154(PlayerState *, s32, f32 *);
+void func_8009E388(s32);
+// func_8009E390
 void func_8009E474(PlayerState *);
 void func_8009E4AC(PlayerState *);
+// func_8009E4E0
+void func_8009E4FC(PlayerState*, s32, f32, f32, f32);
 void func_8009E53C(PlayerState *, s32, f32);
 void func_8009E55C(PlayerState *, s32, f32);
 void func_8009E5A4(PlayerState *, s32, s32);
+s32 func_8009E5C0(void);
+void bs_setState(PlayerState*, BanjoStateId);
 s32 func_8009E674(PlayerState*, s32);
+s32 func_8009E69C(PlayerState *, s32);
+s32 func_8009E6C4(PlayerState *, s32);
 s16 func_8009E6EC(PlayerState *);
 s32 bs_getCurrentState(PlayerState *);
 s32 bs_getNextState(PlayerState *);
 s32 bs_getPreviousState(PlayerState *);
-s32 func_8009E69C(PlayerState *, s32);
-s32 func_8009E6C4(PlayerState *, s32);
+// func_8009E71C
 s32 func_8009E74C(PlayerState *, s32);
 s32 func_8009E77C(PlayerState *, s32);
+// func_8009E7AC
+// func_8009E7C8
 void func_8009E830(PlayerState *, s32);
+// func_8009E83C
 
 #endif // __CORE2_1E77A20_H__
