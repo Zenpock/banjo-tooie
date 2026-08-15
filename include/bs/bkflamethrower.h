@@ -19,7 +19,7 @@
 
 enum bs_state_e _bsstand_entrypoint_8(PlayerState*, enum bs_state_e);
 
-/* .code */
+// Code
 void bsbkflamethrower_entrypoint_0(PlayerState*, f32*, f32*);
 void func_80800094_bsbkflamethrower(PlayerState*, u32);
 void bsbkflamethrower_entrypoint_1(PlayerState*);

@@ -23,7 +23,7 @@
 #include "core2/1EB2840.h"
 
 // CODE
-// void bsbpeck_entrypoint_0(PlayerState*);
+void bsbpeck_entrypoint_0(PlayerState*);
 void func_80800168_bsbpeck(PlayerState*);
 void bsbpeck_entrypoint_1(PlayerState*);
 void bsbpeck_entrypoint_2(PlayerState*);

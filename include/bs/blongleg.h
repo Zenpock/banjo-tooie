@@ -28,6 +28,7 @@
 #include "core2/1EA0AA0.h"
 #include "core2/1ECA640.h"
 
+// Code
 s32 func_80800000_bsblongleg(PlayerState*);
 void func_80800020_bsblongleg(PlayerState*, s32);
 void func_80800064_bsblongleg(PlayerState*);

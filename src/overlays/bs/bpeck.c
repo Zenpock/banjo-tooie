@@ -2,6 +2,7 @@
 
 extern s32 D_808004A0_bsbpeck[];
 
+/* .code */
 void bsbpeck_entrypoint_0(PlayerState* self)
 {
     s32 previous_state;

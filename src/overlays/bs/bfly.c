@@ -37,7 +37,8 @@ void func_808000AC_bsbfly(PlayerState* self)
 
 void func_80800128_bsbfly(PlayerState* self)
 {
-    if (!func_8009E77C(self, 9)) {
+    if (!func_8009E77C(self, 9))
+    {
         _bastatemem_entrypoint_0(self, 0x20);
         _bafly_entrypoint_5(self);
         func_808000AC_bsbfly(self);
@@ -48,7 +49,8 @@ void func_80800128_bsbfly(PlayerState* self)
 
 void func_80800188_bsbfly(PlayerState* self)
 {
-    if (!func_8009E74C(self, 9)) {
+    if (!func_8009E74C(self, 9))
+    {
         _bafly_entrypoint_4(self);
         _bastatemem_entrypoint_1(self);
         baphysics_reset_gravity(self);
@@ -70,7 +72,8 @@ void func_80800248_bsbfly(PlayerState* self)
 {
     baanim_playForDuration_once(self, 0x45, 1.4f);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_6_AIRBORN);
-    if (bastick_distance(self) != 0.0f) {
+    if (bastick_distance(self) != 0.0f)
+    {
         yaw_setIdeal(self, bastick_getAngleRelativeToBanjo(self));
     }
     baphysics_set_target_yaw(self, yaw_getIdeal(self));
@@ -155,7 +158,7 @@ void func_8080050C_bsbfly(PlayerState* self)
 
     baanim_playForDuration_loopSmooth(self, 0x38, 0.62f);
     func_8009FFD8(self, 1, 1, 3, 3);
-    if (baflag_isTrue(self, 9) != 0) {
+    if (baflag_isTrue(self, 9)) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
     } else {
         baphysics_set_target_horizontal_velocity(self, 600.0f);
@@ -517,15 +520,15 @@ void func_80801178_bsbfly(PlayerState* self)
 
 void func_80801208_bsbfly(PlayerState* self)
 {
-    AnimCtrl* temp_v0;
+    AnimCtrl* anim_ctrl;
 
-    temp_v0 = baanim_getAnimCtrlPtr(self);
-    anctrl_reset(temp_v0);
-    func_8008B1C8(temp_v0, 0.3f);
-    anctrl_setIndex(temp_v0, 0xCC);
-    anctrl_setDuration(temp_v0, 0.38f);
-    anctrl_setPlaybackType(temp_v0, 2);
-    anctrl_start(temp_v0);
+    anim_ctrl = baanim_getAnimCtrlPtr(self);
+    anctrl_reset(anim_ctrl);
+    func_8008B1C8(anim_ctrl, 0.3f);
+    anctrl_setIndex(anim_ctrl, 0xCC);
+    anctrl_setDuration(anim_ctrl, 0.38f);
+    anctrl_setPlaybackType(anim_ctrl, 2);
+    anctrl_start(anim_ctrl);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_3_LOCKED_ROTATION);
     func_800A0CF4(self, 1);
     func_80800128_bsbfly(self);
@@ -634,11 +637,11 @@ void func_808015C4_bsbfly(PlayerState* self)
 
 void func_808016B4_bsbfly(PlayerState* self)
 {
-    enum bs_state_e sp24;
+    enum bs_state_e next_state;
     AnimCtrl* anim_ctrl;
     s32 temp_v0;
 
-    sp24 = BS_STATE_0_INVALID;
+    next_state = BS_STATE_0_INVALID;
     anim_ctrl = baanim_getAnimCtrlPtr(self);
     func_8009D3A8(self, 0);
     switch (self->unk160.word) {
@@ -660,13 +663,13 @@ void func_808016B4_bsbfly(PlayerState* self)
             break;
         case 1:
             if (anctrl_isAt(anim_ctrl, 0.63f) != 0) {
-                sp24 = BS_STATE_20_LANDING;
+                next_state = BS_STATE_20_LANDING;
             }
             if (anctrl_isStopped(anim_ctrl) != 0) {
-                sp24 = BS_STATE_1_IDLE;
+                next_state = BS_STATE_1_IDLE;
             }
             if (func_8008DD04(self) != 0) {
-                sp24 = BS_STATE_2F_FALL;
+                next_state = BS_STATE_2F_FALL;
             }
             break;
         case 2:
@@ -676,7 +679,7 @@ void func_808016B4_bsbfly(PlayerState* self)
             }
             break;
     }
-    bs_setState(self, sp24);
+    bs_setState(self, next_state);
 }
 
 void func_8080183C_bsbfly(PlayerState* self)
