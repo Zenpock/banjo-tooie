@@ -2,10 +2,8 @@
 
 extern s32 core1_BSS_END;
 extern s32 core1_BSS_START;
-extern s32 func_80013620();
 extern s32 D_800459CC;
 extern s32 D_8007E994;
-extern s32 func_8001E830();
 
 s32 func_80012030(s32 arg0) {
     bzero(&core1_BSS_START, (s32)&core1_BSS_END - (s32)&core1_BSS_START);

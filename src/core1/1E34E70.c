@@ -1,6 +1,6 @@
 #include "common.h"
+#include "core1/1E34F80.h"
 
-s32 func_8001DA00(s32, s32);                              /* extern */
 extern s32 D_8007D160;
 
 s32 func_8001D340(s32 arg0, s32 arg1, s32 arg2) {

@@ -4,6 +4,8 @@
 #include "common.h"
 #include <ultra64.h>
 
+s32 func_80013620();
+s32 func_8001E830(void);
 void func_8001209C(s32);
 void func_80012128();
 void func_800121D0();

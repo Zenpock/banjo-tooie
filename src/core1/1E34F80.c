@@ -1,4 +1,5 @@
 #include "common.h"
+#include "core1/1E34F80.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E34F80/func_8001D450.s")
 
@@ -24,7 +25,6 @@ void func_8001D9AC(u16 num) {
     }
 }
 
-void func_8001D98C(u16);
 void func_8001D9CC(u16 arg0, u16 arg1) {
     func_8001D98C(arg0);
     func_8001D9AC(arg1);

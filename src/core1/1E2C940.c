@@ -1,5 +1,6 @@
 #include "types.h"
 #include "gfx.h"
+#include "core1/1E2C940.h"
 
 extern s32 D_80078F88;
 extern s32 D_8007913C;
@@ -7,7 +8,6 @@ extern OSMesgQueue D_80079010;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014E10.s")
 
-s32 func_80014E10(s32, s32);                            /* extern */
 extern s32 D_80078F80;
 extern s32 D_80078F84;
 
