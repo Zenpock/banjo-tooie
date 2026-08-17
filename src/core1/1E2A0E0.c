@@ -17,23 +17,61 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_80012D84.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_80012EA0.s")
+extern s32 D_8003CA40;
+extern OSThread D_800459F8;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_80012EDC.s")
+void func_80012EA0(void) {
+    if (D_8003CA40 == 0) {
+        D_8003CA40 = 1;
+        osStartThread(&D_800459F8);
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_80012EE8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_80012EF4.s")
+extern s32 D_80046A78;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_80012F00.s")
+s32* func_80012EDC(void) {
+    return &D_80046A78;
+}
+
+
+extern s32 D_80069488;
+
+s32* func_80012EE8(void) {
+    return &D_80069488;
+}
+
+
+extern s32 D_80069568;
+
+s32* func_80012EF4(void) {
+    return &D_80069568;
+}
+
+
+extern s32 D_80045BB8;
+
+s32* func_80012F00(void) {
+    return &D_80045BB8;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_80012F0C.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_80012F34.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_80012F60.s")
+extern s32 D_8007695C;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_80012F6C.s")
+s32* func_80012F60(void) {
+    return &D_8007695C;
+}
+
+
+extern s32 D_80076940;
+
+s32* func_80012F6C(void) {
+    return &D_80076940;
+}
+
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/rom_dma_read.s")
 
