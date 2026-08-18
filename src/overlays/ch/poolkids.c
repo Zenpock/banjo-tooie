@@ -1,16 +1,17 @@
-#include "common.h"
+#include "ch/poolkids.h"
 
 extern ActorData D_808013F0_chpoolkids;
+extern ActorData D_80801438_chpoolkids;
+extern ActorData D_80801480_chpoolkids;
+
 ActorData* chpoolkids_entrypoint_0()
 {
     return &D_808013F0_chpoolkids;
 }
-extern ActorData D_80801438_chpoolkids;
 ActorData* chpoolkids_entrypoint_1()
 {
     return &D_80801438_chpoolkids;
 }
-extern ActorData D_80801480_chpoolkids;
 ActorData* chpoolkids_entrypoint_2()
 {
     return &D_80801480_chpoolkids;

@@ -11,6 +11,7 @@ void func_800DF41C(s32);
 void func_800DF428(f32);
 void func_800DF440(s32);
 void func_800DF464(f32);
+void func_800DF500(f32, f32, f32);
 void func_800DF5D8(u32, u32, u32, s32);
 void func_800DF72C(s32);
 void func_800DF738(s32);
