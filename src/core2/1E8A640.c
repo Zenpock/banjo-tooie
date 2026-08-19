@@ -1,9 +1,18 @@
 #include "common.h"
+#include "core2/1E8A640.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8A640/func_800B0D50.s")
+s16 func_800B0D50(s16* arg0) {
+    return *arg0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8A640/func_800B0D58.s")
+s16 func_800B0D58(unkStruct800B0D58* a0) {
+    return a0->unk2;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8A640/func_800B0D60.s")
+u8* func_800B0D60(unkStruct800B0D60* a0) {
+    return (u8*)a0 + a0->unk8;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8A640/func_800B0D6C.s")
+s32 func_800B0D6C(s32 arg0, s32 arg1) {
+    return 0xC + arg0 + (arg1 * 8);
+}
