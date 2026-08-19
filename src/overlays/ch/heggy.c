@@ -91,12 +91,12 @@ void func_8080015C_chheggy(Actor* arg0)
         sp64 = func_80101E14(arg0, 0.46f) != 0 || func_80101E14(arg0, 0.54f) != 0 || func_80101E14(arg0, 0.6f) != 0;
         if (func_80101E14(arg0, 0.035f) != 0)
         {
-            func_800EE7F8(sp6C, arg0->position);
+            ml_vec3f_copy(sp6C, arg0->position);
             sp68 = 1;
         }
         else if (func_80101E14(arg0, 0.92f) != 0)
         {
-            func_800EE7F8(sp6C, arg0->position);
+            ml_vec3f_copy(sp6C, arg0->position);
             sp68 = 1;
         }
         break;
@@ -109,8 +109,8 @@ void func_8080015C_chheggy(Actor* arg0)
         func_800EEC30(sp3C, 25.0f, arg0->rotation[1] - 180.0f, 150.0f);
         func_800BA930(sp58, (s16)sp48[0], (s16)sp48[1], (s16)sp48[2], sp3C[0], sp3C[1], sp3C[2]);
         func_800BA930(sp54, (s16)sp48[0], (s16)sp48[1], (s16)sp48[2], sp3C[0], sp3C[1], sp3C[2]);
-        func_800EF334(sp48, -0.5f);
-        func_800EF334(sp3C, -0.5f);
+        ml_vec3f_apply_scale(sp48, -0.5f);
+        ml_vec3f_apply_scale(sp3C, -0.5f);
         func_800BA450(sp58, (s16)sp48[0], -0xC8, (s16)sp48[2], sp3C[0], -0x190, sp3C[2]);
         func_800BA450(sp54, (s16)sp48[0], -0xC8, (s16)sp48[2], sp3C[0], -0x190, sp3C[2]);
         func_800BABB8(sp58, sp6C, NULL, 1.0f, &D_80801E38_chheggy);
@@ -223,7 +223,7 @@ void func_808008C4_chheggy(Actor* arg0)
         _gspropctrl_entrypoint_11(banjoPathProps[var_s0], &sp3C);
         temp_s5->unk48[temp_s1_2] = _glsplinefind_entrypoint_3(&sp3C);
     }
-    func_800EE7F8(&temp_s5->unk3C, arg0->position);
+    ml_vec3f_copy(&temp_s5->unk3C, arg0->position);
 }
 
 void func_808009DC_chheggy(Actor* arg0)
@@ -496,8 +496,8 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
     case 13:
         func_80105634(arg0);
         arg0->unk58 = 1.0f;
-        func_800EE7F8(sp34->unk64, arg0->position);
-        func_800EE7F8(sp34->unk70, func_80106790(arg0->unk3C)->position);
+        ml_vec3f_copy(sp34->unk64, arg0->position);
+        ml_vec3f_copy(sp34->unk70, func_80106790(arg0->unk3C)->position);
         if (arg0->unk64_20)
         {
             func_808006C4_chheggy(arg0, arg0->unk0, 4, 0x30);
@@ -510,7 +510,7 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
     case 15:
         func_8010114C(arg0->unk3C, 0x18, 0);
         arg0->unk58 = 1.0f;
-        func_800EE7F8(sp34->unk64, arg0->position);
+        ml_vec3f_copy(sp34->unk64, arg0->position);
         if (arg0->unk64_20)
         {
             func_800C7A68(func_800D7520(sp34->unk48[1]), 0.0f, sp34->unk70);

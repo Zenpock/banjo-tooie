@@ -115,7 +115,7 @@ void func_80800240_chclockworkmouse(Actor *actor, s32 arg1) {
     var_s3 = _susplinet_entrypoint_12(splineMemory);
     var_s4 = _susplinet_entrypoint_13(splineMemory);
     for (var_s0 = 0; var_s0 < D_80803CE8_chclockworkmouse[temp_s0];) {
-        func_800EE7F8(sp6C[0]->f, D_80803CD8_chclockworkmouse[temp_s0][var_s0].unk0);
+        ml_vec3f_copy(sp6C[0]->f, D_80803CD8_chclockworkmouse[temp_s0][var_s0].unk0);
         var_s3[0] = D_80803CD8_chclockworkmouse[temp_s0][var_s0].unk10;
         var_s4[0] = -1;
         sp68[0][0] = D_80803CD8_chclockworkmouse[temp_s0][var_s0].unkC;
@@ -183,8 +183,8 @@ void func_808004B0_chclockworkmouse(Actor* actor) {
         }
         func_800EF4E4(sp50, temp_s0->unk10C, temp_s0->unk110, sp50[0], sp50[1], sp50[2]);
         func_800EF4E4(sp38, temp_s0->unk10C, temp_s0->unk110, 0, 75.0f, 150.0f);
-        func_800EF04C(sp50, sp68->position);
-        func_800EF04C(sp38, sp68->position);
+        ml_vec3f_add(sp50, sp68->position);
+        ml_vec3f_add(sp38, sp68->position);
         func_800A516C(sp44, sp38, sp50);
         _capod_entrypoint_1(sp50, sp44);
     }
@@ -350,7 +350,7 @@ void func_80800C14_chclockworkmouse(Actor *actor) {
 
     func_800904C8(0x28);
     func_800EEB9C(sp1C, actor->rotation[1], 120.0f);
-    func_800EF04C(sp1C, actor->position);
+    ml_vec3f_add(sp1C, actor->position);
     func_800903D0(sp1C);
 }
 
@@ -693,7 +693,7 @@ void func_808018BC_chclockworkmouse(Actor* actor) {
         } else {
             prop = _gccubesearch_entrypoint_0(PROP_1F6_JIGGY_SPAWN, actor);
         }
-        func_800EE88C(&sp24->unk114, prop->position);
+        ml_vec3s_to_vec3f(&sp24->unk114, prop->position);
         if ((actor->unk64_19) && (func_80800090_chclockworkmouse() == 2)) {
             func_80103140(actor, 0x8A1, ((u16**)actor)[0][0xB]);
         }
@@ -729,7 +729,7 @@ void func_80801B44_chclockworkmouse(Actor *actor, s32 arg1, s32 arg2) {
 void func_80801B90_chclockworkmouse(Actor *actor, s32 arg1) {
     f32 sp1C[3];
 
-    func_800EE7F8(sp1C, actor->position);
+    ml_vec3f_copy(sp1C, actor->position);
     sp1C[1] += 75.0f;
     if ((arg1 == 0x47) || (arg1 == 0x4B)) {
         _capod_entrypoint_19(sp1C);
@@ -1119,9 +1119,9 @@ s32 func_8080297C_chclockworkmouse(Actor* actor) {
     f32 sp1C;
 
     sp1C = time_getDelta();
-    func_800EE7F8(sp38, actor->position);
+    ml_vec3f_copy(sp38, actor->position);
     sp38[1] += 50.0f;
-    func_800EE7F8(sp2C, actor->position);
+    ml_vec3f_copy(sp2C, actor->position);
     sp2C[1] -= 50.0f;
     if (func_800BEF00(sp38, sp2C, sp20, 0x20020) == 0 || sp2C[1] < actor->position[1]) {
         actor->position[1] -= 250.0f * sp1C;

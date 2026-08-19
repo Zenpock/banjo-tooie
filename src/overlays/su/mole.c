@@ -26,7 +26,7 @@ void sumole_entrypoint_0(Actor* arg0, s32 arg1)
     temp_v0 = _gccubesearch_entrypoint_1(0x387U, arg0->position);
     if (temp_v0 == NULL)
     {
-        func_800EE7F8(MOLE_DATA(arg0)->unk0, arg0->position);
+        ml_vec3f_copy(MOLE_DATA(arg0)->unk0, arg0->position);
         func_800EF1B8(MOLE_DATA(arg0)->unk0, arg0->rotation[1] - 90.0f, 200.0f);
     }
     else
@@ -70,7 +70,7 @@ void func_808001E0_sumole(Actor* arg0, s32 arg1)
     f32 sp2C[3];
 
 
-    func_800EE7F8(sp2C, arg0->position);
+    ml_vec3f_copy(sp2C, arg0->position);
     func_800EF1B8(sp2C, arg0->rotation[1] + 15.0f, 150.0f);
     switch (arg1)
     {
@@ -787,15 +787,15 @@ void sumole_entrypoint_18(Actor* arg0, f32 arg1)
     if ((arg0->unk6C_0 == 2) || (arg0->unk6C_0 == 4))
     {
         func_8010D254(sp2C);
-        func_800EF3DC(sp2C, arg0->position);
-        temp_f0 = func_800EEF94(sp2C);
+        ml_vec3f_subtract(sp2C, arg0->position);
+        temp_f0 = ml_vec3f_magnitude(sp2C);
         if (temp_f0 != 0.0f)
         {
             temp_f0 = arg1 / temp_f0;
             if (temp_f0 < 1.0f)
             {
-                func_800EF334(sp2C, temp_f0);
-                func_800EF04C(sp2C, arg0->position);
+                ml_vec3f_apply_scale(sp2C, temp_f0);
+                ml_vec3f_add(sp2C, arg0->position);
                 func_800907C0(sp2C);
             }
         }

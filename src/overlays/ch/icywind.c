@@ -46,7 +46,7 @@ void func_80800044_chicywind(Actor* arg0)
     case 2:
         if (func_800D9078(&arg0->unk58) != 0)
         {
-            func_800EE7F8(sp30, arg0->position);
+            ml_vec3f_copy(sp30, arg0->position);
             func_800EF1B8(sp30, arg0->rotation[1], -200.0f);
             func_800BBCB8(arg0->position, sp30, 1.0f, 1, &D_80800358_chicywind);
             arg0->unk58 = func_800DC178(0.15f, 0.2f);
@@ -84,7 +84,7 @@ void func_808001AC_chicywind(Actor* arg0)
         break;
     }
     func_800F5A00(characterIndex, sp40);
-    sp38 = func_800F10B4(func_800EEAD4(sp40, arg0->position), 1000.0f, 1800.0f, 1200.0f, 300.0f) * (1.0f / sp34);
+    sp38 = func_800F10B4(ml_vec3f_distance(sp40, arg0->position), 1000.0f, 1800.0f, 1200.0f, 300.0f) * (1.0f / sp34);
     func_800EEB9C(sp4C, func_800F1DF4(arg0->position, sp40), sp38);
     func_800F48BC(characterIndex, &sp4C);
 }

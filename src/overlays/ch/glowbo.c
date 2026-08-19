@@ -80,7 +80,7 @@ void func_8080013C_chglowbo(Actor* arg0)
     {
         arg0->unk58 = 0.0f;
         func_80101FDC(arg0, 0xA);
-        func_800EE7F8(&GLOWBO_DATA(arg0)->unk10, arg0->position);
+        ml_vec3f_copy(&GLOWBO_DATA(arg0)->unk10, arg0->position);
     }
     else if (arg0->unk74_29)
     {
@@ -156,7 +156,7 @@ void func_808002F4_chglowbo(Actor* arg0)
                 func_8010C3A8(arg0, 0x305425, func_800F3780(func_80101F24(arg0), &D_808013B0_chglowbo, 3));
                 if (sp74->unk4 != 0)
                 {
-                    func_800EE7F8(sp54, arg0->position);
+                    ml_vec3f_copy(sp54, arg0->position);
                     sp54[1] += 150.0f;
                     func_800C8CB8(sp74->unk4, sp54);
                     func_80800000_chglowbo(arg0);
@@ -175,7 +175,7 @@ void func_808002F4_chglowbo(Actor* arg0)
                 break;
 
             case 0xa:
-                func_800EE7F8(arg0->position, &GLOWBO_DATA(arg0)->unk10);
+                ml_vec3f_copy(arg0->position, &GLOWBO_DATA(arg0)->unk10);
                 func_800EF1B8(arg0->position, arg0->rotation[1] - 90.0f, arg0->unk74_7);
                 arg0->rotation[1] += (time_getDelta() * 100.0f) * func_800F3780(func_80101F24(arg0), &D_808013B0_chglowbo, 3);
                 if (sp74->unk4 != 0)
@@ -318,7 +318,7 @@ void func_80800B10_chglowbo(Actor* arg0)
         {
             GLOWBO_DATA(arg0)->unk14 += GLOWBO_DATA(arg0)->unk1C * time_getDelta();
             func_800EFCD8(&GLOWBO_DATA(arg0)->unk10, arg0->unk54, GLOWBO_DATA(arg0)->unkC);
-            func_800EF04C(arg0->position, &GLOWBO_DATA(arg0)->unk10);
+            ml_vec3f_add(arg0->position, &GLOWBO_DATA(arg0)->unk10);
             arg0->unk6C_0 += 1;
         }
         else if (arg0->unk64_19)
@@ -392,7 +392,7 @@ void func_80800E28_chglowbo(Actor* arg0)
     arg0->rotation[1] = (func_80090010() + func_800DC178(-110.0f, 110.0f));
     func_8010D254(sp3C);
     func_800EEB9C(GLOWBO_DATA(arg0)->unk0, arg0->rotation[1], 400.0f);
-    func_800EF04C(GLOWBO_DATA(arg0)->unk0, arg0->position);
+    ml_vec3f_add(GLOWBO_DATA(arg0)->unk0, arg0->position);
     GLOWBO_DATA(arg0)->unk0[1] = (f32)(sp3C[1] + 20.0f);
     GLOWBO_DATA(arg0)->unk1C = -80.0f;
     GLOWBO_DATA(arg0)->unk14 = 30.0f;
@@ -481,7 +481,7 @@ void func_80801258_chglowbo(Actor* arg0)
     f32 var_f20 = GLOWBO_DATA(arg0)->unk14;
     s32 var_s1 = 0;
 
-    func_800EE7F8(sp44, arg0->position);
+    ml_vec3f_copy(sp44, arg0->position);
 
     while ((GLOWBO_DATA(arg0)->unk0[1] < sp44[1]) || (var_f20 > 0.0f))
     {

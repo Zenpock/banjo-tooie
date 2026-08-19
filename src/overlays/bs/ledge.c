@@ -29,7 +29,7 @@ void func_80800040_bsledge(PlayerState *self, f32 arg1[3]) {
 
     stick_distance = bastick_distance(self);
     if (stick_distance == 0.0f) {
-        func_800EFD24(arg1);
+        ml_vec3f_clear(arg1);
         return;
     }
     angle = bastick_getAngleRelativeToBanjo(self);
@@ -40,7 +40,7 @@ void func_80800040_bsledge(PlayerState *self, f32 arg1[3]) {
         sp18 = 180.0f - sp18;
     }
     if (mlAbsF(sp18) < 10.0f) {
-        func_800EFD24(arg1);
+        ml_vec3f_clear(arg1);
         return;
     }
     self->unk15C.word = sp30 < 0.0f ? 1 : -1;
@@ -185,7 +185,7 @@ void func_808005E0_bsledge(PlayerState *self) {
     }
     if (baanim_getTimer(self) > 0.6329f) {
         func_80800040_bsledge(self, sp20);
-        if (func_800EEF24(sp20) != 0) {
+        if (ml_vec3f_is_not_zero(sp20) != 0) {
             sp2C = BS_STATE_A7;
         }
         if (func_808003D0_bsledge(self) != 0) {

@@ -491,7 +491,7 @@ void func_80800D9C_chdippy(Actor* arg0)
                 if (sp54 != 0)
                 {
                     sp44 = func_800B53A4(sp54);
-                    func_800EE7F8(sp48, arg0->position);
+                    ml_vec3f_copy(sp48, arg0->position);
                     sp48[1] += 6000.0f;
                     func_800BA5A8(sp44, 0x200);
                     func_800BA714(sp44, 0x1F4, 0x1F4);

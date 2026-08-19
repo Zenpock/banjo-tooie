@@ -446,7 +446,7 @@ void func_800D07CC(s32 arg0, s32 arg1, f32* arg2)
         temp_v0 = func_800CFC5C(arg0);
         if (temp_v0 != -1)
         {
-            func_800EE7F8(arg2, D_8012B180[temp_v0].coords);
+            ml_vec3f_copy(arg2, D_8012B180[temp_v0].coords);
         }
     }
 }
@@ -710,12 +710,12 @@ void func_800D1000(u32 arg0, u32 arg1, f32* spawnCoords, u32 spawnStyle, Unk8013
         func_800D053C(arg0, arg1);
         if (spawnCoords != NULL)
         {
-            func_800EE904(sp44, spawnCoords);
+            ml_vec3f_to_vec3i(sp44, spawnCoords);
         }
         else
         {
             func_800D07CC(arg0, arg1, sp34);
-            func_800EE904(sp44, sp34);
+            ml_vec3f_to_vec3i(sp44, sp34);
         }
         _chbaddiesetup_entrypoint_6(&func_800D0F9C, (arg0 << 0x10) | (arg1 & 0xFFFF), sp44[0], sp44[1], sp44[2], spawnStyle, arg4);
     }
@@ -732,7 +732,7 @@ void func_800D1218(s32 arg0, s32 arg1, f32* arg2)
     temp_v0 = func_800D0634(arg0, arg1);
     if (temp_v0 != 0) 
     {
-        func_800EE7F8(arg2, func_80106790((Unk80132ED0*)temp_v0)->position);
+        ml_vec3f_copy(arg2, func_80106790((Unk80132ED0*)temp_v0)->position);
     }
 }
 
@@ -746,7 +746,7 @@ void func_800D1254(s32 arg0, s32 arg1, f32* arg2)
     if (temp_v0 != 0)
     {
         temp_v0_2 = func_80106790((Unk80132ED0*)temp_v0);
-        func_800EE7F8(temp_v0_2->position, arg2);
+        ml_vec3f_copy(temp_v0_2->position, arg2);
         func_80103014(temp_v0_2);
     }
 }

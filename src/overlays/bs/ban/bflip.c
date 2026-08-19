@@ -85,7 +85,7 @@ void __bsbanbflip_set_substate(PlayerState *self, BanjoStateId next_state) {
             anctrl_start(anctrl);
             baphysics_set_type(self, BA_PHYSICS_3_LOCKED_ROTATION);
             baphysics_set_target_horizontal_velocity(self, 0.0f);
-            func_800EFD24(sp38);
+            ml_vec3f_clear(sp38);
             func_8009BA9C(self, sp38);
             func_8009FE58(self);
             func_800A0CF4(self, 0);

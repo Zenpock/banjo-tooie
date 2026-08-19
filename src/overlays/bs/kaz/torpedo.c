@@ -189,7 +189,7 @@ void func_8080078C_bskaztorpedo(PlayerState *self) {
         func_8009C128(self, sp2C);
         sp38[1] += 50.0f;
         sp2C[1] += 50.0f;
-        temp_f0 = func_800EEB40(sp38, sp2C);
+        temp_f0 = ml_vec3f_distance_sq(sp38, sp2C);
         temp_v0 = self->unk160.word;
         if (temp_v0 != 0) {
             if (temp_f0 < 14400.0f) {

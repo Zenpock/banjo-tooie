@@ -414,7 +414,7 @@ void func_80800C00_chwarppad(Actor* arg0)
     func_8010A828(arg0, 2);
     if ((flag_getValue(FLAG3_9FE_WARPING_VIA_WARPPAD) != 0) && (func_800EA090() == (D_80801080_chwarppad - 0x224)[(WARPPAD_DATA(arg0)->unk10) * 0xC + arg0->unk74_7 * 0xC]))
     {
-        func_800EE7F8(sp30, arg0->position);
+        ml_vec3f_copy(sp30, arg0->position);
         sp30[1] += 15.0f * arg0->scale;
         func_800F608C(sp3C, 1);
         func_800F8294(sp3C, sp30);

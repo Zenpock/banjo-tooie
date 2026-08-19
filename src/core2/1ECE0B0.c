@@ -51,7 +51,7 @@ void func_800F48BC(s32 arg0, f32* arg1)
     sp1C = D_80135490[arg0];
     func_800F4200(sp1C, sp2C);
     func_800EFA20(sp20, arg1, time_getDelta());
-    func_800EF04C(sp2C, sp20);
+    ml_vec3f_add(sp2C, sp20);
     func_800F4648(sp1C, sp2C);
 }
 

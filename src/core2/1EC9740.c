@@ -27,9 +27,9 @@ int position_isWithinRangeOf(f32* arg0, f32 arg1, f32* arg2)
 {
     f32 diff[3];
     //Get Diff
-    func_800EFB24(diff, arg2, arg0);
+    ml_getdiff_vec3f(diff, arg2, arg0);
     //Compare squared length
-    return func_800EEFD4(diff) <= (arg1 * arg1);
+    return ml_vec3f_squared_magnitude(diff) <= (arg1 * arg1);
 }
 
 int func_800F0008(f32* arg0, f32 arg1, f32* arg2, f32 arg3)
@@ -37,9 +37,9 @@ int func_800F0008(f32* arg0, f32 arg1, f32* arg2, f32 arg3)
     f32 diff[3];
     f32 temp_f2;
 
-    func_800EFB24(diff, arg0, arg2);
+    ml_getdiff_vec3f(diff, arg0, arg2);
     temp_f2 = arg1 + arg3;
-    return func_800EEFD4(diff) <= (temp_f2 * temp_f2);
+    return ml_vec3f_squared_magnitude(diff) <= (temp_f2 * temp_f2);
 }
 
 int func_800F0064(f32* arg0, f32 arg1, f32* arg2)
@@ -76,20 +76,20 @@ void func_800F018C(f32* arg0, f32* arg1, f32* arg2, f32* arg3)
     f32 temp_f0;
     f32 temp_f2;
 
-    func_800EFB24(sp34, arg2, arg1);
-    temp_f0 = func_800EEFD4(sp34);
+    ml_getdiff_vec3f(sp34, arg2, arg1);
+    temp_f0 = ml_vec3f_squared_magnitude(sp34);
     if (temp_f0 < D_80125EB0) 
     {
-        func_800EE7F8(arg0, arg1);
+        ml_vec3f_copy(arg0, arg1);
         return;
     }
     temp_f2 = 1.0f / sqrtf(temp_f0);
     sp34[0] *= temp_f2;
     sp34[1] *= temp_f2;
     sp34[2] *= temp_f2;
-    func_800EFB24(sp28, arg3, arg1);
-    func_800EFA20(arg0, sp34, func_800EEAA4(sp28, sp34));
-    func_800EF04C(arg0, arg1);
+    ml_getdiff_vec3f(sp28, arg3, arg1);
+    func_800EFA20(arg0, sp34, ml_vec3f_dot_product(sp28, sp34));
+    ml_vec3f_add(arg0, arg1);
 }
 
 void func_800F0274(f32* dst, f32* arg1, f32* arg2, f32* arg3)
@@ -99,12 +99,12 @@ void func_800F0274(f32* dst, f32* arg1, f32* arg2, f32* arg3)
     f32 length;
     f32 dotProduct;
 
-    func_800EFB24(diff, arg2, arg1);
-    length = func_800EEFD4(diff);
+    ml_getdiff_vec3f(diff, arg2, arg1);
+    length = ml_vec3f_squared_magnitude(diff);
     if (length < D_80125EB4)
     {
         //Copy arg1 into dst
-        func_800EE7F8(dst, arg1);
+        ml_vec3f_copy(dst, arg1);
     }
     else
     {
@@ -112,24 +112,24 @@ void func_800F0274(f32* dst, f32* arg1, f32* arg2, f32* arg3)
         diff[0] *= (1.0f / length);
         diff[1] *= (1.0f / length);
         diff[2] *= (1.0f / length);
-        func_800EFB24(diff2, arg3, arg1);
-        dotProduct = func_800EEAA4(diff2, diff);
+        ml_getdiff_vec3f(diff2, arg3, arg1);
+        dotProduct = ml_vec3f_dot_product(diff2, diff);
         if (dotProduct <= 0.0f)
         {
             //Copy arg1 into dst
-            func_800EE7F8(dst, arg1);
+            ml_vec3f_copy(dst, arg1);
             return;
         }
         if (length <= dotProduct)
         {
             //Copy arg2 into dst
-            func_800EE7F8(dst, arg2);
+            ml_vec3f_copy(dst, arg2);
             return;
         }
         //Store Diff*DotProduct in dst
         func_800EFA20(dst, diff, dotProduct);
         //Add arg1 to dst
-        func_800EF04C(dst, arg1);
+        ml_vec3f_add(dst, arg1);
     }
 }
 
@@ -137,9 +137,9 @@ void func_800F03AC(f32* arg0, f32* arg1, f32* arg2, f32* arg3)
 {
     f32 sp1C[3];
 
-    func_800EFB24(sp1C, arg3, arg1);
-    func_800EFA20(sp1C, arg2, func_800EEAA4(arg2, sp1C));
-    func_800EFB24(arg0, arg3, sp1C);
+    ml_getdiff_vec3f(sp1C, arg3, arg1);
+    func_800EFA20(sp1C, arg2, ml_vec3f_dot_product(arg2, sp1C));
+    ml_getdiff_vec3f(arg0, arg3, sp1C);
 }
 
 void func_800F0410(f32* arg0, f32* arg1, f32* arg2)
@@ -154,27 +154,27 @@ void func_800F0410(f32* arg0, f32* arg1, f32* arg2)
     func_800F0274(sp40, arg1, &arg1[3], arg2);
     func_800F0274(sp34, &arg1[3], &arg1[6], arg2);
     func_800F0274(sp28, &arg1[6], arg1, arg2);
-    sp54 = func_800EEB40(sp40, arg2);
-    sp50 = func_800EEB40(sp34, arg2);
-    temp_f0 = func_800EEB40(sp28, arg2);
+    sp54 = ml_vec3f_distance_sq(sp40, arg2);
+    sp50 = ml_vec3f_distance_sq(sp34, arg2);
+    temp_f0 = ml_vec3f_distance_sq(sp28, arg2);
     if (sp54 < sp50)
     {
         if (temp_f0 < sp54)
         {
-            func_800EE7F8(arg0, sp28);
+            ml_vec3f_copy(arg0, sp28);
         }
         else
         {
-            func_800EE7F8(arg0, sp40);
+            ml_vec3f_copy(arg0, sp40);
         }
     }
     else if (temp_f0 < sp50)
     {
-        func_800EE7F8(arg0, sp28);
+        ml_vec3f_copy(arg0, sp28);
     }
     else
     {
-        func_800EE7F8(arg0, sp34);
+        ml_vec3f_copy(arg0, sp34);
     }
 }
 
@@ -184,9 +184,9 @@ void func_800F0524(f32* arg0, f32* arg1, f32* arg2)
     f32 sp30[3];
     f32 sp24[3];
 
-    func_800EFB24(sp3C, &arg1[3], arg1);
-    func_800EFB24(sp30, &arg1[6], arg1);
-    func_800EE97C(sp24, sp3C, sp30);
+    ml_getdiff_vec3f(sp3C, &arg1[3], arg1);
+    ml_getdiff_vec3f(sp30, &arg1[6], arg1);
+    ml_vec3f_cross_product(sp24, sp3C, sp30);
     func_800EF2A0(sp24);
     func_800F03AC(arg0, arg1, sp24, arg2);
 }
@@ -196,8 +196,8 @@ void func_800F059C(f32* arg0, f32* arg1, f32* arg2)
     f32 sp1C[3];
 
     func_800EFA20(arg0, arg1, -1.0f);
-    func_800EFA20(sp1C, arg2, 2.0f * func_800EEAA4(arg0, arg2));
-    func_800EFB24(arg0, sp1C, arg0);
+    func_800EFA20(sp1C, arg2, 2.0f * ml_vec3f_dot_product(arg0, arg2));
+    ml_getdiff_vec3f(arg0, sp1C, arg0);
 }
 
 s32 func_800F05F8(Vec3f* arg0, Vec3f* arg1, Vec3f* arg2, f32 arg3, f32* arg4)
@@ -250,25 +250,25 @@ s32 func_800F0734(f32* arg0, f32* arg1, f32* arg2, f32 arg3, f32 arg4, f32* arg5
     f32 sp2C;
     f32 temp_fv1;
 
-    func_800EFB24(sp74, arg0, arg2);
-    func_800EFB24(sp68, arg1, arg2);
-    func_800EFB24(sp5C, sp68, sp74);
+    ml_getdiff_vec3f(sp74, arg0, arg2);
+    ml_getdiff_vec3f(sp68, arg1, arg2);
+    ml_getdiff_vec3f(sp5C, sp68, sp74);
     sp48 = (sp74[0] * sp5C[0]) + (sp74[2] * sp5C[2]);
     sp44 = (sp5C[0] * sp5C[0]) + (sp5C[2] * sp5C[2]);
     if (sp44 != 0.0f)
     {
         if (-sp48 / sp44 < 0.0f)
         {
-            func_800EE7F8(sp50, sp74);
+            ml_vec3f_copy(sp50, sp74);
         }
         else if (-sp48 / sp44 < 1.0f)
         {
             func_800EFA20(sp50, sp5C, -sp48 / sp44);
-            func_800EF04C(sp50, sp74);
+            ml_vec3f_add(sp50, sp74);
         }
         else
         {
-            func_800EE7F8(sp50, sp68);
+            ml_vec3f_copy(sp50, sp68);
         }
         temp_f2 = arg3 * arg3;
         sp40 = (sp50[0] * sp50[0]) + (sp50[2] * sp50[2]);
@@ -299,7 +299,7 @@ s32 func_800F0734(f32* arg0, f32* arg1, f32* arg2, f32 arg3, f32 arg4, f32* arg5
     {
         if ((arg0[1] < arg2[1]) && (arg2[1] < arg1[1]))
         {
-            func_800EE7F8(arg5, arg2);
+            ml_vec3f_copy(arg5, arg2);
             func_800EFA4C(arg6, arg2[0], arg2[1] + arg4, arg2[2]);
             return 1;
         }
@@ -307,7 +307,7 @@ s32 func_800F0734(f32* arg0, f32* arg1, f32* arg2, f32 arg3, f32 arg4, f32* arg5
         if ((arg2[1] + arg4 < arg0[1]) && (arg1[1] < arg2[1] + arg4))
         {
             func_800EFA4C(arg5, arg2[0], arg2[1] + arg4, arg2[2]);
-            func_800EE7F8(arg6, arg2);
+            ml_vec3f_copy(arg6, arg2);
             return 1;
         }
         if (1) {}
@@ -321,16 +321,16 @@ s32 func_800F0BD0(f32* arg0, f32* arg1, f32 arg2, f32 arg3)
 {
     f32 temp_f0;
 
-    if (func_800EEEA8(arg0) != 0)
+    if (ml_vec3f_is_zero(arg0) != 0)
     {
         return 0;
     }
-    temp_f0 = func_800EEAA4(arg1, arg0);
+    temp_f0 = ml_vec3f_dot_product(arg1, arg0);
     if (arg2 < temp_f0)
     {
         return 0;
     }
-    temp_f0 /= func_800EEF94(arg0);
+    temp_f0 /= ml_vec3f_magnitude(arg0);
     if (temp_f0 < arg3)
     {
         return 0;
@@ -348,11 +348,11 @@ s32 func_800F0CB4(f32* arg0, f32* arg1, f32* arg2, f32* arg3)
 {
     f32 temp_f0;
 
-    temp_f0 = func_800EEAA4(arg1, arg3);
+    temp_f0 = ml_vec3f_dot_product(arg1, arg3);
     if (temp_f0 == 0.0f)
     {
         return 0;
     }
-    func_800EF174(arg0, arg1, (func_800EEAA4(arg3, arg2) - func_800EEAA4(arg0, arg3)) / temp_f0);
+    ml_vec3f_scaled_add(arg0, arg1, (ml_vec3f_dot_product(arg3, arg2) - ml_vec3f_dot_product(arg0, arg3)) / temp_f0);
     return 1;
 }

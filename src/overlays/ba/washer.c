@@ -48,22 +48,22 @@ void bawasher_entrypoint_7(PlayerState *self) {
     f32 sp30[3];
     f32 sp24[3];
     if (func_80092CDC(self, sp3C, 4) && func_80092CDC(self, sp30, 5)) {
-        func_800EFB24(sp24, sp3C, sp30);
-        func_800EF368(sp24, 1200.0f);
+        ml_getdiff_vec3f(sp24, sp3C, sp30);
+        ml_vec3f_set_length(sp24, 1200.0f);
     } else {
         _baeggfire_entrypoint_3(self, sp30, sp24);
-        func_800EF368(sp24, 100.0f);
-        func_800EE780(sp3C, sp30, sp24);
-        func_800EF368(sp24, 1200.0f);
+        ml_vec3f_set_length(sp24, 100.0f);
+        ml_vec3f_sum(sp3C, sp30, sp24);
+        ml_vec3f_set_length(sp24, 1200.0f);
         _baeggcursor_entrypoint_8(self);
     }
     bawasher_entrypoint_8(self, sp30, sp3C, sp24);
 }
 
 void bawasher_entrypoint_8(PlayerState *self, f32 arg1[3], f32 arg2[3], f32 arg3[3]) {
-    func_800EE7F8(self->washer->unk10, arg1);
-    func_800EE7F8(self->washer->unk1C, arg2);
-    func_800EE7F8(self->washer->unk28, arg3);
+    ml_vec3f_copy(self->washer->unk10, arg1);
+    ml_vec3f_copy(self->washer->unk1C, arg2);
+    ml_vec3f_copy(self->washer->unk28, arg3);
     _chbaddiesetup_entrypoint_1(_bawasher_entrypoint_6, self->unk184);
 }
 

@@ -46,7 +46,7 @@ void bawandglow_entrypoint_5(PlayerState *self) {
 void bawandglow_entrypoint_6(PlayerState *self) {
     self->wandglow->unk10 = 0;
     self->wandglow->unkC = NULL;
-    func_800EFD24(self->wandglow->unk0);
+    ml_vec3f_clear(self->wandglow->unk0);
 }
 
 void bawandglow_entrypoint_7(PlayerState *self) {

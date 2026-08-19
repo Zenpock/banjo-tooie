@@ -53,7 +53,7 @@ void func_80800048_cheggclockwork(Actor* arg0)
     while (temp_s1->unk28 <= 0)
     {
         temp_s1->unk28 += (temp_f20);
-        func_800EE7F8(sp4C, arg0->position);
+        ml_vec3f_copy(sp4C, arg0->position);
         _fxegg_entrypoint_4(sp4C, arg0->scale);
     }
 }
@@ -84,7 +84,7 @@ void func_80800124_cheggclockwork(Actor* arg0)
             _suegg_entrypoint_23(arg0);
             var_s0 = 1;
         }
-        if (func_800EEEA8(&arg0->actorData[4]) != 0)
+        if (ml_vec3f_is_zero(&arg0->actorData[4]) != 0)
         {
             var_s0 = 1;
         }
@@ -240,20 +240,20 @@ void func_808006E8_cheggclockwork(Actor* arg0)
     {
         if (func_800F6DE0(temp_s0) != 0)
         {
-            func_800EE7F8(arg0->position, temp_s0);
+            ml_vec3f_copy(arg0->position, temp_s0);
             return;
         }
         if (func_800F6DE0(temp_s0 + 0x3) != 0)
         {
-            func_800EE7F8(arg0->position, temp_s0 + 0x3);
+            ml_vec3f_copy(arg0->position, temp_s0 + 0x3);
             return;
         }
         if (func_800F6DE0(temp_s0 + 0x6) != 0)
         {
-            func_800EE7F8(arg0->position, temp_s0 + 0x6);
+            ml_vec3f_copy(arg0->position, temp_s0 + 0x6);
             return;
         }
-        func_800EE7F8(arg0->position, temp_s0 + 0x6);
+        ml_vec3f_copy(arg0->position, temp_s0 + 0x6);
     }
 }
 
@@ -270,9 +270,9 @@ void func_808007DC_cheggclockwork(Actor* arg0, f32* arg1)
     sp1C = (EggNormalData*)func_80100094(arg0, 0U);
     sp1C->unk2C = func_8001B668(0, 0x24);
     temp_v0 = func_8001B798(sp1C->unk2C);
-    func_800EE7F8(temp_v0, arg1);
-    func_800EE7F8(temp_v0 + 0x3, arg1);
-    func_800EE7F8(temp_v0 + 0x6, arg1);
+    ml_vec3f_copy(temp_v0, arg1);
+    ml_vec3f_copy(temp_v0 + 0x3, arg1);
+    ml_vec3f_copy(temp_v0 + 0x6, arg1);
 }
 
 void func_80800850_cheggclockwork(Actor* arg0)
@@ -281,7 +281,7 @@ void func_80800850_cheggclockwork(Actor* arg0)
     f32* temp_v0;
 
     temp_v0 = func_8001B798(((EggNormalData*)func_80100094(arg0, 0U))->unk2C);
-    func_800EE7F8(temp_v0 + 6, temp_v0 + 3);
-    func_800EE7F8(temp_v0 + 3, temp_v0);
-    func_800EE7F8(temp_v0, arg0->position);
+    ml_vec3f_copy(temp_v0 + 6, temp_v0 + 3);
+    ml_vec3f_copy(temp_v0 + 3, temp_v0);
+    ml_vec3f_copy(temp_v0, arg0->position);
 }

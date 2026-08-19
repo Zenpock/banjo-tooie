@@ -23,7 +23,7 @@ s32 babee_entrypoint_0(void) {
 void func_80800008_babee(f32 arg0[3], f32 arg1[3], f32 arg2) {
     f32 sp24[3];
     func_800EFA98(sp24, arg1, arg2);
-    func_800EF04C(sp24, arg0);
+    ml_vec3f_add(sp24, arg0);
     func_800BBCB8(sp24, NULL, 1.0f, 1, &D_80800390_babee);
 }
 
@@ -48,9 +48,9 @@ void babee_entrypoint_1(s32 arg0) {
         func_80800008_babee(sp50, sp44, 0.0f);
     } else {
         _baeggfire_entrypoint_3(self, sp5C, sp44);
-        func_800EF368(sp44, 100.0f);
-        func_800EE780(sp50, sp5C, sp44);
-        func_800EF368(sp44, bee->unk0[bee->index].unk0);
+        ml_vec3f_set_length(sp44, 100.0f);
+        ml_vec3f_sum(sp50, sp5C, sp44);
+        ml_vec3f_set_length(sp44, bee->unk0[bee->index].unk0);
         _baeggcursor_entrypoint_8(self);
         func_80800008_babee(sp50, sp44, 80.0f);
     }

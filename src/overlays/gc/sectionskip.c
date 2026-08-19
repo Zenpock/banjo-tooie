@@ -29,7 +29,7 @@ s32 func_80800000_gcsectionskip(Vec3f* arg0, Vec3f* arg1, f32 arg2, s32 arg3)
     f32 sp3C;
     f32 sp38;
 
-    func_800EE7F8(sp54, arg0);
+    ml_vec3f_copy(sp54, arg0);
     if (arg3 == 0)
     {
         var_f20 = (arg1->f[0] + arg2) - arg0->f[0];
@@ -63,7 +63,7 @@ s32 func_80800000_gcsectionskip(Vec3f* arg0, Vec3f* arg1, f32 arg2, s32 arg3)
         arg0->f[0] = arg1->f[0] + sp3C;
         arg0->f[2] = arg1->f[2] + sp38;
     }
-    if (func_800EECE0(sp54, arg0->f) != 0)
+    if (ml_vec3f_is_equal(sp54, arg0->f) != 0)
     {
         return 0;
     }
@@ -75,7 +75,7 @@ void func_8080019C_gcsectionskip(Vec3f* arg0, Vec3f* arg1, Vec3f* arg2, f32 arg3
     Vec3f sp58;
     f32 temp;
     s32 i;
-    func_800EE7F8(&sp64, arg1);
+    ml_vec3f_copy(&sp64, arg1);
     for (i = 0; i < 4; i++) {
         temp = (f32)i / 4;
         // @fake
@@ -84,9 +84,9 @@ void func_8080019C_gcsectionskip(Vec3f* arg0, Vec3f* arg1, Vec3f* arg2, f32 arg3
         if (func_80800000_gcsectionskip(&sp58, arg2, arg3, arg4) == 0) {
             break;
         }
-        func_800EE7F8(&sp64, &sp58);
+        ml_vec3f_copy(&sp64, &sp58);
     }
-    func_800EE7F8(arg1, &sp64);
+    ml_vec3f_copy(arg1, &sp64);
 }
 
 void func_808002A0_gcsectionskip(s32 arg0, Prop* arg1)
@@ -106,9 +106,9 @@ void func_808002A0_gcsectionskip(s32 arg0, Prop* arg1)
         temp_t9 = arg1->unk6_7;
         func_800F5D9C(arg0, &sp30);
         func_800F5D70(arg0, &sp3C);
-        func_800EF334(&sp3C, time_getDelta());
-        func_800EFB24(&sp48, &sp30, &sp3C);
-        func_800EE88C(&sp54, arg1);
+        ml_vec3f_apply_scale(&sp3C, time_getDelta());
+        ml_getdiff_vec3f(&sp48, &sp30, &sp3C);
+        ml_vec3s_to_vec3f(&sp54, arg1);
         func_8080019C_gcsectionskip(&sp48, &sp30, &sp54, temp_t9, sp2C);
         func_800F8418(arg0, &sp30);
     }

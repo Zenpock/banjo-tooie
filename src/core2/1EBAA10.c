@@ -9,7 +9,7 @@ void func_800E1120(f32 dst[3], f32 src[3], f32 dy) {
     func_800EFA4C(vec, 0.0f, dy, 0.0f);
     func_800EF8BC(vec, vec, src[0]);
     func_800EF934(vec, vec, src[1]);
-    func_800EF04C(dst, vec);
+    ml_vec3f_add(dst, vec);
 }
 
 //ml_translate_z_local
@@ -19,7 +19,7 @@ void func_800E119C(f32 dst[3], f32 src[3], f32 dz) {
     func_800EFA4C(vec, 0.0f, 0.0f, dz);
     func_800EF8BC(vec, vec, src[0]);
     func_800EF934(vec, vec, src[1]);
-    func_800EF04C(dst, vec);
+    ml_vec3f_add(dst, vec);
 }
 
 //ml_translate_x_local
@@ -29,7 +29,7 @@ void func_800E1218(f32 dst[3], f32 src[3], f32 dx) {
     func_800EFA4C(vec, dx, 0.0f, 0.0f);
     func_800EF8BC(vec, vec, src[0]);
     func_800EF934(vec, vec, src[1]);
-    func_800EF04C(dst, vec);
+    ml_vec3f_add(dst, vec);
 }
 
 void func_800E1294(s32 arg0, f32 position[3], f32 rotation[3], f32 delta)

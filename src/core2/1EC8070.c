@@ -6,103 +6,103 @@
 extern f32 D_80125EA0;
 
 // ml_vec3f_sum
-void func_800EE780(f32 dst[3], f32 a[3], f32 b[3]) {
+void ml_vec3f_sum(f32 dst[3], f32 a[3], f32 b[3]) {
     dst[0] = a[0] + b[0];
     dst[1] = a[1] + b[1];
     dst[2] = a[2] + b[2];
 }
 
 // ml_vec3f_scaled_sum
-void func_800EE7B4(f32 dst[3], f32 a[3], f32 b[3], f32 scale) {
+void ml_vec3f_scaled_sum(f32 dst[3], f32 a[3], f32 b[3], f32 scale) {
     dst[0] = a[0] + b[0] * scale;
     dst[1] = a[1] + b[1] * scale;
     dst[2] = a[2] + b[2] * scale;
 }
 
 // ml_vec3f_copy
-void func_800EE7F8(f32 dst[3], f32 src[3]) {
+void ml_vec3f_copy(f32 dst[3], f32 src[3]) {
     dst[0] = src[0];
     dst[1] = src[1];
     dst[2] = src[2];
 }
 
 // ml_vec3s_copy
-void func_800EE814(s16 dst[3], s16 src[3]) {
+void ml_vec3s_copy(s16 dst[3], s16 src[3]) {
     dst[0] = src[0];
     dst[1] = src[1];
     dst[2] = src[2];
 }
 
 // ml_vec3i_copy
-void func_800EE830(s32 dst[3], s32 src[3]) {
+void ml_vec3i_copy(s32 dst[3], s32 src[3]) {
     dst[0] = src[0];
     dst[1] = src[1];
     dst[2] = src[2];
 }
 
 // ml_vec3i_to_vec3f
-void func_800EE84C(f32 dst[3], s32 src[3]) {
+void ml_vec3i_to_vec3f(f32 dst[3], s32 src[3]) {
     dst[0] = src[0];
     dst[1] = src[1];
     dst[2] = src[2];
 }
 
 // ml_vec3s_to_vec3f
-void func_800EE88C(f32 dst[3], s16 src[3]) {
+void ml_vec3s_to_vec3f(f32 dst[3], s16 src[3]) {
     dst[0] = src[0];
     dst[1] = src[1];
     dst[2] = src[2];
 }
 
 // ml_vec3s_to_vec3i
-void func_800EE8CC(s32 dst[3], s16 src[3]) {
+void ml_vec3s_to_vec3i(s32 dst[3], s16 src[3]) {
     dst[0] = src[0];
     dst[1] = src[1];
     dst[2] = src[2];
 }
 
 // ml_vec2f_to_vec3f
-void func_800EE8E8(f32 dst[3], f32 src[2]) {
+void ml_vec2f_to_vec3f(f32 dst[3], f32 src[2]) {
     dst[0] = src[0];
     dst[1] = 0;
     dst[2] = src[1];
 }
 
 // ml_vec3f_to_vec3i
-void func_800EE904(s32 dst[3], f32 src[3]) {
+void ml_vec3f_to_vec3i(s32 dst[3], f32 src[3]) {
     dst[0] = src[0];
     dst[1] = src[1];
     dst[2] = src[2];
 }
 
 // ml_vec3f_to_vec3s
-void func_800EE940(s16 dst[3], f32 src[3]) {
+void ml_vec3f_to_vec3s(s16 dst[3], f32 src[3]) {
     dst[0] = src[0];
     dst[1] = src[1];
     dst[2] = src[2];
 }
 
 // ml_vec3f_cross_product
-void func_800EE97C(f32 dst[3], f32 a[3], f32 b[3]) {
+void ml_vec3f_cross_product(f32 dst[3], f32 a[3], f32 b[3]) {
     dst[0] = a[1] * b[2] - a[2] * b[1];
     dst[1] = a[2] * b[0] - a[0] * b[2];
     dst[2] = a[0] * b[1] - a[1] * b[0];
 }
 
 // ml_vec3i_cross_product
-void func_800EE9EC(f32 dst[3], s32 a[3], s32 b[3]) {
+void ml_vec3i_cross_product(f32 dst[3], s32 a[3], s32 b[3]) {
     dst[0] = a[1] * b[2] - a[2] * b[1];
     dst[1] = a[2] * b[0] - a[0] * b[2];
     dst[2] = a[0] * b[1] - a[1] * b[0];
 }
 
 // ml_vec3f_dot_product
-f32 func_800EEAA4(f32 a[3], f32 b[3]) {
+f32 ml_vec3f_dot_product(f32 a[3], f32 b[3]) {
     return a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
 }
 
 // ml_vec3f_distance
-f32 func_800EEAD4(f32 a[3], f32 b[3]) {
+f32 ml_vec3f_distance(f32 a[3], f32 b[3]) {
     f32 delta[3];
     delta[0] = a[0] - b[0];
     delta[1] = a[1] - b[1];
@@ -111,7 +111,7 @@ f32 func_800EEAD4(f32 a[3], f32 b[3]) {
 }
 
 // ml_vec3f_distance_sq
-f32 func_800EEB40(f32 a[3], f32 b[3]) {
+f32 ml_vec3f_distance_sq(f32 a[3], f32 b[3]) {
     f32 delta[3];
     delta[0] = a[0] - b[0];
     delta[1] = a[1] - b[1];
@@ -131,13 +131,13 @@ void func_800EEB9C(f32* arg0, f32 arg1, f32 arg2)
 
 void func_800EEBF0(f32* arg0, f32* arg1, f32 arg2)
 {
-    func_800EFD24(arg0);
+    ml_vec3f_clear(arg0);
     func_800EF214(arg0, arg1[0], arg1[1], arg2);
 }
 
 void func_800EEC30(f32* arg0, f32 arg1, f32 arg2, f32 arg3)
 {
-    func_800EFD24(arg0);
+    ml_vec3f_clear(arg0);
     func_800EF214(arg0, arg1, arg2, arg3);
 }
 
@@ -151,48 +151,49 @@ void func_800EEC70(f32* arg0, f32 arg1, f32 arg2, f32 arg3)
     arg0[2] = (f32)(func_80013788() * sp1C);
 }
 // ml_vec3f_is_equal
-int func_800EECE0(f32* arg0, f32* arg1)
+int ml_vec3f_is_equal(f32* arg0, f32* arg1)
 {
     return (arg0[0] == arg1[0] && arg0[1] == arg1[1] && arg0[2] == arg1[2]);
 }
 // ml_vec3i_is_equal
-int func_800EED58(s32* arg0, s32* arg1)
+int ml_vec3i_is_equal(s32* arg0, s32* arg1)
 {
     return (arg0[0] == arg1[0] && arg0[1] == arg1[1] && arg0[2] == arg1[2]);
 }
 
 // ml_vec3s_is_equal
-int func_800EEDA0(s16* arg0, s16* arg1)
+int ml_vec3s_is_equal(s16* arg0, s16* arg1)
 {
     return (arg0[0] == arg1[0] && arg0[1] == arg1[1] && arg0[2] == arg1[2]);
 
 }
 
 // ml_vec3f_is_within_range
-int func_800EEDE8(f32* arg0, f32* arg1, f32 arg2)
+int ml_vec3f_is_within_range(f32* arg0, f32* arg1, f32 arg2)
 {
     return (mlAbsF(arg0[0] - arg1[0]) < arg2 && mlAbsF(arg0[1] - arg1[1]) < arg2 && mlAbsF(arg0[2] - arg1[2]) < arg2);
 }
 
 // ml_vec3f_is_zero
-int func_800EEEA8(f32* arg0)
+int ml_vec3f_is_zero(f32* arg0)
 {
     return !(arg0[0] != 0.0f || arg0[1] != 0.0f || arg0[2] != 0.0f);
 }
 
 // ml_vec3f_is_not_zero
-int func_800EEF24(f32* arg0)
+int ml_vec3f_is_not_zero(f32* arg0)
 {
     return (arg0[0] != 0.0f || arg0[1] != 0.0f || arg0[2] != 0.0f);
 }
 
-f32 func_800EEF94(f32* arg0)
+//ml_vec3f_magnitude
+f32 ml_vec3f_magnitude(f32* arg0)
 {
     return sqrtf(arg0[0] * arg0[0] + arg0[1] * arg0[1] + arg0[2] * arg0[2]);
 }
 
-//ml_distanceSquared_vec3f
-f32 func_800EEFD4(f32* arg0)
+//ml_vec3f_squared_magnitude
+f32 ml_vec3f_squared_magnitude(f32* arg0)
 {
     return (arg0[0] * arg0[0] + arg0[1] * arg0[1] + arg0[2] * arg0[2]);
 }
@@ -207,39 +208,44 @@ f32 func_800EF030(f32* arg0)
     return (arg0[0] * arg0[0]) + (arg0[2] * arg0[2]);
 }
 
-void func_800EF04C(f32* arg0, f32* arg1)
+// ml_vec3f_add
+void ml_vec3f_add(f32 dst[3], f32 src[3])
 {
-    arg0[0] += arg1[0];
-    arg0[1] += arg1[1];
-    arg0[2] += arg1[2];
+    dst[0] += src[0];
+    dst[1] += src[1];
+    dst[2] += src[2];
 }
 
-void func_800EF080(s16* arg0, s16* arg1)
+// ml_vec3s_add
+void ml_vec3s_add(s16* dst, s16* src)
 {
-    arg0[0] += arg1[0];
-    arg0[1] += arg1[1];
-    arg0[2] += arg1[2];
+    dst[0] += src[0];
+    dst[1] += src[1];
+    dst[2] += src[2];
 }
 
-void func_800EF0B4(s16* arg0, f32* arg1)
+// ml_vec3s_add_3f
+void ml_vec3s_add_3f(s16* dst, f32* src)
 {
-    arg0[0] += arg1[0];
-    arg0[1] += arg1[1];
-    arg0[2] += arg1[2];
+    dst[0] += src[0];
+    dst[1] += src[1];
+    dst[2] += src[2];
 }
 
-void func_800EF11C(f32* arg0, s16* arg1)
+// ml_vec3f_add_3s
+void ml_vec3f_add_3s(f32* dst, s16* src)
 {
-    arg0[0] += arg1[0];
-    arg0[1] += arg1[1];
-    arg0[2] += arg1[2];
+    dst[0] += src[0];
+    dst[1] += src[1];
+    dst[2] += src[2];
 }
 
-void func_800EF174(f32* arg0, f32* arg1, f32 arg2)
+// ml_vec3f_scaled_add
+void ml_vec3f_scaled_add(f32* dst, f32* src, f32 scale)
 {
-    arg0[0] += arg1[0] * arg2;
-    arg0[1] += arg1[1] * arg2;
-    arg0[2] += arg1[2] * arg2;
+    dst[0] += src[0] * scale;
+    dst[1] += src[1] * scale;
+    dst[2] += src[2] * scale;
 }
 
 void func_800EF1B8(f32* arg0, f32 arg1, f32 arg2)
@@ -272,24 +278,24 @@ void func_800EF2A0(f32* arg0)
 }
 
 // ml_vec3f_apply_scale
-void func_800EF334(f32 vec[3], f32 scale) {
+void ml_vec3f_apply_scale(f32 vec[3], f32 scale) {
     vec[0] *= scale;
     vec[1] *= scale;
     vec[2] *= scale;
 }
 
 // ml_vec3f_set_length
-void func_800EF368(f32 vec[3], f32 target_length) {
+void ml_vec3f_set_length(f32 vec[3], f32 target_length) {
     f32 length_sq;
 
     length_sq = SQ(vec[0]) + SQ(vec[1]) + SQ(vec[2]);
     if (length_sq != 0.0f) {
-        func_800EF334(vec, target_length / sqrtf(length_sq));
+        ml_vec3f_apply_scale(vec, target_length / sqrtf(length_sq));
     }
 }
 
 // ml_vec3f_subtract
-void func_800EF3DC(f32 dst[3], f32 src[3]) {
+void ml_vec3f_subtract(f32 dst[3], f32 src[3]) {
     dst[0] -= src[0];
     dst[1] -= src[1];
     dst[2] -= src[2];
@@ -305,7 +311,7 @@ void func_800EF410(f32* arg0, f32* arg1)
         func_800EFA20(arg0, arg1, 1.0f / sqrtf(temp_f14));
         return;
     }
-    func_800EE7F8(arg0, arg1);
+    ml_vec3f_copy(arg0, arg1);
 }
 
 void func_800EF49C(f32* arg0)
@@ -484,11 +490,11 @@ void func_800EFA98(f32* arg0, f32* arg1, f32 arg2)
         func_800EFA20(arg0, arg1, arg2 / sqrtf(temp_f14));
         return;
     }
-    func_800EE7F8(arg0, arg1);
+    ml_vec3f_copy(arg0, arg1);
 }
 
 //ml_getdiff_vec3f
-void func_800EFB24(f32* arg0, f32* arg1, f32* arg2)
+void ml_getdiff_vec3f(f32* arg0, f32* arg1, f32* arg2)
 {
     arg0[0] = arg1[0] - arg2[0];
     arg0[1] = arg1[1] - arg2[1];
@@ -555,17 +561,17 @@ void func_800EFCD8(f32* arg0, f32 arg1, f32 arg2)
 }
 
 // ml_vec3f_clear
-void func_800EFD24(f32 vec[3]) {
+void ml_vec3f_clear(f32 vec[3]) {
     vec[0] = vec[1] = vec[2] = 0;
 }
 
 // ml_vec3i_clear
-void func_800EFD3C(s32 vec[3]) {
+void ml_vec3i_clear(s32 vec[3]) {
     vec[0] = vec[1] = vec[2] = 0;
 }
 
 // ml_vec3s_clear
-void func_800EFD4C(s16 vec[3]) {
+void ml_vec3s_clear(s16 vec[3]) {
     vec[0] = vec[1] = vec[2] = 0;
 }
 
@@ -590,6 +596,6 @@ void func_800EFDE8(f32* arg0, f32* arg1, f32* arg2)
     f32 sp1C[3];
 
     func_800EFA20(sp1C, arg1, -1.0f);
-    func_800EFA20(arg0, arg2, 2.0f * func_800EEAA4(sp1C, arg2));
-    func_800EF3DC(arg0, sp1C);
+    func_800EFA20(arg0, arg2, 2.0f * ml_vec3f_dot_product(sp1C, arg2));
+    ml_vec3f_subtract(arg0, sp1C);
 }

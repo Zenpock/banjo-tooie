@@ -88,7 +88,7 @@ void __baanim_applyBottlesBonus(s32 arg0, s32 arg1) {
     func_80098218(self, arg0);
     func_800DFC20(arg0, self->anim->unkE, self->anim->unk10);
     if (self->anim->unkC) {
-        func_800EFD24(sp2C);
+        ml_vec3f_clear(sp2C);
         func_800DFFA0(arg0, self->anim->unkE, sp2C);
     }
     sp28 = func_800A8258();
@@ -187,7 +187,7 @@ void baanim_defrag(PlayerState *self) {
 }
 
 void func_8008C958(PlayerState *self, f32 arg1[3]) {
-    func_800EE7F8(arg1, self->anim->unk10);
+    ml_vec3f_copy(arg1, self->anim->unk10);
 }
 
 void func_8008C984(PlayerState *self, s32 arg1) {

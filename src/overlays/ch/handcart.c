@@ -154,7 +154,7 @@ void func_808002B8_chhandcart(Actor* arg0, s32 arg1)
     var_s4 = _susplinet_entrypoint_13(splineMemory);
     for (var_s0 = 0; var_s0 < D_80804B94_chhandcart[tempA1]; var_s0++)
     {
-        func_800EE7F8(sp68[1], D_80804B84_chhandcart[tempA1][var_s0].unk0);
+        ml_vec3f_copy(sp68[1], D_80804B84_chhandcart[tempA1][var_s0].unk0);
         var_s3[0] = D_80804B84_chhandcart[tempA1][var_s0].unk10;
         var_s4[0] = -1;
         *sp68[0] = D_80804B84_chhandcart[tempA1][var_s0].unk0[3];
@@ -255,8 +255,8 @@ void func_80800528_chhandcart(Actor* arg0)
         }
         func_800EF4E4(sp60, handcartMemory->unk904, handcartMemory->unk908, sp60[0], sp60[1], sp60[2]);
         func_800EF4E4(&sp48, handcartMemory->unk904, handcartMemory->unk908, sp34[0], sp34[1], sp34[2] * 1.0f);
-        func_800EF04C(sp60, sp78->position);
-        func_800EF04C(&sp48, sp78->position);
+        ml_vec3f_add(sp60, sp78->position);
+        ml_vec3f_add(&sp48, sp78->position);
         func_800A516C(&sp54, &sp48, sp60);
         _capod_entrypoint_1(sp60, &sp54);
     }
@@ -639,13 +639,13 @@ void func_80801290_chhandcart(Actor* arg0)
     func_800EF5A0(sp7C[2], arg0->rotation, 52.0f, 0, -49.0f);
     func_800EF5A0(sp7C[3], arg0->rotation, 52.0f, 0, 30.0f);
     for (i = 0; i < 4; i++) {
-        func_800EF04C(sp7C[i], arg0->position);
+        ml_vec3f_add(sp7C[i], arg0->position);
     }
     for (i = 0; i < 0x3C; i++) {
 
         if (spBC->unk87C[i] != 0)
         {
-            func_800EE7B4(spBC->unkC[i], spBC->unkC[i], spBC->unkC[i + 0x78], gamespeed);
+            ml_vec3f_scaled_sum(spBC->unkC[i], spBC->unkC[i], spBC->unkC[i + 0x78], gamespeed);
             if (spBC->unkC[i][1] < (0.0f * 1.0f))
             {
                 spBC->unk87C[i] = 0U;
@@ -658,9 +658,9 @@ void func_80801290_chhandcart(Actor* arg0)
                     spBC->unk87C[i] -= temp_v0;
                 }
                 spBC->unkC[i + 0x78][1] += -300.0f * gamespeed;
-                func_800EE7F8(spBC->unkC[i + 0x3C], sp7C[spBC->unk87C[i + 0x3C]]);
+                ml_vec3f_copy(spBC->unkC[i + 0x3C], sp7C[spBC->unk87C[i + 0x3C]]);
                 func_800EF4E4(&spAC, arg0->rotation[0], arg0->rotation[1], spBC->unkC[i][0], spBC->unkC[i][1], spBC->unkC[i][2]);
-                func_800EF04C(spBC->unkC[i + 0x3C], &spAC);
+                ml_vec3f_add(spBC->unkC[i + 0x3C], &spAC);
             }
         }
     }
@@ -682,7 +682,7 @@ void func_808014D8_chhandcart(Actor* arg0, u32 arg1)
         {
             var_s0[0x87C] = 0xFFU;
             var_s0[0x87C + 0x3C] = (s8)arg1;
-            func_800EFD24(temp_v0->unkC[var_s2]);
+            ml_vec3f_clear(temp_v0->unkC[var_s2]);
             func_800EFA4C(temp_v0->unkC[var_s2] + 0x168, func_800DC178(-15.0f, 15.0f), func_800DC178(80.0f, 120.0), func_800DC178(-50.0f, -85.0f));
             var_s1 += 1;
             if (var_s1 >= 0x4)
@@ -726,8 +726,8 @@ f32 func_8080169C_chhandcart(Actor* arg0, u32 arg1, f32* arg2)
         var_f0 = -58.0f;
     }
     func_800EF4E4(arg2, arg0->rotation[0], arg0->rotation[1], var_f0, 0.0f, 0.0f);
-    func_800EF04C(arg2, arg0->position);
-    func_800EE7F8(sp38, arg2);
+    ml_vec3f_add(arg2, arg0->position);
+    ml_vec3f_copy(sp38, arg2);
     sp38[1] += 150.0f;
     arg2[1] -= 150.0f;
     if (func_800BEF00(sp38, arg2, sp2C, 0x20020U) == 0)
@@ -999,7 +999,7 @@ void func_80802068_chhandcart(Actor* arg0, s32 arg1) {
     {
         var_v0 = _gccubesearch_entrypoint_1(0x313, arg0->position);
     }
-    func_800EE88C(arg0->position, var_v0->position);
+    ml_vec3s_to_vec3f(arg0->position, var_v0->position);
     //Controls the rotation of the cart when spawned in normal GGM
     arg0->rotation[1] = var_v0->FlagOrRotation;
 }
@@ -1052,7 +1052,7 @@ void func_80802120_chhandcart(Actor* arg0)
             }
             // @fake
             if (sp34->unk928[0]) {}
-            func_800EE88C(sp34->unk928, var_v0->position);
+            ml_vec3s_to_vec3f(sp34->unk928, var_v0->position);
             func_801058C4(arg0, (s16)sp34->unk0, HANDCART_DATA(arg0)->unkC, 0);
             func_80801BA4_chhandcart(arg0);
             break;
@@ -1066,7 +1066,7 @@ void func_80802120_chhandcart(Actor* arg0)
             {
                 var_v0_2 = _gccubesearch_entrypoint_0(PROP_1F6_JIGGY_SPAWN, arg0);
             }
-            func_800EE88C(sp34->rewardSpawn, var_v0_2->position);
+            ml_vec3s_to_vec3f(sp34->rewardSpawn, var_v0_2->position);
             func_80802068_chhandcart(arg0, arg0->unk64_19);
             if (arg0->unk64_19 && (func_80800090_chhandcart() == 2))
             {
@@ -1097,7 +1097,7 @@ void func_80802400_chhandcart(Actor* arg0, s32 arg1)
 {
     f32 sp1C[3];
 
-    func_800EE7F8(sp1C, arg0->position);
+    ml_vec3f_copy(sp1C, arg0->position);
     sp1C[1] += 75.0f;
     if ((arg1 == 0) || (arg1 == 0x1B) || (arg1 == 0x1F)) 
     {
@@ -1235,7 +1235,7 @@ void func_8080282C_chhandcart(Actor* arg0, s32 arg1, s32 arg2)
     {
         var_v0 = _gccubesearch_entrypoint_1(0x384, arg0->position);
     }
-    func_800EE88C(arg0->position, var_v0->position);
+    ml_vec3s_to_vec3f(arg0->position, var_v0->position);
     //Controls the rotation of canary mary when spawned in normal GGM
     arg0->rotation[1] = var_v0->FlagOrRotation;
 }
@@ -1622,9 +1622,9 @@ s32 func_80803448_chhandcart(Actor* arg0)
     f32 sp20[3];
     f32 gamespeed;
     gamespeed = time_getDelta();
-    func_800EE7F8(sp38, arg0->position);
+    ml_vec3f_copy(sp38, arg0->position);
     sp38[1] = sp38[1] + 50.0f;
-    func_800EE7F8(sp2C, arg0->position);
+    ml_vec3f_copy(sp2C, arg0->position);
     sp2C[1] -= 50.0f;
     if ((func_800BEF00(sp38, sp2C, sp20, 0x20020U) == 0) || sp2C[1] < arg0->position[1])
     {

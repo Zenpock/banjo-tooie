@@ -98,7 +98,7 @@ void func_80800064_bsbflip(PlayerState *self, s32 substate) {
             anctrl_start(anctrl);
             baphysics_set_type(self, 3);
             baphysics_set_target_horizontal_velocity(self, 0.0f);
-            func_800EFD24(sp30);
+            ml_vec3f_clear(sp30);
             func_8009BA9C(self, sp30);
             func_8009FE58(self);
             func_800A0CF4(self, 0);

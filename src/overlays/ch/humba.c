@@ -180,7 +180,7 @@ s32 func_80800450_chhumba(Actor* arg0, s32 arg1, s32 arg2)
     case 0x3D:
         func_80800238_chhumba(arg0, &sp20);
         temp_v0 = func_801084B0(0x29F, &arg0);
-        func_800EE7F8(temp_v0->actorData, &sp20);
+        ml_vec3f_copy(temp_v0->actorData, &sp20);
         func_8010D254(temp_v0->position);
         temp_v0->unk74_30 = 1;
         arg0->unk3C = temp_v0->unk0;
@@ -495,7 +495,7 @@ void func_80800E44_chhumba(Actor* arg0, u32 arg1)
         func_80090768(sp24);
         arg0->unk3C = func_8008FDEC();
         temp = func_80106790(arg0->unk3C);
-        func_800EE7F8((f32*)((Actor*)temp)->actorData, sp24);
+        ml_vec3f_copy((f32*)((Actor*)temp)->actorData, sp24);
         ((Actor*)temp)->unk74_30 = 1;
         func_808000D4_chhumba(arg0, 0xE, 9, arg0->unk3C);
         return;
@@ -578,7 +578,7 @@ void func_80801260_chhumba(Actor* arg0)
     s32 index;
 
     f32 sp34[3];
-    func_800EF334(sp44, arg0->scale);
+    ml_vec3f_apply_scale(sp44, arg0->scale);
     func_8008FE68(sp34);
     index = 0;
     for (index = 0; index < 3; index++)
@@ -634,9 +634,9 @@ void func_8080144C_chhumba(f32 arg0)
     for (index = 0; index < 4; index++)
     {
         func_800EFA20(sp98, D_808026FC_chhumba[index].f, arg0);
-        func_800EE7F8(sp80, sp98);
+        ml_vec3f_copy(sp80, sp98);
         sp80[1] = 610.0f * arg0;
-        func_800EFB24(sp70, sp98, sp8C);
+        ml_getdiff_vec3f(sp70, sp98, sp8C);
         if ((((sp70[0] * sp70[0]) + (sp70[2] * sp70[2])) < ((var_f20 + 25.0f) * (var_f20 + 25.0f))) && (sp98[1] < sp8C[1]) && (sp8C[1] <= sp80[1]))
         {
             func_800F7F50(func_800F54E4(), sp98, sp80, var_f20, 2, 1);
@@ -881,7 +881,7 @@ void func_80801DB0_chhumba(Actor* arg0, s32 arg1, s32 arg2)
             return;
         case 0x11B2:
             func_808001E4_chhumba(arg0);
-            func_800EE7F8((f32*)arg0->actorData, arg0->position);
+            ml_vec3f_copy((f32*)arg0->actorData, arg0->position);
             func_80800E44_chhumba(arg0, 1);
             return;
         case 0x11B1:

@@ -83,7 +83,7 @@ s32 func_808000C4_chhoneycarrier(Actor* arg0, s32 arg1, s32 arg2)
         func_800C8CB8(arg0->unk6C_0, arg0->position);
         func_800C8D4C(arg0->unk6C_0, D_808003EC_chhoneycarrier);
         func_800C8E84(arg0->unk6C_0, D_808003E0_chhoneycarrier);
-        func_800EE7F8(sp2C, arg0->position);
+        ml_vec3f_copy(sp2C, arg0->position);
         sp2C[1] += 150.0f;
         func_800C8CB8(arg0->unk6C_0, sp2C);
         break;

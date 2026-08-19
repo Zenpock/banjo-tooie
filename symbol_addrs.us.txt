@@ -346,6 +346,45 @@ flag_setValueTrue = 0x800DA544;
 flag_setValueFalse = 0x800DA524;
 flag_getMultipleValue = 0x800DA564;
 flag_setMultipleValue = 0x800DA7A8;
+ml_vec3f_sum = 0x800EE780;
+ml_vec3f_scaled_sum = 0x800EE7B4;
+ml_vec3f_copy = 0x800EE7F8;
+ml_vec3s_copy = 0x800EE814;
+ml_vec3i_copy = 0x800EE830;
+ml_vec3i_to_vec3f = 0x800EE84C;
+ml_vec3s_to_vec3f = 0x800EE88C;
+ml_vec3s_to_vec3i = 0x800EE8CC;
+ml_vec2f_to_vec3f = 0x800EE8E8;
+ml_vec3f_to_vec3i = 0x800EE904;
+ml_vec3f_to_vec3s = 0x800EE940;
+ml_vec3f_cross_product = 0x800EE97C;
+ml_vec3i_cross_product = 0x800EE9EC;
+ml_vec3f_dot_product = 0x800EEAA4;
+ml_vec3f_distance = 0x800EEAD4;
+ml_vec3f_distance_sq = 0x800EEB40;
+ml_vec3f_is_equal = 0x800EECE0;
+ml_vec3i_is_equal = 0x800EED58;
+ml_vec3s_is_equal = 0x800EEDA0;
+ml_vec3f_is_within_range = 0x800EEDE8;
+ml_vec3f_is_zero = 0x800EEEA8;
+ml_vec3f_is_not_zero = 0x800EEF24;
+ml_vec3f_magnitude = 0x800EEF94;
+ml_vec3f_squared_magnitude = 0x800EEFD4;
+ml_vec3f_add = 0x800EF04C;
+ml_vec3s_add = 0x800EF080;
+ml_vec3s_add_3f = 0x800EF0B4;
+ml_vec3f_add_3s = 0x800EF11C;
+ml_vec3f_scaled_add = 0x800EF174;
+ml_vec3f_apply_scale = 0x800EF334;
+ml_vec3f_set_length = 0x800EF368;
+ml_vec3f_subtract = 0x800EF3DC;
+ml_getdiff_vec3f = 0x800EFB24;
+ml_vec3f_clear = 0x800EFD24;
+ml_vec3i_clear = 0x800EFD3C;
+ml_vec3s_clear = 0x800EFD4C;
+
+
+
 position_isWithinRangeOf = 0x800EFFB4;
 mlAbsF = 0x800F2100;
 
