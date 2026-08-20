@@ -756,7 +756,7 @@ void func_80801A1C_bsbfly(PlayerState* self)
 
 void func_80801A44_bsbfly(PlayerState* self)
 {
-    _bafly_entrypoint_18();
+    _bafly_entrypoint_18(self);
     func_80800188_bsbfly(self);
 }
 

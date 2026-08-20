@@ -8,18 +8,24 @@
 
 #include "overlays/ba/flag.h"
 #include "overlays/ba/playerstate.h"
+#include "overlays/ba/physics.h"
 
 #include "ba/egg/fire/eggfire.h"
 
+#include "gc/statusDLL.h"
+
 #include "core2/1E6F080.h"
+#include "core2/1E75710.h"
 #include "core2/1E7D460.h"
 #include "core2/1E9A960.h"
 #include "core2/1EA3AA0.h"
+#include "core2/1EC3810.h"
 #include "core2/1EC8070.h"
 
 // Code
 void _bafly_entrypoint_1(PlayerState*, f32 *, f32 *, f32);
 s32 _bafly_entrypoint_2(PlayerState*);
+u8 bafly_entrypoint_3(PlayerState*);
 void _bafly_entrypoint_4(PlayerState*);
 void _bafly_entrypoint_5(PlayerState*);
 void _bafly_entrypoint_6(PlayerState*, f32);
@@ -34,7 +40,7 @@ void _bafly_entrypoint_14(PlayerState*, s32, s32);
 void _bafly_entrypoint_15();
 void _bafly_entrypoint_16(PlayerState*, s32, f32);
 void _bafly_entrypoint_17(PlayerState*, s32, s32, u8 *);
-void _bafly_entrypoint_18();
+void _bafly_entrypoint_18(PlayerState*);
 void _bafly_entrypoint_19(PlayerState*);
 void _bafly_entrypoint_20(PlayerState*);
 void _bafly_entrypoint_21(PlayerState*);

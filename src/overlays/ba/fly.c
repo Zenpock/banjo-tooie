@@ -31,15 +31,41 @@ s32 bafly_entrypoint_2(PlayerState *self)
     return 1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_3.s")
+u8 bafly_entrypoint_3(PlayerState* self)
+{
+    return self->unk8C->unk8;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_5.s")
+void bafly_entrypoint_5(PlayerState* self) {
+    s32 temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_6.s")
+    if (_gcstatusDll_entrypoint_11() >= 2) {
+        self->unk8C->unk9 = 0U;
+    } else {
+        self->unk8C->unk9 = func_800C2E04();
+        func_800C3418(self->unk8C->unk9, 0);
+    }
+    self->unk8C->unk4 = 1.0f;
+    self->unk8C->unk0 = 0.0f;
+    self->unk8C->unk8 = 0;
+    temp_v0 = func_800EA05C();
+    if ((temp_v0 != 0xE4) && (temp_v0 != 0x17B)) {
+        self->unk8C->unkE = 0;
+        return;
+    }
+    self->unk8C->unkE = 1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_7.s")
+void bafly_entrypoint_6(PlayerState* self, f32 arg1) {
+    self->unk8C->unk0 = arg1;
+}
+
+void bafly_entrypoint_7(PlayerState* self, s32 arg1)
+{
+    self->unk8C->unk8 = (u8) arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_8.s")
 
@@ -61,10 +87,10 @@ s32 bafly_entrypoint_2(PlayerState *self)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_17.s")
 
-void bafly_entrypoint_18(s32 arg0)
+void bafly_entrypoint_18(PlayerState* self)
 {
-    baphysics_reset_gravity();
-    func_8008E95C(arg0);
+    baphysics_reset_gravity(self);
+    func_8008E95C(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_19.s")
 

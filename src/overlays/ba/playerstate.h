@@ -94,57 +94,70 @@ typedef struct ba_unknown_50_s {
     MtxF unkCC;
 } BaUnknown50;
 
+typedef struct ba_unknown_8C_s {
+    f32 unk0;
+    f32 unk4;
+    s8 unk8;
+    s8 unk9;
+    s8 unkA;
+    s8 unkB;
+    s16 unkC;
+    u8 unkE;
+} BaUnknown8C;
+
 typedef struct player_state_s {
-    /* 0x00 */ struct ba_alarm_s *alarm;
-    /* 0x04 */ struct ba_anim_s *anim;
-    /* 0x08 */ struct ba_attach_s *attach;
-    /* 0x0C */ struct ba_unknown_c_s *unkC; // baavatar? from BK XBox debug strings?
-    /* 0x10 */ struct ba_babykaz_s *babykaz;
-    /* 0x14 */ struct ba_backpack_s *backpack;
+               struct ba_alarm_s *alarm;
+               struct ba_anim_s *anim;
+               struct ba_attach_s *attach;
+               struct ba_unknown_c_s *unkC;
+               struct ba_babykaz_s *babykaz;
+               struct ba_backpack_s *backpack;
     u8 pad18[0x4];
-    /* 0x1C */ struct ba_bee_s *bee;
-    /* 0x20 */ struct ba_unknown_20_s *unk20;
-    /* 0x24 */ struct ba_boost_s *boost;
-    /* 0x28 */ struct ba_bounce_s *bounce;
-    /* 0x2C */ struct ba_unknown_2C_s *unk2C; //something with camera
+               struct ba_bee_s *bee;
+               struct ba_unknown_20_s *unk20;
+               struct ba_boost_s *boost;
+               struct ba_bounce_s *bounce;
+               struct ba_unknown_2C_s *unk2C;
     u8 pad30[0x4];
-    /* 0x34 */ struct ba_buzz_s *buzz;
+               struct ba_buzz_s *buzz;
     u8 pad38[0x4];
-    /* 0x3C */ struct ba_state_timer_list_s *state_timer; // clock?
-    /* 0x40 */ struct ba_key_s *key; // controller?
-    /* 0x44 */ struct ba_cough_s *cough;
+               struct ba_state_timer_list_s *state_timer;
+               struct ba_key_s *key;
+               struct ba_cough_s *cough;
     u8 pad48[0x8];
     struct ba_unknown_50_s* unk50;
     u8 pad54[0x10];
     u8* unk64;
     u8 pad68[0x18];
-    /* 0x80 */ struct ba_flag_s *flag;
-    u8 pad84[0x18];
-    /* 0x9C */ struct ba_unk_9C* unk9C;
+               struct ba_flag_s *flag;
+    u8 pad84[0x8];
+               struct ba_unknown_8C_s* unk8C;
+    u8 pad90[0xC];
+               struct ba_unk_9C* unk9C;
     u8 padA0[0x4];
-    /* 0xA4 */ struct ba_input_s *input;
+               struct ba_input_s *input;
     u8 padA8[0x18];
-    /* 0xC0 */ struct ba_unknown_C0_s *unkC0; // 1E72EA0
+               struct ba_unknown_C0_s *unkC0;
     u8 padC4[0x30];
-    /* 0xF4 */ struct ba_roll_s *roll;
-    /* 0xF8 */ struct ba_yaw_s *yaw;
+               struct ba_roll_s *roll;
+               struct ba_yaw_s *yaw;
     u8 padFC[0x24];
-    /* 0x120 */ struct bs_state_s *state;
+                struct bs_state_s *state;
     u8 pad124[4];
-    /* 0x128 */ struct ba_stick_s *stick;
+                struct ba_stick_s *stick;
     u8 pad12C[0x10];
-    /* 0x13C */ struct ba_timer_s *timer;
-    /* 0x140 */ struct ba_translate_s *translate;
-    /* 0x144 */ struct ba_van_s *van;
-    /* 0x148 */ struct ba_wandglow_s *wandglow;
-    /* 0x14C */ struct ba_washer_s *washer;
+                struct ba_timer_s *timer;
+                struct ba_translate_s *translate;
+                struct ba_van_s *van;
+                struct ba_wandglow_s *wandglow;
+                struct ba_washer_s *washer;
     u8 pad150[0x4];
-    /* 0x154 */ struct ba_wobble_s *wobble;
+                struct ba_wobble_s *wobble;
     u8 pad158[0x4];
     union {
         s32 word;
         u8 bytes[4];
-    } unk15C; // Some sort of state
+    } unk15C;
     union {
         s32 word;
         u8 bytes[4];
@@ -164,7 +177,7 @@ typedef struct player_state_s {
     s32 unk17C;
     s32 unk180;
     s32 unk184;
-    /* 0x188 */ struct bs_kazfly_s *kazfly;
+                struct bs_kazfly_s *kazfly;
 } PlayerState;
 
 #endif
