@@ -8,7 +8,7 @@
 #include "core2/1E72EA0.h"
 #include "overlays/ba/anim.h"
 #include "overlays/ba/flag.h"
-#include "overlays/ba/fly.h"
+#include "ba/fly.h"
 #include "overlays/ba/input.h"
 #include "overlays/ba/key.h"
 #include "overlays/ba/physics.h"

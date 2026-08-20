@@ -1,6 +1,6 @@
 #include "common.h"
 
-s32 baflamethrower_entrypoint_0() 
+s32 baflamethrower_entrypoint_0(void) 
 {
     return 0x10;
 }

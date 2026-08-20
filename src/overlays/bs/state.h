@@ -9,7 +9,10 @@ typedef enum bs_state_e {
     BS_STATE_1_IDLE,
     BS_STATE_1_SLOW_WALK,
 
+    BS_STATE_5 = 0x5,
+
     BS_STATE_7_CROUCH = 0x7,
+    BS_STATE_8,
 
     BS_STATE_F_BBUSTER = 0xF,
 
@@ -28,6 +31,8 @@ typedef enum bs_state_e {
     BS_STATE_4C_LANDING_IN_WATER,
     BS_STATE_4D,
 
+    BS_STATE_57 = 0x57,
+
     BS_STATE_67 = 0x67,
     BS_STATE_68,
 
@@ -36,6 +41,8 @@ typedef enum bs_state_e {
     BS_STATE_77 = 0x77,
 
     BS_STATE_84 = 0x84,
+
+    BS_STATE_95 = 0x95,
 
     BS_STATE_A6 = 0xA6,
     BS_STATE_A7,

@@ -6,8 +6,10 @@
 
 #include "overlays/ba/alarm.h"
 #include "overlays/ba/anim.h"
+#include "overlays/ba/dust.h"
 #include "overlays/ba/flag.h"
 #include "overlays/ba/input.h"
+#include "overlays/ba/key.h"
 #include "overlays/ba/physics.h"
 #include "overlays/ba/playerstate.h"
 #include "overlays/ba/roll.h"
@@ -15,6 +17,8 @@
 #include "overlays/ba/stick.h"
 #include "overlays/ba/timer.h"
 
+#include "overlays/bs/drone.h"
+#include "overlays/bs/rest.h"
 #include "overlays/bs/state.h"
 
 #include "core2/1E66990.h"

@@ -191,7 +191,7 @@ void func_80800624_bsbfly(PlayerState* self)
     _bafly_entrypoint_10(self, 300.0f, 80.0f);
     _bafly_entrypoint_11(self);
     var_v1 = 0;
-    if (bakey_pressed(self, 8) != 0) 
+    if (bakey_pressed(self, BUTTON_A) != 0) 
     {
         self->kazfly->unk1C = 1;
     }
@@ -260,7 +260,7 @@ void func_80800624_bsbfly(PlayerState* self)
     }
     self->kazfly->unk0 = func_800F0E00(self->kazfly->unk0 - time_getDelta(), 0);
     if ((self->kazfly->unk0 == 0.0f)
-        && bakey_pressed(self, 9)
+        && bakey_pressed(self, BUTTON_B)
         && func_8008D0E0(self)
         && _bafly_entrypoint_12(self))
     {

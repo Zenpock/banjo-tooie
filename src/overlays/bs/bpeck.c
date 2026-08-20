@@ -9,7 +9,12 @@ void bsbpeck_entrypoint_0(PlayerState* self)
 
     self->unk164.word = 0;
     previous_state = bs_getPreviousState(self);
-    if ((previous_state != 5) && ((previous_state == 8) || ((previous_state != 0x2F) && (previous_state != 0x3D) && (previous_state != 0x57) && (previous_state == 0x95))))
+    if ((previous_state != BS_STATE_5)
+        && ((previous_state == BS_STATE_8) ||
+            ((previous_state != BS_STATE_2F_FALL)
+            && (previous_state != BS_STATE_3D_FALL_TUMBLING)
+            && (previous_state != BS_STATE_57)
+            && (previous_state == BS_STATE_95))))
     {
         self->unk164.word += 1;
     }

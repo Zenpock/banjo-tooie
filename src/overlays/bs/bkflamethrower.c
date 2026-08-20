@@ -1,6 +1,5 @@
 #include "bs/bkflamethrower.h"
 
-extern s32 _bsbkflamethrower_entrypoint_0[];
 extern s32 D_80800450_bsbkflamethrower[];
 
 /* .code */
@@ -75,47 +74,46 @@ void bsbkflamethrower_entrypoint_2(PlayerState* self)
     func_80800094_bsbkflamethrower(self, 1);
 }
 
-void bsbkflamethrower_entrypoint_3(PlayerState* arg0)
+void bsbkflamethrower_entrypoint_3(PlayerState* self)
 {
     enum bs_state_e next_state;
-    s32 temp_v1;
 
     next_state = BS_STATE_0_INVALID;
-    if ((_batimer_get(arg0, 0) != 0.0f) && (bakey_pressed(arg0, 9) != 0)) {
+    if ((_batimer_get(self, 0) != 0.0f) && (bakey_pressed(self, BUTTON_B) != 0)) {
         next_state = 0x189;
     }
-    _batimer_decrement(arg0, 0);
-    switch (arg0->unk15C.word) {
+    _batimer_decrement(self, 0);
+    switch (self->unk15C.word) {
         case 1:
-            if (baanim_isAt(arg0, 0.22f) != 0) {
-                func_8009DF18(arg0, 0x459F, 1.0f, 0x6590);
+            if (baanim_isAt(self, 0.22f) != 0) {
+                func_8009DF18(self, 0x459F, 1.0f, 0x6590);
             }
-            if (baanim_isAt(arg0, 0.4f) != 0) {
-                func_80800094_bsbkflamethrower(arg0, 2);
+            if (baanim_isAt(self, 0.4f) != 0) {
+                func_80800094_bsbkflamethrower(self, 2);
             }
             break;
         case 2:
-            _batimer_decrement(arg0, 2);
-            if ((_batimer_isZero(arg0, 2) != 0) && (bakey_released(arg0, 9) != 0)) {
-                func_80800094_bsbkflamethrower(arg0, 3);
+            _batimer_decrement(self, 2);
+            if ((_batimer_isZero(self, 2) != 0) && (bakey_released(self, 9) != 0)) {
+                func_80800094_bsbkflamethrower(self, 3);
             }
             break;
         case 3:
-            if (_batimer_decrement(arg0, 1) != 0) {
-                func_80800094_bsbkflamethrower(arg0, 4);
+            if (_batimer_decrement(self, 1) != 0) {
+                func_80800094_bsbkflamethrower(self, 4);
             }
             break;
         case 4:
-            if (baanim_isStopped(arg0) != 0) {
+            if (baanim_isStopped(self) != 0) {
                 next_state = BS_STATE_1_IDLE;
             }
-            if (baanim_getTimer(arg0) > 0.7f) {
-                next_state = _bsstand_entrypoint_8(arg0, next_state);
+            if (baanim_getTimer(self) > 0.7f) {
+                next_state = _bsstand_entrypoint_8(self, next_state);
             }
             break;
     }
-    _baflamethrower_entrypoint_5(arg0);
-    bs_setState(arg0, next_state);
+    _baflamethrower_entrypoint_5(self);
+    bs_setState(self, next_state);
 }
 
 s32 bsbkflamethrower_entrypoint_4(s32 arg0)

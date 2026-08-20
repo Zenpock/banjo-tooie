@@ -14,7 +14,6 @@ typedef struct bs_kazfly_s {
 #include "overlays/ba/anim.h"
 #include "overlays/ba/dust.h"
 #include "overlays/ba/flag.h"
-#include "overlays/ba/fly.h"
 #include "overlays/ba/fpctrl.h"
 #include "overlays/ba/input.h"
 #include "overlays/ba/key.h"
@@ -29,8 +28,12 @@ typedef struct bs_kazfly_s {
 #include "overlays/ba/yaw.h"
 
 #include "overlays/bs/state.h"
-#include "overlays/ba/boost.h"
 #include "overlays/bs/drone.h"
+
+#include "overlays/ch/usefeather.h"
+
+#include "ba/boost.h"
+#include "ba/fly.h"
 
 #include "nc/ba/die.h"
 
@@ -43,6 +46,7 @@ typedef struct bs_kazfly_s {
 #include "core2/1E67DA0.h"
 #include "core2/1E6B900.h"
 #include "core2/1E6F080.h"
+#include "core2/1E72EA0.h"
 #include "core2/1E75710.h"
 #include "core2/1E76500.h"
 #include "core2/1E76880.h"

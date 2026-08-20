@@ -6,6 +6,7 @@
 
 #include "overlays/ba/anim.h"
 #include "overlays/ba/flag.h"
+#include "overlays/ba/key.h"
 #include "overlays/ba/physics.h"
 #include "overlays/ba/playerstate.h"
 #include "overlays/ba/timer.h"

@@ -272,7 +272,7 @@ void bsblongleg_entrypoint_9(PlayerState* self) {
     if (func_8008DF18(self)) {
         next_state = 0x55;
     }
-    if (bakey_pressed(self, 8) && player_isStable(self))
+    if (bakey_pressed(self, BUTTON_A) && player_isStable(self))
     {
         next_state = 0x28;
     }
@@ -459,7 +459,7 @@ void bsblongleg_entrypoint_17(PlayerState* self) {
             if (anctrl_isStopped(anim_ctrl) != 0) {
                 next_state = 0x26;
             }
-            if (bakey_pressed(self, 8) != 0) {
+            if (bakey_pressed(self, BUTTON_A) != 0) {
                 next_state = 0x28;
             }
             if (bastatetimer_isDone(self, BA_STATE_TIMER_ID_2_LONGLEG) != 0) {
@@ -551,7 +551,7 @@ s32 bsblongleg_entrypoint_23(s32 arg0)
 
 void bsblongleg_entrypoint_24(PlayerState* self)
 {
-    _bsrest_entrypoint_14();
+    _bsrest_entrypoint_14(self);
     func_80800204_bsblongleg(self);
 }
 
