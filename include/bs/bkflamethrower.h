@@ -19,6 +19,9 @@
 #include "core2/1E75710.h"
 #include "core2/1E75920.h"
 #include "core2/1E76CC0.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E79FD0.h"
+#include "core2/1EA0690.h"
 #include "core2/1EC8070.h"
 
 // Code

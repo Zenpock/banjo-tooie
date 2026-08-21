@@ -150,7 +150,6 @@ void baanim_init(PlayerState *self) {
     func_8008C984(self, 3);
     self->anim->scalable_duration = 0;
     self->anim->duration_scale = 1.0f;
-
 }
 
 void baanim_free(PlayerState *self) {
