@@ -149,10 +149,9 @@ s32 func_800F2EA0(s32);
 s32 func_800F2EBC(s32);   
 f32 func_800DC178(f32, f32);     
 s32 func_800EFA6C(s32, s16, s16, s16);
-s32 func_800BBCB8(f32[3], f32[3], f32, s32, s32*);
-s32 func_800EE940(s32);   
+s32 func_800BBCB8(f32[3], f32[3], f32, s32, s32*);  
 void func_800BA22C(s32, s32);
-s32 func_800EE814(s32); 
+
 s32 func_800EFA6C(s32, s16, s16, s16);
 void func_800BA3FC(s32, s32);
 void func_800BA450(s32, s16, s16, s16, s32, s32, s32);

@@ -1,4 +1,5 @@
 #include "core2/1E93440.h"
+#include "core2/1EC8070.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E93440/func_800B9B50.s")
 
@@ -67,10 +68,7 @@ void func_800BA568(unkstruct800BA568* arg0, s16 arg1) {
     arg0->unkAE = arg1;
 }
 
-void func_800BA574(s32 arg0) {
-    func_800EE814(arg0 + 0xC);
-}
-
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E93440/func_800BA574.s")
 
 void func_800BA594(unkStruct800BA594* arg0, f32 arg1, f32 arg2) {
     arg0->unk18 = arg1;
@@ -130,9 +128,8 @@ void func_800BA730(unkStruct800BA730* arg0, s16 arg1, s16 arg2, s16 arg3, s16 ar
     arg0->unk2E = arg4;
 }
 
-void func_800BA75C(s32 arg0) {
-    func_800EE940(arg0 + 0x12);
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E93440/func_800BA75C.s")
+
 
 void func_800BA77C(s32 arg0, s16 arg1, s16 arg2, s16 arg3) {
     func_800EFA6C(arg0 + 0x4C, arg1, arg2, arg3);

@@ -18,7 +18,7 @@ typedef struct {
     u8  unk33;
 } unkStruct800FB540;
 
-s32 flag_setValueTrue(s32);
+
 s16 func_800FED70(s16, void*);  
 s32 func_800FB650(s32, s32, s32);
 s16 func_800FED90(s16, void*);    

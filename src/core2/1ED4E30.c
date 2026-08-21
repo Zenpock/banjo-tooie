@@ -1,4 +1,5 @@
 #include "core2/1ED4E30.h"
+#include "core2/1EB3750.h"
 
 extern s32 D_80135960;
 extern s16 D_80123DE0[];
