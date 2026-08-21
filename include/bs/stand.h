@@ -17,7 +17,7 @@
 // bsstand_entrypoint_5
 void bsstand_entrypoint_6(s32);
 // bsstand_entrypoint_7
-void bsstand_entrypoint_8();
+enum bs_state_e _bsstand_entrypoint_8(PlayerState*, enum bs_state_e);
 void bsstand_entrypoint_9();
 void bsstand_entrypoint_10(PlayerState*);
 void bsstand_entrypoint_11(s32);

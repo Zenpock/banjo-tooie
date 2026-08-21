@@ -62,7 +62,7 @@ void func_80800788_bsbeemain(PlayerState*);
 s32 bsbeemain_entrypoint_2(s32);
 void func_808007C4_bsbeemain(PlayerState*);
 void func_80800874_bsbeemain(PlayerState*);
-void func_80800A74_bsbeemain(void);
+void func_80800A74_bsbeemain(PlayerState*);
 s32 bsbeemain_entrypoint_3(s32);
 void bsbeemain_entrypoint_4(PlayerState*);
 void bsbeemain_entrypoint_5(PlayerState*);

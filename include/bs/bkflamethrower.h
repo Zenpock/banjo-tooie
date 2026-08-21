@@ -14,12 +14,12 @@
 
 #include "ba/flamethrower.h"
 
+#include "bs/stand.h"
+
 #include "core2/1E75710.h"
 #include "core2/1E75920.h"
 #include "core2/1E76CC0.h"
 #include "core2/1EC8070.h"
-
-enum bs_state_e _bsstand_entrypoint_8(PlayerState*, enum bs_state_e);
 
 // Code
 void _bsbkflamethrower_entrypoint_0(PlayerState*, f32*, f32*);

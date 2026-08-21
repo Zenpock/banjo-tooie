@@ -7,19 +7,25 @@
 #include "player.h"
 
 #include "overlays/ba/anim.h"
-#include "overlays/bs/state.h"
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/flag.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/stick.h"
-#include "ba/boost.h"
-#include "overlays/ba/buzz.h"
-#include "ba/fly.h"
-#include "overlays/ba/roll.h"
-#include "overlays/bs/rest.h"
-#include "overlays/ba/key.h"
-
 #include "overlays/ba/bee.h"
+#include "overlays/ba/flag.h"
+#include "overlays/ba/key.h"
+#include "overlays/ba/playerstate.h"
+#include "overlays/ba/physics.h"
+#include "overlays/ba/roll.h"
+#include "overlays/ba/stick.h"
+
+#include "overlays/bs/rest.h"
+#include "overlays/bs/state.h"
+
+#include "ba/boost.h"
+#include "ba/buzz.h"
+#include "ba/fly.h"
+#include "ba/fpctrl.h"
+
+#include "bs/bee.h"
+
+#include "nc/ba/fly.h"
 
 #include "core1/1E2B200.h"
 
@@ -35,16 +41,6 @@
 #include "core2/1EB5980.h"
 #include "core2/1ECA640.h"
 #include "core2/1EB5980.h"
-
-// Entrypoints
-extern void _ncbafly_entrypoint_4(PlayerState*, f32, f32, f32);
-extern void _babuzz_entrypoint_1(PlayerState*);
-extern void _babuzz_entrypoint_2(PlayerState*);
-extern void _babuzz_entrypoint_3(PlayerState*);
-extern void _babuzz_entrypoint_4(PlayerState*, f32);
-extern f32 _bafpctrl_entrypoint_3(PlayerState*);
-extern void _bafpctrl_entrypoint_18(PlayerState*, s32);
-extern void _bsbee_entrypoint_2(PlayerState*);
 
 // Code
 void func_80800000_bsbeefly(PlayerState*);

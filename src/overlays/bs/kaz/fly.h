@@ -12,7 +12,7 @@
 #include "overlays/ba/dust.h"
 #include "overlays/ba/flag.h"
 #include "ba/fly.h"
-#include "overlays/ba/fpctrl.h"
+#include "ba/fpctrl.h"
 #include "overlays/ba/key.h"
 #include "overlays/ba/motor.h"
 #include "overlays/ba/physics.h"

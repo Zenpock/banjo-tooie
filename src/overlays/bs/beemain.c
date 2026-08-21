@@ -213,7 +213,7 @@ void func_80800548_bsbeemain(PlayerState* self) {
 
 void func_80800788_bsbeemain(PlayerState* self)
 {
-    _bsbee_entrypoint_0();
+    _bsbee_entrypoint_0(self);
     baphysics_reset_gravity(self);
 }
 
@@ -296,9 +296,9 @@ void func_80800874_bsbeemain(PlayerState* self) {
     bs_setState(self, sp34);
 }
 
-void func_80800A74_bsbeemain(void)
+void func_80800A74_bsbeemain(PlayerState* self)
 {
-    _bsbee_entrypoint_0();
+    _bsbee_entrypoint_0(self);
 }
 
 s32 bsbeemain_entrypoint_3(s32 arg0) {

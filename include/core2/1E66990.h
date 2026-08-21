@@ -21,7 +21,7 @@
 #include "core2/1ECB0F0.h"
 #include "core2/1ECE0B0.h"
 #include "overlays/ba/duo.h"
-#include "overlays/ba/fpctrl.h"
+#include "ba/fpctrl.h"
 #include "overlays/nc/ba/1p.h"
 
 #include "overlays/ba/flag.h"

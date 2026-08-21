@@ -10,7 +10,7 @@
 #include "overlays/ba/playerstate.h"
 #include "overlays/ba/physics.h"
 
-#include "ba/egg/fire/eggfire.h"
+#include "ba/egg/fire.h"
 
 #include "gc/statusDLL.h"
 

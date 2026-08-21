@@ -14,7 +14,7 @@ typedef struct bs_kazfly_s {
 #include "overlays/ba/anim.h"
 #include "overlays/ba/dust.h"
 #include "overlays/ba/flag.h"
-#include "overlays/ba/fpctrl.h"
+#include "ba/fpctrl.h"
 #include "overlays/ba/input.h"
 #include "overlays/ba/key.h"
 #include "overlays/ba/motor.h"
