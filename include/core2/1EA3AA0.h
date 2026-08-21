@@ -7,9 +7,9 @@
 // func_800CA1B0
 // func_800CA218
 // func_800CA2A8
-void func_800CA314(s32, s32); // PlayerState
+void func_800CA314(void*, void*);
 // func_800CA334
-void func_800CA364(s32);
+void func_800CA364(void*);
 void* func_800CA384(void*);
 // func_800CA3A4
 // func_800CA3F4
@@ -37,7 +37,7 @@ void func_800CA740(f32*, f32*);
 // func_800CA7B4
 // func_800CA7BC
 // func_800CA7E4
-void func_800CA810(s32, s32);
+void func_800CA810(void*, s32);
 // func_800CA8B4
 // func_800CA8F4
 // func_800CA934
