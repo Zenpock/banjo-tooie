@@ -125,7 +125,15 @@ s32 func_800123B0()
     return D_800459D0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_800123BC.s")
+
+
+void func_800123BC(void) {
+    if (func_800A7D84() != 0) 
+    {
+        func_800A7840(0);
+    }
+    func_800A5D1C();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_800123F4.s")
 

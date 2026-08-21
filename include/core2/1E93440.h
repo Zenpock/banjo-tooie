@@ -143,7 +143,6 @@ typedef struct {
     f32 unk5C;
 } unkStruct800BAB54;
 
-f32 heap_free();
 s32 func_800B4790(s32);    
 f32 func_800136E4(f32);   
 s32 func_800F2EA0(s32);         

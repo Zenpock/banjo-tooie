@@ -3,6 +3,25 @@
 
 #include "common.h"
 
+typedef struct {
+    u8 pad[0x28];
+    s16 unk28;
+    u8  pad1[9];
+    u8 unk33;
+
+} unkStruct800FB5BC;
+typedef struct {
+    u8  pad0[0x28];
+    s16 unk28;
+
+    u8  pad2A[0x33 - 0x2A];
+    u8  unk33;
+} unkStruct800FB540;
+
+s32 flag_setValueTrue(s32);
+s16 func_800FED70(s16, void*);  
+s32 func_800FB650(s32, s32, s32);
+s16 func_800FED90(s16, void*);    
 void func_800FB968();
 void func_800FC124(u32);
 void func_800FC1A8(void);
