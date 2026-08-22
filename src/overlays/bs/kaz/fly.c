@@ -622,7 +622,7 @@ void func_80801838_bskazfly(PlayerState *self) {
 }
 
 void func_8080185C_bskazfly(PlayerState *self) {
-    _bafly_entrypoint_15();
+    _bafly_entrypoint_15(self);
     func_80800188_bskazfly(self);
 }
 
@@ -641,7 +641,7 @@ void func_808018D0_bskazfly(PlayerState *self) {
 }
 
 void func_808018F4_bskazfly(PlayerState *self) {
-    _bafly_entrypoint_15();
+    _bafly_entrypoint_15(self);
     func_80800188_bskazfly(self);
 }
 

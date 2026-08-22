@@ -97,8 +97,8 @@ typedef struct ba_unknown_50_s {
 typedef struct ba_unknown_8C_s {
     f32 unk0;
     f32 unk4;
-    s8 unk8;
-    s8 unk9;
+    u8 unk8;
+    u8 unk9;
     s8 unkA;
     s8 unkB;
     s16 unkC;

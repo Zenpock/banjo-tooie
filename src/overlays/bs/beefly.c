@@ -344,7 +344,7 @@ s32 bsbeefly_entrypoint_3(s32 arg0) {
 
 void func_80800CE0_bsbeefly(PlayerState* self)
 {
-    _bafly_entrypoint_15();
+    _bafly_entrypoint_15(self);
     func_808002E4_bsbeefly(self);
     _bsbee_entrypoint_0(self);
 }
