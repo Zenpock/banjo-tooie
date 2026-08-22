@@ -6,9 +6,9 @@
 //strcmp
 s32 func_800E70DC(const char* str1, const char* str2);
 //Copy Text
-void func_800E715C(u32* target, u32* source);
+void func_800E715C(char* target, char* source);
 //Get Text Length
-s32 func_800E7188(u32*);
+s32 func_800E7188(char*);
 u32* func_800E71B8(s32*);
 
 #endif

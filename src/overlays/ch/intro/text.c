@@ -238,7 +238,7 @@ void chintrotext_entrypoint_3(u32 arg0, s16 arg1, s32 arg2, s32 arg3)
     f32 sp2C[3];
     Actor* temp_v0;
     introTextMemory* temp_v0_2;
-    u32* temp_v0_3;
+    char* temp_v0_3;
 
     func_800EFD24(sp2C);
     temp_v0 = func_80108474(0x3B0U, sp2C, 0);

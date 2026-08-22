@@ -23,7 +23,7 @@
 
 #include "nc/ba/fly.h"
 
-#include "gc/statusDLL.h"
+#include "gc/statusDll.h"
 
 #include "su/inv.h"
 

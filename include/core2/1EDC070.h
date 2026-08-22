@@ -5,5 +5,6 @@
 
 void func_80102B2C(Actor*, f32);
 void func_80102BAC(Actor*, f32, f32, f32);
+void func_80102BF8(Actor*, f32, f32, f32);
 f32 func_80102D78(Actor*, f32*);
 #endif
