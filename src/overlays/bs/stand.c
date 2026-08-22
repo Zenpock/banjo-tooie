@@ -26,9 +26,9 @@ void bsstand_entrypoint_6(s32 arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stand/bsstand_entrypoint_7.s")
 
-void bsstand_entrypoint_8()
+enum bs_state_e bsstand_entrypoint_8(PlayerState* self, enum bs_state_e state)
 {
-    func_80800038_bsstand();
+    return func_80800038_bsstand(self, state);
 }
 
 void bsstand_entrypoint_9()

@@ -8,7 +8,7 @@
 #include "overlays/ba/anim.h"
 #include "overlays/ba/duo.h"
 #include "overlays/ba/flag.h"
-#include "overlays/ba/fpctrl.h"
+#include "ba/fpctrl.h"
 #include "overlays/ba/kaztorpedo.h"
 #include "overlays/ba/key.h"
 #include "overlays/ba/move/goto.h"

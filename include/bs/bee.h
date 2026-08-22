@@ -18,6 +18,6 @@
 // Code
 void bsbee_entrypoint_0(PlayerState*);
 void bsbee_entrypoint_1(PlayerState*);
-void bsbee_entrypoint_2(PlayerState*);
+void _bsbee_entrypoint_2(PlayerState*);
 
 #endif // __BS_BEE_H__

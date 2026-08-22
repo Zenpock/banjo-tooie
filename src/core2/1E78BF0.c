@@ -1,6 +1,6 @@
 #include "core2/1E78BF0.h"
 
-s32 func_8009F300() 
+s32 func_8009F300(void) 
 {
     return 0x4;
 }

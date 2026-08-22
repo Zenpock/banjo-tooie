@@ -94,6 +94,17 @@ typedef struct ba_unknown_50_s {
     MtxF unkCC;
 } BaUnknown50;
 
+typedef struct ba_unknown_8C_s {
+    f32 unk0;
+    f32 unk4;
+    u8 unk8;
+    u8 unk9;
+    s8 unkA;
+    s8 unkB;
+    s16 unkC;
+    u8 unkE;
+} BaUnknown8C;
+
 typedef struct player_state_s {
     /* 0x00 */ struct ba_alarm_s *alarm;
     /* 0x04 */ struct ba_anim_s *anim;
@@ -119,7 +130,9 @@ typedef struct player_state_s {
     u8* unk64;
     u8 pad68[0x18];
     /* 0x80 */ struct ba_flag_s *flag;
-    u8 pad84[0x18];
+    u8 pad84[0x8];
+    /* 0x8C */ struct ba_unknown_8C_s* unk8C;
+    u8 pad90[0xC];
     /* 0x9C */ struct ba_unk_9C* unk9C;
     u8 padA0[0x4];
     /* 0xA4 */ struct ba_input_s *input;

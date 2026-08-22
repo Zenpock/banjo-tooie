@@ -313,9 +313,9 @@ s32 player_inWater(PlayerState* arg0)
     return func_800A0FD8(arg0);
 }
 
-void func_8008E37C()
+s32 func_8008E37C(PlayerState* self)
 {
-    func_800A0FE4();
+    func_800A0FE4(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E39C.s")
