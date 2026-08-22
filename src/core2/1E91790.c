@@ -1,7 +1,15 @@
 #include "core2/1E91790.h"
-#include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B7EA0.s")
+void func_800B7EA0(s32 arg0, s32 arg1)
+{
+	s32 sp3C;
+	s32 sp38;
+	s32 sp34;
+
+	func_800AF614(arg0, func_800D674C(arg1), 0, 0x100, 1, 2, 2, &sp38, &sp34);
+	D_801282C0.data[0xA] = sp38;
+	D_801282C0.data[0xB] = sp34;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B7F14.s")
 
