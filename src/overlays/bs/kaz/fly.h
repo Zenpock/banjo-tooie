@@ -23,7 +23,7 @@
 #include "overlays/ba/sudie.h"
 #include "overlays/ba/timer.h"
 #include "overlays/ba/yaw.h"
-#include "overlays/bs/drone.h"
+#include "bs/drone.h"
 #include "overlays/bs/splat.h"
 #include "overlays/ch/usefeather.h"
 #include "core1/1E29B60.h"

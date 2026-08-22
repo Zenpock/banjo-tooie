@@ -21,7 +21,7 @@
 #include "overlays/ba/stick.h"
 #include "overlays/ba/translate.h"
 #include "overlays/ba/yaw.h"
-#include "overlays/bs/drone.h"
+#include "bs/drone.h"
 #include "overlays/bs/rest.h"
 #include "core1/1E2B200.h"
 #include "core2/1E66990.h"

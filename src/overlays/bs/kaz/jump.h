@@ -14,7 +14,7 @@
 #include "overlays/ba/stick.h"
 #include "overlays/ba/timer.h"
 #include "overlays/ba/yaw.h"
-#include "overlays/bs/kaz.h"
+#include "bs/kaz.h"
 #include "overlays/bs/kaz/move.h"
 #include "overlays/bs/kaz/shock.h"
 #include "core2/1E66990.h"

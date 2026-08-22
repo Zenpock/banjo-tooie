@@ -11,7 +11,7 @@
 #include "overlays/ba/physics.h"
 #include "overlays/ba/yaw.h"
 #include "overlays/ba/anim.h"
-#include "overlays/bs/kaz.h"
+#include "bs/kaz.h"
 #include "core2/1E6B900.h"
 #include "core2/1E76880.h"
 #include "core2/1E76CC0.h"

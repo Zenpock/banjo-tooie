@@ -7,7 +7,7 @@
 #include "overlays/ba/physics.h"
 #include "overlays/ba/playerstate.h"
 #include "overlays/ba/shoes.h"
-#include "overlays/bs/kaz.h"
+#include "bs/kaz.h"
 #include "overlays/bs/kaz/move.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E78BF0.h"

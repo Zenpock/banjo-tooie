@@ -10,7 +10,7 @@
 #include "overlays/ba/playerstate.h"
 #include "overlays/ba/stick.h"
 #include "overlays/ba/yaw.h"
-#include "overlays/bs/drone.h"
+#include "bs/drone.h"
 #include "overlays/bs/mum.h"
 #include "overlays/bs/rest.h"
 #include "overlays/bs/state.h"

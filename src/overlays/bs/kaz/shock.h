@@ -11,7 +11,7 @@
 #include "overlays/ba/playerstate.h"
 #include "overlays/ba/stick.h"
 #include "overlays/ba/yaw.h"
-#include "overlays/bs/kaz.h"
+#include "bs/kaz.h"
 #include "overlays/bs/kaz/move.h"
 #include "core1/1E29B60.h"
 #include "core2/1E66990.h"

@@ -3,9 +3,9 @@
 
 #include <ultra64.h>
 
-#include "overlays/bs/drone.h"
+#include "bs/drone.h"
 #include "overlays/ba/playerstate.h"
-#include "overlays/bs/kaz.h"
+#include "bs/kaz.h"
 #include "core2/anctrl.h"
 #include "overlays/ba/anim.h"
 #include "overlays/ba/input.h"

@@ -28,7 +28,7 @@ typedef struct bs_kazfly_s {
 #include "overlays/ba/yaw.h"
 
 #include "overlays/bs/state.h"
-#include "overlays/bs/drone.h"
+#include "bs/drone.h"
 
 #include "overlays/ch/usefeather.h"
 

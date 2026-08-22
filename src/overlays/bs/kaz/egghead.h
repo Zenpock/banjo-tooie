@@ -8,7 +8,7 @@
 #include "overlays/ba/playerstate.h"
 #include "overlays/ba/anim.h"
 #include "overlays/ba/eggs.h"
-#include "overlays/bs/kaz.h"
+#include "bs/kaz.h"
 #include "overlays/ba/physics.h"
 #include "overlays/ba/yaw.h"
 #include "overlays/bs/kaz/crouch.h"

@@ -7,7 +7,7 @@
 #include "overlays/ba/anim.h"
 #include "overlays/ba/data.h"
 #include "overlays/ba/physics.h"
-#include "overlays/bs/kaz.h"
+#include "bs/kaz.h"
 #include "overlays/bs/state.h"
 #include "core2/1E66990.h"
 #include "core2/1E76CC0.h"

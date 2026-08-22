@@ -10,7 +10,7 @@
 #include "overlays/ba/playerstate.h"
 #include "overlays/ba/stick.h"
 #include "overlays/ba/yaw.h"
-#include "overlays/bs/kaz.h"
+#include "bs/kaz.h"
 #include "core2/1E76880.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E78BF0.h"

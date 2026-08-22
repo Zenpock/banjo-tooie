@@ -8,7 +8,7 @@
 #include "overlays/ba/move/spline.h"
 #include "overlays/ba/shoes.h"
 #include "overlays/ba/shoessuck.h"
-#include "overlays/bs/kaz.h"
+#include "bs/kaz.h"
 #include "overlays/bs/kaz/move.h"
 #include "overlays/ba/anim.h"
 #include "overlays/ba/flag.h"

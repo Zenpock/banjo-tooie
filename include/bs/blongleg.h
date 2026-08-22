@@ -17,7 +17,7 @@
 #include "overlays/ba/stick.h"
 #include "overlays/ba/timer.h"
 
-#include "overlays/bs/drone.h"
+#include "bs/drone.h"
 #include "overlays/bs/rest.h"
 #include "overlays/bs/state.h"
 

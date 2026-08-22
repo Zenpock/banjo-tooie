@@ -7,7 +7,7 @@
 #include "overlays/ba/anim.h"
 #include "overlays/ba/bounce.h"
 #include "overlays/ba/physics.h"
-#include "overlays/bs/kaz.h"
+#include "bs/kaz.h"
 #include "overlays/bs/kaz/move.h"
 #include "player.h"
 

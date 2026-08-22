@@ -12,7 +12,7 @@
 #include "overlays/ba/playerstate.h"
 #include "overlays/ba/stick.h"
 #include "overlays/ba/sudie.h"
-#include "overlays/bs/drone.h"
+#include "bs/drone.h"
 #include "overlays/bs/mum/move.h"
 #include "overlays/bs/rest.h"
 #include "overlays/bs/state.h"
