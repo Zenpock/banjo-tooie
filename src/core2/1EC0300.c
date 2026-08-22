@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1EC0300.h"
 
 //strcat
 void func_800E6A10(char* dst, char* src) {

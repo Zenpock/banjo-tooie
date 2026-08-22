@@ -4,7 +4,7 @@
 #include "common.h"
 #include "memory.h"
 #include "gc/zoombox.h"
-#include "gc/statusDLL.h"
+#include "gc/statusDll.h"
 #include "gc/frontend.h"
 #include "core1/1E2D890.h"
 #include "core2/1E837B0.h"

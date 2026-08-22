@@ -1,5 +1,5 @@
-#ifndef __GC_STATUSDLL__
-#define __GC_STATUSDLL__
+#ifndef __GC_STATUS_DLL__
+#define __GC_STATUS_DLL__
 
 
 #include <ultra64.h>
@@ -7,17 +7,18 @@
 
 // gcstatusDll_entrypoint_0
 // gcstatusDll_entrypoint_1
-// gcstatusDll_entrypoint_2
-// gcstatusDll_entrypoint_3
+void _gcstatusDll_entrypoint_2(s32);
+s32 _gcstatusDll_entrypoint_3(s32, s32);
 // gcstatusDll_entrypoint_4
 // gcstatusDll_entrypoint_5
 // gcstatusDll_entrypoint_6
 // gcstatusDll_entrypoint_7
 // gcstatusDll_entrypoint_8
 // gcstatusDll_entrypoint_9
-// gcstatusDll_entrypoint_10
+s32 _gcstatusDll_entrypoint_10();
 s32 _gcstatusDll_entrypoint_11(void);
 // gcstatusDll_entrypoint_12
+s32 _gcstatusDll_entrypoint_13();
 // gcstatusDll_entrypoint_13
 // gcstatusDll_entrypoint_14
 // gcstatusDll_entrypoint_15
@@ -27,4 +28,4 @@ s32 _gcstatusDll_entrypoint_11(void);
 // gcstatusDll_entrypoint_19
 // gcstatusDll_entrypoint_20
 
-#endif // __GC_STATUSDLL__
+#endif // __GC_STATUS_DLL__

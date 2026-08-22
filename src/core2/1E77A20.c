@@ -12,7 +12,6 @@ s32 func_8009E130()
 void func_8009E388(s32 arg0) 
 {
 }
-
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E390.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E474.s")
