@@ -3,6 +3,7 @@
 
 #include "common.h"
 
+#include "core2/1ECA640.h"
 #include <ultra64.h>
 #include "overlays/ba/playerstate.h"
 

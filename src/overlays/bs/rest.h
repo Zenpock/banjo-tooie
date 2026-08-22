@@ -7,7 +7,7 @@
 #include "overlays/ba/data.h"
 #include "overlays/ba/drone.h"
 #include "overlays/ba/flag.h"
-#include "overlays/ba/fpctrl.h"
+#include "ba/fpctrl.h"
 #include "overlays/ba/physics.h"
 #include "overlays/ba/roll.h"
 #include "overlays/ba/yaw.h"

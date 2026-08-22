@@ -52,7 +52,7 @@ void func_800A0CF4(PlayerState* arg0, s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E79FD0/func_800A0DDC.s")
 
-s32 func_800A0E50() 
+s32 func_800A0E50(void) 
 {
     return 0x14;
 }
