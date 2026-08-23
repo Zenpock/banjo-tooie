@@ -5,7 +5,7 @@
 
 #include "core2/1E72EA0.h"
 #include "ba/drone.h"
-#include "overlays/ba/move/spline.h"
+#include "ba/move/spline.h"
 #include "ba/shoes.h"
 #include "ba/shoessuck.h"
 #include "bs/kaz.h"
