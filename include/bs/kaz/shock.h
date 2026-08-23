@@ -12,7 +12,7 @@
 #include "ba/stick.h"
 #include "ba/yaw.h"
 #include "bs/kaz.h"
-#include "overlays/bs/kaz/move.h"
+#include "bs/kaz/move.h"
 #include "core1/1E29B60.h"
 #include "core2/1E66990.h"
 #include "core2/1E6B900.h"

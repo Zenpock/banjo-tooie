@@ -8,7 +8,7 @@
 #include "ba/bounce.h"
 #include "ba/physics.h"
 #include "bs/kaz.h"
-#include "overlays/bs/kaz/move.h"
+#include "bs/kaz/move.h"
 #include "player.h"
 
 extern s32 _bskazow_entrypoint_0(s32 idx);

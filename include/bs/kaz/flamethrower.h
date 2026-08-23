@@ -9,7 +9,7 @@
 #include "ba/key.h"
 #include "ba/yaw.h"
 #include "ba/playerstate.h"
-#include "overlays/bs/kaz/still.h"
+#include "bs/kaz/still.h"
 #include "core2/1E75710.h"
 #include "core2/1E75920.h"
 #include "core2/1E76CC0.h"

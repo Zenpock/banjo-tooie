@@ -9,7 +9,7 @@
 #include "ba/key.h"
 #include "ba/shoes.h"
 #include "ba/stick.h"
-#include "overlays/bs/kaz/move.h"
+#include "bs/kaz/move.h"
 #include "core2/1E66990.h"
 #include "core2/1E6B900.h"
 #include "core2/1E6F080.h"

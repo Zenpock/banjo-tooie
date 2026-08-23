@@ -18,7 +18,7 @@
 #include "ba/yaw.h"
 #include "bs/drone.h"
 #include "bs/kaz.h"
-#include "overlays/bs/kaz/move.h"
+#include "bs/kaz/move.h"
 #include "core1/1E2B200.h"
 #include "core2/1E66990.h"
 #include "core2/1E67DA0.h"

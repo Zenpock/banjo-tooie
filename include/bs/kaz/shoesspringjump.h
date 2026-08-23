@@ -8,7 +8,7 @@
 #include "ba/playerstate.h"
 #include "ba/shoes.h"
 #include "bs/kaz.h"
-#include "overlays/bs/kaz/move.h"
+#include "bs/kaz/move.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E78BF0.h"
 

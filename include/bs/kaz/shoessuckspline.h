@@ -9,7 +9,7 @@
 #include "ba/shoes.h"
 #include "ba/shoessuck.h"
 #include "bs/kaz.h"
-#include "overlays/bs/kaz/move.h"
+#include "bs/kaz/move.h"
 #include "ba/anim.h"
 #include "ba/flag.h"
 #include "ba/key.h"

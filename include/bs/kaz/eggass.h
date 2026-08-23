@@ -13,7 +13,7 @@
 #include "ba/key.h"
 #include "ba/physics.h"
 #include "bs/kaz.h"
-#include "overlays/bs/kaz/crouch.h"
+#include "bs/kaz/crouch.h"
 #include "core2/1E66990.h"
 #include "core2/1E6B900.h"
 #include "core2/1E78BF0.h"
