@@ -10,7 +10,7 @@
 #include "overlays/ba/timer.h"
 #include "overlays/ba/yaw.h"
 
-#include "overlays/bs/state.h"
+#include "bs/state.h"
 
 #include "ba/flamethrower.h"
 

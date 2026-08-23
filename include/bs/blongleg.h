@@ -18,8 +18,8 @@
 #include "overlays/ba/timer.h"
 
 #include "bs/drone.h"
-#include "overlays/bs/rest.h"
-#include "overlays/bs/state.h"
+#include "bs/rest.h"
+#include "bs/state.h"
 
 #include "core2/1E66990.h"
 #include "core2/1E6B900.h"

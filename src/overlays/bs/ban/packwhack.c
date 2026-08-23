@@ -7,7 +7,7 @@
 #include "overlays/ba/playerstate.h"
 #include "overlays/ba/yaw.h"
 #include "bs.h"
-#include "overlays/bs/state.h"
+#include "bs/state.h"
 
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"

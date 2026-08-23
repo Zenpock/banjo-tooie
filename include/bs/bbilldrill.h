@@ -14,9 +14,9 @@
 #include "overlays/ba/motor.h"
 #include "overlays/ba/physics.h"
 #include "overlays/ba/playerstate.h"
-#include "overlays/bs/state.h"
+#include "bs/state.h"
 #include "overlays/ba/timer.h"
-#include "overlays/bs/walk.h"
+#include "bs/walk.h"
 
 #include "core1/1E29B60.h"
 

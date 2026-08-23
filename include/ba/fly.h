@@ -16,7 +16,7 @@
 #include "overlays/ba/stick.h"
 #include "overlays/ba/yaw.h"
 
-#include "overlays/bs/state.h"
+#include "bs/state.h"
 
 #include "ba/fpctrl.h"
 #include "ba/egg/fire.h"

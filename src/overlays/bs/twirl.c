@@ -6,7 +6,7 @@
 #include "overlays/ba/physics.h"
 #include "bs.h"
 #include "buttons.h"
-#include "overlays/bs/state.h"
+#include "bs/state.h"
 
 #include "core2/1E72EA0.h"
 #include "core2/1E76CC0.h"

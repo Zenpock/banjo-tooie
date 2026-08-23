@@ -7,7 +7,7 @@
 
 #include "overlays/ba/playerstate.h"
 
-#include "overlays/bs/state.h"
+#include "bs/state.h"
 
 // func_80800000_bscrouch
 // func_80800034_bscrouch

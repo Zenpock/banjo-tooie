@@ -15,7 +15,7 @@
 #include "overlays/ba/alarm.h"
 #include "overlays/ba/timer.h"
 #include "overlays/ba/physics.h"
-#include "overlays/bs/rest.h"
+#include "bs/rest.h"
 #include "overlays/ba/input.h"
 #include "core2/1E66990.h"
 #include "core2/1E6F080.h"

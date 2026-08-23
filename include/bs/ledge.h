@@ -15,8 +15,8 @@
 #include "overlays/ba/translate.h"
 #include "overlays/ba/packctrl.h"
 
-#include "overlays/bs/rest.h"
-#include "overlays/bs/state.h"
+#include "bs/rest.h"
+#include "bs/state.h"
 
 #include "core2/anctrl.h"
 

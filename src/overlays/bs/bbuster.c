@@ -9,7 +9,7 @@
 #include "overlays/ba/playerstate.h"
 #include "bs.h"
 #include "buttons.h"
-#include "overlays/bs/state.h"
+#include "bs/state.h"
 #include "overlays/ba/flag.h"
 
 #include "core2/1E66990.h"

@@ -15,8 +15,8 @@
 #include "overlays/ba/roll.h"
 #include "overlays/ba/stick.h"
 
-#include "overlays/bs/rest.h"
-#include "overlays/bs/state.h"
+#include "bs/rest.h"
+#include "bs/state.h"
 
 #include "ba/boost.h"
 #include "ba/buzz.h"

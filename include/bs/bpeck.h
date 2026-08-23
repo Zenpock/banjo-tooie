@@ -12,8 +12,8 @@
 #include "overlays/ba/timer.h"
 #include "overlays/ba/yaw.h"
 
-#include "overlays/bs/state.h"
-#include "overlays/bs/walk.h"
+#include "bs/state.h"
+#include "bs/walk.h"
 
 #include "core2/1E76CC0.h"
 #include "core2/1E6EC70.h"

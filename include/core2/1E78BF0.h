@@ -5,7 +5,7 @@
 #include "overlays/ba/anim.h"
 #include "overlays/ba/yaw.h"
 #include "overlays/ba/physics.h"
-#include "overlays/bs/state.h"
+#include "bs/state.h"
 
 s32 func_8009F300(void);
 f32 func_8009F308(PlayerState *);

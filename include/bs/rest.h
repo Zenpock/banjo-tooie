@@ -11,7 +11,7 @@
 #include "overlays/ba/physics.h"
 #include "overlays/ba/roll.h"
 #include "overlays/ba/yaw.h"
-#include "overlays/bs/state.h"
+#include "bs/state.h"
 #include "core2/1E75710.h"
 #include "core2/1E75920.h"
 #include "core2/1E76500.h"

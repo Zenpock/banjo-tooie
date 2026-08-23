@@ -4,7 +4,7 @@
 #include "overlays/ba/anim.h"
 #include "overlays/ba/eggs.h"
 #include "core2/1E72EA0.h"
-#include "overlays/bs/state.h"
+#include "bs/state.h"
 #include "bs/crouch.h"
 #include "core2/1E66990.h"
 #include "core2/1E6B900.h"

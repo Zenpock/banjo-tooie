@@ -8,7 +8,7 @@
 
 #include "bee.h"
 
-#include "overlays/bs/state.h"
+#include "bs/state.h"
 #include "overlays/ba/playerstate.h"
 #include "overlays/ba/flag.h"
 #include "overlays/ba/physics.h"
