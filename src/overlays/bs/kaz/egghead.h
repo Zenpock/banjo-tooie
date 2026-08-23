@@ -5,12 +5,12 @@
 #include <ultra64.h>
 
 #include "core2/anctrl.h"
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/eggs.h"
+#include "ba/playerstate.h"
+#include "ba/anim.h"
+#include "ba/eggs.h"
 #include "bs/kaz.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/yaw.h"
+#include "ba/physics.h"
+#include "ba/yaw.h"
 #include "overlays/bs/kaz/crouch.h"
 #include "core2/1E66990.h"
 #include "core2/1E6B900.h"

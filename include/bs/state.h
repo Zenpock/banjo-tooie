@@ -1,7 +1,7 @@
 #ifndef __BS_STATE_H__
 #define __BS_STATE_H__
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 // TODO validate that the rest of these state
 typedef enum bs_state_e {

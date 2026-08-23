@@ -1,7 +1,7 @@
 #ifndef __BA_BUZZ_H__
 #define __BA_BUZZ_H__
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 typedef struct ba_buzz_s {
     u8 unk0;

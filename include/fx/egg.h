@@ -2,7 +2,7 @@
 #define __FX_EGG_H__
 
 #include "common.h"
-#include "overlays/ba/assets.h"
+#include "ba/assets.h"
 #include "fx/dlsmoke.h"
 #include "core2/1E8F430.h"
 #include "core2/1E93440.h"

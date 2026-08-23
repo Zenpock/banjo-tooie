@@ -2,10 +2,10 @@
 #define __BS_MUM_SPLAT_H__
 
 #include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/dust.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/playerstate.h"
+#include "ba/anim.h"
+#include "ba/dust.h"
+#include "ba/physics.h"
+#include "ba/playerstate.h"
 #include "bs/mum.h"
 #include "bs/splat.h"
 #include "bs/state.h"

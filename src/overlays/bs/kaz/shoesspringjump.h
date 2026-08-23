@@ -3,10 +3,10 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/anim.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/shoes.h"
+#include "ba/anim.h"
+#include "ba/physics.h"
+#include "ba/playerstate.h"
+#include "ba/shoes.h"
 #include "bs/kaz.h"
 #include "overlays/bs/kaz/move.h"
 #include "core2/1E76CC0.h"

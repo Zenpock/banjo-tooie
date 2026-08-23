@@ -1,10 +1,10 @@
 #ifndef __BS_OW_H__
 #define __BS_OW_H__
 
-#include "overlays/ba/anim.h"
-#include "overlays/ba/bounce.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/playerstate.h"
+#include "ba/anim.h"
+#include "ba/bounce.h"
+#include "ba/physics.h"
+#include "ba/playerstate.h"
 #include "bs/state.h"
 #include "bs/walk.h"
 #include "core2/1E66990.h"

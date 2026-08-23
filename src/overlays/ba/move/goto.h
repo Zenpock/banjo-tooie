@@ -2,7 +2,7 @@
 #define __BA_MOVE_GOTO_H__
 
 #include <ultra64.h>
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 extern void _bamovegoto_entrypoint_0(PlayerState *self);
 extern s32 _bamovegoto_entrypoint_4(PlayerState *self);

@@ -4,11 +4,11 @@
 #include "common.h"
 #include <ultra64.h>
 
-#include "overlays/ba/timer.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/key.h"
-#include "overlays/ba/yaw.h"
-#include "overlays/ba/playerstate.h"
+#include "ba/timer.h"
+#include "ba/anim.h"
+#include "ba/key.h"
+#include "ba/yaw.h"
+#include "ba/playerstate.h"
 #include "overlays/bs/kaz/still.h"
 #include "core2/1E75710.h"
 #include "core2/1E75920.h"

@@ -3,11 +3,11 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/anim.h"
-#include "overlays/ba/flag.h"
-#include "overlays/ba/input.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/yaw.h"
+#include "ba/anim.h"
+#include "ba/flag.h"
+#include "ba/input.h"
+#include "ba/physics.h"
+#include "ba/yaw.h"
 #include "bs/kaz.h"
 #include "core1/1E2B200.h"
 #include "core2/1E66990.h"

@@ -5,7 +5,7 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 void func_800951B4(PlayerState *);
 void func_8009514C(PlayerState *);

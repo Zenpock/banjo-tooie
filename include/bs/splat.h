@@ -1,7 +1,7 @@
 #ifndef __BS_SPLAT_H__
 #define __BS_SPLAT_H__
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 extern void _bssplat_entrypoint_0(PlayerState *self);
 

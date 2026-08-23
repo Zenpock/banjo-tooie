@@ -3,7 +3,7 @@
 
 #include "common.h"
 #include "buttons.h"
-#include "overlays/ba/key.h"
+#include "ba/key.h"
 
 
 #endif

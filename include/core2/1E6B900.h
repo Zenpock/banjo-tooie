@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 #include "core2/physics.h"
 #include "core2/anctrl.h"
 
@@ -30,9 +30,9 @@
 #include "ba/preload.h"
 #include "gc/egg.h"
 #include "core1/mlmtx.h"
-#include "overlays/ba/backpack.h"
-#include "overlays/ba/roll.h"
-#include "overlays/ba/input.h"
+#include "ba/backpack.h"
+#include "ba/roll.h"
+#include "ba/input.h"
 #include "ba/invisible.h"
 #include "ch/baddiesetup.h"
 

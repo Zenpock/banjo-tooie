@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 #include "core2/1E77A20.h"
 

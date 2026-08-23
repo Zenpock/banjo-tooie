@@ -1,4 +1,4 @@
-#include "overlays/ba/data.h"
+#include "ba/data.h"
 
 s32 func_80800000_badata(PlayerState *self) {
     s32 sp1C  = bs_getCurrentState(self);

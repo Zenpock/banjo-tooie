@@ -4,9 +4,9 @@
 #include <ultra64.h>
 
 #include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/bounce.h"
-#include "overlays/ba/physics.h"
+#include "ba/anim.h"
+#include "ba/bounce.h"
+#include "ba/physics.h"
 #include "bs/kaz.h"
 #include "overlays/bs/kaz/move.h"
 #include "player.h"

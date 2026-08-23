@@ -5,7 +5,7 @@
 #include <ultra64.h>
 #include "common.h"
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 #include "bs/state.h"
 

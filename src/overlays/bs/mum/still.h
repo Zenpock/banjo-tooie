@@ -1,13 +1,13 @@
 #ifndef __BS_MUM_STILL_H__
 #define __BS_MUM_STILL_H__
 
-#include "overlays/ba/anim.h"
-#include "overlays/ba/drone.h"
-#include "overlays/ba/input.h"
-#include "overlays/ba/key.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/stick.h"
+#include "ba/anim.h"
+#include "ba/drone.h"
+#include "ba/input.h"
+#include "ba/key.h"
+#include "ba/physics.h"
+#include "ba/playerstate.h"
+#include "ba/stick.h"
 #include "bs/mum.h"
 #include "bs/state.h"
 #include "core2/1E66990.h"

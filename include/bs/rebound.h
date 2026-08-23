@@ -2,8 +2,8 @@
 #define __BS_REBOUND_H__
 
 #include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/bounce.h"
+#include "ba/anim.h"
+#include "ba/bounce.h"
 #include "bs/state.h"
 #include "bs/walk.h"
 #include "core2/1E66990.h"

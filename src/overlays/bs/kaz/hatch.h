@@ -4,9 +4,9 @@
 #include "common.h"
 #include <ultra64.h>
 
-#include "overlays/ba/anim.h"
-#include "overlays/ba/data.h"
-#include "overlays/ba/physics.h"
+#include "ba/anim.h"
+#include "ba/data.h"
+#include "ba/physics.h"
 #include "bs/kaz.h"
 #include "bs/state.h"
 #include "core2/1E66990.h"

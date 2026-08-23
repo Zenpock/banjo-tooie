@@ -1,9 +1,9 @@
 #include "common.h"
 
-#include "overlays/ba/anim.h"
+#include "ba/anim.h"
 #include "core2/anctrl.h"
-#include "overlays/ba/assets.h"
-#include "overlays/ba/physics.h"
+#include "ba/assets.h"
+#include "ba/physics.h"
 #include "bs.h"
 #include "buttons.h"
 #include "bs/state.h"

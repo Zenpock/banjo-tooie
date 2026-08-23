@@ -5,7 +5,7 @@
 
 #include "common.h"
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 typedef struct ba_boost_s {
     u8 unk0;

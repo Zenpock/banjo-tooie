@@ -2,7 +2,7 @@
 #define __BA_HOLD_H__
 
 #include "common.h"
-#include "../../src/overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 s32 bahold_entrypoint_0();
 void bahold_entrypoint_2(s32 arg0);

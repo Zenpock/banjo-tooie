@@ -5,7 +5,7 @@
 #include <ultra64.h>
 #include "common.h"
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 // func_80800000_bsdrone
 extern void _bsdrone_entrypoint_0(PlayerState *self);

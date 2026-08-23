@@ -3,13 +3,13 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/anim.h"
-#include "overlays/ba/input.h"
-#include "overlays/ba/key.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/stick.h"
-#include "overlays/ba/yaw.h"
+#include "ba/anim.h"
+#include "ba/input.h"
+#include "ba/key.h"
+#include "ba/physics.h"
+#include "ba/playerstate.h"
+#include "ba/stick.h"
+#include "ba/yaw.h"
 #include "bs/kaz.h"
 #include "core2/1E76880.h"
 #include "core2/1E76CC0.h"

@@ -1,11 +1,11 @@
 #include "common.h"
 
-#include "overlays/ba/anim.h"
-#include "overlays/ba/flag.h"
-#include "overlays/ba/key.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/yaw.h"
+#include "ba/anim.h"
+#include "ba/flag.h"
+#include "ba/key.h"
+#include "ba/physics.h"
+#include "ba/playerstate.h"
+#include "ba/yaw.h"
 #include "bs.h"
 #include "bs/state.h"
 
