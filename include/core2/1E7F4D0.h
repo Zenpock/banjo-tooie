@@ -20,6 +20,8 @@ typedef struct {
     u8 unk4;
 }D_80127110_Data;
 
+void func_800A5BE0();
+void func_800A5D1C();
 D_80127110_Data* func_800A5D60();
 
 #endif

@@ -5,6 +5,7 @@
 
 s32 func_8001A6C0(s32 arg0, s32 size);
 s32 has_free_block_after(s32 size);
+void heap_setup(s32);
 void* heap_alloc(s32 size);
 s32 heap_get_allocation_size(void* mem);
 

@@ -16,12 +16,23 @@
 #include "core2/1ED4E30.h"
 #include "core2/1ED8C80.h"
 
+s32* func_800A7180(void);
 void func_800A759C(s32, u8);
 void func_800A76F4(s16);
+void func_800A7840(s32);
+void func_800A791C(s32, s32, s32);
 void func_800A7990(s32, s32, s32);
 void func_800A79D4(s32, s32);
+void func_800A7A5C(void);
 void func_800A7A90(s32);
 void func_800A7B18(u32);
+void func_800A7D30();
+s32 func_800A7D84(void);
+void func_800A7FB4();
+void func_800A7FD4(void);
+void func_800A8168(void);
+s16 func_800A8178(void);
+s16 func_800A8184();
 int func_800A819C();
 void func_800A8230(void);
 void func_800A8240();
