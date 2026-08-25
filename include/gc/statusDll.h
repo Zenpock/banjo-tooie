@@ -5,7 +5,7 @@
 #include <ultra64.h>
 #include "common.h"
 
-// gcstatusDll_entrypoint_0
+void _gcstatusDll_entrypoint_0();
 // gcstatusDll_entrypoint_1
 void _gcstatusDll_entrypoint_2(s32);
 s32 _gcstatusDll_entrypoint_3(s32, s32);
