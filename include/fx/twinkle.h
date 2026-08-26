@@ -2,7 +2,7 @@
 #define __FX_TWINKLE_H__
 
 #include "common.h"
-#include "overlays/ba/assets.h"
+#include "ba/assets.h"
 #include "core2/1E93440.h"
 #include "core2/1E8DFA0.h"
 

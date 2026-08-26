@@ -1,8 +1,8 @@
 #ifndef __CORE2_1ECE0B0_H__
 #define __CORE2_1ECE0B0_H__
 
-#include "../../src/overlays/ba/playerstate.h"
-#include "overlays/ba/yaw.h"
+#include "ba/playerstate.h"
+#include "ba/yaw.h"
 #include "transformations.h"
 #include "core2/1E82660.h"
 #include "core2/1E66990.h"
@@ -11,9 +11,9 @@
 #include "core2/1EB2840.h"
 #include "core2/1ECD170.h"
 
-#include "overlays/ba/anim.h"
-#include "overlays/ba/key.h"
-#include "overlays/ba/drone.h"
+#include "ba/anim.h"
+#include "ba/key.h"
+#include "ba/drone.h"
 #include "ba/hold.h"
 #include "bs/babykaz.h"
 

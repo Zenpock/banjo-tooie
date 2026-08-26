@@ -1,7 +1,7 @@
 #ifndef __BA_FPCONTROL_H__
 #define __BA_FPCONTROL_H__
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 s32 bafpctrl_entrypoint_0(void);
 // func_80800008_bafpctrl

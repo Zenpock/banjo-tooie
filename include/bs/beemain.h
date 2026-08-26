@@ -8,17 +8,17 @@
 
 #include "bee.h"
 
-#include "overlays/bs/state.h"
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/flag.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/bounce.h"
-#include "overlays/ba/timer.h"
-#include "overlays/ba/stick.h"
-#include "overlays/ba/bee.h"
-#include "overlays/ba/drone.h"
-#include "overlays/ba/input.h"
-#include "overlays/ba/sudie.h"
+#include "bs/state.h"
+#include "ba/playerstate.h"
+#include "ba/flag.h"
+#include "ba/physics.h"
+#include "ba/bounce.h"
+#include "ba/timer.h"
+#include "ba/stick.h"
+#include "ba/bee.h"
+#include "ba/drone.h"
+#include "ba/input.h"
+#include "ba/sudie.h"
 
 #include "nc/ba/die.h"
 

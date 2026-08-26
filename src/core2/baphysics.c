@@ -1,4 +1,4 @@
-#include "overlays/ba/physics.h"
+#include "ba/physics.h"
 
 s32 func_8009AD70() 
 {

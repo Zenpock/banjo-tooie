@@ -1,4 +1,4 @@
-#include "overlays/bs/ow.h"
+#include "bs/ow.h"
 
 void bsow_entrypoint_0(PlayerState *self) {
     _babounce_entrypoint_4(self, 1);

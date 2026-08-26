@@ -4,7 +4,7 @@
 #include <ultra64.h>
 #include "common.h"
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 // func_801101C0
 // func_80110280

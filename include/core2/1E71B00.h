@@ -5,7 +5,7 @@
 
 #include "common.h"
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 void func_80098520(PlayerState*, f32);
 

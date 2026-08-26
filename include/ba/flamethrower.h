@@ -3,7 +3,7 @@
 
 #include "common.h"
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 s32 baflamethrower_entrypoint_0(void);
 // func_80800008_baflamethrower

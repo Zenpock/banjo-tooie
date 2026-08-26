@@ -3,7 +3,7 @@
 
 #include "common.h"
 #include "core2/1E8DFA0.h"
-#include "overlays/ba/assets.h"
+#include "ba/assets.h"
 
 typedef struct {
     u8 pad0[4];
