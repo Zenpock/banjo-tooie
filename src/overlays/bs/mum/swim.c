@@ -1,4 +1,4 @@
-#include "overlays/bs/mum/swim.h"
+#include "bs/mum/swim.h"
 
 void func_80800000_bsmumswim(PlayerState *self) {
     f32 sp2C[3];

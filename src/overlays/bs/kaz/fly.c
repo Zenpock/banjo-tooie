@@ -1,4 +1,4 @@
-#include "overlays/bs/kaz/fly.h"
+#include "bs/kaz/fly.h"
 
 void func_80800000_bskazfly(PlayerState *self) {
     f32 sp24[3];

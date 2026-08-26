@@ -4,7 +4,7 @@
 #include "common.h"
 #include "gc/lightsDll.h"
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 #include "vector.h"
 
 void func_800C8900(s32, s32*);

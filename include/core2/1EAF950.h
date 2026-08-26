@@ -2,7 +2,7 @@
 #define __CORE2_1EAF950_H__
 
 #include <common.h>
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 typedef struct {
 	u8 pad[0x8];
 	s16 unk8;

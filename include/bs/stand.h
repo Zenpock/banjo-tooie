@@ -3,7 +3,7 @@
 
 #include "common.h"
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 // func_80800000_bsstand
 // func_80800018_bsstand

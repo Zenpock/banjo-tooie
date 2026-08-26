@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 // func_800A06E0
 // func_800A06E8

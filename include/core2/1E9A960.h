@@ -2,7 +2,7 @@
 #define __CORE2_1E9A960_H__
 
 #include "common.h"
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 // func_800C1070
 // func_800C1104

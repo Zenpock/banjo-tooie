@@ -2,7 +2,7 @@
 #define __CORE2_1E8BFE0_H__
 
 #include "common.h"
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 #include "core2/1EAF950.h"
 
 void func_800A2540(PlayerState*, s32);

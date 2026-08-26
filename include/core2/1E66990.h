@@ -20,15 +20,15 @@
 #include "core2/1EC9740.h"
 #include "core2/1ECB0F0.h"
 #include "core2/1ECE0B0.h"
-#include "overlays/ba/duo.h"
+#include "ba/duo.h"
 #include "ba/fpctrl.h"
 #include "overlays/nc/ba/1p.h"
 
-#include "overlays/ba/flag.h"
-#include "overlays/ba/physics.h"
+#include "ba/flag.h"
+#include "ba/physics.h"
 
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/drone.h"
+#include "ba/playerstate.h"
+#include "ba/drone.h"
 
 int func_8008D0A0(PlayerState*);
 int func_8008D0E0(PlayerState*);

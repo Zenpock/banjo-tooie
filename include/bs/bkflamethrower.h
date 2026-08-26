@@ -3,14 +3,14 @@
 
 #include "common.h"
 
-#include "overlays/ba/anim.h"
-#include "overlays/ba/key.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/timer.h"
-#include "overlays/ba/yaw.h"
+#include "ba/anim.h"
+#include "ba/key.h"
+#include "ba/physics.h"
+#include "ba/playerstate.h"
+#include "ba/timer.h"
+#include "ba/yaw.h"
 
-#include "overlays/bs/state.h"
+#include "bs/state.h"
 
 #include "ba/flamethrower.h"
 

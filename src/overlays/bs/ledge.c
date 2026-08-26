@@ -1,5 +1,16 @@
-#include "overlays/bs/ledge.h"
+#include "bs/ledge.h"
 
+extern s16 D_80801340_bsledge[];
+extern s32 D_80801348_bsledge[];
+extern s32 D_80801358_bsledge[];
+extern s32 D_80801368_bsledge[];
+extern s32 D_80801378_bsledge[];
+extern u8 D_80801388_bsledge[];
+extern u8 D_80801390_bsledge[];
+extern s32 D_80801398_bsledge[];
+extern s32 D_808013A8_bsledge[];
+
+/* .code */
 #ifndef NONMATCHINGS
 // Unmatched as the compiler wants to use a0 and then move a0 into v0 instead of using t registers
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ledge/func_80800000_bsledge.s")
@@ -50,7 +61,7 @@ void func_80800040_bsledge(PlayerState *self, f32 arg1[3]) {
     func_800EFCD8(arg1, sp34 + sp30, sp1C);
 }
 
-void func_808001A8_bsledge(PlayerState *self) {
+void func_808001A8_bsledge(PlayerState* self) {
     if (func_8009E74C(self, 2) == 0) {
         func_8009E474(self);
         if (func_80096388(self) == 7) {
@@ -65,9 +76,7 @@ void func_808001A8_bsledge(PlayerState *self) {
     }
 }
 
-
-static void func_80800324_bsledge(PlayerState *self);
-void func_80800238_bsledge(PlayerState *self) {
+void func_80800238_bsledge(PlayerState* self) {
     if (func_8009E77C(self, 2) == 0) {
         func_8009E4AC(self);
         func_8009E55C(self, 0, 32.0f);
@@ -88,12 +97,12 @@ void func_80800238_bsledge(PlayerState *self) {
     }
 }
 
-static void func_80800324_bsledge(PlayerState *self) {
+void func_80800324_bsledge(PlayerState* self) {
     self->unk168.bytes[0] = 2;
     self->unk168.bytes[1] = 0;
 }
 
-void func_80800334_bsledge(PlayerState *self) {
+void func_80800334_bsledge(PlayerState* self) {
     s32 temp_a1;
 
     temp_a1 = self->unk168.bytes[0];
@@ -130,7 +139,7 @@ s32 func_80800410_bsledge(PlayerState *self) {
 }
 #endif
 
-s32 func_80800450_bsledge(PlayerState *self) {
+s32 func_80800450_bsledge(PlayerState* self) {
     return func_8009BB5C(self) > 0.0f;
 }
 
@@ -138,24 +147,24 @@ void func_80800488_bsledge(PlayerState *self, f32 arg1[3]) {
     func_8009BA9C(self, arg1);
 }
 
-void func_808004A8_bsledge(PlayerState *self) {
+void func_808004A8_bsledge(PlayerState* self) {
     f32 sp1C[3];
 
     func_80800040_bsledge(self, sp1C);
     func_8009BA9C(self, sp1C);
 }
 
-void func_808004D8_bsledge(PlayerState *self) {
+void func_808004D8_bsledge(PlayerState* self) {
     yaw_setIdeal(self, func_800974FC(self));
 }
 
-void func_80800504_bsledge(PlayerState *self) {
+void func_80800504_bsledge(PlayerState* self) {
     func_808001A8_bsledge(self);
     func_800A0CF4(self, 0);
     func_8009E55C(self, 2, 0.0f);
 }
 
-void func_80800540_bsledge(PlayerState *self) {
+void func_80800540_bsledge(PlayerState* self) {
     enum asset_e var_a1;
 
     func_80800238_bsledge(self);
@@ -168,7 +177,7 @@ void func_80800540_bsledge(PlayerState *self) {
     func_8009E53C(self, 2, 10.0f);
 }
 
-void func_808005E0_bsledge(PlayerState *self) {
+void func_808005E0_bsledge(PlayerState* self) {
     enum bs_state_e sp2C;
     f32 sp20[3];
 
@@ -291,15 +300,15 @@ s32 bsledge_entrypoint_2(s32 idx) {
     return D_80801368_bsledge[idx];
 }
 
-AssetId func_80800AA0_bsledge(PlayerState *self) {
+AssetId func_80800AA0_bsledge(PlayerState* self) {
     return self->unk15C.word < 0 ? ASSET_51_ANIM_BSLEDGE_UNKNOWN: ASSET_6_ANIM_BSLEDGE_UNKNOWN;
 }
 
-void func_80800AC0_bsledge(PlayerState *self) {
+void func_80800AC0_bsledge(PlayerState* self) {
     func_808001A8_bsledge(self);
 }
 
-void func_80800AE0_bsledge(PlayerState *self) {
+void func_80800AE0_bsledge(PlayerState* self) {
     func_80800238_bsledge(self);
     baanim_playForDuration_loopSmooth(self, func_80800AA0_bsledge(self), 1.0f);
     func_8009FFD8(self, BAANIM_UPDATE_2_SCALE_HORZ, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_D_END);
@@ -307,7 +316,7 @@ void func_80800AE0_bsledge(PlayerState *self) {
     func_8008C9F0(self, 40.0f, 200.0f, 1.5f, 0.65f);
 }
 
-void func_80800B70_bsledge(PlayerState *self) {
+void func_80800B70_bsledge(PlayerState* self) {
     enum bs_state_e next_state;
     enum asset_e sp20;
 
@@ -360,7 +369,7 @@ s32 func_80800CF4_bsledge(PlayerState *self, u8 *arg1, u32 arg2) {
     return arg1[self->unk164.word++];
 }
 
-s32 func_80800D24_bsledge(PlayerState *self) {
+s32 func_80800D24_bsledge(PlayerState* self) {
     if (func_800A3274(self) == TRANSFORM_A_BANJO) {
         return func_80800CF4_bsledge(self, D_80801390_bsledge, 5);
     }
@@ -374,12 +383,12 @@ s32 func_80800D24_bsledge(PlayerState *self) {
 // decomp failure
 #endif
 
-void func_80800EE0_bsledge(PlayerState *self) {
+void func_80800EE0_bsledge(PlayerState* self) {
     func_80800D78_bsledge(self, 0);
     func_808001A8_bsledge(self);
 }
 
-void func_80800F0C_bsledge(PlayerState *self) {
+void func_80800F0C_bsledge(PlayerState* self) {
     func_80800238_bsledge(self);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_D_END);
     func_80800488_bsledge(self, 0);
@@ -388,7 +397,7 @@ void func_80800F0C_bsledge(PlayerState *self) {
     func_80800D78_bsledge(self, 1);
 }
 
-void func_80800F70_bsledge(PlayerState *self) {
+void func_80800F70_bsledge(PlayerState* self) {
     AnimCtrl *anim_ctrl;
     enum bs_state_e next_state;
 
@@ -462,18 +471,18 @@ s32 bsledge_entrypoint_4(s32 idx) {
     return D_80801398_bsledge[idx];
 }
 
-void bsledge_entrypoint_5(PlayerState *self) {
+void bsledge_entrypoint_5(PlayerState* self) {
     _bsrest_entrypoint_14(self);
     func_808001A8_bsledge(self);
 }
 
-void bsledge_entrypoint_6(PlayerState *self) {
+void bsledge_entrypoint_6(PlayerState* self) {
     func_80800238_bsledge(self);
     func_80800488_bsledge(self, 0);
     _bsrest_entrypoint_15(self, 0);
 }
 
-void bsledge_entrypoint_7(PlayerState *self) {
+void bsledge_entrypoint_7(PlayerState* self) {
     enum bs_state_e next_state;
 
     next_state = BS_STATE_0_INVALID;
