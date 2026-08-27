@@ -5,7 +5,7 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 typedef struct unkStruct8009B1FC {
     u8 pad0[0x8];

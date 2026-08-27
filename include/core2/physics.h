@@ -5,7 +5,7 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 typedef struct {
     u8 pad[0xc4];
     u8* unkC4;
