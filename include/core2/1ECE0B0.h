@@ -1,8 +1,8 @@
 #ifndef __CORE2_1ECE0B0_H__
 #define __CORE2_1ECE0B0_H__
 
-#include "../../src/overlays/ba/playerstate.h"
-#include "overlays/ba/yaw.h"
+#include "ba/playerstate.h"
+#include "ba/yaw.h"
 #include "transformations.h"
 #include "core2/1E82660.h"
 #include "core2/1E66990.h"
@@ -11,9 +11,9 @@
 #include "core2/1EB2840.h"
 #include "core2/1ECD170.h"
 
-#include "overlays/ba/anim.h"
-#include "overlays/ba/key.h"
-#include "overlays/ba/drone.h"
+#include "ba/anim.h"
+#include "ba/key.h"
+#include "ba/drone.h"
 #include "ba/hold.h"
 #include "bs/babykaz.h"
 
@@ -41,6 +41,7 @@ typedef enum
 	ALLOW_BK = 1 << (TRANSFORM_1_BK + 0x1F)
 }AllowedTransformation;
 
+void func_800F48BC(s32, f32*);
 void func_800F497C(s32);
 void func_800F49D4(s32 arg0, void* arg1, s32 arg2);
 void func_800F4A58(s32,s32,f32);
@@ -58,6 +59,7 @@ TransformationId func_800F5410(s32);
 //Get the character control index
 u32 func_800F54E4(void);
 s32 func_800F5578(s32);
+s32 func_800F55A4(s32);
 s32 func_800F56AC(s32);
 
 Unk80132ED0* func_800F56D8(s32 arg0);
@@ -80,6 +82,7 @@ s32 func_800F6774(u32);
 //Does the character match the given transformation type
 s32 func_800F64A4(s32 characterIndex, AllowedTransformation transformationType);
 void func_800F57F0(s32, f32*);
+s32 func_800F5FA8(s32);
 s32 func_800F66F0(u32);
 s32 func_800F6774(u32);
 s32 func_800F693C(s32);
@@ -95,6 +98,7 @@ s32 func_800F71D4(u32);
 s32 func_800F72DC(u32);
 void func_800F7664(u32, u8, u8);
 void func_800F7700(u32, s32, f32*);
+void func_800F7874(s32, Unk80132ED0*, f32*, Actor*);
 //The moving object is moved towards/away from the target
 void func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
 s32 func_800F7B9C(s32, u32);

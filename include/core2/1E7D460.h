@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 f32 *func_800A4C48(PlayerState *);
 s32 func_800A4C68(PlayerState*);

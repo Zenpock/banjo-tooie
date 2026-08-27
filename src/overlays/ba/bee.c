@@ -1,7 +1,7 @@
 #include "common.h"
 
-#include "overlays/ba/bee.h"
-#include "overlays/ba/yaw.h"
+#include "ba/bee.h"
+#include "ba/yaw.h"
 
 #include "overlays/ch/stinger.h"
 

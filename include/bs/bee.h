@@ -5,10 +5,10 @@
 
 #include "common.h"
 
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/flag.h"
-#include "overlays/ba/roll.h"
-#include "overlays/ba/stick.h"
+#include "ba/playerstate.h"
+#include "ba/flag.h"
+#include "ba/roll.h"
+#include "ba/stick.h"
 
 #include "core2/1E6B900.h"
 #include "core2/1E6F080.h"
@@ -18,6 +18,6 @@
 // Code
 void bsbee_entrypoint_0(PlayerState*);
 void bsbee_entrypoint_1(PlayerState*);
-void bsbee_entrypoint_2(PlayerState*);
+void _bsbee_entrypoint_2(PlayerState*);
 
 #endif // __BS_BEE_H__

@@ -2,7 +2,7 @@
 #define __CORE2_1ECD170_H__
 
 #include "common.h"
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 #include <ultra64.h>
 

@@ -196,7 +196,7 @@ s32 func_8010A6B0(Actor* arg0, s32 arg1)
     }
     func_800F57F0(arg1, &sp28);
     func_80103DFC(arg0, &sp34);
-    if (func_800C6A7C(&sp28, &sp34, &sp1C, 0x4A0021) != 0)
+    if (func_800C6A7C(sp28, sp34, sp1C, 0x4A0021) != 0)
     {
         return 0;
     }

@@ -23,13 +23,13 @@ void func_80800000_chsecreteggs(Actor* arg0)
     switch (arg0->unk0->unk14)
     {
     case 0x974:
-        func_800BA3FC(temp_v0, 0x9DF);
+        func_800BA3FC(temp_v0, ASSET_9DF_PURPLE_SPARKLE);
         break;
     case 0x975:
-        func_800BA3FC(temp_v0, 0x9E0);
+        func_800BA3FC(temp_v0, ASSET_9E0_BLUE_SPARKLE);
         break;
     case 0x976:
-        func_800BA3FC(temp_v0, 0x9E2);
+        func_800BA3FC(temp_v0, ASSET_9E2_GOLD_SPARKLE);
         break;
     }
     func_800BA22C(temp_v0, 0x14);

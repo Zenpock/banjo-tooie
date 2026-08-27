@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/bs/kaz/die.h"
+#include "bs/kaz/die.h"
 
 s32 D_80800460_bskazdie[];
 

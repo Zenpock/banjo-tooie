@@ -1,5 +1,5 @@
 #include "common.h"
-#include "overlays/bs/walk.h"
+#include "bs/walk.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/walk/func_80800000_bswalk.s")
 

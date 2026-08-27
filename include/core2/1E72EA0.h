@@ -5,7 +5,7 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 typedef struct ba_unknown_C0_s {
     f32 unk0;

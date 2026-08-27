@@ -46,7 +46,9 @@ typedef struct {
     /* 0x24 */ u32 unk24_16 : 6;
     /* 0x24 */ u32 unk24_6 : 6;
     /* 0x24 */ u32 unk24_0 : 10;
-    /* 0x28 */ u32 unk28_10 : 22;
+    /* 0x28 */ u32 pad28_15 : 18;
+    /* 0x28 */ u32 unk28_14 : 1;
+    /* 0x28 */ u32 pad28_10 : 3;
     /* 0x28 */ u32 unk28_9 : 1;
     /* 0x28 */ u32 unk28_0 : 9;
     /* 0x2C */ u32 unk2C;
@@ -64,7 +66,7 @@ typedef struct Actor {
     /* 0x40 */ s32 pad40;
     /* 0x44 */ f32 rotation[3];
     /* 0x50 */ f32 unk50;
-    /* 0x54 */ f32 unk54;
+    /* 0x54 */ f32 unk54; //Occasionally an s32
     /* 0x58 */ f32 unk58;
     /* 0x5C */ u8 pad5C;
     /* 0x5D */ u8 pad5D;

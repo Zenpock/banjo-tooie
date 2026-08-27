@@ -13,7 +13,7 @@ void func_8008F990(s32, f32);
 void func_8008F9F8(f32*, f32);
 s32 func_8008FA60(s32, s32);
 void func_8008FB10(f32*, f32, f32, f32);
-void func_8008FB58(f32[3], f32, f32);
+s32 func_8008FB58(f32[3], f32, f32);
 void func_8008FBE0(u32 a0);
 s32 func_8008FC00();
 s32 func_8008FC28();

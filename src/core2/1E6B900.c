@@ -4,6 +4,8 @@ extern u8* D_80117E30[];
 
 extern u8 D_80117E3C[][2];
 
+extern f32 D_80124D40;
+
 s32 func_80092010(void)
 {
 	return 0x118;
@@ -66,7 +68,7 @@ void func_8009216C(PlayerState* arg0, f32* arg1, f32* arg2)
 
 void func_800921E0(PlayerState* arg0, s32 arg1, f32* arg2)
 {
-    func_8009C2A0(arg0->unk50->unk4, arg1);
+    func_8009C2A0(arg0->unk50->unk4, arg1,arg2);
     if (func_800EEEA8(arg2) != 0)
     {
         func_8009C128(arg0, arg2);
@@ -534,7 +536,31 @@ void func_8009337C(PlayerState* arg0, s32 arg1)
     arg0->unk50->unk18 = arg1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80093388.s")
+void func_80093388(PlayerState* arg0)
+{
+    f32 temp_f12;
+    f32 temp_f0;
+
+    temp_f12 = arg0->unk50->unk3C - arg0->unk50->unk2C[1];
+    temp_f0 = mlAbsF(temp_f12);
+    if (temp_f0 < D_80124D40)
+    {
+        arg0->unk50->unk2C[1] = arg0->unk50->unk3C;
+        return;
+    }
+    else if (temp_f0 > 5.0f)
+    {
+        temp_f0 = 1.0f;
+    }
+    if (temp_f12 > 0.0f)
+    {
+        arg0->unk50->unk2C[1] += temp_f0;
+    }
+    else
+    {
+        arg0->unk50->unk2C[1] -= temp_f0;
+    }
+}
 
 void func_80093448(PlayerState* arg0)
 {
