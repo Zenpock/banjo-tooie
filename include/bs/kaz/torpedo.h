@@ -52,7 +52,7 @@
 #include "core2/1ECA640.h"
 #include "core2/1ECB0F0.h"
 #include "core2/1ECE0B0.h"
-#include "overlays/pl/su.h"
+#include "pl/su.h"
 #include "player.h"
 
 s32 _bskaztorpedo_entrypoint_0(s32 idx);

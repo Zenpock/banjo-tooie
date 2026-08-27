@@ -25,7 +25,7 @@
 #include "ba/yaw.h"
 #include "bs/drone.h"
 #include "bs/splat.h"
-#include "overlays/ch/usefeather.h"
+#include "ch/usefeather.h"
 #include "core1/1E29B60.h"
 #include "core1/1E2B200.h"
 #include "core2/1E66990.h"

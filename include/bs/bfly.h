@@ -30,7 +30,7 @@ typedef struct bs_kazfly_s {
 #include "bs/state.h"
 #include "bs/drone.h"
 
-#include "overlays/ch/usefeather.h"
+#include "ch/usefeather.h"
 
 #include "ba/boost.h"
 #include "ba/fly.h"

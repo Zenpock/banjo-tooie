@@ -3,7 +3,7 @@
 #include "ba/bee.h"
 #include "ba/yaw.h"
 
-#include "overlays/ch/stinger.h"
+#include "ch/stinger.h"
 
 #include "core2/1E75710.h"
 #include "core2/1E75920.h"
