@@ -1,0 +1,13 @@
+#ifndef __BA_MOVE_LEDGE__
+#define __BA_MOVE_LEDGE__
+
+
+#include <ultra64.h>
+#include "common.h"
+
+s32 bamoveledge_entrypoint_0();
+void bamoveledge_entrypoint_1(s32 arg0);
+void bamoveledge_entrypoint_2(s32 arg0);
+// bamoveledge_entrypoint_3
+
+#endif // __BA_MOVE_LEDGE__

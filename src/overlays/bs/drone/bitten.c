@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/drone/bitten.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/bitten/func_80800000_bsdronebitten.s")
 
@@ -7,6 +7,7 @@ void bsdronebitten_entrypoint_0(s32 arg0)
     func_8008E95C();
     bastick_popZone(arg0);
 }
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/bitten/bsdronebitten_entrypoint_1.s")
 
 void bsdronebitten_entrypoint_2()

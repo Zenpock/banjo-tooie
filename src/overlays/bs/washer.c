@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/washer.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_80800000_bswasher.s")
 
@@ -21,6 +21,7 @@ void func_80800590_bswasher(s32 arg0)
     _basudie_entrypoint_6();
     func_808000F0_bswasher(arg0);
 }
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_808005B8_bswasher.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_80800608_bswasher.s")
@@ -64,6 +65,7 @@ void func_8080100C_bswasher(s32 arg0)
     func_80800F1C_bswasher();
     func_808000F0_bswasher(arg0);
 }
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_80801034_bswasher.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_808010DC_bswasher.s")
@@ -75,6 +77,7 @@ void func_808011B4_bswasher(s32 arg0)
     _baspin_entrypoint_1();
     func_808000F0_bswasher(arg0);
 }
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_808011DC_bswasher.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_80801218_bswasher.s")
@@ -86,6 +89,7 @@ void func_80801294_bswasher(s32 arg0)
     _babounce_entrypoint_3();
     func_808000F0_bswasher(arg0);
 }
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_808012BC_bswasher.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_80801314_bswasher.s")
@@ -97,11 +101,13 @@ void func_8080137C_bswasher(s32 arg0)
     _bsrest_entrypoint_14();
     func_808000F0_bswasher(arg0);
 }
+
 void func_808013A4_bswasher(s32 arg0)
 {
     func_808001A8_bswasher();
     _bsrest_entrypoint_16(arg0);
 }
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_808013CC_bswasher.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/bswasher_entrypoint_8.s")
@@ -111,6 +117,7 @@ void func_8080142C_bswasher(s32 arg0)
     func_808000F0_bswasher();
     func_80090A2C(arg0);
 }
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_80801454_bswasher.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_808014C8_bswasher.s")

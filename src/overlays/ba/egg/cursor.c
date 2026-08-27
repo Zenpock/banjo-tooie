@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ba/egg/cursor.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/cursor/func_80800000_baeggcursor.s")
 

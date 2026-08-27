@@ -1,5 +1,4 @@
-#include "common.h"
-#include "ba/playerstate.h"
+#include "bs/stonehead.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/func_80800000_bsstonehead.s")
 
