@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/bwhirl.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/func_80800000_bsbwhirl.s")
 
@@ -55,6 +55,7 @@ void bsbwhirl_entrypoint_14(s32 arg0)
     baphysics_reset_gravity();
     func_8080017C_bsbwhirl(arg0);
 }
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_15.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_16.s")
@@ -85,6 +86,7 @@ void bsbwhirl_entrypoint_22(s32 arg0)
     _bsdrone_entrypoint_2();
     func_8080017C_bsbwhirl(arg0);
 }
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_23.s")
 
 void bsbwhirl_entrypoint_24(s32 arg0)
@@ -92,6 +94,7 @@ void bsbwhirl_entrypoint_24(s32 arg0)
     _bsrest_entrypoint_14();
     func_8080017C_bsbwhirl(arg0);
 }
+
 void bsbwhirl_entrypoint_25()
 {
     _bsrest_entrypoint_16();

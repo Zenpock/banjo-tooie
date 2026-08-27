@@ -1,5 +1,4 @@
-#include "common.h"
-#include "ba/playerstate.h"
+#include "bs/ban/snooze.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/func_80800000_bsbansnooze.s")
 

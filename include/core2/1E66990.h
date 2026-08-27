@@ -22,7 +22,7 @@
 #include "core2/1ECE0B0.h"
 #include "ba/duo.h"
 #include "ba/fpctrl.h"
-#include "overlays/nc/ba/1p.h"
+#include "nc/ba/1p.h"
 
 #include "ba/flag.h"
 #include "ba/physics.h"

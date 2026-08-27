@@ -3,7 +3,8 @@
 
 #include "common.h"
 #include "types.h"
-#include "core2/anctrl.h"
 #include "vector.h"
+
+#include "core2/anctrl.h"
 
 #endif // __AN_SEQ_H__
