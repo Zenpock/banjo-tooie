@@ -25,14 +25,13 @@ typedef struct {
     u8 unk6;
 }unkStruct800EE670;
 
-u32 vector_begin(s32);                              /* extern */
-s32 vector_defrag(s32);                             /* extern */
-u32 vector_end(s32);                                /* extern */
-extern void (*D_80123590[])(void *);
-extern s32 D_80127EF8;
-s32 defrag(s32);                                    /* extern */
-void _idbounce_entrypoint_6();                         /* extern */
-extern u8 D_80135483;
-void _idbounce_entrypoint_7();                         /* extern */
+u32 vector_begin(s32);
+s32 vector_defrag(s32);
+u32 vector_end(s32);
+
+s32 defrag(s32);
+void _idbounce_entrypoint_6();
+
+void _idbounce_entrypoint_7();
 
 #endif

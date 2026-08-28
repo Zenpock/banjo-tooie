@@ -1,6 +1,10 @@
 #include "common.h"
 #include "core2/1EC6180.h"
 
+extern s16 D_80123580[];
+extern f32 D_80125E70;
+extern f32 D_80125E6C;
+
 void func_800EC890(s32 arg0) 
 {
 }

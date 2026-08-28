@@ -1,6 +1,10 @@
 #include "common.h"
 #include "core2/1EC7E20.h"
 
+extern void (*D_80123590[])(void *);
+extern s32 D_80127EF8;
+extern u8 D_80135483;
+
 void func_800EE530(unkStruct800EE530* arg0) {
     arg0->unk2C = defrag(arg0->unk2C);
 }
