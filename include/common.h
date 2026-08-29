@@ -147,8 +147,9 @@ typedef struct Actor {
     /* 0x7C */ u32 pad7C_13 : 2;
     /* 0x7C */ u32 unk7C_12 : 1; // unk7C & 0x1000
     /* 0x7C */ u32 unk7C_0 : 12; // unk7C & 0xFFF
-    /* 0x80 */ u32 pad80;
-    /* 0x84 */ u32 pad84;
+    /* 0x80 */ s16 pad80;
+    /* 0x82 */ s16 unk82[2];
+    /* 0x86 */ s16 pad86;
     /* 0x88 */ u32 pad88;
     /* 0x8C */ u32 pad8C;
     /* 0x90 */ s16 pad90;

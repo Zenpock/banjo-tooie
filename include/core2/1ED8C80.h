@@ -3,6 +3,7 @@
 
 #include "common.h"
 #include "core2/1EDFED0.h"
+#include "core1/1E32FE0.h"
 
 void func_800FFA88(Unk80132ED0*);
 void func_800FFAB0(Actor*);
