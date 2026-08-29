@@ -594,7 +594,7 @@ void func_80093528(PlayerState* arg0)
     u8 temp_v1;
 
     arg0->unk50->unk1A = 0;
-    func_800DBEB0(arg0->unk50->unk4, arg0);
+    func_800DBEB0(arg0->unk50->unk4);
     arg0->unk50->unk16 = 0;
     arg0->unk50->unkA5 = 0U;
     temp_v1 = arg0->unk50->unkA5;

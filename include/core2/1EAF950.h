@@ -19,7 +19,5 @@ void func_800D71F4(s32);
 u8 func_800D731C(u16);
 void func_800D740C();
 void *func_800D7520(s32);
-void func_800DBEB0(s32, PlayerState*);
-s32 func_800DC060(s32);
 
 #endif
