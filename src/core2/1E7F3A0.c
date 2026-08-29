@@ -1,22 +1,55 @@
 #include "core2/1E7F3A0.h"
 
+
 typedef struct {
-    u8 unk0[4];
+    s16 unk0;
+    u8 unk2[2];
     f32 unk4;
     u8 unk8[4];
 }
 unkD_80127100;
+typedef struct {
+    s32 unk0;
+    unkD_80127100* unk4;
+}UNKD_8011A1BC;
 
+extern unkD_80127100 D_8011A1B0;
+extern UNKD_8011A1BC D_8011A1BC[];
 extern unkD_80127100* D_80127100;
+extern u8 D_8012762C;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7F3A0/func_800A5AB0.s")
+void func_800A5AB0(void)
+{
+    s32 index;
+    s32 var_a0 = D_8012762C;
+    s32 pad;
+    unkD_80127100* var_a2 = &D_8011A1B0;
+    enum map_e currentMap;
+
+    for (index = 0; D_8011A1BC[index].unk0 != 0; index++)
+    {
+        if (var_a0 == D_8011A1BC[index].unk0)
+        {
+            var_a2 = D_8011A1BC[index].unk4;
+        }
+    }
+    currentMap = func_800EA05C();
+    for (index = 0; var_a2[index].unk0 != 0; index++)
+    {
+        if (currentMap == var_a2[index].unk0)
+        {
+            break;
+        }
+    }
+    D_80127100 = &var_a2[index];
+}
 
 s8 func_800A5B6C(void)
 {
-    return D_80127100->unk0[2];
+    return D_80127100->unk2[0];
 }
 s8 func_800A5B7C(void) {
-    return D_80127100->unk0[3];
+    return D_80127100->unk2[1];
 }
 
 f32 func_800A5B8C(void) {

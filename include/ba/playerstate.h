@@ -1,7 +1,7 @@
 #ifndef __BANJOSTATE_H__
 #define __BANJOSTATE_H__
 
-#include <ultra64.h>
+#include "common.h"
 
 #include "buttons.h"
 #include "core1/mlmtx.h"
@@ -22,10 +22,15 @@ typedef struct ba_unknown_2C_s {
     u8 unk1A;
 } BaUnknown2C;
 
+typedef struct {
+    s32 unk0;
+    Vec3f unk4[0x17];
+} UNKfunc_800DBEB0_ARG0;
+
 typedef struct ba_unknown_50_s {
     u16 unk0;
     u16 unk2;
-    s32 unk4;
+    UNKfunc_800DBEB0_ARG0* unk4;
     s32 unk8;
     s16 unkC;
     s16 unkE;
