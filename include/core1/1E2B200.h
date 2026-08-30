@@ -11,5 +11,5 @@ f32 func_800137C4();
 f32 func_800137F4(f32);
 f32 func_80013970(f32);
 f32 func_80013B70(f32 y, f32 x, f32 amplitude); //atan2?
-
+f32 func_80013B7C(f32, f32);
 #endif // __CORE1_1E2B200_H__

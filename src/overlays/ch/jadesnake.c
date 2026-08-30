@@ -177,7 +177,7 @@ void func_80800150_chjadesnake(Actor* arg0)
             func_80090734(2, arg0->position);
             func_8010A85C(arg0, 1);
             func_80102424(arg0, 2);
-            func_80101EE4(arg0, 0x3F11EB85);
+            func_80101EE4(arg0, 0.57f);
         }
         break;
     case 7:

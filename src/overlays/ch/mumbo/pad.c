@@ -118,7 +118,7 @@ s32 func_80800514_chmumbopad(Actor* arg0, s32 arg1, s32 arg2)
 
 void func_8080063C_chmumbopad(Actor* arg0, s32 arg1)
 {
-    func_800F7874(arg1, arg0->unk0, arg0->position, arg0);
+    func_800F7874(arg1, arg0->unk0, arg0->position);
     func_800F5FA8(arg1);
 }
 

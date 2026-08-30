@@ -1,13 +1,50 @@
-#include "common.h"
+#include "core2/1ECBB80.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBB80/func_800F2290.s")
+extern f32 D_80125EE0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBB80/func_800F22B4.s")
+f32 func_800F2290(f32* arg0, f32* arg1)
+{
+    return (arg0[0] * arg1[1]) - (arg0[1] * arg1[0]);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBB80/func_800F22EC.s")
+void func_800F22B4(f32* arg0, f32 arg1)
+{
+    arg0[0] = func_800137F4(arg1);
+    arg0[1] = func_80013788();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBB80/func_800F2320.s")
+void func_800F22EC(f32* arg0)
+{
+    sqrtf((arg0[0] * arg0[0]) + (arg0[1] * arg0[1]));
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBB80/func_800F2388.s")
+f32 func_800F2320(f32* arg0)
+{
+    f32 sp1C;
+    f32 temp_f0;
+    f32 var_f12;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBB80/func_800F23AC.s")
+    sp1C = mlAbsF(arg0[0]);
+    temp_f0 = mlAbsF(arg0[1]);
+    if (sp1C < temp_f0)
+    {
+        var_f12 = sp1C;
+    }
+    else
+    {
+        var_f12 = temp_f0;
+    }
+    return (sp1C + temp_f0) - (var_f12 * D_80125EE0);
+}
+
+void func_800F2388(f32* arg0, f32* arg1, f32* arg2)
+{
+    arg0[0] = (f32)(arg1[0] - arg2[0]);
+    arg0[1] = (f32)(arg1[1] - arg2[1]);
+}
+
+void func_800F23AC(f32* arg0, f32* arg1)
+{
+    arg0[0] = arg1[1];
+    arg0[1] = -arg1[0];
+}
