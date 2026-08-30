@@ -64,6 +64,7 @@ s32 func_800F56AC(s32);
 
 Unk80132ED0* func_800F56D8(s32 arg0);
 void func_800F5A00(s32, f32[3]);
+void func_800F5A2C(s32, s32, f32[3]);
 f32 func_800F5AE0(s32);
 void func_800F5D44(s32, f32*);
 void func_800F5D70(s32, f32*);
@@ -98,7 +99,7 @@ s32 func_800F71D4(u32);
 s32 func_800F72DC(u32);
 void func_800F7664(u32, u8, u8);
 void func_800F7700(u32, s32, f32*);
-void func_800F7874(s32, Unk80132ED0*, f32*, Actor*);
+void func_800F7874(s32, Unk80132ED0*, f32*);
 //The moving object is moved towards/away from the target
 void func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
 s32 func_800F7B9C(s32, u32);

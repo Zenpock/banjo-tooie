@@ -14,7 +14,7 @@ void func_80101D4C(Actor*);
 s32 func_80101DDC(Actor*);
 s32 func_80101E14(Actor*, f32);
 s32 func_80101E4C(Actor*, f32*);
-void func_80101EE4(Actor*, s32);
+void func_80101EE4(Actor*, f32);
 f32 func_80101F24(Actor *);
 s32 func_80101F64();
 void func_80101FDC(Actor*, u32);

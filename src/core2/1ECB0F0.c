@@ -10,7 +10,20 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECB0F0/func_800F1988.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECB0F0/func_800F1A88.s")
+void func_800F1A88(f32* arg0, f32* arg1)
+{
+    f32 sp1C;
+    f32 temp_f0;
+    f32 temp_f0_2;
+    f32 temp_f2;
+
+    temp_f0 = arg0[2];
+    temp_f2 = arg0[0];
+    temp_f0_2 = sqrtf((temp_f0 * temp_f0) + (temp_f2 * temp_f2));
+    sp1C = temp_f0_2;
+    arg1[1] = func_80013B70(arg0[0], arg0[2], temp_f0_2);
+    arg1[0] = func_80013B7C(arg0[1], sp1C);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECB0F0/func_800F1AFC.s")
 
