@@ -1,11 +1,10 @@
 #include "core1/1E29B60.h"
+#include "core1/1E36310.h"
 
 extern s32 core1_BSS_END;
 extern s32 core1_BSS_START;
-extern s32 func_80013620();
 extern s32 D_800459CC;
 extern s32 D_8007E994;
-extern s32 func_8001E830();
 
 s32 func_80012030(s32 arg0) {
     bzero(&core1_BSS_START, (s32)&core1_BSS_END - (s32)&core1_BSS_START);
@@ -127,7 +126,15 @@ s32 func_800123B0()
     return D_800459D0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_800123BC.s")
+
+
+void func_800123BC(void) {
+    if (func_800A7D84() != 0) 
+    {
+        func_800A7840(0);
+    }
+    func_800A5D1C();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_800123F4.s")
 
@@ -140,8 +147,15 @@ s32 func_80012530()
     return D_80043380;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_8001253C.s")
+void func_8001253C(s32 arg0) {
+    D_800459CC = arg0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_80012548.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_80012598.s")
+extern s32 D_80045788;
+
+s32* func_80012598(void) { //matched by Zenpock
+    return &D_80045788;
+}
+

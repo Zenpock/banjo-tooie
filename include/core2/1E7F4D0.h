@@ -21,5 +21,8 @@ typedef struct {
 }D_80127110_Data;
 
 D_80127110_Data* func_800A5D60();
+void func_800A5D1C();
+void func_800A7840(s32);
+s32 func_800A7D84();
 
 #endif
