@@ -2,6 +2,8 @@
 #define __CORE2_1ED4E30_H__
 
 #include "common.h"
+#include "core2/1ED68A0.h"
+#include "core2/1ED68A0.h"
 
 typedef struct {
     u8 pad[0x28];
@@ -19,9 +21,8 @@ typedef struct {
 } unkStruct800FB540;
 
 
-s16 func_800FED70(s16, void*);  
 s32 func_800FB650(s32, s32, s32);
-s16 func_800FED90(s16, void*);    
+   
 void func_800FB968();
 void func_800FC124(u32);
 void func_800FC1A8(void);

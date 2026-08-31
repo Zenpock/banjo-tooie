@@ -1,14 +1,13 @@
 #include "ba/physics.h"
 #include "core2/baphysics.h"
-#include "ba/physics.h"
 
 s32 func_8009AD70() 
 {
     return 0xF;
 }
 
-u8 func_8009AD78(unkStruct8009AD78* arg0, s32 arg1) {
-    return *(arg0->unkC4 + arg1);
+s32 func_8009AD78(PlayerState* arg0, s32 arg1) {
+    return arg0->unkC4[arg1];
 }
 
 void func_8009AD88(s32 arg0) 
@@ -16,8 +15,8 @@ void func_8009AD88(s32 arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009AD90.s")
 
-void func_8009ADF0(unkStruct8009ADF0* arg0, s32 arg1, s32 arg2) {
-    *(arg0->unkC4 + arg1) = arg2;
+void func_8009ADF0(PlayerState* arg0, s32 arg1, s32 arg2) {
+    arg0->unkC4[arg1] = arg2;
 }
 
 s32 func_8009AE00() 
@@ -31,7 +30,7 @@ s32 func_8009AE00()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009B170.s")
 
-void func_8009B1FC(unkStruct8009B1FC* arg0) {
+void func_8009B1FC(PlayerState* arg0) {
     f32 temp_f0;
     f32 temp_f12;
     f32 var_f2;
@@ -48,28 +47,28 @@ void func_8009B1FC(unkStruct8009B1FC* arg0) {
         var_f2 = arg0->unkC8->unk14;
     }
 
-    arg0->unkC8->unk2C = var_f2 * temp_f0;
-    arg0->unkC8->unk8 += arg0->unkC8->unk2C;
+    arg0->unkC8->unk28[1] = var_f2 * temp_f0;
+    arg0->unkC8->unk8 += arg0->unkC8->unk28[1];
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009B27C.s")
 
-void func_8009B3B8(unkStruct8009B3B8* arg0) {
-    s32 temp_v0;
-    s32 temp_v0_2;
+void func_8009B3B8(PlayerState* arg0) {
+    ba_unknown_C8_s *temp_v0;
+    ba_unknown_C8_s *temp_v0_2;
 
     temp_v0 = arg0->unkC8;
-    func_800EE7F8(temp_v0 + 0x28, temp_v0 + 0x10);
-    func_800EF334(arg0->unkC8 + 0x28, time_getDelta());
+    func_800EE7F8(temp_v0->unk28, (u8 *)temp_v0 + 0x10);
+    func_800EF334(arg0->unkC8->unk28, time_getDelta());
     temp_v0_2 = arg0->unkC8;
-    func_800EF04C(temp_v0_2 + 4, temp_v0_2 + 0x28);
+    func_800EF04C((u8 *)temp_v0_2 + 4, (u8 *)temp_v0_2 + 0x28);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009B414.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009B450.s")
 
-void func_8009B4D0(unkStruct8009B4D0* arg0, f32 arg1[3]) 
+void func_8009B4D0(PlayerState* arg0, f32 arg1[3]) 
 {
     func_800EE7F8(arg1, arg0->unkC8->unk28);
 }

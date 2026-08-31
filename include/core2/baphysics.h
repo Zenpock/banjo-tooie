@@ -4,6 +4,8 @@
 #include "common.h"
 
 #include <ultra64.h>
+#include "core2/1EB2840.h"
+#include "core2/1EC8070.h"
 
 #include "ba/playerstate.h"
 
@@ -27,17 +29,12 @@ typedef struct unkStruct8009B1FC {
 
 typedef struct {
     u8 pad[0xc4];
-    u8* unkC4;
-}unkStruct8009AD78;
-typedef struct {
-    u8 pad[0xc4];
     s8* unkC4;
 } unkStruct8009ADF0;
 typedef struct {
     u8 pad[0xc8];
     s32 unkC8;
 } unkStruct8009B3B8;
-void func_800EE7F8(f32 dst[3], f32 src[3]);                     /* extern */
 
 typedef struct {
     u8 pad0[0x28];
@@ -48,10 +45,5 @@ typedef struct {
     u8 pad0[0xC8];
     unkStruct8009B4D0_inner* unkC8;
 }unkStruct8009B4D0;
-
-f32 time_getDelta();   
-s32 func_800EF04C(s32, s32);
-s32 func_800EF334(s32, f32);
-
 
 #endif // __CORE2_BAPHYSICS_H__

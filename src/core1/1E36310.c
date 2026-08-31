@@ -6,7 +6,6 @@ s32 func_8001E7E0(void) {
     return 0x80400000;
 }
 
-extern s32 D_8007E990;
 extern s32 D_8007E994;
 extern s32 D_8007E998;
 

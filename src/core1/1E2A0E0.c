@@ -8,6 +8,14 @@ extern void* D_80076978;
 extern OSMesgQueue D_800769B8;
 extern s32 D_8003CC64;
 extern s16 D_8006A1CC;
+extern s32 D_8003CA40;
+extern OSThread D_800459F8;
+extern s32 D_80046A78;
+extern s32 D_80069488;
+extern s32 D_80069568;
+extern s32 D_80045BB8;
+extern s32 D_8007695C;
+extern s32 D_80076940;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_800125B0.s")
 
@@ -32,9 +40,6 @@ void func_80012B74(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_80012D84.s")
 
-extern s32 D_8003CA40;
-extern OSThread D_800459F8;
-
 void func_80012EA0(void) {
     if (D_8003CA40 == 0) {
         D_8003CA40 = 1;
@@ -42,29 +47,17 @@ void func_80012EA0(void) {
     }
 }
 
-
-extern s32 D_80046A78;
-
 s32* func_80012EDC(void) {
     return &D_80046A78;
 }
-
-
-extern s32 D_80069488;
 
 s32* func_80012EE8(void) {
     return &D_80069488;
 }
 
-
-extern s32 D_80069568;
-
 s32* func_80012EF4(void) {
     return &D_80069568;
 }
-
-
-extern s32 D_80045BB8;
 
 s32* func_80012F00(void) {
     return &D_80045BB8;
@@ -80,14 +73,9 @@ void func_80012F34(s32 arg0, s32 arg1) {
     func_80021AD0();
 }
 
-extern s32 D_8007695C;
-
 s32* func_80012F60(void) {
     return &D_8007695C;
 }
-
-
-extern s32 D_80076940;
 
 s32* func_80012F6C(void) {
     return &D_80076940;

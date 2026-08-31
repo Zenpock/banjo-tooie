@@ -2,8 +2,8 @@
 #define __CORE1_1E2A0E0_H__
 
 #include <ultra64.h>
-s32 func_80021A00(s32);                               /* extern */
-s32 func_80021AD0();                                  /* extern */
+#include "common.h"
+#include "core1/1E38AA0.h"
 
 
 #endif // __CORE1_1E2A0E0_H__

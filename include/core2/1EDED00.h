@@ -4,8 +4,6 @@
 #include "common.h"
 #include "freelist.h"
 
-void* freelist_at(FreeList*, s32);
-
 void func_801054D4(Actor*);
 void func_80105634(Actor*);
 void func_80105834(Actor*);

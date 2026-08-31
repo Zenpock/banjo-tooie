@@ -1,4 +1,5 @@
 #include "core1/1E29B60.h"
+#include "core1/1E36310.h"
 
 extern s32 core1_BSS_END;
 extern s32 core1_BSS_START;

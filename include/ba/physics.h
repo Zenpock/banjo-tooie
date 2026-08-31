@@ -23,6 +23,11 @@ typedef enum ba_physics_type_e {
     BA_PHYSICS_E_UNKNOWN
 } BaPhysicsType;
 
+typedef struct {
+    u8 pad[0xc4];
+    u8* unkC4;
+}unkStruct8009AD78;
+
 void baphysics_set_type(PlayerState *, BaPhysicsType);
 void baphysics_set_vertical_velocity(PlayerState *, f32);
 void baphysics_set_target_horizontal_velocity(PlayerState* , f32 vel);
@@ -34,7 +39,6 @@ void baphysics_reset_gravity(PlayerState* );
 void baphysics_reset_terminal_velocity(PlayerState *);
 void baphysics_set_gravity(PlayerState *, f32);
 void baphysics_set_terminal_velocity(PlayerState *, f32);
-
 void func_8009B94(PlayerState *);
 void func_8009B7C0(PlayerState *);
 void func_8009B9F0(PlayerState *, f32);

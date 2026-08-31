@@ -3,15 +3,14 @@
 
 #include "common.h"
 #include <ultra64.h>
+#include "core2/1E7F4D0.h"
+#include "core2/1E80A70.h"
+#include "core1/1E36310.h"
 
 s32 func_80013620();
-s32 func_8001E830(void);
 void func_8001209C(s32);
 void func_80012128();
 void func_800121D0();
-void func_800A5D1C();
-void func_800A7840(s32);
-s32 func_800A7D84();
 void func_8001253C(s32);
 void func_800125B0();
 void func_80014E6C();

@@ -1,5 +1,9 @@
 #ifndef __CORE2_1EC6180_H__
 #define __CORE2_1EC6180_H__
+#include "gl/idmake.h"
+#include "core2/1EC9740.h"
+#include "core2/1EC3810.h"
+#include "core2/1E9A960.h"
 
 typedef struct {
     u8  pad0[4];
@@ -149,18 +153,9 @@ typedef struct {
     f32 unk48;
 } unkStruct800ECD60;
 
-f32 func_800EFE50(f32*, void*, void*, f32);
-s32 _glidmake_entrypoint_2(s32, s32, void*, s32);
-s32 func_800EA05C();
-
 void func_800EE040(unkStruct800EE040* arg0, s32 arg1, f32 arg2, f32 arg3);      
 f32 func_800ED964(f32, f32);
 
-u8 func_800C2E04(void);
-s32 func_800C301C(u8, s32);
-u8 func_800C3058(u8, s32);
-f32 func_800C31DC(u8, f32);
-u8 func_800C330C(u8, s32);
-u8 func_800C3BDC(u8);
+s32 func_800C2E04(void);
 
 #endif
