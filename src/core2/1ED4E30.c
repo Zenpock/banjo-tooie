@@ -24,7 +24,7 @@ void func_800FB540(unkStruct800FB540* arg0) {
     }
 }
 
-void func_800FB5BC(unkStruct800FB5BC* arg0) {
+void func_800FB5BC(unkStruct800FB540* arg0) {
     if (arg0->unk33 != 0) {
         func_800FED90(arg0->unk28, arg0);
         arg0->unk33 = 0U;

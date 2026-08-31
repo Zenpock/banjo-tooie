@@ -9,7 +9,7 @@ void func_800EE530(unkStruct800EE530* arg0) {
     arg0->unk2C = defrag(arg0->unk2C);
 }
 
-void func_800EE55C(unkStruct800EE55C *arg0) {
+void func_800EE55C(unkStruct800EE530 *arg0) {
     s32 sp1C;
     s32 temp_a0;
     s32 new_var;
@@ -20,14 +20,14 @@ void func_800EE55C(unkStruct800EE55C *arg0) {
     arg0->unk2C = arg0->unk24 + (sp1C << 2);
 }
 
-void func_800EE5AC(unkStruct800EE5AC* arg0) {
+void func_800EE5AC(unkStruct800EE530* arg0) {
     arg0->unk24 = defrag(arg0->unk24);
 }
 
 s32 func_800EE5D8(s32 arg0) 
 {
     s32 var_a3;
-    unkStruct800EE670 *var_s0;
+    unkStruct800EE530 *var_s0;
     u32 temp_s2;
 
     var_a3 = defrag(arg0);
@@ -49,7 +49,7 @@ s32 func_800EE5D8(s32 arg0)
 void func_800EE670(void) 
 {
     u32 temp_s2;
-    unkStruct800EE670 *var_s0;
+    unkStruct800EE530 *var_s0;
 
     if (D_80127EF8 != 0) 
     {
