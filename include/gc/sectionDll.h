@@ -13,6 +13,4 @@
 
 
 s32 _gcsectionDll_entrypoint_4(s32);
-
-
 #endif

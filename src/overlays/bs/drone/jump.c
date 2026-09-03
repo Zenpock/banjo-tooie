@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/drone/jump.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/jump/bsdronejump_entrypoint_0.s")
 

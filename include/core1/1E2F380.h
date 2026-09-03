@@ -3,6 +3,8 @@
 
 #include "common.h"
 
+void func_80018444();
+void func_800184E8();
 void func_80018634(void);
 void func_80018820(s32, f32, f32);
 

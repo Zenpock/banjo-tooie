@@ -83,6 +83,7 @@ void func_8001546C(s32 arg0)
         osRecvMesg(&D_80078FD0, &sp50, 1);
         func_80014A54();
         D_80079138++;
+        //Randomizer Change Increase the time limit before we declare an infinite loop
         temp2 = D_80079138 == 0x558;
         temp = func_8001E7C0() == 0;
         temp3 = D_8003F5D0;

@@ -1,8 +1,8 @@
 #include "common.h"
 
 #include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/physics.h"
+#include "ba/anim.h"
+#include "ba/physics.h"
 
 #include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
@@ -150,7 +150,6 @@ void baanim_init(PlayerState *self) {
     func_8008C984(self, 3);
     self->anim->scalable_duration = 0;
     self->anim->duration_scale = 1.0f;
-
 }
 
 void baanim_free(PlayerState *self) {

@@ -1,4 +1,6 @@
-#include "common.h"
+#include "ch/stinger.h"
+
+extern ActorData D_80800870_chstinger;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stinger/func_80800000_chstinger.s")
 
@@ -6,9 +8,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stinger/func_80800218_chstinger.s")
 
-void func_8080025C_chstinger(s32 arg0) 
-{
-}
+void func_8080025C_chstinger(s32 arg0) {}
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stinger/func_80800264_chstinger.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stinger/func_808003B0_chstinger.s")
@@ -19,7 +20,6 @@ void func_8080025C_chstinger(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stinger/func_80800774_chstinger.s")
 
-extern ActorData D_80800870_chstinger;
 ActorData* chstinger_entrypoint_1()
 {
     return &D_80800870_chstinger;

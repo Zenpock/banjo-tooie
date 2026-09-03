@@ -13,7 +13,7 @@
 #include "su/baddiedialog.h"
 #include "su/baddiefind.h"
 #include "su/baddieitem.h"
-#include "overlays/pl/su.h"
+#include "pl/su.h"
 
 #include "core2/1E93440.h"
 #include "core2/1EA9160.h"

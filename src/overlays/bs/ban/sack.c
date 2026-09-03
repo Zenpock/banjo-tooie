@@ -1,5 +1,4 @@
-#include "common.h"
-#include "overlays/ba/playerstate.h"
+#include "bs/ban/sack.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800000_bsbansack.s")
 

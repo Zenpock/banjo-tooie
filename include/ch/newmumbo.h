@@ -11,7 +11,7 @@
 
 #include "gl/cutDll.h"
 #include "gc/dialogcamera.h"
-#include "overlays/pl/su.h"
+#include "pl/su.h"
 
 #include "core1/1E2B200.h"
 #include "core2/1E691A0.h"

@@ -15,4 +15,5 @@ unkStruct80103CB8* func_80103CB8(Actor*, s32);
 void func_80103DFC(Actor*, f32*);
 f32 func_80103EAC(Actor*);
 f32 func_80103EF4(Actor*);
+f32 func_80103FB8(Actor*);
 #endif

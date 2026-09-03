@@ -13096,15 +13096,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02116C80
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02116C80, c, egg]
-      - [0x02116E80, .rodata, egg]
-      - [0x02116E80, data, egg]
-      - [0x02116EF0, bss, egg]
+      - [auto, c, egg]
   - name: gcextra_header
     dir: overlays/gcextra
     type: bin

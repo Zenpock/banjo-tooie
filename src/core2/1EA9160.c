@@ -139,7 +139,7 @@ s32 func_800CFA90()
 
     s32 var_s0;
 
-    u8 var_v0_2;
+    s32 var_v0_2;
 
 
     s32 index;
@@ -171,13 +171,11 @@ s32 func_800CFA90()
         var_v0_2 = func_800DC128(0, 9);
         var_v1 = &(&var_v0[0])[var_v0_2];
         var_a0 = *var_v1;
-        if ((s32)var_v0_2 < var_a0)
+        while ((s32)var_v0_2 < var_a0)
         {
-            do {
-                var_v0_2 = func_800DC128(0, 9);
-                var_v1 = &(&var_v0[0])[var_v0_2];
-                var_a0 = *var_v1;
-            } while ((s32)var_v0_2 < var_a0);
+            var_v0_2 = func_800DC128(0, 9);
+            var_v1 = &(&var_v0[0])[var_v0_2];
+            var_a0 = *var_v1;
         }
         *var_v1 = var_a0 + 1;
         D_8011AB40[index].color = var_v0_2;

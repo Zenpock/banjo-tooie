@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 void func_8009BD88(PlayerState *);
 void func_8009BDAC(PlayerState *, f32);

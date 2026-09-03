@@ -1,4 +1,4 @@
-#include "overlays/ch/clockworkmouse.h"
+#include "ch/clockworkmouse.h"
 
 #define CLOCKWORK_DATA(arg0) ((ClockworkActorData*)(arg0->actorData))
 

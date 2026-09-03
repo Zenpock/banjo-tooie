@@ -1,19 +1,4 @@
-#include "common.h"
-
-#include "overlays/ba/anim.h"
-#include "overlays/ba/flag.h"
-#include "overlays/ba/key.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/yaw.h"
-#include "bs.h"
-#include "overlays/bs/state.h"
-
-#include "core2/1E76CC0.h"
-#include "core2/1E77A20.h"
-#include "core2/1E8F430.h"
-#include "core2/1E93440.h"
-#include "core2/1ECA640.h"
+#include "bs/ban/packwhack.h"
 
 extern s32 D_808004D0_bsbanpackwhack;
 extern BsScript D_8080050C_bsbanpackwhack[4];

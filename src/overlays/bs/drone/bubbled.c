@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/drone/bubbled.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/bubbled/func_80800000_bsdronebubbled.s")
 
@@ -10,9 +10,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/bubbled/bsdronebubbled_entrypoint_3.s")
 
-void bsdronebubbled_entrypoint_4(s32 arg0) 
-{
-}
+void bsdronebubbled_entrypoint_4(s32 arg0) {}
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/bubbled/bsdronebubbled_entrypoint_5.s")
 
 void bsdronebubbled_entrypoint_6()

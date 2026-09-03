@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ba/swim.h"
 
 s32 baswim_entrypoint_0() 
 {

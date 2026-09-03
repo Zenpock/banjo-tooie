@@ -632,6 +632,7 @@ void func_80801290_chhandcart(Actor* arg0)
     s32 i;
     f32 spAC;
     f32 sp7C[4][3];
+    s32 pad;
     spBC = (HandcartMemory*)func_80100094(arg0, 0);
     gamespeed = time_getDelta();
     func_800EF5A0(sp7C[0], arg0->rotation, -52.0f, 0, -49.0f);

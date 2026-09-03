@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/drone/fired.h"
 
 void bsdronefired_entrypoint_0()
 {

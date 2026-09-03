@@ -12,10 +12,10 @@
 #include "core2/1E79FD0.h"
 #include "core2/1EA0690.h"
 
-#include "overlays/ba/flag.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/key.h"
-#include "overlays/ba/timer.h"
+#include "ba/flag.h"
+#include "ba/anim.h"
+#include "ba/key.h"
+#include "ba/timer.h"
 
 void _bsclaw_entrypoint_0(PlayerState* arg0);
 void _bsclaw_entrypoint_1(PlayerState * arg0);

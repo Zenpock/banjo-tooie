@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/wim.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_80800000_bsbswim.s")
 
@@ -66,6 +66,7 @@ void func_80800D30_bsbswim(s32 arg0)
     _baspin_entrypoint_1();
     func_80800104_bsbswim(arg0);
 }
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_80800D58_bsbswim.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_80800D98_bsbswim.s")
@@ -131,6 +132,7 @@ void func_808018B0_bsbswim(s32 arg0)
     _bsdrone_entrypoint_2();
     func_80800104_bsbswim(arg0);
 }
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/bsbswim_entrypoint_11.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_808018EC_bsbswim.s")
@@ -147,9 +149,8 @@ void func_808018B0_bsbswim(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_80801B84_bsbswim.s")
 
-void func_80801C04_bsbswim(s32 arg0) 
-{
-}
+void func_80801C04_bsbswim(s32 arg0) {}
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_80801C0C_bsbswim.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/bsbswim_entrypoint_13.s")

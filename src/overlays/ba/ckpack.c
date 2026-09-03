@@ -1,11 +1,4 @@
-#include "common.h"
-
-#include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/backpack.h"
-#include "overlays/ba/playerstate.h"
-
-#include "core2/1EB5E70.h"
+#include "ba/ckpack.h"
 
 s32 func_8008CA74(PlayerState *self);
 

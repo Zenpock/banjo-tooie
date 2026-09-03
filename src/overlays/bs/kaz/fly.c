@@ -1,4 +1,4 @@
-#include "overlays/bs/kaz/fly.h"
+#include "bs/kaz/fly.h"
 
 void func_80800000_bskazfly(PlayerState *self) {
     f32 sp24[3];
@@ -7,7 +7,7 @@ void func_80800000_bskazfly(PlayerState *self) {
     sp24[0] += func_800DC178(-30, 30);
     sp24[1] += 50.0f + func_800DC178(0, 30);
     sp24[2] += func_800DC178(-30, 30);
-    func_800BBCB8(sp24, 0, 1, 1, D_80801C10_bskazfly);
+    func_800BBCB8(sp24, NULL, 1, 1, D_80801C10_bskazfly);
 }
 
 void func_808000AC_bskazfly(PlayerState *self) {
@@ -622,7 +622,7 @@ void func_80801838_bskazfly(PlayerState *self) {
 }
 
 void func_8080185C_bskazfly(PlayerState *self) {
-    _bafly_entrypoint_15();
+    _bafly_entrypoint_15(self);
     func_80800188_bskazfly(self);
 }
 
@@ -641,7 +641,7 @@ void func_808018D0_bskazfly(PlayerState *self) {
 }
 
 void func_808018F4_bskazfly(PlayerState *self) {
-    _bafly_entrypoint_15();
+    _bafly_entrypoint_15(self);
     func_80800188_bskazfly(self);
 }
 
@@ -660,7 +660,7 @@ void func_80801964_bskazfly(PlayerState *self) {
 }
 
 void func_8080198C_bskazfly(PlayerState *self) {
-    _bafly_entrypoint_18();
+    _bafly_entrypoint_18(self);
     func_80800188_bskazfly(self);
 }
 

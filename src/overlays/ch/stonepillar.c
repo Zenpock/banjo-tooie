@@ -448,12 +448,12 @@ s32 func_80800B58_chstonepillar(Actor* arg0)
 
 void func_80800BDC_chstonepillar(f32* arg0)
 {
-    func_800BBCB8(arg0, 0, 1.0f, 1, &D_80801498_chstonepillar);
+    func_800BBCB8(arg0, NULL, 1.0f, 1, &D_80801498_chstonepillar);
 }
 
 void func_80800C10_chstonepillar(f32* arg0)
 {
-    func_800BBCB8(arg0, (s32)arg0, 1.0f, 3, &D_808014B8_chstonepillar);
+    func_800BBCB8(arg0, arg0, 1.0f, 3, &D_808014B8_chstonepillar);
 }
 
 void func_80800C44_chstonepillar(Actor* arg0)

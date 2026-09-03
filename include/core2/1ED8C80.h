@@ -2,6 +2,7 @@
 #define __CORE2_1ED8C80_H__
 
 #include "common.h"
+#include "core1/1E32FE0.h"
 #include "core2/1EB57A0.h"
 #include "core2/1EDDA60.h"
 #include "core2/1EDDC40.h"

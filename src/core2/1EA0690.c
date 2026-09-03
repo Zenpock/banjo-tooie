@@ -1,9 +1,15 @@
 #include "core2/1EA0690.h"
 #include "core2/1EB3750.h"
 
+extern s32 D_8012AAD0[];
+extern u32 D_8012AAE0;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA0690/func_800C6DA0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA0690/func_800C6E18.s")
+s32 func_800C6E18(s32 arg0)
+{
+    return flag_getValue(arg0 + 0xEE);
+}
 
 //Has Ability
 s32 ability_getValue(AbilityId AbilityID) {
@@ -85,9 +91,20 @@ void ability_offsetSetValueTrue(s32 arg0, s32 set) {
     flag_setValue(arg0 + FLAG_0EE_ABILITY_BK_BEAK_BOMB, set);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA0690/func_800C70F0.s")
+void func_800C70F0(s32 arg0) {
+    D_8012AAD0[arg0] = D_8012AAE0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA0690/func_800C710C.s")
+s32 func_800C710C(s32 arg0)
+{
+
+    if (D_8012AAD0[arg0] + 5 < D_8012AAE0)
+    {
+        D_8012AAD0[arg0] = D_8012AAE0;
+        return 1;
+    }
+    return 0;
+}
 
 void* func_800C7150(void* arg0) 
 {
@@ -95,4 +112,6 @@ void* func_800C7150(void* arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA0690/func_800C7170.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA0690/func_800C718C.s")
+void func_800C718C(void) {
+    D_8012AAE0 += 1;
+}

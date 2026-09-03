@@ -52,7 +52,6 @@ void func_800D0B08(s32, s32);
 void func_800D0B38(s32, s32);
 //Is Item Collected
 s32 func_800D0B68(u32, u32);
-void func_800D0BD4(s32, u32);
 void func_800D0C78(u32, u32, u32);
 //Set Item Collected Flag
 void func_800D0BD4(s32, u32);

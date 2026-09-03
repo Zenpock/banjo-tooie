@@ -3,9 +3,10 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 f32 func_8009C150(PlayerState *);
 void func_8009C128(PlayerState *, f32[3]);
+void func_8009C1F8(PlayerState *, f32[3]);
 
 #endif // __CORE2_1E75920_H__

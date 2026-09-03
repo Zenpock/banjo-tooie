@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ba/egg/aim.h"
 
 s32 baeggaim_entrypoint_0() 
 {

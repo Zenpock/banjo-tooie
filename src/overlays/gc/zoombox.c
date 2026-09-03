@@ -30,9 +30,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_808005F0_gczoombox.s")
 
-void gczoombox_entrypoint_1()
+void gczoombox_entrypoint_1(char* arg0)
 {
-    func_800E7188();
+    func_800E7188(arg0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_808006B4_gczoombox.s")

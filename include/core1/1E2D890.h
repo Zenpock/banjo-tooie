@@ -6,6 +6,8 @@
 //Is Pause Button Pressed
 u8 func_80015FA0(u8);
 void func_80016068(u8, f32*);
+void func_8001608C();
+void func_80016734();
 void func_80016864();
 //Get Number of Frames button held for
 u8 func_80016B30(u8, u32);

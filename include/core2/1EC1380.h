@@ -3,6 +3,7 @@
 
 #include "common.h"
 #include "gfx.h"
+#include "core2/1E80A70.h"
 
 void func_800E7E70(Gfx**);
 
