@@ -21,7 +21,7 @@ typedef struct ba_key_s {
 s32 bakey_getStructSize(void);
 s32 bakey_getControllerIndex(PlayerState *self);
 void bakey_func_8009191C(PlayerState *self, ButtonId id, s32 arg2);
-void bakey_func_80091940(PlayerState *self, ButtonId id, s32 arg2);
+s32 bakey_func_80091940(PlayerState *self, ButtonId id, s32 arg2);
 s32 bakey_func_80091964(PlayerState *self);
 s32 bakey_heldCount(PlayerState *self, ButtonId id);
 s32 bakey_releaseCount(PlayerState *self, ButtonId id);

@@ -33,8 +33,8 @@ void func_8080000C_chintrotext(Actor* arg0)
     textAddress = func_80100094(arg0, 0U);
     textMemory = (introTextMemory*)func_80100094(arg0, 1U);
     textMemory->textOffset[0] = 0;
-    textMemory->textFont[0] = 0xC26;\
     textMemory->numberOfLines = 1;
+	textMemory->textFont[0] = 0xC26;
     charIndex = 0;
     for (charIndex = 0; textAddress[charIndex]; charIndex++)
     {
