@@ -12,10 +12,10 @@ s32 baeggsetup_entrypoint_0();
 // baeggsetup_entrypoint_3
 // baeggsetup_entrypoint_4
 // baeggsetup_entrypoint_5
-// baeggsetup_entrypoint_6
+void _baeggsetup_entrypoint_6(PlayerState*, s32, f32*, f32*, f32*);
 // baeggsetup_entrypoint_7
-// baeggsetup_entrypoint_8
+void _baeggsetup_entrypoint_8(PlayerState*, s32);
 // baeggsetup_entrypoint_9
-// baeggsetup_entrypoint_10
+void _baeggsetup_entrypoint_10(PlayerState*);
 
 #endif // __BA_EGG_SETUP__

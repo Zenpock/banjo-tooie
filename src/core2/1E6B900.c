@@ -695,7 +695,7 @@ s32 func_800944E0(PlayerState* arg0, s32 arg1)
     return D_80117E3C[arg1][0];
 }
 
-s32 func_800944F8(s32 arg0, s32 arg1)
+s32 func_800944F8(PlayerState* arg0, s32 arg1)
 {
     return D_80117E3C[arg1][1];
 }

@@ -23,6 +23,7 @@ void func_8009DF58(PlayerState *, s32, f32);
 void func_8009DF94(PlayerState *, s32, f32, s32);
 void func_8009DFD4(PlayerState *, s32, f32, f32, s32, s32);
 void func_8009E058(PlayerState *);
+void func_8009E0AC(PlayerState*,s32);
 void func_8009E0DC(PlayerState *);
 void func_8009E100(PlayerState *);
 

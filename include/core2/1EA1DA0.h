@@ -24,6 +24,7 @@ s32 func_800C954C();
 void func_800C9BB4(f32, s32, s32, s32);
 void func_800C9C70(f32, u32, f32, u32, f32*, f32, f32);
 void func_800C8D4C(s32, f32*);
+void func_800C9DE4(f32, s32*, s32);
 //Set a timer to execute the callback
 void func_800C9E20(f32 timerLength, u32* callback, u32 callbackArg0, u32 callbackArg1);
 void func_800CA0A8();

@@ -14,7 +14,7 @@ void baeggcursor_entrypoint_4(s32 arg0);
 // baeggcursor_entrypoint_5
 // baeggcursor_entrypoint_6
 // baeggcursor_entrypoint_7
-// baeggcursor_entrypoint_8
+void _baeggcursor_entrypoint_8(PlayerState*);
 // baeggcursor_entrypoint_9
 // baeggcursor_entrypoint_10
 // baeggcursor_entrypoint_11

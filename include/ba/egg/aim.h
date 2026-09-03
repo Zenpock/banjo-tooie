@@ -4,6 +4,9 @@
 
 #include <ultra64.h>
 #include "common.h"
+#include "ba/egg/fire.h"
+#include "ba/fpctrl.h"
+#include "core2/1E6B900.h"
 
 s32 baeggaim_entrypoint_0();
 // func_80800008_baeggaim
