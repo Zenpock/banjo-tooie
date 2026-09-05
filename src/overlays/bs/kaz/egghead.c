@@ -21,15 +21,19 @@ void bskazegghead_entrypoint_0(PlayerState *self) {
 void bskazegghead_entrypoint_1(PlayerState *self) {
     BanjoStateId next_state;
     AnimCtrl* sp28;
-    s32 sp24;
+    s32 has_eggs;
 
     next_state = BS_STATE_0_INVALID;
     sp28 = (AnimCtrl*) baanim_getAnimCtrlPtr(self);
-    sp24 = func_80094BC0(self) != 0;
+    has_eggs = func_80094BC0(self) != 0;
+
+    //If we have the current egg type unlocked
+    //Randomizer change adding gcegg_entrypoint_6
+
     if ((bainput_should_shoot_egg(self) != 0) && (func_80094B14(self) != 0)) {
         self->unk15C.word = func_800F1418(self->unk15C.word + 1, func_800944E0(self, self->unk164.word));
     }
-    if (sp24 != 0) {
+    if (_gcegg_entrypoint_6(self->unk164.word) && has_eggs != 0) {
         if (anctrl_isAt(sp28, 0.1f) != 0) {
             _baeggsetup_entrypoint_10(self);
         }

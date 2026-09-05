@@ -806,38 +806,61 @@ void func_80094864(PlayerState* arg0)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_800949BC.s")
+int func_800949BC(PlayerState* arg0)
+{
+    return func_8009E674(arg0, 0x80000) || (_bafpctrl_entrypoint_5(arg0) && _baeggfire_entrypoint_8(arg0));
+}
 
 s32 func_80094A10(PlayerState* arg0)
 {
-    s32 temp_v0_2;
-    s32 sp20;
+    s32 nextEggType;
+    //Randomizer Change volatile for memory space
+    volatile s32 startEggType;
 
-    sp20 = func_80094510(arg0);
+    startEggType = func_80094510(arg0);
     if (func_800949BC(arg0) != 0)
     {
-        return sp20;
+        return startEggType;
     }
-
     do
     {
+        //arg0->unk64[1] points to the index in the egg cycle
         arg0->unk64[1]++;
-        temp_v0_2 = func_80094510(arg0);
-        if (temp_v0_2 == 0)
+        nextEggType = func_80094510(arg0);
+        if (nextEggType == 0)
         {
             arg0->unk64[1] = 0U;
-            temp_v0_2 = func_80094510(arg0);
+            nextEggType = func_80094510(arg0);
         }
-    } while (_gcegg_entrypoint_6(temp_v0_2) == 0);
-
-    if (temp_v0_2 != sp20)
-    {
-        func_80094E40(temp_v0_2);
-    }
-    return temp_v0_2;
+        //Randomizer Change so we don't get stuck if we don't have any eggs unlocked
+        if (nextEggType == startEggType)
+        {
+            break;
+        }
+    } //Returns true if we have the ability for the associated egg type
+    while (_gcegg_entrypoint_6(nextEggType) == 0);
+    //Randomizer Change removed the if(nextEggType != startEggType) so we had the same amount of space
+    func_80094E40(nextEggType);
+    return nextEggType;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80094AB4.s")
+void func_80094AB4(PlayerState* arg0)
+{
+    s32 eggType;
+    if (func_80094348(arg0, 2) == 0)
+    {
+        eggType = func_80094C64(arg0, (s32)arg0->unk64[1]);
+        if (eggType != 0)
+        {
+            //If egg type is unlocked
+            if (_gcegg_entrypoint_6(eggType) != 0)
+            {
+                //Show amount of eggs we have of the given type
+                func_800D1824(_gcegg_entrypoint_5(eggType));
+            }
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80094B14.s")
 

@@ -29,6 +29,7 @@
 #include "core2/1EE1510.h"
 #include "ba/preload.h"
 #include "gc/egg.h"
+#include "ba/egg/fire.h"
 #include "core1/mlmtx.h"
 #include "ba/backpack.h"
 #include "ba/roll.h"
@@ -71,9 +72,12 @@ s32 func_80094510(PlayerState *);
 void func_800946C4(PlayerState*, s32);
 void func_800947EC(PlayerState *, s32, s32);
 void func_80094824(PlayerState*);
-s32 func_800949BC(PlayerState*);
+int func_800949BC(PlayerState*);
+s32 func_80094A10(PlayerState*);
+//Show amount of eggs for currently selected egg type
 void func_80094AB4(PlayerState*);
 s32 func_80094B14(PlayerState *);
+//Do we have eggs for current type
 s32 func_80094BC0(PlayerState *);
 s32 func_80094C64(PlayerState*, s32);
 void func_80094C88(PlayerState*);

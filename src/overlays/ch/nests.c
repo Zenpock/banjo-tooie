@@ -820,6 +820,7 @@ s32 func_80800A74_chnests(s32 nestIndex)
             {
                 nestIndex--;
             }
+            //Randomizer Change added continue so it wouldn't get stuck forever
             continue;
         }
         associatedAbility = D_80801118_chnests[nestIndex].abilityId;

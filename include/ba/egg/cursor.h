@@ -4,6 +4,7 @@
 
 #include <ultra64.h>
 #include "common.h"
+#include "ba/playerstate.h"
 
 // func_80800000_baeggcursor
 s32 baeggcursor_entrypoint_0();

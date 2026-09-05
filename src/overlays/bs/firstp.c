@@ -1,50 +1,205 @@
 #include "bs/firstp.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800000_bsfirstp.s")
+extern s32 D_8080A890_bsfirstp[];
+extern s32 D_8080B5C0_bsfirstp[];
 
-void func_80800040_bsfirstp()
+void func_80800858_bsfirstp(PlayerState*, s32);
+s32 func_80800864_bsfirstp(PlayerState*);
+void func_80800F14_bsfirstp(PlayerState*);
+void func_80801000_bsfirstp(PlayerState*);
+
+void func_808019EC_bsfirstp(PlayerState*);
+void func_80801A5C_bsfirstp(PlayerState*);
+void func_80802BE8_bsfirstp(PlayerState*, f32);
+s32 func_80802C90_bsfirstp(PlayerState*);
+s32 func_80802D14_bsfirstp(PlayerState*);
+s32 func_80802D50_bsfirstp(PlayerState*, enum bs_state_e*);
+s32 func_80802E7C_bsfirstp(BsKazFly*);
+void func_80803760_bsfirstp(PlayerState*);
+s32 func_80803CD4_bsfirstp(PlayerState*, s32, s32, s32, f32*);
+void func_8080633C_bsfirstp(PlayerState*, f32);
+void func_80807EEC_bsfirstp(PlayerState*);
+void func_80807F24_bsfirstp(PlayerState*);
+s32 func_80808630_bsfirstp(PlayerState*);
+void func_80808678_bsfirstp(PlayerState*, s32);
+enum bs_state_e func_80808B24_bsfirstp(PlayerState*);
+void func_80808B8C_bsfirstp(PlayerState*, enum bs_state_e);
+void func_80808C48_bsfirstp(PlayerState*);
+void func_80808E78_bsfirstp(PlayerState*);
+s32 func_80809540_bsfirstp(PlayerState*, s32);
+
+struct bs_kazfly_s* func_80800000_bsfirstp(PlayerState* arg0)
 {
-    _bastatemem_entrypoint_1();
+    struct bs_kazfly_s* temp_a0;
+    _bastatemem_entrypoint_0(arg0, 0x2A8);
+    temp_a0 = arg0->kazfly;
+    aligned8_memset(temp_a0, 0U, 0x2A8);
+    return temp_a0;
+}
+
+void func_80800040_bsfirstp(PlayerState* self)
+{
+    _bastatemem_entrypoint_1(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_1.s")
+void bsfirstp_entrypoint_1(PlayerState* arg0, s32 arg1)
+{
+    AnimCtrl* temp_s0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800190_bsfirstp.s")
+    switch (arg1)
+    {
+    case 0:
+        temp_s0 = baanim_getAnimCtrlPtr(arg0);
+        func_80801000_bsfirstp(arg0);
+        func_8008B304(temp_s0);
+        func_800DF41C(func_8008B4D4(temp_s0));
+        return;
+    case 1:
+        temp_s0 = func_8008D04C(arg0);
+        if (func_80800864_bsfirstp(arg0) != 0)
+        {
+            func_80800F14_bsfirstp(arg0);
+        }
+        func_8008B304(temp_s0);
+        func_800DF41C(func_8008B4D4(temp_s0));
+        return;
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808001D0_bsfirstp.s")
+void func_80800190_bsfirstp(PlayerState* arg0)
+{
+    BsKazFly* temp = arg0->kazfly;
+    func_80800858_bsfirstp(arg0, 0);
+    func_800EFD24(temp->unk2C);
+    temp->unk50 = 0.0f;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808001FC_bsfirstp.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800228_bsfirstp.s")
+void func_808001D0_bsfirstp(PlayerState* arg0) 
+{
+    func_80808C48_bsfirstp(arg0);
+    func_80800858_bsfirstp(arg0, 0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800264_bsfirstp.s")
+void func_808001FC_bsfirstp(PlayerState* arg0) 
+{
+    anctrl_setPlaybackType(func_8008D04C(arg0), 3);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800290_bsfirstp.s")
+s32 func_80800228_bsfirstp(PlayerState* arg0)
+{
+    s32 var_v1;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808002CC_bsfirstp.s")
+    if (anctrl_getPlaybackType(func_8008D04C(arg0)) == 3)
+    {
+        var_v1 = 1;
+    }
+    else
+    {
+        var_v1 = 0;
+    }
+    return var_v1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800340_bsfirstp.s")
+void func_80800264_bsfirstp(PlayerState* arg0, f32 arg1) 
+{
+    func_8008B10C(func_8008D04C(arg0), arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808003B4_bsfirstp.s")
+void func_80800290_bsfirstp(PlayerState* arg0, enum asset_e arg1, f32 arg2)
+{
+    baanim_playForDuration_loopStartingAt(arg0, arg1, arg2, baanim_getTimer(arg0));
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800424_bsfirstp.s")
+void func_808002CC_bsfirstp(PlayerState* arg0, enum asset_e arg1, f32 arg2, f32 arg3)
+{
+    AnimCtrl* temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800488_bsfirstp.s")
+    temp_v0 = func_8008D04C(arg0);
+    anctrl_reset(temp_v0);
+    anctrl_setIndex(temp_v0, arg1);
+    anctrl_setDuration(temp_v0, arg2);
+    anctrl_setStart(temp_v0, arg3);
+    anctrl_setPlaybackType(temp_v0, 2);
+    anctrl_start(temp_v0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808004F8_bsfirstp.s")
+void func_80800340_bsfirstp(PlayerState* arg0, enum asset_e arg1, f32 arg2, f32 arg3) 
+{
+    AnimCtrl* temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_8080053C_bsfirstp.s")
+    temp_v0 = func_8008D04C(arg0);
+    anctrl_reset(temp_v0);
+    anctrl_setIndex(temp_v0, arg1);
+    anctrl_setDuration(temp_v0, arg2);
+    anctrl_setStart(temp_v0, arg3);
+    anctrl_setPlaybackType(temp_v0, 1);
+    anctrl_start(temp_v0);
+}
+
+void func_808003B4_bsfirstp(PlayerState* arg0, enum asset_e arg1, f32 arg2) {
+    AnimCtrl* temp_v0;
+
+    temp_v0 = func_8008D04C(arg0);
+    anctrl_reset(temp_v0);
+    anctrl_setSmoothTransition(temp_v0, 0);
+    anctrl_setIndex(temp_v0, arg1);
+    anctrl_setDuration(temp_v0, arg2);
+    anctrl_setPlaybackType(temp_v0, 1);
+    anctrl_start(temp_v0);
+}
+
+void func_80800424_bsfirstp(PlayerState* arg0, enum asset_e arg1, f32 arg2) {
+    AnimCtrl* temp_v0;
+
+    temp_v0 = func_8008D04C(arg0);
+    anctrl_reset(temp_v0);
+    anctrl_setIndex(temp_v0, arg1);
+    anctrl_setDuration(temp_v0, arg2);
+    anctrl_setPlaybackType(temp_v0, 1);
+    anctrl_start(temp_v0);
+}
+
+void func_80800488_bsfirstp(PlayerState* arg0, enum asset_e arg1, f32 arg2) {
+    AnimCtrl* temp_v0;
+
+    temp_v0 = func_8008D04C(arg0);
+    anctrl_reset(temp_v0);
+    anctrl_setSmoothTransition(temp_v0, 0);
+    anctrl_setIndex(temp_v0, arg1);
+    anctrl_setDuration(temp_v0, arg2);
+    anctrl_setPlaybackType(temp_v0, 2);
+    anctrl_start(temp_v0);
+}
+
+void func_808004F8_bsfirstp(PlayerState* arg0)
+{
+    BsKazFly* temp_v0;
+    f32 sp18;
+
+    temp_v0 = arg0->kazfly;
+    sp18 = temp_v0->unk20C;
+    func_800EEC70(temp_v0->unk2C, sp18, yaw_get(arg0), 150.0f);
+}
+
+void func_8080053C_bsfirstp(PlayerState* arg0) {
+    BsKazFly* sp1C;
+
+    sp1C = arg0->kazfly;
+    func_808004F8_bsfirstp(arg0);
+    func_800EFD24(sp1C->unk38);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_8080056C_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808006DC_bsfirstp.s")
 
-void func_80800830_bsfirstp(s32 arg0)
+void func_80800830_bsfirstp(PlayerState* self)
 {
-    func_8080056C_bsfirstp();
-    func_808006DC_bsfirstp(arg0);
+    func_8080056C_bsfirstp(self);
+    func_808006DC_bsfirstp(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800858_bsfirstp.s")
 
@@ -72,9 +227,9 @@ void func_80800830_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808015C0_bsfirstp.s")
 
-void func_80801640_bsfirstp()
+void func_80801640_bsfirstp(PlayerState* self)
 {
-    func_800C517C(func_800A4C68());
+    func_800C517C(func_800A4C68(self));
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80801668_bsfirstp.s")
@@ -95,10 +250,10 @@ void func_80801640_bsfirstp()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808019EC_bsfirstp.s")
 
-void func_80801A34_bsfirstp(s32 arg0)
+void func_80801A34_bsfirstp(PlayerState* self)
 {
-    func_8080187C_bsfirstp();
-    bsfirstp_entrypoint_2(arg0);
+    func_8080187C_bsfirstp(self);
+    bsfirstp_entrypoint_2(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80801A5C_bsfirstp.s")
 
@@ -106,9 +261,9 @@ void func_80801A34_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80801AC4_bsfirstp.s")
 
-void func_80801AEC_bsfirstp(s32 arg0)
+void func_80801AEC_bsfirstp(PlayerState* self)
 {
-    func_80801B64_bsfirstp(arg0,0);
+    func_80801B64_bsfirstp(self,0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80801B0C_bsfirstp.s")
@@ -143,7 +298,9 @@ void func_80801AEC_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802458_bsfirstp.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802484_bsfirstp.s")
+s32 func_80802484_bsfirstp(void) {
+    return D_8080A890_bsfirstp[func_800A3280()];
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808024B0_bsfirstp.s")
 
@@ -185,36 +342,115 @@ void func_80801AEC_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_7.s")
 
-void func_80802BD8_bsfirstp(s32 arg0) 
+void func_80802BD8_bsfirstp(PlayerState* self)
 {
 }
-void func_80802BE0_bsfirstp(s32 arg0) 
+void func_80802BE0_bsfirstp(PlayerState* self)
 {
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802BE8_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802C30_bsfirstp.s")
 
-void func_80802C6C_bsfirstp(s32 arg0)
+void func_80802C6C_bsfirstp(PlayerState* self)
 {
     func_800FC660(0xF);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802C90_bsfirstp.s")
+s32 func_80802C90_bsfirstp(PlayerState* self)
+{
+    if (self->unk158.word == 0)
+    {
+        //Randomizer Change added gcegg to check if we have the egg type we are trying to fire
+        return func_80094BC0(self) && _gcegg_entrypoint_6(func_80094510(self));
+    }
+    return _badeathmatch_entrypoint_9(self, _badeathmatch_entrypoint_6(self));
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802CD8_bsfirstp.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802D14_bsfirstp.s")
+s32 func_80802D14_bsfirstp(PlayerState* arg0)
+{
+    if (arg0->unk158.word == 0)
+    {
+        //Swap to the next egg type
+        func_80094A10(arg0);
+        return;
+    }
+    _badeathmatch_entrypoint_0(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802D50_bsfirstp.s")
+s32 func_80802D50_bsfirstp(PlayerState* arg0, BanjoStateId* arg1)
+{
+    BsKazFly* temp_a2;
+    s32 var_v1;
+
+    temp_a2 = arg0->kazfly;
+    if (func_80802C90_bsfirstp(arg0) != 0)
+    {
+        var_v1 = 1;
+    }
+    else
+    {
+        var_v1 = 0;
+    }
+    switch (temp_a2->unkE2)
+    {
+    case 0:
+        return 0;
+    case 1:
+        if (var_v1 == 0)
+        {
+            temp_a2->unkE2 = 0;
+            if (temp_a2->unkE6 == 0)
+            {
+                temp_a2->unkE6 = 1;
+                func_80802C6C_bsfirstp(arg0);
+            }
+            return 0;
+        }
+        break;
+    case 2:
+        if (var_v1 == 0)
+        {
+
+            temp_a2->unkE2 = 0;
+            //Number of Times we failed to fire
+            switch (temp_a2->unkE6)
+            {
+            case 0:
+                temp_a2->unkE6 = 1;
+                func_80802C6C_bsfirstp(arg0);
+                return 0;
+            case 1:
+                temp_a2->unkE8 = func_80802D14_bsfirstp(arg0);
+                func_80802E7C_bsfirstp(temp_a2);
+            default:
+                return 0;
+            }
+            break;
+        }
+        break;
+    }
+    switch (func_80802E7C_bsfirstp(temp_a2))
+    {
+    case 0:
+        *arg1 = BS_STATE_D8_FP_EGG_FIRE;
+        break;
+    case 1:
+        *arg1 = BS_STATE_D6_FP_HEAVY_EGG_FIRE;
+        break;
+    }
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802E7C_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802ED4_bsfirstp.s")
 
-void func_80802F00_bsfirstp()
+void func_80802F00_bsfirstp(PlayerState* self)
 {
-    func_80802ED4_bsfirstp();
+    func_80802ED4_bsfirstp(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802F20_bsfirstp.s")
@@ -233,9 +469,9 @@ void func_80802F00_bsfirstp()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808032C0_bsfirstp.s")
 
-void func_80803320_bsfirstp(void)
+void func_80803320_bsfirstp(PlayerState* self)
 {
-    func_80807C8C_bsfirstp();
+    func_80807C8C_bsfirstp(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80803340_bsfirstp.s")
 
@@ -275,10 +511,10 @@ void func_80803320_bsfirstp(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80803E84_bsfirstp.s")
 
-void func_80803F6C_bsfirstp(s32 arg0)
+void func_80803F6C_bsfirstp(PlayerState* self)
 {
-    func_808090D8_bsfirstp();
-    func_80807C8C_bsfirstp(arg0);
+    func_808090D8_bsfirstp(self);
+    func_80807C8C_bsfirstp(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80803F94_bsfirstp.s")
 
@@ -288,10 +524,10 @@ void func_80803F6C_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808041D0_bsfirstp.s")
 
-void func_80804210_bsfirstp(s32 arg0)
+void func_80804210_bsfirstp(PlayerState* self)
 {
-    func_808090D8_bsfirstp();
-    func_80807C8C_bsfirstp(arg0);
+    func_808090D8_bsfirstp(self);
+    func_80807C8C_bsfirstp(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804238_bsfirstp.s")
 
@@ -299,10 +535,10 @@ void func_80804210_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_8080432C_bsfirstp.s")
 
-void func_8080436C_bsfirstp(s32 arg0)
+void func_8080436C_bsfirstp(PlayerState* self)
 {
-    func_808090D8_bsfirstp();
-    func_80807C8C_bsfirstp(arg0);
+    func_808090D8_bsfirstp(self);
+    func_80807C8C_bsfirstp(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804394_bsfirstp.s")
 
@@ -320,7 +556,7 @@ void func_8080436C_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_18.s")
 
-void func_80804A34_bsfirstp(s32 arg0) 
+void func_80804A34_bsfirstp(PlayerState* self)
 {
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804A3C_bsfirstp.s")
@@ -329,9 +565,9 @@ void func_80804A34_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804B10_bsfirstp.s")
 
-void func_80804B84_bsfirstp(void)
+void func_80804B84_bsfirstp(PlayerState* self)
 {
-    func_80807C8C_bsfirstp();
+    func_80807C8C_bsfirstp(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804BA4_bsfirstp.s")
 
@@ -339,9 +575,9 @@ void func_80804B84_bsfirstp(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804D18_bsfirstp.s")
 
-void func_80804D80_bsfirstp(void)
+void func_80804D80_bsfirstp(PlayerState* self)
 {
-    func_80807C8C_bsfirstp();
+    func_80807C8C_bsfirstp(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804DA0_bsfirstp.s")
 
@@ -349,9 +585,9 @@ void func_80804D80_bsfirstp(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804E1C_bsfirstp.s")
 
-void func_80804EB4_bsfirstp(void)
+void func_80804EB4_bsfirstp(PlayerState* self)
 {
-    func_80807C8C_bsfirstp();
+    func_80807C8C_bsfirstp(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804ED4_bsfirstp.s")
 
@@ -359,9 +595,9 @@ void func_80804EB4_bsfirstp(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804F28_bsfirstp.s")
 
-void func_80804FB4_bsfirstp(void)
+void func_80804FB4_bsfirstp(PlayerState* self)
 {
-    func_80807C8C_bsfirstp();
+    func_80807C8C_bsfirstp(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804FD4_bsfirstp.s")
 
@@ -369,32 +605,32 @@ void func_80804FB4_bsfirstp(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80805058_bsfirstp.s")
 
-void func_808050B0_bsfirstp(s32 arg0)
+void func_808050B0_bsfirstp(PlayerState* self)
 {
-    _bsdrone_entrypoint_2();
-    func_80807C8C_bsfirstp(arg0);
+    _bsdrone_entrypoint_2(self);
+    func_80807C8C_bsfirstp(self);
 }
-void func_808050D8_bsfirstp(s32 arg0)
+void func_808050D8_bsfirstp(PlayerState* self)
 {
-    _bsdrone_entrypoint_1();
-    func_80807D48_bsfirstp(arg0);
-    func_80809D24_bsfirstp(arg0);
+    _bsdrone_entrypoint_1(self);
+    func_80807D48_bsfirstp(self);
+    func_80809D24_bsfirstp(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_23.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_8080511C_bsfirstp.s")
 
-void func_8080519C_bsfirstp(s32 arg0)
+void func_8080519C_bsfirstp(PlayerState* self)
 {
-    _bsdrone_entrypoint_2();
-    func_80807C8C_bsfirstp(arg0);
+    _bsdrone_entrypoint_2(self);
+    func_80807C8C_bsfirstp(self);
 }
-void func_808051C4_bsfirstp(s32 arg0)
+void func_808051C4_bsfirstp(PlayerState* self)
 {
-    _bsdrone_entrypoint_1();
-    func_80807D48_bsfirstp(arg0);
-    func_80809D24_bsfirstp(arg0);
+    _bsdrone_entrypoint_1(self);
+    func_80807D48_bsfirstp(self);
+    func_80809D24_bsfirstp(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_24.s")
@@ -417,14 +653,14 @@ void func_808051C4_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_26.s")
 
-void func_80805F48_bsfirstp(s32 arg0)
+void func_80805F48_bsfirstp(PlayerState* self)
 {
-    func_808061AC_bsfirstp(arg0,0);
+    func_808061AC_bsfirstp(self,0);
 }
 
-void func_80805F68_bsfirstp()
+void func_80805F68_bsfirstp(PlayerState* self)
 {
-    func_8009B4FC();
+    func_8009B4FC(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_27.s")
@@ -481,10 +717,10 @@ void func_80805F68_bsfirstp()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80806E0C_bsfirstp.s")
 
-void func_80806E9C_bsfirstp(s32 arg0)
+void func_80806E9C_bsfirstp(PlayerState* self)
 {
-    _bsbabykaz_entrypoint_3();
-    func_80807C8C_bsfirstp(arg0);
+    _bsbabykaz_entrypoint_3(self);
+    func_80807C8C_bsfirstp(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80806EC4_bsfirstp.s")
 
@@ -492,11 +728,11 @@ void func_80806E9C_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_30.s")
 
-void func_808071D8_bsfirstp(s32 arg0)
+void func_808071D8_bsfirstp(PlayerState* self)
 {
-    func_80091E6C();
-    _bsbabykaz_entrypoint_3(arg0);
-    func_80807C8C_bsfirstp(arg0);
+    func_80091E6C(self);
+    _bsbabykaz_entrypoint_3(self);
+    func_80807C8C_bsfirstp(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80807208_bsfirstp.s")
@@ -537,10 +773,10 @@ void func_808071D8_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80807C8C_bsfirstp.s")
 
-void func_80807D48_bsfirstp(s32 arg0)
+void func_80807D48_bsfirstp(PlayerState* self)
 {
-    func_80802BE0_bsfirstp(arg0);
-    func_8080800C_bsfirstp(arg0);
+    func_80802BE0_bsfirstp(self);
+    func_8080800C_bsfirstp(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80807D70_bsfirstp.s")
 
@@ -552,18 +788,18 @@ void func_80807D48_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80807F5C_bsfirstp.s")
 
-void func_80807F9C_bsfirstp()
+void func_80807F9C_bsfirstp(PlayerState* self)
 {
-    func_80807FBC_bsfirstp();
+    func_80807FBC_bsfirstp(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80807FBC_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_8080800C_bsfirstp.s")
 
-void func_80808084_bsfirstp(s32 arg0)
+void func_80808084_bsfirstp(PlayerState* self)
 {
-    func_80092744(arg0,0);
+    func_80092744(self,0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808080A4_bsfirstp.s")
@@ -588,10 +824,10 @@ void func_80808084_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80808848_bsfirstp.s")
 
-void func_808088A4_bsfirstp(s32 arg0)
+void func_808088A4_bsfirstp(PlayerState* self)
 {
-    func_808086B0_bsfirstp(arg0,0x3);
-    func_80807C8C_bsfirstp(arg0);
+    func_808086B0_bsfirstp(self,0x3);
+    func_80807C8C_bsfirstp(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808088D0_bsfirstp.s")
@@ -600,15 +836,51 @@ void func_808088A4_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80808A24_bsfirstp.s")
 
-void func_80808A8C_bsfirstp(void)
+void func_80808A8C_bsfirstp(PlayerState* self)
 {
-    func_80807C8C_bsfirstp();
+    func_80807C8C_bsfirstp(self);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80808AAC_bsfirstp.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_35.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80808B24_bsfirstp.s")
+void func_80808AAC_bsfirstp(PlayerState* arg0)
+{
+    enum bs_state_e temp_v0;
+
+    func_80807D48_bsfirstp(arg0);
+    func_80808E78_bsfirstp(arg0);
+    func_8080633C_bsfirstp(arg0, 1.0f);
+    temp_v0 = func_80808B24_bsfirstp(arg0);
+    if (temp_v0 != BS_STATE_0_INVALID)
+    {
+        bs_setState(arg0, temp_v0);
+        return;
+    }
+    func_80808B8C_bsfirstp(arg0, temp_v0);
+}
+
+s32 bsfirstp_entrypoint_35(s32 arg0)
+{
+    return D_8080B5C0_bsfirstp[arg0];
+}
+
+enum bs_state_e func_80808B24_bsfirstp(PlayerState* arg0)
+{
+    enum bs_state_e sp1C;
+
+    if (func_80802D50_bsfirstp(arg0, &sp1C) != 0)
+    {
+        return sp1C;
+    }
+    if (func_80808630_bsfirstp(arg0) != 0)
+    {
+        return BS_STATE_D2_BEAK_BAYONET;
+    }
+    if (func_80809540_bsfirstp(arg0, 0) != 0)
+    {
+        return BS_STATE_D1_FP_WALK;
+    }
+    return BS_STATE_0_INVALID;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80808B8C_bsfirstp.s")
 
@@ -636,9 +908,9 @@ void func_80808A8C_bsfirstp(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80809334_bsfirstp.s")
 
-void func_80809384_bsfirstp(void)
+void func_80809384_bsfirstp(PlayerState* self)
 {
-    func_80807C8C_bsfirstp();
+    func_80807C8C_bsfirstp(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808093A4_bsfirstp.s")
 
@@ -678,9 +950,9 @@ void func_80809384_bsfirstp(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80809CB4_bsfirstp.s")
 
-void func_80809CD8_bsfirstp()
+void func_80809CD8_bsfirstp(PlayerState* self)
 {
-    func_80809CF8_bsfirstp();
+    func_80809CF8_bsfirstp(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80809CF8_bsfirstp.s")

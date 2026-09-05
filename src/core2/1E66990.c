@@ -39,7 +39,7 @@ int func_8008D1F0(PlayerState* arg0)
 //Can Dive
 int func_8008D214(PlayerState* arg0) {
 
-    return ability_getValue(0xF) && func_800964DC(arg0) - func_80096364(arg0) > 100.0f;
+    return ability_getValue(ABILITY_0F_BK_DIVING) && func_800964DC(arg0) - func_80096364(arg0) > 100.0f;
 
 }
 

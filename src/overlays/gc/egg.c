@@ -77,7 +77,7 @@ int gcegg_entrypoint_6(s32 eggType)
     return  returnValue == 0x3C || ability_getValue(returnValue);
 }
 
-int gcegg_entrypoint_7(s32 arg0)
+int gcegg_entrypoint_7(s32 eggType)
 {
     s32 returnValue;
     if (!func_800D3948())
@@ -86,7 +86,7 @@ int gcegg_entrypoint_7(s32 arg0)
     }
     else
     {
-        returnValue = D_80800200_gcegg[arg0].unkB;
+        returnValue = D_80800200_gcegg[eggType].unkB;
     }
     return returnValue;
 }

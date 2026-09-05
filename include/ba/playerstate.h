@@ -171,7 +171,10 @@ typedef struct player_state_s {
     /* 0x14C */ struct ba_washer_s *washer;
     u8 pad150[0x4];
     /* 0x154 */ struct ba_wobble_s *wobble;
-    u8 pad158[0x4];
+    union{
+        s32 word;
+        u8 bytes[4];
+    } unk158;
     union {
         s32 word;
         u8 bytes[4];

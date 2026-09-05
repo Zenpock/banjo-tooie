@@ -21,10 +21,14 @@ void bsbeggass_entrypoint_1(PlayerState* arg0) {
     next_state = BS_STATE_0_INVALID;
     plyr_mvmt = baanim_getAnimCtrlPtr(arg0);
     has_eggs = func_80094BC0(arg0) != 0;
+
+    //If we have the current egg type unlocked
+    //Randomizer change adding gcegg_entrypoint_6
+
     if (bainput_should_poop_egg(arg0) && func_80094B14(arg0)) {
         arg0->unk15C.word = func_800F1418(arg0->unk15C.word + 1, func_800944E0(arg0, arg0->unk164.word));
     }
-    if (has_eggs) {
+    if (_gcegg_entrypoint_6(arg0->unk164.word) && has_eggs) {
         if (anctrl_isAt(plyr_mvmt, 0.3837f)) {
             _baeggsetup_entrypoint_9(arg0);
             _baeggsetup_entrypoint_2(arg0, arg0->unk164.word, 60.0f, -18.0f);

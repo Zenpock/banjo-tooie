@@ -29,7 +29,7 @@ void baeggaim_entrypoint_3(PlayerState* arg0)
 {
 	s32 sp28[2];
 	s32 sp24;
-
+	s32 eggType;
 	if (_bafpctrl_entrypoint_2(arg0) == 0)
 	{
 		func_80094AB4(arg0);
@@ -40,7 +40,8 @@ void baeggaim_entrypoint_3(PlayerState* arg0)
 		func_80800264_baeggaim(arg0, sp28);
 	}
 	sp24 = 0;
-	if (func_80094510(arg0) == 7)
+	eggType = func_80094510(arg0);
+	if (eggType == 7)
 	{
 		if (bakey_held(arg0, BUTTON_Z) != 0)
 		{
@@ -51,7 +52,8 @@ void baeggaim_entrypoint_3(PlayerState* arg0)
 	{
 		sp24 = 1;
 	}
-	if ((sp24 != 0) && (_bafpctrl_entrypoint_2(arg0) == 0) && (func_80094B14(arg0) != 0))
+	//Randomizer Change added gcegg to see if we have the egg unlocked before firing
+	if ((sp24 != 0) && (_bafpctrl_entrypoint_2(arg0) == 0) && (func_80094B14(arg0) != 0) && (_gcegg_entrypoint_6(eggType) != 0))
 	{
 		_baeggfire_entrypoint_7(arg0);
 	}
