@@ -143,7 +143,7 @@ void bsbbuster_update(PlayerState *self) {
             if (player_isStable(self) || self->unk15C.bytes[1] || !(self->unk160.bytes[0] < 4)){
                 bsbbuster_setSubstate(self, 4);
                 if (func_800954E8(self, &sp34)) {
-                    next_state = BS_STATE_72;
+                    next_state = BS_STATE_72_HARD_LANDING;
                 }
             }
             break;

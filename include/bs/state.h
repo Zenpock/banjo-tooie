@@ -7,20 +7,27 @@
 typedef enum bs_state_e {
     BS_STATE_0_INVALID = 0x0,
     BS_STATE_1_IDLE,
-    BS_STATE_1_SLOW_WALK,
-
+    BS_STATE_2_SLOW_WALK,
+    BS_STATE_4_WALK = 0x4,
     BS_STATE_5_JUMP = 0x5,
-
+    BS_STATE_6_PECK = 0x6,
     BS_STATE_7_CROUCH = 0x7,
     BS_STATE_8_TTROT_JUMP=0x8,
-
+    BS_STATE_9_EGG_SHOOT_FORWARD = 0x9,
+    BS_STATE_A_EGG_SHOOT_BACKWARD = 0xA,
+    BS_STATE_C_QUICK_TURN = 0xC,
     BS_STATE_F_BBUSTER = 0xF,
+    BS_STATE_10_FFLAP = 0x10,
+    BS_STATE_11_RATATAP = 0x11,
+    BS_STATE_12_FLAP_FLIP = 0x12,
     BS_STATE_14_TTROT_ENTER = 0x14,
     BS_STATE_16_TTROT_WALK = 0x16,
     BS_STATE_17_TTROT_EXIT = 0x17,
     BS_STATE_20_LANDING = 0x20,
-
-    BS_STATE_24 = 0x24, // Fly
+    BS_STATE_21_SHOCK_SPRING_READY = 0x21,
+    BS_STATE_22_SHOCK_SPRING_JUMP = 0x23,
+    BS_STATE_23_FLIGHT_LAUNCH = 0x23,
+    BS_STATE_24_FLYING = 0x24, // Fly
 
     BS_STATE_2F_FALL = 0x2F,
     BS_STATE_30_DIVE = 0x30,
@@ -38,7 +45,7 @@ typedef enum bs_state_e {
     BS_STATE_67 = 0x67,
     BS_STATE_68,
 
-    BS_STATE_72 = 0x72,
+    BS_STATE_72_HARD_LANDING = 0x72,
 
     BS_STATE_77 = 0x77,
 
@@ -46,11 +53,11 @@ typedef enum bs_state_e {
 
     BS_STATE_95 = 0x95,
 
-    BS_STATE_A6 = 0xA6,
-    BS_STATE_A7,
-    BS_STATE_A8,
-    BS_STATE_A9,
-    BS_STATE_AA,
+    BS_STATE_A6_GRIP_GRAB_IDLE = 0xA6,
+    BS_STATE_A7_GRIP_GRAB_MOVE = 0xA7,
+    BS_STATE_A8_GRIP_GRAB_START = 0xA8,
+    BS_STATE_A9_GRIP_GRAB_ATTACK = 0xA9,
+    BS_STATE_AA_GRIP_GRAB_CLIMB=0xAA,
     BS_STATE_AE_STONY_JUMP = 0xAE,
     BS_STATE_B2_STONY_WALK = 0xB2,
     BS_STATE_B3_STONY_IDLE = 0xB3,
@@ -87,7 +94,7 @@ typedef enum bs_state_e {
     BS_STATE_DE,
     BS_STATE_DF,
     BS_STATE_E0,
-
+    BS_STATE_E4_PACK_WHACK = 0xE4,
     BS_STATE_E5 = 0xE5,
     BS_STATE_E6, // stick zone = 1 => move somewhere
     BS_STATE_E7, // stick zone = 2 => move somewhere

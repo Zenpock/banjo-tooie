@@ -223,7 +223,7 @@ void bsbbilldrill_entrypoint_2(PlayerState* self) {
                 sp44 = BS_STATE_4C_LANDING_IN_WATER;
             } else if ((func_8008DF8C(self, 0x50) != 0) || ((s32) self->unk15C.bytes[1] >= 4)) {
                 if (func_800954E8(self, &sp30) != 0) {
-                    sp44 = BS_STATE_72;
+                    sp44 = BS_STATE_72_HARD_LANDING;
                 } else {
                     func_808002DC_bsbbilldrill(self, 4);
                 }

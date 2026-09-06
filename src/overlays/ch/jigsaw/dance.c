@@ -100,7 +100,8 @@ MoveNames D_MOVENAMES[] = {
     {0x2B,0xF},
     {0x2C,0x10},
     {0x2D,0x11},
-    {0x2E,0x12}
+    {0x2E,0x12},
+    {0x41,0x31} //Blue Eggs
 };
 
 void func_80800210_chmoveitem(Actor*);
@@ -231,7 +232,7 @@ Unk80132ED0* chjigsawdance_entrypoint_1(s32 arg0, f32* arg1, s32 spawnStyle, u16
         sp2C = func_800D0CE0(PROP_3C6_TICKET_REAL, arg1, spawnStyle, &sp28);
         break;
     case 9:
-        sp2C = func_800D0CE0(0x187, arg1, spawnStyle, &sp28);
+        sp2C = func_800D0CE0(PROP_187_CUSTOM_MOVE_ITEM, arg1, spawnStyle, &sp28);
         break;
     default:
         break;
@@ -336,7 +337,7 @@ s32 moveItem_Touched(Actor* arg0, unkStructMoveItem* arg1)
     { 
         u8 dialogIndex = 0;
         s32 index = 0;
-        for (index = 0; index < 46; index++)
+        for (index = 0; index < ARRLEN(D_MOVENAMES); index++)
         {
             if (D_MOVENAMES[index].AbilityId == arg0->unk74_7)
             {

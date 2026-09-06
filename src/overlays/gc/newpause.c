@@ -77,14 +77,14 @@ Option D_80802200_gcnewpause[] = { //Randomizer Menu
 	{ICON_40_HUMBA_WUMBA,0xB,0x7,0x12,0x0} //MUMBO/HUMBA
 };
 PauseOption D_80802070_gcnewpause[] = {
-	{0x1863,0x1,0x3,D_80802030_gcnewpause},
-	{0x1863,0x1,0x4,D_80802000_gcnewpause},
-	{0x1863,0x1,0x4,D_80802018_gcnewpause},
-	{0x1863,0x1,0x5,D_80801FE0_gcnewpause},
-	{0x1867,0x1,0x3,D_80802044_gcnewpause},
-	{0x1868,0x0,0x2,D_80802058_gcnewpause},
-	{0x186E,0x0,0x2,D_80802064_gcnewpause},
-	{0x1863,0x1,0x5,D_80802200_gcnewpause}
+	{0x1863,0x1,ARRLEN(D_80802030_gcnewpause),D_80802030_gcnewpause},
+	{0x1863,0x1,ARRLEN(D_80802000_gcnewpause),D_80802000_gcnewpause},
+	{0x1863,0x1,ARRLEN(D_80802018_gcnewpause),D_80802018_gcnewpause},
+	{0x1863,0x1,ARRLEN(D_80801FE0_gcnewpause),D_80801FE0_gcnewpause},
+	{0x1867,0x1,ARRLEN(D_80802044_gcnewpause),D_80802044_gcnewpause},
+	{0x1868,0x0,ARRLEN(D_80802058_gcnewpause),D_80802058_gcnewpause},
+	{0x186E,0x0,ARRLEN(D_80802064_gcnewpause),D_80802064_gcnewpause},
+	{0x1863,0x1,ARRLEN(D_80802200_gcnewpause),D_80802200_gcnewpause}
 };
 TotalsFlags D_808020A8_gcnewpause[] = {
 	{0x10,0x5},
@@ -226,7 +226,7 @@ AbilityCheck D_BKMovesPage1[] = {
 	{0x8D,0x62,0x25,0x9},
 	{0x8D,0x78,0x26,0xA},
 	{0x8D,0x8E,0x27,0xB},
-	{0x8D,0xA4,0x28,0xC}
+	{0x8D,0xA4,0x41,0x31}
 };
 //BK Moves Page 2
 AbilityCheck D_BKMovesPage2[] = {
@@ -235,7 +235,8 @@ AbilityCheck D_BKMovesPage2[] = {
 	{0x10,0x62,0x2B,0xF},
 	{0x8D,0x36,0x2C,0x10},
 	{0x8D,0x4C,0x2D,0x11},
-	{0x8D,0x62,0x2E,0x12}
+	{0x8D,0x62,0x2E,0x12},
+	{0x8D,0x78,0x28,0xC}
 };
 
 FlagCheck D_MUMBO_HUMBAPAGE[] = {
@@ -263,7 +264,7 @@ FlagCheck D_MUMBO_HUMBAPAGE2[] = {
 void* D_80802218_gcnewpause[] = { D_BTMovesPage1,D_BTMovesPage2,D_BKMovesPage1,D_BKMovesPage2,D_MUMBO_HUMBAPAGE,D_MUMBO_HUMBAPAGE2 };
 
 
-u8 elementSizes[] = {14,14,12,6,10,8};
+u8 elementSizes[] = {ARRLEN(D_BTMovesPage1),ARRLEN(D_BTMovesPage2),ARRLEN(D_BKMovesPage1),ARRLEN(D_BKMovesPage2),ARRLEN(D_MUMBO_HUMBAPAGE),ARRLEN(D_MUMBO_HUMBAPAGE2)};
 extern u8 D_8012762D;
 extern u32 D_80127658;
 //Setup Pause Menu
@@ -278,7 +279,7 @@ PauseState* gcnewpause_entrypoint_0(u32 arg0)
 	func_80800534_gcnewpause(pauseMemory, 1U);
 	pauseMemory->HeaderAndButtonOffset += D_80802124_gcnewpause[0];
 	pauseMemory->HeaderAndButtonOffset += D_80802124_gcnewpause[1];
-	for (index = 0; index < 2; index++)
+	for (index = 0; index < ARRLEN(D_80802126_gcnewpause); index++)
 	{
 		pauseMemory->HeaderAndButtonOffset += D_80802126_gcnewpause[index].a1;
 		pauseMemory->HeaderAndButtonOffset += D_80802126_gcnewpause[index].a2;
