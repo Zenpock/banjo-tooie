@@ -100,7 +100,8 @@ void bsbbuster_update(PlayerState *self) {
                 bsbbuster_setSubstate(self, 2);
             }
 
-            if (baanim_isAt(self, 0.3637f) && bakey_held(self, BUTTON_Z) && ability_getValue(ABILITY_19_BILL_DRILL)) {
+            if (((baanim_isAt(self, 0.3637f) && bakey_held(self, BUTTON_Z)) || !ability_getValue(ABILITY_02_BK_BEAK_BUSTER)) && ability_getValue(ABILITY_19_BILL_DRILL))
+            {
                 next_state = BS_STATE_B6_BILL_DRILL;
             }
             break;

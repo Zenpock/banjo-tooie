@@ -16,6 +16,7 @@ void anctrl_setSmoothTransition(AnimCtrl *, s32);
 void anctrl_setDuration(AnimCtrl *, f32);
 void anctrl_setSubrange(AnimCtrl *, f32, f32);
 void anctrl_setPlaybackType(AnimCtrl *, s32);
+s32 func_8008AEDC(AnimCtrl*);
 void func_8008B10C(AnimCtrl *, f32);
 int anctrl_isAt(AnimCtrl *, f32);
 void anctrl_setStart(AnimCtrl *, f32);

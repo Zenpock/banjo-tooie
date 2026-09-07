@@ -36,7 +36,7 @@ BanjoStateId bskaz_entrypoint_3(PlayerState *self) {
         return BS_STATE_C6;
     }
     
-    return BS_STATE_BD;
+    return BS_STATE_BD_KAZ_JUMP;
 }
 
 

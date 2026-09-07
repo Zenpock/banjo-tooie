@@ -8,7 +8,8 @@ typedef enum bs_state_e {
     BS_STATE_0_INVALID = 0x0,
     BS_STATE_1_IDLE,
     BS_STATE_2_SLOW_WALK,
-    BS_STATE_4_WALK = 0x4,
+    BS_STATE_3_WALK = 0x3,
+    BS_STATE_4_RUN = 0x4,
     BS_STATE_5_JUMP = 0x5,
     BS_STATE_6_PECK = 0x6,
     BS_STATE_7_CROUCH = 0x7,
@@ -23,6 +24,7 @@ typedef enum bs_state_e {
     BS_STATE_14_TTROT_ENTER = 0x14,
     BS_STATE_16_TTROT_WALK = 0x16,
     BS_STATE_17_TTROT_EXIT = 0x17,
+    BS_STATE_1F_TIPTOE = 0x1F,
     BS_STATE_20_LANDING = 0x20,
     BS_STATE_21_SHOCK_SPRING_READY = 0x21,
     BS_STATE_22_SHOCK_SPRING_JUMP = 0x23,
@@ -66,12 +68,12 @@ typedef enum bs_state_e {
 
     BS_STATE_BB = 0xBB,
     BS_STATE_BC,
-    BS_STATE_BD,
+    BS_STATE_BD_KAZ_JUMP,
     BS_STATE_BE,
     
-    BS_STATE_C1 = 0xC1,
+    BS_STATE_C1_KAZ_SHOCK_SPRING_LAUNCH = 0xC1,
     BS_STATE_C2,
-    BS_STATE_C3,
+    BS_STATE_C3_KAZ_SHOCK_SPRING_READY,
     BS_STATE_C4,
     BS_STATE_C5,
     BS_STATE_C6,
@@ -141,7 +143,8 @@ typedef enum bs_state_e {
     BS_STATE_186 = 0x186,
     BS_STATE_187,
     BS_STATE_188,
-
+    BS_STATE_189_BREEGULL_BASH = 0x189,
+    BS_STATE_18A_FLAMETHROWER = 0x18A,
     BS_STATE_18B = 0x18B
 } BanjoStateId;
 

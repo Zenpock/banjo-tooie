@@ -41,7 +41,7 @@ BanjoStateId func_808001A4_bskazstill(PlayerState *self, BanjoStateId nextState)
         if (func_8008E3E8(self) != 0) {
             _bashoes_entrypoint_20(self);
         }
-        if (bakey_pressed(self, 9) != 0) {
+        if (bakey_pressed(self, BUTTON_B) != 0) {
             _bashoes_entrypoint_6(self, 2);
         }
     } else {
@@ -52,7 +52,7 @@ BanjoStateId func_808001A4_bskazstill(PlayerState *self, BanjoStateId nextState)
             nextState = _bskaz_entrypoint_4(self);
         }
     }
-    if (bakey_pressed(self, 8) != 0) {
+    if (bakey_pressed(self, BUTTON_A) != 0) {
         if (func_8008D790(self) != 0) {
             _baduo_entrypoint_12(self);
         } else {

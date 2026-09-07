@@ -57,16 +57,22 @@ void bskazjump_entrypoint_1(PlayerState *self) {
 
     next_state = BS_STATE_0_INVALID;
     animCtrl = baanim_getAnimCtrlPtr(self);
-    if (self->unk164.word != 0) {
+    if (self->unk164.word != 0 && func_8008D6D4(self))
+    {
         _bskazshock_entrypoint_0(self);
     }
-    if (baflag_isTrue(self, BA_FLAG_F) != 0) {
+    if (baflag_isTrue(self, BA_FLAG_F) != 0) 
+    {
         func_8009B7C0(self);
-    } else {
+    } 
+    else 
+    {
         _bskazmove_entrypoint_0(self);
     }
     func_8009BB24(self, &sp24);
-    if (((bakey_released(self, BUTTON_A) != 0) && (sp28 > 0.0f) && (self->unk164.word == 0)) || (func_8008D544(self) == 0)) {
+    //Randomizer Change if we are standing on a shock spring we get the full jump
+    if (((bakey_released(self, BUTTON_A) != 0) && (sp28 > 0.0f) && (self->unk164.word == 0)) || (func_8008D544(self) == 0 && self->unk164.word == 0))
+    {
         baphysics_reset_gravity(self);
     }
     switch (self->unk15C.word) {
@@ -86,9 +92,9 @@ void bskazjump_entrypoint_1(PlayerState *self) {
             if (baanim_isStopped(self) != 0) {
                 next_state = BS_STATE_DF;
             }
-            if (self->unk164.word != 0) {
+            if (self->unk164.word != 0 && func_8008D6D4(self)) {
                 self->unk164.word = 0;
-                next_state = BS_STATE_C3;
+                next_state = BS_STATE_C3_KAZ_SHOCK_SPRING_READY;
             }
             if (func_8008DF8C(self, 0x5A) != 0) {
                 baanim_setEndAndDuration(self, 1, 2);
@@ -124,8 +130,10 @@ void bskazjump_entrypoint_1(PlayerState *self) {
     bs_setState(self, next_state);
 }
 
-void bskazjump_entrypoint_2(PlayerState *self) {
-    if (ability_getValue(ABILITY_0A_BK_FULL_JUMP_HEIGHT) != 0) {
+void bskazjump_entrypoint_2(PlayerState *self) 
+{
+    if (ability_getValue(ABILITY_0A_BK_FULL_JUMP_HEIGHT) != 0) 
+    {
         func_800C6DA0(0x3C);
     }
     baphysics_reset_gravity(self);

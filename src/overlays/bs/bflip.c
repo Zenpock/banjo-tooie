@@ -120,9 +120,12 @@ void bsbflip_update(PlayerState *self) {
             if (anctrl_isStopped(anctrl)) {
                func_80800064_bsbflip(self, 3); 
             }
-            if (bainput_should_beak_bust(self)) {
+            //RANDOMIZER CHANGE It will now fall back on BILL DRILL if we do not have beak bust
+            if (bainput_should_beak_bust(self) || (bakey_pressed(self, BUTTON_Z) && ability_getValue(ABILITY_19_BILL_DRILL))) {
                 next_state = BS_STATE_F_BBUSTER;
             }
+            
+
             if (func_8008DA24(self)) {
                 next_state = BS_STATE_A8_GRIP_GRAB_START;
             }
@@ -141,9 +144,11 @@ void bsbflip_update(PlayerState *self) {
                 break;
             } 
 
-            if (bainput_should_beak_bust(self)) {
+            //RANDOMIZER CHANGE It will now fall back on BILL DRILL if we do not have beak bust
+            if (bainput_should_beak_bust(self) || (bakey_pressed(self, BUTTON_Z) && ability_getValue(ABILITY_19_BILL_DRILL))) {
                 next_state = BS_STATE_F_BBUSTER;
             }
+
             if (func_8008DA24(self)) {
                 next_state = BS_STATE_A8_GRIP_GRAB_START;
             }

@@ -8,6 +8,7 @@
 
 void func_800A2CE8(PlayerState *, f32, s32);
 void func_800A2D2C(PlayerState *, f32, s32);
+void func_800A2EDC(PlayerState*, f32);
 TransformationId func_800A3274(PlayerState *);
 s32 func_800A3280();
 f32 func_800A3298(PlayerState *);

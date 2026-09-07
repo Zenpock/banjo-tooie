@@ -3,6 +3,6 @@
 
 #include "common.h"
 
-
+f32 func_8008C0C8(s32);
 
 #endif

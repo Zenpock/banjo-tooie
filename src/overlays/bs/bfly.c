@@ -108,7 +108,7 @@ void func_80800320_bsbfly(PlayerState* self)
         func_80800000_bsbfly(self);
         if (baphysics_get_vertical_velocity(self) < 0.0f) 
         {
-            next_state = BS_STATE_24;
+            next_state = BS_STATE_24_FLYING;
         }
     }
     bs_setState(self, next_state);
@@ -178,13 +178,13 @@ void func_8080050C_bsbfly(PlayerState* self)
 
 void func_80800624_bsbfly(PlayerState* self)
 {
-    s32 next_state;
+    BanjoStateId next_state;
     AnimCtrl *anim_ctrl;
     f32 temp_f0;
     s32 sp38;
     s32 var_v1;
 
-    next_state = 0;
+    next_state = BS_STATE_0_INVALID;
     anim_ctrl = baanim_getAnimCtrlPtr(self);
     _bafly_entrypoint_20(self);
     _bafly_entrypoint_9(self);
@@ -253,10 +253,11 @@ void func_80800624_bsbfly(PlayerState* self)
         func_8009DFD4(self, 0x3FF, 0.6f, 0.7f, 0x2710, 0x2EE0);
     }
     _bafly_entrypoint_8(self, 300.0f, 80.0f, 600.0f, -300.0f, -99.9f, -700.0f, -1000.0f);
+    //RANDOMIZER CHANGE It will now fall back on BILL DRILL if we do not have beak bust
     if ((_bafpctrl_entrypoint_4(self) != 3)
-        && (bainput_should_beak_bust(self) != 0))
+        && ((bainput_should_beak_bust(self) != 0)|| (bakey_pressed(self, BUTTON_Z) && ability_getValue(ABILITY_19_BILL_DRILL))))
     {
-        next_state = 0xF;
+        next_state = BS_STATE_F_BBUSTER;
     }
     self->kazfly->unk0 = func_800F0E00(self->kazfly->unk0 - time_getDelta(), 0);
     if ((self->kazfly->unk0 == 0.0f)
@@ -272,7 +273,7 @@ void func_80800624_bsbfly(PlayerState* self)
     }
     if (_bafly_entrypoint_2(self) != 0) 
     {
-        next_state = 1;
+        next_state = BS_STATE_1_IDLE;
     }
     _baboost_entrypoint_5(self);
     bs_setState(self, next_state);
@@ -565,9 +566,10 @@ void func_80801334_bsbfly(PlayerState* self)
     self->kazfly->unk0 -= time_getDelta();
     if (self->kazfly->unk0 < 0.0f) {
         self->unk15C.word = 1;
-        sp34 = BS_STATE_24;
+        sp34 = BS_STATE_24_FLYING;
     }
-    if (bainput_should_beak_bust(self) != 0) {
+    //RANDOMIZER CHANGE It will now fall back on BILL DRILL if we do not have beak bust
+    if (bainput_should_beak_bust(self) || (bakey_pressed(self, BUTTON_Z)&&ability_getValue(ABILITY_19_BILL_DRILL))) {
         sp34 = BS_STATE_F_BBUSTER;
     }
     if (player_isStable(self) != 0) {
@@ -783,7 +785,7 @@ void func_80801AEC_bsbfly(PlayerState* self)
         func_8009DEC0(self, 0x3FF, 0.6f, 0.7f, 0x2710, 0x2EE0);
     }
     if (func_8009CC68(self) == 0) {
-        sp2C = BS_STATE_24;
+        sp2C = BS_STATE_24_FLYING;
     }
     func_800A0024(self);
     bs_setState(self, sp2C);

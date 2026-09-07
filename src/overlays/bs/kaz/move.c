@@ -152,7 +152,7 @@ void bskazmove_entrypoint_3(PlayerState *self) {
         next_state = func_808001C4_bskazmove(self, next_state);
     }
 
-    if (bakey_pressed(self, 8) != 0) {
+    if (bakey_pressed(self, BUTTON_A) != 0) {
         next_state = _bskaz_entrypoint_3(self);
         if ((baphysics_get_target_horizontal_velocity(self) == 0.0f) && (func_8008D790(self) != 0)) {
             _baduo_entrypoint_12(self);

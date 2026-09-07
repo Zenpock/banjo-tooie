@@ -66,6 +66,28 @@ void func_8009FE58(PlayerState* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_800A04F4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_800A055C.s")
+BanjoStateId func_800A055C(PlayerState* arg0, BanjoStateId arg1)
+{
+    if (func_8008E23C(arg0))
+    {
+        if (func_8008D568(arg0) != 0)
+        {
+            return BS_STATE_E4_PACK_WHACK;
+        }
+
+        return arg1;
+    }
+    //We Can Peck
+    if (func_8008D1B0(arg0) != 0)
+    {
+        //Is Dragon Kazooie
+        if (func_8009EA2C())
+        {
+            return BS_STATE_18A_FLAMETHROWER;
+        }
+        return BS_STATE_6_PECK;
+    }
+    return arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_800A05DC.s")
