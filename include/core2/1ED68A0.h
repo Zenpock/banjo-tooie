@@ -4,6 +4,7 @@
 #include "common.h"
 #include "core2/1EB3750.h"
 
+s16 func_800FED90(s16, void*); 
 u32 func_800FDC28(u32);
 void func_800FE4E4(void);
 void func_800FE734(u32);

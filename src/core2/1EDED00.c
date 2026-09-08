@@ -13,7 +13,13 @@ void func_8010545C()
        D_80136EC0 = freelist_defrag(D_80136EC0);
     }
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_80105494.s")
+
+void* func_80105494(Actor* arg0) {
+    if (arg0->unk7C_0 == 0) {
+        return NULL;
+    }
+    return freelist_at(D_80136EC0, arg0->unk7C_0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_801054D4.s")
 

@@ -4,6 +4,8 @@
 #include "ba/anim.h"
 #include "ba/playerstate.h"
 #include "ba/yaw.h" // for YawType
+#include "core2/1EB2840.h"
+#include "core2/1EC8070.h"
 
 typedef enum ba_physics_type_e {
     BA_PHYSICS_0_NONE,
@@ -34,7 +36,6 @@ void baphysics_reset_gravity(PlayerState* );
 void baphysics_reset_terminal_velocity(PlayerState *);
 void baphysics_set_gravity(PlayerState *, f32);
 void baphysics_set_terminal_velocity(PlayerState *, f32);
-
 void func_8009B94(PlayerState *);
 void func_8009B7C0(PlayerState *);
 void func_8009B9F0(PlayerState *, f32);

@@ -4,7 +4,7 @@
 #include <ultra64.h>
 
 #include "ba/playerstate.h"
-#include "core2/physics.h"
+#include "ba/physics.h"
 #include "core2/anctrl.h"
 
 #include "core2/1E64F00.h"
