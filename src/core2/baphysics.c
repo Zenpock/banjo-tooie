@@ -1,5 +1,4 @@
 #include "ba/physics.h"
-#include "core2/baphysics.h"
 
 s32 func_8009AD70() 
 {

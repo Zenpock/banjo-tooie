@@ -7,7 +7,7 @@
 #include "core2/1E80A70.h"
 #include "core1/1E36310.h"
 
-s32 func_80013620();
+void func_80012030(s32); 
 void func_8001209C(s32);
 void func_80012128();
 void func_800121D0();

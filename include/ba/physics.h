@@ -4,6 +4,8 @@
 #include "ba/anim.h"
 #include "ba/playerstate.h"
 #include "ba/yaw.h" // for YawType
+#include "core2/1EB2840.h"
+#include "core2/1EC8070.h"
 
 typedef enum ba_physics_type_e {
     BA_PHYSICS_0_NONE,
@@ -22,11 +24,6 @@ typedef enum ba_physics_type_e {
     BA_PHYSICS_D_END,
     BA_PHYSICS_E_UNKNOWN
 } BaPhysicsType;
-
-typedef struct {
-    u8 pad[0xc4];
-    u8* unkC4;
-}unkStruct8009AD78;
 
 void baphysics_set_type(PlayerState *, BaPhysicsType);
 void baphysics_set_vertical_velocity(PlayerState *, f32);

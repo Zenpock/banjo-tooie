@@ -156,6 +156,4 @@ typedef struct {
 void func_800EE040(unkStruct800EE040* arg0, s32 arg1, f32 arg2, f32 arg3);      
 f32 func_800ED964(f32, f32);
 
-s32 func_800C2E04(void);
-
 #endif

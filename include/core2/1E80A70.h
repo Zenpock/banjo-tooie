@@ -29,6 +29,8 @@ s16 func_800A824C(void);
 f32 func_800A8258(void);
 int func_800A8264();
 void func_800A8278();
+s32 func_800A7D84();
+void func_800A7840(s32);
 void func_800A89BC(s32);
 s32 func_800A89F8();
 void func_800A8B24(s32, s32);

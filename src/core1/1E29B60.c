@@ -5,12 +5,13 @@ extern s32 core1_BSS_END;
 extern s32 core1_BSS_START;
 extern s32 D_800459CC;
 extern s32 D_8007E994;
+extern s32 D_80045788;
 
-s32 func_80012030(s32 arg0) {
+void func_80012030(s32 arg0) {
     bzero(&core1_BSS_START, (s32)&core1_BSS_END - (s32)&core1_BSS_START);
     osWritebackDCacheAll();
     osInitialize();
-    return func_80013620();
+    func_80013620();
 }
 
 void func_8001207C(void) 
@@ -152,8 +153,6 @@ void func_8001253C(s32 arg0) {
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_80012548.s")
-
-extern s32 D_80045788;
 
 s32* func_80012598(void) { //matched by Zenpock
     return &D_80045788;
