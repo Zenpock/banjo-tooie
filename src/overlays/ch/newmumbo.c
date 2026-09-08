@@ -80,7 +80,7 @@ GameFlag func_8080011C_chnewmumbo(void) {
 			return FLAG_381_PAID_GLOWBO_MUMBO_WW;
 		case MAP_EF_JRL_MUMBO:
 			return FLAG_382_PAID_GLOWBO_MUMBO_JRL;
-		case MAP_171_GGM_MUMBO:
+		case MAP_171_TDL_MUMBO:
 			return FLAG_383_PAID_GLOWBO_MUMBO_TDL;
 		case MAP_172_GI_MUMBO:
 			return FLAG_387_PAID_GLOWBO_MUMBO_GI;

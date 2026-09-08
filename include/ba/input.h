@@ -1,5 +1,5 @@
-#ifndef __BA_KEY_H__
-#define __BA_KEY_H__
+#ifndef __BA_INPUT_H__
+#define __BA_INPUT_H__
 
 #include <ultra64.h>
 

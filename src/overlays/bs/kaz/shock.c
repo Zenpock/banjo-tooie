@@ -96,7 +96,7 @@ void bskazshock_entrypoint_2(PlayerState *self) {
         }
     }
     if ((anctrl_isAt(animCtrl, 0.5) != 0) && (self->unk15C.word != 0)) {
-        next_state = BS_STATE_C1;
+        next_state = BS_STATE_C1_KAZ_SHOCK_SPRING_LAUNCH;
     }
     if (anctrl_isAt(animCtrl, 0.5551) != 0) {
         baphysics_set_vertical_velocity(self, 180);

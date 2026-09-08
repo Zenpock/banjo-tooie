@@ -3,6 +3,7 @@
 
 #include "common.h"
 #include "freelist.h"
+#include "memory.h"
 
 void func_800E8A68(void);
 u8 func_800E8B74(u32);

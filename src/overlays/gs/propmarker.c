@@ -12,7 +12,7 @@ Prop* gspropmarker_entrypoint_0(s16* arg0, s32 arg1)
         for (var_v1; var_v1 < temp_v0; var_v1++)
         {
             if (((u32)var_v1->unk6_0 == 1 || var_v1->unk6_0 == 0 && var_v1->unk12_8 == 1)
-                && var_v1->unk6_1 == 6 && arg1 == var_v1->ItemID)
+                && var_v1->unk6_1 == 6 && arg1 == var_v1->PropID)
             {
                 return var_v1;
             }
@@ -47,7 +47,7 @@ s32 gspropmarker_entrypoint_1(s16* arg0, s32* arg1, s32* arg2, s32 arg3)
                 {
                     for (temp2 = arg1; *temp2 != -1; temp2++)
                     {
-                        if (currentProp->ItemID == *temp2)
+                        if (currentProp->PropID == *temp2)
                         {
                             arg2[var_t0++] = currentProp;
                             break;
@@ -77,7 +77,7 @@ s32 gspropmarker_entrypoint_2(s16* arg0, s32 arg1, f32 arg2[][3], s32 arg3)
             for (currentProp; currentProp < propListEnd && arg3 > var_t0; currentProp++)
             {
                 if (((u32)currentProp->unk6_0 == 1 || currentProp->unk6_0 == 0 && currentProp->unk12_8 == 1)
-                    && currentProp->unk6_1 == 6 && arg1 == currentProp->ItemID)
+                    && currentProp->unk6_1 == 6 && arg1 == currentProp->PropID)
                 {
                     arg2[var_t0][0] = (f32)currentProp->position[0];
                     arg2[var_t0][1] = (f32)currentProp->position[1];

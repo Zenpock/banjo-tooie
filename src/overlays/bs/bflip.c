@@ -124,7 +124,7 @@ void bsbflip_update(PlayerState *self) {
                 next_state = BS_STATE_F_BBUSTER;
             }
             if (func_8008DA24(self)) {
-                next_state = BS_STATE_A8;
+                next_state = BS_STATE_A8_GRIP_GRAB_START;
             }
             break;
 
@@ -145,14 +145,14 @@ void bsbflip_update(PlayerState *self) {
                 next_state = BS_STATE_F_BBUSTER;
             }
             if (func_8008DA24(self)) {
-                next_state = BS_STATE_A8;
+                next_state = BS_STATE_A8_GRIP_GRAB_START;
             }
             
             break;
 
         case 4:
             if (anctrl_isStopped(anctrl)) {
-                next_state = BS_STATE_1_SLOW_WALK;
+                next_state = BS_STATE_2_SLOW_WALK;
             }
             next_state = func_800A01F8(self, next_state);
             break;

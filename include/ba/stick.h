@@ -8,7 +8,9 @@
 typedef enum bs_stick_zone_id_e {
     BS_STICK_ZONE_ID_0,
     BS_STICK_ZONE_ID_1,
-    BS_STICK_ZONE_ID_2
+	BS_STICK_ZONE_ID_2,
+	BS_STICK_ZONE_ID_3,
+	BS_STICK_ZONE_ID_4
 } BsStickZoneId;
 
 typedef struct ba_stick_0_s {

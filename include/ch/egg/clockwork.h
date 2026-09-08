@@ -6,6 +6,8 @@
 #include "su/egg.h"
 #include "su/eggmisc.h"
 #include "su/eggmove.h"
+#include "su/baddiedraw25d.h"
+
 #include "ch/baddiesetup.h"
 #include "ch/egg/splode.h"
 
@@ -22,5 +24,6 @@
 #include "core2/1ED8C80.h"
 #include "core2/1EE1510.h"
 
+s32 _cheggclockwork_entrypoint_2(Vec3f, f32, s32, s32);
 
 #endif

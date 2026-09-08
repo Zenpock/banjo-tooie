@@ -3,6 +3,7 @@
 
 #include "common.h"
 #include "overlays.h"
+#include "props.h"
 #include "core2/1ED8C80.h"
 #include "core2/1EDFED0.h"
 //Store a pointer in reserved memory

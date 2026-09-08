@@ -4,5 +4,6 @@
 #include "common.h"
 #include "freelist.h"
 
+void func_801041C8();
 
 #endif

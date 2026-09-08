@@ -111,7 +111,7 @@ void bafly_entrypoint_9(PlayerState* self) {
     f32 sp28;
 
     sp28 = bastick_getX(self);
-    if (bakey_held(self, 3) != 0) {
+    if (bakey_held(self, BUTTON_R) != 0) {
         yaw_setVelocityBounded(self, 500.0f, 30.0f);
         sp30 = 6.0f;
         var_f0 = 85.0f;

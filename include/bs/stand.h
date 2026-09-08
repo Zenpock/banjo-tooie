@@ -2,6 +2,29 @@
 #define __BS_STAND_H__
 
 #include "common.h"
+#include "ba/anim.h"
+#include "ba/drone.h"
+#include "ba/duo.h"
+#include "ba/input.h"
+#include "ba/key.h"
+#include "ba/motor.h"
+#include "ba/physics.h"
+#include "ba/stick.h"
+#include "ba/yaw.h"
+#include "bs/mum/move.h"
+#include "bs/mum/still.h"
+#include "bs/stand.h"
+#include "bs/state.h"
+#include "core2/1E66990.h"
+#include "core2/1E6A190.h"
+#include "core2/1E6E870.h"
+#include "core2/1E71B00.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E79FD0.h"
+#include "core2/anctrl.h"
+#include "player.h"
 
 #include "ba/playerstate.h"
 
@@ -17,10 +40,10 @@
 // bsstand_entrypoint_5
 void bsstand_entrypoint_6(s32);
 // bsstand_entrypoint_7
-enum bs_state_e _bsstand_entrypoint_8(PlayerState*, enum bs_state_e);
-void bsstand_entrypoint_9();
+BanjoStateId _bsstand_entrypoint_8(PlayerState*, BanjoStateId); 
+void bsstand_entrypoint_9(PlayerState*);
 void bsstand_entrypoint_10(PlayerState*);
-void bsstand_entrypoint_11(s32);
+void bsstand_entrypoint_11(PlayerState*);
 // bsstand_entrypoint_12
 
 #endif // __BS_STAND_H__

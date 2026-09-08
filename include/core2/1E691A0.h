@@ -2,6 +2,7 @@
 #define __CORE2_1E691A0_H__
 
 #include "common.h"
+#include "transformations.h"
 #include "core2/1ECE0B0.h"
 
 void func_8008F8B0();

@@ -80,7 +80,7 @@ void bsbkflamethrower_entrypoint_3(PlayerState* self)
 
     next_state = BS_STATE_0_INVALID;
     if ((_batimer_get(self, 0) != 0.0f) && (bakey_pressed(self, BUTTON_B) != 0)) {
-        next_state = 0x189;
+        next_state = BS_STATE_189_BREEGULL_BASH;
     }
     _batimer_decrement(self, 0);
     switch (self->unk15C.word) {

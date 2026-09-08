@@ -60,7 +60,7 @@ void bacough_entrypoint_5(PlayerState *self) {
                 }
                 break;
 
-            case 0xB:
+            case TRANSFORM_B_KAZOOIE:
                 if (sp20 < 0.5f) {
                     sp24 = 0x45B;
                 } else {

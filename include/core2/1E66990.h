@@ -64,7 +64,7 @@ int func_8008DC90(PlayerState*, f32*, f32);
 int func_8008DD04(PlayerState*);
 s32 func_8008DD70(s32);
 s32 func_8008DD90(PlayerState*);
-void func_8008DDEC(PlayerState*, s32, f32);
+s32 func_8008DDEC(PlayerState*, f32*, f32); 
 s32 func_8008DE24(PlayerState*);
 s32 func_8008DE44(s32);
 s32 func_8008DE50(PlayerState*);
@@ -77,12 +77,13 @@ s32 func_8008E0C8(s32);
 s32 func_8008E0E8(PlayerState*);
 s32 func_8008E124(PlayerState*);
 s32 func_8008E148(PlayerState*);
-// func_8008E1A0
+s32 func_8008E1A0(PlayerState*);
 // func_8008E1C4
+//Are we Solo Banjo
 s32 func_8008E23C(PlayerState*);
 s32 func_8008E260(PlayerState*);
 // func_8008E2AC
-// func_8008E300
+s32 func_8008E300(PlayerState*); 
 s32 player_inWater(PlayerState*);
 s32 func_8008E37C(PlayerState*);
 s32 func_8008E39C(PlayerState*);

@@ -42,7 +42,7 @@ void bskazeggass_entrypoint_1(PlayerState *self) {
     if (func_8008DD04(self) != 0) {
         next_state = BS_STATE_DF;
     }
-    if (bakey_held(self, 1) != 0) {
+    if (bakey_held(self, BUTTON_Z) != 0) {
         if (anctrl_isStopped(sp28) != 0) {
             next_state = BS_STATE_DD;
         }

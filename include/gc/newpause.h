@@ -47,7 +47,7 @@ typedef struct {
 } PauseState;
 
 typedef struct {
-	s16 ItemID;
+	s16 PropID;
 	u8 uiPosition;
 	u8 AbilityID;
 } InventoryDisplay;

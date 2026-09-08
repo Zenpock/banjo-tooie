@@ -142,7 +142,7 @@ void bskazmove_entrypoint_3(PlayerState *self) {
         next_state = BS_STATE_DF;
     }
 
-    if ((bakey_held(self, 1) != 0) && (func_8008E39C(self) == 0)) {
+    if ((bakey_held(self, BUTTON_Z) != 0) && (func_8008E39C(self) == 0)) {
         next_state = BS_STATE_DD;
     }
 
@@ -152,7 +152,7 @@ void bskazmove_entrypoint_3(PlayerState *self) {
         next_state = func_808001C4_bskazmove(self, next_state);
     }
 
-    if (bakey_pressed(self, 8) != 0) {
+    if (bakey_pressed(self, BUTTON_A) != 0) {
         next_state = _bskaz_entrypoint_3(self);
         if ((baphysics_get_target_horizontal_velocity(self) == 0.0f) && (func_8008D790(self) != 0)) {
             _baduo_entrypoint_12(self);
@@ -314,7 +314,7 @@ void bskazmove_entrypoint_9(PlayerState *self) {
         next_state = BS_STATE_DF;
     }
 
-    if ((bakey_held(self, 1) != 0) && (func_8008E39C(self) == 0)) {
+    if ((bakey_held(self, BUTTON_Z) != 0) && (func_8008E39C(self) == 0)) {
         next_state = BS_STATE_DD;
     }
 

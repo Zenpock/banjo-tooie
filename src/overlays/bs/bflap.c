@@ -158,12 +158,12 @@ void bsbflap_update(PlayerState *self) {
     }
     
     if (func_8008DA24(self)) {
-        next_state = BS_STATE_A8;
+        next_state = BS_STATE_A8_GRIP_GRAB_START;
     }
 
     if (player_isStable(self)) {
         func_8009FE58(self);
-        next_state = BS_STATE_1_SLOW_WALK;
+        next_state = BS_STATE_2_SLOW_WALK;
     }
 
     if (player_inWater(self)) {

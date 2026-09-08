@@ -108,7 +108,7 @@ void func_80800320_bsbfly(PlayerState* self)
         func_80800000_bsbfly(self);
         if (baphysics_get_vertical_velocity(self) < 0.0f) 
         {
-            next_state = BS_STATE_24;
+            next_state = BS_STATE_24_FLYING;
         }
     }
     bs_setState(self, next_state);
@@ -134,7 +134,7 @@ void func_8080042C_bsbfly(PlayerState* self)
 
 void func_80800454_bsbfly(PlayerState* self)
 {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     baflag_clear(self, 0x2F);
     baflag_clear(self, 0x30);
@@ -178,13 +178,13 @@ void func_8080050C_bsbfly(PlayerState* self)
 
 void func_80800624_bsbfly(PlayerState* self)
 {
-    s32 next_state;
+	BanjoStateId next_state;
     AnimCtrl *anim_ctrl;
     f32 temp_f0;
     s32 sp38;
     s32 var_v1;
 
-    next_state = 0;
+    next_state = BS_STATE_0_INVALID;
     anim_ctrl = baanim_getAnimCtrlPtr(self);
     _bafly_entrypoint_20(self);
     _bafly_entrypoint_9(self);
@@ -256,7 +256,7 @@ void func_80800624_bsbfly(PlayerState* self)
     if ((_bafpctrl_entrypoint_4(self) != 3)
         && (bainput_should_beak_bust(self) != 0))
     {
-        next_state = 0xF;
+        next_state = BS_STATE_F_BBUSTER;
     }
     self->kazfly->unk0 = func_800F0E00(self->kazfly->unk0 - time_getDelta(), 0);
     if ((self->kazfly->unk0 == 0.0f)
@@ -272,7 +272,7 @@ void func_80800624_bsbfly(PlayerState* self)
     }
     if (_bafly_entrypoint_2(self) != 0) 
     {
-        next_state = 1;
+        next_state = BS_STATE_1_IDLE;
     }
     _baboost_entrypoint_5(self);
     bs_setState(self, next_state);
@@ -462,7 +462,7 @@ void func_80800F10_bsbfly(PlayerState* self)
             func_800EF3DC(unk0, self->kazfly->unk4);
             _bafly_entrypoint_6(self, func_800F10B4(func_800EEFD4(unk0), 0, 16000000, 0.2, 0.7f));
             if (func_800EEFD4(unk0) > 1.6e7f) {
-                if (bakey_held(self, 9) != 0) {
+                if (bakey_held(self, BUTTON_B) != 0) {
                     func_80800A24_bsbfly(self, 3);
                 } else {
                     next_state = 0x57;
@@ -565,7 +565,7 @@ void func_80801334_bsbfly(PlayerState* self)
     self->kazfly->unk0 -= time_getDelta();
     if (self->kazfly->unk0 < 0.0f) {
         self->unk15C.word = 1;
-        sp34 = BS_STATE_24;
+        sp34 = BS_STATE_24_FLYING;
     }
     if (bainput_should_beak_bust(self) != 0) {
         sp34 = BS_STATE_F_BBUSTER;
@@ -783,7 +783,7 @@ void func_80801AEC_bsbfly(PlayerState* self)
         func_8009DEC0(self, 0x3FF, 0.6f, 0.7f, 0x2710, 0x2EE0);
     }
     if (func_8009CC68(self) == 0) {
-        sp2C = BS_STATE_24;
+        sp2C = BS_STATE_24_FLYING;
     }
     func_800A0024(self);
     bs_setState(self, sp2C);

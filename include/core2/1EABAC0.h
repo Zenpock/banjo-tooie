@@ -2,6 +2,7 @@
 #define __CORE2_1EABAC0_H__
 
 #include "common.h"
+#include "core2/1ED3900.h"
 
 void func_800D2438();
 void func_800D24E8(s32,s32,s32);

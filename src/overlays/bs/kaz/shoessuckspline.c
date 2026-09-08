@@ -65,7 +65,7 @@ void bskazshoessuckspline_entrypoint_3(PlayerState *self) {
     if ((bastick_getZone(self) == BS_STICK_ZONE_ID_0) && (func_8009BCD4(self, 1) != 0)) {
         next_state = BS_STATE_187;
     }
-    if (bakey_pressed(self, 8) != 0) {
+    if (bakey_pressed(self, BUTTON_A) != 0) {
         next_state = _bskaz_entrypoint_3(self);
     }
     if ((_bamovespline_entrypoint_1(self, 100) != 0) || (_bashoes_entrypoint_1(self) != 4)) {
