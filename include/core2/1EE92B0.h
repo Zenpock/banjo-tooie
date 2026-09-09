@@ -3,6 +3,8 @@
 
 #include "common.h"
 
+PlayerState* func_80110014(s32);
 void func_8010FFB0(s32, s32, s32);
+s32 func_8010FAE4(s32);
 
 #endif
