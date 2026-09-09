@@ -1,8 +1,5 @@
 #include "core2/1EB45C0.h"
 
-s16 func_800A8184(void);
-f32 func_800D9004(void);
-
 extern u8 D_8012762C;
 extern f32 D_8012C768[];
 

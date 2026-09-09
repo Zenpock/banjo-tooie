@@ -458,7 +458,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
     }
 }
 
-s32 sumole_entrypoint_5(Actor* arg0, s32 arg1, AllowedTransformation arg2, s32 arg3)
+s32 sumole_entrypoint_5(Actor* arg0, AllowedTransformation arg1, s32 arg2, s32 arg3)
 {
     if (arg2 != -1)
     {

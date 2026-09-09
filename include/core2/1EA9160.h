@@ -7,6 +7,7 @@
 #include "ch/baddiesetup.h"
 #include "ch/bounce.h"
 #include "ch/nests.h"
+#include "su/baddieDll.h"
 
 #include "core2/1EA1DA0.h"
 #include "core2/1EB3750.h"
@@ -47,12 +48,14 @@ s32 func_800D0908(s32, s32);
 s32 func_800D0A80(s32, s32);
 //Is Item Spawned
 s32 func_800D0A9C(u32, u32);
+void func_800D0B08(s32, s32);
 void func_800D0B38(s32, s32);
 //Is Item Collected
 s32 func_800D0B68(u32, u32);
 void func_800D0C78(u32, u32, u32);
 //Set Item Collected Flag
 void func_800D0BD4(s32, u32);
+Unk80132ED0* func_800D0DAC(s32, f32*, s32, u16*);
 //Spawn Collectable
 void func_800D1000(u32, u32, f32*, u32, Unk80132ED0*);
 //Despawn Collectable

@@ -25,9 +25,9 @@ s32 func_8009E674(PlayerState*, s32);
 s32 func_8009E69C(PlayerState *, s32);
 s32 func_8009E6C4(PlayerState *, s32);
 s16 func_8009E6EC(PlayerState *);
-s32 bs_getCurrentState(PlayerState *);
-s32 bs_getNextState(PlayerState *);
-s32 bs_getPreviousState(PlayerState *);
+BanjoStateId bs_getCurrentState(PlayerState*);
+BanjoStateId bs_getNextState(PlayerState*);
+BanjoStateId bs_getPreviousState(PlayerState*);
 // func_8009E71C
 s32 func_8009E74C(PlayerState *, s32);
 s32 func_8009E77C(PlayerState *, s32);

@@ -151,7 +151,7 @@ void func_8080056C_bsmumswim(PlayerState *self) {
     if (bainput_should_enter_first_person(self) != 0) {
         next_state = _badrone_entrypoint_24(self);
     }
-    if ((func_80096500(self) != 0) && (bakey_pressed(self, 8) != 0)) {
+    if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
         next_state = BS_STATE_E8;
     }
     bs_setState(self, next_state);
@@ -217,7 +217,7 @@ void func_80800870_bsmumswim(PlayerState *self) {
     if (player_inWater(self) == 0) {
         next_state = BS_STATE_E5;
     }
-    if ((func_80096500(self) != 0) && (bakey_pressed(self, 8) != 0)) {
+    if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
         next_state = BS_STATE_E8;
     }
     bs_setState(self, next_state);

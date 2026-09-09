@@ -55,7 +55,18 @@ u32* func_80100074(Actor* a0, u32 a1, u32 a2)
     return func_800FFECC(a0,a1,a2);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_80100094.s")
+void* func_80100094(Actor* arg0, u32 arg1)
+{
+    s16 temp_a2;
+    void* var_v0;
+
+    var_v0 = NULL;
+    if (arg0->unk82[arg1] != 0)
+    {
+        return func_8001B798(arg0->unk82[arg1]);
+    }
+    return var_v0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_801000D8.s")
 

@@ -12,7 +12,7 @@ s32 func_800C6E18(s32 arg0)
 }
 
 //Has Ability
-s32 ability_getValue(s32 AbilityID) {
+s32 ability_getValue(AbilityId AbilityID) {
     return flag_getValue(AbilityID + FLAG_0ED_ABILITY_BK_BEAK_BARGE);
 }
 
@@ -81,7 +81,7 @@ void func_800C7074(s32 arg0, s32 arg1) {
 }
 
 //Set Ability Flag
-void ability_setValueTrue(s32 arg0, s32 set) {
+void ability_setValueTrue(AbilityId arg0, s32 set) {
     flag_setValue(arg0 + FLAG_0ED_ABILITY_BK_BEAK_BARGE, set);
 }
 

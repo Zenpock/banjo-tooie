@@ -153,7 +153,7 @@ void func_80800518_bskazpaddle(PlayerState *self) {
         next_state = BS_STATE_15F;
     }
     if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
-        next_state = BS_STATE_BD;
+        next_state = BS_STATE_BD_KAZ_JUMP;
     }
     bs_setState(self, next_state);
 }
@@ -192,11 +192,11 @@ void func_8080070C_bskazpaddle(PlayerState *self) {
     if (bainput_should_enter_first_person(self) != 0) {
         next_state = _badrone_entrypoint_24(self);
     }
-    if (bakey_pressed(self, 9) != 0) {
+    if (bakey_pressed(self, BUTTON_B) != 0) {
         next_state = BS_STATE_15F;
     }
     if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
-        next_state = BS_STATE_BD;
+        next_state = BS_STATE_BD_KAZ_JUMP;
     }
     bs_setState(self, next_state);
 }

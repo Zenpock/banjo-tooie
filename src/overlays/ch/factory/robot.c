@@ -984,7 +984,7 @@ void func_80801D7C_chfactoryrobot(Actor* arg0)
         if (temp_s0 != 0)
         {
             func_80101FDC(arg0, 0xAU);
-            flag_setValueTrue(FLAG_1BB_UNK);
+            flag_setValueTrue(FLAG_1BB_TINTOP_FIGHT_ENDED);
         }
         break;
     case 8:
@@ -1174,7 +1174,7 @@ void func_808025D4_chfactoryrobot(Actor* arg0)
     {
         _subaddieDll_entrypoint_4(arg0, 1U);
         temp_v0->unk13 = 6;
-        func_80101FDC(arg0, flag_getValue(FLAG_1BB_UNK) ? 0xA : 4);
+        func_80101FDC(arg0, flag_getValue(FLAG_1BB_TINTOP_FIGHT_ENDED) ? 0xA : 4);
         func_800EE7F8(sp2C, arg0->position);
         sp2C[1] += 300.0f;
         func_800D1254(0x39, 1, sp2C);

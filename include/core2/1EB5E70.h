@@ -14,7 +14,7 @@ void func_800DF464(f32);
 void func_800DF500(f32, f32, f32);
 void func_800DF5D8(u32, u32, u32, s32);
 void func_800DF72C(s32);
-void func_800DF738(s32);
+void func_800DF738(void*);
 void func_800DF744(s32, s32);
 void func_800DF830(s32);
 void func_800DF944(u32 a0, f32* coords, f32 a2, f32 a3, u8 a4, u8 a5, ImageStruct *a6);

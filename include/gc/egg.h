@@ -7,7 +7,9 @@
 
 s32 _gcegg_entrypoint_0(u32);
 s32 _gcegg_entrypoint_2(s32 eggType);
+//Get Inventory Id of given egg
 s32 _gcegg_entrypoint_5(s32);
+//Do we have the given egg type
 int _gcegg_entrypoint_6(s32);
 
 #endif

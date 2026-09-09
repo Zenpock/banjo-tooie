@@ -8,5 +8,6 @@
 #include "ba/playerstate.h"
 
 void func_80098520(PlayerState*, f32);
+void func_80098840(PlayerState*);
 
 #endif // __CORE2_1E71B00_H__

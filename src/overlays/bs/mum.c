@@ -226,7 +226,7 @@ void func_808007A0_bsmum(PlayerState *self, s32);
 void func_80800980_bsmum(PlayerState *self) {
     bsmum_entrypoint_1(self);
     func_808007A0_bsmum(self, 0);
-    if (bs_getNextState(self) == 0xEF) {
+    if (bs_getNextState(self) == BS_STATE_EF) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
     }
 }

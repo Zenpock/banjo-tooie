@@ -4,6 +4,8 @@
 #include "common.h"
 
 s32 func_80014E10(s32, s32);
+void func_80014E6C();
+void func_80014FE8();
 void func_80015178(s32);
 s32 func_80015184();
 void func_80015CC0(s32, s32, s32, s32, s32);

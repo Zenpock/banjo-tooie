@@ -184,7 +184,7 @@ void func_808005E0_bsledge(PlayerState* self) {
     sp2C = BS_STATE_0_INVALID;
     func_808004D8_bsledge(self);
     if (baanim_isStopped(self) != 0) {
-        sp2C = BS_STATE_A6;
+        sp2C = BS_STATE_A6_GRIP_GRAB_IDLE;
     }
     if (baanim_isAt(self, 0.1233f) != 0) {
         func_8009DF94(self, 0x442C, 1.15f, 22000);
@@ -195,13 +195,13 @@ void func_808005E0_bsledge(PlayerState* self) {
     if (baanim_getTimer(self) > 0.6329f) {
         func_80800040_bsledge(self, sp20);
         if (func_800EEF24(sp20) != 0) {
-            sp2C = BS_STATE_A7;
+            sp2C = BS_STATE_A7_GRIP_GRAB_MOVE;
         }
         if (func_808003D0_bsledge(self) != 0) {
-            sp2C = BS_STATE_AA;
+            sp2C = BS_STATE_AA_GRIP_GRAB_CLIMB;
         }
         if (func_80800000_bsledge(self) != 0) {
-            sp2C = BS_STATE_A9;
+            sp2C = BS_STATE_A9_GRIP_GRAB_ATTACK;
         }
         if (bakey_pressed(self, BUTTON_Z) != 0) {
             sp2C = BS_STATE_2F_FALL;
@@ -278,20 +278,20 @@ void func_808009C8_bsledge(PlayerState *self) {
     func_808004D8_bsledge(self);
     if (baanim_getTimer(self) > 0.3f) {
         if (func_808003D0_bsledge(self) != 0) {
-            next_state = BS_STATE_AA;
+            next_state = BS_STATE_AA_GRIP_GRAB_CLIMB;
         }
         if (func_80800450_bsledge(self) != 0) {
-            next_state = BS_STATE_A7;
+            next_state = BS_STATE_A7_GRIP_GRAB_MOVE;
         }
         if (func_80800000_bsledge(self) != 0) {
-            next_state = BS_STATE_A9;
+            next_state = BS_STATE_A9_GRIP_GRAB_ATTACK;
         }
         if (bakey_pressed(self, BUTTON_Z) != 0) {
             next_state = BS_STATE_2F_FALL;
         }
     }
     if (baanim_isStopped(self) != 0) {
-        next_state = BS_STATE_A6;
+        next_state = BS_STATE_A6_GRIP_GRAB_IDLE;
     }
     bs_setState(self, next_state);
 }
@@ -340,13 +340,13 @@ void func_80800B70_bsledge(PlayerState* self) {
         func_80800334_bsledge(self);
     }
     if (func_80800450_bsledge(self) == 0) {
-        next_state = BS_STATE_A6;
+        next_state = BS_STATE_A6_GRIP_GRAB_IDLE;
     }
     if (func_808003D0_bsledge(self) != 0) {
-        next_state = BS_STATE_AA;
+        next_state = BS_STATE_AA_GRIP_GRAB_CLIMB;
     }
     if (func_80800000_bsledge(self) != 0) {
-        next_state = BS_STATE_A9;
+        next_state = BS_STATE_A9_GRIP_GRAB_ATTACK;
     }
     if (bakey_pressed(self, BUTTON_Z) != 0) {
         next_state = BS_STATE_2F_FALL;
@@ -450,13 +450,13 @@ void func_80800F70_bsledge(PlayerState* self) {
             break;
     }
     if (func_80800450_bsledge(self) != 0) {
-        next_state = BS_STATE_A7;
+        next_state = BS_STATE_A7_GRIP_GRAB_MOVE;
     }
     if (func_808003D0_bsledge(self) != 0) {
-        next_state = BS_STATE_AA;
+        next_state = BS_STATE_AA_GRIP_GRAB_CLIMB;
     }
     if (func_80800000_bsledge(self) != 0) {
-        next_state = BS_STATE_A9;
+        next_state = BS_STATE_A9_GRIP_GRAB_ATTACK;
     }
     if (bakey_pressed(self, BUTTON_Z) != 0) {
         next_state = BS_STATE_2F_FALL;
@@ -487,7 +487,7 @@ void bsledge_entrypoint_7(PlayerState* self) {
 
     next_state = BS_STATE_0_INVALID;
     if (_bsrest_entrypoint_19(self, NULL) != 0) {
-        next_state = BS_STATE_A6;
+        next_state = BS_STATE_A6_GRIP_GRAB_IDLE;
     }
     bs_setState(self, next_state);
 }

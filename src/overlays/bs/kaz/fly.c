@@ -382,7 +382,7 @@ void func_80800EB4_bskazfly(PlayerState *self) {
         func_800EF3DC(unk0, self->kazfly->unk4);
         _bafly_entrypoint_6(self, func_800F10B4(func_800EEFD4(unk0), 0, 16000000, 0.2, 0.7f));
         if (func_800EEFD4(unk0) > 1.6e7f) {
-            if (bakey_held(self, 9) != 0) {
+            if (bakey_held(self, BUTTON_B) != 0) {
                 func_808009C8_bskazfly(self, 3);
             } else {
                 next_state = BS_STATE_175;

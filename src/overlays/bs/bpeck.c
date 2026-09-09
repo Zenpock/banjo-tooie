@@ -9,8 +9,8 @@ void bsbpeck_entrypoint_0(PlayerState* self)
 
     self->unk164.word = 0;
     previous_state = bs_getPreviousState(self);
-    if ((previous_state != BS_STATE_5)
-        && ((previous_state == BS_STATE_8) ||
+    if ((previous_state != BS_STATE_5_JUMP)
+        && ((previous_state == BS_STATE_8_TTROT_JUMP) ||
             ((previous_state != BS_STATE_2F_FALL)
             && (previous_state != BS_STATE_3D_FALL_TUMBLING)
             && (previous_state != BS_STATE_57)

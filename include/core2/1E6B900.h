@@ -29,6 +29,7 @@
 #include "core2/1EE1510.h"
 #include "ba/preload.h"
 #include "gc/egg.h"
+#include "ba/egg/fire.h"
 #include "core1/mlmtx.h"
 #include "ba/backpack.h"
 #include "ba/roll.h"
@@ -62,15 +63,25 @@ void func_800936E8(PlayerState*, s32);
 void func_80093700(PlayerState*, s32);
 s32 func_80093DF4(PlayerState*, s32);
 PlayerState* func_80093F7C(PlayerState*);
+s32 func_80094348(PlayerState*, s32);
+void func_80094390(PlayerState*);
 s32 func_800944E0(PlayerState *, s32);
+s32 func_800944F8(PlayerState*, s32);
 //Get Current Egg Type
 s32 func_80094510(PlayerState *);
 void func_800946C4(PlayerState*, s32);
 void func_800947EC(PlayerState *, s32, s32);
-s32 func_800949BC(PlayerState*);
+void func_80094824(PlayerState*);
+int func_800949BC(PlayerState*);
+s32 func_80094A10(PlayerState*);
+//Show amount of eggs for currently selected egg type
+void func_80094AB4(PlayerState*);
 s32 func_80094B14(PlayerState *);
+//Do we have eggs for current type
 s32 func_80094BC0(PlayerState *);
 s32 func_80094C64(PlayerState*, s32);
+void func_80094C88(PlayerState*);
+s32 func_80094DA8(PlayerState*);
 void func_80094E40(s32);
 // This might return a s32 instead of a PlayerState pointer
 PlayerState *func_80092B04(PlayerState *, s32);

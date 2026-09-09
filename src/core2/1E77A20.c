@@ -62,15 +62,15 @@ s16 func_8009E6EC(PlayerState *self) {
     return self->state->unkC;
 }
 
-s32 bs_getCurrentState(PlayerState *self) {
+BanjoStateId bs_getCurrentState(PlayerState *self) {
     return self->state->current;
 }
 
-s32 bs_getNextState(PlayerState *self) {
+BanjoStateId bs_getNextState(PlayerState *self) {
     return self->state->next;
 }
 
-s32 bs_getPreviousState(PlayerState *self) {
+BanjoStateId bs_getPreviousState(PlayerState *self) {
     return self->state->previous;
 }
 
