@@ -82,9 +82,9 @@ void func_808001D0_bsfirstp(PlayerState* self)
 	func_80800858_bsfirstp(self, 0);
 }
 
-void func_808001FC_bsfirstp(PlayerState* self)
+void func_808001FC_bsfirstp(PlayerState* arg0) 
 {
-	_bastatemem_entrypoint_1(self);
+	anctrl_setPlaybackType(func_8008D04C(arg0), 3);
 }
 
 s32 func_80800228_bsfirstp(PlayerState* arg0)
