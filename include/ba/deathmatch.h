@@ -4,6 +4,7 @@
 
 #include <ultra64.h>
 #include "common.h"
+#include "ba/playerstate.h"
 
 // func_80800000_badeathmatch
 // func_80800028_badeathmatch
