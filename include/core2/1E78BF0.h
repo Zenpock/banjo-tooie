@@ -79,6 +79,9 @@ BanjoStateId func_800A01F8(PlayerState *, BanjoStateId arg1);
 BanjoStateId func_800A02DC(PlayerState *, BanjoStateId arg1);
 void func_800A042C(PlayerState *);
 void func_800A046C(PlayerState *);
+s32 func_8009F678(PlayerState*, s32, s32, f32);
+s32 func_8009F440(PlayerState*, s32, s32, s32, s32, f32);
+s32 func_8009F860(PlayerState*, s32, s32, s32, f32, f32);
 BanjoStateId func_800A04F4(PlayerState*, BanjoStateId);
 BanjoStateId func_800A055C(PlayerState*, BanjoStateId);
 // func_800A05DC

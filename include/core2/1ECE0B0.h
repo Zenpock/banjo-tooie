@@ -2,24 +2,85 @@
 #define __CORE2_1ECE0B0_H__
 
 #include "ba/playerstate.h"
+#include "player.h"
+#include "vector.h"
 #include "ba/yaw.h"
 #include "transformations.h"
 #include "core2/1E82660.h"
 #include "core2/1E66990.h"
+#include "core2/1E6B900.h"
 #include "core2/1E7BFA0.h"
 #include "core2/1E7AB30.h"
 #include "core2/1EB2840.h"
 #include "core2/1ECD170.h"
+#include "core2/1E691A0.h"
+#include "core2/1E78BF0.h"
+#include "core2/1EC8070.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1EDA900.h"
+#include "core2/1E6F080.h"
+#include "core2/1E75920.h"
+#include "core2/1E72EA0.h"
+#include "core2/1E71B00.h"
+#include "core2/1E72180.h"
+#include "core2/1E67DA0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E75620.h"
+#include "core2/1E78170.h"
+#include "core2/1E76360.h"
 
 #include "ba/anim.h"
 #include "ba/key.h"
+#include "ba/stick.h"
 #include "ba/drone.h"
+#include "ba/cough.h"
+#include "pl/camera.h"
+
 #include "ba/hold.h"
 #include "bs/babykaz.h"
+#include "ba/snowball.h"
+#include "pl/su.h"
+#include "ba/data.h"
 
 #include <ultra64.h>
 
 #include "core2/1E75710.h"
+
+typedef struct {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+} unkStruct800F5A58;
+typedef struct {
+    u8 unk0;
+    u8 pad1[0x21];
+    s16 unk22;
+    u8 pad24[0x18];
+} unkStruct800F8F3C;
+typedef struct {
+    u8 unk0;
+    u8 unk1;
+    u8 pad2[0x3A];
+} UnkStruct800F8AA4;
+
+typedef struct {
+    u8 unk0;
+    u8 unk1;
+    u8 pad2[2];
+    u8 unk4;
+    u8 unk5;
+    u8 pad6[0xE];
+    f32 unk14;
+    u8 pad18[0xC];
+    s32 unk24;
+} unkStructD_801354F8;
+typedef struct {
+    u8 unk0;
+    s8 unk1;
+    s8 unk2;
+} unkStructD_80135520;
+
 
 typedef enum
 {
@@ -42,10 +103,31 @@ typedef enum
 }AllowedTransformation;
 
 void func_800F48BC(s32, f32*);
+s32 func_800F6720();
+void func_800F9104(s32);
+void func_800F9110(s32);
+s32 func_800F9C6C();
+s32 func_800F798C(s32 arg0, s32 arg1, s32 arg2);
+s32 func_800F7750(s32, s32, f32, s32, s32);
+s32 func_800F929C(void);
+void func_800F93C4(s32*, s32*);
+void func_800F8128(s32);
+void func_800F8EBC(s32);
+void func_800F8268(s32, s32, s32);
+s32 func_800F8914(u8*, s32);
+u8* func_800F88A0(s32);
+void func_800F911C(s32);
+void func_800F9A44(void);
+s32 func_800F9A24();
+void func_800F8D80(s32, u8*);
+u8* func_800F88A0(s32);
+s32 func_800F7C58(s32 arg0, s32 arg1, s32 arg2);
+s32 func_800F7B1C(s32, s32, f32, s32);
 void func_800F497C(s32);
 void func_800F49D4(s32 arg0, void* arg1, s32 arg2);
 void func_800F4A58(s32,s32,f32);
-void func_800F4AC0(u32, f32*, f32);
+void func_800F4AC0(s32, s32, f32);
+s32 func_800F68B8(s32);
 s32 func_800F4B4C(s32);
 s32 func_800F4B8C(u32, u32, s32);
 s32 func_800F4BB8(u32, u32, s32);
@@ -61,7 +143,8 @@ u32 func_800F54E4(void);
 s32 func_800F5578(s32);
 s32 func_800F55A4(s32);
 s32 func_800F56AC(s32);
-
+s32 func_800F6C1C(s32 arg0);
+s32 func_800F690C();
 Unk80132ED0* func_800F56D8(s32 arg0);
 void func_800F5A00(s32, f32[3]);
 void func_800F5A2C(s32, s32, f32[3]);
@@ -79,7 +162,6 @@ s32 func_800F6438(u32);
 s32 func_800F6478(s32);
 s32 func_800F651C(u32);
 s32 func_800F6774(u32);
-
 //Does the character match the given transformation type
 s32 func_800F64A4(s32 characterIndex, AllowedTransformation transformationType);
 void func_800F57F0(s32, f32*);
@@ -96,10 +178,10 @@ s32 func_800F65D0(s32);
 s32 func_800F70BC(u32);
 s32 func_800F7150(s32);
 s32 func_800F71D4(u32);
-s32 func_800F72DC(u32);
-void func_800F7664(u32, u8, u8);
+int func_800F72DC(u32);
+void func_800F7664(u32, s32, s32);
 void func_800F7700(u32, s32, f32*);
-void func_800F7874(s32, Unk80132ED0*, f32*);
+s32 func_800F7874(s32, Unk80132ED0*, s32);
 //The moving object is moved towards/away from the target
 void func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
 s32 func_800F7B9C(s32, u32);

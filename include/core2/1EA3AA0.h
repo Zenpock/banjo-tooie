@@ -53,6 +53,7 @@ f32 func_800CAF00(f32 [3], f32);
 f32 func_800CA7E4(s32, f32[3]);
 s32 func_800CA334();
 void func_800CA364(void*);
+void func_800CA628(f32*, s32*, s32*);
 
 
 #endif // __CORE2_1EA3AA0_H__

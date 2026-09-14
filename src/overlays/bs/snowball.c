@@ -119,7 +119,7 @@ void func_80800D28_bssnowball(s32 arg0)
 
 void func_80800DB0_bssnowball(s32 arg0)
 {
-    func_80090A2C();
+    func_80090A2C(arg0);
     bssnowball_entrypoint_0(arg0);
 }
 

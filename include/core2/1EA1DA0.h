@@ -7,6 +7,7 @@
 #include "ba/playerstate.h"
 #include "vector.h"
 
+s32 func_800C964C(s32);
 void func_800C8900(s32, s32*);
 s32 func_800C8A98(void);
 void func_800C8B84(s32);

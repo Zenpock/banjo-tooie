@@ -30,48 +30,22 @@
 #include "ba/playerstate.h"
 #include "ba/drone.h"
 
-int func_8008D0A0(PlayerState*);
-int func_8008D0E0(PlayerState*);
-int func_8008D14C(PlayerState*);
-int func_8008D18C(PlayerState*);
-int func_8008D1B0(PlayerState*);
-int func_8008D1F0(PlayerState*);
-int func_8008D214(PlayerState*);
-s32 func_8008D280(PlayerState*);
-int func_8008D304(PlayerState*);
-int func_8008D370(s32);
-int func_8008D3B0(PlayerState*);
-// func_8008D40C
-s32 func_8008D544(PlayerState*);
-int func_8008D568(PlayerState*);
-int func_8008D5C4(PlayerState*);
-s32 func_8008D630(PlayerState*);
-int func_8008D694(s32);
-int func_8008D6D4(PlayerState*);
-int func_8008D714(PlayerState*);
-int func_8008D750(PlayerState*);
-int func_8008D790(PlayerState*);
-s32 func_8008D850(PlayerState*);
-int func_8008D8E4(PlayerState*);
-int func_8008D924(PlayerState*);
-int func_8008D964(PlayerState*);
-s32 func_8008D9A4(PlayerState*);
-int func_8008DA24(PlayerState*);
-s32 func_8008DAA8(PlayerState*);
-s32 func_8008DAC8(s32);
-// func_8008DAE8
-int func_8008DC90(PlayerState*, f32*, f32);
-int func_8008DD04(PlayerState*);
-s32 func_8008DD70(s32);
-s32 func_8008DD90(PlayerState*);
-s32 func_8008DDEC(PlayerState*, f32*, f32); 
-s32 func_8008DE24(PlayerState*);
-s32 func_8008DE44(s32);
-s32 func_8008DE50(PlayerState*);
-s32 func_8008DE74(PlayerState*);
-int func_8008DEA4(PlayerState*, f32*, f32);
-s32 func_8008DF18(PlayerState*);
-s32 func_8008DF8C(PlayerState*, s32);
+int func_8008D0E0(PlayerState *);
+int func_8008D3B0(PlayerState *);
+s32 func_8008D544(PlayerState *);
+int func_8008D790(PlayerState *);
+s32 func_8008DE24(PlayerState *);
+s32 func_8008DF18(PlayerState *);
+int func_8008DD04(PlayerState *);
+s32 func_8008DF8C(PlayerState *, s32);
+s32 func_8008E0E8(PlayerState *);
+s32 func_8008E124(PlayerState *);
+s32 func_8008E23C(PlayerState *);
+s32 func_8008E260(PlayerState *);
+s32 func_8008E39C(PlayerState *);
+s32 func_8008E3E8(PlayerState *);
+s32 func_8008E430(void);
+void func_8008DAE8(PlayerState*, s32, f32);
 s32 player_isStable(PlayerState*);
 s32 func_8008E0C8(s32);
 s32 func_8008E0E8(PlayerState*);
