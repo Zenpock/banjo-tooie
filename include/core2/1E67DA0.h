@@ -9,5 +9,6 @@
 
 void func_8008E944(PlayerState *);
 void func_8008E95C(PlayerState *);
+void func_8008E9B8(PlayerState*, s32*);
 
 #endif // __CORE2_1E67DA0_H__

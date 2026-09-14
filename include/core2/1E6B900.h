@@ -36,8 +36,10 @@
 #include "ba/invisible.h"
 #include "ch/baddiesetup.h"
 
+void func_80093528(PlayerState*);                   /* extern */
+void func_80093584(PlayerState*); 
 void func_80092778(PlayerState*);
-
+f32 func_80092B8C();
 void func_80092864(PlayerState *, f32);
 void func_80092880(PlayerState *, s32);
 Unkfunc_800E0960_1 *func_80092AD8(PlayerState *);
@@ -54,10 +56,10 @@ void func_8009328C(PlayerState*, f32);
 void func_80093300(PlayerState*, f32);
 void func_8009332C(PlayerState*, f32);
 void func_80093360(PlayerState*, f32);
-void func_80093370(PlayerState*, s32);
-void func_8009337C(PlayerState*, s32);
+void func_80093370();
+void func_8009337C();
 void func_80093388(PlayerState*);
-void func_80093504(PlayerState*, s32, s32);
+void func_80093504();
 void func_800936E8(PlayerState*, s32);
 void func_80093700(PlayerState*, s32);
 s32 func_80093DF4(PlayerState*, s32);

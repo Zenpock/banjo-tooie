@@ -194,8 +194,213 @@ void func_800A4190(PlayerState* arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7D460/func_800A4338.s")
+s32 func_80090E24(PlayerState*);
+s32 func_80090E30(PlayerState*);
+s32 func_800A5854(s32);
+s32 func_800A5904(s32);
+s32 func_800A5B9C(void);
+s32 func_800A5B7C(void);
+void func_800A3DB8(PlayerState*, s32, s32, s32, s32);
+s32 func_800A5BBC(void);
+void func_800A3EC8(PlayerState*, s32);
+void func_800A3D78(PlayerState*, s32, s32);
+PlayerState* func_800A4CA8(PlayerState*);
+s32 func_80110F44(PlayerState*);
+s32 func_800A5BAC(void);
+s32 func_800A5BCC(void);
+void func_80110D80(PlayerState*, s32);
+s32 func_800A5B6C(void);
+void func_80110D28(PlayerState*, s32);
+f32 func_800A5B8C(void);
+void func_80110D58(PlayerState*,f32);
+s32 bs_getCurrentState(PlayerState*);
+s32 func_8009CA70(PlayerState*, s32, s32);
+void func_800A5800(s32);
+void _cadbfunc_entrypoint_0(s32*);
+void _cadbfunc_entrypoint_2(s32*);
+f32* func_800A4C48(PlayerState*);
+void func_800CA628(f32*, s32*, s32*);
+void func_801108A0(PlayerState*);
+void _cadbfunc_entrypoint_22(s32*);
+void _cadbfunc_entrypoint_24(s32*);
+void _cadbfunc_entrypoint_26(s32*);
+void _cadbfunc_entrypoint_29(s32, s32*);
+void _cadbfunc_entrypoint_32(s32*);
+void _cadbfunc_entrypoint_34(s32*);
+void func_800A3B78(PlayerState*, s32);
+void _ncbadolly_entrypoint_4(PlayerState*, s32);
+void _ncbafixpos_entrypoint_4(PlayerState*, s32);
+void _ncbaspiral_entrypoint_5(PlayerState*, s32);
+void func_800A4190(PlayerState*);
 
+s32 func_800A4338(PlayerState* arg0) {
+    s32 sp84;
+    s32 stateResult;
+    s32 sp7C;
+    s32 sp78;
+    s32 sp74;
+    s32 sp70;
+    s32 sp6C;
+    s32 sp68;
+    f32 sp64;
+    s32 sp60;
+    s32 sp5C;
+    s32 sp58;
+    s32 sp4C[3];
+    s32 sp40[3];
+
+    sp84 = func_80090E24(arg0);
+    sp6C = 0;
+    sp68 = func_80090E30(arg0);
+    sp60 = func_800A5854(sp84);
+    switch(sp84)
+    {
+        default:
+            if (func_800A5904(sp84) != 0) 
+            {
+                if ((arg0->unk38->pad38 == 0) || (sp60 == 4)) 
+                {
+                    break;
+                }
+            }
+        case -1:
+            arg0->unk38->unk4 = func_800A5B9C();
+            if (arg0->unk38->unk4 == 5) 
+            {
+                sp6C = 1;
+                arg0->unk38->unk4 = 0;
+            }
+            func_800A3DB8(arg0, 0, func_800A5B7C(), sp6C, sp68);
+            func_800A3EC8(arg0, func_800A5BBC());
+            if (arg0->unk38->unk4) 
+            {
+                func_800A3D78(arg0, arg0->unk38->unk4, sp68);
+            } 
+            else if (arg0->unk38->pad38 != 0)
+            {
+                if (arg0->unk38->unk3) 
+                {
+                    func_800A3D78(arg0, arg0->unk38->unk3, sp68);
+                } 
+                else 
+                {
+                    func_80110F44(func_800A4CA8(arg0));
+                }
+            }
+            arg0->unk38->unk5 = func_800A5BAC();
+            func_80110D80(func_800A4CA8(arg0), func_800A5BCC());
+            func_80110D28(func_800A4CA8(arg0), func_800A5B6C());
+            func_80110D58(func_800A4CA8(arg0), func_800A5B8C());
+            arg0->unk38->pad38 = 0;
+            return 0;
+    }
+
+    stateResult = bs_getCurrentState(arg0);
+    switch (sp60) 
+    {
+        case 4:
+            func_800A5800(sp84);
+            _cadbfunc_entrypoint_26(&sp7C);
+            if (sp7C == 0 && (arg0->unk38->pad38 != 0) && (sp84 + 1 != arg0->unk38->pad38) && (arg0->unk38->unk3)) 
+            {
+                sp7C = arg0->unk38->unk3;
+            }
+            if (sp84 +1);
+            if (sp7C == 5) 
+            {
+                sp6C = 1;
+                sp7C = 0;
+            }
+            if (sp7C == 0) 
+            {
+                if (arg0->unk38->unk2 == 4) 
+                {
+                    sp7C = 1;
+                }
+            }
+            if (arg0->unk38->pad38 == 0) 
+            {
+                _cadbfunc_entrypoint_29(0x10, &sp78);
+                if (sp78 != 0) 
+                {
+                    arg0->unk38->unk3 = func_800A3DAC(arg0);
+                } 
+                else 
+                {
+                    arg0->unk38->unk3 = 0;
+                }
+            }
+            if (sp7C != 0) 
+            {
+                func_800A3D78(arg0, sp7C, 0);
+            }
+            arg0->unk38->unk4 = sp7C;
+            _cadbfunc_entrypoint_22(&sp74);
+            _cadbfunc_entrypoint_24(&sp70);
+            func_800A3DB8(arg0, sp70, sp74, sp6C, 0);
+            _cadbfunc_entrypoint_29(0x40, &sp78);
+            func_800A3EC8(arg0, sp78);
+            _cadbfunc_entrypoint_29(0x20, &sp78);
+            arg0->unk38->unk5 = sp78;
+            _cadbfunc_entrypoint_29(0x80, &sp78);
+            func_80110D80(func_800A4CA8(arg0), sp78);
+            _cadbfunc_entrypoint_34(&sp74);
+            func_80110D28(func_800A4CA8(arg0), sp74);
+            _cadbfunc_entrypoint_32(&sp64);
+            func_80110D58(func_800A4CA8(arg0), sp64);
+            arg0->unk38->pad38 = sp84 + 1;
+            return 0;
+        case 3:
+            if (func_8009CA70(arg0, stateResult, 0x4000) != 0) 
+            {
+                sp5C = 0;
+                func_800A5800(sp84);
+                _cadbfunc_entrypoint_29(4, &sp5C);
+                if (sp5C == 0) {
+                    return 0;
+                }
+            }
+            func_800A3B78(arg0, 0xD);
+            _ncbadolly_entrypoint_4(func_800A4CA8(arg0), sp84);
+            func_800A3F14(arg0, 4);
+            return 1;
+        case 1:
+            if (func_8009CA70(arg0, stateResult, 0x4000) != 0) 
+            {
+                sp58 = 0;
+                func_800A5800(sp84);
+                _cadbfunc_entrypoint_29(4, &sp58);
+                if (sp58 == 0) 
+                {
+                    return 0;
+                }
+            }
+            func_800A3B78(arg0, 6);
+            _ncbafixpos_entrypoint_4(func_800A4CA8(arg0), sp84);
+            func_800A3F14(arg0, 4);
+            return 1;
+        case 2:
+            if (sp84 && sp84);
+            if (sp84 != arg0->unk38->unk36) 
+            {
+                func_800A5800(sp84);
+                _cadbfunc_entrypoint_0(sp4C);
+                _cadbfunc_entrypoint_2(sp40);
+                func_800CA628(func_800A4C48(arg0), &sp4C, &sp40);
+                func_801108A0(func_800A4CA8(arg0));
+                arg0->unk38->unk36 = sp84;
+            }
+            return 0;
+        case 7:
+            func_800A3B78(arg0, 0x12);
+            _ncbaspiral_entrypoint_5(func_800A4CA8(arg0), sp84);
+            func_800A3F14(arg0, 4);
+            func_800A4190(arg0);
+            return 1;
+        default:
+            return 0;
+    }
+}
 
 
 s32 func_800A4878(PlayerState* arg0) {
@@ -254,7 +459,7 @@ s32 func_800A4978(PlayerState* arg0) {
 
 
 void func_800A4A14(s32 arg0) {
-    if (func_800A4338() == 0) {
+    if (func_800A4338(arg0) == 0) {
         func_800A4190(arg0);
         func_800A4878(arg0);
     }
@@ -267,7 +472,7 @@ void func_800A4A4C(s32 arg0)
 }
 
 void func_800A4A74(PlayerState* arg0) {
-    if ((func_800A4338() == 0) && (func_800A4978(arg0) == 0)) {
+    if ((func_800A4338(arg0) == 0) && (func_800A4978(arg0) == 0)) {
         func_800A4190(arg0);
         if (arg0) {
         }
@@ -282,7 +487,60 @@ void func_800A4AD0(PlayerState* arg0) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7D460/func_800A4B08.s")
+
+void func_800A4B08(PlayerState* arg0) 
+{
+    _batimer_decrement(arg0, 7);
+    if (func_800F65D0(arg0->unk184) != 0) 
+    {
+        func_80090C34(arg0);
+    }
+    func_80090C28(arg0, 0);
+    switch (arg0->unk38->unk6) 
+    {
+        case 4:
+            if (func_800A4338(arg0) == 0) 
+            {
+                if (arg0->unk38->unk0 != 0) 
+                {
+                    func_800A3F14(arg0, 1);
+                    func_800A3B78(arg0, arg0->unk38->unk0);
+                } 
+                else 
+                {
+                    func_800A3F14(arg0, 2);
+                }
+                break;
+            }
+        return;
+        case 0:
+        case 9:
+            break;
+            break;
+        case 1:
+            func_800A4A14(arg0);
+        break;
+        case 3:
+            func_800A4A4C((s32) arg0);
+        break;
+        case 5:
+            func_800A4AD0(arg0);
+        break;
+        default:
+            if (arg0->unk38->unk0 != 0) 
+            {
+                func_800A3F14(arg0, 1);
+                func_800A3B78(arg0, arg0->unk38->unk0);
+            } 
+            else 
+            {
+                func_800A4A74(arg0);
+            }
+        break;
+    }
+    arg0->unk38->unk3B = 0;
+}
+
 
 f32* func_800A4C48(PlayerState* arg0) {
     return func_800A93F8(arg0->unk184);

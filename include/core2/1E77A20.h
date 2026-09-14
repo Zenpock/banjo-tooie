@@ -8,6 +8,8 @@
 #include "overlays/ba/playerstate.h"
 #include "overlays/bs/state.h"
 
+s32 func_8009E7C8(PlayerState*, s32);
+s32 func_8009E71C(PlayerState*, s32);
 f32 func_8009E138(PlayerState *, s32);
 void func_8009E154(PlayerState *, s32, f32 *);
 void func_8009E474(PlayerState *);

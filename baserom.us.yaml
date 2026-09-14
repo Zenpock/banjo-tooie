@@ -593,6 +593,8 @@ segments:
       - [0x1EFE3C0, rodata]
       - [0x1EFEC30, .rodata, baroll]
       - [0x1EFEC40, rodata]
+      - [0x1EFEE60, .rodata, 1E7D460]
+      - [0x1EFEEB0, rodata]
       - [0x1EFF2C0, .rodata, 1EA9160]
       - [0x1EFF3D0, rodata]
       - [0x1EFF620, .rodata, 1EB45C0]

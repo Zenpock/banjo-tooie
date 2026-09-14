@@ -30,6 +30,7 @@
 #include "overlays/ba/playerstate.h"
 #include "overlays/ba/drone.h"
 
+void func_8008DAE8(PlayerState*, s32, f32);
 int func_8008D0E0(PlayerState *);
 int func_8008D3B0(PlayerState *);
 s32 func_8008D544(PlayerState *);
