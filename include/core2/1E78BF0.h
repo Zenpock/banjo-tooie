@@ -72,7 +72,7 @@ void func_8009FFD8(PlayerState *, BaAnimUpdateType anim_update_type, YawType yaw
 void func_800A0024(PlayerState*);
 // func_800A0064
 s32 func_800A00CC(PlayerState *, f32[3]);
-// func_800A0110
+void func_800A0110(PlayerState*, AnimCtrl*);
 // func_800A0150
 void func_800A0180(PlayerState *);
 BanjoStateId func_800A01F8(PlayerState *, BanjoStateId arg1);
