@@ -12,7 +12,7 @@ s32 func_800A0C20(PlayerState *self);
 // func_800A0C2C
 // func_800A0C38
 // func_800A0C44
-// func_800A0CD0
+void func_800A0CD0(PlayerState*, s32);
 void func_800A0CDC(PlayerState *, s32);
 void func_800A0CE8(PlayerState *, s32);
 void func_800A0CF4(PlayerState *, s32);
