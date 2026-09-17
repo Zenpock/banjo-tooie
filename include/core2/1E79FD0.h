@@ -30,7 +30,7 @@ void func_800A0DD0(PlayerState *, s32);
 // func_800A0DDC
 s32 func_800A0E50(void);
 // func_800A0E58
-// func_800A0E64
+void func_800A0E64(PlayerState*); 
 s32 func_800A0FCC(PlayerState*);
 s32 func_800A0FD8(PlayerState*);
 void func_800A0FE4(PlayerState*);
