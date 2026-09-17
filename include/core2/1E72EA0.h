@@ -20,7 +20,7 @@ typedef struct ba_unknown_C0_s {
 
 
 s32 func_8009AD14(PlayerState*, Unk80132ED0*);
-s32 func_8009AD04(PlayerState*, s32);
+s32 func_8009AD04(PlayerState*, f32);
 s32 func_8009ACF4(PlayerState*, f32); 
 s32 func_8009AD38(PlayerState*, s32);
 s32 func_8009AD2C(PlayerState*, s32);

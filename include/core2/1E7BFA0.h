@@ -6,6 +6,7 @@
 
 #include "overlays/ba/playerstate.h"
 
+s32 func_800A3538(PlayerState*);
 void func_800A2CE8(PlayerState *, f32, s32);
 void func_800A2D2C(PlayerState *, f32, s32);
 TransformationId func_800A3274(PlayerState *);
@@ -22,6 +23,6 @@ s32 func_8009FA20(PlayerState*, f32*, f32, f32, f32);
 s32 func_800A5B9C(void);
 s32 func_800A5B7C(void);
 s32 func_800A5BBC(void);
-void func_800A3148(PlayerState*, f32*, f32*, f32*);    /* extern */
+void func_800A3148(PlayerState*, f32*, f32*, f32*);
 
 #endif // __CORE2_1E7BFA0_H__

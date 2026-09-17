@@ -4,6 +4,7 @@
 #include "common.h"
 #include "../../src/overlays/ba/playerstate.h"
 
+void _bainvisible_entrypoint_9(void*, u8, f32*);
 f32 _bainvisible_entrypoint_2(PlayerState*, u8);
 
 #endif
