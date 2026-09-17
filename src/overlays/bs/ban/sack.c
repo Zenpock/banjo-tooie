@@ -573,7 +573,44 @@ void func_80801178_bsbansack(PlayerState* self)
     func_8080101C_bsbansack(self, 1);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_8080119C_bsbansack.s")
+s32 func_8080119C_bsbansack(PlayerState* self)
+{
+	f32 sp3C;
+	s32 temp;
+	f32 sp34;
+	f32 gameSpeed;
+	f32 sp2C;
+	f32 temp_f12;
+
+	sp2C = func_80092BE8(self);
+	gameSpeed = time_getDelta();
+	_batimer_decrement(self, 0);
+	switch (self->unk15C.bytes[0])
+	{
+	case 1:
+		sp34 = func_800F10B4(_batimer_get(self, 0.0f), 0.0f, 1.2f, 700.0f, 1400.0f);
+		sp2C += (sp34 * gameSpeed);
+		func_8009328C(self, sp2C);
+		if (func_8008DF8C(self, 1) != 0)
+		{
+			self->unk16C = sp34;
+			func_8080101C_bsbansack(self, 2);
+		}
+		return 0;
+	case 2:
+		temp_f12 = func_800F10B4(_batimer_get(self, 0), 0.0f, 0.5f, 1.0f, 0.0f) * 90.0f;
+		sp3C = self->unk174 - self->unk170;
+		sp2C = (func_80013970(temp_f12) * (sp3C)) + self->unk170;
+		func_8009328C(self, sp2C);
+		if (_batimer_get(self, 0) != 0.0f)
+		{
+			return 0;
+		}
+		return 1;
+	default:
+		return 0;
+	}
+}
 
 void func_80801318_bsbansack(PlayerState* self)
 {

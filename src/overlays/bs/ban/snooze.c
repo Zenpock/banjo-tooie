@@ -153,7 +153,30 @@ void func_808004E0_bsbansnooze(PlayerState* self) {
     func_8008CA30(self, 1.0f);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/func_80800588_bsbansnooze.s")
+void func_80800588_bsbansnooze(PlayerState* self)
+{
+	BanjoStateId nextState;
+	AnimCtrl* animCtrl;
+
+	animCtrl = baanim_getAnimCtrlPtr(self);
+	nextState = BS_STATE_0_INVALID;
+
+	func_80800128_bsbansnooze(self, func_800F3780(anctrl_getAnimTimer(animCtrl), D_80800A60_bsbansnooze, 3));
+
+	if ((bastick_getZone(self) == BS_STICK_ZONE_ID_0) && (func_8009BCD4(self, 3.0f) != 0))
+	{
+		nextState = BS_STATE_16F_SNOOZE_IDLE;
+	}
+	if (bakey_released(self, BUTTON_Z) != 0)
+	{
+		nextState = BS_STATE_172_SNOOZE_EXIT;
+	}
+	if (player_inWater(self) != 0)
+	{
+		nextState = BS_STATE_4C_LANDING_IN_WATER;
+	}
+	bs_setState(self, nextState);
+}
 
 s32 bsbansnooze_entrypoint_2(s32 arg0) {
     return D_80800A78_bsbansnooze[arg0];
