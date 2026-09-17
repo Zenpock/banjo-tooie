@@ -3628,7 +3628,7 @@ segments:
     start: 0x01F703E0
     exclusive_ram_id: overlay
     subsegments: 
-      - [auto, c, airr]
+      - [auto, c, airbar]
   - name: cadbmgrDll_header
     dir: overlays/cadbmgrDll
     type: bin
