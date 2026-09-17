@@ -37,7 +37,10 @@
 #include "ba/invisible.h"
 #include "ch/baddiesetup.h"
 
-void func_80093528(PlayerState*);                   /* extern */
+s32 func_80092258(PlayerState*);
+void func_80092AA4(PlayerState*);
+s32 func_80092EA4(PlayerState*);
+void func_80093528(PlayerState*);
 void func_80093584(PlayerState*); 
 void func_80092778(PlayerState*);
 f32 func_80092B8C();

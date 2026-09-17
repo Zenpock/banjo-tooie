@@ -6,6 +6,7 @@
 
 #include "ba/playerstate.h"
 
+s32 func_800A3538(PlayerState*);
 void func_800A2CE8(PlayerState *, f32, s32);
 void func_800A2D2C(PlayerState *, f32, s32);
 void func_800A2EDC(PlayerState*, f32);
@@ -21,6 +22,6 @@ void func_800A38F0(PlayerState *, s32, s32);
 void func_800A3904(PlayerState *, s32);
 f32 func_800A3048(PlayerState*);
 s32 func_8009FA20(PlayerState*, f32*, f32, f32, f32);
-void func_800A3148(PlayerState*, f32*, f32*, f32*);    /* extern */
+void func_800A3148(PlayerState*, f32*, f32*, f32*);
 
 #endif // __CORE2_1E7BFA0_H__

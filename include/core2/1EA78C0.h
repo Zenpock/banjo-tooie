@@ -15,5 +15,6 @@ void func_800CEF7C();
 void func_800CF2B0();
 void func_800CF700();
 void func_800CF7F4(u32 a0);
+void func_800CF840(s32);
 
 #endif
