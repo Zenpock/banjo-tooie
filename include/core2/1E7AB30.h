@@ -13,6 +13,7 @@ void func_800A13B0(s32);
 void func_800A1658(s32);
 void func_800A16BC(s32);
 s32 func_800A1718(PlayerState *);
+s32 func_800A1760(PlayerState*);
 void func_800A17A8(PlayerState *, s32);
 
 #endif // __CORE2_1E7AB30_H__
