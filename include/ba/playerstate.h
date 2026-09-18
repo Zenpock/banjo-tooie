@@ -171,6 +171,20 @@ typedef struct ba_unknown_134_s {
     f32 unk4;
 } BaUnknown134;
 
+typedef struct ba_deathmatch_s {
+    s16 unk0[4];
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    u8 unk20;
+    u8 unk21;
+    u8 unk22;
+    u8 unk23;
+} BaDeathmatch;
+
 typedef struct player_state_s {
     /* 0x00 */ struct ba_alarm_s *alarm;
     /* 0x04 */ struct ba_anim_s *anim;
@@ -226,10 +240,7 @@ typedef struct player_state_s {
     /* 0x14C */ struct ba_washer_s *washer;
     u8 pad150[0x4];
     /* 0x154 */ struct ba_wobble_s *wobble;
-	union {
-		s32 word;
-		u8 bytes[4];
-	} unk158;
+    /* 0x158 */ BaDeathmatch* deathmatch;
     union {
         s32 word;
         u8 bytes[4];
