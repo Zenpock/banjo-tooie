@@ -3,6 +3,21 @@
 
 #include "common.h"
 #include "ba/playerstate.h"
+#include "ba/fpctrl.h"
+#include "ba/key.h"
+#include "ba/physics.h"
+#include "ba/roll.h"
+#include "ba/stick.h"
+#include "ba/swim.h"
+#include "ba/yaw.h"
+#include "core2/1E6F080.h"
+#include "core2/1E75710.h"
+#include "core2/1E75920.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1EA0690.h"
+#include "core2/1EB2840.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECA640.h"
 
 s32 baswim_entrypoint_0();
 s32 _baswim_entrypoint_1(PlayerState*);
