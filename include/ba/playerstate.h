@@ -230,7 +230,7 @@ typedef struct player_state_s {
     f32 unk16C;
     f32 unk170;
     f32 unk174;
-    s32 unk178;
+    f32 unk178;
     s32 unk17C;
     s32 unk180;
     s32 unk184;

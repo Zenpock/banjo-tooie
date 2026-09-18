@@ -66,14 +66,15 @@ void func_808001C8_bsbanswim(PlayerState* self) {
 }
 
 void func_8080025C_bsbanswim(PlayerState* self) {
-    BanjoStateId sp24;
+    BanjoStateId nextState;
     AnimCtrl* sp20;
     u8 temp_v1;
 
-    sp24 = BS_STATE_0_INVALID;
+    nextState = BS_STATE_0_INVALID;
     sp20 = baanim_getAnimCtrlPtr(self);
     temp_v1 = self->unk164.bytes[0];
-    switch (temp_v1) {                              /* irregular */
+    switch (temp_v1) 
+    {
     case 0:
         func_8009BF5C(self, 50.0f);
         if (anctrl_isAt(sp20, 0.37f) != 0) {
@@ -89,7 +90,7 @@ void func_8080025C_bsbanswim(PlayerState* self) {
         _baswim_entrypoint_11(self);
         _baswim_entrypoint_13(self);
         if (anctrl_isAt(sp20, 0.76f) != 0) {
-            sp24 = 0x2B;
+            nextState = BS_STATE_2B_SWIM_UNDERWATER_KICK;
         }
         break;
     }
@@ -97,9 +98,9 @@ void func_8080025C_bsbanswim(PlayerState* self) {
         func_8009DE38(self, 0x3FD, 1.0f);
     }
     if (player_inWater(self) == 0) {
-        sp24 = BS_STATE_1_IDLE;
+        nextState = BS_STATE_1_IDLE;
     }
-    bs_setState(self, sp24);
+    bs_setState(self, nextState);
 }
 
 s32 bsbanswim_entrypoint_0(s32 arg0) {
@@ -157,10 +158,10 @@ void func_808004BC_bsbanswim(PlayerState* self) {
 }
 
 void func_808004F4_bsbanswim(PlayerState* self) {
-    BanjoStateId sp24;
+    BanjoStateId nextState;
     AnimCtrl* sp20;
 
-    sp24 = BS_STATE_0_INVALID;
+    nextState = BS_STATE_0_INVALID;
     sp20 = baanim_getAnimCtrlPtr(self);
     _baswim_entrypoint_11(self);
     _baswim_entrypoint_12(self);
@@ -182,23 +183,23 @@ void func_808004F4_bsbanswim(PlayerState* self) {
         break;
     case 0:
         if (anctrl_isAt(sp20, 0.99f) != 0) {
-            sp24 = 0x2B;
+            nextState = BS_STATE_2B_SWIM_UNDERWATER_KICK;
         }
         break;
     case 2:
-        sp24 = 0x82;
+        nextState = 0x82;
         break;
     case 3:
-        sp24 = 0x90;
+        nextState = 0x90;
         break;
     }
     if (_baswim_entrypoint_2(self) != 0) {
-        sp24 = 0x2D;
+        nextState = BS_STATE_2D_SWIM_IDLE;
     }
     if (player_inWater(self) == 0) {
-        sp24 = BS_STATE_1_IDLE;
+        nextState = BS_STATE_1_IDLE;
     }
-    bs_setState(self, sp24);
+    bs_setState(self, nextState);
 }
 
 s32 bsbanswim_entrypoint_1(s32 arg0) {
@@ -219,11 +220,11 @@ void func_80800690_bsbanswim(PlayerState* self) {
 }
 
 void func_808006CC_bsbanswim(PlayerState* self) {
-    BanjoStateId sp24;
+    BanjoStateId nextState;
     AnimCtrl* sp20;
     s32 temp_v0;
 
-    sp24 = BS_STATE_0_INVALID;
+    nextState = BS_STATE_0_INVALID;
     sp20 = baanim_getAnimCtrlPtr(self);
     _baswim_entrypoint_11(self);
     _baswim_entrypoint_12(self);
@@ -246,23 +247,23 @@ void func_808006CC_bsbanswim(PlayerState* self) {
         break;
     case 0:
         if (anctrl_isAt(sp20, 0.99f) != 0) {
-            sp24 = 0x2B;
+            nextState = BS_STATE_2B_SWIM_UNDERWATER_KICK;
         }
         break;
     case 1:
-        sp24 = 0x81;
+        nextState = 0x81;
         break;
     case 3:
-        sp24 = 0x90;
+        nextState = 0x90;
         break;
     }
     if (_baswim_entrypoint_2(self) != 0) {
-        sp24 = 0x2D;
+        nextState = BS_STATE_2D_SWIM_IDLE;
     }
     if (player_inWater(self) == 0) {
-        sp24 = BS_STATE_1_IDLE;
+        nextState = BS_STATE_1_IDLE;
     }
-    bs_setState(self, sp24);
+    bs_setState(self, nextState);
 }
 
 s32 bsbanswim_entrypoint_2(s32 arg0) {
@@ -284,9 +285,9 @@ void func_80800868_bsbanswim(PlayerState* self)
 
 void func_808008A4_bsbanswim(PlayerState* self)
 {
-    BanjoStateId sp24;
+    BanjoStateId nextState;
     AnimCtrl* sp20;
-    sp24 = BS_STATE_0_INVALID;
+    nextState = BS_STATE_0_INVALID;
     sp20 = baanim_getAnimCtrlPtr(self);
     _baswim_entrypoint_11(self);
     _baswim_entrypoint_12(self);
@@ -314,25 +315,25 @@ void func_808008A4_bsbanswim(PlayerState* self)
     case 0:
         if (anctrl_isAt(sp20, 0.99f) != 0)
         {
-            sp24 = 0x2B;
+            nextState = BS_STATE_2B_SWIM_UNDERWATER_KICK;
         }
         break;
     case 1:
-        sp24 = 0x81;
+        nextState = 0x81;
         break;
     case 2:
-        sp24 = 0x82;
+        nextState = 0x82;
         break;
     }
     if (_baswim_entrypoint_2(self) != 0)
     {
-        sp24 = 0x2D;
+        nextState = BS_STATE_2D_SWIM_IDLE;
     }
     if (player_inWater(self) == 0)
     {
-        sp24 = BS_STATE_1_IDLE;
+        nextState = BS_STATE_1_IDLE;
     }
-    bs_setState(self, sp24);
+    bs_setState(self, nextState);
 }
 
 s32 bsbanswim_entrypoint_3(s32 arg0) {
