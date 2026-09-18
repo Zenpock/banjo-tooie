@@ -40,7 +40,7 @@ void func_808000C0_bsbeemain(PlayerState* self) {
 }
 
 void func_80800128_bsbeemain(PlayerState* self) {
-    enum bs_state_e var_s1;
+    BanjoStateId var_s1;
 
     var_s1 = BS_STATE_0_INVALID;
     _bsbee_entrypoint_2(self);
@@ -85,7 +85,7 @@ void func_80800238_bsbeemain(PlayerState* self) {
 }
 
 void func_808002C0_bsbeemain(PlayerState* self) {
-    enum bs_state_e sp24;
+    BanjoStateId sp24;
 
     sp24 = BS_STATE_0_INVALID;
     _bsbee_entrypoint_2(self);
@@ -148,7 +148,7 @@ void func_808003F0_bsbeemain(PlayerState* self) {
 }
 
 void func_80800548_bsbeemain(PlayerState* self) {
-    enum bs_state_e sp34;
+    BanjoStateId sp34;
     AnimCtrl* sp30;
     f32 sp24[3];
 
@@ -238,7 +238,7 @@ void func_808007C4_bsbeemain(PlayerState* self) {
 }
 
 void func_80800874_bsbeemain(PlayerState* self) {
-    enum bs_state_e sp34;
+    BanjoStateId sp34;
     AnimCtrl* sp30;
     f32 sp24[3];
 
@@ -320,7 +320,7 @@ void bsbeemain_entrypoint_5(PlayerState* self)
 
 void bsbeemain_entrypoint_6(PlayerState* self)
 {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     _bsbee_entrypoint_2(self);
@@ -350,7 +350,7 @@ void func_80800B90_bsbeemain(PlayerState* self)
 
 void func_80800BD0_bsbeemain(PlayerState* self)
 {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     _bsbee_entrypoint_2(self);
@@ -481,7 +481,7 @@ void func_80801080_bsbeemain(PlayerState* self)
 }
 
 void func_808010A8_bsbeemain(PlayerState* self) {
-    enum bs_state_e sp1C;
+    BanjoStateId sp1C;
 
     sp1C = BS_STATE_0_INVALID;
     _bsbee_entrypoint_2(self);

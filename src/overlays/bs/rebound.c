@@ -6,7 +6,7 @@ void func_80800000_bsrebound(PlayerState *self) {
 }
 
 void func_80800038_bsrebound(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl *animCtrl;
 
     next_state = BS_STATE_0_INVALID;

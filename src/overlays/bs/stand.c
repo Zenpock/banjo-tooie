@@ -406,7 +406,7 @@ s32 bsstand_entrypoint_7(s32 arg0)
     return D_80800DA8_bsstand[arg0];
 }
 
-enum bs_state_e bsstand_entrypoint_8(PlayerState* self, BanjoStateId state)
+BanjoStateId bsstand_entrypoint_8(PlayerState* self, BanjoStateId state)
 {
     return func_80800038_bsstand(self, state);
 }

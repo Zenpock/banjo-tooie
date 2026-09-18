@@ -223,9 +223,9 @@ void bafly_entrypoint_13(PlayerState* self, s32 arg1, enum asset_e arg2, f32 arg
     func_8008E944(self);
 }
 
-void bafly_entrypoint_14(PlayerState* self, enum bs_state_e arg1, enum bs_state_e arg2) 
+void bafly_entrypoint_14(PlayerState* self, BanjoStateId arg1, BanjoStateId arg2) 
 {
-    enum bs_state_e sp1C;
+    BanjoStateId sp1C;
 
     sp1C = BS_STATE_0_INVALID;
     if (anctrl_isStopped(baanim_getAnimCtrlPtr(self)) != 0) {
@@ -268,8 +268,8 @@ void bafly_entrypoint_16(PlayerState* self, enum asset_e arg1, f32 arg2) {
     _ncbafly_entrypoint_4(func_800A4CA8(self), 12.0f, 10000.0f, 800.0f);
 }
 
-void bafly_entrypoint_17(PlayerState* self, enum bs_state_e arg1, enum bs_state_e arg2, s32* arg3) {
-    enum bs_state_e sp24;
+void bafly_entrypoint_17(PlayerState* self, BanjoStateId arg1, BanjoStateId arg2, s32* arg3) {
+    BanjoStateId sp24;
     AnimCtrl* sp20;
 
     sp24 = BS_STATE_0_INVALID;
