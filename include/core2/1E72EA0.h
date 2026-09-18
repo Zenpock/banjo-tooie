@@ -26,5 +26,6 @@ void func_80099B94(PlayerState *);
 f32 func_80099A40(PlayerState *);
 s32 func_80099A58(PlayerState *);
 void func_8009AB78(PlayerState *);
-
+void func_8009AD20(PlayerState*, s32);
+void func_8009AD2C(PlayerState*, s32);
 #endif // __CORE2_1E72EA0_H__

@@ -32,7 +32,7 @@ BanjoStateId bs_getPreviousState(PlayerState*);
 s32 func_8009E74C(PlayerState *, s32);
 s32 func_8009E77C(PlayerState *, s32);
 // func_8009E7AC
-// func_8009E7C8
+void func_8009E7C8(PlayerState*, s32);
 void func_8009E830(PlayerState *, s32);
 // func_8009E83C
 

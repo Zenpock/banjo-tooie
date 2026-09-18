@@ -358,7 +358,7 @@ void func_80802C6C_bsfirstp(PlayerState* self)
 
 s32 func_80802C90_bsfirstp(PlayerState* self)
 {
-	if (self->unk158.word == 0)
+	if (self->deathmatch == 0)
 	{
 		return func_80094BC0(self);
 	}
@@ -369,7 +369,7 @@ s32 func_80802C90_bsfirstp(PlayerState* self)
 
 s32 func_80802D14_bsfirstp(PlayerState* arg0)
 {
-	if (arg0->unk158.word == 0)
+	if (arg0->deathmatch == 0)
 	{
 		//Swap to the next egg type
 		func_80094A10(arg0);
