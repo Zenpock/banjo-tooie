@@ -442,7 +442,7 @@ s32 bskaztorpedo_entrypoint_5(s32 idx) {
 }
 
 void func_80801380_bskaztorpedo(PlayerState *self) {
-    _baspin_entrypoint_1();
+    _baspin_entrypoint_1(self);
     _bakaztorpedo_entrypoint_6(self, 2);
     func_80800508_bskaztorpedo(self);
 }

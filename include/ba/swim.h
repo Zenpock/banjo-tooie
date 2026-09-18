@@ -26,9 +26,9 @@ s32 _baswim_entrypoint_3(PlayerState*);
 void _baswim_entrypoint_4(PlayerState*);
 void _baswim_entrypoint_5(PlayerState*);
 void _baswim_entrypoint_6(PlayerState*, s32);
-// baswim_entrypoint_7
+void _baswim_entrypoint_7(PlayerState*, s32, s32);
 void _baswim_entrypoint_8(PlayerState*, f32);
-// baswim_entrypoint_9
+void _baswim_entrypoint_9(PlayerState*, f32);
 void _baswim_entrypoint_10(PlayerState*, f32);
 void _baswim_entrypoint_11(PlayerState*);
 void _baswim_entrypoint_12(PlayerState*);

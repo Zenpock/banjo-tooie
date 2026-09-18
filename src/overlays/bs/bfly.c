@@ -268,7 +268,7 @@ void func_80800624_bsbfly(PlayerState* self)
     }
     if (player_inWater(self) != 0)
     {
-        next_state = 0x2D;
+        next_state = BS_STATE_2D_SWIM_IDLE;
     }
     if (_bafly_entrypoint_2(self) != 0) 
     {
@@ -511,7 +511,7 @@ void func_80801178_bsbfly(PlayerState* self)
         func_808000AC_bsbfly(self);
     }
     temp_v0 = bs_getNextState(self);
-    if ((temp_v0 == 0x20) || (temp_v0 == 0x24) || (temp_v0 == 0x2D)) {
+    if ((temp_v0 == 0x20) || (temp_v0 == 0x24) || (temp_v0 == BS_STATE_2D_SWIM_IDLE)) {
         func_8009DBF0(self, 0x3EA, 1.0f);
     }
     func_80800188_bsbfly(self);
@@ -575,7 +575,7 @@ void func_80801334_bsbfly(PlayerState* self)
         sp34 = BS_STATE_20_LANDING;
     }
     if (player_inWater(self) != 0) {
-        sp34 = 0x2D;
+        sp34 = BS_STATE_2D_SWIM_IDLE;
     }
     bs_setState(self, sp34);
 }

@@ -68,7 +68,7 @@ BanjoStateId func_80800038_bsstand(PlayerState* self, BanjoStateId arg1)
     }
     if (player_inWater(self) != 0)
     {
-        arg1 = 0x2D;
+        arg1 = BS_STATE_2D_SWIM_IDLE;
     }
     return func_800A02DC(self, arg1);
 }

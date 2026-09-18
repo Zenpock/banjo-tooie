@@ -205,7 +205,7 @@ void bswalk_entrypoint_4(PlayerState* self)
     }
     if (player_inWater(self) != 0)
     {
-        nextState = 0x2D;
+        nextState = BS_STATE_2D_SWIM_IDLE;
     }
     bs_setState(self, func_800A02DC(self, nextState));
 }
@@ -313,7 +313,7 @@ void bswalk_entrypoint_7(PlayerState* self)
     }
     if (player_inWater(self) != 0)
     {
-        var_s1 = 0x2D;
+        var_s1 = BS_STATE_2D_SWIM_IDLE;
     }
     bs_setState(self, func_800A02DC(self, var_s1));
 }
@@ -432,7 +432,7 @@ void bswalk_entrypoint_11(PlayerState* self)
     }
     if (player_inWater(self) != 0)
     {
-        nextState = 0x2D;
+        nextState = BS_STATE_2D_SWIM_IDLE;
     }
     bs_setState(self, func_800A02DC(self, nextState));
 }
@@ -578,7 +578,7 @@ void bswalk_entrypoint_15(PlayerState* self)
     }
     if (player_inWater(self) != 0)
     {
-        nextState = 0x2D;
+        nextState = BS_STATE_2D_SWIM_IDLE;
     }
     bs_setState(self, func_800A02DC(self, nextState));
 }
@@ -650,7 +650,7 @@ void bswalk_entrypoint_20(PlayerState* self)
     }
     if (player_inWater(self) != 0)
     {
-        var_s1 = 0x2D;
+        var_s1 = BS_STATE_2D_SWIM_IDLE;
     }
     bs_setState(self, func_800A02DC(self, var_s1));
 }

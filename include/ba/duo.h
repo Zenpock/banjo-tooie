@@ -7,5 +7,6 @@ s32 _baduo_entrypoint_3(PlayerState*);
 s32 _baduo_entrypoint_4(PlayerState*);
 extern void _baduo_entrypoint_7(PlayerState *self, s32);
 extern void _baduo_entrypoint_12(PlayerState *self);
+void _baduo_entrypoint_21(PlayerState*);
 
 #endif // __BA_DUO_H__
