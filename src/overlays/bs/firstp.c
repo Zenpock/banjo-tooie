@@ -13,7 +13,7 @@ void func_80801A5C_bsfirstp(PlayerState*);
 void func_80802BE8_bsfirstp(PlayerState*, f32);
 s32 func_80802C90_bsfirstp(PlayerState*);
 s32 func_80802D14_bsfirstp(PlayerState*);
-s32 func_80802D50_bsfirstp(PlayerState*, enum bs_state_e*);
+s32 func_80802D50_bsfirstp(PlayerState*, BanjoStateId*);
 s32 func_80802E7C_bsfirstp(BsKazFly*);
 void func_80803760_bsfirstp(PlayerState*);
 s32 func_80803CD4_bsfirstp(PlayerState*, s32, s32, s32, f32*);
@@ -22,8 +22,8 @@ void func_80807EEC_bsfirstp(PlayerState*);
 void func_80807F24_bsfirstp(PlayerState*);
 s32 func_80808630_bsfirstp(PlayerState*);
 void func_80808678_bsfirstp(PlayerState*, s32);
-enum bs_state_e func_80808B24_bsfirstp(PlayerState*);
-void func_80808B8C_bsfirstp(PlayerState*, enum bs_state_e);
+BanjoStateId func_80808B24_bsfirstp(PlayerState*);
+void func_80808B8C_bsfirstp(PlayerState*, BanjoStateId);
 void func_80808C48_bsfirstp(PlayerState*);
 void func_80808E78_bsfirstp(PlayerState*);
 s32 func_80809540_bsfirstp(PlayerState*, s32);
@@ -841,7 +841,7 @@ void func_80808A8C_bsfirstp(PlayerState* self)
 
 void func_80808AAC_bsfirstp(PlayerState* arg0)
 {
-	enum bs_state_e temp_v0;
+	BanjoStateId temp_v0;
 
 	func_80807D48_bsfirstp(arg0);
 	func_80808E78_bsfirstp(arg0);
@@ -860,9 +860,9 @@ s32 bsfirstp_entrypoint_35(s32 arg0)
 	return D_8080B5C0_bsfirstp[arg0];
 }
 
-enum bs_state_e func_80808B24_bsfirstp(PlayerState* arg0)
+BanjoStateId func_80808B24_bsfirstp(PlayerState* arg0)
 {
-	enum bs_state_e sp1C;
+	BanjoStateId sp1C;
 
 	if (func_80802D50_bsfirstp(arg0, &sp1C) != 0)
 	{

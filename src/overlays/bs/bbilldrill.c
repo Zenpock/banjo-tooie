@@ -182,7 +182,7 @@ void bsbbilldrill_entrypoint_1(PlayerState* arg0) {
 }
 
 void bsbbilldrill_entrypoint_2(PlayerState* self) {
-    enum bs_state_e sp44;
+    BanjoStateId sp44;
     f32 sp40;
     f32 sp34[3];
     s32 sp30;

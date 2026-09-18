@@ -47,7 +47,7 @@ void func_8080010C_bsbeefly(PlayerState* self) {
 
 void func_808001C4_bsbeefly(PlayerState* self) 
 {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl* anim_ctrl;
 
     next_state = BS_STATE_0_INVALID;
@@ -179,7 +179,7 @@ void func_80800600_bsbeefly(PlayerState* self) {
 }
 
 void func_80800708_bsbeefly(PlayerState* self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl* anim_ctrl;
     s32 flap_count;
     f32 volume;
@@ -296,7 +296,7 @@ void func_80800B54_bsbeefly(PlayerState* self)
 }
 
 void func_80800BA4_bsbeefly(PlayerState* self) {
-    enum bs_state_e sp1C;
+    BanjoStateId sp1C;
 
     sp1C = BS_STATE_0_INVALID;
     _bsbee_entrypoint_2(self);

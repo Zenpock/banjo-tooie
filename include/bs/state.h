@@ -46,7 +46,7 @@ typedef enum bs_state_e {
     BS_STATE_2F_FALL = 0x2F,
 	BS_STATE_30_DIVE = 0x30,
     BS_STATE_3D_FALL_TUMBLING = 0x3D,
-
+    BS_STATE_41_FALL_DEATH = 0x41,
     BS_STATE_48 = 0x48,
     BS_STATE_49,
     BS_STATE_4A,

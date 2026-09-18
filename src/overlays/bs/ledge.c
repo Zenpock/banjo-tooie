@@ -11,22 +11,10 @@ extern s32 D_80801398_bsledge[];
 extern s32 D_808013A8_bsledge[];
 
 /* .code */
-#ifndef NONMATCHINGS
-// Unmatched as the compiler wants to use a0 and then move a0 into v0 instead of using t registers
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ledge/func_80800000_bsledge.s")
-#else
-// Probably a check whether kazooie should (or can?) attack
-s32 func_80800000_bsledge(PlayerState *self) {
-    s32 temp_t6;
-
-    temp_t6 = (func_8008E23C(self) == 0);
-    if (temp_t6 ) {
-        temp_t6 = bakey_pressed(self, BUTTON_B) != 0;
-    }
-
-    return temp_t6;
+int func_80800000_bsledge(PlayerState* self)
+{
+    return !func_8008E23C(self) && bakey_pressed(self, BUTTON_B);
 }
-#endif
 
 void func_80800040_bsledge(PlayerState *self, f32 arg1[3]) {
     f32 sp34;
@@ -118,26 +106,15 @@ void func_80800334_bsledge(PlayerState* self) {
     }
 }
 
-#ifndef NONMATCHINGS
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ledge/func_808003D0_bsledge.s")
-#else
-// Probably a check whether banjo can pull himself up a ledge
-s32 func_808003D0_bsledge(PlayerState *self) {
-    if ((bakey_pressed(self, BUTTON_A) != 0) != 0) {
-        return (func_80097530(self) != 0);
-    }
+int func_808003D0_bsledge(PlayerState* arg0)
+{
+    return bakey_pressed(arg0, BUTTON_A) && func_80097530(arg0);
 }
-#endif
 
-#ifndef NONMATCHINGS
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ledge/func_80800410_bsledge.s")
-#else
-s32 func_80800410_bsledge(PlayerState *self) {
-    if (((func_80096388(self) ^ 7) == 0) != 0) {
-        return func_80097524(self) != 4;
-    }
+int func_80800410_bsledge(PlayerState* arg0)
+{
+    return func_80096388(arg0) == 7 && func_80097524(arg0) != 4;
 }
-#endif
 
 s32 func_80800450_bsledge(PlayerState* self) {
     return func_8009BB5C(self) > 0.0f;
@@ -178,7 +155,7 @@ void func_80800540_bsledge(PlayerState* self) {
 }
 
 void func_808005E0_bsledge(PlayerState* self) {
-    enum bs_state_e sp2C;
+    BanjoStateId sp2C;
     f32 sp20[3];
 
     sp2C = BS_STATE_0_INVALID;
@@ -234,7 +211,7 @@ void func_80800764_bsledge(PlayerState *self) {
 }
 
 void func_808007F4_bsledge(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     if (baanim_isAt(self, 0.2f) != 0) {
@@ -271,7 +248,7 @@ void func_808008F4_bsledge(PlayerState *self) {
 }
 
 void func_808009C8_bsledge(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     func_808004A8_bsledge(self);
@@ -317,7 +294,7 @@ void func_80800AE0_bsledge(PlayerState* self) {
 }
 
 void func_80800B70_bsledge(PlayerState* self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     enum asset_e sp20;
 
     next_state = BS_STATE_0_INVALID;
@@ -377,11 +354,52 @@ s32 func_80800D24_bsledge(PlayerState* self) {
     return func_80800CF4_bsledge(self, D_80801388_bsledge, 8);
 }
 
-#ifndef NONMATCHINGS
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ledge/func_80800D78_bsledge.s")
-#else
-// decomp failure
-#endif
+void func_80800D78_bsledge(PlayerState* self, s32 arg1)
+{
+    switch (self->unk160.word)
+    {
+    case 1:
+        if (func_8008E0E8(self) == 0)
+        {
+            _bapackctrl_entrypoint_5(self, 1);
+        }
+        break;
+    case 2:
+        break;
+    case 3:
+        func_800A0D14(self, 0, 0.2f);
+        break;
+    case 4:
+        func_800A0D14(self, 0, 0.2f);
+        break;
+    }
+    self->unk160.word = arg1;
+    switch (arg1)
+    {
+    case 1:
+        func_800A0CF4(self, 0);
+        baanim_playForDuration_onceSmooth(self, 0x52, 1.8f);
+        if (!func_8008E0E8(self))
+        {
+            _bapackctrl_entrypoint_5(self, 5);
+        }
+        break;
+    case 2:
+        baanim_playForDuration_onceSmooth(self, 0x55, 4.5f);
+        return;
+    case 3:
+        func_800A0CF4(self, 1);
+        baanim_playForDuration_onceSmooth(self, 0x56, 5.0f);
+        return;
+    case 4:
+        func_800A0CF4(self, 1);
+        baanim_playForDuration_onceSmooth(self, 0x52, 2.0f);
+        break;
+    case 0:
+    default:
+        return;
+    }
+}
 
 void func_80800EE0_bsledge(PlayerState* self) {
     func_80800D78_bsledge(self, 0);
@@ -399,7 +417,7 @@ void func_80800F0C_bsledge(PlayerState* self) {
 
 void func_80800F70_bsledge(PlayerState* self) {
     AnimCtrl *anim_ctrl;
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     anim_ctrl = baanim_getAnimCtrlPtr(self);
     next_state = BS_STATE_0_INVALID;
@@ -483,7 +501,7 @@ void bsledge_entrypoint_6(PlayerState* self) {
 }
 
 void bsledge_entrypoint_7(PlayerState* self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     if (_bsrest_entrypoint_19(self, NULL) != 0) {

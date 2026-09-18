@@ -547,7 +547,7 @@ void func_80801208_bsbfly(PlayerState* self)
 
 void func_80801334_bsbfly(PlayerState* self)
 {
-    enum bs_state_e sp34;
+    BanjoStateId sp34;
     f32 sp28[3];
 
     sp34 = BS_STATE_0_INVALID;
@@ -637,7 +637,7 @@ void func_808015C4_bsbfly(PlayerState* self)
 
 void func_808016B4_bsbfly(PlayerState* self)
 {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl* anim_ctrl;
     s32 temp_v0;
 
@@ -776,7 +776,7 @@ void func_80801A80_bsbfly(PlayerState* self)
 
 void func_80801AEC_bsbfly(PlayerState* self)
 {
-    enum bs_state_e sp2C;
+    BanjoStateId sp2C;
 
     sp2C = BS_STATE_0_INVALID;
     if (anctrl_isAt(baanim_getAnimCtrlPtr(self), 0.1358f) != 0) {
