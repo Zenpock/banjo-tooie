@@ -166,6 +166,11 @@ typedef struct ba_unknown_C8_s {
     struct ba_unknown_C8_s* unkC8;
 } ba_unknown_C8_s;
 
+typedef struct ba_unknown_134_s {
+    f32 unk0;
+    f32 unk4;
+} BaUnknown134;
+
 typedef struct player_state_s {
     /* 0x00 */ struct ba_alarm_s *alarm;
     /* 0x04 */ struct ba_anim_s *anim;
@@ -211,7 +216,9 @@ typedef struct player_state_s {
     /* 0x120 */ struct bs_state_s *state;
     u8 pad124[4];
     /* 0x128 */ struct ba_stick_s *stick;
-    u8 pad12C[0x10];
+    u8 pad12C[0x8];
+    /* 0x134 */ BaUnknown134* swim;
+    u8 pad138[0x4];
     /* 0x13C */ struct ba_timer_s *timer;
     /* 0x140 */ struct ba_translate_s *translate;
     /* 0x144 */ struct ba_van_s *van;

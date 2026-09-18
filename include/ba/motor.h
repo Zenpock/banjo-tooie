@@ -6,6 +6,7 @@
 #include "ba/playerstate.h"
 
 void _bamotor_entrypoint_1(PlayerState *, f32, f32, f32);
+void _bamotor_entrypoint_3(PlayerState*, f32, f32, f32, f32, f32, f32);
 
 
 #endif

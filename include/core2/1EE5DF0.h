@@ -15,6 +15,7 @@ f32 func_8010CD28(Actor *);
 f32 func_8010CD50(Actor*, u32);
 s32 func_8010CD88(Actor*, f32, f32);
 s32 func_8010CFBC(f32*, s32, s32);
+void func_8010D09C(s32, f32*, f32);
 s32 func_8010D23C();
 s32 func_8010D248();
 void func_8010D254(f32*);
