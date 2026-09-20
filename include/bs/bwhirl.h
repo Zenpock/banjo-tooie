@@ -4,44 +4,43 @@
 
 #include <ultra64.h>
 #include "common.h"
+#include "ba/anim.h"
+#include "ba/drone.h"
+#include "ba/input.h"
+#include "ba/key.h"
+#include "ba/physics.h"
+#include "ba/playerstate.h"
+#include "ba/stick.h"
+#include "ba/yaw.h"
+#include "bs/bwhirl.h"
+#include "bs/mum/move.h"
+#include "bs/mum/still.h"
+#include "bs/rest.h"
+#include "bs/state.h"
+#include "ch/light/fader.h"
+#include "ch/usefeather.h"
+#include "su/inv.h"
+#include "core1/1E2B200.h"
+#include "core2/1E66990.h"
+#include "core2/1E6B900.h"
+#include "core2/1E75920.h"
+#include "core2/1E76880.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E79FD0.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1E8F430.h"
+#include "core2/1E93440.h"
+#include "core2/1E97EF0.h"
+#include "core2/1EA1DA0.h"
+#include "core2/1EB2840.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECE0B0.h"
+#include "core2/1ED4E30.h"
+#include "core2/anctrl.h"
+#include "player.h"
 
-// func_80800000_bsbwhirl
-// func_80800008_bsbwhirl
-// func_808000D8_bsbwhirl
-// func_80800114_bsbwhirl
-// func_8080017C_bsbwhirl
-// func_80800200_bsbwhirl
-// func_808003A8_bsbwhirl
-// func_80800430_bsbwhirl
-// bsbwhirl_entrypoint_0
-// bsbwhirl_entrypoint_1
-// bsbwhirl_entrypoint_2
-// bsbwhirl_entrypoint_3
-// bsbwhirl_entrypoint_4
-// bsbwhirl_entrypoint_5
-void bsbwhirl_entrypoint_6();
-// bsbwhirl_entrypoint_7
-// bsbwhirl_entrypoint_8
-// bsbwhirl_entrypoint_9
-void bsbwhirl_entrypoint_10();
-// bsbwhirl_entrypoint_11
-// bsbwhirl_entrypoint_12
-// bsbwhirl_entrypoint_13
-void bsbwhirl_entrypoint_14(s32 arg0);
-// bsbwhirl_entrypoint_15
-// bsbwhirl_entrypoint_16
-// bsbwhirl_entrypoint_17
-void bsbwhirl_entrypoint_18();
-// bsbwhirl_entrypoint_19
-void bsbwhirl_entrypoint_20();
-void bsbwhirl_entrypoint_21(s32 arg0);
-void bsbwhirl_entrypoint_22(s32 arg0);
-// bsbwhirl_entrypoint_23
-void bsbwhirl_entrypoint_24(s32 arg0);
-void bsbwhirl_entrypoint_25();
-// bsbwhirl_entrypoint_26
-// bsbwhirl_entrypoint_27
-// func_80800EA0_bsbwhirl
-// bsbwhirl_entrypoint_28
 
 #endif // __BS_BWHIRL__

@@ -17,6 +17,7 @@
 #include "fx/dlsmoke.h"
 
 void _badust_entrypoint_1(PlayerState *self);
+void _badust_entrypoint_2(PlayerState*, s32*, f32*, f32, f32, f32);
 void _badust_entrypoint_3(PlayerState *self, f32, f32);
 void _badust_entrypoint_5(PlayerState *self, f32, f32);
 void _badust_entrypoint_8(PlayerState*);
