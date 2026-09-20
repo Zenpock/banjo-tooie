@@ -86,8 +86,8 @@ s32 player_inWater(PlayerState*);
 s32 func_8008E37C(PlayerState*);
 s32 func_8008E39C(PlayerState*);
 s32 func_8008E3E8(PlayerState*);
-// func_8008E40C
-s32 func_8008E430(void);
+s32 func_8008E40C(PlayerState*);
+s32 func_8008E430(PlayerState*);
 // func_8008E454
 
 #endif // __CORE2_1E66990_H__
