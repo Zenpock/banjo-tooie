@@ -135,6 +135,21 @@ typedef struct ba_dust_s {
     u8 unkA;
     u8 unkB;
 } BaDust;
+typedef struct ba_cursor_s {
+    f32 unk0;
+    f32 unk4;
+    u8 unk8;
+    u8 unk9;
+    u8 unkA;
+    u8 unkB;
+    f32 unkC;
+    s8 unk10;
+    s8 unk11;
+    s8 unk12;
+    s8 unk13;
+    s32 unk14;
+    f32 unk18;
+} BaCursor;
 typedef struct ba_unknown_6C_s {
 	f32 unk0;
 	s32 unk4;
@@ -157,20 +172,34 @@ typedef struct ba_unknown_8C_s {
     u8 unkE;
 } BaUnknown8C;
 
+typedef struct ba_hold_s {
+    f32 unk0;
+    f32 unk4;
+    s32 unk8;
+    u8 unkC;
+    s8 unkD;
+    s8 unkE;
+    s8 unkF;
+    s8 unk10;
+    s8 unk11;
+    s8 unk12;
+    s8 unk13;
+    s32 unk14;
+    f32 unk18;
+} BaHold;
+
 typedef struct ba_unknown_C8_s {
-    u8 pad0[0x8];
-    f32 unk8;
-
-    u8 padC[0x14 - 0xC];
-    f32 unk14;
-
-    u8 pad18[0x28 - 0x18];
+    s32 unk0;
+    f32 unk4[3];
+    f32 unk10[3];
+    f32 unk1C[3];
     f32 unk28[3];
-    f32 unk34;
-    f32 unk38;
-
-    u8 pad3C[0xC8 - 0x3C];
-    struct ba_unknown_C8_s* unkC8;
+    f32 unk34[3];
+    f32 unk40[3];
+    f32 unk4C[3];
+    u8 pad58[0x54];
+    f32 unkAC[3];
+    f32 unkB8[3];
 } ba_unknown_C8_s;
 
 typedef struct ba_unknown_134_s {
@@ -191,6 +220,27 @@ typedef struct ba_deathmatch_s {
     u8 unk22;
     u8 unk23;
 } BaDeathmatch;
+
+typedef struct bs_kazfly_s {
+    f32 unk0;
+    f32 unk4[3];
+    f32 unk10[3];
+    u8 unk1C;
+    u8 pad1D[0xF];
+    f32 unk2C[3];
+    f32 unk38[3];
+    f32 unk44[3];
+    f32 unk50;
+    u8 pad54[0x8C];
+    s16 unkE0;
+    s16 unkE2;
+    s16 unkE4;
+    s16 unkE6;
+    s16 unkE8;
+    s16 unkEA;
+    u8 padEC[0x120];
+    f32 unk20C;
+} BsKazFly;
 
 typedef struct player_state_s {
     /* 0x00 */ struct ba_alarm_s *alarm;
@@ -218,14 +268,14 @@ typedef struct player_state_s {
     /* 0x5C */ BaDust* dust;
     u8 pad60[0x4];
     u8* unk64;
-	u8 pad68[0x4];
+    /* 0x68 */ BaCursor* cursor;
 	struct ba_unknown_6C_s* unk6C;
 	u8 pad70[0x10];
     /* 0x80 */ struct ba_flag_s *flag;
     u8 pad84[0x8];
     /* 0x8C */ struct ba_unknown_8C_s* unk8C;
     u8 pad90[0xC];
-    /* 0x9C */ struct ba_unk_9C* unk9C;
+    /* 0x9C */ BaHold* hold;
     u8 padA0[0x4];
     /* 0xA4 */ struct ba_input_s *input;
     u8 padA8[0x18];

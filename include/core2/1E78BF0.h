@@ -1,6 +1,7 @@
 #ifndef __CORE2_1E78BF0_H__
 #define __CORE2_1E78BF0_H__
 
+#include "physicstypes.h"
 #include "ba/playerstate.h"
 #include "ba/anim.h"
 #include "ba/data.h"

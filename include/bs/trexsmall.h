@@ -4,6 +4,7 @@
 #include "common.h"
 #include "buttons.h"
 #include "ba/key.h"
+#include "ba/playerstate.h"
 
 
 #endif

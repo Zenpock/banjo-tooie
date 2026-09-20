@@ -4,10 +4,11 @@
 
 #include <ultra64.h>
 #include "common.h"
+#include "ba/playerstate.h"
 
 s32 bamoveledge_entrypoint_0();
-void bamoveledge_entrypoint_1(s32 arg0);
-void bamoveledge_entrypoint_2(s32 arg0);
-// bamoveledge_entrypoint_3
+void _bamoveledge_entrypoint_1(PlayerState*);
+void _bamoveledge_entrypoint_2(PlayerState*);
+void _bamoveledge_entrypoint_3(PlayerState*);
 
 #endif // __BA_MOVE_LEDGE__

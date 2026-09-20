@@ -18,8 +18,8 @@ s32 bafpctrl_entrypoint_0(void);
 // func_808008CC_bafpctrl
 // func_80800904_bafpctrl
 // func_80800970_bafpctrl
-// bafpctrl_entrypoint_1
-// bafpctrl_entrypoint_2
+s32 _bafpctrl_entrypoint_1(PlayerState*);
+s32 _bafpctrl_entrypoint_2(PlayerState*);
 f32 _bafpctrl_entrypoint_3(PlayerState*);
 s32 _bafpctrl_entrypoint_4(PlayerState *self);
 s32 _bafpctrl_entrypoint_5(PlayerState *self);

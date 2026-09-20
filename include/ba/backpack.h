@@ -26,7 +26,7 @@ void _babackpack_entrypoint_2(PlayerState *self);
 void _babackpack_entrypoint_3(PlayerState *self, f32 *position, f32 *arg2, s32 arg3, f32 *arg4);
 s32 _babackpack_get_state(PlayerState *self);
 void _babackpack_entrypoint_5(PlayerState *self, s32 arg1, s32 arg2);
-void _babackpack_entrypoint_6(PlayerState *self, s32 arg1, s32 arg2);
+void _babackpack_entrypoint_6(PlayerState *self, f32* arg1, s32 arg2);
 f32 _babackpack_get_scale(PlayerState *self);
 void _babackpack_entrypoint_8(PlayerState *self);
 void _babackpack_entrypoint_9(PlayerState *self);
