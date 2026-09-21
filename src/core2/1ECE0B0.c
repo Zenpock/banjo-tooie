@@ -595,7 +595,7 @@ f32 func_800F5B64(s32 arg0, f32* arg1) {
     return sp24;
 }
 
-void func_800F5BC4(s32 arg0)
+void func_800F5BC4(s32 arg0,f32* arg1)
 {
     func_80092B8C(D_80135490.unk0[arg0]);
 }

@@ -71,9 +71,9 @@ int func_8008DEA4(PlayerState* arg0, f32* arg1, f32 arg2);
 s32 func_8008DF18(PlayerState *);
 s32 func_8008DF8C(PlayerState *, s32);
 s32 player_isStable(PlayerState*);
-s32 func_8008E0C8(s32);
-s32 func_8008E0E8(PlayerState *);
-s32 func_8008E124(PlayerState *);
+s32 func_8008E0C8(PlayerState*);
+s32 func_8008E0E8(PlayerState*);
+s32 func_8008E124(PlayerState*);
 s32 func_8008E148(PlayerState*);
 s32 func_8008E1A0(PlayerState*);
 // func_8008E1C4

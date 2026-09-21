@@ -1,5 +1,9 @@
 #include "bs/climb.h"
 
+extern s32 D_808008FC_bsclimb[];
+extern s32 D_8080090C_bsclimb[];
+extern s32 D_8080091C_bsclimb[];
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/climb/func_80800000_bsclimb.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/climb/func_8080005C_bsclimb.s")
@@ -16,9 +20,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/climb/bsclimb_entrypoint_1.s")
 
-void bsclimb_entrypoint_2()
+void bsclimb_entrypoint_2(PlayerState* self)
 {
-    func_808001D0_bsclimb();
+    func_808001D0_bsclimb(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/climb/bsclimb_entrypoint_3.s")
@@ -27,9 +31,9 @@ void bsclimb_entrypoint_2()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/climb/bsclimb_entrypoint_5.s")
 
-void bsclimb_entrypoint_6()
+void bsclimb_entrypoint_6(PlayerState* self)
 {
-    func_808001D0_bsclimb();
+    func_808001D0_bsclimb(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/climb/bsclimb_entrypoint_7.s")
@@ -38,9 +42,9 @@ void bsclimb_entrypoint_6()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/climb/bsclimb_entrypoint_9.s")
 
-void bsclimb_entrypoint_10()
+void bsclimb_entrypoint_10(PlayerState* self)
 {
-    func_808001D0_bsclimb();
+    func_808001D0_bsclimb(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/climb/bsclimb_entrypoint_11.s")

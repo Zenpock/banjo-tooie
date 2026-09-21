@@ -284,7 +284,7 @@ int func_8008DEA4(PlayerState* arg0, f32* arg1, f32 arg2)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/player_isStable.s")
 
-s32 func_8008E0C8(s32 arg0)
+s32 func_8008E0C8(PlayerState* arg0)
 {
     return _bapackctrl_entrypoint_1(arg0);
 }

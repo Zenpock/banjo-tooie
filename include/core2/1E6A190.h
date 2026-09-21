@@ -11,8 +11,15 @@ typedef struct ba_unknown_20_s {
     u8 unk9;
 } BaUnknown20;
 
-void func_800909CC(PlayerState *);
-void func_800909EC(PlayerState*);
-void func_80090A2C(PlayerState*);
+s32 func_800908A0(void);
+f32* func_800908A8(s32);
+void func_800908F0(PlayerState*, s32);
+void func_80090938(PlayerState*);
+void func_8009097C(PlayerState*, s32 );
+void func_800909CC(PlayerState* );
+void func_800909EC(PlayerState* );
+void func_80090A0C(PlayerState* );
+void func_80090A2C(PlayerState* );
+
 
 #endif // __CORE2_1E6A190_H__
