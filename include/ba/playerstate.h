@@ -226,12 +226,28 @@ typedef struct bs_kazfly_s {
     f32 unk4[3];
     f32 unk10[3];
     u8 unk1C;
-    u8 pad1D[0xF];
+} BsKazFly;
+
+typedef struct bs_firstp_s {
+    s32 unk0;
+    f32 unk4[3];
+    f32 unk10[3];
+    f32 unk1C;
+    f32 unk20;
+    f32 unk24;
+    s32 unk28;
     f32 unk2C[3];
     f32 unk38[3];
     f32 unk44[3];
     f32 unk50;
-    u8 pad54[0x8C];
+    f32 unk54;
+    f32 unk58;
+    f32 unk5C;
+    f32 unk60;
+    u8 pad64[0x28];
+    s32 unk8C;
+    f32 unk90;
+    u8 pad94[0x4C];
     s16 unkE0;
     s16 unkE2;
     s16 unkE4;
@@ -240,7 +256,7 @@ typedef struct bs_kazfly_s {
     s16 unkEA;
     u8 padEC[0x120];
     f32 unk20C;
-} BsKazFly;
+} BsFirstP;
 
 typedef struct player_state_s {
     /* 0x00 */ struct ba_alarm_s *alarm;
@@ -323,6 +339,9 @@ typedef struct player_state_s {
     s32 unk17C;
     s32 unk180;
     s32 unk184;
-    /* 0x188 */ struct bs_kazfly_s *kazfly;
+    union var188 {
+        /* 0x188 */ BsKazFly* kazfly;
+        /* 0x188 */ BsFirstP* firstp;
+    };
 } PlayerState;
 #endif
