@@ -4,6 +4,7 @@
 #include "common.h"
 #include "ba/playerstate.h"
 
+f32 func_80094E98(PlayerState*);
 void func_80094F14(PlayerState*, s32, s32, f32);
 
 #endif

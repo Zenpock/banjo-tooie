@@ -275,7 +275,62 @@ BanjoStateId func_808007E0_bsbtrot(PlayerState* self, BanjoStateId arg1)
     return arg1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/func_808008D0_bsbtrot.s")
+void func_808008D0_bsbtrot(PlayerState* arg0)
+{
+	AnimCtrl* sp24;
+	f32 sp20;
+	f32 sp1C;
+	s32 sp18;
+	sp24 = baanim_getAnimCtrlPtr(arg0);
+	sp18 = 1;
+	sp20 = 0.7781f;
+	sp1C = 0.2781f;
+	switch (_bashoes_entrypoint_1(arg0))
+	{
+	case 3:
+		_bashoes_entrypoint_20(arg0);
+		break;
+	case 4:
+		sp18 = 0;
+		break;
+	case 5:
+		sp1C = 0.6583f;
+		sp20 = 0.1783f;
+		if (anctrl_isAt(sp24, 0.6583f) != 0)
+		{
+			_bashoes_entrypoint_19(arg0);
+		}
+		if (anctrl_isAt(sp24, 0.1783f) != 0)
+		{
+			_bashoes_entrypoint_18(arg0);
+		}
+		break;
+	default:
+		if ((anctrl_isAt(sp24, 0.2115f) != 0) || (anctrl_isAt(sp24, 0.7115f) != 0))
+		{
+			_badust_entrypoint_1(arg0);
+		}
+		break;
+	}
+	if (anctrl_isAt(sp24, func_800F13C4(sp1C + 0.2f, 1.0f)) != 0)
+	{
+		func_808000DC_bsbtrot(arg0, 1);
+	}
+	if (anctrl_isAt(sp24, func_800F13C4(sp20 + 0.2f, 1.0f)) != 0)
+	{
+		func_808000DC_bsbtrot(arg0, 0);
+	}
+	if (sp18 != 0)
+	{
+		func_800A2CE8(arg0, sp1C, 4);
+		func_800A2CE8(arg0, sp20, 3);
+	}
+	else
+	{
+		func_800A2D2C(arg0, sp1C, 4);
+		func_800A2D2C(arg0, sp20, 3);
+	}
+}
 
 void bsbtrot_entrypoint_0(PlayerState* self) {
     func_80800538_bsbtrot(self);

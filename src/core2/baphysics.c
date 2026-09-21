@@ -2,7 +2,9 @@
 
 extern f32 D_80117EF0;
 extern f32 D_80117EF4;
-extern f32 D_801252A0[3];
+extern f32 D_801252A0;
+extern f32 D_801252A4;
+extern f32 D_801252A8;
 
 s32 func_8009AD70() 
 {
@@ -17,19 +19,13 @@ void func_8009AD88(s32 arg0)
 {
 }
 
-void func_8009AD90(PlayerState* self)
+void func_8009AD90(PlayerState* arg0)
 {
-    s32 var_v0;
-    self->unkC4[0] = 0;
-    self->unkC4[1] = 0;
-    self->unkC4[2] = 0;
-    for (var_v0 = 3; var_v0 != 0xF; var_v0 += 4)
-    {
-        self->unkC4[var_v0] = 0;
-        self->unkC4[var_v0 + 1] = 0;
-        self->unkC4[var_v0 + 2] = 0;
-        self->unkC4[var_v0 + 3] = 0;
-    }
+	s32 var_v0;
+	for (var_v0 = 0; var_v0 != 0xF; var_v0++)
+	{
+		arg0->unkC4[var_v0] = 0;
+	}
 }
 
 void func_8009ADF0(PlayerState* self, s32 arg1, s32 arg2) {
@@ -41,25 +37,81 @@ s32 func_8009AE00()
     return 0xC4;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009AE08.s")
+void func_8009AE08(PlayerState* arg0) {
+	f32 sp7C[3];
+	f32 sp70[3];
+	f32 sp64[3];
+	f32 sp58[3];
+	f32 sp4C[3];
+	f32 sp40[3];
+	f32 sp3C;
+	f32 sp38;
+	f32 var_f12;
+
+	func_800EEB9C(arg0->unkC8->unk1C, arg0->unkC8->unk40[0], arg0->unkC8->unk4C[1] * arg0->unkC8->unk34[2]);
+	sp64[0] = arg0->unkC8->unk10[0];
+	sp64[1] = 0.0f;
+	sp64[2] = arg0->unkC8->unk10[2];
+	func_800EE7F8(sp58, arg0->unkC8->unk1C);
+	sp58[1] = 0.0f;
+	if (func_80096518(arg0) != 0)
+	{
+		func_800963C0(arg0, sp4C);
+		func_800EF410(sp40, sp58);
+		sp3C = func_800EEAA4(sp40, sp4C);
+		sp38 = func_800A3378(arg0);
+		if (sp3C != 0.0f)
+		{
+			if (sp3C < 0.0f)
+			{
+				if (func_8008E1C4(arg0) != 0)
+				{
+					sp38 = func_800F10B4(sp38, 0.0f, 1.0f, sp3C * 0.5f, -1.0f);
+				}
+				else
+				{
+					sp38 = sp3C * 0.5f;
+				}
+				func_800EF334(sp58, 1.0f + sp38);
+			}
+			else
+			{
+				func_800EF334(sp58, (0, 1.0f) + sp3C * D_801252A0);
+			}
+		}
+	}
+	func_800EFA20(sp7C, sp58, func_80094E98(arg0));
+	func_800EFA20(sp70, sp64, func_80094E98(arg0));
+	func_800EF3DC(sp7C, sp70);
+	func_800EF334(sp7C, time_getDelta() * 30.0f);
+	func_800EF04C(arg0->unkC8->unk10, sp7C);
+	arg0->unkC8->unk10[1] += (arg0->unkC8->unk34[0] * time_getDelta());
+	if (arg0->unkC8->unk10[1] < arg0->unkC8->unk34[1])
+	{
+		arg0->unkC8->unk10[1] = arg0->unkC8->unk34[1];
+	}
+	func_800EFA20(arg0->unkC8->unk28, arg0->unkC8->unk10, time_getDelta());
+	func_800EF04C(arg0->unkC8->unk4, arg0->unkC8->unk28);
+	func_800F2168(arg0->unkC8->unk10, 0.0001f);
+}
 
 void func_8009B08C(PlayerState* arg0) {
-    f32 sp2C[3];
-    f32 sp28;
+	f32 sp2C[3];
+	f32 sp28;
 
-    sp28 = time_getDelta();
-    func_800EFB24(sp2C, arg0->unkC8->unk1C, arg0->unkC8->unk10);
-    func_800EF334(sp2C, arg0->unkC8->unk40[1] * sp28);
-    if (((sp2C[2] * sp2C[2]) + ((sp2C[0] * sp2C[0]) + (sp2C[1] * sp2C[1]))) < D_801252A0[1])
-    {
-        func_800EE7F8(arg0->unkC8->unk10, arg0->unkC8->unk1C);
-    }
-    else
-    {
-        func_800EF04C(arg0->unkC8->unk10, &sp2C);
-    }
-    func_800EFA20(arg0->unkC8->unk28, arg0->unkC8->unk10, sp28);
-    func_800EF04C(arg0->unkC8->unk4, arg0->unkC8->unk28);
+	sp28 = time_getDelta();
+	func_800EFB24(sp2C, arg0->unkC8->unk1C, arg0->unkC8->unk10);
+	func_800EF334(sp2C, arg0->unkC8->unk40[1] * sp28);
+	if (((SQ(sp2C[0]) + SQ(sp2C[1]) + SQ(sp2C[2]))) < D_801252A4)
+	{
+		func_800EE7F8(arg0->unkC8->unk10, arg0->unkC8->unk1C);
+	}
+	else
+	{
+		func_800EF04C(arg0->unkC8->unk10, sp2C);
+	}
+	func_800EFA20(arg0->unkC8->unk28, arg0->unkC8->unk10, sp28);
+	func_800EF04C(arg0->unkC8->unk4, arg0->unkC8->unk28);
 }
 
 void func_8009B170(PlayerState* arg0)
@@ -119,7 +171,7 @@ void func_8009B414(PlayerState* arg0)
 void func_8009B450(PlayerState* arg0)
 {
     arg0->unkC8->unk4C[0] += time_getDelta();
-    arg0->unkC8->unk4[1] = arg0->unkC8->unk40[2] + (func_80013970(func_800F0F9C(arg0->unkC8->unk4C[0], D_801252A0[2]) * 360.0f) * 5.0f);
+    arg0->unkC8->unk4[1] = arg0->unkC8->unk40[2] + (func_80013970(func_800F0F9C(arg0->unkC8->unk4C[0], D_801252A8) * 360.0f) * 5.0f);
 }
 
 void func_8009B4D0(PlayerState* self, f32 arg1[3]) 
@@ -218,7 +270,8 @@ f32 func_8009BB0C(PlayerState* self) {
 f32 func_8009BB18(PlayerState* self) {
     return self->unkC8->unk40[0];
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009BB24.s")
+
+void func_8009BB24(PlayerState* self, f32* arg1) { func_800EE7F8(arg1, self->unkC8->unk10); }
 
 f32 baphysics_get_vertical_velocity(PlayerState* self) {
     return self->unkC8->unk10[1];

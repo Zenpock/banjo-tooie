@@ -76,9 +76,9 @@ s32 func_8008E0E8(PlayerState*);
 s32 func_8008E124(PlayerState*);
 s32 func_8008E148(PlayerState*);
 s32 func_8008E1A0(PlayerState*);
-// func_8008E1C4
-s32 func_8008E23C(PlayerState *);
+s32 func_8008E1C4(PlayerState*);
 //Are we Solo Banjo
+s32 func_8008E23C(PlayerState *);
 s32 func_8008E260(PlayerState*);
 // func_8008E2AC
 s32 func_8008E300(PlayerState*); 

@@ -62,7 +62,28 @@ void func_80800170_baeggaim(f32* arg0, f32* arg1, f32 arg2)
     arg1[1] = func_800F1344(var_f18, 0.0f, 32.5f, 0, arg2);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/aim/func_80800264_baeggaim.s")
+void func_80800264_baeggaim(PlayerState* arg0, f32* arg1)
+{
+	f32 temp;
+	f32 gameSpeed;
+	f32 sp24[3];
+	f32 sp1C[2];
+	PlayerState* temp_v0;
+
+	temp_v0 = func_800A4CA8(arg0);
+	_ncba1p_entrypoint_8(temp_v0, sp24);
+	temp = _bafpctrl_entrypoint_3(arg0) * 70.0f;
+	func_80800170_baeggaim(arg1, sp1C, temp);
+	gameSpeed = time_getDelta();
+	sp24[1] += sp1C[0] * gameSpeed;
+	if (baflag_isTrue(arg0, 0x3A) == 0)
+	{
+		sp24[0] += sp1C[1] * gameSpeed;
+		sp24[0] = _bsdronelook_entrypoint_2(sp24[0]);
+	}
+	sp24[2] = 0.0f;
+	_ncba1p_entrypoint_7(temp_v0, sp24);
+}
 
 void baeggaim_entrypoint_1(PlayerState* self)
 {

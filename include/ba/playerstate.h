@@ -231,7 +231,8 @@ typedef struct bs_kazfly_s {
 typedef struct bs_firstp_s {
     s32 unk0;
     f32 unk4[3];
-    f32 unk10[3];
+    f32 unk10[2];
+	f32 unk18;
     f32 unk1C;
     f32 unk20;
     f32 unk24;

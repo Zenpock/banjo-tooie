@@ -299,7 +299,7 @@ void func_800EF410(f32* arg0, f32* arg1)
 {
     f32 temp_f14;
 
-    temp_f14 = arg1[0] * arg1[0] + arg1[1] * arg1[1] + arg1[2] * arg1[2];
+    temp_f14 = SQ(arg1[0]) + SQ(arg1[1]) + SQ(arg1[2]);
     if (temp_f14 != 0.0f)
     {
         func_800EFA20(arg0, arg1, 1.0f / sqrtf(temp_f14));

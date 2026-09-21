@@ -1,17 +1,22 @@
 #include "ba/egg/cursor.h"
 
+typedef struct {
+	f32 unk0;
+	f32 unk4;
+} Unk80800690;
+
 void baeggcursor_entrypoint_10(PlayerState*, f32, f32);
 void baeggcursor_entrypoint_7(PlayerState*, s32);
-extern f32* D_80800690_baeggcursor[];
+extern Unk80800690* D_80800690_baeggcursor[];
 
-f32* func_80800000_baeggcursor(s32 arg0)
+Unk80800690* func_80800000_baeggcursor(s32 arg0)
 {
-    return D_80800690_baeggcursor[arg0];
+	return D_80800690_baeggcursor[arg0];
 }
 
 s32 baeggcursor_entrypoint_0() 
 {
-    return 0x1C;
+    return sizeof(BaCursor);
 }
 
 void baeggcursor_entrypoint_1(PlayerState* self)
@@ -142,4 +147,53 @@ void baeggcursor_entrypoint_10(PlayerState* self, f32 arg1, f32 arg2) {
     self->cursor->unk4 = arg2;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/cursor/baeggcursor_entrypoint_11.s")
+void baeggcursor_entrypoint_11(PlayerState* self)
+{
+	f32 var_f0;
+	f32 sp30;
+	s32 index;
+	Unk80800690* temp_v0_2;
+
+	switch (self->cursor->unk9)
+	{
+	case 3:
+		if (self->cursor->unkC < 0.1f)
+		{
+			var_f0 = func_800F10B4(self->cursor->unkC, 0.0f, 0.1f, 1.0f, 0.8f);
+		}
+		else
+		{
+			var_f0 = func_800F10B4(self->cursor->unkC, 0.1f, 0.3f, 0.8f, 16.0f);
+		}
+		self->cursor->unk18 = var_f0;
+		self->cursor->unk14 = func_800F10B4(self->cursor->unkC, 0.00f, 0.3f, 120.0f, 0.0f);
+		if (func_800D9078(&self->cursor->unkC) != 0) {
+			baeggcursor_entrypoint_7(self, 2U);
+			return;
+		}
+		return;
+	case 4:
+		self->cursor->unk18 = func_800F10B4(self->cursor->unkC, 0.00f, 0.2f, 16.0f, 1.0f);
+		self->cursor->unk14 = func_800F10B4(self->cursor->unkC, 0.0f, 0.2f, 0/*.0f*/, 120.0f);
+		if (func_800D9078(&self->cursor->unkC) != 0) {
+			baeggcursor_entrypoint_7(self, 1U);
+			return;
+		}
+		break;
+	case 5:
+		sp30 = self->cursor->unkC;
+		temp_v0_2 = func_80800000_baeggcursor((u8)self->cursor->unk10);
+		index = 0;
+		while (temp_v0_2[index].unk0 <= sp30) {
+			if (temp_v0_2[index].unk4 == 0/*.0f*/)
+			{
+				baeggcursor_entrypoint_7(self, 2);
+				break;
+			}
+			index++;
+		}
+		self->cursor->unk18 = func_800F10B4(sp30, temp_v0_2[index - 1].unk0, temp_v0_2[index].unk0, temp_v0_2[index - 1].unk4, temp_v0_2[index].unk4);
+		func_800D91B8(&self->cursor->unkC);
+		break;
+	}
+}

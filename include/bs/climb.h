@@ -15,6 +15,7 @@
 #include "core2/1E691A0.h"
 #include "core2/1E6EC70.h"
 #include "core2/1E6F080.h"
+#include "core2/1E71B00.h"
 #include "core2/1E72EA0.h"
 #include "core2/1E75920.h"
 #include "core2/1E76500.h"

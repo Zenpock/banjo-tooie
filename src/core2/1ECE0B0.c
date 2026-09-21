@@ -371,7 +371,7 @@ s32 func_800F543C(s32 arg0)
     return 1 << (func_800A3274(D_80135490.unk0[arg0]) + 0x1F);
 }
 
-void func_800F5470(s32 arg0)
+void func_800F5470(s32 arg0,f32* arg1)
 {
     func_80098590(D_80135490.unk0[arg0]);
 }

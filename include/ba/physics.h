@@ -12,10 +12,15 @@
 #include "ba/move/thrust.h"
 #include "bs/firstp.h"
 #include "ba/stick.h"
+#include "core2/1E66990.h"
+#include "core2/1E6E760.h"
+#include "core2/1E6F080.h"
+#include "core2/1E71B00.h"
 #include "core2/1E75920.h"
 #include "core2/1E7BFA0.h"
 #include "core2/1EB2840.h"
 #include "core2/1EC8070.h"
+#include "core2/1ECB9F0.h"
 
 void baphysics_set_type(PlayerState *, BaPhysicsType);
 void baphysics_set_vertical_velocity(PlayerState *, f32);
@@ -43,6 +48,7 @@ void func_8009B9F0(PlayerState *, f32);
 void func_8009BA9C(PlayerState *, f32 *);
 f32 func_8009BADC(PlayerState *);
 f32 func_8009BAE8(PlayerState *);
+f32 func_8009BB0C(PlayerState*);
 f32 func_8009BB18(PlayerState*);
 void func_8009BB24(PlayerState *, f32[3]);
 f32 func_8009BB5C(PlayerState *);

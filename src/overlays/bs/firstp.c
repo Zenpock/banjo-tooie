@@ -1,10 +1,12 @@
 #include "bs/firstp.h"
 
+extern f32 D_8080A5B0_bsfirstp[][4];
 extern s32 D_8080A890_bsfirstp[];
 extern s32 D_8080B5C0_bsfirstp[];
 
 void func_80800858_bsfirstp(PlayerState*, s32);
 s32 func_80800864_bsfirstp(PlayerState*);
+s32 func_80800900_bsfirstp(PlayerState*,f32);
 void func_80800F14_bsfirstp(PlayerState*);
 void func_80801000_bsfirstp(PlayerState*);
 
@@ -259,10 +261,39 @@ void func_80800888_bsfirstp(PlayerState* arg0, s32 arg1)
 	func_80800900_bsfirstp(arg0, 1.0f);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808008B0_bsfirstp.s")
+void func_808008B0_bsfirstp(PlayerState* arg0)
+{
+	BsFirstP* temp = arg0->firstp;
+	f32 var_f2 = temp->unk90 - func_800D9004() * 5.5f;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800900_bsfirstp.s")
+	func_80800900_bsfirstp(arg0, var_f2);
+}
 
+s32 func_80800900_bsfirstp(PlayerState* arg0, f32 arg1) {
+	s32 var_a0;
+	BsFirstP* temp_v1;
+
+	temp_v1 = arg0->firstp;
+
+	if (arg1 <= 0.0f)
+	{
+		var_a0 = 0;
+		arg1 = 0.0f;
+	}
+	else
+	{
+		var_a0 = 1;
+	}
+
+	temp_v1->unk90 = arg1;
+
+	temp_v1->unk18 = D_8080A5B0_bsfirstp[temp_v1->unk8C][0] * arg1;
+	temp_v1->unk1C = D_8080A5B0_bsfirstp[temp_v1->unk8C][1] * arg1;
+	temp_v1->unk20 = D_8080A5B0_bsfirstp[temp_v1->unk8C][2] * arg1;
+	temp_v1->unk24 = D_8080A5B0_bsfirstp[temp_v1->unk8C][3] * arg1;
+
+	return var_a0;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800978_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800A18_bsfirstp.s")
