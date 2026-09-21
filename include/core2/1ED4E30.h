@@ -21,6 +21,7 @@ void func_800FC63C(u32, u32);
 void func_800FC660(s32);
 void func_800FC6B0(u32);
 void func_800FC74C(u32);
+void func_800FC7C4();
 void func_800FC81C();
 void func_800FC9B4(s32, f32);
 void func_800FCA90(u32);

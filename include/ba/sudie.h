@@ -8,8 +8,10 @@ extern void _basudie_entrypoint_0(PlayerState *self);
 extern void _basudie_entrypoint_1(PlayerState *self);
 
 void _basudie_entrypoint_2(PlayerState *self, f32, f32, f32);
+void _basudie_entrypoint_4(PlayerState*, f32, f32, f32, f32, f32);
 void _basudie_entrypoint_5(PlayerState *self);
 void _basudie_entrypoint_6(PlayerState *self, s32);
+s32 _basudie_entrypoint_7(PlayerState*);
 
 extern void _basudie_entrypoint_12(PlayerState *self);
 

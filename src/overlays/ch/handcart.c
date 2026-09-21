@@ -1613,8 +1613,6 @@ void func_80803218_chhandcart(Actor* arg0, Actor* arg1)
     }
 }
 
-
-
 s32 func_80803448_chhandcart(Actor* arg0)
 {
     u32 sp48;
