@@ -127,6 +127,14 @@ typedef struct ba_unknown_50_s {
     f32 unkC8;
     MtxF unkCC;
 } BaUnknown50;
+typedef struct ba_unk54_s {
+    u8 pad0[0x30];
+    u8 unk30;
+    u8 unk31;
+    u8 unk32;
+    u8 unk33;
+    f32 unk34[3];
+} BaUnknown54;
 typedef struct ba_dust_s {
     s32 unk0;
     s32 unk4;
@@ -281,7 +289,8 @@ typedef struct player_state_s {
     u8 unk48;
     u8 pad49[0x7];
     struct ba_unknown_50_s* unk50;
-    u8 pad54[0x8];
+    /* 0x54 */  BaUnknown54* unk54;
+    u8 pad58[0x4];
     /* 0x5C */ BaDust* dust;
     u8 pad60[0x4];
     u8* unk64;
@@ -344,5 +353,8 @@ typedef struct player_state_s {
         /* 0x188 */ BsKazFly* kazfly;
         /* 0x188 */ BsFirstP* firstp;
     };
+    s32 unk18C;
+    u8 unk190;
+    u8 unk191;
 } PlayerState;
 #endif

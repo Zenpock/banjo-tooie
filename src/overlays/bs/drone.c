@@ -11,12 +11,12 @@ typedef struct unkbsdrone {
 } UNKBSDRONE;
 extern UNKBSDRONE D_80800180_bsdrone[];
 
-s32 func_80800000_bsdrone(PlayerState* arg0)
+s32 func_80800000_bsdrone(PlayerState* self)
 {
     s32 temp_v0;
     s32 var_a1;
 
-    temp_v0 = _badrone_entrypoint_3(arg0);
+    temp_v0 = _badrone_entrypoint_3(self);
     var_a1 = 0;
     while (D_80800180_bsdrone[var_a1].unk0 != 0)
     {
@@ -27,28 +27,28 @@ s32 func_80800000_bsdrone(PlayerState* arg0)
     return 0;
 }
 
-void bsdrone_entrypoint_0(PlayerState* arg0)
+void bsdrone_entrypoint_0(PlayerState* self)
 {
-    _badrone_entrypoint_4(arg0);
-    D_80800180_bsdrone[func_80800000_bsdrone(arg0)].unk4(arg0);
+    _badrone_entrypoint_4(self);
+    D_80800180_bsdrone[func_80800000_bsdrone(self)].unk4(self);
 }
 
-void bsdrone_entrypoint_1(PlayerState* arg0)
+void bsdrone_entrypoint_1(PlayerState* self)
 {
-    D_80800180_bsdrone[func_80800000_bsdrone(arg0)].unk8(arg0);
+    D_80800180_bsdrone[func_80800000_bsdrone(self)].unk8(self);
 }
 
-void bsdrone_entrypoint_2(PlayerState* arg0)
+void bsdrone_entrypoint_2(PlayerState* self)
 {
-    D_80800180_bsdrone[func_80800000_bsdrone(arg0)].unkC(arg0);
+    D_80800180_bsdrone[func_80800000_bsdrone(self)].unkC(self);
 }
 
-void bsdrone_entrypoint_3(PlayerState* arg0)
+void bsdrone_entrypoint_3(PlayerState* self)
 {
     void* (*temp_v1)(PlayerState*);
 
-    temp_v1 = D_80800180_bsdrone[func_80800000_bsdrone(arg0)].unk10;
+    temp_v1 = D_80800180_bsdrone[func_80800000_bsdrone(self)].unk10;
     if (temp_v1 != NULL) {
-        temp_v1(arg0);
+        temp_v1(self);
     }
 }

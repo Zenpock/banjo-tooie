@@ -37,6 +37,6 @@ void _bafpctrl_entrypoint_14(PlayerState *self, s32);
 void _bafpctrl_entrypoint_16(PlayerState*, s32); 
 void _bafpctrl_entrypoint_17(PlayerState *self);
 void _bafpctrl_entrypoint_18(PlayerState*, s32);
-// bafpctrl_entrypoint_19
+void _bafpctrl_entrypoint_19(PlayerState*);
 
 #endif // __BA_FPCONTROL_H__
