@@ -63,7 +63,7 @@ void bsdronebitten_entrypoint_3(PlayerState* self) {
 f32 bsdronebitten_entrypoint_4(PlayerState* self, f32 arg1) {
     f32 temp_f2;
 
-    switch (self->unk191)
+    switch (self->unk190.bytes[1])
     {
     case 1:
         return arg1;
@@ -77,7 +77,7 @@ f32 bsdronebitten_entrypoint_4(PlayerState* self, f32 arg1) {
 
 void bsdronebitten_entrypoint_5(PlayerState* self, f32* arg1, f32 arg2)
 {
-    switch (self->unk191)
+    switch (self->unk190.bytes[1])
     {
     case 1:
         break;
@@ -104,9 +104,9 @@ void bsdronebitten_entrypoint_7(PlayerState* self) {
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_2_NORMAL);
     func_8009C128(self, sp28);
     sp3C = func_800EEAD4(sp28, self->unk54->unk34);
-    self->unk191 = self->unk54->unk30;
+    self->unk190.bytes[1] = self->unk54->unk30;
     _bamovegoto_entrypoint_0(self);
-    if (self->unk191 == 1)
+    if (self->unk190.bytes[1] == 1)
     {
         _bamovegoto_entrypoint_8(self, 2400.0f);
     }
@@ -121,7 +121,7 @@ void bsdronebitten_entrypoint_7(PlayerState* self) {
     func_800961A0(self, 1);
     func_8008E944(self);
     func_8009D9D4(self);
-    self->unk190 = 0;
+    self->unk190.bytes[0] = 0;
 }
 
 void bsdronebitten_entrypoint_8(PlayerState* self)
@@ -151,14 +151,14 @@ void func_808004C4_bsdronebitten(PlayerState* self, AssetId arg1, f32 arg2) {
     anctrl_setPlaybackType(temp_v0, 1);
     anctrl_setSmoothTransition(temp_v0, 0);
     anctrl_start(temp_v0);
-    self->unk190 = 1;
+	self->unk190.bytes[0] = 1;
 }
 
 void bsdronebitten_entrypoint_9(PlayerState* self) {
     BanjoStateId nextState;
 
     nextState = BS_STATE_0_INVALID;
-    switch (self->unk190)
+    switch (self->unk190.bytes[0])
     {
     case 0:
         if (_bamovegoto_entrypoint_4(self) != 0) {

@@ -147,8 +147,8 @@ typedef struct ba_unk54_s {
     u8 unk32;
     u8 unk33;
     f32 unk34[3];
-	s32 unk40;
-	s32 unk44;
+	f32 unk40;
+	f32 unk44;
 	s32 unk48;
 } BaUnknown54;
 typedef struct ba_dust_s {
@@ -370,7 +370,13 @@ typedef struct player_state_s {
         /* 0x188 */ BsFirstP* firstp;
     };
     s32 unk18C;
-    u8 unk190;
-    u8 unk191;
+	union {
+		f32 word;
+		u8 bytes[4];
+	} unk190;
+	union {
+		f32 word;
+		u8 bytes[4];
+	} unk194;
 } PlayerState;
 #endif

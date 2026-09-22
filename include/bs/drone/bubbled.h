@@ -4,15 +4,18 @@
 
 #include <ultra64.h>
 #include "common.h"
+#include "ba/anim.h"
+#include "ba/data.h"
+#include "ba/playerstate.h"
+#include "bs/state.h"
+#include "core2/1E72EA0.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
+#include "core2/1EB2840.h"
+#include "core2/1ECA640.h"
+#include "core2/1EDA900.h"
+#include "core2/anctrl.h"
 
-// func_80800000_bsdronebubbled
-// bsdronebubbled_entrypoint_0
-// bsdronebubbled_entrypoint_1
-// bsdronebubbled_entrypoint_2
-// bsdronebubbled_entrypoint_3
-void bsdronebubbled_entrypoint_4(s32 arg0);
-// bsdronebubbled_entrypoint_5
-void bsdronebubbled_entrypoint_6();
-// bsdronebubbled_entrypoint_7
 
 #endif // __BS_DRONE_BUBBLED__
