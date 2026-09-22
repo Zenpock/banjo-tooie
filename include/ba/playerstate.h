@@ -128,12 +128,28 @@ typedef struct ba_unknown_50_s {
     MtxF unkCC;
 } BaUnknown50;
 typedef struct ba_unk54_s {
-    u8 pad0[0x30];
+	u8 unk0;
+	u8 unk1;
+	u8 unk2;
+	u8 unk3;
+	u8 unk4;
+	u8 unk5;
+	u8 unk6;
+	u8 unk7;
+	f32 unk8;
+	f32 unkC;
+	f32 unk10[3];
+	void* (*unk1C)(s32,s32,s32);
+	s32 unk20;
+	f32 unk24[3];
     u8 unk30;
     u8 unk31;
     u8 unk32;
     u8 unk33;
     f32 unk34[3];
+	s32 unk40;
+	s32 unk44;
+	s32 unk48;
 } BaUnknown54;
 typedef struct ba_dust_s {
     s32 unk0;
