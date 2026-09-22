@@ -15,7 +15,54 @@ u8 func_80800000_bskazstill(PlayerState *self) {
     return D_808008A0_bskazstill[self->unk160.word++];
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/kaz/still/func_80800030_bskazstill.s")
+void func_80800030_bskazstill(PlayerState* self, s32 arg1)
+{
+
+    if (self->unk15C.word == 0)
+    {
+        self->unk160.word = 0;
+        self->unk164.word = 0;
+        func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
+        baphysics_set_target_horizontal_velocity(self, 0.0f);
+        func_800909CC(self);
+        bastick_func_8009F258(self);
+    }
+    self->unk15C.word = arg1;
+    switch (arg1)
+    {
+    case 0:
+        break;
+    case 1:
+        baanim_playForDuration_onceSmooth(self, ASSET_A4_ANIM_BSKAZSHOESSUCKSPLINE, 6.5f);
+        return;
+    case 2:
+        baanim_playForDuration_onceSmooth(self, 0xA5, 6.5f);
+        return;
+    case 3:
+        baanim_playForDuration_onceSmooth(self, 0xAC, 5.7f);
+        return;
+    case 4:
+        baanim_playForDuration_onceSmooth(self, 0xAD, 5.3f);
+        return;
+    case 5:
+        self->unk168.word = _bashoes_entrypoint_1(self);
+        switch (self->unk168.word)
+        {
+        case 3:
+            baanim_playForDuration_loopSmooth(self, ASSET_A4_ANIM_BSKAZSHOESSUCKSPLINE, 6.5f);
+            return;
+        case 4:
+            baanim_playForDuration_loopSmooth(self, 0x24E, 1.4f);
+            return;
+        case 5:
+            baanim_playForDuration_loopSmooth(self, 0x24B, 1.4f);
+        default:
+            return;
+        }
+        break;
+
+    }
+}
 
 BanjoStateId func_808001A4_bskazstill(PlayerState *self, BanjoStateId nextState) {
     s32 sp24;

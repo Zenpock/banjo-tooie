@@ -46,6 +46,7 @@ void bastick_reset(PlayerState *self);
 void bastick_func_8009F18C(PlayerState *self, s32 arg1);
 void bastick_func_8009F198(PlayerState *self, s32 arg1);
 s32 bastick_func_8009F1A4(PlayerState *self);
+void bastick_func_8009F258(PlayerState*);
 void bastick_setZoneMax(PlayerState *self, s32 zone_id , f32 value);
 void bastick_resetZones(PlayerState *self);
 void bastick_func_8009F2A4(PlayerState *self);
