@@ -80,7 +80,7 @@ void func_808002B8_bsmum(PlayerState *self, s32 arg1) {
     self->unk15C.word = arg1;
     switch (self->unk15C.word) {                                 
         case 0:
-            _basudie_entrypoint_6(self, arg1);
+            _basudie_entrypoint_6(self);
             return;
         case 1:
             self->unk16C = 250.0f;

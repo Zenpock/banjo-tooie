@@ -241,6 +241,7 @@ void func_800F8D80(s32, unkStruct800F88A0*);
 void func_800F8DD8();
 void func_800F8E08();
 void func_800F8EBC(s32);
+void func_800F90F8(s32);
 void func_800F9104(s32);
 void func_800F9110(s32);
 void func_800F911C(s32);

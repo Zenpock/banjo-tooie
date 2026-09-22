@@ -18,7 +18,7 @@
 
 void func_808004F8_bsvan(s32 arg0)
 {
-    _basudie_entrypoint_6();
+    _basudie_entrypoint_6(arg0);
     bsvan_entrypoint_0(arg0);
 }
 

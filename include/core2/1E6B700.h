@@ -7,4 +7,6 @@
 void func_80091E48(PlayerState*, s32);
 void func_80091E6C(PlayerState*);
 s32 func_80091E80(PlayerState*, s32);
+void func_80091EF0(PlayerState*);
+
 #endif 

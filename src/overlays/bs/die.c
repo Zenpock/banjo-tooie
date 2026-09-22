@@ -89,8 +89,8 @@ void bsdie_entrypoint_1(PlayerState* self)
     bs_setState(self, nextState);
 }
 
-void bsdie_entrypoint_2(PlayerState* self, s32 arg1) {
-    _basudie_entrypoint_6(self, arg1);
+void bsdie_entrypoint_2(PlayerState* self) {
+    _basudie_entrypoint_6(self);
     func_800A0CF4(self, 0);
     func_8009BF5C(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
@@ -165,8 +165,8 @@ void bsdie_entrypoint_5(PlayerState* self) {
     bs_setState(self, nextState);
 }
 
-void bsdie_entrypoint_6(PlayerState* self, s32 arg1) {
-    _basudie_entrypoint_6(self, arg1);
+void bsdie_entrypoint_6(PlayerState* self) {
+    _basudie_entrypoint_6(self);
     func_8009BF5C(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
     func_800A0CF4(self, 0);
@@ -240,8 +240,8 @@ void bsdie_entrypoint_9(PlayerState* self) {
     bs_setState(self, nextState);
 }
 
-void bsdie_entrypoint_10(PlayerState* self, s32 arg1) {
-    _basudie_entrypoint_6(self, arg1);
+void bsdie_entrypoint_10(PlayerState* self) {
+    _basudie_entrypoint_6(self);
     func_8009BF5C(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
 }
