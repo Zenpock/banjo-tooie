@@ -12,7 +12,7 @@ s32 func_800CA334();
 void func_800CA364(void*);
 void* func_800CA384(void*);
 // func_800CA3A4
-void func_800CA3F4(s32, s32, f32);
+void func_800CA3F4(f32*, f32*, f32);
 // func_800CA440
 // func_800CA510
 // func_800CA558

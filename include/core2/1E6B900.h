@@ -38,6 +38,8 @@
 #include "ch/baddiesetup.h"
 
 s32 func_80092258(PlayerState*);
+void func_80092744(PlayerState*, s32);
+void func_80092750(PlayerState*, s32, s32, s32, s32);
 void func_80092778(PlayerState*);
 void func_80092864(PlayerState *, f32);
 void func_80092880(PlayerState *, s32);

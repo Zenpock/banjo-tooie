@@ -7,6 +7,7 @@
 #include "core2/1ED8C80.h"
 #include "core2/1EDFED0.h"
 
+void func_80101038(f32*);
 f32 func_80101068();
 //Store a pointer in reserved memory
 void func_80101074(void*);

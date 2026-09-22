@@ -4,77 +4,56 @@
 
 #include <ultra64.h>
 #include "common.h"
-
-// func_80800000_bstnt
-// func_80800028_bstnt
-void func_80800060_bstnt(s32 arg0);
-// func_80800068_bstnt
-// func_8080009C_bstnt
-// func_808000D4_bstnt
-// func_80800164_bstnt
-// func_808001C8_bstnt
-// func_80800218_bstnt
-// func_808002AC_bstnt
-// func_8080030C_bstnt
-// func_808004F8_bstnt
-// func_80800554_bstnt
-// func_808005F4_bstnt
-// func_80800668_bstnt
-void func_80800694_bstnt();
-// func_808006B4_bstnt
-// func_808006EC_bstnt
-// func_80800720_bstnt
-// func_808007EC_bstnt
-// func_8080092C_bstnt
-// func_80800960_bstnt
-// func_80800998_bstnt
-// bstnt_entrypoint_0
-// func_80800B60_bstnt
-void func_80800CB0_bstnt(s32 arg0);
-// func_80800CD8_bstnt
-// func_80800D08_bstnt
-// bstnt_entrypoint_1
-// bstnt_entrypoint_2
-// bstnt_entrypoint_3
-// bstnt_entrypoint_4
-void func_80801058_bstnt(s32 arg0);
-// func_80801080_bstnt
-void func_80801190_bstnt(s32 arg0);
-// bstnt_entrypoint_5
-void func_808011CC_bstnt(s32 arg0);
-void func_808011F4_bstnt(s32 arg0);
-void func_8080121C_bstnt(s32 arg0);
-// bstnt_entrypoint_6
-// func_80801258_bstnt
-// func_808012F8_bstnt
-// func_80801464_bstnt
-// bstnt_entrypoint_7
-// bstnt_entrypoint_8
-// func_8080150C_bstnt
-// func_8080166C_bstnt
-// func_808018D0_bstnt
-// bstnt_entrypoint_9
-// bstnt_entrypoint_10
-// func_80801980_bstnt
-// func_80801C0C_bstnt
-// func_80801C3C_bstnt
-void func_80801E20_bstnt(s32 arg0);
-// bstnt_entrypoint_11
-// func_80801E60_bstnt
-// func_80801EA0_bstnt
-void func_80801F20_bstnt(s32 arg0);
-// bstnt_entrypoint_12
-// func_80801F5C_bstnt
-// func_80801F9C_bstnt
-void func_80802000_bstnt(s32 arg0);
-// bstnt_entrypoint_13
-void func_8080203C_bstnt(s32 arg0);
-void func_80802064_bstnt(s32 arg0);
-// func_8080208C_bstnt
-// bstnt_entrypoint_14
-void func_808020EC_bstnt(s32 arg0);
-// func_80802114_bstnt
-// func_8080217C_bstnt
-// bstnt_entrypoint_15
+#include "ba/playerstate.h"
+#include "ba/anim.h"
+#include "ba/bounce.h"
+#include "ba/drone.h"
+#include "ba/flag.h"
+#include "ba/input.h"
+#include "ba/key.h"
+#include "ba/move/goto.h"
+#include "ba/physics.h"
+#include "ba/pulse.h"
+#include "ba/roll.h"
+#include "ba/shake.h"
+#include "ba/stick.h"
+#include "ba/sudie.h"
+#include "ba/timer.h"
+#include "ba/yaw.h"
+#include "bs/rest.h"
+#include "bs/state.h"
+#include "bs/tnt.h"
+#include "bs/tntswim.h"
+#include "core1/1E2B200.h"
+#include "core2/1E65B90.h"
+#include "core2/1E66990.h"
+#include "core2/1E68670.h"
+#include "core2/1E6A190.h"
+#include "core2/1E6B900.h"
+#include "core2/1E6E870.h"
+#include "core2/1E6F080.h"
+#include "core2/1E72EA0.h"
+#include "core2/1E75710.h"
+#include "core2/1E75920.h"
+#include "core2/1E76880.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E7AB30.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1E7D460.h"
+#include "core2/1E8F430.h"
+#include "core2/1E93440.h"
+#include "core2/1E9A960.h"
+#include "core2/1EA3AA0.h"
+#include "core2/1EB2840.h"
+#include "core2/1EB5980.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECB0F0.h"
+#include "core2/1ED4E30.h"
+#include "core2/1EDA900.h"
+#include "core2/anctrl.h"
+#include "player.h"
 
 #endif // __BS_TNT__

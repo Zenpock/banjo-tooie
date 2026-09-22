@@ -5,9 +5,9 @@ s32 bapulse_entrypoint_0()
 	return sizeof(ba_unknown_E8_s);
 }
 
-void bapulse_entrypoint_1(PlayerState* self)
+f32 bapulse_entrypoint_1(PlayerState* self)
 {
-	func_800F10B4(self->unkE8->unk8, 0.0f, self->unkE8->unk4, 0.0f, 1.0f);
+	return func_800F10B4(self->unkE8->unk8, 0.0f, self->unkE8->unk4, 0.0f, 1.0f);
 }
 
 void bapulse_entrypoint_2(PlayerState* self) {}

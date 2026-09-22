@@ -10,7 +10,7 @@
 #include "core2/1ECA640.h"
 
 s32 _bapulse_entrypoint_0();
-void _bapulse_entrypoint_1(PlayerState*);
+f32 _bapulse_entrypoint_1(PlayerState*);
 void _bapulse_entrypoint_2(PlayerState*);
 void _bapulse_entrypoint_3(PlayerState*, f32, f32);
 void _bapulse_entrypoint_4(PlayerState*);

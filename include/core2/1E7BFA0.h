@@ -8,6 +8,7 @@
 
 void func_800A2CE8(PlayerState *, f32, s32);
 void func_800A2D2C(PlayerState *, f32, s32);
+void func_800A2EAC(PlayerState*);
 void func_800A2EDC(PlayerState*, f32);
 void func_800A2EEC(PlayerState*, s32);
 void func_800A2FCC(PlayerState*, s32);
