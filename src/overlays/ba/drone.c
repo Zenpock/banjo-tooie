@@ -34,7 +34,13 @@ void badrone_entrypoint_5(PlayerState* self) {
 	self->unk54->unk1C = 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_6.s")
+s32 badrone_entrypoint_6(PlayerState* self)
+{
+	if (self->unk54->unk1C != NULL)
+	{
+		return self->unk54->unk1C(self->unk54->unk20, self->unk184, self);
+	}
+}
 
 s32 badrone_entrypoint_7(PlayerState* self) {
 	return self->unk54->unk4;
