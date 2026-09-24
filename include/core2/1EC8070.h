@@ -6,6 +6,8 @@
 #include "core2/1ECA640.h"
 #include "core2/1ECB9F0.h"
 
+void func_800EFA88(s32*, s32, s32, s32);
+
 void func_800EE780(f32 dst[3], f32 a[3], f32 b[3]); // ml_vec3f_sum
 void func_800EE7B4(f32 dst[3], f32 a[3], f32 b[3], f32 scale); // ml_vec3f_scaled_sum
 void func_800EE7F8(f32 dst[3], f32 src[3]); // ml_vec3f_copy

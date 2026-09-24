@@ -6,6 +6,7 @@
 
 #include <ultra64.h>
 
+s32 func_800F0E28(s32, s32);
 f32 func_800F0D50(f32 value, f32 min, f32 max); // mlClamp()
 s32 func_800F0D90(s32, s32, s32);
 f32 func_800F0DC0(f32, f32);

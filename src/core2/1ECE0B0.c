@@ -635,9 +635,9 @@ void func_800F5CEC(s32 arg0)
     bastick_distance(D_80135490.unk0[arg0]);
 }
 
-void func_800F5D18(s32 arg0)
+s32 func_800F5D18(s32 arg0)
 {
-    func_800F40EC(D_80135490.unk0[arg0]);
+    return func_800F40EC(D_80135490.unk0[arg0]);
 }
 
 void func_800F5D44(s32 arg0, f32* arg1) 

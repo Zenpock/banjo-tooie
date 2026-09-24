@@ -335,7 +335,7 @@ void bsblongleg_entrypoint_12(PlayerState* self)
     baphysics_set_target_horizontal_velocity(self, 0.0f);
     temp_v0 = func_800C2E04();
     self->unk160.bytes[0] = temp_v0;
-    func_800C301C(temp_v0 & 0xFF, 0x41D);
+    func_800C301C(temp_v0, 0x41D);
     func_800C330C(self->unk160.bytes[0], 3);
     func_800C3730(self->unk160.bytes[0], 1.4f, 0.4f, -1.2f);
 }

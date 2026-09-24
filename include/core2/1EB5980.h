@@ -3,6 +3,8 @@
 
 #include "common.h"
 
+s32 func_800DC214(s32, s32);
+f32 func_800DC264(f32, f32);
 s32 func_800DC090(void);
 f32 func_800DC0C0(void);
 s32 func_800DC128(s32, s32);

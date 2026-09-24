@@ -5,6 +5,7 @@
 #include "transformations.h"
 #include "core2/1ECE0B0.h"
 
+void func_80090708(s32);
 void func_8008F8B0();
 void func_8008F8D8(s32);
 void func_8008F904(void*, s32);
