@@ -33,7 +33,7 @@ typedef struct {
     f32 unk10;
     f32 unk14;
     s16 unk18;
-    u8 unk1A;
+    s8 unk1A;
     u8 unk1B;
     u8 unk1C;
     u8 unk1D;
@@ -167,9 +167,10 @@ void func_800C3FC0(s32, f32, s32);
 void func_800C4140(u32, f32*, u32);
 void func_800C427C();
 void func_800C4308(f32, f32);
-s32 func_800C4350(s32, f32[3], s32 *); // changed from u8 return
+u8 func_800C4350(u8, f32*, s16*);
 void func_800C4AF0(f32 *, void*);
 void func_800C4B64(f32);
 void func_800C4B7C(s32);
+void func_800C1984(s32, s32, s32);
 
 #endif // __CORE2_1E9A960_H__

@@ -375,7 +375,7 @@ void func_800C1AA4(unkStruct800C39D0* arg0) {
         }
         func_800C18C8(arg0->unk79, arg0->unk60, arg0->unk1B, arg0->unk1C, func_800C13C4(arg0, 0x400));
         temp_f6 = (sp44 * 0.7f) + 64.0f;
-        if (arg0->unk1A != 0) {
+        if ((u8)arg0->unk1A != 0) {
             arg0->unk14 += 0.07f * (temp_f6 - arg0->unk14);
         } else {
             arg0->unk14 = temp_f6;
@@ -401,7 +401,66 @@ s32 func_800C1CCC(unkStruct800C39D0* arg0, s32 arg1) {
     return arg1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9A960/func_800C1D80.s")
+s32 func_800C1D80(u8 arg0) {
+    s32 sp34;
+    s32 sp30;
+    s32 pad;
+    s32 sp28;
+    unkStruct800C39D0* temp_v0;
+
+    sp34 = 0;
+    temp_v0 = func_800C1414(arg0);
+    if ((temp_v0->unk7A_10 == 1) && (temp_v0->unk79 != 0)) {
+        sp28 = func_800EA05C() != temp_v0->unk5E;
+        if (func_800C13C4(temp_v0, 4) != 0) {
+            func_800C1950(temp_v0->unk79, temp_v0->unk6C);
+        }
+        if ((func_800C13C4(temp_v0, 0x10) != 0) && (temp_v0->unk1B == 0)) {
+            func_800C18C8(temp_v0->unk79, temp_v0->unk60, temp_v0->unk1B, temp_v0->unk1C, func_800C13C4(temp_v0, 0x400));
+        }
+        if (func_800C13C4(temp_v0, 2) != 0) {
+            if (sp28 != 0) {
+                func_800C1984(temp_v0->unk79, temp_v0->unk5C, func_800C13C4(temp_v0, 0x200));
+            } else {
+                if (temp_v0->unk63 != 0) {
+                    sp30 = func_800C19E4(temp_v0, temp_v0->unk5A);
+                } else {
+                    sp30 = temp_v0->unk5A;
+                }
+                if (sp30 < 0x64) {
+                    sp34 = 1;
+                }
+                sp30 = func_800C1CCC(temp_v0, sp30);
+                temp_v0->unk5C = sp30;
+                func_800C1984(temp_v0->unk79, sp30, func_800C13C4(temp_v0, 0x200));
+                if (func_800EA068(0x20) == 0) {
+                    func_800C1AA4(temp_v0);
+                }
+            }
+        } else {
+            if (func_800C13C4(temp_v0, 0x100) != 0) {
+                func_800C191C(temp_v0->unk79, temp_v0->unk61);
+            }
+            if (sp28 != 0) {
+                func_800C1984(temp_v0->unk79, temp_v0->unk5C, func_800C13C4(temp_v0, 0x200));
+            } else if (func_800C13C4(temp_v0, 8) != 0) {
+                sp30 = func_800C1CCC(temp_v0, temp_v0->unk5A);
+                temp_v0->unk5C = sp30;
+                if (sp30 < 0x64) {
+                    sp34 = 1;
+                }
+                func_800C1984(temp_v0->unk79, sp30, func_800C13C4(temp_v0, 0x200));
+            }
+        }
+        func_800C13B0(temp_v0, 4);
+        func_800C13B0(temp_v0, 8);
+        func_800C13B0(temp_v0, 0x10);
+    }
+    if (func_800A8184() == 4) {
+        sp34 += 1;
+    }
+    return sp34;
+}
 
 void func_800C2000(u8 arg0) {
     s32 pad44;
@@ -633,7 +692,25 @@ void func_800C28D8()
     func_800C13E4();
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9A960/func_800C2900.s")
+void func_800C2900(void) {
+    s32 var_s1;
+    s32 i;
+
+    for (i = 1; i < 0x3C; i++) {
+        if (D_80128B90[i].unk78 != 0) {
+            func_800C2FDC(i);
+        }
+    }
+    do {
+        var_s1 = 0;
+        func_800C2718();
+        for (i = 1; i < 0x3C; i++) {
+            if (D_80128B90[i].unk78 != 0) {
+                var_s1++;
+            }
+        }
+    } while (var_s1 != 0);
+}
 
 void func_800C2A08(void) {
     func_800C28D8();
@@ -1358,7 +1435,254 @@ void func_800C431C(u8 id, s32 arg1) {
     func_800C1414(id)->unk63 = arg1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9A960/func_800C4350.s")
+u8 func_800C4350(u8 arg0, f32* arg1, s16* arg2) {
+    s16 var_v1;
+    s16 var_a1;
+    s16 var_a2;
+    s32 var_s4;
+    s32 temp_v0;
+    unkStruct800C39D0* var_v0;
+    f32 var_fv0;
+    f32 var_fv1;
+    f32 var_fa0;
+    f32 var_fa1;
+    f32 var_fa2;
+    f32 var_fa3;
+
+    var_s4 = 0;
+    if (arg0 == 0) {
+        arg0 = func_800C2E04();
+        if (arg0 == 0) {
+            return 0;
+        }
+        var_v0 = func_800C1414(arg0);
+    } else {
+        var_v0 = func_800C1414(arg0);
+    }
+    if (arg1 != NULL) {
+        func_800EE7F8((f32*)var_v0, arg1);
+        func_800C13A0(var_v0, 2);
+        var_v0->unk1B = 1;
+        var_v0->unk5E = func_800EA05C();
+    }
+    if (arg2 == NULL) {
+        if (arg0 != 0) {
+            func_800C3BDC(arg0);
+        }
+        return arg0;
+    }
+    while ((var_v1 = *arg2++) != 0) {
+        switch (var_v1 & 0xFF) {
+        case 1:
+            var_fv0 = arg2[0];
+            var_fv1 = arg2[1];
+            if (arg1 != NULL) {
+                var_v0->unk1B = 1;
+                var_v0->unkC = SQ(var_fv0);
+                var_v0->unk10 = SQ(var_fv1);
+                func_800C13A0(var_v0, 2);
+            }
+            arg2 += 2;
+            break;
+        case 2:
+            var_v0->unk63 = (s32)(var_v1 & 0xFF00) >> 8;
+            break;
+        case 32:
+            if (((s32)(var_v1 & 0xFF00) >> 8) != 0) {
+                func_800C13B0(var_v0, 0x200);
+            } else {
+                func_800C13A0(var_v0, 0x200);
+            }
+            break;
+        case 34:
+            if (((s32)(var_v1 & 0xFF00) >> 8) != 0) {
+                func_800C13B0(var_v0, 0x400);
+            } else {
+                func_800C13A0(var_v0, 0x400);
+            }
+            break;
+        case 36:
+            if (((s32)(var_v1 & 0xFF00) >> 8) != 0) {
+                func_800C13A0(var_v0, 0x800);
+            } else {
+                func_800C13B0(var_v0, 0x800);
+            }
+            break;
+        case 3:
+            return arg0;
+        case 4:
+            func_800C2FDC(arg0);
+            return 0;
+        case 5:
+            var_v0->unk60 = (s32)(var_v1 & 0xFF00) >> 8;
+            func_800C13A0(var_v0, 0x10);
+            break;
+        case 6:
+            func_800C11F8(var_v0, (s32)(var_v1 & 0xFF00) >> 8);
+            break;
+        case 7:
+            var_v0->unk62 = (s32)(var_v1 & 0xFF00) >> 8;
+            break;
+        case 8:
+            var_v0->unk61 = (s32)(var_v1 & 0xFF00) >> 8;
+            func_800C13A0(var_v0, 0x100);
+            break;
+        case 9:
+            if (((s32)(var_v1 & 0xFF00) >> 8) & 0xFF) {
+                var_v0->unk1A = 1;
+            } else {
+                var_v0->unk1A = 0;
+            }
+            break;
+        case 10:
+            var_fv0 = *arg2++ * (1.0f / 256.0f);
+            var_v0->unk6C = var_fv0;
+            func_800C13A0(var_v0, 4);
+            break;
+        case 11:
+            var_fv0 = *arg2++ * (1.0f / 256.0f);
+            var_fv1 = *arg2++ * (1.0f / 256.0f);
+            var_fa0 = *arg2++ * (1.0f / 256.0f);
+            var_v0->unk6C = var_fv0;
+            var_v0->unk2C = var_fv1;
+            var_v0->unk28 = var_fa0;
+            var_v0->unk7A_6 = 1;
+            func_800C13A0(var_v0, 4);
+            break;
+        case 12:
+            var_fv0 = *arg2++ * (1.0f / 256.0f);
+            var_fv1 = *arg2++ * (1.0f / 256.0f);
+            var_fa0 = *arg2++ * (1.0f / 256.0f);
+            var_fa1 = *arg2++ * (1.0f / 256.0f);
+            var_v0->unk28 = var_fv0;
+            var_v0->unk2C = var_fv1;
+            var_v0->unk30 = var_fa0;
+            var_v0->unk34 = var_fa1;
+            var_v0->unk7A_6 = 3;
+            func_800C13A0(var_v0, 4);
+            break;
+        case 13:
+            var_fa0 = *arg2++ * (1.0f / 256.0f);
+            var_fa1 = *arg2++ * (1.0f / 256.0f);
+            var_v0->unk6C = func_800DC264(var_fa0, var_fa1);
+            func_800C13A0(var_v0, 4);
+            break;
+        case 29:
+            var_fv0 = D_8012A990.unk0;
+            var_v0->unk6C = var_fv0;
+            func_800C13A0(var_v0, 4);
+            break;
+        case 14:
+            var_fv0 = *arg2++ * (1.0f / 256.0f);
+            var_fv1 = *arg2++ * (1.0f / 256.0f);
+            var_fa0 = *arg2++ * (1.0f / 256.0f);
+            var_v0->unk2C = var_fv0;
+            var_v0->unk28 = var_fv1;
+            var_v0->unk30 = var_fa0;
+            var_v0->unk6C = (var_v0->unk2C + var_v0->unk28) * 0.5f;
+            var_v0->unk7A_6 = 2;
+            func_800C13A0(var_v0, 4);
+            break;
+        case 15:
+            func_800C11F8(var_v0, 1);
+            var_s4 = 1;
+            var_v0->unk62 = 0;
+            break;
+        case 16:
+            func_800C2E40(arg0);
+            break;
+        case 17:
+            var_s4 = 1;
+            break;
+        case 18:
+            var_s4 = 0;
+            if (var_v0->unk7A_10 == 1) {
+                func_800C1860(var_v0);
+                if (var_v0->unk64 != NULL) {
+                    var_v0->unk64(arg0, var_v0->unk68);
+                }
+            }
+            break;
+        case 19:
+            temp_v0 = *arg2++;
+            var_v0->unk58 = temp_v0;
+            break;
+        case 20:
+            if (arg1 != NULL) {
+                var_v0->unk1B = (s32)(var_v1 & 0xFF00) >> 8;
+                if (((s32)(var_v1 & 0xFF00) >> 8) != 0) {
+                    func_800C13A0(var_v0, 2);
+                } else {
+                    func_800C13B0(var_v0, 2);
+                }
+            }
+            break;
+        case 21:
+            var_fv0 = *arg2++ * (1.0f / 256.0f);
+            var_fv1 = *arg2++ * (1.0f / 256.0f);
+            var_fa0 = *arg2++ * (1.0f / 256.0f);
+            func_800C3A40(arg0, var_fv0, var_fv1, var_fa0);
+            break;
+        case 31:
+            var_v0->unk1D = 1;
+            break;
+        case 22:
+            func_800C3058(arg0, *arg2++);
+            break;
+        case 23:
+            var_a1 = *arg2++;
+            var_a2 = *arg2++;
+            var_fv0 = *arg2++;
+            func_800C316C(arg0, var_a1, var_a2, var_fv0);
+            break;
+        case 24:
+            func_800C3058(arg0, 0x7FFF);
+            break;
+        case 25:
+            func_800C3058(arg0, func_800DC214(arg2[0], arg2[1]));
+            arg2 += 2;
+            break;
+        case 30:
+            func_800C3058(arg0, D_8012A990.unk4);
+            break;
+        case 26:
+            var_fv0 = *arg2++ * (1.0f / 256.0f);
+            var_fv1 = *arg2++ * (1.0f / 256.0f);
+            var_v0->unk70 = var_fv0;
+            var_v0->unk74 = var_fv1;
+            break;
+        case 27:
+            func_800C3418(arg0, (s32)(var_v1 & 0xFF00) >> 8);
+            break;
+        case 28:
+            var_v0->unk7B_2 = 1;
+            break;
+        case 33:
+            func_800C301C(arg0, D_8012A990.unk6);
+            break;
+        case 35:
+            var_fv0 = *arg2++ * (1.0f / 256.0f);
+            var_fv1 = *arg2++ * (1.0f / 256.0f);
+            var_fa0 = *arg2++ * (1.0f / 256.0f);
+            var_fa1 = *arg2++ * (1.0f / 256.0f);
+            var_fa2 = *arg2++ * (1.0f / 256.0f);
+            var_fa3 = *arg2++ * (1.0f / 256.0f);
+            var_v0->unk28 = var_fv0;
+            var_v0->unk2C = var_fv1;
+            var_v0->unk30 = var_fa0;
+            var_v0->unk34 = var_fa1;
+            var_v0->unk38 = var_fa2;
+            var_v0->unk3C = var_fa3;
+            var_v0->unk7A_6 = 4;
+            func_800C13A0(var_v0, 4);
+            break;
+        }
+    }
+    if (var_s4 != 0) {
+        func_800C3BDC(arg0);
+    }
+    return arg0;
+}
 
 void func_800C4AF0(f32* arg0, void* arg1) {
     s32 temp_v0;
