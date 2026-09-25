@@ -7,9 +7,9 @@ extern unkStructD_801354F8 D_801354F8;
 extern u8 D_801354F9;
 extern u8 D_801354FC;
 extern u8 D_801354FD;
-extern f32 D_80135500;
+extern f32 D_80135500[3];
 extern s8 D_801354B0;
-extern f32 D_80135510;
+extern f32 D_80135510[3];
 extern u8 D_801354FA;
 extern s32 D_8013551C;
 extern unkStructD_80135520 D_80135520;
@@ -241,7 +241,8 @@ void func_800F4FC4(void) {
 }
 
 
-void func_800F5008(s32 arg0) {
+void func_800F5008(s32 arg0) 
+{
     s32 temp;
     PlayerState* playerState;
     s32 count;
@@ -253,13 +254,15 @@ void func_800F5008(s32 arg0) {
             // yummy fake ^0
             if ((func_80092258(playerState)^0) == 0xFF) {
                 func_80098BA8(playerState, arg0);
-            } else {
-                ((PlayerState**) ((u8*) &D_80135490 + 0x28))[count] = playerState;
+            } 
+            else 
+            {
+                D_80135490.unk28[count] = playerState;
                 count++;
             }
         }
     }
-    ((PlayerState*) &D_80135490)->unk48 = count;
+    D_80135490.unk48 = count;
 }
 
 
@@ -268,12 +271,13 @@ void func_800F50D0(s32 arg0) {
     s32 var_s0;
     f32 sp38;
 
-    if (((PlayerState*)&D_80135490)->unk48 != 0) {
+    if (D_80135490.unk48 != 0)
+    {
         func_800CA7E4(func_800A8984(func_800A89F8()), &sp38);
-        _bainvisible_entrypoint_9(D_801354B8, ((PlayerState*)&D_80135490)->unk48, &sp38);
-        for (var_s0 = 0; var_s0 < ((PlayerState*)&D_80135490)->unk48; var_s0++) {
-            // very hacky :/
-            func_80098BA8(((s32*)&D_80135490.unk0[10])[var_s0], arg0);
+        _bainvisible_entrypoint_9(D_80135490.unk28, D_80135490.unk48, &sp38);
+        for (var_s0 = 0; var_s0 < D_80135490.unk48; var_s0++)
+        {
+            func_80098BA8(D_80135490.unk28[var_s0], arg0);
         }
     }
 }
@@ -290,9 +294,9 @@ void func_800F51CC(void) {
     func_800F47C0(func_80098BE0);
 }
 
-void func_800F51F0(s32 arg0)
+void func_800F51F0(s32 arg0, s32 arg1, s32 arg2)
 {
-    func_80093504(D_80135490.unk0[arg0]);
+    func_80093504(D_80135490.unk0[arg0], arg1, arg2);
 }
 
 void func_800F521C(s32 arg0, s32 arg1) {
@@ -409,7 +413,7 @@ s32 func_800F5578(s32 arg0)
 
 s32 func_800F55A4(s32 arg0)
 {
-    func_800A1760(D_80135490.unk0[arg0]);
+    return func_800A1760(D_80135490.unk0[arg0]);
 }
 
 void func_800F55D0(s32 arg0)
@@ -574,7 +578,7 @@ void func_800F5B0C(s32 arg0)
     func_8009CC68(D_80135490.unk0[arg0]);
 }
 
-void func_800F5B38(s32 arg0, u8* arg1)
+void func_800F5B38(s32 arg0, f32* arg1)
 {
     func_800F3E84(D_80135490.unk0[arg0], arg1);
 }
@@ -772,8 +776,8 @@ s32 func_800F6140(s32 arg0) {
             func_800A93F8(i);
             func_800A93E4(i);
             D_80135490.unk0[i] = func_800F43A8(i);
-            (&D_801354B0)[i] = 0;
-            bakey_setControllerIndex(*(PlayerState* volatile*) &D_80135490.unk0[i], temp);
+            D_80135490.unk20[i] = 0;
+            bakey_setControllerIndex(D_80135490.unk0[i], temp);
             return i;
         }
     } 
@@ -792,11 +796,13 @@ s32 func_800F6224(s32 arg0) {
     f32 sp3C[3];
     s32 i;
 
-    i = 0; do {
+    for(i = 0;i<8;i++)
+    {
         PlayerState* newPlayer;
         PlayerState* refPlayer;
         s32 temp;
-        if (D_80135490.unk0[i] == NULL) {
+        if (D_80135490.unk0[i] == NULL)
+        {
             refPlayer = D_80135490.unk0[arg0];
             temp = func_800A907C(i, bakey_getControllerIndex(refPlayer), -1);
             newPlayer = func_800F43A8(i);
@@ -809,8 +815,7 @@ s32 func_800F6224(s32 arg0) {
             func_800A92A8(2, 2);
             return i;
         }
-        i++;
-    } while (i != 8);
+    }
     return 0;
 }
 
@@ -1630,14 +1635,14 @@ void func_800F8128(s32 arg0)
     func_800F80D8(arg0);
     func_800A91A8(arg0);
 }
-void func_800F8150(s32 arg0)
+void func_800F8150(s32 arg0, s32 arg1)
 {
-    func_80093370(D_80135490.unk0[arg0]);
+    func_80093370(D_80135490.unk0[arg0], arg1);
 }
 
-void func_800F817C(s32 arg0)
+void func_800F817C(s32 arg0, s32 arg1)
 {
-    func_8009337C(D_80135490.unk0[arg0]);
+    func_8009337C(D_80135490.unk0[arg0], arg1);
 }
 
 void func_800F81A8(s32 arg0)
@@ -1851,39 +1856,38 @@ void func_800F8874(s32 arg0)
     func_8009224C(D_80135490.unk0[arg0]);
 }
 
-u8* func_800F88A0(s32 arg0) {
-    u8* sp1C;
-    u8* temp_v0;
+unkStruct800F88A0* func_800F88A0(s32 arg0) {
+    unkStruct800F88A0* sp1C;
+    unkStruct800F88A0* temp_v0;
 
     sp1C = vector_begin(D_801354F0);
     temp_v0 = vector_end(D_801354F0);
     while (sp1C < temp_v0) {
-        if (arg0 == *sp1C) {
+        if (arg0 == sp1C->unk0) {
             return sp1C;
         }
 
-        sp1C += 0x3C;
+        sp1C++;
     }
 
     return NULL;
 }
 
-
-s32 func_800F8914(u8* arg0, s32 arg1)
+s32 func_800F8914(unkStruct800F88A0* arg0, s32 arg1)
 {
     s32 temp;
-    func_800F5A00(arg1, &((f32*)arg0)[0x9]);
-    func_800F5B38(arg1,&arg0[0x30]);
-    _plcamera_entrypoint_14(arg1, &arg0[0x4], &arg0[0x10]);
-    arg0[0x2] = func_800F9214(arg1);
-    arg0[0x0] = func_800F5410(arg1);
-    arg0[0x1] = func_800F65D0(arg1);
-    ((s16*)arg0)[0x11] = func_800EA05C();
-    arg0[0x21] = func_800EA090();
-    arg0[0x20] = 2;
-    arg0[0x1D] = func_800F58F8(arg1);
+    func_800F5A00(arg1, arg0->unk24);
+    func_800F5B38(arg1, arg0->unk30);
+    _plcamera_entrypoint_14(arg1, arg0->unk4, arg0->unk10);
+    arg0->unk2 = func_800F9214(arg1);
+    arg0->unk0 = func_800F5410(arg1);
+    arg0->unk1 = func_800F65D0(arg1);
+    arg0->unk22 = func_800EA05C();
+    arg0->unk21 = func_800EA090();
+    arg0->unk20 = 2;
+    arg0->unk1D = func_800F58F8(arg1);
     temp = func_800F5924(arg1);
-    arg0[0x1C] = temp;
+    arg0->unk1C = temp;
     return temp;
 }
 
@@ -1914,11 +1918,11 @@ f32 func_800F8A50(void)
 }
 
 s16 func_800F8A5C(s32 arg0) {
-    return *(s16*)(func_800F88A0(arg0) + 0x22);
+    return func_800F88A0(arg0)->unk22;
 }
 
 u8 func_800F8A80(s32 arg0) {
-    return *(s16*)(func_800F88A0(arg0) + 0x20);
+    return *(s16*)&func_800F88A0(arg0)->unk20;
 }
 
 u8 func_800F8AA4(void) {
@@ -1976,8 +1980,8 @@ void func_800F8D50(s32 arg0, s32 arg1) {
     func_800F8D80(arg0, func_800F88A0(arg1));
 }
 
-void func_800F8D80(s32 arg0, u8* arg1) {
-    _plcamera_entrypoint_12(arg0, arg1 + 4, arg1 + 0x10);
+void func_800F8D80(s32 arg0, unkStruct800F88A0* arg1) {
+    _plcamera_entrypoint_12(arg0, arg1->unk4, arg1->unk10);
 }
 
 s32 func_800F8DA8(s32 arg0) {
@@ -2064,8 +2068,8 @@ void func_800F8F3C(void) {
 }
 
 void func_800F9070(s32 arg0, s32 arg1) {
-    u8* result = func_800F88A0(arg0);
-    result[1] = arg1;
+    unkStruct800F88A0* result = func_800F88A0(arg0);
+    result->unk1 = arg1;
 }
 
 void func_800F9098(s32 arg0, f32* arg1) {
@@ -2155,7 +2159,7 @@ void func_800F92CC(u32* arg0, enum transform_e* arg1, s32* arg2, s32* arg3) {
     *arg0 = temp_v0;
     temp_v0_2 = func_800F5410((s32) temp_v0);
     *arg1 = temp_v0_2;
-    switch (temp_v0_2) {                            /* irregular */
+    switch (temp_v0_2) {
     case TRANSFORM_A_BANJO:
         *arg3 = 0xB;
         break;
@@ -2174,7 +2178,7 @@ void func_800F9354(u32* arg0, enum transform_e* arg1, s32* arg2) {
     *arg0 = temp_v0;
     temp_v0_2 = func_800F5410((s32) temp_v0);
     *arg1 = temp_v0_2;
-    switch (temp_v0_2) {                            /* irregular */
+    switch (temp_v0_2) {
     case TRANSFORM_A_BANJO:
         *arg2 = 0xB;
         return;

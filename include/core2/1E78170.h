@@ -7,7 +7,6 @@
 #include "core2/1EAD060.h"
 #include "core2/1EB3750.h"
 
-s32 func_8009EAD0(s32);
 void func_8009E8B4();
 void func_8009E8D4();
 void func_8009E9A0();
@@ -19,6 +18,7 @@ s32 func_8009EA2C(void);
 s32 func_8009EA64(void);
 void func_8009EA94(f32);
 void func_8009EAAC(s32);
+s32 func_8009EAD0(s32);
 void func_8009EAE8(s32);
 void func_8009EB24(s16, s16);
 

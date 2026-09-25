@@ -34,9 +34,8 @@ void func_801108A0(PlayerState*);
 // func_80110B68
 void func_80110BF0(PlayerState *self);
 void func_80110C2C(PlayerState *self);
-void func_80110D08();
 // func_80110C88
-void func_80110CC0(PlayerState*, f32, f32, f32, f32); /* extern */
+void func_80110CC0(PlayerState*, f32, f32, f32, f32);
 void func_80110D08();
 void func_80110D28(PlayerState*, s32);
 void func_80110D58(PlayerState*,f32);

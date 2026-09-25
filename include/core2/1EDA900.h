@@ -11,11 +11,11 @@ void func_80101074(void*);
 //Retrieve a pointer from reserved memory
 void* func_80101080(void);
 
-//Send an event to Actor that has Unk80132ED0*
-s32 func_8010114C(s32, s32, s32);
-
 //Send an event to the actor's event handler
 s32 func_8010108C(Actor*, s32, s32);
+
+//Send an event to Actor that has Unk80132ED0*
+s32 func_8010114C(s32, s32, s32);
 
 //Send an event to items of type
 s32 func_80101180(s32 propId, s32 eventId, s32);

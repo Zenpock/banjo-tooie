@@ -53,16 +53,15 @@ s32 func_8009F300(void);
 f32 func_8009F308(PlayerState *);
 // func_8009F354
 f32 func_8009F3BC(PlayerState *, f32, f32, f32, f32);
-// func_8009F440
-// func_8009F678
-// func_8009F860
+s32 func_8009F440(PlayerState*, s32, s32, s32, s32, f32);
+s32 func_8009F678(PlayerState*, s32, s32, f32);
+s32 func_8009F860(PlayerState*, s32, s32, s32, f32, f32);
 // func_8009FA20
 s32 func_8009FBB0(PlayerState *, f32[3], f32);
 // func_8009FBE8
 void func_8009FC34(PlayerState *, s32);
 // func_8009FC80
 void func_8009FD24(PlayerState *, s32);
-// func_8009FD24
 void func_8009FE58(PlayerState*);
 // func_8009FE78
 // bs_getTypeOfJump
@@ -79,9 +78,6 @@ BanjoStateId func_800A01F8(PlayerState *, BanjoStateId arg1);
 BanjoStateId func_800A02DC(PlayerState *, BanjoStateId arg1);
 void func_800A042C(PlayerState *);
 void func_800A046C(PlayerState *);
-s32 func_8009F678(PlayerState*, s32, s32, f32);
-s32 func_8009F440(PlayerState*, s32, s32, s32, s32, f32);
-s32 func_8009F860(PlayerState*, s32, s32, s32, f32, f32);
 BanjoStateId func_800A04F4(PlayerState*, BanjoStateId);
 BanjoStateId func_800A055C(PlayerState*, BanjoStateId);
 // func_800A05DC

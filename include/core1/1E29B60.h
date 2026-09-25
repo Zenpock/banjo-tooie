@@ -26,14 +26,14 @@
 #include "gc/statusDll.h"
 
 void func_80012030(s32); 
+void func_8001207C();
 void func_8001209C(s32);
+s32 func_8001210C(s32);
+s32 func_8001211C(void);
 void func_80012128();
 void func_800121D0();
 void func_800123BC();
 void func_800123F4(void);
-void func_8001207C();
-s32 func_8001210C(s32);
-s32 func_8001211C(void);
 s32 func_80012530();
 void func_8001253C(s32);
 

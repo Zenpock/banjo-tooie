@@ -3,7 +3,7 @@
 
 #include "ba/playerstate.h"
 
-void func_800A5A4C(PlayerState*);
 void func_800A59B8(u8, s32*, s32*, s32*, s32*, s32*, s32*, s32*, s32*, s32*);
+void func_800A5A4C(PlayerState*);
 
 #endif

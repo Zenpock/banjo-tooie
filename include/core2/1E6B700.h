@@ -6,6 +6,6 @@
 
 #include "ba/playerstate.h"
 
-s32 func_80091E80(PlayerState*, s32);                 /* extern */
+s32 func_80091E80(PlayerState*, s32);
 
 #endif // __CORE2_1E6B700_H__

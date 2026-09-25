@@ -14,7 +14,6 @@ s32 func_800C064C();
 void func_800C067C(s32);
 void func_800C06C4();
 void func_800C0710();
-s32 func_800C064C();
 void func_800C0850();
 s32 func_800C0948();
 void func_800C0A2C();

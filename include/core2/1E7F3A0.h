@@ -19,12 +19,10 @@ typedef struct {
 
 s32 func_800A5B6C(void);
 s32 func_800A5B7C(void);
-s32 func_800A5BBC(void);
-s32 func_800A5BCC(void);
 f32 func_800A5B8C(void);
 u8 func_800A5B9C(void);
 u8 func_800A5BAC(void);
-
-
+s32 func_800A5BBC(void);
+s32 func_800A5BCC(void);
 
 #endif 
