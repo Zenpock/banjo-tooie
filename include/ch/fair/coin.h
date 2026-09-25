@@ -11,5 +11,6 @@
 #include "core2/1EC8070.h"
 #include "core2/1ED8C80.h"
 
+void _chfaircoin_entrypoint_0(f32*, f32*, f32);
 
 #endif

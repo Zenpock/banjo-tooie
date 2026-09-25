@@ -291,7 +291,11 @@ typedef struct bs_firstp_s {
     u8 padEC[0x120];
     f32 unk20C;
 } BsFirstP;
-
+typedef struct bs_van_s {
+    s32 unk0;
+    f32 unk4[3];
+    s32 unk10;
+} BsVan;
 typedef struct player_state_s {
     /* 0x00 */ struct ba_alarm_s *alarm;
     /* 0x04 */ struct ba_anim_s *anim;
@@ -379,6 +383,7 @@ typedef struct player_state_s {
     union var188 {
         /* 0x188 */ BsKazFly* kazfly;
         /* 0x188 */ BsFirstP* firstp;
+        /* 0x188 */ BsVan* bsvan;
     };
     s32 unk18C;
 	union {

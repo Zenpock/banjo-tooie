@@ -4,59 +4,52 @@
 
 #include <ultra64.h>
 #include "common.h"
+#include "ba/playerstate.h"
+#include "ba/anim.h"
+#include "ba/bounce.h"
+#include "ba/drone.h"
+#include "ba/flag.h"
+#include "ba/input.h"
+#include "ba/key.h"
+#include "ba/physics.h"
+#include "ba/roll.h"
+#include "ba/statemem.h"
+#include "ba/stick.h"
+#include "ba/sudie.h"
+#include "ba/timer.h"
+#include "ba/van.h"
+#include "ba/yaw.h"
+#include "bs/mum/move.h"
+#include "bs/mum/still.h"
+#include "bs/rest.h"
+#include "bs/state.h"
+#include "bs/vanswim.h"
+#include "ch/baddiesetup.h"
+#include "ch/fair/coin.h"
+#include "ch/fair/coinbox.h"
+#include "core2/1E65B90.h"
+#include "core2/1E66990.h"
+#include "core2/1E6A190.h"
+#include "core2/1E6B900.h"
+#include "core2/1E6E870.h"
+#include "core2/1E6F080.h"
+#include "core2/1E72EA0.h"
+#include "core2/1E75710.h"
+#include "core2/1E75920.h"
+#include "core2/1E76880.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1E8F430.h"
+#include "core2/1E93440.h"
+#include "core2/1EB5980.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECB0F0.h"
+#include "core2/1ECE0B0.h"
+#include "core2/anctrl.h"
+#include "player.h"
 
-// func_80800000_bsvan
-// func_80800064_bsvan
-// func_808000BC_bsvan
-// bsvan_entrypoint_0
-// bsvan_entrypoint_1
-// bsvan_entrypoint_2
-// func_8080032C_bsvan
-// bsvan_entrypoint_3
-void func_808004F8_bsvan(s32 arg0);
-// func_80800520_bsvan
-// func_808005E4_bsvan
-// bsvan_entrypoint_4
-void func_80800760_bsvan(s32 arg0);
-void func_80800788_bsvan(s32 arg0);
-void func_808007B0_bsvan(s32 arg0);
-// bsvan_entrypoint_5
-// func_808007EC_bsvan
-// func_80800824_bsvan
-// func_808008D4_bsvan
-// bsvan_entrypoint_6
-// func_80800A5C_bsvan
-// func_80800BDC_bsvan
-// func_80800E0C_bsvan
-// bsvan_entrypoint_7
-// func_80800E60_bsvan
-// bsvan_entrypoint_8
-// bsvan_entrypoint_9
-void func_80800F50_bsvan();
-// func_80800F70_bsvan
-// func_80801034_bsvan
-// bsvan_entrypoint_10
-void func_80801118_bsvan(s32 arg0);
-// func_80801140_bsvan
-// func_80801198_bsvan
-// bsvan_entrypoint_11
-void func_80801224_bsvan(s32 arg0);
-// func_8080124C_bsvan
-// func_808012A4_bsvan
-// bsvan_entrypoint_12
-void func_8080130C_bsvan(s32 arg0);
-void func_80801334_bsvan(s32 arg0);
-// func_8080135C_bsvan
-// bsvan_entrypoint_13
-void func_808013BC_bsvan(s32 arg0);
-// func_808013E4_bsvan
-// func_8080145C_bsvan
-// bsvan_entrypoint_14
-// func_8080164C_bsvan
-// func_80801770_bsvan
-// func_808017A0_bsvan
-// bsvan_entrypoint_15
-// func_80801890_bsvan
-// bsvan_entrypoint_16
 
 #endif // __BS_VAN__
