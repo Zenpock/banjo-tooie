@@ -141,7 +141,7 @@ void func_800C3798(u8 id, f32, f32);
 // func_800C37E0
 // func_800C3868
 // func_800C38E4
-s32 func_800C3920(s32, s32, PlayerState*);
+s16 func_800C3920(u8);
 f32 func_800C395C(u8);
 s32 func_800C39A0(u8 id);
 s32 func_800C39D0(unkStruct800C39D0*);

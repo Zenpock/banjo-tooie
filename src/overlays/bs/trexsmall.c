@@ -212,7 +212,7 @@ void bstrexsmall_entrypoint_3(PlayerState* self) {
 
     if ((self->unk160.bytes[0] != 0) && (self->unk15C.bytes[2] == 3))
     {
-        sp1C = func_800C3920(self->unk160.bytes[0] & 0xFF, self->unk160.bytes[0], self);
+        sp1C = func_800C3920(self->unk160.bytes[0]);
         temp_v0 = func_800F0E28(0, (s32)((f32)sp1C - (time_getDelta() * 60000.0f)));
         if (temp_v0 != 0)
         {
