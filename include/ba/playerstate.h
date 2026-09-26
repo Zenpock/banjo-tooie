@@ -27,6 +27,35 @@ typedef struct {
     Vec3f unk4[0x17];
 } UNKfunc_800DBEB0_ARG0;
 
+typedef struct ba_unknown_38_s {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    u8 unk3;
+    u8 unk4;
+    u8 unk5;
+    u8 unk6;
+    u8 unk7;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    s32 unk20;
+    s32 unk24;
+    s32 unk28;
+    f32 unk2C;
+    f32 unk30;
+    s16 unk34;
+    s16 unk36;
+    u8 pad38;
+    u8 unk39;
+    u8 unk3A;
+    u8 unk3B;
+    s32 unk3C;
+} ba_unknown_38_s;
+
 typedef struct ba_unknown_50_s {
     u16 unk0;
     u16 unk2;
@@ -152,11 +181,12 @@ typedef struct player_state_s {
     /* 0x2C */ struct ba_unknown_2C_s *unk2C; //something with camera
     u8 pad30[0x4];
     /* 0x34 */ struct ba_buzz_s *buzz;
-    u8 pad38[0x4];
+    /* 0x38 */ struct ba_unknown_38_s *unk38;
     /* 0x3C */ struct ba_state_timer_list_s *state_timer; // clock?
     /* 0x40 */ struct ba_key_s *key; // controller?
     /* 0x44 */ struct ba_cough_s *cough;
-    u8 pad48[0x8];
+    u8 unk48;
+    u8 pad49[0x7];
     struct ba_unknown_50_s* unk50;
     u8 pad54[0x10];
     u8* unk64;

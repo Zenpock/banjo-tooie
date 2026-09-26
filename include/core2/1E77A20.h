@@ -28,11 +28,11 @@ s16 func_8009E6EC(PlayerState *);
 BanjoStateId bs_getCurrentState(PlayerState*);
 BanjoStateId bs_getNextState(PlayerState*);
 BanjoStateId bs_getPreviousState(PlayerState*);
-// func_8009E71C
+s32 func_8009E71C(PlayerState*, s32);
 s32 func_8009E74C(PlayerState *, s32);
 s32 func_8009E77C(PlayerState *, s32);
 // func_8009E7AC
-// func_8009E7C8
+s32 func_8009E7C8(PlayerState*, s32);
 void func_8009E830(PlayerState *, s32);
 // func_8009E83C
 

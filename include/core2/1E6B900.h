@@ -37,17 +37,24 @@
 #include "ba/invisible.h"
 #include "ch/baddiesetup.h"
 
+s32 func_80092258(PlayerState*);
 void func_80092778(PlayerState*);
-
 void func_80092864(PlayerState *, f32);
 void func_80092880(PlayerState *, s32);
+void func_80092AA4(PlayerState*);
 Unkfunc_800E0960_1 *func_80092AD8(PlayerState *);
+PlayerState *func_80092B04(PlayerState *, s32);
+// This might take a s32 instead of a PlayerState pointer
+// This might return a s32 instead of a PlayerState pointer
+
+f32 func_80092B8C();
 f32 func_80092BE8(PlayerState *);
 f32 func_80092BF4(PlayerState *);
-void func_80092EC8(PlayerState*, s32);
 void func_80092C00(PlayerState*, f32[3]);
 void func_80092C24(PlayerState*, f32[3]);
 void func_80092C48(PlayerState*, f32[3]);
+s32 func_80092EA4(PlayerState*);
+void func_80092EC8(PlayerState*, s32);
 void func_8009312C(PlayerState*, s32);
 void func_800931AC(PlayerState*, s32);
 void func_80093230(PlayerState*, f32);
@@ -59,6 +66,8 @@ void func_80093370(PlayerState*, s32);
 void func_8009337C(PlayerState*, s32);
 void func_80093388(PlayerState*);
 void func_80093504(PlayerState*, s32, s32);
+void func_80093528(PlayerState*);
+void func_80093584(PlayerState*); 
 void func_800936E8(PlayerState*, s32);
 void func_80093700(PlayerState*, s32);
 s32 func_80093DF4(PlayerState*, s32);
@@ -68,6 +77,7 @@ void func_80094390(PlayerState*);
 s32 func_800944E0(PlayerState *, s32);
 s32 func_800944F8(PlayerState*, s32);
 //Get Current Egg Type
+
 s32 func_80094510(PlayerState *);
 void func_800946C4(PlayerState*, s32);
 void func_800947EC(PlayerState *, s32, s32);
@@ -75,6 +85,7 @@ void func_80094824(PlayerState*);
 int func_800949BC(PlayerState*);
 s32 func_80094A10(PlayerState*);
 //Show amount of eggs for currently selected egg type
+
 void func_80094AB4(PlayerState*);
 s32 func_80094B14(PlayerState *);
 //Do we have eggs for current type
@@ -84,10 +95,7 @@ void func_80094C88(PlayerState*);
 s32 func_80094DA8(PlayerState*);
 void func_80094E40(s32);
 // This might return a s32 instead of a PlayerState pointer
-PlayerState *func_80092B04(PlayerState *, s32);
-// This might take a s32 instead of a PlayerState pointer
-// This might return a s32 instead of a PlayerState pointer
-PlayerState *func_800B27E0(PlayerState *);
 
+PlayerState *func_800B27E0(PlayerState *);
 
 #endif // __CORE2_1E6B900_H__

@@ -6,104 +6,6 @@
 #include "core2/1E9A960.h"
 
 typedef struct {
-    u8  pad0[4];
-    f32 unk4;
-    f32 unk8;
-    u8  padC[0x29 - 0x0C];
-    s8  unk29;
-    u8  pad2A[0x44 - 0x2A];
-    f32 unk44;
-    f32 unk48;
-    s16 unk4C; 
-    s16 unk4E;
-} unkStruct800EDC64;
-
-typedef struct 
-{
-    u8 pad00[0x28];
-    u8 unk28;
-    s8 unk29;
-    u8 pad2A[0x78 - 0x2A];
-    f32 unk78;
-    f32 unk7C;
-    f32 unk80;
-    f32 unk84;
-    f32 unk88;
-    f32 unk8C;
-    f32 unk90;
-    f32 unk94;
-    f32 unk98;
-    f32 unk9C;
-} unkStruct800EDF2C;
-
-typedef struct 
-{
-    u8 pad0[0x28];
-    s8 unk28;
-    s8 unk29;
-    u8 pad2A[0x78 - 0x2A];
-    f32 unk78;
-    f32 unk7C;
-    f32 unk80;
-    f32 unk84;
-    f32 unk88;
-    f32 unk8C;
-    f32 unk90;
-    f32 unk94;
-    f32 unk98;
-    f32 unk9C;
-} unkStruct800EDE54_arg0;
-
-typedef struct 
-{
-    s32 unk0;
-    s32 unk4;
-    s32 unk8;
-    s32 unkC;
-} unkStruct800EDE54_arg1;
-
-typedef struct 
-{
-    s32 unk0;
-    s32 unk4;
-    s32 unk8;
-    s32 unkC;
-} unkStruct800EDE54_arg2;
-
-typedef struct {
-    u8 pad[4];
-    f32 unk4;
-    f32 unk8;
-    u8 pad0C[0x29 - 0x0C];
-    s8 unk29;
-    u8 pad2A[0x44 - 0x2A];
-    f32 unk44;
-    f32 unk48;
-    s16 unk4C;
-    s16 unk4E;
-} unkStruct800EDFBC;
-
-typedef struct {
-    u8 pad[0xc];
-    s32 unkC;
-} unkStruct800EE0F0;
-
-typedef struct {
-    u8 pad[0x10];
-    s32 unk10;
-} unkStruct800EE0F8;
-typedef struct {
-    u8 unk0;
-    u8 pad[0x20 - 1];
-    f32 unk20;
-    f32 unk24;
-}unkStruct800EE040;
-typedef struct {
-    u8 pad[0x4c];
-    s16 unk4C;
-} unkStruct800EE100;
-
-typedef struct {
     s16 unk0;
     s16 unk2;
     s16 unk4;
@@ -153,7 +55,105 @@ typedef struct {
     f32 unk48;
 } unkStruct800ECD60;
 
-void func_800EE040(unkStruct800EE040* arg0, s32 arg1, f32 arg2, f32 arg3);      
+typedef struct {
+    u8  pad0[4];
+    f32 unk4;
+    f32 unk8;
+    u8  padC[0x29 - 0x0C];
+    s8  unk29;
+    u8  pad2A[0x44 - 0x2A];
+    f32 unk44;
+    f32 unk48;
+    s16 unk4C; 
+    s16 unk4E;
+} unkStruct800EDC64;
+
+typedef struct 
+{
+    u8 pad0[0x28];
+    s8 unk28;
+    s8 unk29;
+    u8 pad2A[0x78 - 0x2A];
+    f32 unk78;
+    f32 unk7C;
+    f32 unk80;
+    f32 unk84;
+    f32 unk88;
+    f32 unk8C;
+    f32 unk90;
+    f32 unk94;
+    f32 unk98;
+    f32 unk9C;
+} unkStruct800EDE54_arg0;
+
+typedef struct 
+{
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+} unkStruct800EDE54_arg1;
+
+typedef struct 
+{
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+} unkStruct800EDE54_arg2;
+typedef struct 
+{
+    u8 pad00[0x28];
+    u8 unk28;
+    s8 unk29;
+    u8 pad2A[0x78 - 0x2A];
+    f32 unk78;
+    f32 unk7C;
+    f32 unk80;
+    f32 unk84;
+    f32 unk88;
+    f32 unk8C;
+    f32 unk90;
+    f32 unk94;
+    f32 unk98;
+    f32 unk9C;
+} unkStruct800EDF2C;
+typedef struct {
+    u8 pad[4];
+    f32 unk4;
+    f32 unk8;
+    u8 pad0C[0x29 - 0x0C];
+    s8 unk29;
+    u8 pad2A[0x44 - 0x2A];
+    f32 unk44;
+    f32 unk48;
+    s16 unk4C;
+    s16 unk4E;
+} unkStruct800EDFBC;
+
+typedef struct {
+    u8 unk0;
+    u8 pad[0x20 - 1];
+    f32 unk20;
+    f32 unk24;
+}unkStruct800EE040;
+
+typedef struct {
+    u8 pad[0xc];
+    s32 unkC;
+} unkStruct800EE0F0;
+
+typedef struct {
+    u8 pad[0x10];
+    s32 unk10;
+} unkStruct800EE0F8;
+
+typedef struct {
+    u8 pad[0x4c];
+    s16 unk4C;
+} unkStruct800EE100;
+
 f32 func_800ED964(f32, f32);
+void func_800EE040(unkStruct800EE040* arg0, s32 arg1, f32 arg2, f32 arg3);      
 
 #endif

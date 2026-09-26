@@ -71,7 +71,7 @@ void func_80800FC0_bssub(s32 arg0)
 
 void func_80801004_bssub(s32 arg0)
 {
-    func_80090A2C();
+    func_80090A2C(arg0);
     func_808008D8_bssub(arg0);
 }
 

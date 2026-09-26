@@ -68,7 +68,7 @@ void func_80800128_bsbeemain(PlayerState* self) {
 
 void func_808001FC_bsbeemain(PlayerState* self)
 {
-    func_80090A2C();
+    func_80090A2C(self);
     _bsbee_entrypoint_0(self);
 }
 
@@ -113,7 +113,7 @@ void func_808002C0_bsbeemain(PlayerState* self) {
 
 void func_808003B4_bsbeemain(PlayerState* self)
 {
-    func_80090A2C();
+    func_80090A2C(self);
     _bsbee_entrypoint_0(self);
 }
 

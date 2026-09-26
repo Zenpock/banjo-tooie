@@ -64,14 +64,8 @@ typedef struct {
     s16 unkCE;
 } unkStruct800BA198;
 
-s32 func_800BBCB8(f32[3], f32[3], f32, s32, s32*);
 void func_800BA1D0(s32, f32*, f32*, s32);
 void func_800BA22C(s32, s32);
-void func_800BA670(unkStruct800BA198*, s32);
-void func_800BA77C(s32, s16, s16, s16);
-void func_800BA7C4(unkStruct800BA198*, f32, f32);
-void func_800BA7FC(unkStruct800BA198*, f32, f32);
-void func_800BA930(unkStruct800BA198*, s16, s16, s16, s16, s16, s16);
 void func_800BA3FC(s32, AssetId);
 void func_800BA450(s32, s32, s32, s32, s32, s32, s32);
 void func_800BA4D0(unkStruct800BA198*, s32);
@@ -80,11 +74,17 @@ void func_800BA568(unkStruct800BA198*, s16);
 void func_800BA5A8(s16*, s32);
 void func_800BA5D0(s32, s16);
 void func_800BA660(unkStruct800BA198*, s32, s16);
+void func_800BA670(unkStruct800BA198*, s32);
 void func_800BA6B0(s32, s16, s16, s16, s16, s16, s16);
 void func_800BA714(unkStruct800BA198*, s16, s16);
 void func_800BA75C(s32, f32*);
+void func_800BA77C(s32, s16, s16, s16);
+void func_800BA7C4(unkStruct800BA198*, f32, f32);
+void func_800BA7FC(unkStruct800BA198*, f32, f32);
+void func_800BA930(unkStruct800BA198*, s16, s16, s16, s16, s16, s16);
 void func_800BA994(unkStruct800BA198*, s16, s16, s16, s16, s16, s16);
 void func_800BAA60(unkStruct800BA198*, f32*, s16, s16);
 s32 func_800BABB8(s32, f32[3], f32[3], f32, s32[]);
+s32 func_800BBCB8(f32[3], f32[3], f32, s32, s32*);
 
 #endif // __CORE2_1E93440_H__

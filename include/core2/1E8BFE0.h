@@ -5,8 +5,8 @@
 #include "ba/playerstate.h"
 #include "core2/1EAF950.h"
 
+s32 func_800B2840(ImageStruct*);
 void func_800A2540(PlayerState*, s32);
 s32 func_800A25D0(PlayerState*);
-s32 func_800B2840(ImageStruct*);
 
 #endif

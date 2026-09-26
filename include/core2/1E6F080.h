@@ -7,27 +7,30 @@
 
 #include "ba/playerstate.h"
 
+f32 func_80095870(PlayerState*, f32*, f32*);
+void func_8009590C(PlayerState*, f32);
 void func_800959C8(PlayerState *, f32, f32);
 void func_80095A40(PlayerState *);
 void func_800961AC(PlayerState *, s32);
 void func_800962B0(PlayerState *, s32);
-s32 func_80096388(PlayerState *);
 f32 func_800962D4(PlayerState*);
-void func_800963C0(PlayerState *, f32[3]);
-s32 func_80096434(PlayerState *);
-void func_80096440(PlayerState *, f32 *);
-f32 func_800974FC(PlayerState *);
-s32 func_80097524(PlayerState *);
-s32 func_80097530(PlayerState *);
-void func_8009590C(PlayerState*, f32);
 f32 func_8009630C(PlayerState *);
 f32 func_80096364(PlayerState *);
+s32 func_80096388(PlayerState *);
+void func_800963C0(PlayerState *, f32[3]);
+s32 func_8009640C(PlayerState*);
+s32 func_80096434(PlayerState *);
+void func_80096440(PlayerState *, f32 *);
 f32 func_800964DC(PlayerState *);
 s32 func_80096500(PlayerState *);
 s32 func_8009650C(PlayerState *);
 s32 func_80096544(PlayerState *);
 s32 func_80096628(PlayerState *);
 s32 func_80096694(PlayerState*);
+s32 func_800966BC(PlayerState*);
+f32 func_800974FC(PlayerState *);
+s32 func_80097524(PlayerState *);
+s32 func_80097530(PlayerState *);
 s32 func_800976DC(PlayerState*);
 
 #endif // __CORE2_1E6F080_H__

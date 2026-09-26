@@ -6,7 +6,6 @@ typedef struct
     u8 unk42C;
 } UNKD_80127194;
 
-/* extern */
 extern UNKD_80127194 D_80127194;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/goto/func_80800000_gcgoto.s")

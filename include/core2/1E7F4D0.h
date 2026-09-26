@@ -3,7 +3,6 @@
 
 #include "common.h"
 
-
 typedef struct {
     u32 unk0;
     u32 unk4;
@@ -23,6 +22,5 @@ typedef struct {
 void func_800A5BE0();
 void func_800A5D1C();
 D_80127110_Data* func_800A5D60();
-void func_800A5D1C();
 
 #endif

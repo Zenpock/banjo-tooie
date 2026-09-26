@@ -10,6 +10,7 @@ f32 func_800F0D50(f32 value, f32 min, f32 max); // mlClamp()
 s32 func_800F0D90(s32, s32, s32);
 f32 func_800F0DC0(f32, f32);
 f32 func_800F0E00(f32, f32);
+s32 func_800F0E28(s32, s32);
 void func_800F0EF0(s32, f32*);
 f32 func_800F0F9C(f32, f32);
 f32 func_800F101C(f32, f32);
@@ -18,13 +19,13 @@ f32 func_800F1198(f32, f32, f32, f32, f32);
 f32 func_800F1214(f32 value, f32 min, f32 max); // ml_interpolate_f
 f32 func_800F12D4(f32, f32, f32, f32, f32);
 f32 func_800F1344(f32, f32 , f32, f32 , f32); //ml_mapAbsRange_f
-f32 func_800138D0(f32);
-f32 func_8001395C(f32);
 f32 func_800F13C4(f32, f32);
 f32 func_800F13F0(f32, f32);
 s32 func_800F1418(s32, s32);
 f32 func_800F1434(f32);
 f32 func_800F14AC(f32);
 f32 func_800F15F8(f32, f32, f32);
+f32 func_800138D0(f32);
+f32 func_8001395C(f32);
 
 #endif // __CORE2_1ECA640_H__
