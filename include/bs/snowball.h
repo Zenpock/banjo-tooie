@@ -4,50 +4,36 @@
 
 #include <ultra64.h>
 #include "common.h"
-
-// func_80800000_bssnowball
-// func_80800064_bssnowball
-// func_8080010C_bssnowball
-// func_80800164_bssnowball
-// bssnowball_entrypoint_0
-// bssnowball_entrypoint_1
-// bssnowball_entrypoint_2
-void func_808003B0_bssnowball(s32 arg0);
-// func_808003D8_bssnowball
-void func_808004AC_bssnowball();
-// bssnowball_entrypoint_3
-void func_808004E0_bssnowball(s32 arg0);
-void func_80800508_bssnowball(s32 arg0);
-void func_80800530_bssnowball(s32 arg0);
-// bssnowball_entrypoint_4
-// func_8080056C_bssnowball
-// func_808005A4_bssnowball
-// func_80800614_bssnowball
-// bssnowball_entrypoint_5
-// func_808006BC_bssnowball
-// func_808007D8_bssnowball
-// func_8080089C_bssnowball
-// bssnowball_entrypoint_6
-void func_808008F0_bssnowball();
-void func_80800910_bssnowball();
-// func_80800930_bssnowball
-// func_808009B0_bssnowball
-// bssnowball_entrypoint_7
-// func_80800B44_bssnowball
-// func_80800B70_bssnowball
-// func_80800BBC_bssnowball
-// bssnowball_entrypoint_8
-void func_80800C18_bssnowball(s32 arg0);
-// func_80800C40_bssnowball
-// func_80800C98_bssnowball
-// bssnowball_entrypoint_9
-void func_80800D00_bssnowball(s32 arg0);
-void func_80800D28_bssnowball(s32 arg0);
-// func_80800D50_bssnowball
-// bssnowball_entrypoint_10
-void func_80800DB0_bssnowball(s32 arg0);
-// func_80800DD8_bssnowball
-// func_80800E4C_bssnowball
-// bssnowball_entrypoint_11
+#include "ba/playerstate.h"
+#include "ba/anim.h"
+#include "ba/snowll.h"
+#include "ba/bounce.h"
+#include "ba/drone.h"
+#include "ba/flag.h"
+#include "ba/input.h"
+#include "ba/key.h"
+#include "ba/physics.h"
+#include "ba/roll.h"
+#include "ba/spin.h"
+#include "ba/stick.h"
+#include "ba/sudie.h"
+#include "ba/yaw.h"
+#include "bs/rest.h"
+#include "bs/state.h"
+#include "core2/1E66990.h"
+#include "core2/1E6A190.h"
+#include "core2/1E6B900.h"
+#include "core2/1E75710.h"
+#include "core2/1E75920.h"
+#include "core2/1E76880.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1E8DFA0.h"
+#include "core2/1E93440.h"
+#include "core2/1ECA640.h"
+#include "core2/anctrl.h"
+#include "player.h"
 
 #endif // __BS_SNOWBALL__

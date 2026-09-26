@@ -4,63 +4,48 @@
 
 #include <ultra64.h>
 #include "common.h"
-
-// func_80800000_bswasher
-// func_80800064_bswasher
-// func_808000BC_bswasher
-// func_808000F0_bswasher
-// func_808001A8_bswasher
-// bswasher_entrypoint_0
-// func_80800300_bswasher
-// func_8080042C_bswasher
-void func_80800590_bswasher(s32 arg0);
-// func_808005B8_bswasher
-// func_80800608_bswasher
-// bswasher_entrypoint_1
-// func_80800714_bswasher
-// func_80800770_bswasher
-// func_808007DC_bswasher
-// bswasher_entrypoint_2
-// func_808008BC_bswasher
-// func_808008F4_bswasher
-// func_8080099C_bswasher
-// bswasher_entrypoint_3
-// func_80800B08_bswasher
-// func_80800C70_bswasher
-// func_80800E74_bswasher
-// bswasher_entrypoint_4
-// func_80800EC8_bswasher
-// func_80800F1C_bswasher
-// func_80800F54_bswasher
-// func_80800F88_bswasher
-void func_8080100C_bswasher(s32 arg0);
-// func_80801034_bswasher
-// func_808010DC_bswasher
-// bswasher_entrypoint_5
-void func_808011B4_bswasher(s32 arg0);
-// func_808011DC_bswasher
-// func_80801218_bswasher
-// bswasher_entrypoint_6
-void func_80801294_bswasher(s32 arg0);
-// func_808012BC_bswasher
-// func_80801314_bswasher
-// bswasher_entrypoint_7
-void func_8080137C_bswasher(s32 arg0);
-void func_808013A4_bswasher(s32 arg0);
-// func_808013CC_bswasher
-// bswasher_entrypoint_8
-void func_8080142C_bswasher(s32 arg0);
-// func_80801454_bswasher
-// func_808014C8_bswasher
-// bswasher_entrypoint_9
-// func_808015EC_bswasher
-void func_80801744_bswasher(s32 arg0);
-// func_80801770_bswasher
-// func_808017A0_bswasher
-// bswasher_entrypoint_10
-void func_80801B10_bswasher();
-// func_80801B30_bswasher
-// func_80801BA4_bswasher
-// bswasher_entrypoint_11
+#include "ba/playerstate.h"
+#include "ba/anim.h"
+#include "ba/bounce.h"
+#include "ba/drone.h"
+#include "ba/flag.h"
+#include "ba/fpctrl.h"
+#include "ba/input.h"
+#include "ba/key.h"
+#include "ba/physics.h"
+#include "ba/roll.h"
+#include "ba/spin.h"
+#include "ba/stick.h"
+#include "ba/sudie.h"
+#include "ba/timer.h"
+#include "ba/washer.h"
+#include "ba/yaw.h"
+#include "bs/drone.h"
+#include "bs/mum/move.h"
+#include "bs/mum/still.h"
+#include "bs/rest.h"
+#include "bs/state.h"
+#include "ch/factory/workerdirty.h"
+#include "core2/1E65B90.h"
+#include "core2/1E66990.h"
+#include "core2/1E6A190.h"
+#include "core2/1E6B900.h"
+#include "core2/1E6F080.h"
+#include "core2/1E72EA0.h"
+#include "core2/1E75710.h"
+#include "core2/1E75920.h"
+#include "core2/1E76880.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1E8F430.h"
+#include "core2/1E93440.h"
+#include "core2/1E9A960.h"
+#include "core2/1EB2840.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECB0F0.h"
+#include "core2/anctrl.h"
+#include "player.h"
 
 #endif // __BS_WASHER__

@@ -8,17 +8,26 @@
 
 void func_800A2CE8(PlayerState *, f32, s32);
 void func_800A2D2C(PlayerState *, f32, s32);
+void func_800A2E18(PlayerState*);
+void func_800A2EAC(PlayerState*);
 void func_800A2EDC(PlayerState*, f32);
+void func_800A2EEC(PlayerState*, s32);
+void func_800A2FCC(PlayerState*, s32);
 f32 func_800A3048(PlayerState*);
 void func_800A3148(PlayerState*, f32*, f32*, f32*);
 TransformationId func_800A3274(PlayerState *);
 s32 func_800A3280();
 f32 func_800A3298(PlayerState *);
 void func_800A32C4(PlayerState *, f32[3]);
+Unk80132ED0* func_800A32F8(PlayerState*);
 s32 func_800A3304(PlayerState*);
+f32 func_800A3378(PlayerState*);
 f32 func_800A3394(PlayerState *);
+void func_800A33A0(PlayerState*, f32*);
+void func_800A33CC(PlayerState*, f32*);
 void func_800A3410(PlayerState *, s32);
 void func_800A34AC(PlayerState *, f32[3]);
+void func_800A34D8(s32, s32);
 s32 func_800A3538(PlayerState*);
 void func_800A38F0(PlayerState *, s32, s32);
 void func_800A3904(PlayerState *, s32);

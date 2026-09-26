@@ -76,7 +76,7 @@ void bsbkflamethrower_entrypoint_2(PlayerState* self)
 
 void bsbkflamethrower_entrypoint_3(PlayerState* self)
 {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     if ((_batimer_get(self, 0) != 0.0f) && (bakey_pressed(self, BUTTON_B) != 0)) {

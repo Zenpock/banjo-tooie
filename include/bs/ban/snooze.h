@@ -1,37 +1,42 @@
 #ifndef __BS_BAN_SNOOZE__
 #define __BS_BAN_SNOOZE__
 
-
-#include <ultra64.h>
 #include "common.h"
+#include "ba/anim.h"
+#include "ba/backpack.h"
+#include "ba/input.h"
+#include "ba/key.h"
+#include "ba/physics.h"
+#include "ba/stick.h"
+#include "ba/timer.h"
+#include "ba/yaw.h"
+#include "ba/playerstate.h"
+#include "bs/ban/snooze.h"
+#include "bs/mum/move.h"
+#include "bs/rest.h"
+#include "bs/state.h"
+#include "core2/1E66990.h"
+#include "core2/1E6E870.h"
+#include "core2/1E6F080.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E79FD0.h"
+#include "core2/1E7AB30.h"
+#include "core2/1E7D460.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECD170.h"
+#include "core2/1ED4E30.h"
+#include "core2/anctrl.h"
 #include "player.h"
 
-// func_80800000_bsbansnooze
-// func_80800098_bsbansnooze
-// func_80800128_bsbansnooze
-// func_8080019C_bsbansnooze
-// func_808001FC_bsbansnooze
-// func_80800278_bsbansnooze
-// bsbansnooze_entrypoint_0
-void func_8080037C_bsbansnooze();
-// func_8080039C_bsbansnooze
-// func_80800414_bsbansnooze
-// bsbansnooze_entrypoint_1
-void func_808004C0_bsbansnooze();
-// func_808004E0_bsbansnooze
-// func_80800588_bsbansnooze
-// bsbansnooze_entrypoint_2
-void func_8080064C_bsbansnooze(s32 arg0);
-void func_80800674_bsbansnooze(s32 arg0);
-void func_8080069C_bsbansnooze(PlayerState* self);
-// bsbansnooze_entrypoint_3
-void func_808006D0_bsbansnooze(s32 arg0);
-void func_808006F8_bsbansnooze(s32 arg0);
-// func_80800720_bsbansnooze
-// bsbansnooze_entrypoint_4
-void func_8080076C_bsbansnooze(s32 arg0);
-// func_80800794_bsbansnooze
-// func_808008A4_bsbansnooze
-// bsbansnooze_entrypoint_5
+#include "bs/ban/snooze.h"
+
+s32 _bsbansnooze_entrypoint_0(s32);
+s32 _bsbansnooze_entrypoint_1(s32);
+s32 _bsbansnooze_entrypoint_2(s32);
+s32 _bsbansnooze_entrypoint_3(s32);
+s32 _bsbansnooze_entrypoint_4(s32);
+s32 _bsbansnooze_entrypoint_5(s32);
 
 #endif // __BS_BAN_SNOOZE__

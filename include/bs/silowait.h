@@ -1,14 +1,17 @@
 #ifndef __BS_SILOWAIT__
 #define __BS_SILOWAIT__
 
-
-#include <ultra64.h>
 #include "common.h"
+#include "ba/anim.h"
+#include "ba/physics.h"
+#include "ba/playerstate.h"
+#include "bs/state.h"
+#include "core2/1E6B700.h"
+#include "core2/1E6B900.h"
+#include "core2/1E72EA0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
 
-// func_80800000_bssilowait
-// func_8080003C_bssilowait
-// func_808000D0_bssilowait
-void func_80800120_bssilowait(s32 arg0);
-// bssilowait_entrypoint_0
+s32 _bssilowait_entrypoint_0(s32 arg0);
 
 #endif // __BS_SILOWAIT__

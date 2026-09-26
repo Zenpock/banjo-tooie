@@ -18,8 +18,8 @@ s32 bafpctrl_entrypoint_0(void);
 // func_808008CC_bafpctrl
 // func_80800904_bafpctrl
 // func_80800970_bafpctrl
-// bafpctrl_entrypoint_1
-// bafpctrl_entrypoint_2
+s32 _bafpctrl_entrypoint_1(PlayerState*);
+s32 _bafpctrl_entrypoint_2(PlayerState*);
 f32 _bafpctrl_entrypoint_3(PlayerState*);
 s32 _bafpctrl_entrypoint_4(PlayerState *self);
 s32 _bafpctrl_entrypoint_5(PlayerState *self);
@@ -34,9 +34,9 @@ void _bafpctrl_entrypoint_11(PlayerState *self, s32, s32);
 void _bafpctrl_entrypoint_14(PlayerState *self, s32);
 // func_80800E30_bafpctrl
 // bafpctrl_entrypoint_15
-// bafpctrl_entrypoint_16
+void _bafpctrl_entrypoint_16(PlayerState*, s32); 
 void _bafpctrl_entrypoint_17(PlayerState *self);
 void _bafpctrl_entrypoint_18(PlayerState*, s32);
-// bafpctrl_entrypoint_19
+void _bafpctrl_entrypoint_19(PlayerState*);
 
 #endif // __BA_FPCONTROL_H__

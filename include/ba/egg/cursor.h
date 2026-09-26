@@ -4,19 +4,18 @@
 
 #include "common.h"
 #include "ba/playerstate.h"
+#include "core2/1E7D460.h"
+#include "core2/1E80A70.h"
+#include "core2/1E831D0.h"
+#include "core2/1EAF950.h"
+#include "core2/1EB2840.h"
+#include "core2/1EBB4F0.h"
+#include "core2/1ECA640.h"
 
-// func_80800000_baeggcursor
-s32 baeggcursor_entrypoint_0();
-// baeggcursor_entrypoint_1
-// baeggcursor_entrypoint_2
-// baeggcursor_entrypoint_3
-void baeggcursor_entrypoint_4(s32 arg0);
-// baeggcursor_entrypoint_5
-// baeggcursor_entrypoint_6
-// baeggcursor_entrypoint_7
+
+void _baeggcursor_entrypoint_3(PlayerState*, f32*, f32*);
+
 void _baeggcursor_entrypoint_8(PlayerState*);
-// baeggcursor_entrypoint_9
-// baeggcursor_entrypoint_10
-// baeggcursor_entrypoint_11
+void _baeggcursor_entrypoint_10(PlayerState*, f32, f32);
 
 #endif // __BA_EGG_CURSOR__

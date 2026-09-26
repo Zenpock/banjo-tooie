@@ -80,7 +80,7 @@ void func_808002B8_bsmum(PlayerState *self, s32 arg1) {
     self->unk15C.word = arg1;
     switch (self->unk15C.word) {                                 
         case 0:
-            _basudie_entrypoint_6(self, arg1);
+            _basudie_entrypoint_6(self);
             return;
         case 1:
             self->unk16C = 250.0f;
@@ -175,7 +175,7 @@ void func_80800604_bsmum(PlayerState *self) {
 }
 
 void func_8080065C_bsmum(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     f32 sp28[3];
 
     next_state = BS_STATE_0_INVALID;
@@ -238,7 +238,7 @@ void func_808009C8_bsmum(PlayerState *self) {
 }
 
 void func_808009F8_bsmum(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl *anim_ctrl;
     f32 sp24[3];
 
@@ -303,7 +303,7 @@ void func_80800BEC_bsmum(PlayerState *self) {
 }
 
 void func_80800C2C_bsmum(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     if (baanim_isAt(self, 0.5f) != 0) {
@@ -334,7 +334,7 @@ void bsmum_entrypoint_9(PlayerState *self) {
 }
 
 void bsmum_entrypoint_10(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     if (_babounce_entrypoint_9(self) != 0) {
@@ -361,7 +361,7 @@ void func_80800DE8_bsmum(PlayerState *self) {
 }
 
 void func_80800E10_bsmum(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     if (_bsrest_entrypoint_20(self) != 0) {
@@ -421,7 +421,7 @@ void func_80800FE0_bsmum(PlayerState *self) {
 }
 
 void func_80801058_bsmum(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     bsmum_entrypoint_13(self);

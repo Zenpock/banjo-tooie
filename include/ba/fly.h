@@ -66,7 +66,7 @@ void _bafly_entrypoint_10(PlayerState*, f32, f32);
 void _bafly_entrypoint_11(PlayerState*);
 s32 _bafly_entrypoint_12(PlayerState*);
 void _bafly_entrypoint_13(PlayerState*, s32, enum asset_e, f32);
-void bafly_entrypoint_14(PlayerState* arg0, enum bs_state_e, enum bs_state_e);
+void bafly_entrypoint_14(PlayerState* arg0, BanjoStateId, BanjoStateId);
 void _bafly_entrypoint_15(PlayerState*);
 void _bafly_entrypoint_16(PlayerState*, s32, f32);
 void _bafly_entrypoint_17(PlayerState*, s32, s32, u8 *);

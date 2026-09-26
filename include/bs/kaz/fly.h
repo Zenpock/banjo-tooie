@@ -56,12 +56,6 @@
 #include "nc/ba/fly.h"
 #include "player.h"
 
-typedef struct bs_kazfly_s {
-    f32 unk0;
-    f32 unk4[3];
-    f32 unk10[3];
-    u8 unk1C;
-} BsKazFly;
 
 s32 D_80801C10_bskazfly[];
 s32 D_80801C38_bskazfly[];

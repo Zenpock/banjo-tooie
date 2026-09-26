@@ -131,6 +131,7 @@ s32 func_800C9510();
 s32 func_800C954C();
 s32 func_800C95D4();
 s32 func_800C964C(s32);
+void func_800C968C(s32, s32);
 unkStruct800C9750* func_800C9750(f32, s32, u32*, s32, s32, s32, s32, s32);
 void func_800C986C(unkStruct800C9750*);
 void func_800C9974(u32, u32);

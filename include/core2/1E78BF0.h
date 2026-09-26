@@ -1,6 +1,7 @@
 #ifndef __CORE2_1E78BF0_H__
 #define __CORE2_1E78BF0_H__
 
+#include "physicstypes.h"
 #include "ba/playerstate.h"
 #include "ba/anim.h"
 #include "ba/data.h"
@@ -60,7 +61,7 @@ s32 func_8009F860(PlayerState*, s32, s32, s32, f32, f32);
 s32 func_8009FBB0(PlayerState *, f32[3], f32);
 // func_8009FBE8
 void func_8009FC34(PlayerState *, s32);
-// func_8009FC80
+void func_8009FC80(PlayerState*);
 void func_8009FD24(PlayerState *, s32);
 void func_8009FE58(PlayerState*);
 // func_8009FE78
@@ -71,7 +72,7 @@ void func_8009FFD8(PlayerState *, BaAnimUpdateType anim_update_type, YawType yaw
 void func_800A0024(PlayerState*);
 // func_800A0064
 s32 func_800A00CC(PlayerState *, f32[3]);
-// func_800A0110
+void func_800A0110(PlayerState*, AnimCtrl*);
 // func_800A0150
 void func_800A0180(PlayerState *);
 BanjoStateId func_800A01F8(PlayerState *, BanjoStateId arg1);
@@ -80,6 +81,6 @@ void func_800A042C(PlayerState *);
 void func_800A046C(PlayerState *);
 BanjoStateId func_800A04F4(PlayerState*, BanjoStateId);
 BanjoStateId func_800A055C(PlayerState*, BanjoStateId);
-// func_800A05DC
+void func_800A05DC(PlayerState*);
 
 #endif // __CORE2_1E78BF0_H__

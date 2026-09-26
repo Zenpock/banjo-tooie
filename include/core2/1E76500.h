@@ -8,5 +8,6 @@
 
 s32 func_8009CC18(PlayerState *self, f32[3]);
 s32 func_8009CC68(PlayerState *self);
+void func_8009CEE8(PlayerState*);
 
 #endif // __CORE2_1E76500_H__

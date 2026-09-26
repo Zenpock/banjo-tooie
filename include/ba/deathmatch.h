@@ -1,13 +1,22 @@
 #ifndef __BA_DEATHMATCH_H__
 #define __BA_DEATHMATCH_H__
 
-
-#include <ultra64.h>
 #include "common.h"
 #include "ba/playerstate.h"
+#include "ba/input.h"
+#include "ba/timer.h"
+#include "core1/heap.h"
+#include "core2/1E77A20.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1E7D460.h"
+#include "core2/1EA1DA0.h"
+#include "core2/1EC3810.h"
+#include "core2/1ECA640.h"
+#include "core2/1ED4E30.h"
+#include "core2/1EDA900.h"
+#include "gc/egg.h"
+#include "memory.h"
 
-// func_80800000_badeathmatch
-// func_80800028_badeathmatch
 void _badeathmatch_entrypoint_0(PlayerState*);
 // badeathmatch_entrypoint_1
 // badeathmatch_entrypoint_2

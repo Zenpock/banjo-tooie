@@ -127,7 +127,53 @@ typedef struct ba_unknown_50_s {
     f32 unkC8;
     MtxF unkCC;
 } BaUnknown50;
-
+typedef struct ba_unk54_s {
+	u8 unk0;
+	u8 unk1;
+	u8 unk2;
+	u8 unk3;
+	u8 unk4;
+	u8 unk5;
+	u8 unk6;
+	u8 unk7;
+	f32 unk8;
+	f32 unkC;
+	f32 unk10[3];
+	void* (*unk1C)(s32,s32,s32);
+	s32 unk20;
+	f32 unk24[3];
+    u8 unk30;
+    u8 unk31;
+    u8 unk32;
+    u8 unk33;
+    f32 unk34[3];
+	f32 unk40;
+	f32 unk44;
+	s32 unk48;
+} BaUnknown54;
+typedef struct ba_dust_s {
+    s32 unk0;
+    s32 unk4;
+    u8 unk8;
+    u8 unk9;
+    u8 unkA;
+    u8 unkB;
+} BaDust;
+typedef struct ba_cursor_s {
+    f32 unk0;
+    f32 unk4;
+    u8 unk8;
+    u8 unk9;
+    u8 unkA;
+    u8 unkB;
+    f32 unkC;
+    s8 unk10;
+    s8 unk11;
+    s8 unk12;
+    s8 unk13;
+    s32 unk14;
+    f32 unk18;
+} BaCursor;
 typedef struct ba_unknown_6C_s {
 	f32 unk0;
 	s32 unk4;
@@ -150,22 +196,106 @@ typedef struct ba_unknown_8C_s {
     u8 unkE;
 } BaUnknown8C;
 
+typedef struct ba_hold_s {
+    f32 unk0;
+    f32 unk4;
+    s32 unk8;
+    u8 unkC;
+    s8 unkD;
+    s8 unkE;
+    s8 unkF;
+    s8 unk10;
+    s8 unk11;
+    s8 unk12;
+    s8 unk13;
+    s32 unk14;
+    f32 unk18;
+} BaHold;
+
 typedef struct ba_unknown_C8_s {
-    u8 pad0[0x8];
-    f32 unk8;
-
-    u8 padC[0x14 - 0xC];
-    f32 unk14;
-
-    u8 pad18[0x28 - 0x18];
+    s32 unk0;
+    f32 unk4[3];
+    f32 unk10[3];
+    f32 unk1C[3];
     f32 unk28[3];
-    f32 unk34;
-    f32 unk38;
-
-    u8 pad3C[0xC8 - 0x3C];
-    struct ba_unknown_C8_s* unkC8;
+    f32 unk34[3];
+    f32 unk40[3];
+    f32 unk4C[3];
+    u8 pad58[0x54];
+    f32 unkAC[3];
+    f32 unkB8[3];
 } ba_unknown_C8_s;
 
+typedef struct ba_unknown_E8_s {
+	u8 unk0;
+	u8 unk1;
+	u8 unk2;
+	u8 unk3;
+	f32 unk4;
+	f32 unk8;
+} ba_unknown_E8_s;
+
+typedef struct ba_unknown_134_s {
+    f32 unk0;
+    f32 unk4;
+} BaUnknown134;
+
+typedef struct ba_deathmatch_s {
+    s16 unk0[4];
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    u8 unk20;
+    u8 unk21;
+    u8 unk22;
+    u8 unk23;
+} BaDeathmatch;
+
+typedef struct bs_kazfly_s {
+    f32 unk0;
+    f32 unk4[3];
+    f32 unk10[3];
+    u8 unk1C;
+} BsKazFly;
+
+typedef struct bs_firstp_s {
+    s32 unk0;
+    f32 unk4[3];
+    f32 unk10[2];
+	f32 unk18;
+    f32 unk1C;
+    f32 unk20;
+    f32 unk24;
+    s32 unk28;
+    f32 unk2C[3];
+    f32 unk38[3];
+    f32 unk44[3];
+    f32 unk50;
+    f32 unk54;
+    f32 unk58;
+    f32 unk5C;
+    f32 unk60;
+    u8 pad64[0x28];
+    s32 unk8C;
+    f32 unk90;
+    u8 pad94[0x4C];
+    s16 unkE0;
+    s16 unkE2;
+    s16 unkE4;
+    s16 unkE6;
+    s16 unkE8;
+    s16 unkEA;
+    u8 padEC[0x120];
+    f32 unk20C;
+} BsFirstP;
+typedef struct bs_van_s {
+    s32 unk0;
+    f32 unk4[3];
+    s32 unk10;
+} BsVan;
 typedef struct player_state_s {
     /* 0x00 */ struct ba_alarm_s *alarm;
     /* 0x04 */ struct ba_anim_s *anim;
@@ -188,30 +318,37 @@ typedef struct player_state_s {
     u8 unk48;
     u8 pad49[0x7];
     struct ba_unknown_50_s* unk50;
-    u8 pad54[0x10];
+    /* 0x54 */  BaUnknown54* unk54;
+    u8 pad58[0x4];
+    /* 0x5C */ BaDust* dust;
+    u8 pad60[0x4];
     u8* unk64;
-	u8 pad68[0x4];
+    /* 0x68 */ BaCursor* cursor;
 	struct ba_unknown_6C_s* unk6C;
 	u8 pad70[0x10];
     /* 0x80 */ struct ba_flag_s *flag;
     u8 pad84[0x8];
     /* 0x8C */ struct ba_unknown_8C_s* unk8C;
     u8 pad90[0xC];
-    /* 0x9C */ struct ba_unk_9C* unk9C;
+    /* 0x9C */ BaHold* hold;
     u8 padA0[0x4];
     /* 0xA4 */ struct ba_input_s *input;
     u8 padA8[0x18];
     /* 0xC0 */ struct ba_unknown_C0_s *unkC0; // 1E72EA0
     /* 0xC4 */ u8 *unkC4;
     /* 0xC8 */ struct ba_unknown_C8_s *unkC8;
-    u8 padCC[0xF4 - 0xCC];
+    u8 padCC[0xE8 - 0xCC];
+	/* 0xE8 */ ba_unknown_E8_s* unkE8;
+	u8 padEC[0x8];
     /* 0xF4 */ struct ba_roll_s *roll;
     /* 0xF8 */ struct ba_yaw_s *yaw;
     u8 padFC[0x24];
     /* 0x120 */ struct bs_state_s *state;
     u8 pad124[4];
     /* 0x128 */ struct ba_stick_s *stick;
-    u8 pad12C[0x10];
+    u8 pad12C[0x8];
+    /* 0x134 */ BaUnknown134* swim;
+    u8 pad138[0x4];
     /* 0x13C */ struct ba_timer_s *timer;
     /* 0x140 */ struct ba_translate_s *translate;
     /* 0x144 */ struct ba_van_s *van;
@@ -219,10 +356,7 @@ typedef struct player_state_s {
     /* 0x14C */ struct ba_washer_s *washer;
     u8 pad150[0x4];
     /* 0x154 */ struct ba_wobble_s *wobble;
-	union {
-		s32 word;
-		u8 bytes[4];
-	} unk158;
+    /* 0x158 */ BaDeathmatch* deathmatch;
     union {
         s32 word;
         u8 bytes[4];
@@ -242,10 +376,23 @@ typedef struct player_state_s {
     f32 unk16C;
     f32 unk170;
     f32 unk174;
-    s32 unk178;
+    f32 unk178;
     s32 unk17C;
     s32 unk180;
     s32 unk184;
-    /* 0x188 */ struct bs_kazfly_s *kazfly;
+    union var188 {
+        /* 0x188 */ BsKazFly* kazfly;
+        /* 0x188 */ BsFirstP* firstp;
+        /* 0x188 */ BsVan* bsvan;
+    };
+    s32 unk18C;
+	union {
+		f32 word;
+		u8 bytes[4];
+	} unk190;
+	union {
+		f32 word;
+		u8 bytes[4];
+	} unk194;
 } PlayerState;
 #endif

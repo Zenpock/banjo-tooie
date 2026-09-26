@@ -15,4 +15,13 @@ typedef struct ba_van_s {
     f32 unk14;
 } BaVan;
 
+void _bavan_entrypoint_1(PlayerState*);
+void _bavan_entrypoint_2(PlayerState*);
+void _bavan_entrypoint_3(PlayerState*);
+void _bavan_entrypoint_4(PlayerState*, f32);
+void _bavan_entrypoint_5(PlayerState*, f32);
+void _bavan_entrypoint_6(PlayerState*, f32);
+void _bavan_entrypoint_7(PlayerState*, f32);
+void _bavan_entrypoint_8(PlayerState*);
+
 #endif 

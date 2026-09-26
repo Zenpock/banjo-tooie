@@ -31,6 +31,7 @@ int func_800EEEA8(f32*);
 int func_800EEF24(f32[3]);
 f32 func_800EEF94(f32*);
 f32 func_800EEFD4(f32[3]);
+f32 func_800EEFFC(f32*);
 void func_800EF04C(f32[3], f32[3]);
 void func_800EF174(f32*, f32*, f32);
 void func_800EF1B8(f32*, f32, f32);
@@ -39,6 +40,7 @@ void func_800EF2A0(f32[3]);
 void func_800EF334(f32 vec[3], f32 scale); // ml_vec3f_apply_scale
 void func_800EF368(f32 vec[3], f32 target_length); // ml_vec3f_set_length
 void func_800EF3DC(f32 dst[3], f32 src[3]); // ml_vec3f_subtract
+void func_800EF410(f32*, f32*);
 void func_800EF4E4(f32[3], f32, f32, f32, f32, f32);
 void func_800EF5A0(f32*, f32*, f32, f32, f32);
 void func_800EF8BC(f32*, f32*, f32);

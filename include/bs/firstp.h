@@ -67,29 +67,10 @@
 #include "nc/ba/1p.h"
 #include "player.h"
 
-typedef struct bs_kazfly_s {
-	f32 unk0;
-	f32 unk4[3];
-	f32 unk10[3];
-	u8 unk1C;
-	u8 pad1D[0xF];
-	f32 unk2C[3];
-	f32 unk38[3];
-	f32 unk44[3];
-	f32 unk50;
-	u8 pad54[0x8C];
-	s16 unkE0;
-	s16 unkE2;
-	s16 unkE4;
-	s16 unkE6;
-	s16 unkE8;
-	s16 unkEA;
-	u8 padEC[0x120];
-	f32 unk20C;
-} BsKazFly;
-
 
 void func_80807D48_bsfirstp(PlayerState*);
 void func_8080800C_bsfirstp(PlayerState*);
+
+void _bsfirstp_entrypoint_27(PlayerState*);
 
 #endif

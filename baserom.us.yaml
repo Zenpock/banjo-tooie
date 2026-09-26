@@ -1083,10 +1083,10 @@ segments:
     symbol_name_format: $VRAM_$SEG
     symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F12D00, c, wim]
-      - [0x01F14A70, .rodata, wim]
-      - [0x01F14B60, data, wim]
-      - [0x01F14CB0, bss, wim]
+      - [0x01F12D00, c, bswim]
+      - [0x01F14A70, .rodata, bswim]
+      - [0x01F14B60, data, bswim]
+      - [0x01F14CB0, bss, bswim]
   - name: bsbtrot_header
     dir: overlays/bsbtrot
     type: bin
@@ -3636,7 +3636,7 @@ segments:
     start: 0x01F703E0
     exclusive_ram_id: overlay
     subsegments: 
-      - [auto, c, airr]
+      - [auto, c, airbar]
   - name: cadbmgrDll_header
     dir: overlays/cadbmgrDll
     type: bin

@@ -41,7 +41,6 @@
 #include "core2/1ED4E30.h"
 
 // Entrypoints
-extern enum bs_state_e _badrone_entrypoint_28(PlayerState*);
 extern void _bsbee_entrypoint_1(PlayerState*);
 extern void _bsbee_entrypoint_2(PlayerState*);
 

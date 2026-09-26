@@ -24,6 +24,7 @@ f32 func_800F13F0(f32, f32);
 s32 func_800F1418(s32, s32);
 f32 func_800F1434(f32);
 f32 func_800F14AC(f32);
+int func_800F1574(f32* timer, f32 delta);
 f32 func_800F15F8(f32, f32, f32);
 f32 func_800138D0(f32);
 f32 func_8001395C(f32);

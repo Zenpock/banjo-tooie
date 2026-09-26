@@ -160,7 +160,7 @@ void func_800E4208() {
     D_8012D504 = 0;
 }
 
-void func_800E4244(s32 arg0, f32 arg1) {
+void func_800E4244(f32* arg0, f32 arg1) {
     func_800CA3F4(D_8012D500, arg0, arg1);
 }
 
