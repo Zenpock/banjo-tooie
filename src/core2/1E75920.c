@@ -2,33 +2,79 @@
 
 s32 func_8009C030() 
 {
-    return 0x30;
+    return sizeof(PositionInfo);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C038.s")
+//Clear Position History
+void func_8009C038(PlayerState* self)
+{
+    func_800EFD24(self->posInfo->unk24);
+    func_800EFD24(self->posInfo->current);
+    func_800EFD24(self->posInfo->oldPos);
+    func_800EFD24(self->posInfo->olderPos);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C08C.s")
+void func_8009C08C(PlayerState* self)
+{
+    func_8009C21C(self);
+    func_800EFD24(self->posInfo->unk24);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C0BC.s")
+void func_8009C0BC(PlayerState* self, f32* src)
+{
+    func_800EE7F8(self->posInfo->current, src);
+    func_800EE7F8(self->posInfo->oldPos, src);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C0F8.s")
+void func_8009C0F8(PlayerState* self, f32* src)
+{
+    func_800EE7F8(self->posInfo->current, src);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C118.s")
+void func_8009C118(PlayerState* self, f32 src)
+{
+    self->posInfo->current[1] = src;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C128.s")
+void func_8009C128(PlayerState* self, f32* dst) {
+    func_800EE7F8(dst, self->posInfo->current);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C150.s")
+f32 func_8009C150(PlayerState* self)
+{
+    return self->posInfo->current[1];
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C15C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C188.s")
+void func_8009C188(PlayerState* self, f32* dst)
+{
+    func_800EE7F8(dst, self->posInfo->olderPos);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C1B4.s")
+void func_8009C1B4(PlayerState* self, f32 src)
+{
+    self->posInfo->current[1] += src;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C1CC.s")
+void func_8009C1CC(PlayerState* self, f32* dst)
+{
+    func_800EE7F8(dst, self->posInfo->unk24);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C1F8.s")
+void func_8009C1F8(PlayerState* self, f32* src)
+{
+    func_800EE7F8(self->posInfo->unk24, src);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C21C.s")
+void func_8009C21C(PlayerState* self)
+{
+    func_800EE7F8(self->posInfo->olderPos, self->posInfo->oldPos);
+    func_800EE7F8(self->posInfo->oldPos, self->posInfo->current);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C25C.s")
+void func_8009C25C(PlayerState* self)
+{
+    func_800EF04C(self->posInfo->current, self->posInfo->unk24);
+    func_800EFD24(self->posInfo->unk24);
+}

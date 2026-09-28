@@ -226,6 +226,13 @@ typedef struct ba_unknown_C8_s {
     f32 unkB8[3];
 } ba_unknown_C8_s;
 
+typedef struct PositionInfo {
+    f32 current[3];
+    f32 oldPos[3];
+    f32 olderPos[3];
+    f32 unk24[3];
+} PositionInfo;
+
 typedef struct ba_unknown_E8_s {
 	u8 unk0;
 	u8 unk1;
@@ -337,7 +344,8 @@ typedef struct player_state_s {
     /* 0xC0 */ struct ba_unknown_C0_s *unkC0; // 1E72EA0
     /* 0xC4 */ u8 *unkC4;
     /* 0xC8 */ struct ba_unknown_C8_s *unkC8;
-    u8 padCC[0xE8 - 0xCC];
+    u8 padCC[0xE4 - 0xCC];
+    /* 0xE4 */ PositionInfo* posInfo;
 	/* 0xE8 */ ba_unknown_E8_s* unkE8;
 	u8 padEC[0x8];
     /* 0xF4 */ struct ba_roll_s *roll;
