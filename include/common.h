@@ -69,7 +69,11 @@ typedef struct Actor {
     /* 0x40 */ s32 pad40;
     /* 0x44 */ f32 rotation[3];
     /* 0x50 */ f32 unk50;
-    /* 0x54 */ f32 unk54; //Occasionally an s32
+    union
+    {
+        /* 0x54 */ f32 unk54;
+        /* 0x54 */ s32 unk54s;
+    };
     /* 0x58 */ f32 unk58;
     /* 0x5C */ u8 pad5C;
     /* 0x5D */ u8 pad5D;

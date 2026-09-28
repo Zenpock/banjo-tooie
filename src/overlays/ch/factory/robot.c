@@ -672,7 +672,7 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
                 if (_subaddierouteDll_entrypoint_4(arg0) != 0)
                 {
                     _subaddierouteDll_entrypoint_7(arg0, &temp_s1->unk34, temp_f0_2, temp_f0_2, 400.0f, 0x5000);
-                    temp_s1->unk30 = (f32)arg0->unk54;
+                    temp_s1->unk30 = arg0->unk54;
                 }
                 temp_s1->unk2C = func_800F1FF0(temp_s1->unk2C, temp_s1->unk30, 0.15f, time_getDelta() * 10.0f, time_getDelta() * 150.0f);
                 arg0->unk54 = temp_f0_2;
@@ -700,7 +700,7 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
                     if (_subaddierouteDll_entrypoint_4(arg0) != 0)
                     {
                         _subaddierouteDll_entrypoint_7(arg0, &temp_s1->unk34, temp_f0_3, temp_f0_3, 400.0f, 0x5000);
-                        temp_s1->unk30 = (f32)arg0->unk54;
+                        temp_s1->unk30 = arg0->unk54;
                     }
 
                     temp_s1->unk2C = func_800F1FF0(temp_s1->unk2C, temp_s1->unk30, 0.15f, time_getDelta() * 10.0f, time_getDelta() * 120.0f);

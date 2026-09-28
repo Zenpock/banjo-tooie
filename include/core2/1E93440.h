@@ -66,6 +66,7 @@ typedef struct {
 
 void func_800BA1D0(s32, f32*, f32*, s32);
 void func_800BA22C(s32, s32);
+int func_800BA28C(unkStruct800BA198*);
 void func_800BA3FC(s32, AssetId);
 void func_800BA450(s32, s32, s32, s32, s32, s32, s32);
 void func_800BA4D0(unkStruct800BA198*, s32);

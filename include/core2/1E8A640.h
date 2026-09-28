@@ -11,5 +11,9 @@ typedef struct {
     u8 unkC[];
 } unkStruct800B0D58;
 
+s16 func_800B0D50(unkStruct800B0D58*);
+s16 func_800B0D58(unkStruct800B0D58*);
+u8* func_800B0D60(unkStruct800B0D58*);
+s32 func_800B0D6C(unkStruct800B0D58*, s32);
 
 #endif
