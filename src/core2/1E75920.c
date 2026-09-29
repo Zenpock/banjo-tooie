@@ -45,7 +45,7 @@ f32 func_8009C150(PlayerState* self)
     return self->posInfo->current[1];
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75920/func_8009C15C.s")
+void func_8009C15C(PlayerState* self, f32* dst) { func_800EE7F8(dst, self->posInfo->oldPos); }
 
 void func_8009C188(PlayerState* self, f32* dst)
 {

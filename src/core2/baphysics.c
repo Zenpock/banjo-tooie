@@ -160,18 +160,18 @@ void func_8009B3B8(PlayerState* self)
     func_800EF04C(self->unkC8->unk4, self->unkC8->unk28);
 }
 
-void func_8009B414(PlayerState* arg0)
+void func_8009B414(PlayerState* self)
 {
     f32 sp1C[3];
 
-    func_8009C128(arg0, sp1C);
-    func_800EFB24(arg0->unkC8->unk28, arg0->unkC8->unk4, sp1C);
+    func_8009C128(self, sp1C);
+    func_800EFB24(self->unkC8->unk28, self->unkC8->unk4, sp1C);
 }
 
-void func_8009B450(PlayerState* arg0)
+void func_8009B450(PlayerState* self)
 {
-    arg0->unkC8->unk4C[0] += time_getDelta();
-    arg0->unkC8->unk4[1] = arg0->unkC8->unk40[2] + (func_80013970(func_800F0F9C(arg0->unkC8->unk4C[0], D_801252A8) * 360.0f) * 5.0f);
+    self->unkC8->unk4C[0] += time_getDelta();
+    self->unkC8->unk4[1] = self->unkC8->unk40[2] + (func_80013970(func_800F0F9C(self->unkC8->unk4C[0], D_801252A8) * 360.0f) * 5.0f);
 }
 
 void func_8009B4D0(PlayerState* self, f32 arg1[3]) 
@@ -181,7 +181,7 @@ void func_8009B4D0(PlayerState* self, f32 arg1[3])
 
 void func_8009B4FC(PlayerState* arg0)
 {
-    arg0->unkC8->unk0 = 0;
+    arg0->unkC8->currentPhysicsType = 0;
     arg0->unkC8->unk4C[1] = 1.0f;
     func_800EFA4C(arg0->unkC8->unk10, 0.0f, -1.0f, 0.0f);
     func_800EFD24(arg0->unkC8->unk1C);
@@ -256,8 +256,9 @@ f32 func_8009BADC(PlayerState* self) {
 f32 func_8009BAE8(PlayerState* self) {
     return self->unkC8->unk34[1];
 }
-s32 func_8009BAF4(PlayerState* self) {
-    return self->unkC8->unk0;
+
+BaPhysicsType func_8009BAF4(PlayerState* self) {
+    return self->unkC8->currentPhysicsType;
 }
 
 f32 baphysics_get_target_horizontal_velocity(PlayerState* self) {
@@ -336,18 +337,18 @@ void baphysics_set_terminal_velocity(PlayerState* self, f32 arg1) {
     self->unkC8->unk34[1] = arg1;
 }
 
-s32 func_8009BCD4(PlayerState* arg0, f32 arg1)
+s32 func_8009BCD4(PlayerState* self, f32 arg1)
 {
     f32 temp_f0;
     f32 temp_f2;
     s32 var_v0;
 
     var_v0 = 0;
-    temp_f0 = arg0->unkC8->unk10[2];
-    temp_f2 = arg0->unkC8->unk10[0];
+    temp_f0 = self->unkC8->unk10[2];
+    temp_f2 = self->unkC8->unk10[0];
     return (((temp_f0 * temp_f0) + (temp_f2 * temp_f2)) <= (arg1 * arg1));
 }
 
-void func_8009BD18(PlayerState* arg0, f32 arg1) {
-    arg0->unkC8->unk4C[1] = arg1;
+void func_8009BD18(PlayerState* self, f32 arg1) {
+    self->unkC8->unk4C[1] = arg1;
 }

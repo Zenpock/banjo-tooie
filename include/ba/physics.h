@@ -57,7 +57,7 @@ void func_8009B9F0(PlayerState *, f32);
 void func_8009BA9C(PlayerState *, f32[3]);
 f32 func_8009BADC(PlayerState *);
 f32 func_8009BAE8(PlayerState *);
-s32 func_8009BAF4(PlayerState*);
+BaPhysicsType func_8009BAF4(PlayerState*);
 f32 func_8009BB0C(PlayerState*);
 f32 func_8009BB18(PlayerState*);
 void func_8009BB24(PlayerState *, f32[3]);

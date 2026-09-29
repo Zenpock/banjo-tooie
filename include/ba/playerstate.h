@@ -5,6 +5,7 @@
 
 #include "buttons.h"
 #include "core1/mlmtx.h"
+#include "physicstypes.h"
 
 typedef struct ba_unknown_c_s {
     u8 pad0[0xC];
@@ -213,7 +214,7 @@ typedef struct ba_hold_s {
 } BaHold;
 
 typedef struct ba_unknown_C8_s {
-    s32 unk0;
+    BaPhysicsType currentPhysicsType;
     f32 unk4[3];
     f32 unk10[3];
     f32 unk1C[3];
@@ -225,6 +226,13 @@ typedef struct ba_unknown_C8_s {
     f32 unkAC[3];
     f32 unkB8[3];
 } ba_unknown_C8_s;
+
+typedef struct ba_unknown_DC_s {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    f32 unkC;
+} ba_unknown_DC_s;
 
 typedef struct PositionInfo {
     f32 current[3];
@@ -344,7 +352,9 @@ typedef struct player_state_s {
     /* 0xC0 */ struct ba_unknown_C0_s *unkC0; // 1E72EA0
     /* 0xC4 */ u8 *unkC4;
     /* 0xC8 */ struct ba_unknown_C8_s *unkC8;
-    u8 padCC[0xE4 - 0xCC];
+    u8 padCC[0xDC - 0xCC];
+    /* 0xDC */ ba_unknown_DC_s* unkDC;
+    u8 padE0[4];
     /* 0xE4 */ PositionInfo* posInfo;
 	/* 0xE8 */ ba_unknown_E8_s* unkE8;
 	u8 padEC[0x8];
