@@ -2,9 +2,6 @@
 
 extern f32 D_80117EF0;
 extern f32 D_80117EF4;
-extern f32 D_801252A0;
-extern f32 D_801252A4;
-extern f32 D_801252A8;
 
 s32 func_8009AD70() 
 {
@@ -19,12 +16,12 @@ void func_8009AD88(s32 arg0)
 {
 }
 
-void func_8009AD90(PlayerState* arg0)
+void func_8009AD90(PlayerState* self)
 {
 	s32 var_v0;
 	for (var_v0 = 0; var_v0 != 0xF; var_v0++)
 	{
-		arg0->unkC4[var_v0] = 0;
+		self->unkC4[var_v0] = 0;
 	}
 }
 
@@ -34,10 +31,10 @@ void func_8009ADF0(PlayerState* self, s32 arg1, s32 arg2) {
 
 s32 func_8009AE00() 
 {
-    return 0xC4;
+    return sizeof(ba_unknown_C8_s);
 }
 
-void func_8009AE08(PlayerState* arg0) {
+void func_8009AE08(PlayerState* self) {
 	f32 sp7C[3];
 	f32 sp70[3];
 	f32 sp64[3];
@@ -48,23 +45,23 @@ void func_8009AE08(PlayerState* arg0) {
 	f32 sp38;
 	f32 var_f12;
 
-	func_800EEB9C(arg0->unkC8->unk1C, arg0->unkC8->unk40[0], arg0->unkC8->unk4C[1] * arg0->unkC8->unk34[2]);
-	sp64[0] = arg0->unkC8->unk10[0];
+	func_800EEB9C(self->unkC8->unk1C, self->unkC8->unk40[0], self->unkC8->unk4C[1] * self->unkC8->unk34[2]);
+	sp64[0] = self->unkC8->unk10[0];
 	sp64[1] = 0.0f;
-	sp64[2] = arg0->unkC8->unk10[2];
-	func_800EE7F8(sp58, arg0->unkC8->unk1C);
+	sp64[2] = self->unkC8->unk10[2];
+	func_800EE7F8(sp58, self->unkC8->unk1C);
 	sp58[1] = 0.0f;
-	if (func_80096518(arg0) != 0)
+	if (func_80096518(self) != 0)
 	{
-		func_800963C0(arg0, sp4C);
+		func_800963C0(self, sp4C);
 		func_800EF410(sp40, sp58);
 		sp3C = func_800EEAA4(sp40, sp4C);
-		sp38 = func_800A3378(arg0);
+		sp38 = func_800A3378(self);
 		if (sp3C != 0.0f)
 		{
 			if (sp3C < 0.0f)
 			{
-				if (func_8008E1C4(arg0) != 0)
+				if (func_8008E1C4(self) != 0)
 				{
 					sp38 = func_800F10B4(sp38, 0.0f, 1.0f, sp3C * 0.5f, -1.0f);
 				}
@@ -76,58 +73,58 @@ void func_8009AE08(PlayerState* arg0) {
 			}
 			else
 			{
-				func_800EF334(sp58, (0, 1.0f) + sp3C * D_801252A0);
+				func_800EF334(sp58, (0, 1.0f) + sp3C * 0.2f);
 			}
 		}
 	}
-	func_800EFA20(sp7C, sp58, func_80094E98(arg0));
-	func_800EFA20(sp70, sp64, func_80094E98(arg0));
+	func_800EFA20(sp7C, sp58, func_80094E98(self));
+	func_800EFA20(sp70, sp64, func_80094E98(self));
 	func_800EF3DC(sp7C, sp70);
 	func_800EF334(sp7C, time_getDelta() * 30.0f);
-	func_800EF04C(arg0->unkC8->unk10, sp7C);
-	arg0->unkC8->unk10[1] += (arg0->unkC8->unk34[0] * time_getDelta());
-	if (arg0->unkC8->unk10[1] < arg0->unkC8->unk34[1])
+	func_800EF04C(self->unkC8->unk10, sp7C);
+	self->unkC8->unk10[1] += (self->unkC8->unk34[0] * time_getDelta());
+	if (self->unkC8->unk10[1] < self->unkC8->unk34[1])
 	{
-		arg0->unkC8->unk10[1] = arg0->unkC8->unk34[1];
+		self->unkC8->unk10[1] = self->unkC8->unk34[1];
 	}
-	func_800EFA20(arg0->unkC8->unk28, arg0->unkC8->unk10, time_getDelta());
-	func_800EF04C(arg0->unkC8->unk4, arg0->unkC8->unk28);
-	func_800F2168(arg0->unkC8->unk10, 0.0001f);
+	func_800EFA20(self->unkC8->unk28, self->unkC8->unk10, time_getDelta());
+	func_800EF04C(self->unkC8->unk4, self->unkC8->unk28);
+	func_800F2168(self->unkC8->unk10, 0.0001f);
 }
 
-void func_8009B08C(PlayerState* arg0) {
+void func_8009B08C(PlayerState* self) {
 	f32 sp2C[3];
 	f32 sp28;
 
 	sp28 = time_getDelta();
-	func_800EFB24(sp2C, arg0->unkC8->unk1C, arg0->unkC8->unk10);
-	func_800EF334(sp2C, arg0->unkC8->unk40[1] * sp28);
-	if (((SQ(sp2C[0]) + SQ(sp2C[1]) + SQ(sp2C[2]))) < D_801252A4)
+	func_800EFB24(sp2C, self->unkC8->unk1C, self->unkC8->unk10);
+	func_800EF334(sp2C, self->unkC8->unk40[1] * sp28);
+	if (((SQ(sp2C[0]) + SQ(sp2C[1]) + SQ(sp2C[2]))) < 0.02f)
 	{
-		func_800EE7F8(arg0->unkC8->unk10, arg0->unkC8->unk1C);
+		func_800EE7F8(self->unkC8->unk10, self->unkC8->unk1C);
 	}
 	else
 	{
-		func_800EF04C(arg0->unkC8->unk10, sp2C);
+		func_800EF04C(self->unkC8->unk10, sp2C);
 	}
-	func_800EFA20(arg0->unkC8->unk28, arg0->unkC8->unk10, sp28);
-	func_800EF04C(arg0->unkC8->unk4, arg0->unkC8->unk28);
+	func_800EFA20(self->unkC8->unk28, self->unkC8->unk10, sp28);
+	func_800EF04C(self->unkC8->unk4, self->unkC8->unk28);
 }
 
-void func_8009B170(PlayerState* arg0)
+void func_8009B170(PlayerState* self)
 {
     f32 temp_f0;
     f32 temp_f2;
 
     temp_f0 = time_getDelta();
-    arg0->unkC8->unk10[1] += arg0->unkC8->unk34[0] * temp_f0;
-    temp_f2 = arg0->unkC8->unk34[1];
-    if (arg0->unkC8->unk10[1] < temp_f2)
+    self->unkC8->unk10[1] += self->unkC8->unk34[0] * temp_f0;
+    temp_f2 = self->unkC8->unk34[1];
+    if (self->unkC8->unk10[1] < temp_f2)
     {
-        arg0->unkC8->unk10[1] = temp_f2;
+        self->unkC8->unk10[1] = temp_f2;
     }
-    func_800EFA20(arg0->unkC8->unk28, arg0->unkC8->unk10, temp_f0);
-    func_800EF04C(arg0->unkC8->unk4, arg0->unkC8->unk28);
+    func_800EFA20(self->unkC8->unk28, self->unkC8->unk10, temp_f0);
+    func_800EF04C(self->unkC8->unk4, self->unkC8->unk28);
 }
 
 void func_8009B1FC(PlayerState* self) {
@@ -151,7 +148,29 @@ void func_8009B1FC(PlayerState* self) {
     self->unkC8->unk4[1] += self->unkC8->unk28[1];
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009B27C.s")
+void func_8009B27C(PlayerState* self)
+{
+	f32 sp3C[3];
+	f32 sp30[3];
+	func_80098590(self, sp30);
+	self->unkC8->unk4[0] = sp30[0];
+	self->unkC8->unk4[2] = sp30[2];
+	if (func_8009861C(self) == 2)
+	{
+		func_800EEB9C(sp3C, func_800136E4(func_80098610(self) + 180.0f), -func_80098628(self));
+	}
+	else
+	{
+		func_800EEB9C(sp3C, yaw_get(self), -func_80098628(self));
+	}
+
+	self->unkC8->unk4[0] += sp3C[0];
+	self->unkC8->unk4[1] += sp3C[1];
+	self->unkC8->unk4[2] += sp3C[2];
+	self->unkC8->unk1C[0] = self->unkC8->unk1C[2] =
+	self->unkC8->unk10[0] = self->unkC8->unk10[2] = 0.0f;
+	func_8009B08C(self);
+}
 
 void func_8009B3B8(PlayerState* self)
 {
@@ -171,7 +190,7 @@ void func_8009B414(PlayerState* self)
 void func_8009B450(PlayerState* self)
 {
     self->unkC8->unk4C[0] += time_getDelta();
-    self->unkC8->unk4[1] = self->unkC8->unk40[2] + (func_80013970(func_800F0F9C(self->unkC8->unk4C[0], D_801252A8) * 360.0f) * 5.0f);
+    self->unkC8->unk4[1] = self->unkC8->unk40[2] + (func_80013970(func_800F0F9C(self->unkC8->unk4C[0], 1.2f) * 360.0f) * 5.0f);
 }
 
 void func_8009B4D0(PlayerState* self, f32 arg1[3]) 
@@ -179,18 +198,91 @@ void func_8009B4D0(PlayerState* self, f32 arg1[3])
     func_800EE7F8(arg1, self->unkC8->unk28);
 }
 
-void func_8009B4FC(PlayerState* arg0)
+void func_8009B4FC(PlayerState* self)
 {
-    arg0->unkC8->currentPhysicsType = 0;
-    arg0->unkC8->unk4C[1] = 1.0f;
-    func_800EFA4C(arg0->unkC8->unk10, 0.0f, -1.0f, 0.0f);
-    func_800EFD24(arg0->unkC8->unk1C);
-    func_800EFD24(arg0->unkC8->unk28);
-    func_800EFD24(arg0->unkC8->unk4);
-    arg0->unkC8->unk40[1] = 2.0f;
-    func_8009BC34(arg0);
+    self->unkC8->currentPhysicsType = 0;
+    self->unkC8->unk4C[1] = 1.0f;
+    func_800EFA4C(self->unkC8->unk10, 0.0f, -1.0f, 0.0f);
+    func_800EFD24(self->unkC8->unk1C);
+    func_800EFD24(self->unkC8->unk28);
+    func_800EFD24(self->unkC8->unk4);
+    self->unkC8->unk40[1] = 2.0f;
+    func_8009BC34(self);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009B590.s")
+void func_8009B590(PlayerState* self)
+{
+	f32 temp_t6;
+	func_8009C128(self, self->unkC8->unk4);
+	self->unkC8->unk4C[1] *= func_800A3048(self);
+	switch (self->unkC8->currentPhysicsType)
+	{
+		case 0:
+			break;
+		case 12:
+			_bamovegoto_entrypoint_14(self);
+			break;
+		case 11:
+			func_8009B450(self);
+			break;
+		case 8:
+			func_8009B3B8(self);
+			break;
+		case 1:
+			func_8009B170(self);
+			break;
+		case 9:
+			func_8009B08C(self);
+			break;
+		case 2:
+			baphysics_set_target_yaw(self, yaw_getIdeal(self));
+			func_8009AE08(self);
+			break;
+		case 5:
+			baphysics_set_target_yaw(self, func_800136E4(yaw_getIdeal(self) + 180.0f));
+			func_8009AE08(self);
+			break;
+		case 3:
+			func_8009AE08(self);
+			break;
+		case 13:
+			_bamoveledge_entrypoint_3(self);
+			break;
+		case 6:
+			if (bastick_distance(self) > 0.0f)
+			{
+				baphysics_set_target_yaw(self, bastick_getAngleRelativeToBanjo(self));
+			}
+			func_8009AE08(self);
+			break;
+		case 10:
+			func_8009B27C(self);
+			break;
+		case 16:
+			_bsfirstp_entrypoint_27(self);
+			func_8009AE08(self);
+			func_8009B414(self);
+			break;
+		case 17:
+			_bsfirstp_entrypoint_27(self);
+			func_8009B1FC(self);
+			break;
+		case 14:
+			baphysics_set_target_yaw(self, yaw_get(self));
+			func_8009AE08(self);
+			break;
+		case 15:
+			_bamovethrust_entrypoint_5(self);
+			break;
+		case 18:
+			_bamovespline_entrypoint_10(self);
+			break;
+		case 19:
+			_bamovehover_entrypoint_2(self);
+			break;
+	}
+	func_8009C0F8(self, self->unkC8->unk4);
+	self->unkC8->unk4C[1] = 1.0f;
+}
 void func_8009B7C0(PlayerState* self)
 {
     baphysics_set_target_horizontal_velocity(self, 0.0f);
@@ -198,7 +290,65 @@ void func_8009B7C0(PlayerState* self)
     self->unkC8->unk10[0] = self->unkC8->unk10[2];
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/baphysics_set_type.s")
+void baphysics_set_type(PlayerState* self, BaPhysicsType nextType)
+{
+	BaPhysicsType currentType;
+	currentType = self->unkC8->currentPhysicsType;
+	if (currentType == nextType)
+	{
+		return;
+	}
+
+	switch (currentType)
+	{
+		case BA_PHYSICS_D_END:
+			_bamoveledge_entrypoint_1(self);
+			break;
+		case 15:
+			_bamovethrust_entrypoint_0(self);
+			break;
+		case BA_PHYSICS_C_GOTO:
+			_bamovegoto_entrypoint_5(self);
+			break;
+		case 18:
+			_bamovespline_entrypoint_5(self);
+			break;
+		case 19:
+			_bamovehover_entrypoint_0(self);
+			break;
+		default:
+			break;
+		}
+	self->unkC8->currentPhysicsType = nextType;
+	switch (nextType)
+	{
+		case BA_PHYSICS_C_GOTO:
+			_bamovegoto_entrypoint_6(self);
+			return;
+		case BA_PHYSICS_D_END:
+			_bamoveledge_entrypoint_2(self);
+			return;
+		case BA_PHYSICS_B_TRANSFORM:
+			if (currentType != nextType)
+			{
+				self->unkC8->unk40[2] = self->unkC8->unk4[1];
+				self->unkC8->unk4C[0] = 0.0f;
+				return;
+			}
+			break;
+		case 15:
+			_bamovethrust_entrypoint_1(self);
+			return;
+		case 18:
+			_bamovespline_entrypoint_6(self);
+			return;
+		case 19:
+			_bamovehover_entrypoint_1(self);
+			break;
+		default:
+			break;
+	}
+}
 
 void func_8009B94C(PlayerState* self, f32* arg1)
 {
