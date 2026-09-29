@@ -9,8 +9,8 @@ ActorData* chdiggerbossbattery_entrypoint_0()
 }
 void func_8080000C_chdiggerbossbattery(Actor* arg0)
 {
-    func_800EE7F8(&arg0->actorData[0], arg0->position);
-    func_800EFD24(arg0->position);
+    ml_vec3f_copy(&arg0->actorData[0], arg0->position);
+    ml_vec3f_clear(arg0->position);
     func_80102FDC(arg0, 0.25f);
     arg0->unk58 = func_800DC178(1.5f, 3.0f);
     if (flag_getValue(arg0->unk74_7 + 0xA1D) != 0)
@@ -26,7 +26,7 @@ void func_80800090_chdiggerbossbattery(Actor* arg0)
 
     _subaddieaudioloop_entrypoint_4(arg0, &arg0->actorData[0], 1U, &D_80800338_chdiggerbossbattery);
     if (func_800D9078(&arg0->unk58) != 0) {
-        func_800EE7F8(sp2C, &arg0->actorData[0]);
+        ml_vec3f_copy(sp2C, &arg0->actorData[0]);
         if (func_800DC298(0.5f) != 0)
         {
             var_f0 = 1.0f;
@@ -51,7 +51,7 @@ s32 func_80800170_chdiggerbossbattery(Actor* arg0, s32 arg1, s32 arg2)
     switch (arg1)
     {
     case 0x40:
-        func_800EE7F8(sp2C, (f32*)arg0->actorData);
+        ml_vec3f_copy(sp2C, (f32*)arg0->actorData);
         func_800EF1B8(sp2C, arg0->rotation[1], -400.0f);
         sp2C[1] -= 80.0f;
         flag_setValueTrue(arg0->unk74_7 + 0xA1D);

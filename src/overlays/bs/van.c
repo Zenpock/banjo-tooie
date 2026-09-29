@@ -616,7 +616,7 @@ void func_8080145C_bsvan(PlayerState* self) {
         sp3C = func_800B5BE4(8);
         func_8009C128(self, sp58);
         func_80092C90(self, sp40, 4);
-        func_800EFB24(sp4C, sp40, sp58);
+        ml_getdiff_vec3f(sp4C, sp40, sp58);
         func_800F1A88(sp4C, sp64);
         sp64[0] = -sp64[0] - 10/*.0f*/;
 
@@ -700,7 +700,7 @@ void bsvan_entrypoint_15(s32 self)
 
     sp34 = func_800F53D0(self);
     func_8009C128(sp34, sp28);
-    func_800EE7F8(sp1C, sp34->bsvan->unk4);
+    ml_vec3f_copy(sp1C, sp34->bsvan->unk4);
     sp28[1] += 20.0f;
     sp1C[1] += 40.0f;
     _chfaircoin_entrypoint_0(sp28, sp1C, 0.5f);

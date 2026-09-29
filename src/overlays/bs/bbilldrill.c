@@ -110,7 +110,7 @@ void func_808002DC_bsbbilldrill(PlayerState* self, s32 arg1) {
             func_8009E53C(self, 1, -100.0f);
             return;
         case 4:
-            func_800EFA4C(sp34, 0, 80.0f - func_800962D4(self), 0);
+            ml_vec3f_assign_value(sp34, 0, 80.0f - func_800962D4(self), 0);
             func_8009C1F8(self, sp34);
             _badust_entrypoint_10(self, -func_800962D4(self));
             baflag_set(self, 0x26);

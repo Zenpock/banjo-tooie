@@ -13,7 +13,7 @@ s32 badrone_entrypoint_1(PlayerState* self)
 }
 
 void badrone_entrypoint_2(PlayerState* self, f32* arg1) {
-	func_800EE7F8(arg1, self->unk54->unk24);
+	ml_vec3f_copy(arg1, self->unk54->unk24);
 }
 
 s32 badrone_entrypoint_3(PlayerState* self) {
@@ -29,7 +29,7 @@ void badrone_entrypoint_5(PlayerState* self) {
 	self->unk54->unk4 = 0;
 	self->unk54->unk5 = 1;
 	self->unk54->unk8 = 1.0f;
-	func_800EFD24(self->unk54->unk10);
+	ml_vec3f_clear(self->unk54->unk10);
 	self->unk54->unkC = 1.0f;
 	self->unk54->unk1C = 0;
 }
@@ -47,7 +47,7 @@ s32 badrone_entrypoint_7(PlayerState* self) {
 }
 
 void badrone_entrypoint_8(PlayerState* self, f32* arg1, f32* arg2, f32* arg3) {
-	func_800EE7F8(arg1, self->unk54->unk10);
+	ml_vec3f_copy(arg1, self->unk54->unk10);
 	*arg2 = self->unk54->unk8;
 	*arg3 = self->unk54->unkC;
 }
@@ -70,14 +70,14 @@ void badrone_entrypoint_12(PlayerState* self, s32 arg1) {
 }
 
 void badrone_entrypoint_13(PlayerState* self, f32* arg1) {
-	func_800EE7F8(self->unk54->unk10, arg1);
+	ml_vec3f_copy(self->unk54->unk10, arg1);
 	if ((self->unk54->unk0 == 1) && (func_8009BAF4(self) == 0xC)) {
 		_bamovegoto_entrypoint_12(self, arg1);
 	}
 }
 
 void badrone_entrypoint_14(PlayerState* self, f32* arg1, f32 arg2) {
-	func_800EE7F8(self->unk54->unk10, arg1);
+	ml_vec3f_copy(self->unk54->unk10, arg1);
 	self->unk54->unkC = arg2;
 	self->unk54->unk8 = 0.0f;
 	self->unk54->unk1 = 1;
@@ -85,7 +85,7 @@ void badrone_entrypoint_14(PlayerState* self, f32* arg1, f32 arg2) {
 }
 
 void badrone_entrypoint_15(PlayerState* self, f32* arg1, f32 arg2) {
-	func_800EE7F8(self->unk54->unk10, arg1);
+	ml_vec3f_copy(self->unk54->unk10, arg1);
 	self->unk54->unk8 = arg2;
 	self->unk54->unkC = 0.0f;
 	self->unk54->unk1 = 1;
@@ -97,7 +97,7 @@ void badrone_entrypoint_16(PlayerState* self, f32* arg1, f32 arg2) {
 	f32 sp20[3];
 
 	func_8009C128(self, sp2C);
-	func_800EFB24(sp20, arg1, sp2C);
+	ml_getdiff_vec3f(sp20, arg1, sp2C);
 	badrone_entrypoint_15(self, arg1, func_800EEFFC(sp20) / arg2);
 }
 
@@ -123,7 +123,7 @@ BanjoStateId badrone_entrypoint_19(PlayerState* self)
 
 BanjoStateId badrone_entrypoint_20(PlayerState* self, f32* arg1, s32 arg2) {
 	self->unk54->unk30 = arg2;
-	func_800EE7F8(self->unk54->unk34, arg1);
+	ml_vec3f_copy(self->unk54->unk34, arg1);
 	return func_80800348_badrone(self, 8U);
 }
 
@@ -133,12 +133,12 @@ void badrone_entrypoint_21(PlayerState* self) {
 }
 
 BanjoStateId badrone_entrypoint_22(PlayerState* self, f32* arg1) {
-	func_800EE7F8(self->unk54->unk34, arg1);
+	ml_vec3f_copy(self->unk54->unk34, arg1);
 	return func_80800348_badrone(self, 0xBU);
 }
 
 BanjoStateId badrone_entrypoint_23(PlayerState* self, f32* arg1) {
-	func_800EE7F8(self->unk54->unk34, arg1);
+	ml_vec3f_copy(self->unk54->unk34, arg1);
 	return func_80800348_badrone(self, 0xAU);
 }
 
@@ -191,5 +191,5 @@ void badrone_entrypoint_32(PlayerState* self)
 }
 
 void badrone_entrypoint_33(PlayerState* self, f32* arg1) {
-	func_800EE7F8(self->unk54->unk24, arg1);
+	ml_vec3f_copy(self->unk54->unk24, arg1);
 }

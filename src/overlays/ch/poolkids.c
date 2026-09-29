@@ -157,10 +157,10 @@ void func_80800618_chpoolkids(Actor* arg0)
     switch (arg0->unk6C_9)
     {
     case 0x3A3:
-        func_800EE7F8(arg0->position, &D_80801508_chpoolkids);
+        ml_vec3f_copy(arg0->position, &D_80801508_chpoolkids);
         break;
     case 0x3A4:
-        func_800EE7F8(arg0->position, &D_80801514_chpoolkids);
+        ml_vec3f_copy(arg0->position, &D_80801514_chpoolkids);
         func_801020DC(arg0, 0);
         func_80101DAC(arg0, 0);
         break;
@@ -256,7 +256,7 @@ void func_80800944_chpoolkids(Actor* arg0, f32 arg1)
 
     if (func_80101E14(arg0, arg1) != 0)
     {
-        func_800EE7F8(sp34, arg0->position);
+        ml_vec3f_copy(sp34, arg0->position);
         _subaddieaudioquick_entrypoint_2(arg0, sp34, &D_80801520_chpoolkids);
         _fxripple_entrypoint_0(3, sp34);
         _fxsplash25d_entrypoint_0(sp34);

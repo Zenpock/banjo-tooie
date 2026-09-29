@@ -17,6 +17,8 @@ void func_8009C0BC(PlayerState*, f32*);
 
 //Set Player Coordinates
 void func_8009C0F8(PlayerState*, f32[3]);
+
+//Set Player Vertical
 void func_8009C118(PlayerState*, f32);
 
 //Get_Player_Coordinates

@@ -92,11 +92,11 @@ void badust_entrypoint_4(PlayerState* arg0, f32 arg1, f32 arg2)
     f32 sp34[3];
     unkStruct800BA198* temp_v0;
 
-    func_800EFA4C(sp34, 0.0f, 40.0f, 0.0f);
+    ml_vec3f_assign_value(sp34, 0.0f, 40.0f, 0.0f);
     func_8009C128(arg0, sp40);
     func_800EFCD8(sp4C, arg1, arg2);
     sp4C[1] = 15.0f;
-    func_800EF04C(sp40, sp4C);
+    ml_vec3f_add(sp40, sp4C);
     temp_v0 = _fxdlsmoke_entrypoint_0(sp40);
     func_800BA930(temp_v0, sp34[0], sp34[1], sp34[2], sp34[0], sp34[1], sp34[2]);
     func_800BA450((s32)temp_v0, 0, 0, 0, 0, 0, 0);
@@ -158,11 +158,11 @@ void badust_entrypoint_7(PlayerState* arg0)
     case 0:
         break;
     case 1:
-        func_800EF334(sp44, -1.0f);
-        func_800EF04C(sp50, sp44);
+        ml_vec3f_apply_scale(sp44, -1.0f);
+        ml_vec3f_add(sp50, sp44);
         break;
     case 2:
-        func_800EF04C(sp50, sp44);
+        ml_vec3f_add(sp50, sp44);
         break;
     }
     func_800EFCD8(sp5C, yaw_get(arg0), 40.0f);

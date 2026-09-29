@@ -67,8 +67,8 @@ s32 func_80800130_chgruntyfireball(Actor* actor, s32 arg1, s32 arg2)
         func_8010D09C((arg2 >> 0x10) & 0xFFFF, sp34, 0);
         temp_a0 = &actor->actorData[4];
         sp34[1] += 50.0f;
-        func_800EFB24((f32*)temp_a0, sp34, actor->position);
-        func_800EF368((f32*)temp_a0, (f32)(arg2 & 0xFFFF));
+        ml_getdiff_vec3f((f32*)temp_a0, sp34, actor->position);
+        ml_vec3f_set_length((f32*)temp_a0, (f32)(arg2 & 0xFFFF));
         _subaddieaudioquick_entrypoint_2(actor, actor->position, &D_808004F8_chgruntyfireball);
         break;
     case 0x40:
@@ -95,13 +95,13 @@ void func_80800260_chgruntyfireball(Actor* actor)
 
     func_8010A570(actor);
     _subaddieaudioquick_entrypoint_2(actor, actor->position, &D_80800514_chgruntyfireball);
-    func_800EE7F8(sp7C, actor->position);
+    ml_vec3f_copy(sp7C, actor->position);
     sp7C[1] += -10.0f;
     temp_s5 = func_800B53A4(0xA);
     for (var_s1 = 0; var_s1 < 0xA; var_s1++)
     {
         func_800EEB9C(sp70, (f32)var_s1 * 36.0f, func_800DC178(60.0f, 80.0f));
-        func_800EF04C(sp70, actor->position);
+        ml_vec3f_add(sp70, actor->position);
         func_800BABB8(temp_s5, sp70, sp7C, 1.0f, &D_80800524_chgruntyfireball);
     }
     if (((s32*)actor->actorData)[3] != 0)
@@ -115,9 +115,9 @@ void func_808003D8_chgruntyfireball(Actor* actor)
 {
     f32 sp2C[3];
     func_800BBCB8(actor->position, actor->position, 1.0f, 1, &D_80800588_chgruntyfireball);
-    func_800EE7F8(sp2C, &actor->actorData[4]);
-    func_800EF368(sp2C, 100.0f);
-    func_800EF334(sp2C, -1.0f);
-    func_800EF04C(sp2C, actor->position);
+    ml_vec3f_copy(sp2C, &actor->actorData[4]);
+    ml_vec3f_set_length(sp2C, 100.0f);
+    ml_vec3f_apply_scale(sp2C, -1.0f);
+    ml_vec3f_add(sp2C, actor->position);
     func_800BBCB8(sp2C, actor->position, 0.8f, 1, &D_80800554_chgruntyfireball);
 }

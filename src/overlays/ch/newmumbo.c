@@ -159,7 +159,7 @@ void func_80800264_chnewmumbo(Actor* arg0, s32 arg1) {
 			return;
 		case 18:
 			temp_v1->unk1 = 0;
-			func_800EE7F8(arg0->position, &D_808019F4_chnewmumbo);
+			ml_vec3f_copy(arg0->position, &D_808019F4_chnewmumbo);
 			return;
 		case 19:
 			temp_v1->unk2 = 1;
@@ -512,7 +512,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 				break;
 			case 3:
 				temp_v0_5 = func_80106790(arg0->unk3C);
-				func_800EE7F8((f32*)&temp_v0_5->actorData[0], sp5C->unk4);
+				ml_vec3f_copy((f32*)&temp_v0_5->actorData[0], sp5C->unk4);
 				temp_v0_5->unk74_30 = 1;
 				temp_v0_5->unk64_19 = 1;
 				sp5C->unk3 = 4U;
@@ -592,7 +592,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 			func_800F7B9C(_plsu_entrypoint_1(1), 0x3DU);
 			sp5C->unk0 = 0U;
 			func_80800264_chnewmumbo(arg0, 0x10);
-			func_800EE7F8(arg0->position, sp38);
+			ml_vec3f_copy(arg0->position, sp38);
 			func_808007B0_chnewmumbo(arg0);
 			return;
 		}
@@ -667,12 +667,12 @@ void func_808014FC_chnewmumbo(Actor* arg0, s32 arg1, s32 arg2)
 		func_808000DC_chnewmumbo(arg0, 0x11D9U, 7U);
 		return;
 	case 0x11D9:                                    /* switch 1 */
-		func_800EE7F8((f32*)arg0->actorData, arg0->position);
+		ml_vec3f_copy((f32*)arg0->actorData, arg0->position);
 		func_808007B0_chnewmumbo(arg0);
 		func_80800264_chnewmumbo(arg0, 0xA);
 		return;
 	case 0x11DA:                                    /* switch 1 */
-		func_800EE7F8((f32*)arg0->actorData, arg0->position);
+		ml_vec3f_copy((f32*)arg0->actorData, arg0->position);
 		func_808007B0_chnewmumbo(arg0);
 		func_80800264_chnewmumbo(arg0, 0xA);
 		return;
@@ -729,7 +729,7 @@ void func_808014FC_chnewmumbo(Actor* arg0, s32 arg1, s32 arg2)
 
 void chnewmumbo_entrypoint_0(Actor* arg0, f32 arg1[3])
 {
-	func_800EE7F8(arg1, ((NewMumboStruct*)func_80100094(arg0, 0U))->unk4);
+	ml_vec3f_copy(arg1, ((NewMumboStruct*)func_80100094(arg0, 0U))->unk4);
 }
 
 void func_8080172C_chnewmumbo(Actor* arg0) 
@@ -745,7 +745,7 @@ void func_80801760_chnewmumbo(Actor* arg0)
 	NewMumboStruct* sp2C;
 
 	sp2C = (NewMumboStruct*)func_80100094(arg0, 0U);
-	func_800EE7F8(arg0->position, &D_80801A00_chnewmumbo);
+	ml_vec3f_copy(arg0->position, &D_80801A00_chnewmumbo);
 	arg0->scale = 0.5f;
 	_suexpression_entrypoint_7(arg0, 1U, 0x10U);
 	if (func_8010D278() == 0xD)
@@ -758,7 +758,7 @@ void func_80801760_chnewmumbo(Actor* arg0)
 		sp2C->unk0 = 0;
 		if ((flag_getValue(func_8080011C_chnewmumbo()) != 0) || (_glcutDll_entrypoint_20() != 0))
 		{
-			func_800EE7F8(arg0->position, &D_808019F4_chnewmumbo);
+			ml_vec3f_copy(arg0->position, &D_808019F4_chnewmumbo);
 			func_80800264_chnewmumbo(arg0, 0x13);
 		}
 		else if (flag_getValue(FLAG_07D_FTT_MUMBO) != 0)

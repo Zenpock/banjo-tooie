@@ -129,10 +129,10 @@ void func_8080030C_bstnt(PlayerState* self, f32* arg1)
 
 	for (var_s0 = 0; var_s0 != 0x168; var_s0 += 0x2D)
 	{
-		func_800EFA4C(sp78, 0.0f, var_s0, 480.0f);
+		ml_vec3f_assign_value(sp78, 0.0f, var_s0, 480.0f);
 		func_800BA994((unkStruct800BA198*)temp_v0, sp78[0], sp78[1], sp78[2], sp78[0], sp78[1], sp78[2]);
 		func_800BA22C(temp_v0, 1);
-		func_800EFA4C(sp78, -45.0f, var_s0, 430.0f);
+		ml_vec3f_assign_value(sp78, -45.0f, var_s0, 430.0f);
 		func_800BA994((unkStruct800BA198*)temp_v0, sp78[0], sp78[1], sp78[2], sp78[0], sp78[1], sp78[2]);
 		func_800BA22C(temp_v0, 1);
 	}
@@ -141,7 +141,7 @@ void func_8080030C_bstnt(PlayerState* self, f32* arg1)
 void func_808004F8_bstnt(PlayerState* self, f32* arg1) {
 	f32 sp24[3];
 
-	func_800EE7F8(sp24, arg1);
+	ml_vec3f_copy(sp24, arg1);
 	func_800CA3F4(func_800A4C48(self), sp24, 80.0f);
 	func_800BBCB8(sp24, NULL, 1.0f, 1, &D_808022FC_bstnt);
 }

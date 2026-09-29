@@ -43,7 +43,7 @@ void chdoubloon_entrypoint_1(Actor* arg0)
             if (func_800DC0C0() < 0.015f)
             {
                 func_800EEC30(sp74, sp68[0] + func_800DC178(-90.0f, 90.0f), sp68[1] + func_800DC178(-90.0f, 90.0f), 30.0f);
-                func_800EF04C(sp74, arg0->position);
+                ml_vec3f_add(sp74, arg0->position);
                 sp74[1] += 30.0f;
                 _fxtwinkle_entrypoint_1(sp74, ASSET_9E2_GOLD_SPARKLE);
             }

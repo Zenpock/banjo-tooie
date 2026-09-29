@@ -61,7 +61,7 @@ void func_800F48BC(s32 arg0, f32* arg1)
     sp1C = D_80135490.unk0[arg0];
     func_800F4200(sp1C, sp2C);
     func_800EFA20(sp20, arg1, time_getDelta());
-    func_800EF04C(sp2C, sp20);
+    ml_vec3f_add(sp2C, sp20);
     func_800F4648(sp1C, sp2C);
 }
 
@@ -199,8 +199,8 @@ void func_800F4D74(s32 arg0, Vec3f* arg1, f32 arg2, f32 arg3, f32 arg4) {
     PlayerState* sp24;
 
     sp24 = D_80135490.unk0[arg0];
-    func_800EFA4C(sp34, arg1->pos.x - arg2, arg1->pos.y - arg3, arg1->pos.z - arg4);
-    func_800EFA4C(sp28, arg1->pos.x + arg2, arg1->pos.y + arg3, arg1->pos.z + arg4);
+    ml_vec3f_assign_value(sp34, arg1->pos.x - arg2, arg1->pos.y - arg3, arg1->pos.z - arg4);
+    ml_vec3f_assign_value(sp28, arg1->pos.x + arg2, arg1->pos.y + arg3, arg1->pos.z + arg4);
     func_8009F678(sp24, sp34, sp28, func_800A3048(sp24) * 1000.0f);
 }
 
@@ -610,7 +610,7 @@ f32 func_800F5BF0(s32 arg0, f32* arg1) {
     sp1C = D_80135490.unk0[arg0];
     sp2C = func_80092B8C(sp1C, arg1);
     func_8009C128(sp1C, sp20);
-    func_800EF04C(arg1, sp20);
+    ml_vec3f_add(arg1, sp20);
     return sp2C;
 }
 
@@ -1902,10 +1902,10 @@ s32 func_800F89E4(s32 arg0, f32* arg1) {
     s32 sp1C;
 
     if (arg0 == 0xA) {
-        func_800EE7F8(arg1, &D_80135500);
+        ml_vec3f_copy(arg1, &D_80135500);
         sp1C = D_8013551C;
     } else if (arg0 == 0xB) {
-        func_800EE7F8(arg1, &D_80135510);
+        ml_vec3f_copy(arg1, &D_80135510);
         sp1C = D_8013551C;
     }
     return sp1C;
@@ -1948,14 +1948,14 @@ void func_800F8B0C(s32 arg0, s32 arg1) {
     u8* v0;
 
     v0 = func_800F88A0(arg0);
-    func_800EE7F8(arg1, v0 + 0x24);
+    ml_vec3f_copy(arg1, v0 + 0x24);
 }
 
 void func_800F8B38(s32 arg0, s32 arg1) {
     u8* v0;
 
     v0 = func_800F88A0(arg0);
-    func_800EE7F8(arg1, v0 + 0x30);
+    ml_vec3f_copy(arg1, v0 + 0x30);
 }
 
 s32 func_800F8B64(void) {
@@ -2009,8 +2009,8 @@ void func_800F8E08(void) {
     D_801354F8.unk5 = 0;
     D_801354F8.unk0 = 0;
     func_800F911C(1);
-    func_800EFD24(&D_80135500);
-    func_800EFD24(&D_80135510);
+    ml_vec3f_clear(&D_80135500);
+    ml_vec3f_clear(&D_80135510);
     D_8013551C = 0;
     func_800F9A44();
 }
@@ -2053,13 +2053,13 @@ void func_800F8F3C(void) {
         if ((u32)temp_s2 < (u32)temp_v0) {
             do {
                 if (s0->unk0 == 0xA) {
-                    func_800EE7F8((u8*)s0 + 0x24, &D_80135500);
+                    ml_vec3f_copy((u8*)s0 + 0x24, &D_80135500);
                     s0->unk22 = (s16)D_801354F8.unk24;
-                    func_800EFA4C((u8*)s0 + 0x30, 0.0f, D_801354F8.unk14, 0.0f);
+                    ml_vec3f_assign_value((u8*)s0 + 0x30, 0.0f, D_801354F8.unk14, 0.0f);
                 } else if (s0->unk0 == 0xB) {
-                    func_800EE7F8((u8*)s0 + 0x24, &D_80135510);
+                    ml_vec3f_copy((u8*)s0 + 0x24, &D_80135510);
                     s0->unk22 = (s16)D_801354F8.unk24;
-                    func_800EFA4C((u8*)s0 + 0x30, 0.0f, D_801354F8.unk14, 0.0f);
+                    ml_vec3f_assign_value((u8*)s0 + 0x30, 0.0f, D_801354F8.unk14, 0.0f);
                 }
                 s0 = (unkStruct800F8F3C*)((u8*)s0 + 0x3C);
             } while ((u32)s0 < (u32)temp_v0);
@@ -2074,9 +2074,9 @@ void func_800F9070(s32 arg0, s32 arg1) {
 
 void func_800F9098(s32 arg0, f32* arg1) {
     if (arg0 == 0xA) {
-        func_800EE7F8(&D_80135500, arg1);
+        ml_vec3f_copy(&D_80135500, arg1);
     } else if (arg0 == 0xB) {
-        func_800EE7F8(&D_80135510, arg1);
+        ml_vec3f_copy(&D_80135510, arg1);
     }
     D_8013551C = func_800EA05C();
 }
@@ -2140,7 +2140,7 @@ void func_800F9240(f32* arg0, s32 arg1) {
     f32 buf[3];
     func_800F5A00(arg1, buf);
     buf[0] += 200.0f;
-    func_800EFA4C(arg0, buf[0], buf[1], buf[2] + 200.0f);
+    ml_vec3f_assign_value(arg0, buf[0], buf[1], buf[2] + 200.0f);
 }
 
 
@@ -2341,8 +2341,8 @@ int func_800F9488(s32 arg0) {
         sp50 = _plsu_entrypoint_1(0xA);
         func_800F5A00(sp58, sp20);
         func_800F5A00(sp50, sp2C);
-        if (func_800EEB40(sp20, sp2C) < 48400.0f) {
-            func_800EE7F8(sp38, sp20);
+        if (ml_vec3f_distance_sq(sp20, sp2C) < 48400.0f) {
+            ml_vec3f_copy(sp38, sp20);
         } else {
             func_800F9240(sp38, sp50);
         }

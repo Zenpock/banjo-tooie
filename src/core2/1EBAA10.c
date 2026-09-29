@@ -36,30 +36,30 @@ extern UNKD_8012CF90 D_8012CF90[];
 void func_800E1120(f32 dst[3], f32 src[3], f32 dy) {
     f32 vec[3];
 
-    func_800EFA4C(vec, 0.0f, dy, 0.0f);
+    ml_vec3f_assign_value(vec, 0.0f, dy, 0.0f);
     func_800EF8BC(vec, vec, src[0]);
     func_800EF934(vec, vec, src[1]);
-    func_800EF04C(dst, vec);
+    ml_vec3f_add(dst, vec);
 }
 
 //ml_translate_z_local
 void func_800E119C(f32 dst[3], f32 src[3], f32 dz) {
     f32 vec[3];
 
-    func_800EFA4C(vec, 0.0f, 0.0f, dz);
+    ml_vec3f_assign_value(vec, 0.0f, 0.0f, dz);
     func_800EF8BC(vec, vec, src[0]);
     func_800EF934(vec, vec, src[1]);
-    func_800EF04C(dst, vec);
+    ml_vec3f_add(dst, vec);
 }
 
 //ml_translate_x_local
 void func_800E1218(f32 dst[3], f32 src[3], f32 dx) {
     f32 vec[3];
 
-    func_800EFA4C(vec, dx, 0.0f, 0.0f);
+    ml_vec3f_assign_value(vec, dx, 0.0f, 0.0f);
     func_800EF8BC(vec, vec, src[0]);
     func_800EF934(vec, vec, src[1]);
-    func_800EF04C(dst, vec);
+    ml_vec3f_add(dst, vec);
 }
 
 void func_800E1294(s32 arg0, f32 position[3], f32 rotation[3], f32 delta)
@@ -134,7 +134,7 @@ void func_800E148C(s32 arg0, f32 arg1, f32 arg2)
 
 void func_800E14B8(s32 arg0, f32* arg1)
 {
-    func_800EE7F8(D_8012CF90[arg0].unk0, arg1);
+    ml_vec3f_copy(D_8012CF90[arg0].unk0, arg1);
     D_8012CF90[arg0].unk76 = 1;
 }
 
@@ -221,7 +221,7 @@ void func_800E1788(void)
         D_8012CF90[var_s0].unk74 = 1;
         D_8012CF90[var_s0].unk30 = 0.0f;
         D_8012CF90[var_s0].unk76 = 0;
-        func_800EFD24(D_8012CF90[var_s0].unk0);
+        ml_vec3f_clear(D_8012CF90[var_s0].unk0);
         func_800E1378(var_s0);
     }
 }

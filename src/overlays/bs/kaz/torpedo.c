@@ -189,7 +189,7 @@ void func_8080078C_bskaztorpedo(PlayerState *self) {
         func_8009C128(self, sp2C);
         sp38[1] += 50.0f;
         sp2C[1] += 50.0f;
-        temp_f0 = func_800EEB40(sp38, sp2C);
+        temp_f0 = ml_vec3f_distance_sq(sp38, sp2C);
         temp_v0 = self->unk160.word;
         if (temp_v0 != 0) {
             if (temp_f0 < 14400.0f) {
@@ -373,7 +373,7 @@ void func_80800FB4_bskaztorpedo(PlayerState *self) {
     func_80091290(self, 40.0f, 0, 0xD);
     if (_bamovegoto_entrypoint_4(self) != 0) {
         func_8009C128(self, sp3C);
-        func_800EFA4C(sp48, sp3C[0], sp3C[1] - 50.0f, sp3C[2]);
+        ml_vec3f_assign_value(sp48, sp3C[0], sp3C[1] - 50.0f, sp3C[2]);
         func_800BABB8(func_8009FBB0(self, sp3C, 80.0f), sp3C, sp48, 1.0f, D_80801770_bskaztorpedo);
         func_800F82C0(self->unk184);
         func_800F911C(1);

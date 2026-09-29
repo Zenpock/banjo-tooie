@@ -49,13 +49,13 @@ void func_8009AE08(PlayerState* self) {
 	sp64[0] = self->unkC8->unk10[0];
 	sp64[1] = 0.0f;
 	sp64[2] = self->unkC8->unk10[2];
-	func_800EE7F8(sp58, self->unkC8->unk1C);
+	ml_vec3f_copy(sp58, self->unkC8->unk1C);
 	sp58[1] = 0.0f;
 	if (func_80096518(self) != 0)
 	{
 		func_800963C0(self, sp4C);
 		func_800EF410(sp40, sp58);
-		sp3C = func_800EEAA4(sp40, sp4C);
+		sp3C = ml_vec3f_dot_product(sp40, sp4C);
 		sp38 = func_800A3378(self);
 		if (sp3C != 0.0f)
 		{
@@ -69,26 +69,26 @@ void func_8009AE08(PlayerState* self) {
 				{
 					sp38 = sp3C * 0.5f;
 				}
-				func_800EF334(sp58, 1.0f + sp38);
+				ml_vec3f_apply_scale(sp58, 1.0f + sp38);
 			}
 			else
 			{
-				func_800EF334(sp58, (0, 1.0f) + sp3C * 0.2f);
+				ml_vec3f_apply_scale(sp58, (0, 1.0f) + sp3C * 0.2f);
 			}
 		}
 	}
 	func_800EFA20(sp7C, sp58, func_80094E98(self));
 	func_800EFA20(sp70, sp64, func_80094E98(self));
-	func_800EF3DC(sp7C, sp70);
-	func_800EF334(sp7C, time_getDelta() * 30.0f);
-	func_800EF04C(self->unkC8->unk10, sp7C);
+	ml_vec3f_subtract(sp7C, sp70);
+	ml_vec3f_apply_scale(sp7C, time_getDelta() * 30.0f);
+	ml_vec3f_add(self->unkC8->unk10, sp7C);
 	self->unkC8->unk10[1] += (self->unkC8->unk34[0] * time_getDelta());
 	if (self->unkC8->unk10[1] < self->unkC8->unk34[1])
 	{
 		self->unkC8->unk10[1] = self->unkC8->unk34[1];
 	}
 	func_800EFA20(self->unkC8->unk28, self->unkC8->unk10, time_getDelta());
-	func_800EF04C(self->unkC8->unk4, self->unkC8->unk28);
+	ml_vec3f_add(self->unkC8->unk4, self->unkC8->unk28);
 	func_800F2168(self->unkC8->unk10, 0.0001f);
 }
 
@@ -97,18 +97,18 @@ void func_8009B08C(PlayerState* self) {
 	f32 sp28;
 
 	sp28 = time_getDelta();
-	func_800EFB24(sp2C, self->unkC8->unk1C, self->unkC8->unk10);
-	func_800EF334(sp2C, self->unkC8->unk40[1] * sp28);
+	ml_getdiff_vec3f(sp2C, self->unkC8->unk1C, self->unkC8->unk10);
+	ml_vec3f_apply_scale(sp2C, self->unkC8->unk40[1] * sp28);
 	if (((SQ(sp2C[0]) + SQ(sp2C[1]) + SQ(sp2C[2]))) < 0.02f)
 	{
-		func_800EE7F8(self->unkC8->unk10, self->unkC8->unk1C);
+		ml_vec3f_copy(self->unkC8->unk10, self->unkC8->unk1C);
 	}
 	else
 	{
-		func_800EF04C(self->unkC8->unk10, sp2C);
+		ml_vec3f_add(self->unkC8->unk10, sp2C);
 	}
 	func_800EFA20(self->unkC8->unk28, self->unkC8->unk10, sp28);
-	func_800EF04C(self->unkC8->unk4, self->unkC8->unk28);
+	ml_vec3f_add(self->unkC8->unk4, self->unkC8->unk28);
 }
 
 void func_8009B170(PlayerState* self)
@@ -124,7 +124,7 @@ void func_8009B170(PlayerState* self)
         self->unkC8->unk10[1] = temp_f2;
     }
     func_800EFA20(self->unkC8->unk28, self->unkC8->unk10, temp_f0);
-    func_800EF04C(self->unkC8->unk4, self->unkC8->unk28);
+    ml_vec3f_add(self->unkC8->unk4, self->unkC8->unk28);
 }
 
 void func_8009B1FC(PlayerState* self) {
@@ -174,9 +174,9 @@ void func_8009B27C(PlayerState* self)
 
 void func_8009B3B8(PlayerState* self)
 {
-    func_800EE7F8(self->unkC8->unk28, self->unkC8->unk10);
-    func_800EF334(self->unkC8->unk28, time_getDelta());
-    func_800EF04C(self->unkC8->unk4, self->unkC8->unk28);
+    ml_vec3f_copy(self->unkC8->unk28, self->unkC8->unk10);
+    ml_vec3f_apply_scale(self->unkC8->unk28, time_getDelta());
+    ml_vec3f_add(self->unkC8->unk4, self->unkC8->unk28);
 }
 
 void func_8009B414(PlayerState* self)
@@ -184,7 +184,7 @@ void func_8009B414(PlayerState* self)
     f32 sp1C[3];
 
     func_8009C128(self, sp1C);
-    func_800EFB24(self->unkC8->unk28, self->unkC8->unk4, sp1C);
+    ml_getdiff_vec3f(self->unkC8->unk28, self->unkC8->unk4, sp1C);
 }
 
 void func_8009B450(PlayerState* self)
@@ -195,17 +195,17 @@ void func_8009B450(PlayerState* self)
 
 void func_8009B4D0(PlayerState* self, f32 arg1[3]) 
 {
-    func_800EE7F8(arg1, self->unkC8->unk28);
+    ml_vec3f_copy(arg1, self->unkC8->unk28);
 }
 
 void func_8009B4FC(PlayerState* self)
 {
     self->unkC8->currentPhysicsType = 0;
     self->unkC8->unk4C[1] = 1.0f;
-    func_800EFA4C(self->unkC8->unk10, 0.0f, -1.0f, 0.0f);
-    func_800EFD24(self->unkC8->unk1C);
-    func_800EFD24(self->unkC8->unk28);
-    func_800EFD24(self->unkC8->unk4);
+    ml_vec3f_assign_value(self->unkC8->unk10, 0.0f, -1.0f, 0.0f);
+    ml_vec3f_clear(self->unkC8->unk1C);
+    ml_vec3f_clear(self->unkC8->unk28);
+    ml_vec3f_clear(self->unkC8->unk4);
     self->unkC8->unk40[1] = 2.0f;
     func_8009BC34(self);
 }
@@ -354,14 +354,14 @@ void func_8009B94C(PlayerState* self, f32* arg1)
 {
     if (arg1 != NULL)
     {
-        func_800EE7F8(self->unkC8->unk1C, arg1);
+        ml_vec3f_copy(self->unkC8->unk1C, arg1);
         return;
     }
-    func_800EFD24(self->unkC8->unk1C);
+    ml_vec3f_clear(self->unkC8->unk1C);
 }
 
 void func_8009B98C(PlayerState* self, f32* arg1) {
-    func_800EE7F8(self->unkC8->unk4, arg1);
+    ml_vec3f_copy(self->unkC8->unk4, arg1);
 }
 
 void baphysics_set_target_horizontal_velocity(PlayerState* self, f32 vel) {
@@ -393,10 +393,10 @@ void func_8009BA9C(PlayerState* self, f32* arg1)
 {
     if (arg1 != NULL)
     {
-        func_800EE7F8(self->unkC8->unk10, arg1);
+        ml_vec3f_copy(self->unkC8->unk10, arg1);
         return;
     }
-    func_800EFD24(self->unkC8->unk10);
+    ml_vec3f_clear(self->unkC8->unk10);
 }
 
 f32 func_8009BADC(PlayerState* self) {
@@ -422,7 +422,7 @@ f32 func_8009BB18(PlayerState* self) {
     return self->unkC8->unk40[0];
 }
 
-void func_8009BB24(PlayerState* self, f32* arg1) { func_800EE7F8(arg1, self->unkC8->unk10); }
+void func_8009BB24(PlayerState* self, f32* arg1) { ml_vec3f_copy(arg1, self->unkC8->unk10); }
 
 f32 baphysics_get_vertical_velocity(PlayerState* self) {
     return self->unkC8->unk10[1];
@@ -457,7 +457,7 @@ f32 func_8009BBB8(PlayerState* self) {
 }
 
 void func_8009BC08(PlayerState* self, f32* arg1) {
-    func_800EE7F8(arg1, self->unkC8->unk4);
+    ml_vec3f_copy(arg1, self->unkC8->unk4);
 }
 
 void func_8009BC34(PlayerState* self)

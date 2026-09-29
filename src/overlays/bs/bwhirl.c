@@ -29,7 +29,7 @@ void func_80800008_bsbwhirl(PlayerState* self) {
         }
         sp24 = func_80092B8C(self, sp28);
         func_8009C128(self, sp34);
-        func_800EF04C(&sp34, sp28);
+        ml_vec3f_add(&sp34, sp28);
         func_800EF1B8(&sp34, func_80092BE8(self), sp24);
         sp34[1] += sp24;
         func_800C8CB8(self->unk160.word, &sp34);
@@ -89,7 +89,7 @@ void func_80800200_bsbwhirl(PlayerState* self)
     func_8009C128(self, sp3C);
     func_800EFCD8(sp60, yaw_get(self), 48.0f);
     sp60[1] = 0.0f;
-    func_800EF04C(sp3C, sp60);
+    ml_vec3f_add(sp3C, sp60);
     sp38 = func_800B5BE4(0xE);
     func_800BABB8(sp38, sp3C, NULL, 1.0f, &D_80800F5C_bsbwhirl);
     func_8009BB24(self, sp60);
@@ -97,8 +97,8 @@ void func_80800200_bsbwhirl(PlayerState* self)
     func_800EFCD8(sp48, self->unk170 + 45.0f, 250.0f);
     sp54[1] = 0.0f;
     sp48[1] = 0.0f;
-    func_800EF04C(sp54, sp60);
-    func_800EF04C(sp48, sp60);
+    ml_vec3f_add(sp54, sp60);
+    ml_vec3f_add(sp48, sp60);
     if (sp48[0] < sp54[0])
     {
         temp = sp48[0];

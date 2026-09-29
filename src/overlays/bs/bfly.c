@@ -288,7 +288,7 @@ void func_808009D0_bsbfly(PlayerState* self)
     f32 sp1C[3];
 
     func_8009C128(self, &sp1C);
-    func_800EF04C(sp1C, self->kazfly->unk10);
+    ml_vec3f_add(sp1C, self->kazfly->unk10);
     func_800A34AC(self, sp1C);
     func_8009DF58(self, 0x40D, 1.0f);
 }
@@ -347,16 +347,16 @@ void func_80800C38_bsbfly(PlayerState* self)
     f32 unk2;
     f32 unk3;
 
-    func_800EE7F8(unk1, self->kazfly->unk10);
+    ml_vec3f_copy(unk1, self->kazfly->unk10);
     func_800CA9D8(func_800A4C48(self), &unk3);
-    func_800EFA4C(unk0, bastick_getX(self) * 1000.0f, 0.0f, 0.0f);
+    ml_vec3f_assign_value(unk0, bastick_getX(self) * 1000.0f, 0.0f, 0.0f);
     func_800EF8BC(unk0, unk0, unk3);
     func_800EF934(unk0, unk0, unk2);
-    func_800EF04C(unk1, unk0);
-    func_800EFA4C(unk0, 0.0f, -bastick_getY(self) * 1000.0f, 0.0f);
+    ml_vec3f_add(unk1, unk0);
+    ml_vec3f_assign_value(unk0, 0.0f, -bastick_getY(self) * 1000.0f, 0.0f);
     func_800EF8BC(unk0, unk0, unk3);
     func_800EF934(unk0, unk0, unk2);
-    func_800EF04C(unk1, unk0);
+    ml_vec3f_add(unk1, unk0);
     func_8009BA9C(self, unk1);
 }
 
@@ -397,9 +397,9 @@ s32 func_80800D80_bsbfly(PlayerState* self, s32 arg1)
                 var_v0 = func_80096434(self);
                 break;
         } 
-        func_800EE7F8(sp2C, self->kazfly->unk10);
+        ml_vec3f_copy(sp2C, self->kazfly->unk10);
         func_800EF2A0(sp2C);
-        sp44 = mlAbsF(func_800EEAA4(&sp38, sp2C));
+        sp44 = mlAbsF(ml_vec3f_dot_product(&sp38, sp2C));
         if ((baflag_isTrue(self, BA_FLAG_8) != 0) || (var_v0 & 0x80)) 
         {
             func_808009D0_bsbfly(self);
@@ -459,7 +459,7 @@ void func_80800F10_bsbfly(PlayerState* self)
                 anctrl_start(animCtrl);
             }
             func_8009C128(self, unk0);
-            func_800EF3DC(unk0, self->kazfly->unk4);
+            ml_vec3f_subtract(unk0, self->kazfly->unk4);
             _bafly_entrypoint_6(self, func_800F10B4(func_800EEFD4(unk0), 0, 16000000, 0.2, 0.7f));
             if (func_800EEFD4(unk0) > 1.6e7f) {
                 if (bakey_held(self, BUTTON_B) != 0) {

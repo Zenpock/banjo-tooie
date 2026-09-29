@@ -19,12 +19,12 @@ void func_8080000C_chwaterfallfx(Actor* arg0)
     f32 temp_f0;
     func_800F22B4(sp48, arg0->rotation[1]);
     func_800F23AC(sp40, sp48);
-    func_800EE8E8(sp34, sp40);
+    ml_vec2f_to_vec3f(sp34, sp40);
 
-    func_800EF334(sp34, arg0->unk74_7);
-    func_800EE780((f32*)&arg0->actorData[4], arg0->position, sp34);
-    func_800EFB24(arg0->actorData, arg0->position, sp34);
-    temp_f0 = func_800EEAD4(&arg0->actorData[4], arg0->actorData);
+    ml_vec3f_apply_scale(sp34, arg0->unk74_7);
+    ml_vec3f_sum((f32*)&arg0->actorData[4], arg0->position, sp34);
+    ml_getdiff_vec3f(arg0->actorData, arg0->position, sp34);
+    temp_f0 = ml_vec3f_distance(&arg0->actorData[4], arg0->actorData);
     ((f32*)arg0->actorData)[7] = 0.6f * temp_f0;
     temp_f0 /= 25.0f;
     temp_f0 += 8.0f;
@@ -72,7 +72,7 @@ void func_808001F8_chwaterfallfx(Actor* arg0)
 
 
     func_800E3980(spA4);
-    if ((func_800EEB40(arg0->position, spA4) < 2.5e7f) && (func_800E3E8C(arg0->position, ((f32*)arg0->actorData)[7])))
+    if ((ml_vec3f_distance_sq(arg0->position, spA4) < 2.5e7f) && (func_800E3E8C(arg0->position, ((f32*)arg0->actorData)[7])))
     {
         temp_fp = func_800B5BE4(0x23);
         var_s4 = 0;
@@ -85,7 +85,7 @@ void func_808001F8_chwaterfallfx(Actor* arg0)
         for (var_s3 = 0; var_s3 < var_s4; var_s3++)
         {
             func_800EFE50(sp80, &arg0->actorData[4], arg0->actorData, func_800DC178(0.0f, 1.0f));
-            func_800EE7F8(sp8C, sp80);
+            ml_vec3f_copy(sp8C, sp80);
             func_800EF1B8(sp8C, arg0->rotation[1], -100.0f);
             sp8C[1] += 100.0f;
             func_800BABB8(temp_fp, sp80, sp8C, arg0->scale * 1.15f, &D_80800478_chwaterfallfx);

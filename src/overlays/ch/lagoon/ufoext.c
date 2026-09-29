@@ -99,7 +99,7 @@ void func_808001D8_chlagoonufoext(Actor* arg0)
     }
     if (_subaddiemarker_entrypoint_0(arg0, 0x1C0, sp28, 1) != 0)
     {
-        func_800EE7F8((f32*)&arg0->actorData[4], sp28);
+        ml_vec3f_copy((f32*)&arg0->actorData[4], sp28);
     }
     _susubgame_entrypoint_0(arg0, func_80100094(arg0, 0), 0);
 }

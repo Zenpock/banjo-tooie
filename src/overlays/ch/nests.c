@@ -759,7 +759,7 @@ s32 func_80800898_chnests(Actor* arg0, s32 arg1, f32 arg2)
     func_80106A98(arg0, sp30);
     func_800DF830(1);
     func_800DF410(_subaddiefade_entrypoint_0(arg0));
-    func_800EFA4C(sp34, 0.0f, arg2, 0.0f);
+    ml_vec3f_assign_value(sp34, 0.0f, arg2, 0.0f);
     return func_800DE448(arg0->position, sp34, arg0->scale, func_801018D8(arg0), (s32)sp30);
 }
 

@@ -3,9 +3,9 @@
 void bamovehover_entrypoint_0(s32 arg0) {}
 
 void bamovehover_entrypoint_1(PlayerState* self) {
-    func_800EFD24(self->unkC8->unkAC);
-    func_800EFD24(self->unkC8->unkB8);
-    func_800EFA4C(self->unkC8->unk10, 16.666668f, 33.333336f, 50.0f);
+    ml_vec3f_clear(self->unkC8->unkAC);
+    ml_vec3f_clear(self->unkC8->unkB8);
+    ml_vec3f_assign_value(self->unkC8->unk10, 16.666668f, 33.333336f, 50.0f);
 }
 
 void bamovehover_entrypoint_2(PlayerState* self)
@@ -43,15 +43,15 @@ void bamovehover_entrypoint_2(PlayerState* self)
 
 void bamovehover_entrypoint_3(PlayerState* self, f32* arg1)
 {
-    func_800EE7F8(self->unkC8->unkAC, arg1);
+    ml_vec3f_copy(self->unkC8->unkAC, arg1);
 }
 
 void bamovehover_entrypoint_4(PlayerState* self, f32* arg1)
 {
     if (arg1 == NULL)
     {
-        func_800EFD24(self->unkC8->unkB8);
+        ml_vec3f_clear(self->unkC8->unkB8);
         return;
     }
-    func_800EE7F8(self->unkC8->unkB8, arg1);
+    ml_vec3f_copy(self->unkC8->unkB8, arg1);
 }

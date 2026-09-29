@@ -36,7 +36,7 @@ s32 func_80800094_fxripple(s32 arg0, f32* arg1, s32 arg2)
     f32 sp30[3];
     s32 temp_v0;
 
-    func_800EE7F8(sp30, arg1);
+    ml_vec3f_copy(sp30, arg1);
     if (func_80800000_fxripple(sp30, &sp3C, arg2) == 0)
     {
         return 0;

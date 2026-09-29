@@ -184,7 +184,7 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
         func_808008A8_chbubbleelevator(arg0);
         func_800F7B9C(func_800F54E4(), 0x7C);
         func_800F8294(func_800F54E4(), arg0->position);
-        func_800EFA4C(&sp2C, 0.0f, func_800F1DF4(arg0->position, ELEVATOR_DATA(arg0)->unk0), 0.0f);
+        ml_vec3f_assign_value(&sp2C, 0.0f, func_800F1DF4(arg0->position, ELEVATOR_DATA(arg0)->unk0), 0.0f);
         func_800F832C(func_800F54E4(), &sp2C);
         func_800F80E4(func_800F54E4(), 0);
         _capod_entrypoint_13(arg0->unk0, arg0->unk0, D_80800C20_chbubbleelevator[(u32) arg0->unk79_4].unk0, 0x2001);
@@ -326,12 +326,12 @@ void func_80800A10_chbubbleelevator(Actor* arg0, s32 arg1) {
         }
         sp5C = arg0->unk54 * 360.0f;
         sp58 = func_800F10B4(arg0->unk50, 0.0f, 3.0f, 0.075f, 0.200000003f);
-        func_800EE7F8(sp4C, arg0->position);
+        ml_vec3f_copy(sp4C, arg0->position);
         sp4C[1] += 75.0f;
         func_800E3980(sp40);
         func_800F18FC(sp4C, sp40, sp38);
         func_800EEBF0(sp40, sp38, 75.0f);
-        func_800EF04C(sp4C, sp40);
+        ml_vec3f_add(sp4C, sp40);
         sp38[0] = (func_80013970(sp5C) * sp58) + 1.0f;
         sp38[1] = (func_800138D0(sp5C) * sp58) + 1.0f;
         arg0->unk7C_12 = _chbubble_entrypoint_0(arg1, sp4C, sp38, arg0->scale, 4000.0f);

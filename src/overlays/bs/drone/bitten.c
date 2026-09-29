@@ -103,7 +103,7 @@ void bsdronebitten_entrypoint_7(PlayerState* self) {
     baanim_playForDuration_loopSmooth(self, sp34, sp38);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_2_NORMAL);
     func_8009C128(self, sp28);
-    sp3C = func_800EEAD4(sp28, self->unk54->unk34);
+    sp3C = ml_vec3f_distance(sp28, self->unk54->unk34);
     self->unk190.bytes[1] = self->unk54->unk30;
     _bamovegoto_entrypoint_0(self);
     if (self->unk190.bytes[1] == 1)

@@ -414,7 +414,7 @@ void func_80800C00_chwarppad(Actor* arg0)
     func_8010A828(arg0, 2);
     if ((flag_getValue(FLAG3_9FE_WARPING_VIA_WARPPAD) != 0) && (func_800EA090() == (D_80801080_chwarppad - 0x224)[(WARPPAD_DATA(arg0)->unk10) * 0xC + arg0->unk74_7 * 0xC]))
     {
-        func_800EE7F8(sp30, arg0->position);
+        ml_vec3f_copy(sp30, arg0->position);
         sp30[1] += 15.0f * arg0->scale;
         func_800F608C(sp3C, 1);
         func_800F8294(sp3C, sp30);
@@ -478,7 +478,7 @@ void func_80800F34_chwarppad(Actor* arg0, s32 arg1, s32 arg2)
 
     if (!(arg0->unk64_20))
     {
-        func_800EFA4C(sp2C, 0.0f, func_8010CD28(arg0), 0.0f);
+        ml_vec3f_assign_value(sp2C, 0.0f, func_8010CD28(arg0), 0.0f);
         _capod_entrypoint_2(arg0->unk0, 0x1AU, 0);
         _capod_entrypoint_8(1);
         _capod_entrypoint_9(0, &D_8080134C_chwarppad);

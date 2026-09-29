@@ -30,7 +30,7 @@ s32 func_808001C8_chdinocoaster(Actor* arg0, s32 arg1, s32 arg2)
 		func_80101074(&D_80800468_chdinocoaster);
 		return 0xA;
 	case 0x52:
-		func_800EFA4C(sp2C, 0.0f, func_8010CD28(arg0), 0.0f);
+		ml_vec3f_assign_value(sp2C, 0.0f, func_8010CD28(arg0), 0.0f);
 		_gcdialogcamera_entrypoint_3(&D_80800544_chdinocoaster, arg0->scale);
 		_gcdialogcamera_entrypoint_5(sp2C);
 		break;

@@ -206,7 +206,7 @@ s32 func_808003E0_gccollectDll(s32* arg0, s32* arg1)
                     //Get the coords of the jiggy
                     func_800D07CC(itemIndex, 1, sp44);
                     //Convert Float Coords
-                    func_800EE940(var_s2, sp44);
+                    ml_vec3f_to_vec3s(var_s2, sp44);
                     var_s2 += 3;
                 }
             }
@@ -300,7 +300,7 @@ void func_808007D8_gccollectDll(Prop* arg0)
         func_808005BC_gccollectDll((u32)arg0->FlagOrRotation, arg0);
         return;
     }
-    func_800EE88C(sp24, arg0->position);
+    ml_vec3s_to_vec3f(sp24, arg0->position);
     func_800D0778(arg0->FlagOrRotation, 1, &sp24);
 }
 

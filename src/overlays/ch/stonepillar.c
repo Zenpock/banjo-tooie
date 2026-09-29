@@ -242,14 +242,14 @@ void func_808005B4_chstonepillar(Actor* arg0, s32 arg1, f32* arg2)
         stonePillar_2 = func_80100094(stonePillar, 0U);
         if (arg1 == stonePillar_2->unk2C)
         {
-            func_800EE7F8(arg2, stonePillar_2->unk18);
+            ml_vec3f_copy(arg2, stonePillar_2->unk18);
             arg2[1] = (f32)(arg2[1] + (sp28 - ((f32)arg1 * 200.0f)));
             return;
         }
         stonePillar = _subaddiefind_entrypoint_3(0x12E, &sp2C);
     }
     stonePillar_2 = (StonePillarStruct*)func_80100094(arg0, 0U);
-    func_800EE7F8(arg2, stonePillar_2->unk18);
+    ml_vec3f_copy(arg2, stonePillar_2->unk18);
     arg2[1] = (f32)(arg2[1] + (sp28 - ((f32)arg1 * 200.0f)));
 }
 
@@ -303,7 +303,7 @@ void func_808007C8_chstonepillar(Actor* arg0)
             temp_v0 = func_80100094(var_v0, 0U);
             if ((temp_s1->unk2C + 1) == temp_v0->unk2C)
             {
-                func_800EE7F8(temp_s1->unkC, temp_v0);
+                ml_vec3f_copy(temp_s1->unkC, temp_v0);
             }
         }
         var_v0 = _subaddiefind_entrypoint_3(arg0->unk6C_9, &sp28);
@@ -427,7 +427,7 @@ void func_80800C44_chstonepillar(Actor* arg0)
     {
         temp_v0->unk2C = -1;
     }
-    func_800EE7F8(arg0->position, (f32*)arg0->actorData);
+    ml_vec3f_copy(arg0->position, (f32*)arg0->actorData);
 }
 
 void func_80800CC8_chstonepillar(Actor* arg0, s32 arg1)
@@ -506,8 +506,8 @@ void func_80800EE0_chstonepillar(Actor* arg0)
     {
         arg0->rotation[1] = 0.0f;
     }
-    func_800EE7F8((f32*)arg0->actorData, arg0->position);
-    func_800EE7F8(temp_v0->unk18, arg0->position);
+    ml_vec3f_copy((f32*)arg0->actorData, arg0->position);
+    ml_vec3f_copy(temp_v0->unk18, arg0->position);
     if (func_800D0B68(8U, 1U) != 0) 
     {
         temp_v0->unk2C = -1;
@@ -594,13 +594,13 @@ s32 func_80801238_chstonepillar(Actor* arg0)
     if (sp28->unk24 > 0.0f)
     {
         sp28->unk24 = (f32)(sp28->unk24 - time_getDelta());
-        func_800EE7F8(&sp2C, (f32*)arg0->actorData);
+        ml_vec3f_copy(&sp2C, (f32*)arg0->actorData);
         sp2C[0] += func_800DC178(-7.5f, 7.5f);
         sp2C[2] += func_800DC178(-7.5f, 7.5f);
-        func_800EE7F8(arg0->position, &sp2C);
+        ml_vec3f_copy(arg0->position, &sp2C);
         return 1;
     }
-    func_800EE7F8(arg0->position, (f32*)arg0->actorData);
+    ml_vec3f_copy(arg0->position, (f32*)arg0->actorData);
     return 0;
 }
 

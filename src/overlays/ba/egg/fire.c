@@ -131,10 +131,10 @@ void func_80800250_baeggfire(PlayerState* arg0) {
 	}
 	arg0->unk6C->unkC = 0;
 	baeggfire_entrypoint_3(arg0, sp50, sp44);
-	func_800EF368(sp44, 100.0f);
-	func_800EE780(sp38, sp50, sp44);
+	ml_vec3f_set_length(sp44, 100.0f);
+	ml_vec3f_sum(sp38, sp50, sp44);
 
-	func_800EF368(sp44, arg0->unk6C->unk10 == 7 ? 5000.0f : 3000.0f);
+	ml_vec3f_set_length(sp44, arg0->unk6C->unk10 == 7 ? 5000.0f : 3000.0f);
 	_baeggsetup_entrypoint_6(arg0, arg0->unk6C->unk10, sp50, sp38, sp44);
 	_baeggcursor_entrypoint_8(arg0);
 	func_800C6DA0(0x43);
@@ -157,11 +157,11 @@ void baeggfire_entrypoint_3(PlayerState* arg0, f32* arg1, f32* arg2)
 		sp48[1] = 114.0f;
 	}
 	func_800C5008(func_800A4C68(arg0), sp48, sp40);
-	func_800EFA4C(&sp28, sp40[0], sp40[1], 100.0f);
+	ml_vec3f_assign_value(&sp28, sp40[0], sp40[1], 100.0f);
 	func_800C4E58(func_800A4C68(arg0), sp28, sp34);
 	func_800A4CE8(arg0, arg1);
-	func_800EFB24(arg2, sp34, arg1);
-	func_800EF368(arg2, 1.0f);
+	ml_getdiff_vec3f(arg2, sp34, arg1);
+	ml_vec3f_set_length(arg2, 1.0f);
 }
 
 void baeggfire_entrypoint_4(s32 arg0)
