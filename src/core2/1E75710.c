@@ -7,29 +7,22 @@ s32 func_8009BE20()
 
 void func_8009BE28(PlayerState* self, f32 arg1, f32 arg2)
 {
-    ba_unknown_DC_s* temp2;
-    f32 temp_f2;
-    f32 sp2C;
-    f32 gameSpeed;
+	ba_unknown_DC_s* temp2;
+	f32 temp_f2;
+	f32 sp2C;
+	f32 gameSpeed;
 
 
-    gameSpeed = time_getDelta();
-    temp2 = self->unkDC;
-    sp2C = func_80013728(temp2->unk4 - temp2->unk0);
-    temp_f2 = sp2C * arg2;
-    if (temp_f2 != 0.0f)
-    {
-        if (temp_f2 < 0.0f)
-        {
-            temp_f2 = func_800F0D50(temp_f2, -arg1, -3.0f); \
-        }
-        else \
-        { \
-            temp_f2 = func_800F0D50(temp_f2, 3.0f, arg1);
-        }
-    }
-    temp2->unk0 += func_800F212C(temp_f2 * gameSpeed, sp2C);
-    temp2->unk0 = func_800136E4(temp2->unk0);
+	gameSpeed = time_getDelta();
+	temp2 = self->unkDC;
+	sp2C = func_80013728(temp2->unk4 - temp2->unk0);
+	temp_f2 = sp2C * arg2;
+	if (temp_f2 != 0.0f)
+	{
+		temp_f2 = temp_f2 < 0.0f ? func_800F0D50(temp_f2, -arg1, -3.0f) : func_800F0D50(temp_f2, 3.0f, arg1);
+	}
+	temp2->unk0 += func_800F212C(temp_f2 * gameSpeed, sp2C);
+	temp2->unk0 = func_800136E4(temp2->unk0);
 }
 
 void func_8009BF04(PlayerState* self)
