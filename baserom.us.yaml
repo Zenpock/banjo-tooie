@@ -591,6 +591,8 @@ segments:
       - [0x1EFE380, rodata]
       - [0x1EFE3A0, .rodata, baanim]
       - [0x1EFE3C0, rodata]
+      - [0x1EFE720, .rodata, 1E72180]
+      - [0x1EFE760, rodata]
       - [0x1EFEB90, .rodata, baphysics]
       - [0x1EFEC30, .rodata, baroll]
       - [0x1EFEC40, rodata]

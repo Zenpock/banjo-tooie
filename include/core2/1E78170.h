@@ -7,19 +7,25 @@
 #include "core2/1EAD060.h"
 #include "core2/1EB3750.h"
 
+void func_8009E880();
 void func_8009E8B4();
 void func_8009E8D4();
 void func_8009E9A0();
 void func_8009E9A8();
+void func_8009E9D8(TransformationId);
+void func_8009E9FC(f32);
 f32  func_8009EA14(void);
 u8 func_8009EA20(void);
 //Is Dragon Kazooie Active
 s32 func_8009EA2C(void);
 s32 func_8009EA64(void);
 void func_8009EA94(f32);
+void func_8009EAF4(s32);
 void func_8009EAAC(s32);
 s32 func_8009EAD0(s32);
 void func_8009EAE8(s32);
+void func_8009EB0C(f32);
+void func_8009EB18(s32, s32);
 void func_8009EB24(s16, s16);
 
 #endif // __CORE2_1E78170_H__

@@ -4,6 +4,7 @@
 
 #include <ultra64.h>
 #include "common.h"
+#include "ba/playerstate.h"
 
 s32 basetup_entrypoint_0();
 // func_80800008_basetup
@@ -18,7 +19,8 @@ s32 basetup_entrypoint_0();
 // func_8080071C_basetup
 // func_80800778_basetup
 // basetup_entrypoint_2
-void basetup_entrypoint_3(s32 arg0);
+void _basetup_entrypoint_3(PlayerState*);
 void basetup_entrypoint_4(s32 arg0);
+void _basetup_entrypoint_4(PlayerState*);
 
 #endif // __BA_SETUP__

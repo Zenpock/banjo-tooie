@@ -10,4 +10,7 @@ typedef struct ba_babykaz_s {
     f32 unk4;
 } BaBabyKaz;
 
+void _bababykaz_entrypoint_1(PlayerState*);
+void _bababykaz_entrypoint_2(PlayerState*);
+
 #endif // __BA_BABYKAZ_H__

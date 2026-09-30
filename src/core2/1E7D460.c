@@ -152,7 +152,7 @@ void func_800A4074(PlayerState* arg0, s32 arg1) {
     arg0->unk38->unk36 = -1;
 }
 
-void func_800A4160(s32 arg0) 
+void func_800A4160(PlayerState* arg0)
 {
 
 }

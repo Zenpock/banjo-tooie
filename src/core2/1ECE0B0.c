@@ -499,9 +499,9 @@ s32 func_800F581C(s32 arg0) {
     return var_v1;
 }
 
-void func_800F586C(s32 arg0)
+void func_800F586C(s32 arg0,f32* arg1, f32* arg2)
 {
-    func_80098B5C(D_80135490.unk0[arg0]);
+    func_80098B5C(D_80135490.unk0[arg0],arg1,arg2);
 }
 
 s32 func_800F5898(void) 
@@ -1768,8 +1768,11 @@ void func_800F84FC(void) {
 
     D_80135490.unk49 = 1;
 
-    for (k = 0; k < 8; k++) {
-        if (D_80135490.unk0[k] != NULL) {
+    //Loop through all of the active characters and trigger their update functions
+    for (k = 0; k < 8; k++) 
+    {
+        if (D_80135490.unk0[k] != NULL) 
+        {
             func_800F468C(D_80135490.unk0[k]);
         }
     }

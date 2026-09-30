@@ -38,12 +38,16 @@
 #include "ch/baddiesetup.h"
 
 s32 func_80092258(PlayerState*);
+void func_80092444(PlayerState*, s32);
 void func_80092744(PlayerState*, s32);
 void func_80092750(PlayerState*, s32, s32, s32, s32);
 void func_80092778(PlayerState*);
 void func_80092864(PlayerState *, f32);
 void func_80092880(PlayerState *, s32);
+void func_80092898(PlayerState*);
+void func_80092A1C(PlayerState*);
 void func_80092AA4(PlayerState*);
+void func_80092AB0(PlayerState*);
 Unkfunc_800E0960_1 *func_80092AD8(PlayerState *);
 PlayerState *func_80092B04(PlayerState *, s32);
 // This might take a s32 instead of a PlayerState pointer
@@ -68,6 +72,8 @@ void func_80093360(PlayerState*, f32);
 void func_80093370(PlayerState*, s32);
 void func_8009337C(PlayerState*, s32);
 void func_80093388(PlayerState*);
+void func_80093448(PlayerState*);
+void func_800934C4(PlayerState*);
 void func_80093504(PlayerState*, s32, s32);
 void func_80093528(PlayerState*);
 void func_80093584(PlayerState*); 
@@ -82,11 +88,15 @@ s32 func_800944F8(PlayerState*, s32);
 //Get Current Egg Type
 
 s32 func_80094510(PlayerState *);
+void func_80094538(PlayerState*);
+void func_80094644(PlayerState*);
 void func_800946C4(PlayerState*, s32);
 void func_800947EC(PlayerState *, s32, s32);
 void func_80094824(PlayerState*);
+void func_80094864(PlayerState*);
 int func_800949BC(PlayerState*);
 s32 func_80094A10(PlayerState*);
+
 //Show amount of eggs for currently selected egg type
 
 void func_80094AB4(PlayerState*);

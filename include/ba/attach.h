@@ -12,7 +12,9 @@ s32 baattach_entrypoint_0(void);
 s32 baattach_entrypoint_1(PlayerState *self);
 s32 baattach_entrypoint_2(PlayerState *self, s32 arg1, void (*arg2)(s32, s32, s32, s32));
 void baattach_entrypoint_3(PlayerState *self);
+void _baattach_entrypoint_3(PlayerState*);
 void baattach_entrypoint_4(PlayerState *self);
+void _baattach_entrypoint_4(PlayerState*);
 void baattach_entrypoint_5(PlayerState *self, s32 arg1);
 void baattach_entrypoint_6(PlayerState *self, s32 arg1, s32 arg2, s32 arg3);
 

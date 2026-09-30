@@ -212,6 +212,23 @@ typedef struct ba_hold_s {
     s32 unk14;
     f32 unk18;
 } BaHold;
+typedef struct ba_unknown_B8_s {
+    void (*unk0)(s32);
+    s32 unk4;
+    u8 unk8;
+    u8 unk9;
+    u8 unkA;
+    u8 unkB;
+} ba_unknown_B8_s;
+
+typedef struct ba_unknown_BC_s {
+    f32 unk0[3];
+    f32 unkC[3];
+    u8 unk18;
+    u8 unk19;
+    u8 unk1A;
+    u8 unk1B;
+} ba_unknown_BC_s;
 
 typedef struct ba_unknown_C8_s {
     BaPhysicsType currentPhysicsType;
@@ -348,7 +365,9 @@ typedef struct player_state_s {
     /* 0x9C */ BaHold* hold;
     u8 padA0[0x4];
     /* 0xA4 */ struct ba_input_s *input;
-    u8 padA8[0x18];
+    u8 padA8[0x10];
+    /* 0xB8 */ struct ba_unknown_B8_s* unkB8;
+    /* 0xBC */ struct ba_unknown_BC_s* unkBC;
     /* 0xC0 */ struct ba_unknown_C0_s *unkC0; // 1E72EA0
     /* 0xC4 */ u8 *unkC4;
     /* 0xC8 */ struct ba_unknown_C8_s *unkC8;

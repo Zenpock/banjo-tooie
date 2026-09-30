@@ -11,7 +11,7 @@
 s32 func_800A0C20(PlayerState *self);
 // func_800A0C2C
 // func_800A0C38
-// func_800A0C44
+void func_800A0C44(PlayerState*);
 void func_800A0CD0(PlayerState*, s32);
 void func_800A0CDC(PlayerState *, s32);
 void func_800A0CE8(PlayerState *, s32);
@@ -27,16 +27,16 @@ void func_800A0DAC(PlayerState *, s32);
 // func_800A0DB8
 void func_800A0DC4(PlayerState *, s32);
 void func_800A0DD0(PlayerState *, s32);
-// func_800A0DDC
+void func_800A0DDC(PlayerState*);
 s32 func_800A0E50(void);
 // func_800A0E58
 void func_800A0E64(PlayerState*); 
 s32 func_800A0FCC(PlayerState*);
 s32 func_800A0FD8(PlayerState*);
 void func_800A0FE4(PlayerState*);
-// func_800A0FF0
+void func_800A0FF0(PlayerState*); 
 void func_800A1040(PlayerState *);
 void func_800A106C(PlayerState *, f32, f32);
-// func_800A10A0
+void func_800A10A0(PlayerState*);
 
 #endif // __CORE2_1E79FD0_H__

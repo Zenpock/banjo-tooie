@@ -7,6 +7,9 @@
 
 #include "core2/1E77A20.h"
 
+void func_8008E618(PlayerState*);
+void func_8008E6BC(PlayerState*);
+void func_8008E6F0(PlayerState*);
 Unk80132ED0* func_8008E938(PlayerState*);
 void func_8008E944(PlayerState *);
 void func_8008E95C(PlayerState *);

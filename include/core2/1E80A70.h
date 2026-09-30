@@ -34,6 +34,7 @@ void func_800A8168(void);
 s16 func_800A8178(void);
 s16 func_800A8184();
 int func_800A819C();
+int func_800A81C4();
 void func_800A8230(void);
 void func_800A8240();
 s16 func_800A824C(void);

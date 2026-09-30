@@ -4,5 +4,6 @@
 #include "common.h"
 
 void _gcfrontend_entrypoint_0();
+void _gcfrontend_entrypoint_12();
 
 #endif

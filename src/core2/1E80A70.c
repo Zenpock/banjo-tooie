@@ -140,29 +140,29 @@ s32 func_800A7D84(void)
     func_800FB968();
     switch (D_80127630.unk2)
     {
-    case 5:
-        func_800A9A14();
-        break;
-    case 3:
-        D_80127630.unkC += time_getDelta();
-        if ((D_801255F8 < D_80127630.unkC) && (func_800C0A34() != 0))
-        {
-            func_800A759C(4, 0U);
-        }
-        else if (sp1C == 0)
-        {
-            func_800A759C(3, 1U);
-        }
-        break;
-    case 4:
-        if (func_800C0948() != 0)
-        {
-            func_800EA334(1);
-            func_800EA34C(1);
-            func_800A759C(3, 0U);
-            func_800FFC14();
-            func_800F8850();
-        }
+        case 5:
+            func_800A9A14();
+            break;
+        case 3:
+            D_80127630.unkC += time_getDelta();
+            if ((D_801255F8 < D_80127630.unkC) && (func_800C0A34() != 0))
+            {
+                func_800A759C(4, 0U);
+            }
+            else if (sp1C == 0)
+            {
+                func_800A759C(3, 1U);
+            }
+            break;
+        case 4:
+            if (func_800C0948() != 0)
+            {
+                func_800EA334(1);
+                func_800EA34C(1);
+                func_800A759C(3, 0U);
+                func_800FFC14();
+                func_800F8850();
+            }
     }
     if (func_800A819C() != 0)
     {

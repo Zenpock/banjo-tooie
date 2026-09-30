@@ -20,6 +20,6 @@ void func_800909CC(PlayerState* );
 void func_800909EC(PlayerState* );
 void func_80090A0C(PlayerState* );
 void func_80090A2C(PlayerState* );
-
+void func_80090A4C(PlayerState*);
 
 #endif // __CORE2_1E6A190_H__

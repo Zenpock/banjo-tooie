@@ -24,8 +24,8 @@ f32 _bafpctrl_entrypoint_3(PlayerState*);
 s32 _bafpctrl_entrypoint_4(PlayerState *self);
 s32 _bafpctrl_entrypoint_5(PlayerState *self);
 // bafpctrl_entrypoint_6
-void bafpctrl_entrypoint_7(s32 arg0) ;
-// bafpctrl_entrypoint_8
+void _bafpctrl_entrypoint_7(PlayerState*);
+void _bafpctrl_entrypoint_8(PlayerState*);
 void _bafpctrl_entrypoint_9(PlayerState *self, s32);
 void _bafpctrl_entrypoint_10(PlayerState *self, s32);
 void _bafpctrl_entrypoint_11(PlayerState *self, s32, s32);
@@ -33,8 +33,8 @@ void _bafpctrl_entrypoint_11(PlayerState *self, s32, s32);
 // bafpctrl_entrypoint_13
 void _bafpctrl_entrypoint_14(PlayerState *self, s32);
 // func_80800E30_bafpctrl
-// bafpctrl_entrypoint_15
-void _bafpctrl_entrypoint_16(PlayerState*, s32); 
+void _bafpctrl_entrypoint_15(PlayerState*); 
+void _bafpctrl_entrypoint_16(PlayerState*, s32);
 void _bafpctrl_entrypoint_17(PlayerState *self);
 void _bafpctrl_entrypoint_18(PlayerState*, s32);
 void _bafpctrl_entrypoint_19(PlayerState*);

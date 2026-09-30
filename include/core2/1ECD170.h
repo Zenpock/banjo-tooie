@@ -3,6 +3,8 @@
 
 #include "common.h"
 #include "ba/playerstate.h"
+#include "core2/1E72180.h"
+#include "core2/1EC3810.h"
 
 #include <ultra64.h>
 
