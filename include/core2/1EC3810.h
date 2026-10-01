@@ -26,5 +26,7 @@ s32 func_800EA09C();
 s32 func_800EA170();
 void func_800EA334(s32);
 void func_800EA34C(s32);
+void func_800EA45C();
+void func_800EA51C();
 
 #endif

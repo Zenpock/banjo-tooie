@@ -5,6 +5,7 @@
 #include "freelist.h"
 #include "gc/cubesearch.h"
 
+void func_80106F70(Actor*);
 s32 func_80107070(Actor*, s32);
 void func_80107200(Actor*);
 

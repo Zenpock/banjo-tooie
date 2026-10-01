@@ -47,11 +47,13 @@ typedef struct {
     /* 0x20 */ u32 unk20;
     /* 0x24 */ u32 unk24_22 : 10;
     /* 0x24 */ u32 unk24_16 : 6;
-    /* 0x24 */ u32 unk24_6 : 6;
-    /* 0x24 */ u32 unk24_0 : 10;
-    /* 0x28 */ u32 pad28_15 : 18;
-    /* 0x28 */ u32 unk28_14 : 1;
-    /* 0x28 */ u32 pad28_10 : 3;
+    /* 0x24 */ u32 unk24_6 : 9;
+	/* 0x24 */ u32 unk24_0 : 7;
+	/* 0x28 */ u32 unk28_23 : 9;
+	/* 0x28 */ u32 unk28_14 : 9;
+	/* 0x28 */ u32 unk28_13 : 1;
+	/* 0x28 */ u32 unk28_12 : 1;
+    /* 0x28 */ u32 pad28_10 : 2;
     /* 0x28 */ u32 unk28_9 : 1;
     /* 0x28 */ u32 unk28_0 : 9;
     /* 0x2C */ u32 unk2C;
@@ -166,10 +168,13 @@ typedef struct Actor {
     /* 0x82 */ s16 unk82[2];
     /* 0x86 */ s16 pad86;
     /* 0x88 */ u32 pad88;
-    /* 0x8C */ u32 pad8C;
-    /* 0x90 */ s16 pad90;
+    /* 0x8C */ s16 unk8C;
+	/* 0x8E */ s16 unk8E;
+    /* 0x90 */ s16 unk90;
     /* 0x92 */ s16 unk92;
-    /* 0x94 */ u32 pad94;
+    /* 0x94 */ u32 pad94_30 : 2;
+	/* 0x94 */ u32 unk94_20 : 10; //(unk94 * 4) >> 0x16
+	/* 0x94 */ u32 pad94_0 : 20;
     /* 0x98 */ u8 pad98;
     /* 0x99 */ u8 pad99;
     /* 0x9A */ u8 pad9A;
@@ -182,7 +187,7 @@ typedef struct ActorData {
     s16 Model;
     s16 unk6;
     void *unk8;
-    void (*unkC_func)(Actor* actor); //Update
+    void (*update_func)(Actor* actor); //Update
     void (*unk10_func)(Actor* actor);
     void (*unk14_func)(Actor* arg0, void* arg1);
     u16 unk18;

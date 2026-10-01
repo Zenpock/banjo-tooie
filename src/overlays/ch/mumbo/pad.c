@@ -89,7 +89,7 @@ s32 func_80800514_chmumbopad(Actor* arg0, s32 arg1, s32 arg2)
     {
     case 0x91:
 
-        if (!(arg0->unk64_19) && !(arg0->unk74_29) && !(arg0->unk0->unk28_14))
+        if (!(arg0->unk64_19) && !(arg0->unk74_29) && !(arg0->unk0->unk28_13))
         {
             func_808008CC_chmumbopad(arg0, arg2);
         }
@@ -101,7 +101,7 @@ s32 func_80800514_chmumbopad(Actor* arg0, s32 arg1, s32 arg2)
     case 0xBB:
         if (arg2 == (arg0->unk6C_0))
         {
-            arg0->unk0->unk28_14 = 0;
+            arg0->unk0->unk28_13 = 0;
         }
         break;
     case 0x2E:
