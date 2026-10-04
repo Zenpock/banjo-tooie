@@ -92,7 +92,7 @@ void bskazjump_entrypoint_1(PlayerState *self) {
             if (baanim_isStopped(self) != 0) {
                 next_state = BS_STATE_DF;
             }
-            if (self->unk164.word != 0 && func_8008D6D4(self)) {
+            if (self->unk164.word != 0 && ability_getValue(ABILITY_0D_BK_SHOCK_SPRING_JUMP)) {
                 self->unk164.word = 0;
                 next_state = BS_STATE_C3_KAZ_SHOCK_SPRING_READY;
             }
