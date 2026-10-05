@@ -28,11 +28,17 @@ typedef struct {
     /* 0x0C */ u32 unkC;
 } Unk80132ED0_2;
 
+typedef struct {
+	void ( *unk0) (s32, s32);
+	void (*unk4) (s32, s32);
+	void (*unk8) (s32, s32);
+} CallbackTable;
+
 // size: unknown
 typedef struct {
     /* 0x00 */ Unk80132ED0_2* unk0;
     /* 0x04 */ u32* unk4;
-    /* 0x08 */ u32* unk8;
+    /* 0x08 */ CallbackTable* (*unk8)(void);
     /* 0x0C */ u32 unkC;
     /* 0x10 */ s16 unk10;
     /* 0x12 */ u16 unk12_1:15;
@@ -42,7 +48,8 @@ typedef struct {
 	/* 0x18 */ u32 unk18_17 : 15;
 	/* 0x18 */ u32 unk18_16 : 1;
 	/* 0x18 */ u32 unk18_5 : 11;
-	/* 0x18 */ u32 unk18_0 : 5;
+	/* 0x18 */ u32 unk18_1 : 4;
+	/* 0x18 */ u32 unk18_0 : 1;
     /* 0x1C */ u32 unk1C;
     /* 0x20 */ u32 unk20;
     /* 0x24 */ u32 unk24_22 : 10;
@@ -195,16 +202,26 @@ typedef struct ActorData {
     f32 unk1C;
     s16 unk20;
     s16 unk22;
-    s16 unk24;
-    s16 unk26;
+	union {
+		struct {
+			s16 unk24;
+			s16 unk26;
+		};
+		s32 unk24w;
+	};
     void (*unk28_func)(Actor* actor);
     void* (*unk2C_func)();
     s16 unk30;
     s16 unk32;
     void (*unk34_func)(Actor* actor);
 	Actor* (*unk38_func)(void* arg0, s32 arg1, void* arg2, s32 arg3, void* arg4); // argument types unknown currently
-    s16 unk3C;
-    s16 unk3E;
+	union {
+		struct {
+			s16 unk3C;
+			s16 unk3E;
+		};
+		s32 unk3Cw;
+	};
     s32 (*eventHandler)(Actor* actor, s32 arg1, s32 arg2);
     s16 unk44;
     s16 unk46;

@@ -7,10 +7,33 @@
 #include "core1/mlmtx.h"
 #include "physicstypes.h"
 
+typedef struct unkCUnk0 {
+	s32 unk0;
+	s32 unk4;
+	s32 unk8;
+	s32 unkC;
+	s32 unk10;
+	s32 unk14;
+	s32 unk18;
+	s16 unk1C;
+	s16 unk1E;
+	s32 unk20;
+	s32 unk24;
+	union {
+		s32 unk28;
+		struct {
+			s32 unk28_11 : 21;
+			s32 unk28_10 : 1;
+			s32 unk28_9 : 1;
+		};
+	};
+
+} unkCUnk0;
 typedef struct ba_unknown_c_s {
-    u8 pad0[0xC];
-    s32 unkC[3];
-    u8 pad18[4];
+	unkCUnk0* unk0;
+	s32 pad4[2];
+	s32 unkC[3];
+	s32 unk18;
 } BaUnknownC;
 
 typedef struct ba_unknown_2C_s {

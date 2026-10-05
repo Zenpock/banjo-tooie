@@ -71,6 +71,7 @@
 void func_80807D48_bsfirstp(PlayerState*);
 void func_8080800C_bsfirstp(PlayerState*);
 
+void _bsfirstp_entrypoint_14(PlayerState*);
 void _bsfirstp_entrypoint_27(PlayerState*);
 void _bsfirstp_entrypoint_37(PlayerState*);
 

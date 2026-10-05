@@ -13,6 +13,7 @@
 #include "core2/1EB52C0.h"
 #include "core2/1EBAA10.h"
 #include "core2/1EC2350.h"
+#include "core2/1EC4CC0.h"
 #include "core2/1EC8070.h"
 #include "core2/1ECE0B0.h"
 #include "core2/1EDC7B0.h"
@@ -28,5 +29,6 @@ void func_800EA334(s32);
 void func_800EA34C(s32);
 void func_800EA45C();
 void func_800EA51C();
-
+int func_800EB15C(Unk80132ED0* arg0);
+void func_800EB210(Unk80132ED0*, unkCUnk0*, s32);
 #endif

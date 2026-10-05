@@ -50,6 +50,7 @@ void ml_vec3f_assign_value(f32[3], f32, f32, f32);
 void ml_vec3i_assign_value(s32*, s32, s32, s32);
 void func_800EFA98(f32[3], f32[3], f32);
 void ml_getdiff_vec3f(f32*, f32*, f32*);
+void func_800EFB58(s32*, s32*, s32*);
 f32 func_800EFB8C(f32*, f32*);
 f32 func_800EFC7C(f32*, f32*);
 void func_800EFCD8(f32[3], f32, f32);

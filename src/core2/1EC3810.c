@@ -141,9 +141,63 @@ void func_800EA398(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EADFC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EB15C.s")
+int func_800EB15C(Unk80132ED0* arg0)
+{
+	if (arg0->unk18_0)
+	{
+		return 0;
+	}
+	if (!arg0->unk24_22)
+	{
+		return 1;
+	}
+	if (!func_800D3948())
+	{
+		if (!func_800F6774(func_800F54E4()))
+		{
+			if ((arg0->unk18_16) && (func_80102F74(func_80106790(arg0), 0x88000000)))
+			{
+				return 1;
+			}
+			return 0;
+		}
+	}
+	return 1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EB210.s")
+void func_800EB210(Unk80132ED0* arg0, unkCUnk0* arg1, s32 arg2)
+{
+	CallbackTable* temp_v0;
+
+	if (func_800EB15C(arg0) != 0)
+	{
+		temp_v0 = func_800EC3C4(arg0);
+		if (arg0) {}
+		switch (arg2)
+		{
+		case 0:
+			if (temp_v0->unk0 != 0)
+			{
+				temp_v0->unk0(arg0, arg1);
+				return;
+			}
+			break;
+		case 1:
+			if (temp_v0->unk4 != 0)
+			{
+				temp_v0->unk4(arg0, arg1);
+				return;
+			}
+			break;
+		case 2:
+			if (temp_v0->unk8 != 0)
+			{
+				temp_v0->unk8(arg0, arg1);
+			}
+			break;
+		}
+	}
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EB2DC.s")
 

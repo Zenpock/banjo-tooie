@@ -6,8 +6,22 @@
 #include "ba/assets.h"
 
 typedef struct anctrl_s {
-    // TODO populate this struct
-    u8 unk0;
+	s32 unk0;
+	s32 unk4;
+	s32 unk8;
+	s32 unkC;
+	s32 unk10;
+	s32 unk14;
+	u32 unk18_31 : 1;
+	u32 unk18_30 : 1;
+	u32 unk18_24 : 6;
+	u32 unk18_16 : 8;
+	u32 unk18_8 : 8;
+	u32 unk18_3 : 5;
+	u32 unk18_2 : 1;
+	u32 unk18_1 : 1;
+	u32 unk18_0 : 1;
+	f32 unk1C[3];
 } AnimCtrl;
 
 void anctrl_setIndex(AnimCtrl *, AssetId);
