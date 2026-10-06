@@ -40,15 +40,15 @@
 
 Actor* func_80108C90(s32 arg0, s32* arg1, u32 arg2, Prop* arg3)
 {
-    ActorData* (*temp_v0_2)(void);
-    ActorData* actorData;
-    temp_v0_2 = (ActorData * (*)(void))_gemarkersDll_entrypoint_0(arg0);
-    if (temp_v0_2 == NULL)
-    {
-        return NULL;
-    }
-    actorData = temp_v0_2();
-    return actorData->unk38_func(arg1, arg2, actorData, temp_v0_2, arg3);
+	ActorData* (*temp_v0_2)(void);
+	ActorData* actorData;
+	temp_v0_2 = (ActorData * (*)(void))_gemarkersDll_entrypoint_0(arg0);
+	if (temp_v0_2 == NULL)
+	{
+		return NULL;
+	}
+	actorData = temp_v0_2();
+	return actorData->unk38_func(arg1, arg2, actorData, temp_v0_2, arg3);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE1510/func_80108CF4.s")

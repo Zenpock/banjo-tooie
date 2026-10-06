@@ -131,74 +131,74 @@ s32 func_800CFA70(s32 arg0,s32 arg1)
 //Set jinjo pattern
 s32 func_800CFA90()
 {
-    s32 var_v0[0x9];
-    s32 var_a0;
+	s32 var_v0[0x9];
+	s32 var_a0;
 
-    s32* var_v1;
-
-
-    s32 var_s0;
-
-    s32 var_v0_2;
+	s32* var_v1;
 
 
-    s32 index;
-    if (func_800DA9E4(FLAG2_6A0_JINJO_PATTERN_ALREADY_APPLIED_TO_GAME, 1) != 0)
-    {
-        return 0;
-    }
-    if (flag_getValue(FLAG_379_RANDOMISER_JINJO_SET) == 0)
-    {
-        //Get Random int between 0 and 0x21
-        var_s0 = func_800DC128(0, 0x21);
-        flag_setMultipleValue(FLAG_37A_RANDOMISER_JINJO_1, (u32)var_s0, 5);
-        flag_setValueTrue(FLAG_379_RANDOMISER_JINJO_SET);
-    }
-    else
-    {
-        var_s0 = flag_getMultipleValue(FLAG_37A_RANDOMISER_JINJO_1, 5);
-    }
-    func_800DC330();
-    func_800DC324((s32)var_s0);
-    //Zero out 0x24 from sp
-    for (index = 0; index < 0x9; index++)
-    {
-        var_v0[index] = 0;
-    }
-    for (index = 0; index < 0x2D; index++)
-    {
-        //Get Random int between 0 and 9
-        var_v0_2 = func_800DC128(0, 9);
-        var_v1 = &(&var_v0[0])[var_v0_2];
-        var_a0 = *var_v1;
-        while ((s32)var_v0_2 < var_a0)
-        {
-            var_v0_2 = func_800DC128(0, 9);
-            var_v1 = &(&var_v0[0])[var_v0_2];
-            var_a0 = *var_v1;
-        }
-        *var_v1 = var_a0 + 1;
-        D_8011AB40[index].color = var_v0_2;
-    }
-    func_800DC354(var_a0);
-    return 1;
+	s32 var_s0;
+
+	s32 var_v0_2;
+
+
+	s32 index;
+	if (func_800DA9E4(FLAG2_6A0_JINJO_PATTERN_ALREADY_APPLIED_TO_GAME, 1) != 0)
+	{
+		return 0;
+	}
+	if (flag_getValue(FLAG_379_RANDOMISER_JINJO_SET) == 0)
+	{
+		//Get Random int between 0 and 0x21
+		var_s0 = func_800DC128(0, 0x21);
+		flag_setMultipleValue(FLAG_37A_RANDOMISER_JINJO_1, (u32)var_s0, 5);
+		flag_setValueTrue(FLAG_379_RANDOMISER_JINJO_SET);
+	}
+	else
+	{
+		var_s0 = flag_getMultipleValue(FLAG_37A_RANDOMISER_JINJO_1, 5);
+	}
+	func_800DC330();
+	func_800DC324((s32)var_s0);
+	//Zero out 0x24 from sp
+	for (index = 0; index < 0x9; index++)
+	{
+		var_v0[index] = 0;
+	}
+	for (index = 0; index < 0x2D; index++)
+	{
+		//Get Random int between 0 and 9
+		var_v0_2 = func_800DC128(0, 9);
+		var_v1 = &(&var_v0[0])[var_v0_2];
+		var_a0 = *var_v1;
+		while ((s32)var_v0_2 < var_a0)
+		{
+			var_v0_2 = func_800DC128(0, 9);
+			var_v1 = &(&var_v0[0])[var_v0_2];
+			var_a0 = *var_v1;
+		}
+		*var_v1 = var_a0 + 1;
+		D_8011AB40[index].color = var_v0_2;
+	}
+	func_800DC354(var_a0);
+	return 1;
 }
 
 void func_800CFBC8(Actor* arg0, u32 itemFlag, s32 itemType, s32 arg3)
 {
-    func_8010108C(arg0, 0x13, (s32)itemFlag);
-    if (func_800CF888((s32)itemFlag, itemType) != 0)
-    {
-        _subaddieDll_entrypoint_4(arg0, 1);
-    }
-    if (func_800CF8D0((s32)itemFlag, itemType) != 0)
-    {
-        func_8010108C(arg0, 0x12, 1);
-    }
-    if (func_800CF918((s32)itemFlag, itemType) != -1)
-    {
-        func_8010108C(arg0, 0x55, 1);
-    }
+	func_8010108C(arg0, 0x13, (s32)itemFlag);
+	if (func_800CF888((s32)itemFlag, itemType) != 0)
+	{
+		_subaddieDll_entrypoint_4(arg0, 1);
+	}
+	if (func_800CF8D0((s32)itemFlag, itemType) != 0)
+	{
+		func_8010108C(arg0, 0x12, 1);
+	}
+	if (func_800CF918((s32)itemFlag, itemType) != -1)
+	{
+		func_8010108C(arg0, 0x55, 1);
+	}
 }
 
 //Return the relative jiggy index within the level
@@ -518,7 +518,7 @@ void func_800D07CC(s32 arg0, s32 arg1, f32* arg2)
         temp_v0 = func_800CFC5C(arg0);
         if (temp_v0 != -1)
         {
-            func_800EE7F8(arg2, D_8012B180[temp_v0].coords);
+            ml_vec3f_copy(arg2, D_8012B180[temp_v0].coords);
         }
     }
 }
@@ -782,12 +782,12 @@ void func_800D1000(u32 arg0, u32 arg1, f32* spawnCoords, u32 spawnStyle, Unk8013
         func_800D053C(arg0, arg1);
         if (spawnCoords != NULL)
         {
-            func_800EE904(sp44, spawnCoords);
+            ml_vec3f_to_vec3i(sp44, spawnCoords);
         }
         else
         {
             func_800D07CC(arg0, arg1, sp34);
-            func_800EE904(sp44, sp34);
+            ml_vec3f_to_vec3i(sp44, sp34);
         }
         _chbaddiesetup_entrypoint_6(&func_800D0F9C, (arg0 << 0x10) | (arg1 & 0xFFFF), sp44[0], sp44[1], sp44[2], spawnStyle, arg4);
     }
@@ -804,7 +804,7 @@ void func_800D1218(s32 arg0, s32 arg1, f32* arg2)
     temp_v0 = func_800D0634(arg0, arg1);
     if (temp_v0 != 0) 
     {
-        func_800EE7F8(arg2, func_80106790((Unk80132ED0*)temp_v0)->position);
+        ml_vec3f_copy(arg2, func_80106790((Unk80132ED0*)temp_v0)->position);
     }
 }
 
@@ -818,7 +818,7 @@ void func_800D1254(s32 arg0, s32 arg1, f32* arg2)
     if (temp_v0 != 0)
     {
         temp_v0_2 = func_80106790((Unk80132ED0*)temp_v0);
-        func_800EE7F8(temp_v0_2->position, arg2);
+        ml_vec3f_copy(temp_v0_2->position, arg2);
         func_80103014(temp_v0_2);
     }
 }

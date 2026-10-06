@@ -15,9 +15,15 @@ typedef struct ba_washer_s {
     f32 unk28[3];
 } BaWasher;
 
+void _bawasher_entrypoint_1(PlayerState*);
+void _bawasher_entrypoint_2(PlayerState*);
+void _bawasher_entrypoint_3(PlayerState*, f32*);
+void _bawasher_entrypoint_4(PlayerState*, f32);
+void _bawasher_entrypoint_5(PlayerState*, f32);
 void _bawasher_entrypoint_6(s32 arg0);
-
+void _bawasher_entrypoint_7(PlayerState*);
 void bawasher_entrypoint_8(PlayerState *self, f32 arg1[3], f32 arg2[3], f32 arg3[3]);
+void _bawasher_entrypoint_9(PlayerState*);
 
 
 #endif 

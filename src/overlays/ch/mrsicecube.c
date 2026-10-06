@@ -108,7 +108,7 @@ void func_808000BC_chmrsicecube(Actor* arg0)
     if (temp_v0 != 0)
     {
         func_8080066C_chmrsicecube(arg0, sp30);
-        func_800EE7F8(temp_v0->position, sp30);
+        ml_vec3f_copy(temp_v0->position, sp30);
         if ((sp3C != 0) && (_subaddieskeleton_entrypoint_0(arg0, 3, sp24) != 0))
         {
             temp_v0->position[1] += (sp24[1] - arg0->position[1]);
@@ -187,7 +187,7 @@ Actor* func_8080043C_chmrsicecube(Actor* arg0, s32 arg1, f32* arg2)
     temp_v0 = _subaddiefind_entrypoint_0(arg0->position, arg1, -1, 0);
     if (temp_v0 != NULL)
     {
-        func_800EE7F8(arg2, temp_v0->position);
+        ml_vec3f_copy(arg2, temp_v0->position);
     }
     return temp_v0;
 }
@@ -206,7 +206,7 @@ Actor* func_8080048C_chmrsicecube(Actor* arg0, s32 arg1, f32* arg2)
     var_v1 = _subaddiefind_entrypoint_12(temp_v0[4] >> 21);
     if (var_v1 != NULL)
     {
-        func_800EE88C(arg2, temp_v0);
+        ml_vec3s_to_vec3f(arg2, temp_v0);
     }
     return var_v1;
 }
@@ -228,7 +228,7 @@ Unk80132ED0* func_80800508_chmrsicecube(Actor* arg0)
     {
         var_v0 = func_8080048C_chmrsicecube(arg0, D_80800910_chmrsicecube[temp_s0][0], sp2C);
     }
-    if ((var_v0 != NULL) && (func_800EEB40(&sp2C, arg0->position) < 40000.0f))
+    if ((var_v0 != NULL) && (ml_vec3f_distance_sq(&sp2C, arg0->position) < 40000.0f))
     {
         sp28->unk8 = var_v0->unk74_20;
         func_8010A570(var_v0);
@@ -255,7 +255,7 @@ void func_80800634_chmrsicecube(Actor* arg0)
 
 void func_8080066C_chmrsicecube(Actor* arg0, f32* arg1)
 {
-    func_800EE7F8(arg1, arg0->position);
+    ml_vec3f_copy(arg1, arg0->position);
     arg1[1] += arg0->scale * 100.0f;
 }
 

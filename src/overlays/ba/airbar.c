@@ -1,4 +1,4 @@
-#include "ba/airr.h"
+#include "ba/airbar.h"
 
 void baairbar_entrypoint_0(PlayerState *self, s32 arg1) {
     if (flag_getValue(FLAG_0E9_MAGIC_SUNLIGHT_OXYGENATED_WATER) && _gclevel_entrypoint_4(0x10)) {

@@ -4,56 +4,51 @@
 
 #include <ultra64.h>
 #include "common.h"
+#include "ba/playerstate.h"
+#include "ba/anim.h"
+#include "ba/bounce.h"
+#include "ba/data.h"
+#include "ba/fpctrl.h"
+#include "ba/key.h"
+#include "ba/move/thrust.h"
+#include "ba/physics.h"
+#include "ba/roll.h"
+#include "ba/spin.h"
+#include "ba/stick.h"
+#include "ba/sudie.h"
+#include "ba/timer.h"
+#include "ba/yaw.h"
+#include "ba/sub.h"
+#include "bs/mum/move.h"
+#include "bs/rest.h"
+#include "bs/state.h"
+#include "core2/1E66990.h"
+#include "core2/1E6A190.h"
+#include "core2/1E6A730.h"
+#include "core2/1E6B900.h"
+#include "core2/1E6F080.h"
+#include "core2/1E72EA0.h"
+#include "core2/1E75620.h"
+#include "core2/1E75710.h"
+#include "core2/1E75920.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1E8DFA0.h"
+#include "core2/1E8F430.h"
+#include "core2/1E93440.h"
+#include "core2/1EB2840.h"
+#include "core2/1EB5980.h"
+#include "core2/1EC3810.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECB0F0.h"
+#include "core2/1ECB9F0.h"
+#include "core2/1ED4E30.h"
+#include "core2/1EDA900.h"
+#include "core2/anctrl.h"
+#include "fx/airbub.h"
+#include "player.h"
 
-// func_80800000_bssub
-// func_80800030_bssub
-// func_80800048_bssub
-// func_80800064_bssub
-// func_808000F0_bssub
-// func_80800254_bssub
-// func_80800634_bssub
-// func_80800768_bssub
-// func_80800834_bssub
-// func_808008D8_bssub
-// func_808009B0_bssub
-void func_80800AEC_bssub();
-void func_80800B0C_bssub();
-// func_80800B2C_bssub
-// func_80800BD8_bssub
-// func_80800C1C_bssub
-// func_80800C60_bssub
-// func_80800E34_bssub
-// func_80800E98_bssub
-// func_80800EE0_bssub
-// bssub_entrypoint_0
-void func_80800F70_bssub(s32 arg0);
-void func_80800F98_bssub(s32 arg0);
-void func_80800FC0_bssub(s32 arg0);
-// bssub_entrypoint_1
-void func_80801004_bssub(s32 arg0);
-// func_8080102C_bssub
-// func_80801130_bssub
-// func_80801188_bssub
-// bssub_entrypoint_2
-void func_8080121C_bssub(s32 arg0);
-// func_80801244_bssub
-// func_80801284_bssub
-// bssub_entrypoint_3
-void func_808012F0_bssub(s32 arg0);
-// func_80801318_bssub
-// func_80801358_bssub
-// bssub_entrypoint_4
-void func_808013C4_bssub(s32 arg0);
-// func_808013EC_bssub
-// func_80801428_bssub
-// bssub_entrypoint_5
-void func_80801490_bssub(s32 arg0);
-// func_808014B8_bssub
-// func_80801518_bssub
-// bssub_entrypoint_6
-void func_80801578_bssub(s32 arg0);
-// func_808015A0_bssub
-// func_80801618_bssub
-// bssub_entrypoint_7
 
 #endif // __BS_SUB__

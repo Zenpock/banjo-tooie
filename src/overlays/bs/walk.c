@@ -321,16 +321,16 @@ void bswalk_entrypoint_7(PlayerState* self)
     }
     if (player_inWater(self) != 0)
     {
-        var_s1 = 0x2D;
+        var_s1 = BS_STATE_2D_SWIM_IDLE;
     }
     bs_setState(self, func_800A02DC(self, var_s1));
 }
 
-void bswalk_entrypoint_8(PlayerState* arg0)
+void bswalk_entrypoint_8(PlayerState* self)
 {
-    if (func_8008E0E8(arg0) != 0)
+    if (func_8008E0E8(self) != 0)
     {
-        _bapackctrl_entrypoint_5(arg0, 3);
+        _bapackctrl_entrypoint_5(self, 3);
     }
 }
 
@@ -339,14 +339,14 @@ s32 bswalk_entrypoint_9(s32 arg0)
     return D_80801530_bswalk[arg0];
 }
 
-void bswalk_entrypoint_10(PlayerState* arg0)
+void bswalk_entrypoint_10(PlayerState* self)
 {
     AnimCtrl* temp_s0;
     f32 sp28;
     BanjoStateId temp_v0;
 
-    temp_s0 = baanim_getAnimCtrlPtr(arg0);
-    temp_v0 = bs_getPreviousState(arg0);
+    temp_s0 = baanim_getAnimCtrlPtr(self);
+    temp_v0 = bs_getPreviousState(self);
     if ((temp_v0 != BS_STATE_2_SLOW_WALK) && (temp_v0 != BS_STATE_4_RUN))
     {
         sp28 = 0.0f;
@@ -362,113 +362,118 @@ void bswalk_entrypoint_10(PlayerState* arg0)
     anctrl_setStart(temp_s0, sp28);
     anctrl_setPlaybackType(temp_s0, 2);
     anctrl_start(temp_s0);
-    func_8009FFD8(arg0, BAANIM_UPDATE_2_SCALE_HORZ, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
-    baanim_setDurationRange(arg0, 0.3f, 1.5f);
-    func_8008C9F0(arg0, 150.0f, 225.0f, 0.92f, 0.58f);
-    func_808001D8_bswalk(arg0, 0.3f);
-    bastick_resetZones(arg0);
-    if (func_8008E0E8(arg0) != 0)
+    func_8009FFD8(self, BAANIM_UPDATE_2_SCALE_HORZ, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
+    baanim_setDurationRange(self, 0.3f, 1.5f);
+    func_8008C9F0(self, 150.0f, 225.0f, 0.92f, 0.58f);
+    func_808001D8_bswalk(self, 0.3f);
+    bastick_resetZones(self);
+    if (func_8008E0E8(self) != 0)
     {
-        _bapackctrl_entrypoint_5(arg0, 2);
+        _bapackctrl_entrypoint_5(self, 2);
     }
 }
 
-void bswalk_entrypoint_11(PlayerState* arg0)
+void bswalk_entrypoint_11(PlayerState* self)
 {
     BanjoStateId nextState;
 
     nextState = BS_STATE_0_INVALID;
-    func_8080016C_bswalk(arg0);
-    func_800A2CE8(arg0, 0.4f, 4);
-    func_800A2CE8(arg0, 0.9f, 3);
-    func_808001E4_bswalk(arg0);
-    func_80800000_bswalk(arg0);
-    switch (bastick_getZone(arg0))
+    func_8080016C_bswalk(self);
+    func_800A2CE8(self, 0.4f, 4);
+    func_800A2CE8(self, 0.9f, 3);
+    func_808001E4_bswalk(self);
+    func_80800000_bswalk(self);
+    switch (bastick_getZone(self))
     {
-    case BS_STICK_ZONE_ID_0:
-    case BS_STICK_ZONE_ID_1:
-    case BS_STICK_ZONE_ID_2:
-        if ((func_8009BCD4(arg0, 150.0f) != 0) && (func_80800220_bswalk(arg0) != 0))
-        {
-            nextState = BS_STATE_2_SLOW_WALK;
-        }
-        break;
-    case BS_STICK_ZONE_ID_4:
-        nextState = BS_STATE_4_RUN;
-        break;
+        case BS_STICK_ZONE_ID_0:
+        case BS_STICK_ZONE_ID_1:
+        case BS_STICK_ZONE_ID_2:
+            if ((func_8009BCD4(self, 150.0f) != 0) && (func_80800220_bswalk(self) != 0))
+            {
+                nextState = BS_STATE_2_SLOW_WALK;
+            }
+            break;
+        case BS_STICK_ZONE_ID_4:
+            nextState = BS_STATE_4_RUN;
+            break;
     }
-    if (func_8008DE24(arg0) != 0)
+    if (func_8008DE24(self) != 0)
     {
         nextState = 0x7A;
     }
-    if ((func_8008E300(arg0) != 0) && (func_8009BB5C(arg0) > 125.0f))
+    if ((func_8008E300(self) != 0) && (func_8009BB5C(self) > 125.0f))
     {
         nextState = BS_STATE_C_QUICK_TURN;
     }
-    if (bainput_should_enter_first_person(arg0) != 0)
+    if (bainput_should_enter_first_person(self) != 0)
     {
-        nextState = _badrone_entrypoint_24(arg0);
+        nextState = _badrone_entrypoint_24(self);
     }
-    if (func_8008DD04(arg0) != 0)
+    if (func_8008DD04(self) != 0)
     {
         nextState = BS_STATE_2F_FALL;
     }
-    if (bakey_held(arg0, BUTTON_Z) != 0)
+    if (bakey_held(self, BUTTON_Z) != 0)
     {
         nextState = BS_STATE_7_CROUCH;
     }
-    nextState = func_80800248_bswalk(arg0, nextState);
-    if (bakey_pressed(arg0, BUTTON_A) != 0) {
-        nextState = bs_getTypeOfJump(arg0);
-        if (baphysics_get_target_horizontal_velocity(arg0) == 0.0f)
+    nextState = func_80800248_bswalk(self, nextState);
+    if (bakey_pressed(self, BUTTON_A) != 0) 
+    {
+        nextState = bs_getTypeOfJump(self);
+        if (baphysics_get_target_horizontal_velocity(self) == 0.0f)
         {
-            if (func_8008D714(arg0) != 0) {
+            if (func_8008D714(self) != 0) 
+            {
                 nextState = 0xB8;
             }
-            else if (func_8008D790(arg0) != 0)
+            else if (func_8008D790(self) != 0)
             {
-                _baduo_entrypoint_12(arg0);
+                _baduo_entrypoint_12(self);
                 return;
             }
         }
     }
-    if (func_8008E148(arg0) != 0)
+    if (func_8008E148(self) != 0)
     {
-        nextState = _badrone_entrypoint_25(arg0);
+        nextState = _badrone_entrypoint_25(self);
     }
-    if (player_inWater(arg0) != 0)
+    if (player_inWater(self) != 0)
     {
-        nextState = 0x2D;
+        nextState = BS_STATE_2D_SWIM_IDLE;
     }
-    bs_setState(arg0, func_800A02DC(arg0, nextState));
+    bs_setState(self, func_800A02DC(self, nextState));
 }
 
-void bswalk_entrypoint_12(PlayerState* arg0)
+void bswalk_entrypoint_12(PlayerState* self)
 {
-    if (func_8008E0E8(arg0) != 0) {
-        _bapackctrl_entrypoint_5(arg0, 3);
+    if (func_8008E0E8(self) != 0)
+    {
+        _bapackctrl_entrypoint_5(self, 3);
     }
 }
 
-s32 bswalk_entrypoint_13(s32 arg0) {
+s32 bswalk_entrypoint_13(s32 arg0)
+{
     return D_80801540_bswalk[arg0];
 }
 
-void bswalk_entrypoint_14(PlayerState* arg0) {
+void bswalk_entrypoint_14(PlayerState* self)
+{
     AnimCtrl* sp34;
     f32 sp30;
     s32 sp2C;
 
-    sp34 = baanim_getAnimCtrlPtr(arg0);
+    sp34 = baanim_getAnimCtrlPtr(self);
     sp2C = 1;
     sp30 = 0.0f;
-    switch (bs_getPreviousState(arg0))
+    switch (bs_getPreviousState(self))
     {
         case BS_STATE_1_IDLE:
         case BS_STATE_2_SLOW_WALK:
-            if (func_8009BB5C(arg0) < 200.0f)
+            if (func_8009BB5C(self) < 200.0f)
             {
-                _badust_entrypoint_3(arg0, 0.0f, 0.0f);
+                _badust_entrypoint_3(self, 0.0f, 0.0f);
             }
             break;
         case BS_STATE_C_QUICK_TURN:
@@ -486,107 +491,118 @@ void bswalk_entrypoint_14(PlayerState* arg0) {
     anctrl_setStart(sp34, sp30);
     anctrl_setPlaybackType(sp34, 2);
     anctrl_start(sp34);
-    func_8009FFD8(arg0, BAANIM_UPDATE_2_SCALE_HORZ, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
-    baanim_setDurationRange(arg0, 0.3f, 1.5f);
-    func_8008C9F0(arg0, 225.0f, 500.0f, 0.54f, 0.44f);
-    func_8009BFE4(arg0, 1000.0f, 12.0f);
-    baroll_setAngularVelocity(arg0, 1000.0f, 12.0f);
-    func_808001D8_bswalk(arg0, 0.3f);
-    bastick_resetZones(arg0);
-    if (func_8008E0E8(arg0) != 0)
+    func_8009FFD8(self, BAANIM_UPDATE_2_SCALE_HORZ, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
+    baanim_setDurationRange(self, 0.3f, 1.5f);
+    func_8008C9F0(self, 225.0f, 500.0f, 0.54f, 0.44f);
+    func_8009BFE4(self, 1000.0f, 12.0f);
+    baroll_setAngularVelocity(self, 1000.0f, 12.0f);
+    func_808001D8_bswalk(self, 0.3f);
+    bastick_resetZones(self);
+    if (func_8008E0E8(self) != 0)
     {
-        _bapackctrl_entrypoint_5(arg0, 2);
+        _bapackctrl_entrypoint_5(self, 2);
     }
 }
 
-void bswalk_entrypoint_15(PlayerState* arg0)
+void bswalk_entrypoint_15(PlayerState* self)
 {
     BanjoStateId nextState;
 
     nextState = BS_STATE_0_INVALID;
-    func_8080016C_bswalk(arg0);
-    func_8009D2F0(arg0, 0, 0.5f);
-    func_800A2CE8(arg0, 0.4f, 4);
-    func_800A2CE8(arg0, 0.9f, 3);
-    func_808001E4_bswalk(arg0);
-    func_80800000_bswalk(arg0);
-    switch (bastick_getZone(arg0))
+    func_8080016C_bswalk(self);
+    func_8009D2F0(self, 0, 0.5f);
+    func_800A2CE8(self, 0.4f, 4);
+    func_800A2CE8(self, 0.9f, 3);
+    func_808001E4_bswalk(self);
+    func_80800000_bswalk(self);
+    switch (bastick_getZone(self))
     {
         case BS_STICK_ZONE_ID_0:
-            if (func_8009BCD4(arg0, 18.0f) != 0)
+            if (func_8009BCD4(self, 18.0f) != 0)
             {
                 nextState = BS_STATE_1_IDLE;
             }
-            if (bainput_should_enter_first_person(arg0) != 0)
+            if (bainput_should_enter_first_person(self) != 0)
             {
-                nextState = _badrone_entrypoint_24(arg0);
+                nextState = _badrone_entrypoint_24(self);
             }
             break;
         case BS_STICK_ZONE_ID_1:
         case BS_STICK_ZONE_ID_2:
-            if (func_8009BCD4(arg0, 150.0f) != 0) {
+            if (func_8009BCD4(self, 150.0f) != 0)
+            {
                 nextState = BS_STATE_2_SLOW_WALK;
             }
-            if (bainput_should_enter_first_person(arg0) != 0) {
-                nextState = _badrone_entrypoint_24(arg0);
+            if (bainput_should_enter_first_person(self) != 0)
+            {
+                nextState = _badrone_entrypoint_24(self);
             }
             break;
         case BS_STICK_ZONE_ID_3:
-            if ((func_8009BCD4(arg0, 225.0f) != 0) && (func_80800220_bswalk(arg0) != 0)) {
+            if ((func_8009BCD4(self, 225.0f) != 0) && (func_80800220_bswalk(self) != 0))
+            {
                 nextState = BS_STATE_3_WALK;
             }
-            if (bainput_should_enter_first_person(arg0) != 0) {
-                nextState = _badrone_entrypoint_24(arg0);
+            if (bainput_should_enter_first_person(self) != 0)
+            {
+                nextState = _badrone_entrypoint_24(self);
             }
             break;
     }
-    if (func_8008DE24(arg0) != 0) {
+    if (func_8008DE24(self) != 0) {
         nextState = 0x7A;
     }
-    if ((func_8008E300(arg0) != 0) && (func_8009BB5C(arg0) > 125.0f)) {
+    if ((func_8008E300(self) != 0) && (func_8009BB5C(self) > 125.0f)) {
         nextState = BS_STATE_C_QUICK_TURN;
     }
-    if (func_8008DD04(arg0) != 0) {
+    if (func_8008DD04(self) != 0)
+    {
         nextState = BS_STATE_2F_FALL;
     }
-    if (bakey_held(arg0, BUTTON_Z) != 0) {
+    if (bakey_held(self, BUTTON_Z) != 0)
+    {
         nextState = BS_STATE_7_CROUCH;
     }
-    nextState = func_80800248_bswalk(arg0, nextState);
-    if (bakey_pressed(arg0, BUTTON_A) != 0) {
-        nextState = bs_getTypeOfJump(arg0);
-        if (baphysics_get_target_horizontal_velocity(arg0) == 0.0f) {
-            if (func_8008D714(arg0) != 0) {
+    nextState = func_80800248_bswalk(self, nextState);
+    if (bakey_pressed(self, BUTTON_A) != 0)
+    {
+        nextState = bs_getTypeOfJump(self);
+        if (baphysics_get_target_horizontal_velocity(self) == 0.0f)
+        {
+            if (func_8008D714(self) != 0)
+            {
                 nextState = 0xB8;
             }
-            else if (func_8008D790(arg0) != 0) {
-                _baduo_entrypoint_12(arg0);
+            else if (func_8008D790(self) != 0)
+            {
+                _baduo_entrypoint_12(self);
                 return;
             }
         }
     }
-    if (func_8008E148(arg0) != 0)
+    if (func_8008E148(self) != 0)
     {
-        nextState = _badrone_entrypoint_25(arg0);
+        nextState = _badrone_entrypoint_25(self);
     }
-    if (player_inWater(arg0) != 0)
+    if (player_inWater(self) != 0)
     {
-        nextState = 0x2D;
+        nextState = BS_STATE_2D_SWIM_IDLE;
     }
-    bs_setState(arg0, func_800A02DC(arg0, nextState));
+    bs_setState(self, func_800A02DC(self, nextState));
 }
 
-void bswalk_entrypoint_16(PlayerState* arg0) 
+void bswalk_entrypoint_16(PlayerState* self)
 {
-    func_8009BF5C(arg0, 0.0f);
-    baroll_setIdeal(arg0, 0.0f);
-    if (func_8008E0E8(arg0) != 0) 
+    func_8009BF5C(self, 0.0f);
+    baroll_setIdeal(self, 0.0f);
+    if (func_8008E0E8(self) != 0)
     {
-        _bapackctrl_entrypoint_5(arg0, 3);
+        _bapackctrl_entrypoint_5(self, 3);
     }
 }
 
-s32 bswalk_entrypoint_17(s32 arg0) {
+s32 bswalk_entrypoint_17(s32 arg0) 
+{
     return D_80801550_bswalk[arg0];
 }
 
@@ -594,73 +610,72 @@ void bswalk_entrypoint_18(s32 arg0)
 {
 }
 
-void bswalk_entrypoint_19(PlayerState* arg0)
+void bswalk_entrypoint_19(PlayerState* self)
 {
-    baanim_playForDuration_loopSmooth(arg0, 0xB, 0.43f);
-    func_8009FFD8(arg0, BAANIM_UPDATE_2_SCALE_HORZ, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
-    baanim_setDurationRange(arg0, 0.3f, 1.5f);
-    func_8008C9F0(arg0, 30.0f, 150.0f, 1.2f, 0.9f);
+    baanim_playForDuration_loopSmooth(self, 0xB, 0.43f);
+    func_8009FFD8(self, BAANIM_UPDATE_2_SCALE_HORZ, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
+    baanim_setDurationRange(self, 0.3f, 1.5f);
+    func_8008C9F0(self, 30.0f, 150.0f, 1.2f, 0.9f);
 }
 
-void bswalk_entrypoint_20(PlayerState* arg0)
+void bswalk_entrypoint_20(PlayerState* self)
 {
     BanjoStateId var_s1;
 
     var_s1 = BS_STATE_0_INVALID;
-    func_8080016C_bswalk(arg0);
-    func_800A2CE8(arg0, 0.4f, 4);
-    func_800A2CE8(arg0, 0.9f, 3);
-    func_80800000_bswalk(arg0);
-    if (func_8008DE24(arg0) == 0)
+    func_8080016C_bswalk(self);
+    func_800A2CE8(self, 0.4f, 4);
+    func_800A2CE8(self, 0.9f, 3);
+    func_80800000_bswalk(self);
+    if (func_8008DE24(self) == 0)
     {
         var_s1 = BS_STATE_2_SLOW_WALK;
     }
-    if (bastick_getZone(arg0) == BS_STICK_ZONE_ID_0)
+    if (bastick_getZone(self) == BS_STICK_ZONE_ID_0)
     {
         var_s1 = BS_STATE_1_IDLE;
     }
-    if (bainput_should_enter_first_person(arg0) != 0)
+    if (bainput_should_enter_first_person(self) != 0)
     {
-        var_s1 = _badrone_entrypoint_24(arg0);
+        var_s1 = _badrone_entrypoint_24(self);
     }
-    if (func_8008DD04(arg0) != 0)
+    if (func_8008DD04(self) != 0)
     {
         var_s1 = BS_STATE_2F_FALL;
     }
-    if (bakey_held(arg0, BUTTON_Z) != 0)
+    if (bakey_held(self, BUTTON_Z) != 0)
     {
         var_s1 = BS_STATE_7_CROUCH;
     }
-    var_s1 = func_80800248_bswalk(arg0, var_s1);
-    if (bakey_pressed(arg0, BUTTON_A) != 0)
+    var_s1 = func_80800248_bswalk(self, var_s1);
+    if (bakey_pressed(self, BUTTON_A) != 0)
     {
-        var_s1 = bs_getTypeOfJump(arg0);
+        var_s1 = bs_getTypeOfJump(self);
     }
-    if (func_8008E148(arg0) != 0)
+    if (func_8008E148(self) != 0)
     {
-        var_s1 = _badrone_entrypoint_25(arg0);
+        var_s1 = _badrone_entrypoint_25(self);
     }
-    if (player_inWater(arg0) != 0)
+    if (player_inWater(self) != 0)
     {
-        var_s1 = 0x2D;
+        var_s1 = BS_STATE_2D_SWIM_IDLE;
     }
-    bs_setState(arg0, func_800A02DC(arg0, var_s1));
+    bs_setState(self, func_800A02DC(self, var_s1));
 }
 
 s32 bswalk_entrypoint_21(s32 arg0) {
     return D_80801560_bswalk[arg0];
 }
 
-
-void bswalk_entrypoint_22(PlayerState* arg0, f32 arg1)
+void bswalk_entrypoint_22(PlayerState* self, f32 arg1)
 {
     if (arg1 < 150.0f)
     {
-        func_8009FF44(arg0, 3, 80.0f, 150.0f, 1.3f, 0.6f);
+        func_8009FF44(self, 3, 80.0f, 150.0f, 1.3f, 0.6f);
         return;
     }
     else
     {
-        func_8009FF44(arg0, 0xC, 225.0f, 500.0f, 0.54f, 0.44f);
+        func_8009FF44(self, 0xC, 225.0f, 500.0f, 0.54f, 0.44f);
     }
 }

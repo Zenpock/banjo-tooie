@@ -4,14 +4,14 @@
 #include "common.h"
 
 typedef struct {
-    s16 unk0;
-    s16 unk2;
-    f32 unk4;
+	s16 unk0;
+	s16 unk2;
+	f32 unk4;
 } unkfunc_800DB9FC_inner;
 
 typedef struct {
-    unkfunc_800DB9FC_inner unk0[7];
-    f32 unk38[7];
+	unkfunc_800DB9FC_inner unk0[7];
+	f32 unk38[7];
 } unkfunc_800DB9FC;
 
 s32 func_800DB9FC(u8, s32, s32*);

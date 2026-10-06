@@ -3,10 +3,10 @@
 
 #include "ba/playerstate.h"
 
-extern void _bashoessuck_entrypoint_1(s32, f32[3]);
-extern void _bashoessuck_entrypoint_2(s32);
-extern void _bashoessuck_entrypoint_3(s32);
-extern void _bashoessuck_entrypoint_4(s32);
-extern s32 _bashoessuck_entrypoint_5(s32, f32[3]);
+extern void _bashoessuck_entrypoint_1(PlayerState*, f32[3]);
+extern void _bashoessuck_entrypoint_2(PlayerState*);
+extern void _bashoessuck_entrypoint_3(PlayerState*);
+extern void _bashoessuck_entrypoint_4(PlayerState*);
+extern s32 _bashoessuck_entrypoint_5(PlayerState*, f32[3]);
 
 #endif // __BA_SHOWSSUCK_H__

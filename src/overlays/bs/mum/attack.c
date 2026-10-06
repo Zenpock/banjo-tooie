@@ -113,7 +113,7 @@ void func_80800344_bsmumattack(PlayerState *self) {
 
 void func_808003DC_bsmumattack(PlayerState *self) {
     AnimCtrl *anim_ctrl;
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     f32 timer_value;
 
     anim_ctrl = baanim_getAnimCtrlPtr(self);

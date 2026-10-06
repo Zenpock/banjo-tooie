@@ -4,10 +4,11 @@
 
 #include <ultra64.h>
 #include "common.h"
+#include "ba/playerstate.h"
 
 // badronemem_entrypoint_0
 // badronemem_entrypoint_1
-void badronemem_entrypoint_2(s32 arg0);
-// badronemem_entrypoint_3
+void _badronemem_entrypoint_2(PlayerState*);
+void _badronemem_entrypoint_3(PlayerState*);
 
 #endif // __BA_DRONEMEM__

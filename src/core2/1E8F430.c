@@ -3,13 +3,43 @@
 extern s32 D_801282B4;
 extern Vector* D_80128180;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8F430/func_800B5B40.s")
+extern u8 D_8011A5C2[][2];
+extern u8 D_80128151[];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8F430/func_800B5B88.s")
+void func_800B5B40(void)
+{
+    int index;
+    for (index = 0; index < 0x28; index++)
+    {
+        func_800B58D4(D_80128151[index]);
+        D_80128151[index] = 0;
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8F430/func_800B5BE4.s")
+void func_800B5B88(void)
+{
+    int index;
+    for (index = 0; index < 0x28; index++)
+    {
+        D_80128151[index] = func_800B5758(D_8011A5C2[index][1]);
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8F430/func_800B5C10.s")
+s32 func_800B5BE4(s32 arg0) {
+    return func_800B56D0(D_80128151[arg0-1]);
+}
+
+void* func_800B5C10(s32 arg0, s32 arg1, s32* arg2, s32* arg3)
+{
+    s32 temp_v0;
+    s32* sp18;
+
+    temp_v0 = func_800D3524(arg0);
+    sp18 = func_800B0D6C(temp_v0, arg1);
+    *arg2 = func_800B0D58(temp_v0);
+    *arg3 = sp18[1] + func_800B0D60(temp_v0);
+    return sp18;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8F430/func_800B5C7C.s")
 

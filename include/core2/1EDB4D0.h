@@ -9,8 +9,8 @@
 
 s32 func_80101BE0(Actor*, u32);
 void func_80101CDC(Actor*, f32);
-void func_80101DAC(Actor*, s32);
 void func_80101D4C(Actor*);
+void func_80101DAC(Actor*, s32);
 s32 func_80101DDC(Actor*);
 s32 func_80101E14(Actor*, f32);
 s32 func_80101E4C(Actor*, f32*);

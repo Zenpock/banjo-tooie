@@ -2,10 +2,7 @@
 #define __CORE2_1EE9AB0_H__
 
 #include <ultra64.h>
-#include "common.h"
-
 #include "ba/playerstate.h"
-
 // func_801101C0
 // func_80110280
 // func_80110424
@@ -13,7 +10,7 @@
 // func_80110528
 // func_80110588
 // func_801106A0
-// func_801106A8
+s32 func_801106A8(PlayerState*, s32);
 // func_80110720
 // func_80110728
 // func_80110730
@@ -28,27 +25,27 @@ void func_80110818(s32, Vec3f*);
 // func_80110888
 // func_80110890
 // func_80110898
-// func_801108A0
+void func_801108A0(PlayerState*);
 // func_80110928
 // func_80110970
 // func_80110A24
 // func_80110A68
 // func_80110A9C
 // func_80110B68
-void func_80110BF0(PlayerState*);
-void func_80110C2C(PlayerState*);
+void func_80110BF0(PlayerState *self);
+void func_80110C2C(PlayerState *self);
 // func_80110C88
-// func_80110CC0
+void func_80110CC0(PlayerState*, f32, f32, f32, f32);
 void func_80110D08();
-// func_80110D28
-// func_80110D58
+void func_80110D28(PlayerState*, s32);
+void func_80110D58(PlayerState*,f32);
 void func_80110D80();
 void func_80110DA0();
 void func_80110DC0();
 void func_80110DE0();
 // func_80110E00
-// func_80110EFC
-// func_80110F44
+s32 func_80110EFC();  
+s32 func_80110F44(PlayerState*);
 // func_80110FCC
 // func_80111018
 // func_8011106C

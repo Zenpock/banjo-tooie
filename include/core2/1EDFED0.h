@@ -25,4 +25,5 @@ Actor* func_801067C4(s32*);
 //Get the next actor in the list
 Actor* func_8010682C(s32* currentIndex);
 Actor* func_801068A8(s32* index);
+
 #endif

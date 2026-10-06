@@ -7,7 +7,7 @@
 
 // bsdronelook_entrypoint_0
 // bsdronelook_entrypoint_1
-// bsdronelook_entrypoint_2
+f32 _bsdronelook_entrypoint_2(f32);
 // bsdronelook_entrypoint_3
 // bsdronelook_entrypoint_4
 

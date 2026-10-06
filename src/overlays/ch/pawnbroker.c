@@ -162,7 +162,7 @@ void func_80800320_chpawnbroker(Actor* arg0)
     s32 sp30;
 
     temp_a1 = _gccubesearch_entrypoint_0(0x154U, arg0);
-    func_800EE88C((f32*)arg0->actorData, temp_a1->position);
+    ml_vec3s_to_vec3f((f32*)arg0->actorData, temp_a1->position);
     if ((func_800D0B68(0x27U, 1U) != 0) && (func_800D0B68(0xAU, 4U) != 0))
     {
         sp44 = 8;
@@ -170,7 +170,7 @@ void func_80800320_chpawnbroker(Actor* arg0)
     else if (func_800D0B68(0x27U, 1U) != 0)
     {
         sp30 = 1;
-        if ((_plsu_entrypoint_0(&sp34, arg0->actorData) != -1) && (func_800EEAD4(&sp34, (f32*)arg0->actorData) < 250.0f))
+        if ((_plsu_entrypoint_0(&sp34, arg0->actorData) != -1) && (ml_vec3f_distance(&sp34, (f32*)arg0->actorData) < 250.0f))
         {
             sp30 = 0;
         }

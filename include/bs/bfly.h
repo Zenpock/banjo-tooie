@@ -3,14 +3,6 @@
 
 #include "common.h"
 
-// stolen from fly.h
-typedef struct bs_kazfly_s {
-    f32 unk0;
-    f32 unk4[3];
-    f32 unk10[3];
-    u8 unk1C;
-} BsKazFly;
-
 #include "ba/anim.h"
 #include "ba/dust.h"
 #include "ba/flag.h"

@@ -24,7 +24,7 @@ void bskaz_entrypoint_2(PlayerState *self) {
 }
 
 BanjoStateId bskaz_entrypoint_3(PlayerState *self) {
-    if (func_8008E430() != 0) {
+    if (func_8008E430(self) != 0) {
         return BS_STATE_186;
     }
     

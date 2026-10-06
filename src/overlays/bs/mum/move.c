@@ -47,7 +47,7 @@ void func_80800068_bsmummove(PlayerState *self) {
 }
 
 void func_808001D8_bsmummove(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     func_8009D2F0(self, 0, 0.5f);
@@ -116,7 +116,7 @@ void func_80800338_bsmummove(PlayerState *self) {
 }
 
 void func_80800444_bsmummove(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     s32 temp_v0;
 
     next_state = BS_STATE_0_INVALID;

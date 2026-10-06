@@ -78,7 +78,7 @@ void bsmumswim_entrypoint_1(PlayerState *self) {
 }
 
 void bsmumswim_entrypoint_2(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     f32 sp40[3];
     s32 sp3C;
 
@@ -128,7 +128,7 @@ void func_80800498_bsmumswim(PlayerState *self) {
 }
 
 void func_8080056C_bsmumswim(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl *anim_ctrl;
 
     next_state = BS_STATE_0_INVALID;
@@ -193,7 +193,7 @@ void func_80800750_bsmumswim(PlayerState *self) {
 }
 
 void func_80800870_bsmumswim(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl *anim_ctrl;
 
     next_state = BS_STATE_0_INVALID;
@@ -242,7 +242,7 @@ void func_808009FC_bsmumswim(PlayerState *self) {
 }
 
 void func_80800A24_bsmumswim(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     if (_bsrest_entrypoint_20(self) != 0) {
@@ -261,7 +261,7 @@ void func_80800A70_bsmumswim(PlayerState *self) {
 }
 
 void func_80800A98_bsmumswim(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     if (_badrone_entrypoint_30(self) != 0) {

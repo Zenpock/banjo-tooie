@@ -5,6 +5,7 @@
 #include "common.h"
 
 #include "ba/assets.h"
+#include "bs/state.h"
 #include "ba/statetimer.h"
 #include "core2/1E6F080.h"
 #include "core2/1E75920.h"
@@ -90,7 +91,7 @@ extern void _badata_entrypoint_17(PlayerState *self, s32 index, s32 *arg2, f32 *
 extern f32 _badata_entrypoint_18(PlayerState *self);
 extern void _badata_entrypoint_19(PlayerState *self, s32 index, s32 *arg2, f32 *arg3, s32 *arg4);
 extern s32 _badata_entrypoint_20(PlayerState *self);
-extern s32 _badata_entrypoint_21(PlayerState *self);
+extern BanjoStateId _badata_entrypoint_21(PlayerState *self);
 extern s32 _badata_entrypoint_22(PlayerState *self);
 extern s32 _badata_entrypoint_23(PlayerState *self);
 extern s32 _badata_entrypoint_24(PlayerState *self);

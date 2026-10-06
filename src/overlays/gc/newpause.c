@@ -981,7 +981,7 @@ s32 func_8080105C_gcnewpause(s32 a0, s32 a1, u32 a2, u32 a3)
 		{
 			continue;
 		}
-		new_var = func_800D1A04(D_808020D8_gcnewpause[index].ItemID);
+		new_var = func_800D1A04(D_808020D8_gcnewpause[index].PropID);
 		if (a3 != 0)
 		{
 			if (new_var == 0)
@@ -990,12 +990,12 @@ s32 func_8080105C_gcnewpause(s32 a0, s32 a1, u32 a2, u32 a3)
 			}
 		}
 		temp_s3 = D_808020D8_gcnewpause[index].uiPosition;
-		temp_v0_2 = func_800D1C5C(D_808020D8_gcnewpause[index].ItemID);
+		temp_v0_2 = func_800D1C5C(D_808020D8_gcnewpause[index].PropID);
 		temp_s0 = func_800D27A4(temp_v0_2);
 		temp_v0_3 = func_800D28E8(temp_v0_2);
 		if (temp_v0_3 == 1)
 		{
-			if (func_80801844_gcnewpause(new_var, func_800D1A6C(D_808020D8_gcnewpause[index].ItemID), temp_s3, temp_s0, 1, a2) != 0)
+			if (func_80801844_gcnewpause(new_var, func_800D1A6C(D_808020D8_gcnewpause[index].PropID), temp_s3, temp_s0, 1, a2) != 0)
 			{
 				ret = 1;
 				continue;
@@ -1508,7 +1508,7 @@ s32 func_80801E80_gcnewpause(s32 a0, s32 a1)
 	s32 s0 = 0;
 	for (s0 = a0; s0 < a0 + a1; s0++)
 	{
-		if (func_800D1A04(D_808020D8_gcnewpause[s0].ItemID) != 0)
+		if (func_800D1A04(D_808020D8_gcnewpause[s0].PropID) != 0)
 		{
 			return 0x1;
 		}

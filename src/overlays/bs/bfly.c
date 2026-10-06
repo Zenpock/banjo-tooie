@@ -134,7 +134,7 @@ void func_8080042C_bsbfly(PlayerState* self)
 
 void func_80800454_bsbfly(PlayerState* self)
 {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     baflag_clear(self, 0x2F);
     baflag_clear(self, 0x30);
@@ -269,7 +269,7 @@ void func_80800624_bsbfly(PlayerState* self)
     }
     if (player_inWater(self) != 0)
     {
-        next_state = 0x2D;
+        next_state = BS_STATE_2D_SWIM_IDLE;
     }
     if (_bafly_entrypoint_2(self) != 0) 
     {
@@ -289,7 +289,7 @@ void func_808009D0_bsbfly(PlayerState* self)
     f32 sp1C[3];
 
     func_8009C128(self, &sp1C);
-    func_800EF04C(sp1C, self->kazfly->unk10);
+    ml_vec3f_add(sp1C, self->kazfly->unk10);
     func_800A34AC(self, sp1C);
     func_8009DF58(self, 0x40D, 1.0f);
 }
@@ -348,16 +348,16 @@ void func_80800C38_bsbfly(PlayerState* self)
     f32 unk2;
     f32 unk3;
 
-    func_800EE7F8(unk1, self->kazfly->unk10);
+    ml_vec3f_copy(unk1, self->kazfly->unk10);
     func_800CA9D8(func_800A4C48(self), &unk3);
-    func_800EFA4C(unk0, bastick_getX(self) * 1000.0f, 0.0f, 0.0f);
+    ml_vec3f_assign_value(unk0, bastick_getX(self) * 1000.0f, 0.0f, 0.0f);
     func_800EF8BC(unk0, unk0, unk3);
     func_800EF934(unk0, unk0, unk2);
-    func_800EF04C(unk1, unk0);
-    func_800EFA4C(unk0, 0.0f, -bastick_getY(self) * 1000.0f, 0.0f);
+    ml_vec3f_add(unk1, unk0);
+    ml_vec3f_assign_value(unk0, 0.0f, -bastick_getY(self) * 1000.0f, 0.0f);
     func_800EF8BC(unk0, unk0, unk3);
     func_800EF934(unk0, unk0, unk2);
-    func_800EF04C(unk1, unk0);
+    ml_vec3f_add(unk1, unk0);
     func_8009BA9C(self, unk1);
 }
 
@@ -398,9 +398,9 @@ s32 func_80800D80_bsbfly(PlayerState* self, s32 arg1)
                 var_v0 = func_80096434(self);
                 break;
         } 
-        func_800EE7F8(sp2C, self->kazfly->unk10);
+        ml_vec3f_copy(sp2C, self->kazfly->unk10);
         func_800EF2A0(sp2C);
-        sp44 = mlAbsF(func_800EEAA4(&sp38, sp2C));
+        sp44 = mlAbsF(ml_vec3f_dot_product(&sp38, sp2C));
         if ((baflag_isTrue(self, BA_FLAG_8) != 0) || (var_v0 & 0x80)) 
         {
             func_808009D0_bsbfly(self);
@@ -460,10 +460,10 @@ void func_80800F10_bsbfly(PlayerState* self)
                 anctrl_start(animCtrl);
             }
             func_8009C128(self, unk0);
-            func_800EF3DC(unk0, self->kazfly->unk4);
+            ml_vec3f_subtract(unk0, self->kazfly->unk4);
             _bafly_entrypoint_6(self, func_800F10B4(func_800EEFD4(unk0), 0, 16000000, 0.2, 0.7f));
             if (func_800EEFD4(unk0) > 1.6e7f) {
-                if (bakey_held(self, 9) != 0) {
+                if (bakey_held(self, BUTTON_B) != 0) {
                     func_80800A24_bsbfly(self, 3);
                 } else {
                     next_state = 0x57;
@@ -512,7 +512,7 @@ void func_80801178_bsbfly(PlayerState* self)
         func_808000AC_bsbfly(self);
     }
     temp_v0 = bs_getNextState(self);
-    if ((temp_v0 == 0x20) || (temp_v0 == 0x24) || (temp_v0 == 0x2D)) {
+    if ((temp_v0 == 0x20) || (temp_v0 == 0x24) || (temp_v0 == BS_STATE_2D_SWIM_IDLE)) {
         func_8009DBF0(self, 0x3EA, 1.0f);
     }
     func_80800188_bsbfly(self);
@@ -548,7 +548,7 @@ void func_80801208_bsbfly(PlayerState* self)
 
 void func_80801334_bsbfly(PlayerState* self)
 {
-    enum bs_state_e sp34;
+    BanjoStateId sp34;
     f32 sp28[3];
 
     sp34 = BS_STATE_0_INVALID;
@@ -577,7 +577,7 @@ void func_80801334_bsbfly(PlayerState* self)
         sp34 = BS_STATE_20_LANDING;
     }
     if (player_inWater(self) != 0) {
-        sp34 = 0x2D;
+        sp34 = BS_STATE_2D_SWIM_IDLE;
     }
     bs_setState(self, sp34);
 }
@@ -639,7 +639,7 @@ void func_808015C4_bsbfly(PlayerState* self)
 
 void func_808016B4_bsbfly(PlayerState* self)
 {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl* anim_ctrl;
     s32 temp_v0;
 
@@ -778,7 +778,7 @@ void func_80801A80_bsbfly(PlayerState* self)
 
 void func_80801AEC_bsbfly(PlayerState* self)
 {
-    enum bs_state_e sp2C;
+    BanjoStateId sp2C;
 
     sp2C = BS_STATE_0_INVALID;
     if (anctrl_isAt(baanim_getAnimCtrlPtr(self), 0.1358f) != 0) {

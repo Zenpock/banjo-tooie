@@ -1,11 +1,11 @@
 #include "ch/gold/fish.h"
 
+void func_808005F0_chgoldfish(Actor*, s32);
+extern u32 D_80800D3C_chgoldfish;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gold/fish/func_80800000_chgoldfish.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gold/fish/func_8080009C_chgoldfish.s")
-
-void func_808005F0_chgoldfish(Actor*, s32);
-extern u32 D_80800D3C_chgoldfish;
 
 s32 func_808004AC_chgoldfish(Actor* arg0, s32 arg1, s32 arg2)
 {

@@ -13,7 +13,7 @@ void func_80800000_bsmumsplat(PlayerState *self) {
 }
 
 void func_808000A0_bsmumsplat(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl *anim_ctrl;
 
     next_state = BS_STATE_0_INVALID;

@@ -135,7 +135,7 @@ void bsblongleg_entrypoint_0(PlayerState* self)
 
 void bsblongleg_entrypoint_1(PlayerState* self)
 {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl* anim_ctrl;
 
     next_state = BS_STATE_0_INVALID;
@@ -182,7 +182,7 @@ void bsblongleg_entrypoint_4(PlayerState* self)
 
 void bsblongleg_entrypoint_5(PlayerState* self)
 {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     func_808000C8_bsblongleg(self);
@@ -244,7 +244,7 @@ void bsblongleg_entrypoint_8(PlayerState* self)
 }
 
 void bsblongleg_entrypoint_9(PlayerState* self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl* anim_ctrl;
 
     next_state = BS_STATE_0_INVALID;
@@ -335,13 +335,13 @@ void bsblongleg_entrypoint_12(PlayerState* self)
     baphysics_set_target_horizontal_velocity(self, 0.0f);
     temp_v0 = func_800C2E04();
     self->unk160.bytes[0] = temp_v0;
-    func_800C301C(temp_v0 & 0xFF, 0x41D);
+    func_800C301C(temp_v0, 0x41D);
     func_800C330C(self->unk160.bytes[0], 3);
     func_800C3730(self->unk160.bytes[0], 1.4f, 0.4f, -1.2f);
 }
 
 void bsblongleg_entrypoint_13(PlayerState* self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl* anim_ctrl;
 
     next_state = BS_STATE_0_INVALID;
@@ -408,7 +408,7 @@ void bsblongleg_entrypoint_16(PlayerState* self)
 }
 
 void bsblongleg_entrypoint_17(PlayerState* self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl* anim_ctrl;
     f32 sp34[3];
     f32 temp_f2;
@@ -510,7 +510,7 @@ void bsblongleg_entrypoint_20(PlayerState* self)
 
 void bsblongleg_entrypoint_21(PlayerState* self)
 {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     f32 sp34[3];
     f32 sp44;
 
@@ -563,7 +563,7 @@ void bsblongleg_entrypoint_25(PlayerState* self)
 
 void bsblongleg_entrypoint_26(PlayerState* self)
 {
-    enum bs_state_e sp24;
+    BanjoStateId sp24;
 
     sp24 = BS_STATE_0_INVALID;
     func_808000C8_bsblongleg(self);

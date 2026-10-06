@@ -142,7 +142,7 @@ void bskazmove_entrypoint_3(PlayerState *self) {
         next_state = BS_STATE_DF;
     }
 
-    if ((bakey_held(self, 1) != 0) && (func_8008E39C(self) == 0)) {
+    if ((bakey_held(self, BUTTON_Z) != 0) && (func_8008E39C(self) == 0)) {
         next_state = BS_STATE_DD;
     }
 
@@ -314,7 +314,7 @@ void bskazmove_entrypoint_9(PlayerState *self) {
         next_state = BS_STATE_DF;
     }
 
-    if ((bakey_held(self, 1) != 0) && (func_8008E39C(self) == 0)) {
+    if ((bakey_held(self, BUTTON_Z) != 0) && (func_8008E39C(self) == 0)) {
         next_state = BS_STATE_DD;
     }
 

@@ -25,8 +25,8 @@ void func_80092018(PlayerState* arg0)
     {
         var_f0 = arg0->unk50->unk28;
     }
-    func_800EFA4C(sp34, arg0->unk50->unk20, var_f0, arg0->unk50->unk24);
-    func_800EE780(sp28, arg0->unk50->unk2C, arg0->unk50->unk44);
+    ml_vec3f_assign_value(sp34, arg0->unk50->unk20, var_f0, arg0->unk50->unk24);
+    ml_vec3f_sum(sp28, arg0->unk50->unk2C, arg0->unk50->unk44);
     func_80019CD4();
     func_80019750(arg0->unk50->unk44, &sp34, arg0->unk50->unk1C, sp28);
     if (arg0->unk50->unkC4 != 0)
@@ -62,14 +62,14 @@ void func_8009216C(PlayerState* arg0, f32* arg1, f32* arg2)
     arg0->unk50->unk24 = baroll_get(arg0);
     arg0->unk50->unk20 = func_8009BFCC(arg0);
     temp_v0 = arg0->unk50;
-    func_800EFA4C(arg2, temp_v0->unk20, temp_v0->unk28, temp_v0->unk24);
+    ml_vec3f_assign_value(arg2, temp_v0->unk20, temp_v0->unk28, temp_v0->unk24);
     func_8009C128(arg0, arg1);
 }
 
 void func_800921E0(PlayerState* arg0, s32 arg1, f32* arg2)
 {
     func_8009C2A0(arg0->unk50->unk4, arg1,arg2);
-    if (func_800EEEA8(arg2) != 0)
+    if (ml_vec3f_is_zero(arg2) != 0)
     {
         func_8009C128(arg0, arg2);
     }
@@ -192,7 +192,7 @@ void func_800927C4(s32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 arg4)
     if (func_800F6BE4(arg4) != 0)
     {
         temp_s0 = func_800F53D0(arg4);
-        func_800EFA4C(sp28, arg1, arg2, arg3);
+        ml_vec3f_assign_value(sp28, arg1, arg2, arg3);
         temp_s0->unk50->unk84 = func_80108474(arg0, sp28, 0)->unk0;
         func_800A70D0(temp_s0->unk50->unk84, temp_s0->unk184);
         func_800A7108(temp_s0->unk50->unk84, temp_s0->unk50->unk78);
@@ -232,9 +232,9 @@ void func_80092898(PlayerState* arg0)
     arg0->unk50->unk84 = 0;
     arg0->unk50->unk7C = 0;
     arg0->unk50->unk81 = 0;
-    func_800EFD24(arg0->unk50->unk2C);
-    func_800EFD24(&arg0->unk50->unk38);
-    func_800EFD24(arg0->unk50->unk44);
+    ml_vec3f_clear(arg0->unk50->unk2C);
+    ml_vec3f_clear(&arg0->unk50->unk38);
+    ml_vec3f_clear(arg0->unk50->unk44);
     arg0->unk50->unk28 = arg0->unk50->unk24 = arg0->unk50->unk20 = 0.0f;
     func_80093370(arg0, 1);
     func_8009337C(arg0, 1);
@@ -282,7 +282,7 @@ s32 func_80092B80(PlayerState* arg0)
 
 f32 func_80092B8C(PlayerState* arg0, f32* arg1)
 {
-    func_800EE7F8(arg1, arg0->unk50->unk64);
+    ml_vec3f_copy(arg1, arg0->unk50->unk64);
     return arg0->unk50->unk70;
 }
 
@@ -334,7 +334,7 @@ void func_80092C6C(s32 arg0,s32 arg1)
 void func_80092C90(PlayerState* arg0, f32* arg1, s32 arg2)
 {
     func_800DBEFC(arg0->unk50->unk4, arg2, arg1);
-    if (func_800EEEA8(arg1) != 0)
+    if (ml_vec3f_is_zero(arg1) != 0)
     {
         func_8009C128(arg0, arg1);
     }
@@ -343,12 +343,12 @@ void func_80092C90(PlayerState* arg0, f32* arg1, s32 arg2)
 void func_80092CDC(PlayerState* arg0, f32* arg1, s32 arg2)
 {
     func_800DBEFC(arg0->unk50->unk4, arg2, arg1);
-    func_800EEF24(arg1);
+    ml_vec3f_is_not_zero(arg1);
 }
 
 void func_80092D18(PlayerState* arg0, f32* arg1)
 {
-    func_800EE7F8(arg1, arg0->unk50->unk44);
+    ml_vec3f_copy(arg1, arg0->unk50->unk44);
 }
 
 void func_80092D44(PlayerState* arg0, f32* arg1)
@@ -358,8 +358,8 @@ void func_80092D44(PlayerState* arg0, f32* arg1)
 
     func_800921E0(arg0, 4, &sp18);
     func_800921E0(arg0, 3, &sp24);
-    func_800EE780(arg1, sp18, sp24);
-    func_800EF334(arg1, 0.5f);
+    ml_vec3f_sum(arg1, sp18, sp24);
+    ml_vec3f_apply_scale(arg1, 0.5f);
 }
 
 void func_80092D9C(s32 arg0,s32 arg1)
@@ -480,7 +480,7 @@ void func_80093230(PlayerState* arg0, f32 arg1)
     arg0->unk50->unk1C = arg1;
     arg0->unk50->unk70 = arg0->unk50->unk5C * arg0->unk50->unk1C;
     arg0->unk50->unk74 = (arg0->unk50->unk60 * arg0->unk50->unk1C);
-    func_800EF334((f32*)arg0->unk50->unk64, arg0->unk50->unk1C);
+    ml_vec3f_apply_scale((f32*)arg0->unk50->unk64, arg0->unk50->unk1C);
 }
 
 void func_8009328C(PlayerState* arg0, f32 arg1)
@@ -518,7 +518,7 @@ void func_8009332C(PlayerState* arg0, f32 arg1)
 
 void func_8009333C(PlayerState* arg0, f32* arg1)
 {
-    func_800EE7F8(arg0->unk50->unk44, arg1);
+    ml_vec3f_copy(arg0->unk50->unk44, arg1);
 }
 
 void func_80093360(PlayerState* arg0, f32 arg1)
@@ -756,59 +756,59 @@ void func_800947EC(PlayerState* arg0, s32 arg1, s32 arg2)
 
 void func_80094864(PlayerState* arg0)
 {
-    s32 sp24;
+	s32 sp24;
 
-    if (func_800F6774(arg0->unk184) != 0)
-    {
-        if (func_80094348(arg0, 0x10) != 0)
-        {
-            func_80094390(arg0);
-        }
-        if (func_80094348(arg0, 8) != 0)
-        {
-            sp24 = _gcegg_entrypoint_5(func_80094510(arg0));
-            if (func_80094348(arg0, 4) == 0)
-            {
-                func_800D1824(sp24);
-            }
-        }
-        if (func_80094348(arg0, 1) == 0)
-        {
-            switch (arg0->unk64[3])
-            {
-            case 0:
-                if (bainput_func_80097C7C(arg0) != 0)
-                {
-                    arg0->unk64[3] = 1U;
-                    func_80094E40(func_80094510(arg0));
-                    func_80094C88(arg0);
-                    return;
-                }
-                break;
-            case 1:
-                func_80094824(arg0);
-                if (func_80094DA8(arg0) != 0)
-                {
-                    arg0->unk64[3] = 2U;
-                    func_80094C88(arg0);
-                    return;
-                }
-                break;
-            case 2:
-                func_80094824(arg0);
-                if (func_80094DA8(arg0) == 0)
-                {
-                    arg0->unk64[3] = 0U;
-                }
-                break;
-            }
-        }
-    }
+	if (func_800F6774(arg0->unk184) != 0)
+	{
+		if (func_80094348(arg0, 0x10) != 0)
+		{
+			func_80094390(arg0);
+		}
+		if (func_80094348(arg0, 8) != 0)
+		{
+			sp24 = _gcegg_entrypoint_5(func_80094510(arg0));
+			if (func_80094348(arg0, 4) == 0)
+			{
+				func_800D1824(sp24);
+			}
+		}
+		if (func_80094348(arg0, 1) == 0)
+		{
+			switch (arg0->unk64[3])
+			{
+			case 0:
+				if (bainput_func_80097C7C(arg0) != 0)
+				{
+					arg0->unk64[3] = 1U;
+					func_80094E40(func_80094510(arg0));
+					func_80094C88(arg0);
+					return;
+				}
+				break;
+			case 1:
+				func_80094824(arg0);
+				if (func_80094DA8(arg0) != 0)
+				{
+					arg0->unk64[3] = 2U;
+					func_80094C88(arg0);
+					return;
+				}
+				break;
+			case 2:
+				func_80094824(arg0);
+				if (func_80094DA8(arg0) == 0)
+				{
+					arg0->unk64[3] = 0U;
+				}
+				break;
+			}
+		}
+	}
 }
 
 int func_800949BC(PlayerState* arg0)
 {
-    return func_8009E674(arg0, 0x80000) || (_bafpctrl_entrypoint_5(arg0) && _baeggfire_entrypoint_8(arg0));
+	return func_8009E674(arg0, 0x80000) || (_bafpctrl_entrypoint_5(arg0) && _baeggfire_entrypoint_8(arg0));
 }
 
 s32 func_80094A10(PlayerState* arg0)
@@ -846,20 +846,20 @@ s32 func_80094A10(PlayerState* arg0)
 
 void func_80094AB4(PlayerState* arg0)
 {
-    s32 eggType;
-    if (func_80094348(arg0, 2) == 0)
-    {
-        eggType = func_80094C64(arg0, (s32)arg0->unk64[1]);
-        if (eggType != 0)
-        {
-            //If egg type is unlocked
-            if (_gcegg_entrypoint_6(eggType) != 0)
-            {
-                //Show amount of eggs we have of the given type
-                func_800D1824(_gcegg_entrypoint_5(eggType));
-            }
-        }
-    }
+	s32 eggType;
+	if (func_80094348(arg0, 2) == 0)
+	{
+		eggType = func_80094C64(arg0, (s32)arg0->unk64[1]);
+		if (eggType != 0)
+		{
+			//If egg type is unlocked
+			if (_gcegg_entrypoint_6(eggType) != 0)
+			{
+				//Show amount of eggs we have of the given type
+				func_800D1824(_gcegg_entrypoint_5(eggType));
+			}
+		}
+	}
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80094B14.s")
@@ -880,22 +880,22 @@ s32 func_80094C64(PlayerState* arg0, s32 eggCycleIndex)
 
 s32 func_80094DA8(PlayerState* arg0)
 {
-    s32 eggType;
-    s32 eggCycleIndex;
+	s32 eggType;
+	s32 eggCycleIndex;
 
-    eggCycleIndex = 0;
-    eggType = func_80094C64(arg0, 0);
-    while (eggType != 0)
-    {
-        //If we have the egg type unlocked and the ui is being shown
-        if ((_gcegg_entrypoint_6(eggType) != 0) && (func_800D27F4(func_800D1C5C(_gcegg_entrypoint_5(eggType))) == 0))
-        {
-            return 0;
-        }
-        eggCycleIndex += 1;
-        eggType = func_80094C64(arg0, eggCycleIndex);
-    }
-    return 1;
+	eggCycleIndex = 0;
+	eggType = func_80094C64(arg0, 0);
+	while (eggType != 0)
+	{
+		//If we have the egg type unlocked and the ui is being shown
+		if ((_gcegg_entrypoint_6(eggType) != 0) && (func_800D27F4(func_800D1C5C(_gcegg_entrypoint_5(eggType))) == 0))
+		{
+			return 0;
+		}
+		eggCycleIndex += 1;
+		eggType = func_80094C64(arg0, eggCycleIndex);
+	}
+	return 1;
 }
 
 void func_80094E40(s32 arg0)

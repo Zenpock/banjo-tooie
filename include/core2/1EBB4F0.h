@@ -3,7 +3,9 @@
 
 #include "common.h"
 #include "core2/1EAF950.h"
-
+void func_800E2434(s32);
+void func_800E24CC(s32);
+void func_800E253C(f32);
 void func_800E2554(f32, f32);
 void func_800E2568(s32, s32);
 void func_800E257C(s32);

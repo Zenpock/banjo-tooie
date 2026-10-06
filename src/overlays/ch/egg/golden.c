@@ -68,7 +68,7 @@ void func_80800000_chegggolden(Actor* arg0)
         while (temp_s1->unk28 <= 0.0f)
         {
             temp_s1->unk28 = (f32)(temp_s1->unk28 + temp_f20);
-            func_800EE7F8(sp58, arg0->position);
+            ml_vec3f_copy(sp58, arg0->position);
             _fxegg_entrypoint_6(arg0->position, arg0->scale, &sp64);
         }
 
@@ -85,7 +85,7 @@ void func_80800110_chegggolden(Actor* arg0)
     case 1:
         if (_suegg_entrypoint_8(arg0) == 0)
         {
-            if (func_800EEEA8(&arg0->actorData[4]) != 0)
+            if (ml_vec3f_is_zero(&arg0->actorData[4]) != 0)
             {
                 sp2C->unk39_7 = 1;
             }

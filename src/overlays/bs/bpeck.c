@@ -63,7 +63,7 @@ void func_80800168_bsbpeck(PlayerState* self)
 
 void bsbpeck_entrypoint_1(PlayerState* self)
 {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl* anim_ctrl;
 
     next_state = BS_STATE_0_INVALID;

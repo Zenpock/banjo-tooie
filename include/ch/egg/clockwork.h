@@ -25,6 +25,7 @@
 #include "core2/1EDED00.h"
 #include "core2/1EE1510.h"
 
+s32 _cheggclockwork_entrypoint_2(Vec3f, f32, s32, s32);
 
 s32 _cheggclockwork_entrypoint_2(Vec3f, f32, s32 , s32);
 

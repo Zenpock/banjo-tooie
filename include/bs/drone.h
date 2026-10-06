@@ -4,7 +4,15 @@
 
 #include <ultra64.h>
 #include "common.h"
-
+#include "ba/drone.h"
+#include "bs/drone/bitten.h"
+#include "bs/drone/bubbled.h"
+#include "bs/drone/falldie.h"
+#include "bs/drone/goto.h"
+#include "bs/drone/slide.h"
+#include "bs/drone/suckunder.h"
+#include "bs/drone/vanish.h"
+#include "bs/drone/xform.h"
 #include "ba/playerstate.h"
 
 // func_80800000_bsdrone

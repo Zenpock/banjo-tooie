@@ -15,8 +15,11 @@
 #include "ba/physics.h"
 #include "ba/playerstate.h"
 #include "bs/state.h"
+#include "ba/shake.h"
 #include "ba/timer.h"
 #include "bs/walk.h"
+#include "ch/light/fader.h"
+#include "fx/dlsmoke.h"
 
 #include "core1/1E29B60.h"
 
@@ -45,12 +48,6 @@
 #include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
 #include "core2/1ECB9F0.h"
-
-// Entrypoints
-extern s32 _chlightfader_entrypoint_1(s32, f32, s32);
-extern s32 _fxdlsmoke_entrypoint_0(f32*);
-extern void _bamotor_entrypoint_3(PlayerState*, f32, f32, f32, f32, f32, f32);
-extern void _bashake_entrypoint_1(PlayerState*, s32, s32);
 
 // Code
 void func_80800000_bsbbilldrill(PlayerState*);

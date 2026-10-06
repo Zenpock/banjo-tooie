@@ -1,5 +1,8 @@
 #include "ch/bottles/family.h"
 
+void func_80800520_chbottlesfamily(Actor*);
+void func_80800BC0_chbottlesfamily(Actor*);
+
 extern ActorData D_80800DE0_chbottlesfamily;
 ActorData* chbottlesfamily_entrypoint_0()
 {
@@ -41,10 +44,6 @@ void func_8080086C_chbottlesfamily(Actor* arg0)
 {
     _suexpression_entrypoint_8(arg0, 1);
 }
-
-void func_80800520_chbottlesfamily(Actor*);
-void func_80800BC0_chbottlesfamily(Actor*);
-
 void func_8080088C_chbottlesfamily(Actor* arg0, s32 arg1, s32 arg2)
 {
     switch (arg1)

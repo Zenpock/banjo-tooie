@@ -20,7 +20,7 @@ Actor* subaddiefind_entrypoint_0(f32* arg0, s32 propId, s32 arg2, f32* arg3)
         if (((propId == var_v0->unk6C_9) || (propId < 0)) && (arg2 != (var_v0->unk70_10)) && (var_v0->unk6C_9 != 0x215) && (var_v0->unk6C_9 != 0x243) && !(var_v0->unk64_17))
         {
             //Get Distance between given coords and actor coords with matching propId
-            temp_f0 = func_800EEB40(arg0, var_v0->position);
+            temp_f0 = ml_vec3f_distance_sq(arg0, var_v0->position);
             //If this object is closer than the last stored distance
             if (temp_f0 < var_f20 || found == 0)
             {
@@ -53,7 +53,7 @@ Actor* subaddiefind_entrypoint_1(Actor* arg0, s32 arg1, s32 arg2, f32* arg3)
     {
         if (((arg1 == var_v0->unk6C_9) || (arg1 < 0)) && (arg2 != var_v0->unk70_10) && (var_v0->unk6C_9 != 0x215) && (var_v0->unk6C_9 != 0x243) && !(var_v0->unk64_17) && (var_v0->unk0 != arg0->unk0))
         {
-            temp_f0 = func_800EEAD4(arg0->position, var_v0->position);
+            temp_f0 = ml_vec3f_distance(arg0->position, var_v0->position);
             if (temp_f0 < var_f20)
             {
                 var_f20 = temp_f0;

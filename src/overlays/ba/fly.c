@@ -12,12 +12,12 @@ void bafly_entrypoint_1(PlayerState* self, f32* arg1, s32* arg2, f32 arg3) {
     if (baflag_isTrue(self, BA_FLAG_30))
     {
         _baeggfire_entrypoint_3(self, &sp24, arg1);
-        func_800EF334(arg1, arg3);
+        ml_vec3f_apply_scale(arg1, arg3);
         func_800CA9D8(func_800A4C48(self), arg2);
         return;
     }
     func_800CA740(func_800A4C48(self), arg1);
-    func_800EF334(arg1, arg3);
+    ml_vec3f_apply_scale(arg1, arg3);
     func_800CA9D8(func_800A4C48(self), arg2);
 }
 
@@ -111,7 +111,7 @@ void bafly_entrypoint_9(PlayerState* self) {
     f32 sp28;
 
     sp28 = bastick_getX(self);
-    if (bakey_held(self, 3) != 0) {
+    if (bakey_held(self, BUTTON_R) != 0) {
         yaw_setVelocityBounded(self, 500.0f, 30.0f);
         sp30 = 6.0f;
         var_f0 = 85.0f;
@@ -223,9 +223,9 @@ void bafly_entrypoint_13(PlayerState* self, s32 arg1, enum asset_e arg2, f32 arg
     func_8008E944(self);
 }
 
-void bafly_entrypoint_14(PlayerState* self, enum bs_state_e arg1, enum bs_state_e arg2) 
+void bafly_entrypoint_14(PlayerState* self, BanjoStateId arg1, BanjoStateId arg2) 
 {
-    enum bs_state_e sp1C;
+    BanjoStateId sp1C;
 
     sp1C = BS_STATE_0_INVALID;
     if (anctrl_isStopped(baanim_getAnimCtrlPtr(self)) != 0) {
@@ -268,8 +268,8 @@ void bafly_entrypoint_16(PlayerState* self, enum asset_e arg1, f32 arg2) {
     _ncbafly_entrypoint_4(func_800A4CA8(self), 12.0f, 10000.0f, 800.0f);
 }
 
-void bafly_entrypoint_17(PlayerState* self, enum bs_state_e arg1, enum bs_state_e arg2, s32* arg3) {
-    enum bs_state_e sp24;
+void bafly_entrypoint_17(PlayerState* self, BanjoStateId arg1, BanjoStateId arg2, s32* arg3) {
+    BanjoStateId sp24;
     AnimCtrl* sp20;
 
     sp24 = BS_STATE_0_INVALID;

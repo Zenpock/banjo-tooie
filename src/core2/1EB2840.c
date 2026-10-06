@@ -9,7 +9,7 @@ extern f32 D_8012C760;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB2840/func_800D8FA0.s")
 
-u32 func_800D8FEC()
+s32 func_800D8FEC()
 {
 	return D_8012C764;
 }

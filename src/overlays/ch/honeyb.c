@@ -75,7 +75,7 @@ void func_80800194_chhoneyb(Actor* arg0)
 
     if (_subaddiemarker_entrypoint_0(arg0, 0x1C1, sp28, 1) != 0)
     {
-        func_800EE7F8(&arg0->actorData[0], sp28);
+        ml_vec3f_copy(&arg0->actorData[0], sp28);
     }
     _subaddieitem_entrypoint_0(&((unkSubGameStruct*)func_80100094(arg0, 1))->unk18, 0x4B7, 0x258, 3);
     func_80800058_chhoneyb(arg0);

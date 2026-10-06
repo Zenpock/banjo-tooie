@@ -11,6 +11,6 @@
 #include "core2/1E99980.h"
 #include "core2/1EAD060.h"
 
-
 s32 _gcsectionDll_entrypoint_4(s32);
+
 #endif

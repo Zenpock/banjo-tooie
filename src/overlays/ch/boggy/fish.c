@@ -10,7 +10,7 @@ typedef struct {
 void func_8080018C_chboggyfish(Actor*);
 s32 func_80800064_chboggyfish(Actor*, s32, s32);
 void func_80800000_chboggyfish(Actor*, unkStructBoggyFish*);
-s32 D_80800210_chboggyfish[4] = {0,0,0x3F99999A,0x04440049};
+s32 D_80800210_chboggyfish[4] = { 0,0,0x3F99999A,0x04440049 };
 ActorData D_80800220_chboggyfish =
 {
 	/*0x0*/ 0x037A,

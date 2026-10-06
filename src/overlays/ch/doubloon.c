@@ -43,7 +43,7 @@ void chdoubloon_entrypoint_1(Actor* arg0)
             if (func_800DC0C0() < 0.015f)
             {
                 func_800EEC30(sp74, sp68[0] + func_800DC178(-90.0f, 90.0f), sp68[1] + func_800DC178(-90.0f, 90.0f), 30.0f);
-                func_800EF04C(sp74, arg0->position);
+                ml_vec3f_add(sp74, arg0->position);
                 sp74[1] += 30.0f;
                 _fxtwinkle_entrypoint_1(sp74, ASSET_9E2_GOLD_SPARKLE);
             }
@@ -58,14 +58,14 @@ s32 func_808001D4_chdoubloon(Actor* arg0, s32 arg1, s32 arg2)
 
     case 0x3E:
         _sudialog_entrypoint_0(0x165, 4);
-        func_800D0BD4(*(s32*)&arg0->unk54, 7U);
+        func_800D0BD4(arg0->unk54s, 7U);
         func_800D1844(0x4E);
         _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80800290_chdoubloon);
         _fxsparkle_entrypoint_1(arg0->position, 0x13U);
         func_800FFAB0(arg0);
         break;
     case 0x13:
-        *(s32*)&arg0->unk54 = arg2;
+        arg0->unk54s = arg2;
         break;
     default:
         return 0;

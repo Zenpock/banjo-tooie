@@ -12,7 +12,7 @@ void bsbkflamethrower_entrypoint_0(PlayerState* self, f32 arg1[2], f32 arg2[2]) 
     func_800EEC30(arg2, -sp1C, yaw_get(self), 1.0f);
     func_8009C128(self, arg1);
     func_800EFA98(sp24, arg2, 40.0f);
-    func_800EF04C(arg1, sp24);
+    ml_vec3f_add(arg1, sp24);
     arg1[1] += 94.0f;
 }
 
@@ -76,7 +76,7 @@ void bsbkflamethrower_entrypoint_2(PlayerState* self)
 
 void bsbkflamethrower_entrypoint_3(PlayerState* self)
 {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     if ((_batimer_get(self, 0) != 0.0f) && (bakey_pressed(self, BUTTON_B) != 0)) {

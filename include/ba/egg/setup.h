@@ -2,7 +2,6 @@
 #define __BA_EGG_SETUP__
 
 
-#include <ultra64.h>
 #include "common.h"
 #include "ba/playerstate.h"
 

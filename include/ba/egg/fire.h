@@ -1,8 +1,6 @@
 #ifndef __BA_FIRE_EGGFIRE_H__
 #define __BA_FIRE_EGGFIRE_H__
 
-#include <ultra64.h>
-
 #include "common.h"
 #include "ba/playerstate.h"
 #include "ba/egg/setup.h"
@@ -13,7 +11,6 @@
 #include "core2/1E9E480.h"
 #include "core2/1EA1DA0.h"
 #include "core2/1ECE0B0.h"
-
 
 s32 _baeggfire_entrypoint_0();
 void _baeggfire_entrypoint_1(s32);

@@ -329,7 +329,7 @@ s32 moveItem_Touched(Actor* arg0, unkStructMoveItem* arg1)
         func_800C8B84(arg0->unk6C_0);
     }
     //Set the ability flag
-    ability_setValueTrue(arg0->unk74_7, 1);
+    ability_setValue(arg0->unk74_7, 1);
     //Play collected sound effect
     func_800FC63C(0x10, 0x6D60);
     //Show the Move Title
