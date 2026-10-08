@@ -155,7 +155,7 @@ s32 func_8080031C_chstonepillar(Actor* arg0, s32 arg1, s32 arg2)
 
     switch (arg1)
     {
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
 
         sp1C = (StonePillarStruct*)func_80100094(arg0, 0U);
         func_80800704_chstonepillar(arg0);
@@ -177,7 +177,7 @@ s32 func_80800390_chstonepillar(Actor* arg0, s32 arg1, s32 arg2)
     case 0x3F:
         func_80800CC8_chstonepillar(arg0, *(s32*)&arg2);
         break;
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         func_80800C44_chstonepillar(arg0);
         break;
     default:

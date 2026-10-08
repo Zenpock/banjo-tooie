@@ -87,7 +87,7 @@ s32 func_80800514_chmumbopad(Actor* arg0, s32 arg1, s32 arg2)
 
     switch (arg1)
     {
-    case 0x91:
+    case EVENT_91_ACTOR_STOOD_ON:
 
         if (!(arg0->unk64_19) && !(arg0->unk74_29) && !(arg0->unk0->unk28_13))
         {

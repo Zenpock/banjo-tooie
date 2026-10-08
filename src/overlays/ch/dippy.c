@@ -186,7 +186,7 @@ s32 func_80800374_chdippy(Actor* arg0, s32 arg1, s32 arg2)
 {
     switch (arg1)
     {
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         func_8080047C_chdippy(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
         break;
     case 0xB:
@@ -205,7 +205,7 @@ s32 func_80800374_chdippy(Actor* arg0, s32 arg1, s32 arg2)
         default:
             return 3;
         }
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         if (_glcutDll_entrypoint_19(0x36U) != 0)
         {
             _subaddieDll_entrypoint_4(arg0, 1U);
@@ -527,12 +527,12 @@ s32 func_80801110_chdippy(Actor* arg0, s32 arg1, s32 arg2)
     f32 sp34[3];
     switch (arg1)
     {
-        case 0x95:
+        case EVENT_95_ACTOR_SPAWNED:
         {
             func_80801200_chdippy();
             return 1;
         }
-        case 0x1F:
+        case EVENT_1F_ACTOR_ONSCREEN:
         {
             if (arg0->unk64_16)
             {

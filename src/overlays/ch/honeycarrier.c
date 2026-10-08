@@ -69,26 +69,26 @@ s32 func_808000C4_chhoneycarrier(Actor* arg0, s32 arg1, s32 arg2)
     f32 sp2C[3];
     switch (arg1)
     {
-    case 0x3E:
-        func_80800000_chhoneycarrier(arg0, (unkStructHoneyCarrier*)arg2);
-        break;
-    case 0x12:
-        arg0->unk64_19 = arg2;
-        break;
-    case 0x13:
-        arg0->unk50 = (f32)arg2;
-        break;
-    case 0x55:
-        arg0->unk6C_0 = func_800C8A98();
-        func_800C8CB8(arg0->unk6C_0, arg0->position);
-        func_800C8D4C(arg0->unk6C_0, D_808003EC_chhoneycarrier);
-        func_800C8E84(arg0->unk6C_0, D_808003E0_chhoneycarrier);
-        ml_vec3f_copy(sp2C, arg0->position);
-        sp2C[1] += 150.0f;
-        func_800C8CB8(arg0->unk6C_0, sp2C);
-        break;
-    default:
-        return 0;
+        case EVENT_3E_ACTOR_TOUCHED:
+            func_80800000_chhoneycarrier(arg0, (unkStructHoneyCarrier*)arg2);
+            break;
+        case 0x12:
+            arg0->unk64_19 = arg2;
+            break;
+        case 0x13:
+            arg0->unk50 = (f32)arg2;
+            break;
+        case 0x55:
+            arg0->unk6C_0 = func_800C8A98();
+            func_800C8CB8(arg0->unk6C_0, arg0->position);
+            func_800C8D4C(arg0->unk6C_0, D_808003EC_chhoneycarrier);
+            func_800C8E84(arg0->unk6C_0, D_808003E0_chhoneycarrier);
+            ml_vec3f_copy(sp2C, arg0->position);
+            sp2C[1] += 150.0f;
+            func_800C8CB8(arg0->unk6C_0, sp2C);
+            break;
+        default:
+            return 0;
     }
     if (arg2)
     {

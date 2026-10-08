@@ -70,10 +70,10 @@ s32 func_80800170_chdiggerbossbattery(Actor* arg0, s32 arg1, s32 arg2)
         _chexploder_entrypoint_15((s32)temp_v0_2, 2U, 1.0f);
         _chexploder_entrypoint_13((s32)temp_v0_2, 1U);
         break;
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         func_80103140(arg0, ((u16*)&D_808002F0_chdiggerbossbattery)[arg0->unk74_7 - 4], 0U);
         break;
-    case 0x1F:
+    case EVENT_1F_ACTOR_ONSCREEN:
         func_801015D0(arg0);
         func_800DF744(1, 1);
         break;

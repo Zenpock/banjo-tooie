@@ -123,43 +123,43 @@ s32 func_80800260_chmrsicecube(Actor* arg0, s32 arg1, s32 arg2)
 
     switch (arg1)
     {
-    case 0x2E:
-        temp_v0 = ((s16*)&arg2)[0];
-        if (_subaddiedialog_entrypoint_9(arg0, temp_v0, &D_808008F0_chmrsicecube, 4) == 1)
-        {
-            func_8010A590(arg0);
-        }
-        func_80102424(arg0, 5);
-        break;
-    case 0x40:
-        if (_subaddieDll_entrypoint_5(arg0, arg2) != 0)
-        {
-            func_80103110(arg0, 1U);
-            _subaddieDll_entrypoint_4(arg0, 1U);
-            func_80102424(arg0, 6);
-        }
-        else
-        {
-            func_808006C4_chmrsicecube(arg0);
-        }
-        break;
-    case 0x52:
-        _gcdialogcamera_entrypoint_3(&D_80800A2C_chmrsicecube, arg0->scale);
-        break;
-    case 0x95:
-        sp20 = func_80100094(arg0, 0U);
-        temp_v0 = func_80800508_chmrsicecube(arg0);
-        if (temp_v0 != 0)
-        {
-            _subaddielink_entrypoint_1(sp20, temp_v0);
-        }
-        else if ((arg0->actorData[4] != 0) || (_glcutDll_entrypoint_20() == 0))
-        {
-            func_800FFAB0(arg0);
-        }
-        break;
-    default:
-        return 0;
+        case EVENT_2E_ACTOR_DIALOG_ENDED:
+            temp_v0 = ((s16*)&arg2)[0];
+            if (_subaddiedialog_entrypoint_9(arg0, temp_v0, &D_808008F0_chmrsicecube, 4) == 1)
+            {
+                func_8010A590(arg0);
+            }
+            func_80102424(arg0, 5);
+            break;
+        case 0x40:
+            if (_subaddieDll_entrypoint_5(arg0, arg2) != 0)
+            {
+                func_80103110(arg0, 1U);
+                _subaddieDll_entrypoint_4(arg0, 1U);
+                func_80102424(arg0, 6);
+            }
+            else
+            {
+                func_808006C4_chmrsicecube(arg0);
+            }
+            break;
+        case 0x52:
+            _gcdialogcamera_entrypoint_3(&D_80800A2C_chmrsicecube, arg0->scale);
+            break;
+        case EVENT_95_ACTOR_SPAWNED:
+            sp20 = func_80100094(arg0, 0U);
+            temp_v0 = func_80800508_chmrsicecube(arg0);
+            if (temp_v0 != 0)
+            {
+                _subaddielink_entrypoint_1(sp20, temp_v0);
+            }
+            else if ((arg0->actorData[4] != 0) || (_glcutDll_entrypoint_20() == 0))
+            {
+                func_800FFAB0(arg0);
+            }
+            break;
+        default:
+            return 0;
     }
     return 1;
 }

@@ -598,84 +598,83 @@ s32 func_808003F4_chnests(Actor* arg0, s32 eventType, s32 arg2)
 {
     switch (eventType)
     {
-
-    case 0x3E:
-    {
-        UnkArg2ChNest* temp2 = arg2;    // = arg2;
-        // FAKE to force saving arg2 / temp2 on stack
-        if (&arg2);
-
-        if (func_800F4B4C(temp2->unk1A_5) == 0)
+        case EVENT_3E_ACTOR_TOUCHED:
         {
-            return 0;
-        }
-        switch (arg0->unk0->unk24_22)
-        {
-        case 0x1D9:
-        case 0x1DA:
-            func_80800670_chnests(arg0, temp2);
-            break;
-        case 0x1D4:
-            func_800F7C0C(temp2->unk1A_5, 0x5F, arg0->rotation[1]);
-            if (arg0->unk74_7 == 0x32)
+            UnkArg2ChNest* temp2 = arg2;    // = arg2;
+            // FAKE to force saving arg2 / temp2 on stack
+            if (&arg2);
+
+            if (func_800F4B4C(temp2->unk1A_5) == 0)
             {
+                return 0;
+            }
+            switch (arg0->unk0->unk24_22)
+            {
+            case 0x1D9:
+            case 0x1DA:
+                func_80800670_chnests(arg0, temp2);
+                break;
+            case 0x1D4:
+                func_800F7C0C(temp2->unk1A_5, 0x5F, arg0->rotation[1]);
+                if (arg0->unk74_7 == 0x32)
+                {
+                    func_808001F0_chnests(arg0, temp2);
+                }
+                else
+                {
+                    func_80800324_chnests(arg0, temp2);
+                }
+                break;
+
+            default:
                 func_808001F0_chnests(arg0, temp2);
+                break;
             }
-            else
+            return 1;
+        }
+        case EVENT_1F_ACTOR_ONSCREEN:
+            if (func_80801014_chnests(arg0) != 0)
             {
-                func_80800324_chnests(arg0, temp2);
+                func_8080093C_chnests(arg0, arg2);
+            }
+            else if (func_808010A0_chnests(arg0) != 0)
+            {
+                func_808009D4_chnests(arg0, arg2);
             }
             break;
-
-        default:
-            func_808001F0_chnests(arg0, temp2);
+        case EVENT_95_ACTOR_SPAWNED:
+		    if ((arg0->unk6C_9 != PROP_1E9_EGGNEST) && (arg0->unk6C_9 != PROP_4A6_FEATHERNEST))
+		    {
+                func_80103110(arg0, 0U);
+            }
+            func_80109EEC(arg0, 0x44);
             break;
-        }
-        return 1;
-    }
-    case 0x1F:
-        if (func_80801014_chnests(arg0) != 0)
-        {
-            func_8080093C_chnests(arg0, arg2);
-        }
-        else if (func_808010A0_chnests(arg0) != 0)
-        {
-            func_808009D4_chnests(arg0, arg2);
-        }
-        break;
-    case 0x95:
-		if ((arg0->unk6C_9 != PROP_1E9_EGGNEST) && (arg0->unk6C_9 != PROP_4A6_FEATHERNEST))
-		{
-            func_80103110(arg0, 0U);
-        }
-        func_80109EEC(arg0, 0x44);
-        break;
-    case 0x29:
-        if (func_80801014_chnests(arg0) != 0)
-        {
-            func_8010DC50(0);
-        }
-        else if (func_808010A0_chnests(arg0) != 0)
-        {
-            func_8010DC50(1);
-        }
-        break;
-    case 0x2A:
-        if (func_80801014_chnests(arg0) != 0)
-        {
-            func_8010DCB4(0);
-        }
-        else if (func_808010A0_chnests(arg0) != 0)
-        {
-            func_8010DCB4(1);
-        }
-        break;
-    case 0x76:
-        func_8080034C_chnests(arg0);
-        func_80101FDC(arg0, 1U);
-        break;
-    default:
-        return 0;
+        case 0x29:
+            if (func_80801014_chnests(arg0) != 0)
+            {
+                func_8010DC50(0);
+            }
+            else if (func_808010A0_chnests(arg0) != 0)
+            {
+                func_8010DC50(1);
+            }
+            break;
+        case 0x2A:
+            if (func_80801014_chnests(arg0) != 0)
+            {
+                func_8010DCB4(0);
+            }
+            else if (func_808010A0_chnests(arg0) != 0)
+            {
+                func_8010DCB4(1);
+            }
+            break;
+        case 0x76:
+            func_8080034C_chnests(arg0);
+            func_80101FDC(arg0, 1U);
+            break;
+        default:
+            return 0;
     }
 
     return 1;

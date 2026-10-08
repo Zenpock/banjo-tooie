@@ -266,7 +266,7 @@ s32 func_808007DC_chjadesnake(Actor* arg0, s32 arg1, u32 arg2)
             func_80102FE8(temp_v0, 0);
         }
         break;
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         func_80800728_chjadesnake(arg0, ((s16*)(&arg2))[0], ((s16*)(&arg2))[1]);
         break;
     case 0x52:

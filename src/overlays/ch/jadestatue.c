@@ -34,19 +34,19 @@ s32 func_80800140_chjadestatue(Actor* arg0, s32 arg1, s32 arg2)
 	switch (arg1)
 	{
 
-	case 0x95:
-		func_80109EEC(arg0, 0x44);
-		break;
-	case 0x3E:
-		arg0->unk64_20 = 1;
-		_subaddieDll_entrypoint_4(arg0, 1U);
-		break;
+		case EVENT_95_ACTOR_SPAWNED:
+			func_80109EEC(arg0, 0x44);
+			break;
+		case EVENT_3E_ACTOR_TOUCHED:
+			arg0->unk64_20 = 1;
+			_subaddieDll_entrypoint_4(arg0, 1U);
+			break;
 
-	case 0x2C:
-		func_800FFAB0(arg0);
-		return 1;
-	default:
-		return 0;
+		case 0x2C:
+			func_800FFAB0(arg0);
+			return 1;
+		default:
+			return 0;
 	}
 	return 1;
 }

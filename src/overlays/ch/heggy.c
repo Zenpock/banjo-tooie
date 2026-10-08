@@ -570,7 +570,7 @@ s32 func_80801570_chheggy(Actor* arg0, s32 arg1, s32 arg2)
 
     switch (arg1)
     {
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         if (_glcutDll_entrypoint_20() != 0)
         {
             func_80800ECC_chheggy(arg0, 0x14);
@@ -604,7 +604,7 @@ s32 func_80801570_chheggy(Actor* arg0, s32 arg1, s32 arg2)
             return 1;
         }
         break;
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         switch (((s16*)&arg2)[0])
         {
         case 0x153A:
@@ -731,7 +731,7 @@ s32 func_80801A00_chheggy(Actor* arg0, s32 arg1, s32 arg2)
         _chskeletonexplode_entrypoint_3(sp34, 2, 1);
         func_800FFA88(arg0->unk0);
         return 1;
-    case 0x1F:
+    case EVENT_1F_ACTOR_ONSCREEN:
         func_801015D0(arg0);
         func_800DF744(1, 1);
         func_800DF744(2, 0);

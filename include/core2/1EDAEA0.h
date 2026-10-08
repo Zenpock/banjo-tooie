@@ -2,6 +2,8 @@
 #define __CORE2_1EDAEA0_H__
 
 #include "common.h"
+#include "core2/1EDA900.h"
+#include "core2/1EDCA30.h"
 
 s32 func_801015D0(Actor*);
 s32 func_801017D0(Actor*);

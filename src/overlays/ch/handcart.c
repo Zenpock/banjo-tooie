@@ -1113,7 +1113,7 @@ s32 func_80802468_chhandcart(Actor* arg0, s32 arg1, s32 arg2)
 
     switch (arg1)
     {
-    case 0x1F:
+    case EVENT_1F_ACTOR_ONSCREEN:
         func_80802394_chhandcart(arg0);
         break;
     case 0xE:

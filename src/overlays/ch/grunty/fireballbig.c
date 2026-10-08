@@ -88,7 +88,7 @@ s32 func_808001B4_chgruntyfireballbig(Actor* actor, s32 arg1, s32 arg2)
     case 0x40:
         func_8080034C_chgruntyfireballbig(actor);
         break;
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         actor->actorData[3] = func_800C8A98();
         func_800C8CB8(actor->actorData[3], actor->position);
         func_800C8D4C(actor->actorData[3], &D_8080070C_chgruntyfireballbig);

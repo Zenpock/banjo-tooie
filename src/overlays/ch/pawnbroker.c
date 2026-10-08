@@ -228,7 +228,7 @@ s32 func_80800534_chpawnbroker(Actor* actor, s32 eventType, s32 arg2)
     switch (eventType)
     {
         //Just Finished a dialog
-        case 0x2E:
+        case EVENT_2E_ACTOR_DIALOG_ENDED:
             func_8080083C_chpawnbroker(actor, temp[0], temp[1]);
             break;
         case 0x3D:
@@ -242,7 +242,7 @@ s32 func_80800534_chpawnbroker(Actor* actor, s32 eventType, s32 arg2)
         case 0xB:
             func_80800AA8_chpawnbroker(actor);
             return 4;
-        case 0x95:
+        case EVENT_95_ACTOR_SPAWNED:
             sp1C = _suexpression_entrypoint_7(actor, 1U, 0x53U);
             _suexpression_entrypoint_12((void*)sp1C, 70.0f, 30.0f);
             _suexpression_entrypoint_17(sp1C, 0x3E8);

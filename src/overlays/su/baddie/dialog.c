@@ -560,7 +560,7 @@ void subaddiedialog_entrypoint_12(s32 arg1, s32 arg2, s32 arg3)
     s16 combined[2];
     combined[0] = arg2;
     combined[1] = arg3;
-    func_8010114C(arg1, 0x2E, ((s32*)combined)[0]);
+    func_8010114C(arg1, EVENT_2E_ACTOR_DIALOG_ENDED, ((s32*)combined)[0]);
 }
 
 void subaddiedialog_entrypoint_13(s32 arg1, s32 arg2, s32 arg3)

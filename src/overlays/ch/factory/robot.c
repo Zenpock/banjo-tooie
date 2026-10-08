@@ -207,7 +207,7 @@ s32 func_80800360_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
         func_808005D4_chfactoryrobot(arg0);
         func_80107070(arg0, 3);
         break;
-    case 0x1F:
+    case EVENT_1F_ACTOR_ONSCREEN:
         func_80800424_chfactoryrobot(arg0, arg2);
 
         break;
@@ -218,7 +218,7 @@ s32 func_80800360_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
             func_80800508_chfactoryrobot(arg0);
         }
         break;
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
 
         func_80800508_chfactoryrobot(arg0);
         break;
@@ -482,47 +482,47 @@ s32 func_80800E40_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
     temp_v0 = func_80100094(arg0, 0U);
     switch (arg1)
     {
-    case 0x40:
-        func_80801160_chfactoryrobot(arg0, 7);
-        break;
-    case 0x2:
-        if (_subaddieDll_entrypoint_3(arg0) == 0)
-        {
-            func_80107070(arg0, 1);
-        }
-        break;
-    case 0x3E:
+        case 0x40:
+            func_80801160_chfactoryrobot(arg0, 7);
+            break;
+        case 0x2:
+            if (_subaddieDll_entrypoint_3(arg0) == 0)
+            {
+                func_80107070(arg0, 1);
+            }
+            break;
+        case EVENT_3E_ACTOR_TOUCHED:
 
-        temp_v0->unk1C = arg0->unk64_29 ? 1.5f : 6.0f;
+            temp_v0->unk1C = arg0->unk64_29 ? 1.5f : 6.0f;
 
-        temp_v0->unk18 = arg0->unk64_29;
-        break;
-    case 0x90:
-        temp_v0_2 = func_80106790(func_80101080());
-        _chexploder_entrypoint_9(temp_v0_2, 3, 0);
-        _chexploder_entrypoint_13(temp_v0_2, 0xAU);
-        if (func_80107070(arg0, 3) == 0)
-        {
-            func_800FFAB0(arg0);
-        }
-        break;
-    case 0x93:
-        func_80802470_chfactoryrobot(arg0, 0);
-        break;
-    case 0x95:
-        func_8080183C_chfactoryrobot(arg0);
-        break;
-    case 0x38:
-        return func_80801C50_chfactoryrobot((s32)arg0);
-    case 0x8F:
-        if (arg2 == 0)
-        {
-            func_8010A590(arg0);
-            func_80109FE8(arg0, 1);
-        }
-        break;
-    default:
-        return 0;
+            temp_v0->unk18 = arg0->unk64_29;
+            break;
+        case 0x90:
+            temp_v0_2 = func_80106790(func_80101080());
+            _chexploder_entrypoint_9(temp_v0_2, 3, 0);
+            _chexploder_entrypoint_13(temp_v0_2, 0xAU);
+            if (func_80107070(arg0, 3) == 0)
+            {
+                func_800FFAB0(arg0);
+            }
+            break;
+        case 0x93:
+            func_80802470_chfactoryrobot(arg0, 0);
+            break;
+        case EVENT_95_ACTOR_SPAWNED:
+            func_8080183C_chfactoryrobot(arg0);
+            break;
+        case 0x38:
+            return func_80801C50_chfactoryrobot((s32)arg0);
+        case 0x8F:
+            if (arg2 == 0)
+            {
+                func_8010A590(arg0);
+                func_80109FE8(arg0, 1);
+            }
+            break;
+        default:
+            return 0;
     }
     return 1;
 }
@@ -1058,13 +1058,13 @@ s32 func_80802240_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
                 temp_v0->unk74_7 = arg0->unk74_7;
             }
             break;
-        case 0x2E:
+        case EVENT_2E_ACTOR_DIALOG_ENDED:
             _capod_entrypoint_14();
             break;
-        case 0x1F:
+        case EVENT_1F_ACTOR_ONSCREEN:
             func_808021D4_chfactoryrobot(arg0, *(s32*)&arg2);
             break;
-        case 0x95:
+        case EVENT_95_ACTOR_SPAWNED:
             func_808025D4_chfactoryrobot(arg0);
             break;
         case 0x29:

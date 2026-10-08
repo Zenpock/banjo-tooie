@@ -23,7 +23,7 @@ s32 func_80800018_chshockjump(s32 arg0, s32 arg1, s32 arg2)
 		_chexploder_entrypoint_6(temp_v0, 400.0f, 600.0f);
 		_chexploder_entrypoint_7(temp_v0, -600.0f, -400.0f);
 		break;
-	case 0x91:
+	case EVENT_91_ACTOR_STOOD_ON:
 		func_800F7B9C(arg2, 0x49U);
 		break;
 	default:
@@ -36,7 +36,7 @@ s32 func_808000AC_chshockjump(s32 arg0, s32 arg1, s32 arg2)
 {
 	switch (arg1)
 	{
-	case 0x91:
+	case EVENT_91_ACTOR_STOOD_ON:
 		func_800F7B9C(arg2, 0x4AU);
 		break;
 	default:

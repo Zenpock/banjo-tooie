@@ -16,7 +16,13 @@ void func_801015C8(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDAEA0/func_801015D0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDAEA0/func_801017D0.s")
+s32 func_801017D0(Actor* arg0)
+{
+    s32 temp_v0[2];
+
+    temp_v0[0] = func_801039E4(arg0->unk0);
+    return func_8010108C(arg0, EVENT_1F_ACTOR_ONSCREEN, temp_v0[0]);
+}
 
 // the real actor_draw?
 void func_80101808(Actor* arg0, s32 (*arg1)(Actor*)) {

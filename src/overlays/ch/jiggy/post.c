@@ -136,9 +136,9 @@ s32 func_808002DC_chjiggypost(Actor* arg0, s32 arg1, s32 arg2)
     switch (arg1)
     {
         //Finished a dialog
-        case 0x2E:
+        case EVENT_2E_ACTOR_DIALOG_ENDED:
             func_808001C4_chjiggypost(arg0, split->upper, split->lower);
-        case 0x95:
+        case EVENT_95_ACTOR_SPAWNED:
             break;
         case 0x30:
             return _sujiggy_entrypoint_2(arg0->unk74_7 - 0x33);

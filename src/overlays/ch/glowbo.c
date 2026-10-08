@@ -216,40 +216,40 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
     sp2C = (glowboStruct*)func_80100094(arg0, 0U);
     switch (arg1)
     {
-    case 0x95:
-        _subaddierouteDll_entrypoint_1(arg0);
-        func_8010A5B0(arg0, flag_getValue(FLAG2_64E_UNK));
-        break;
-    case 0x3E:
-        _fxsparkle_entrypoint_1(arg0->position, 6U);
-        if (arg0->unk74_29) {
-            _subaddiedialog_entrypoint_11(arg0->unk0, 0xD03U, 0U, arg0->position, 0U);
-            flag_setValueTrue(FLAG_056_STATE_MEGA_GLOWBO);
-            func_800D1844(0x54U);
-        }
-        else {
-            _sudialog_entrypoint_0(0x2A, 0);
-            func_800D0BD4(sp2C->unk0, 3U);
-            func_800D1844(0x48U);
-        }
-        _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801454_chglowbo);
-        func_80101FDC(arg0, 1U);
-        if (sp2C->unk4) {
-            func_800C8E54(sp2C->unk4, 0.0f, 0.0f);
-            func_800C8FB0(sp2C->unk4, 0U, 0U, 0U);
-        }
-        break;
-    case 0x13:
-        sp2C->unk0 = arg2;
-        break;
-    case 0x55:
-        sp2C->unk4 = func_800C8A98();
-        func_800C8E54(sp2C->unk4, 100.0f, 750.0f);
-        sp2C->unk16 = 1;
-        sp2C->unk8 = 0.5f;
-        break;
-    default:
-        return 0;
+        case EVENT_95_ACTOR_SPAWNED:
+            _subaddierouteDll_entrypoint_1(arg0);
+            func_8010A5B0(arg0, flag_getValue(FLAG2_64E_UNK));
+            break;
+        case EVENT_3E_ACTOR_TOUCHED:
+            _fxsparkle_entrypoint_1(arg0->position, 6U);
+            if (arg0->unk74_29) {
+                _subaddiedialog_entrypoint_11(arg0->unk0, 0xD03U, 0U, arg0->position, 0U);
+                flag_setValueTrue(FLAG_056_STATE_MEGA_GLOWBO);
+                func_800D1844(0x54U);
+            }
+            else {
+                _sudialog_entrypoint_0(0x2A, 0);
+                func_800D0BD4(sp2C->unk0, 3U);
+                func_800D1844(0x48U);
+            }
+            _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801454_chglowbo);
+            func_80101FDC(arg0, 1U);
+            if (sp2C->unk4) {
+                func_800C8E54(sp2C->unk4, 0.0f, 0.0f);
+                func_800C8FB0(sp2C->unk4, 0U, 0U, 0U);
+            }
+            break;
+        case 0x13:
+            sp2C->unk0 = arg2;
+            break;
+        case 0x55:
+            sp2C->unk4 = func_800C8A98();
+            func_800C8E54(sp2C->unk4, 100.0f, 750.0f);
+            sp2C->unk16 = 1;
+            sp2C->unk8 = 0.5f;
+            break;
+        default:
+            return 0;
     }
     return 1;
 }

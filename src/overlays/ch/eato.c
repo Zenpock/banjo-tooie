@@ -90,7 +90,7 @@ s32 func_80800204_chcheato(Actor* arg0, s32 arg1, s32 arg2)
 {
     switch (arg1)
     {
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         func_80800434_chcheato(arg0, ((s16*)(&arg2))[0], ((s16*)(&arg2))[1]);
         break;
     case 0x49:
@@ -107,7 +107,7 @@ s32 func_80800204_chcheato(Actor* arg0, s32 arg1, s32 arg2)
     case 0x52:
         _gcdialogcamera_entrypoint_3(&D_80800E50_chcheato, arg0->scale);
         break;
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         arg0->unk64_20 = 0;
         break;
     case 0x57:

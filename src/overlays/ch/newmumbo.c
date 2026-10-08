@@ -195,73 +195,73 @@ s32 func_808004E8_chnewmumbo(Actor* arg0, s32 arg1, s32 arg2)
 
 	switch (arg1)
 	{
-	case 0x32:
-		switch (arg0->unk70_10)
-		{
-		case 2:
-			func_80800264_chnewmumbo(arg0, 5);
-			break;
-		case 3:
-			if (flag_getValue(func_8080011C_chnewmumbo()) != 0)
+		case 0x32:
+			switch (arg0->unk70_10)
 			{
-				func_8080073C_chnewmumbo(arg0, 1);
+			case 2:
+				func_80800264_chnewmumbo(arg0, 5);
+				break;
+			case 3:
+				if (flag_getValue(func_8080011C_chnewmumbo()) != 0)
+				{
+					func_8080073C_chnewmumbo(arg0, 1);
+					func_80800000_chnewmumbo(arg0, 2, 1U);
+					func_808000DC_chnewmumbo(arg0, 0x11DBU, 0x4EU);
+				}
+				else
+				{
+					func_80800000_chnewmumbo(arg0, 2, 1U);
+					func_8080073C_chnewmumbo(arg0, 1);
+					func_80800264_chnewmumbo(arg0, 7);
+				}
+				break;
+			case 4:                                     /* switch 2 */
 				func_80800000_chnewmumbo(arg0, 2, 1U);
 				func_808000DC_chnewmumbo(arg0, 0x11DBU, 0x4EU);
+				break;
+			}
+			break;
+		case EVENT_2E_ACTOR_DIALOG_ENDED:
+			func_808014FC_chnewmumbo(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
+			break;
+		case 0x52:
+			_gcdialogcamera_entrypoint_3(&D_80801AB8_chnewmumbo, arg0->scale);
+			if ((s32)arg0->unk70_10 < 0xE)
+			{
+				_gcdialogcamera_entrypoint_4(&D_80801AC8_chnewmumbo);
+			}
+			break;
+		case 0x57:
+			temp2 = (arg2 & 0xFFFF);
+			temp = (arg2 & 0xFFFF0000) >> 0x10;
+
+			if (_gcdialogcamera_entrypoint_0(temp2, temp) != 0)
+			{
+				func_80800000_chnewmumbo(arg0, temp2, temp);
+			}
+			break;
+		case EVENT_1F_ACTOR_ONSCREEN:
+			sp24 = (NewMumboStruct*)func_80100094(arg0, 0U);
+			func_801015D0(arg0);
+			if (sp24->unk1 != 0)
+			{
+				func_800DF744(5, 1);
 			}
 			else
 			{
-				func_80800000_chnewmumbo(arg0, 2, 1U);
-				func_8080073C_chnewmumbo(arg0, 1);
-				func_80800264_chnewmumbo(arg0, 7);
+				func_800DF744(5, 0);
+			}
+			if (sp24->unk2 != 0)
+			{
+				func_800DF744(4, 1);
+			}
+			else
+			{
+				func_800DF744(4, 0);
 			}
 			break;
-		case 4:                                     /* switch 2 */
-			func_80800000_chnewmumbo(arg0, 2, 1U);
-			func_808000DC_chnewmumbo(arg0, 0x11DBU, 0x4EU);
-			break;
-		}
-		break;
-	case 0x2E:
-		func_808014FC_chnewmumbo(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
-		break;
-	case 0x52:
-		_gcdialogcamera_entrypoint_3(&D_80801AB8_chnewmumbo, arg0->scale);
-		if ((s32)arg0->unk70_10 < 0xE)
-		{
-			_gcdialogcamera_entrypoint_4(&D_80801AC8_chnewmumbo);
-		}
-		break;
-	case 0x57:
-		temp2 = (arg2 & 0xFFFF);
-		temp = (arg2 & 0xFFFF0000) >> 0x10;
-
-		if (_gcdialogcamera_entrypoint_0(temp2, temp) != 0)
-		{
-			func_80800000_chnewmumbo(arg0, temp2, temp);
-		}
-		break;
-	case 0x1F:                                      /* switch 1 */
-		sp24 = (NewMumboStruct*)func_80100094(arg0, 0U);
-		func_801015D0(arg0);
-		if (sp24->unk1 != 0)
-		{
-			func_800DF744(5, 1);
-		}
-		else
-		{
-			func_800DF744(5, 0);
-		}
-		if (sp24->unk2 != 0)
-		{
-			func_800DF744(4, 1);
-		}
-		else
-		{
-			func_800DF744(4, 0);
-		}
-		break;
-	default:
-		return 0;
+		default:
+			return 0;
 	}
 	return 1;
 }

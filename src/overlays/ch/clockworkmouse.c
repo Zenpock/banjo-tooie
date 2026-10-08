@@ -741,7 +741,7 @@ s32 func_80801BF0_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
     s32 sp18;
 
     switch (arg1) {
-    case 0x1F:
+    case EVENT_1F_ACTOR_ONSCREEN:
         func_80801A94_chclockworkmouse(actor);
         break;
     case 0xE:

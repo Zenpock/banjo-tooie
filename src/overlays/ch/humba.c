@@ -186,7 +186,7 @@ s32 func_80800450_chhumba(Actor* arg0, s32 arg1, s32 arg2)
         arg0->unk3C = temp_v0->unk0;
         func_80800E44_chhumba(arg0, 6);
         break;
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         func_80801DB0_chhumba(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
         break;
     case 0x2F:
@@ -230,7 +230,7 @@ s32 func_80800450_chhumba(Actor* arg0, s32 arg1, s32 arg2)
             break;
         }
         break;
-    case 0x1F:
+    case EVENT_1F_ACTOR_ONSCREEN:
         func_801015D0(arg0);
         temp_v0_2 = func_80103CB8(arg0, func_801039E4(arg0->unk0));
         temp_v0_2->unk0 = 1;

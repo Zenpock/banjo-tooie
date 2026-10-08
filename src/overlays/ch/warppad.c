@@ -297,18 +297,18 @@ s32 func_80800A1C_chwarppad(Actor* arg0, u32 arg1, s32 arg2)
 {
     switch (arg1)
     {
-    case 0x91:
-        arg0->unk64_19 = 1;
-    case 0x95:
-        break;
-    case 0x2E:
-        func_80800AB8_chwarppad(arg0, *(s16*)&arg2, *((s16*)&arg2 + 1));
-        break;
-    case 0x20:
-        func_80800B34_chwarppad(arg0, (OptionState*)func_80101080(), *(s16*)&arg2, *((s16*)&arg2 + 1));
-        break;
-    default:
-        return 0;
+        case EVENT_91_ACTOR_STOOD_ON:
+            arg0->unk64_19 = 1;
+        case EVENT_95_ACTOR_SPAWNED:
+            break;
+        case EVENT_2E_ACTOR_DIALOG_ENDED:
+            func_80800AB8_chwarppad(arg0, *(s16*)&arg2, *((s16*)&arg2 + 1));
+            break;
+        case 0x20:
+            func_80800B34_chwarppad(arg0, (OptionState*)func_80101080(), *(s16*)&arg2, *((s16*)&arg2 + 1));
+            break;
+        default:
+            return 0;
     }
     return 1;
 }

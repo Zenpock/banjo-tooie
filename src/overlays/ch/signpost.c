@@ -71,7 +71,7 @@ s32 func_8080019C_chsignpost(Actor* arg0, s32 arg1, s32 arg2) {
     switch (arg1)
     {
 
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         func_80800230_chsignpost(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
         break;
     case 0x2F:

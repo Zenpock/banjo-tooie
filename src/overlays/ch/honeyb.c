@@ -305,7 +305,7 @@ s32 func_80800968_chhoneyb(Actor* arg0, s32 arg1, s32 arg2)
 {
     switch (arg1)
     {
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         func_80800744_chhoneyb(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
         break;
     case 0x30:
@@ -319,7 +319,7 @@ s32 func_80800968_chhoneyb(Actor* arg0, s32 arg1, s32 arg2)
         break;
     case 0xB:
         return 3;
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         _suexpression_entrypoint_12(_suexpression_entrypoint_7(arg0, 0, 0x9B), 60.0f, 20.0f);
         if ((flag_getValue(0x4E9) == 0) && (_glcutDll_entrypoint_20() == 0))
         {

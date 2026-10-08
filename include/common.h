@@ -2,6 +2,7 @@
 #define __COMMON_H__
 
 #include "types.h"
+#include "actorevents.h"
 
 // This hacky structure allows coords to be accessed using
 // coord->x, coord->y and coord->z, but also as
@@ -158,7 +159,7 @@ typedef struct Actor {
     /* 0x7A */ u16 unk7A_0 : 1;
     union {
         struct {
-            s16 unk7C;
+            u16 unk7C;
             s16 unk7E;
         };
         struct {
@@ -166,7 +167,8 @@ typedef struct Actor {
             /* 0x7C */ u32 unk7C_28 : 1;
             /* 0x7C */ u32 pad7C_16 : 12;
             /* 0x7C */ u32 unk7C_15 : 1;
-            /* 0x7C */ u32 pad7C_13 : 2;
+            /* 0x7C */ u32 unk7C_14 : 1;
+            /* 0x7C */ u32 unk7C_13 : 1;
             /* 0x7C */ u32 unk7C_12 : 1; // unk7C & 0x1000
             /* 0x7C */ u32 unk7C_0 : 12; // unk7C & 0xFFF
         };
@@ -222,7 +224,7 @@ typedef struct ActorData {
 		};
 		s32 unk3Cw;
 	};
-    s32 (*eventHandler)(Actor* actor, s32 arg1, s32 arg2);
+    s32 (*eventHandler)(Actor* actor, ActorEventId arg1, s32 arg2);
     s16 unk44;
     s16 unk46;
 } ActorData;

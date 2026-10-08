@@ -62,34 +62,34 @@ s32 func_80800064_chboggyfish(Actor* arg0, s32 arg1, s32 arg2)
 
 	switch (arg1)
 	{
-	case 0x3E:
-		func_80800000_chboggyfish(arg0, (unkStructBoggyFish*)arg2);
-		break;
-		//On Screen
-	case 0x1F:
-		func_801015D0(arg0);
-		temp_v0 = func_800D731C(arg0->unk0->unk14);
-		if (temp_v0 != 0)
-		{
-			temp_f6 = BOGGYFISH_DATA(arg0)->unk10;
-			func_800DBE60(temp_v0, 0, temp_f6);
-			func_800DBE60(temp_v0, 1, temp_f6);
-			func_800DBE60(temp_v0, 2, temp_f6);
-			func_800DBE60(temp_v0, 3, temp_f6);
-		}
-		break;
-		//Start
-	case 0x95:
-		if ((flag_getValue(FLAG_438_UNK) != 0) && (_glcutDll_entrypoint_20() == 0))
-		{
-			func_800FFAB0(arg0);
+		case EVENT_3E_ACTOR_TOUCHED:
+			func_80800000_chboggyfish(arg0, (unkStructBoggyFish*)arg2);
+			break;
+			//On Screen
+		case EVENT_1F_ACTOR_ONSCREEN:
+			func_801015D0(arg0);
+			temp_v0 = func_800D731C(arg0->unk0->unk14);
+			if (temp_v0 != 0)
+			{
+				temp_f6 = BOGGYFISH_DATA(arg0)->unk10;
+				func_800DBE60(temp_v0, 0, temp_f6);
+				func_800DBE60(temp_v0, 1, temp_f6);
+				func_800DBE60(temp_v0, 2, temp_f6);
+				func_800DBE60(temp_v0, 3, temp_f6);
+			}
+			break;
+			//Start
+		case EVENT_95_ACTOR_SPAWNED:
+			if ((flag_getValue(FLAG_438_UNK) != 0) && (_glcutDll_entrypoint_20() == 0))
+			{
+				func_800FFAB0(arg0);
+				return 0;
+			}
+			BOGGYFISH_DATA(arg0)->unk10 = 0;
+			BOGGYFISH_DATA(arg0)->unk14 = 0.5f;
+			break;
+		default:
 			return 0;
-		}
-		BOGGYFISH_DATA(arg0)->unk10 = 0;
-		BOGGYFISH_DATA(arg0)->unk14 = 0.5f;
-		break;
-	default:
-		return 0;
 	}
 	if (arg2)
 	{

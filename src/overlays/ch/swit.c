@@ -60,7 +60,7 @@ s32 chswitch_entrypoint_5(Actor* arg0, s32 arg1, u32 arg2)
     {
     case 0x29:
         return func_8080093C_chswitch(arg0);
-    case 0x91:
+    case EVENT_91_ACTOR_STOOD_ON:
         if (arg0->unk70_10 == 1)
         {
             _gcaudiolist_entrypoint_0(0);
@@ -72,7 +72,7 @@ s32 chswitch_entrypoint_5(Actor* arg0, s32 arg1, u32 arg2)
             break;
         }
         return 0;
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         if (flag_getValue(arg0->actorData[7]) != 0)
         {
             func_80102424(arg0, 3);

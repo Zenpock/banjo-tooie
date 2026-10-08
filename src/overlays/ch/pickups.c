@@ -75,19 +75,19 @@ s32 func_80800084_chpickups(Actor* arg0, s32 arg1, s32 arg2)
 {
     switch (arg1)
     {
-    case 0x3E:
-        func_80800110_chpickups(arg0);
-        return 1;
-    case 0x95:
-        if (arg0->unk64_23)
-        {
-            func_800F822C(func_800F54E4(), 0, 0);
-            func_80101FDC(arg0, 3);
-        }
+        case EVENT_3E_ACTOR_TOUCHED:
+            func_80800110_chpickups(arg0);
+            return 1;
+        case EVENT_95_ACTOR_SPAWNED:
+            if (arg0->unk64_23)
+            {
+                func_800F822C(func_800F54E4(), 0, 0);
+                func_80101FDC(arg0, 3);
+            }
 
-        return 1;
-    default:
-        return 0;
+            return 1;
+        default:
+            return 0;
     }
 }
 

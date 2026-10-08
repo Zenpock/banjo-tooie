@@ -22,7 +22,7 @@ s32 func_8080008C_chbigtopticket(Actor* arg0, s32 arg1, s32 arg2)
 {
     switch (arg1) 
     {
-        case 0x3E:
+        case EVENT_3E_ACTOR_TOUCHED:
             _sudialog_entrypoint_0(0x19F, 4);
             func_800D0BD4(arg0->unk54s, 8);
             func_800D1844(0x4D);
