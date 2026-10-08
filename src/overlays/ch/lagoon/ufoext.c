@@ -91,7 +91,7 @@ void func_808001D8_chlagoonufoext(Actor* arg0)
         {
             func_800CBB80(temp_a0, 0);
         }
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
     }
     else
     {
@@ -146,7 +146,7 @@ void func_8080032C_chlagoonufoext(Actor* arg0)
             {
                 func_800CBB80(UFO_DATA(arg0)->unkC, 0);
             }
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
         }
         break;
     }

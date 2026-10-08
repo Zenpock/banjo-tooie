@@ -108,7 +108,7 @@ void func_80800260_chgruntyfireball(Actor* actor)
     {
         ((s32*)actor->actorData)[3] = _chlightfader_entrypoint_1(((s32*)actor->actorData)[3], 1.5f, 2);
     }
-    func_800FFAB0(actor);
+    actor_mark_delete(actor);
 }
 
 void func_808003D8_chgruntyfireball(Actor* actor)

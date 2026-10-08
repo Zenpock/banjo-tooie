@@ -509,7 +509,7 @@ void func_80800D9C_chdippy(Actor* arg0)
             _glid_entrypoint_0(sp40, 2, _chdippy_entrypoint_3, arg0->unk0);
             if (arg0->unk79_4-- == 0)
             {
-                func_800FFAB0(arg0);
+                actor_mark_delete(arg0);
             }
             break;
     }

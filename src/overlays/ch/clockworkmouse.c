@@ -1328,7 +1328,7 @@ void func_80802CC8_chclockworkmouse(Actor* arg0) {
             func_80105634(arg0);
             func_808009F4_chclockworkmouse(sp34);
             sp34->unk3C = 0;
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
         }
         break;
     }

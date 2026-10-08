@@ -58,7 +58,7 @@ s32 func_80101180(s32 propId, ActorEventId eventId, s32 arg2)
     s32 var_s0;
 
     var_s0 = 0;
-    actorToCheck = func_801067C4(&LastIndex);
+    actorToCheck = actorList_getLast(&LastIndex);
     //Loop through the actors to find matching propIds to send events to
     while (actorToCheck != NULL)
     {
@@ -72,7 +72,7 @@ s32 func_80101180(s32 propId, ActorEventId eventId, s32 arg2)
             }
         }
         //Get the next Actor in the list
-        actorToCheck = func_8010682C(&LastIndex);
+        actorToCheck = actorList_getNext(&LastIndex);
     }
     return var_s0;
 }

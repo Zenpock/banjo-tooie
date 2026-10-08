@@ -13,7 +13,7 @@ void func_8080000C_chfactoryposter(Actor* arg0)
     if (flag_getValue(FLAG_03D_UNK) != 0)
     {
         func_800BF744(2, 2);
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     func_800BF744(2, 1);
@@ -30,7 +30,7 @@ void func_8080005C_chfactoryposter(Actor* arg0)
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80800158_chfactoryposter);
             func_800BF744(2, 2);
             flag_setValueTrue(FLAG_03D_UNK);
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
         }
     }
 }

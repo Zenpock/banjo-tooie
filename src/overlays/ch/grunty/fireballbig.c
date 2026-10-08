@@ -55,7 +55,7 @@ void func_80800030_chgruntyfireballbig(Actor* actor)
         ((f32*)actor->actorData)[2] = ((f32*)actor->actorData)[2] + (800.0f * sp2C);
         if (actor->position[1] <= ((f32*)actor->actorData)[1])
         {
-            func_800FFAB0(actor);
+            actor_mark_delete(actor);
         }
         break;
     }
@@ -130,7 +130,7 @@ void func_8080034C_chgruntyfireballbig(Actor* actor)
     {
         ((s32*)actor->actorData)[3] = _chlightfader_entrypoint_1(((s32*)actor->actorData)[3], 1.5f, 2);
     }
-    func_800FFAB0(actor);
+    actor_mark_delete(actor);
 }
 
 void func_808004C4_chgruntyfireballbig(Actor* actor)

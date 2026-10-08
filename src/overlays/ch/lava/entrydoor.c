@@ -32,12 +32,12 @@ void func_808000CC_chlavaentrydoor(Actor* arg0)
     if (_sujiggy_entrypoint_20(6U) != 0)
     {
         flag_setValueTrue(FLAG_398_PROGRESS_OPENED_WORLD_HFP);
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     if ((func_800D3E40(0xBU) != 0) && (_glcutDll_entrypoint_19(0x80U) == 0))
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
     }
 }
 

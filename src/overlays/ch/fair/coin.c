@@ -13,7 +13,7 @@ void func_80800000_chfaircoin(Actor* arg0)
     func_800EFE50(arg0->position, (f32*)&arg0->actorData[4], (f32*)&arg0->actorData[0], temp_f0);
     arg0->position[1] += func_8001395C(sp2C * 3.1415927f) * 200.0f;
     if (*(f32*)&arg0->actorData[3] == 0.0f) {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         func_800FC660(0xE);
     }
 }

@@ -16,7 +16,7 @@ void func_8080000C_chicywind(Actor* arg0)
 {
     if (func_800D0B68(0x21U, 0U) != 0)
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
     }
 }
 
@@ -30,7 +30,7 @@ void func_80800044_chicywind(Actor* arg0)
     }
     if (func_800D0B68(0x21U, 0U) != 0)
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     switch (arg0->unk70_10)

@@ -473,7 +473,7 @@ void func_80800000_chnests(Actor* arg0)
 
     if (var_v1 == 0xE)
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     arg0->actorData[1] = (u32)var_v1;
@@ -688,7 +688,7 @@ void func_80800670_chnests(Actor* arg0, UnkArg2ChNest* arg1)
     {
         func_800D0BD4((s32)arg0->actorData[2], 6U);
     }
-    func_800FFAB0(arg0);
+    actor_mark_delete(arg0);
 }
 
 void func_808006C4_chnests(Actor* arg0)
@@ -701,14 +701,14 @@ void func_808006C4_chnests(Actor* arg0)
     temp_v0 = (arg0->unk74_7) - 0x32;
     if ((temp_v0 <= 0) || (temp_v0 >= 0x12))
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     temp_a0 = (func_800D13E8(6, D_8012762C) + (arg0->unk74_7)) - 0x32;
     arg0->actorData[2] = temp_a0;
     if (func_800D0B68(temp_a0, 6U) != 0)
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     func_80800000_chnests(arg0);

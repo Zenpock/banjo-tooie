@@ -72,7 +72,7 @@ void func_8080013C_chglowbo(Actor* arg0)
     }
     if ((arg0->unk74_29) && (flag_getValue(FLAG_056_STATE_MEGA_GLOWBO) != 0))
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
 
@@ -204,7 +204,7 @@ void func_808002F4_chglowbo(Actor* arg0)
             {
                 func_800C8B84(sp74->unk4);
             }
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
         }
     }
 }
@@ -356,7 +356,7 @@ void func_80800B10_chglowbo(Actor* arg0)
         return;
     case 1:
         func_800C8B84(temp_v0->unk4);
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         break;
     }
 }

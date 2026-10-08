@@ -9,12 +9,12 @@ void func_80800000_chterryteeth(Actor* arg0)
     if (_sujiggy_entrypoint_20(4U) != 0)
     {
         flag_setValueTrue(FLAG_396_PROGRESS_OPENED_WORLD_TDL);
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     if ((func_800D3E40(0xB) != 0) && (_glcutDll_entrypoint_19(0x7EU) == 0))
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
     }
 }
 

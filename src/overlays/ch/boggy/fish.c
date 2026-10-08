@@ -82,7 +82,7 @@ s32 func_80800064_chboggyfish(Actor* arg0, s32 arg1, s32 arg2)
 		case EVENT_95_ACTOR_SPAWNED:
 			if ((flag_getValue(FLAG_438_UNK) != 0) && (_glcutDll_entrypoint_20() == 0))
 			{
-				func_800FFAB0(arg0);
+				actor_mark_delete(arg0);
 				return 0;
 			}
 			BOGGYFISH_DATA(arg0)->unk10 = 0;

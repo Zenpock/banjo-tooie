@@ -30,12 +30,12 @@ void func_80800000_chcauldronenergybars(Actor* arg0)
     }
     if (flag_getValue(var_a1) != 0)
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     if ((func_800D3E40(0xB) != 0) && (_glcutDll_entrypoint_19(sp18) == 0))
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
     }
 }
 
@@ -53,7 +53,7 @@ void func_808000B8_chcauldronenergybars(Actor* arg0)
     case 2:
         if (func_800D90A4(&arg0->unk58) != 0)
         {
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
         }
         _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1, &D_808002C0_chcauldronenergybars);
         _subaddieaudioloop_entrypoint_0(arg0, func_800F10B4(arg0->unk58, CAULDRONENERGYBARS_DATA(arg0)->unk1C, 0.0f, 1.4f, 0.7f));

@@ -920,7 +920,7 @@ void func_80801F74_chhumba(Actor* arg0)
     arg0->unk74_7 = 0;
     if (sp24 == NULL)
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     _gspropctrl_entrypoint_11(sp24, (f32*)&arg0->actorData[4]);

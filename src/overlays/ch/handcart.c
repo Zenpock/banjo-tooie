@@ -1257,7 +1257,7 @@ void func_808028F0_chhandcart(Actor* arg0)
         }
         else //If we're not in GGM
         {
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
             return;
         }
     }
@@ -1266,7 +1266,7 @@ void func_808028F0_chhandcart(Actor* arg0)
         //Are we in Canary Cave
         if (func_800EA05C() == MAP_DB_GGM_CANARY_CAVE)
         {
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
             return;
         }
         switch (func_80800194_chhandcart(arg0))
@@ -1309,7 +1309,7 @@ void func_808028F0_chhandcart(Actor* arg0)
     }
     else if (func_800EA05C() != MAP_DB_GGM_CANARY_CAVE) //If we aren't in Canary Cave
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     else
@@ -1960,7 +1960,7 @@ void func_80803794_chhandcart(Actor* arg0)
             {
                 func_80800AB0_chhandcart(sp40);
                 sp40->unk3C = 0;
-                func_800FFAB0(arg0);
+                actor_mark_delete(arg0);
             }
         }
         break;

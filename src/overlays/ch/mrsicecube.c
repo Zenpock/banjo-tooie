@@ -51,7 +51,7 @@ void func_80800018_chmrsicecube(Actor* arg0)
         }
         if (flag_getValue(FLAG_378_PHYSICAL_HFP_KilledMildred) != 0)
         {
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
         }
     }
 }
@@ -155,7 +155,7 @@ s32 func_80800260_chmrsicecube(Actor* arg0, s32 arg1, s32 arg2)
             }
             else if ((arg0->actorData[4] != 0) || (_glcutDll_entrypoint_20() == 0))
             {
-                func_800FFAB0(arg0);
+                actor_mark_delete(arg0);
             }
             break;
         default:
@@ -287,7 +287,7 @@ void func_808006C4_chmrsicecube(Actor* arg0)
         _chbounce_entrypoint_5(D_80800910_chmrsicecube[arg0->actorData[4]][1], temp_s0);
     }
     func_80800818_chmrsicecube(arg0);
-    func_800FFAB0(arg0);
+    actor_mark_delete(arg0);
 }
 
 void func_80800818_chmrsicecube(Actor* arg0)

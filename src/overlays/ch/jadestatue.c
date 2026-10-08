@@ -43,7 +43,7 @@ s32 func_80800140_chjadestatue(Actor* arg0, s32 arg1, s32 arg2)
 			break;
 
 		case 0x2C:
-			func_800FFAB0(arg0);
+			actor_mark_delete(arg0);
 			return 1;
 		default:
 			return 0;
@@ -74,7 +74,7 @@ void func_8080026C_chjadestatue(Actor* arg0)
 {
 	if (func_800D035C(5) >= 0x14)
 	{
-		func_800FFAB0(arg0);
+		actor_mark_delete(arg0);
 	}
 }
 
@@ -89,7 +89,7 @@ void func_808002A4_chjadestatue(Actor* arg0)
 	if (sp1C >= 0x14)
 	{
 		func_80101180(PROP_2B3_JADETOTEM, 0x2C, 0);
-		func_800FFAB0(arg0);
+		actor_mark_delete(arg0);
 	}
 }
 

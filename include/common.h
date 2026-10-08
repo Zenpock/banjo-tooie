@@ -55,7 +55,7 @@ typedef struct {
     /* 0x20 */ u32 unk20;
     /* 0x24 */ u32 unk24_22 : 10;
     /* 0x24 */ u32 unk24_16 : 6;
-    /* 0x24 */ u32 unk24_6 : 9;
+    /* 0x24 */ u32 unk24_7 : 9;
 	/* 0x24 */ u32 unk24_0 : 7;
 	/* 0x28 */ u32 unk28_23 : 9;
 	/* 0x28 */ u32 unk28_14 : 9;
@@ -75,8 +75,8 @@ typedef struct Actor {
     /* 0x14 */ u32 unk14;
     /* 0x18 */ u32 actorData[8]; //Cast this array to struct in actor
     /* 0x38 */ f32 scale;
-    /* 0x3C */ Unk80132ED0 *unk3C;
-    /* 0x40 */ s32 pad40;
+    /* 0x3C */ Unk80132ED0* unk3C; //Child Object?
+    /* 0x40 */ Unk80132ED0* unk40; //Shadow Reference?
     /* 0x44 */ f32 rotation[3];
     /* 0x50 */ f32 unk50;
     union
@@ -104,7 +104,7 @@ typedef struct Actor {
     /* 0x64 */ u32 unk64_20 : 1;
     /* 0x64 */ u32 unk64_19 : 1; // flags & 0x80000
     /* 0x64 */ u32 unk64_18 : 1;
-    /* 0x64 */ u32 unk64_17 : 1;
+    /* 0x64 */ u32 unk64_17 : 1; //Marked for Deletion?
     /* 0x64 */ u32 unk64_16 : 1;
     /* 0x64 */ u32 unk64_0 : 16;
     /* 0x68 */ s32 pad68;
@@ -166,7 +166,7 @@ typedef struct Actor {
             /* 0x7C */ u32 pad7C_29 : 3;
             /* 0x7C */ u32 unk7C_28 : 1;
             /* 0x7C */ u32 pad7C_16 : 12;
-            /* 0x7C */ u32 unk7C_15 : 1;
+            /* 0x7C */ u32 unk7C_15 : 1; //unk7E | 0x80 IsInitialized
             /* 0x7C */ u32 unk7C_14 : 1;
             /* 0x7C */ u32 unk7C_13 : 1;
             /* 0x7C */ u32 unk7C_12 : 1; // unk7C & 0x1000
@@ -211,7 +211,7 @@ typedef struct ActorData {
 		};
 		s32 unk24w;
 	};
-    void (*unk28_func)(Actor* actor);
+    void (*unk28_func)(Actor* actor); //Destructor
     void* (*unk2C_func)();
     s16 unk30;
     s16 unk32;

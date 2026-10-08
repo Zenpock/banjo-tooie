@@ -257,7 +257,7 @@ void func_808002DC_cheggclockwork(Actor* arg0, s32 arg1)
         return;
     case 2:
         cheggclockwork_entrypoint_3(func_8001B798(sp24->unk2C), *(s32*)&arg0->rotation[1], (s32)sp24->unk3A, 1);
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     case 3:
         _suegg_entrypoint_3(arg0);

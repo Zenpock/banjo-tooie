@@ -503,7 +503,7 @@ s32 func_80800E40_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
             _chexploder_entrypoint_13(temp_v0_2, 0xAU);
             if (func_80107070(arg0, 3) == 0)
             {
-                func_800FFAB0(arg0);
+                actor_mark_delete(arg0);
             }
             break;
         case 0x93:

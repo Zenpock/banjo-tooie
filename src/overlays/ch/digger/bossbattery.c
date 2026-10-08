@@ -15,7 +15,7 @@ void func_8080000C_chdiggerbossbattery(Actor* arg0)
     arg0->unk58 = func_800DC178(1.5f, 3.0f);
     if (flag_getValue(arg0->unk74_7 + 0xA1D) != 0)
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
     }
 }
 

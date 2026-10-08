@@ -29,7 +29,7 @@ s32 func_8080008C_chbigtopticket(Actor* arg0, s32 arg1, s32 arg2)
             func_800FC6B0(0x73);
             _fxsparkle_entrypoint_1(arg0->position, 0x11U);
             func_8010A570(arg0);
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
             break;
         case 0x13:
             arg0->unk54s = arg2;

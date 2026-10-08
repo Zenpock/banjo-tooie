@@ -382,6 +382,16 @@ ml_vec3f_clear = 0x800EFD24;
 ml_vec3i_clear = 0x800EFD3C;
 ml_vec3s_clear = 0x800EFD4C;
 mlAbsF = 0x800F2100;
+actor_mark_delete = 0x800FFAB0;
+actorList_new = 0x801065E0;
+actorList_free = 0x80106608;
+actorList_defrag = 0x80106630;
+actorList_pushback = 0x80106668;
+actorList_erase = 0x801066C0;
+actorList_getSize = 0x80106730;
+actorList_getAtIndex = 0x80106768;
+actorList_getLast = 0x801067C4;
+actorList_getNext = 0x8010682C;
 
 // Actual size is 0x26 without file alignment padding
 D_8012D580 = 0x8012D580; // size:0x30

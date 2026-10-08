@@ -1,10 +1,55 @@
 #include "core2/1ED8C80.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FF390.s")
+extern s32 D_80135A50;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FF3EC.s")
+void func_800FF390(void)
+{
+	D_80135A50 = 0;
+	//Create New Actor Vector
+	actorList_new();
+	//Create new freelist (func_8008B4F4(), 0x20)
+	func_80104170();
+	//Create new freelist (0x2C,8)
+	func_80104350();
+	//Create new freelist (0x48,8)
+	func_80105410();
+	//Create new freelist (0x8,0)
+	func_80105C20();
+	//Nothing
+	func_80106A20();
+	//Create new freelist (0x18,0xC)
+	func_80106DF0();
+	func_80107BB0();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FF44C.s")
+void func_800FF3EC(Actor* actor)
+{
+	ActorData* temp_v0;
+
+	if (!(actor->unk64_26))
+	{
+		temp_v0 = func_80100368(actor);
+		if (temp_v0->unk28_func != NULL)
+		{
+			temp_v0->unk28_func(actor);
+		}
+		actor->unk64_26 = 1;
+	}
+}
+
+void func_800FF44C(void)
+{
+	s32 actorIterator;
+	Actor* actor;
+
+	func_80101238(0x93, 0);
+	actor = actorList_getLast(&actorIterator);
+	while (actor != NULL)
+	{
+		func_800FF3EC(actor);
+		actor = actorList_getNext(&actorIterator);
+	}
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FF4A4.s")
 
@@ -39,7 +84,7 @@ void func_800FF62C(void)
 		func_8010D254(sp40);
 	}
 
-	actor = func_801067C4(&actorIterator);
+	actor = actorList_getLast(&actorIterator);
 	//Loop through all actors
 	while (actor != NULL)
 	{
@@ -107,25 +152,52 @@ void func_800FF62C(void)
 			else
 			{
 				temp_s1->unk28_23 = func_800136E4(actor->rotation[1]);
-				temp_s1->unk24_6 = func_800136E4(actor->rotation[0]);
+				temp_s1->unk24_7 = func_800136E4(actor->rotation[0]);
 				temp_s1->unk28_14 = func_800136E4(actor->rotation[2]);
 			}
 			func_80103040(actor);
 		}
-		actor = func_8010682C(&actorIterator);
+		actor = actorList_getNext(&actorIterator);
 
 	}
 	func_8010DF3C();
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FFA3C.s")
+void func_800FFA3C(Actor* actor)
+{
+	Unk80132ED0* sp1C;
+
+	sp1C = actor->unk0;
+	func_800FF3EC(actor);
+	func_800FF4A4(actor);
+	actorList_erase(sp1C->unk18_5);
+	func_800EBFF4(sp1C);
+}
+
 
 void func_800FFA88(Unk80132ED0* a0)
 {
-    func_800FFAB0(func_80106790(a0));
+    actor_mark_delete(func_80106790(a0));
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FFAB0.s")
+void actor_mark_delete(Actor* actor)
+{
+	Actor* temp_v0;
+	Unk80132ED0* temp_a2;
+	actor->unk64_17 = 1;
+	D_80135A50++;
+	temp_a2 = actor->unk40;
+	if (temp_a2 != 0 && actor->unk6C_9 != 0x243)
+	{
+		temp_v0 = func_80106790((Unk80132ED0*)actor->unk40);
+		temp_v0->unk64_17 = 1;
+		actor->unk40 = 0;
+		temp_v0->unk40 = 0;
+		D_80135A50++;
+	}
+	actor->unk7A_2 = 0;
+	actor->unk74_24 = actor->unk7A_2;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FFB74.s")
 
@@ -189,4 +261,33 @@ ActorData* func_80100368(Actor* arg0)
     return (*arg0->pointerToSyscallEntry)();
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_8010038C.s")
+int func_8010038C(Actor* actor, f32* arg1)
+{
+
+	if (!actor->unk7C_15)
+	{
+		actor->unk7C_15 = 1;
+		func_8010108C(actor, EVENT_95_ACTOR_SPAWNED, 0);
+		if (actor->unk64_17)
+		{
+			return 0;
+		}
+		if (actor->unk7A_5)
+		{
+			func_80081D34(actor->pointerToSyscallEntry);
+		}
+	}
+	if (!(actor->unk7C_14))
+	{
+		return 0;
+	}
+	if (!actor->unk7C)
+	{
+		return 1;
+	}
+	if ((actor->unk7C_13) && (actor->unk7C_12))
+	{
+		return 1;
+	}
+	return position_isWithinRangeOf(actor->position, (s32)actor->unk7C, arg1);
+}

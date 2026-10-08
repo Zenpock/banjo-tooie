@@ -103,7 +103,7 @@ void func_80800110_chpickups(Actor* arg0)
             func_800FC6B0(0xE);
         }
         func_800F6388(func_800F54E4(), arg0->unk6C_9);
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
     }
 }
 
@@ -194,7 +194,7 @@ void func_80800364_chpickups(Actor* arg0)
             if ((arg0->unk0->unk24_22 != 0x37) && (arg0->unk0->unk24_22 == 0x67))
             {
                 func_80101180(0x4A5, 0x7D, 0);
-                func_800FFAB0(arg0);
+                actor_mark_delete(arg0);
             }
         }
         arg0->unk64_22 = 0;
@@ -210,7 +210,7 @@ void func_80800528_chpickups(Actor* arg0)
     if (func_8008FDEC() != arg0->unk0)
     {
         func_800F63E0(func_800F54E4(), arg0->unk6C_9);
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     if (arg0->unk64_22)
