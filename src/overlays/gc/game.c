@@ -11,7 +11,7 @@ void gcgame_entrypoint_0(s32 arg0)
     func_800F8E08();
     func_8009E8D4();
     func_800D2438();
-    func_800D1510();
+    inventory_setup();
     func_800DACD0();
     _gccollectDll_entrypoint_2();
     func_800CB618();
@@ -33,7 +33,7 @@ void gcgame_entrypoint_1(void)
     func_800FE4E4();
     func_800CB610();
     _gccollectDll_entrypoint_3();
-    func_800D1604();
+    inventory_free();
     //Do Nothing
     func_8009E8B4();
     func_800F8DD8();

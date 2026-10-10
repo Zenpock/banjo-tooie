@@ -150,7 +150,7 @@ void func_80800264_chnewmumbo(Actor* arg0, s32 arg1) {
 			_suexpression_entrypoint_12(func_80100094(arg0, 1U), 60.0f, 0.0f);
 			return;
 		case 8:
-			if (func_800D1A04(0x48) > 0)
+			if (inventory_getValue(0x48) > 0)
 			{
 				func_808000DC_chnewmumbo(arg0, 0x11D7U, 0x46U);
 				return;
@@ -354,7 +354,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 
 	if ((flag_getValue(func_8080011C_chnewmumbo()) == 0) && (MUMBO_DATA(arg0)->unkC <= 0.0f))
 	{
-		func_800D1824(0x48);
+		inventory_showValue(0x48);
 	}
 	if (func_8010D278() == 0xD)
 	{
@@ -538,7 +538,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 			func_80800264_chnewmumbo(arg0, 0x11);
 			func_80800000_chnewmumbo(arg0, 2, 1);
 			flag_setValueTrue(func_8080011C_chnewmumbo());
-			func_800D175C(0x48, -1);
+			inventory_addValue(0x48, -1);
 			return;
 		}
 		break;

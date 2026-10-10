@@ -329,7 +329,7 @@ void func_808009DC_chheggy(Actor* arg0)
             func_80800ECC_chheggy(arg0, 0x10);
         }
         func_800EFE50(arg0->position, (u8*)sp40 + 0x64, (u8*)sp40 + 0x70, sp3C);
-        func_800D1804(0x52);
+        inventory_decrementValue(0x52);
         break;
     case 16:
         if (func_800D90A4(&arg0->unk58) != 0)
@@ -384,7 +384,7 @@ void func_808009DC_chheggy(Actor* arg0)
     func_8080015C_chheggy(arg0);
     if (((flag_getValue(FLAG_3E4_SNS_EGG_HATCHED_BLUE) == 0) || (flag_getValue(FLAG_3E6_SNS_EGG_HATCHED_PINK) == 0)) && (_glcutDll_entrypoint_20() == 0))
     {
-        func_800D1824(0x52);
+        inventory_showValue(0x52);
     }
 }
 

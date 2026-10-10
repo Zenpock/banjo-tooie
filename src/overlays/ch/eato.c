@@ -44,7 +44,7 @@ void func_80800068_chcheato(Actor* arg0)
     _sudeflect_entrypoint_0(arg0->position, 150.0f, 150.0f, 0xA);
     func_808006B8_chcheato(arg0);
     func_8080078C_chcheato(arg0);
-    func_800D1824(0x4A);
+    inventory_showValue(0x4A);
     switch (arg0->unk70_10)
     {
     case 1:
@@ -162,7 +162,7 @@ void func_80800434_chcheato(Actor* arg0, s32 arg1, s32 arg2)
         _subaddiedialog_entrypoint_11(arg0->unk0, func_80800888_chcheato(), 0xEU, arg0->position, 0x37U);
         return;
     case 0x1142:
-        if (func_800D1A04(0x4A) != 0)
+        if (inventory_getValue(0x4A) != 0)
         {
             sp2C = 0xE;
             _subaddiedialog_entrypoint_11(arg0->unk0, func_80800824_chcheato(&sp2C), sp2C, arg0->position, 0x37U);
@@ -200,7 +200,7 @@ void func_80800434_chcheato(Actor* arg0, s32 arg1, s32 arg2)
     case 0x114D:
     case 0x114E:
     case 0x114F:
-        if ((func_800D1A04(0x4A) >= 5) && (func_80800BB8_chcheato() != -1))
+        if ((inventory_getValue(0x4A) >= 5) && (func_80800BB8_chcheato() != -1))
         {
             _subaddieitem_entrypoint_2(func_80100094(arg0, 1U));
             func_80102424(arg0, 3);
@@ -272,7 +272,7 @@ s32 func_80800824_chcheato(s32* arg0)
     s32 sp1C;
     s32 var_v0;
 
-    sp1C = func_800D1A04(0x4A);
+    sp1C = inventory_getValue(0x4A);
     if (func_80800BB8_chcheato() == -1)
     {
         return 0x1147;

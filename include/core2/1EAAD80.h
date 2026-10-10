@@ -3,21 +3,23 @@
 
 #include "common.h"
 #include "memory.h"
+#include "core1/1E29B60.h"
+#include "core2/1EABAC0.h"
 
-void func_800D1510();
-void func_800D1604();
+void inventory_setup();
+void inventory_free();
 void func_800D162C();
-void func_800D175C(s32, s32);
-void func_800D1804(s32);
+void inventory_addValue(s32, s32);
+void inventory_decrementValue(s32);
 //Inventory Item by 0 to show item value
-void func_800D1824(s32);
+void inventory_showValue(s32);
 //Increment Inventory Value
-void func_800D1844(s32);
+void inventory_incrementValue(s32);
 void func_800D1864(u32, u32, u32);
 //Get Inventory Value
-s32 func_800D1A04(s32 a0);
+s32 inventory_getValue(s32 a0);
 u32 func_800D1A6C(u32);
-s32 func_800D1C38(s32);
+s32 inventory_hasZeroItems(s32);
 s32 func_800D1C5C(u32);
 
 #endif

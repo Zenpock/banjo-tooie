@@ -58,7 +58,7 @@ void func_80800000_chhoneycarrier(Actor* arg0, unkStructHoneyCarrier* arg1)
         //Wait 2 seconds before trying to show the tutorial
         func_800C9E20(2.0f, &_sudialog_entrypoint_0, FLAG_032_FTT_ITEM_EMPTY_HONEYCOMB, 0);
         //Increment Inventory Value for honeycomb
-        func_800D1844(0x49);
+        inventory_incrementValue(0x49);
         _fxsparkle_entrypoint_1(arg0->position, 0);
         func_800FFA88(arg0->unk0);
     }

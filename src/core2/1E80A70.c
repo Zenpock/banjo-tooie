@@ -202,7 +202,7 @@ void func_800CCFEC(void);
 void func_800A5D6C(void);
 void func_800B5E3C(void);
 void func_800DA1E0(void);
-void func_800D15CC(void);
+void inventory_defrag(void);
 void func_8010E030(void);
 void func_800C075C(void);
 void func_800C08C0(void);
@@ -250,7 +250,7 @@ void func_800A7FD4(void) {
     func_800A5D6C();
     func_800B5E3C();
     func_800DA1E0();
-    func_800D15CC();
+    inventory_defrag();
     func_8010E030();
     func_800C075C();
     if (D_80127630.unk2 == 4) {

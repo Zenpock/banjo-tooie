@@ -403,12 +403,12 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
             if (arg0->unk74_29) {
                 _subaddiedialog_entrypoint_11(arg0->unk0, 0xD03U, 0U, arg0->position, 0U);
                 flag_setValueTrue(FLAG_056_STATE_MEGA_GLOWBO);
-                func_800D1844(0x54U);
+                inventory_incrementValue(0x54U);
             }
             else {
                 _sudialog_entrypoint_0(0x2A, 0);
                 func_800D0BD4(sp2C->unk0, 3U);
-                func_800D1844(0x48U);
+                inventory_incrementValue(0x48U);
             }
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801454_chglowbo);
             func_80101FDC(arg0, 1U);

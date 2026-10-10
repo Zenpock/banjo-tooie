@@ -63,7 +63,7 @@ void func_80800024_chpawnbroker(Actor* arg0)
     u32* sp3C;
     f32 temp[3];
     sp3C = func_80100094(arg0, 1U);
-    func_800D1824(0x4E);
+    inventory_showValue(0x4E);
     _sudeflect_entrypoint_1(&D_808010B8_chpawnbroker, 60.0f, 0.0f, 60.0f, 2);
     _sudeflect_entrypoint_1(arg0->position, 250.0f, 0.0f, 100.0f, 0xA);
     _suexpression_entrypoint_10(sp3C, arg0->unk0, 0U);
@@ -455,7 +455,7 @@ s32 func_80800C00_chpawnbroker(s32 NumDoubloons, s32 SaleConfirmation)
     if (SaleConfirmation > 0)
     {
         //Check if we have enough doubloons
-        if (func_800D1A04(0x4E) >= NumDoubloons)
+        if (inventory_getValue(0x4E) >= NumDoubloons)
         {
             //Check the current player's transformation if valid
             if (func_800F64A4(func_800F54E4(), ALLOW_BANJO | ALLOW_BK) != 0)

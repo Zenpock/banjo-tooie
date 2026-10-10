@@ -281,11 +281,11 @@ void func_808007F8_chhumba(Actor* arg0)
     flag_setValueTrue((arg0->unk6C_0) + 0xD5);
     if (arg0->unk74_29)
     {
-        func_800D175C(0x54, -func_808007EC_chhumba((s32)arg0));
+        inventory_addValue(0x54, -func_808007EC_chhumba((s32)arg0));
     }
     else
     {
-        func_800D175C(0x48, -func_808007EC_chhumba((s32)arg0));
+        inventory_addValue(0x48, -func_808007EC_chhumba((s32)arg0));
     }
     arg0->unk64_20 = 1;
 }
@@ -669,11 +669,11 @@ void func_808015DC_chhumba(Actor* arg0)
     {
         if (arg0->unk74_29)
         {
-            func_800D1824(0x54);
+            inventory_showValue(0x54);
         }
         else
         {
-            func_800D1824(0x48);
+            inventory_showValue(0x48);
         }
     }
     func_8008FB10(arg0->position, arg0->scale * 1350.0f, arg0->scale * 72.0f, arg0->scale * 350.0f);
@@ -707,7 +707,7 @@ void func_808015DC_chhumba(Actor* arg0)
             {
                 if (arg0->unk74_29)
                 {
-                    if (func_800D1A04(0x54) >= func_808007EC_chhumba(arg0))
+                    if (inventory_getValue(0x54) >= func_808007EC_chhumba(arg0))
                     {
                         func_80800338_chhumba(arg0, 0x11BE, 0x4E);
                         return;
@@ -715,7 +715,7 @@ void func_808015DC_chhumba(Actor* arg0)
                     func_80800338_chhumba(arg0, 0x11BF, 0xF);
                     return;
                 }
-                if (func_800D1A04(0x48) >= func_808007EC_chhumba(arg0))
+                if (inventory_getValue(0x48) >= func_808007EC_chhumba(arg0))
                 {
                     func_80800338_chhumba(arg0, 0x11B0, 0x4E);
                     return;

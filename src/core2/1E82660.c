@@ -1,5 +1,7 @@
 #include "core2/1E82660.h"
 
+extern s32 D_80127728[];
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E82660/func_800A8D70.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E82660/func_800A8E9C.s")
@@ -24,7 +26,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E82660/func_800A9378.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E82660/func_800A93E4.s")
+s32 func_800A93E4(s32 arg0)
+{
+    return D_80127728[arg0];
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E82660/func_800A93F8.s")
 

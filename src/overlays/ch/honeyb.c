@@ -109,7 +109,7 @@ void func_808002AC_chhoneyb(Actor* arg0)
     case 1:
         if (_glcutDll_entrypoint_20() == 0)
         {
-            func_800D1824(0x49);
+            inventory_showValue(0x49);
             if (arg0->actorData[4] == 0)
             {
                 if (func_80800B78_chhoneyb() < _gcextra_entrypoint_1())
@@ -346,7 +346,7 @@ s32 func_80800B2C_chhoneyb(Actor* arg0)
 
 s32 func_80800B58_chhoneyb()
 {
-    return func_800D1A04(0x49);
+    return inventory_getValue(0x49);
 }
 
 s32 func_80800B78_chhoneyb()

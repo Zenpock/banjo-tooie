@@ -146,7 +146,7 @@ s32 func_80800328_chsecreteggs(Actor* arg0, s32 arg1, s32 arg2)
             {
                 _subaddiedialog_entrypoint_11(arg0->unk0, var_a1, 4, arg0->position, 0x6F);
             }
-            func_800D1844(0x52);
+            inventory_incrementValue(0x52);
             func_80800000_chsecreteggs(arg0);
             func_800FC660(0xE);
             func_800FFA88(arg0->unk0);

@@ -769,7 +769,7 @@ void func_80094864(PlayerState* arg0)
 			sp24 = _gcegg_entrypoint_5(func_80094510(arg0));
 			if (func_80094348(arg0, 4) == 0)
 			{
-				func_800D1824(sp24);
+				inventory_showValue(sp24);
 			}
 		}
 		if (func_80094348(arg0, 1) == 0)
@@ -853,7 +853,7 @@ void func_80094AB4(PlayerState* arg0)
 			if (_gcegg_entrypoint_6(eggType) != 0)
 			{
 				//Show amount of eggs we have of the given type
-				func_800D1824(_gcegg_entrypoint_5(eggType));
+				inventory_showValue(_gcegg_entrypoint_5(eggType));
 			}
 		}
 	}
