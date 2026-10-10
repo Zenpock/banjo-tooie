@@ -117,7 +117,9 @@ typedef struct Actor {
 	/* 0x70 */ u32 pad70_16 : 6;
     /* 0x70 */ u32 unk70_10: 6; // unk72 >> 10 ActorState
     /* 0x70 */ u32 unk70_4 : 6; //(unk70 << 0x16) >> 0x1A
-    /* 0x70 */ u32 pad70_1 : 3;
+    /* 0x70 */ u32 unk70_3 : 1;
+    /* 0x70 */ u32 unk70_2 : 1;
+    /* 0x70 */ u32 unk70_1 : 1;
     /* 0x70 */ u32 unk70_0 : 1;
     /* 0x74 */ u32 unk74_31 : 1;
     /* 0x74 */ u32 unk74_30 : 1; // unk74 & 0x40000000
@@ -222,7 +224,7 @@ typedef struct ActorData {
 			s16 unk3C;
 			s16 unk3E;
 		};
-		s32 unk3Cw;
+		s32 unk3Cw; //Collision Mask?
 	};
     s32 (*eventHandler)(Actor* actor, ActorEventId arg1, s32 arg2);
     s16 unk44;

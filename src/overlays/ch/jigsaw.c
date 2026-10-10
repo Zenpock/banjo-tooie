@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/jigsaw.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jigsaw/func_80800000_chjigsaw.s")
 
@@ -8,9 +8,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jigsaw/func_8080017C_chjigsaw.s")
 
-void func_808001D0_chjigsaw(s32 arg0)
+void func_808001D0_chjigsaw(Actor* arg0)
 {
-    func_80105834();
+    func_80105834(arg0);
     func_8080011C_chjigsaw(arg0);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jigsaw/func_808001F8_chjigsaw.s")

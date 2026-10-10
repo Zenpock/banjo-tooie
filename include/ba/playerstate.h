@@ -14,7 +14,8 @@ typedef struct unkCUnk0 {
 	s32 unkC;
 	s32 unk10;
 	s32 unk14;
-	s32 unk18;
+	s16 unk18;
+    u16 unk1A;
 	s16 unk1C;
 	s16 unk1E;
 	s32 unk20;

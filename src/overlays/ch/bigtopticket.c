@@ -1,6 +1,39 @@
 #include "ch/bigtopticket.h"
 
-extern ActorData D_80800120_chbigtopticket;
+void func_8080000C_chbigtopticket(s32);
+void func_80800014_chbigtopticket(Actor*);
+void func_80800058_chbigtopticket(Actor*, void*);
+s32 func_8080008C_chbigtopticket(Actor*, s32, s32);
+
+ActorData D_80800120_chbigtopticket =
+{
+	/*0x0*/ 0x0329,
+	/*0x2*/ 0x03C6,
+	/*0x4*/ 0x07BF,
+	/*0x6*/ 0x0001,
+	/*0x8*/ 0x00000000,
+	/*0xC*/ func_80800014_chbigtopticket,
+	/*0x10*/ func_80105834,
+	/*0x14*/ func_80800058_chbigtopticket,
+	/*0x18*/ 0x0000,
+	/*0x1A*/ 0x0000,
+	/*0x1C*/ 1.0f,
+	/*0x20*/ 0x0000,
+	/*0x22*/ 0x0000,
+	/*0x24*/ 0x4004,
+	/*0x26*/ 0x0004,
+	/*0x28*/ 0x00000000,
+	/*0x2C*/ func_80108ED0,
+	/*0x30*/ 0x0000,
+	/*0x32*/ 0x0000,
+	/*0x34*/ func_8080000C_chbigtopticket,
+	/*0x38*/ func_80107C2C,
+	/*0x3C*/ 0x8000,
+	/*0x3E*/ 0x1814,
+	/*0x40*/ func_8080008C_chbigtopticket,
+	/*0x44*/ 0x0000,
+	/*0x46*/ 0x0000
+};
 ActorData* chbigtopticket_entrypoint_0()
 {
     return &D_80800120_chbigtopticket;
