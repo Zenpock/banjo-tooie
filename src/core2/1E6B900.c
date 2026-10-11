@@ -191,7 +191,7 @@ void func_800927C4(s32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 arg4)
 
     if (func_800F6BE4(arg4) != 0)
     {
-        temp_s0 = func_800F53D0(arg4);
+        temp_s0 = character_getPlayerState(arg4);
         ml_vec3f_assign_value(sp28, arg1, arg2, arg3);
         temp_s0->unk50->unk84 = func_80108474(arg0, sp28, 0)->unk0;
         func_800A70D0(temp_s0->unk50->unk84, temp_s0->unk184);

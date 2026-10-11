@@ -5,7 +5,7 @@ s32 bawandglow_entrypoint_0(void) {
 }
 
 void bawandglow_entrypoint_1(s32 arg0, s32 arg1) {
-    PlayerState *self = func_800F53E4(arg1);
+    PlayerState *self = character_getPlayerStateBounded(arg1);
     if (self != NULL) {
         self->wandglow->unkC = NULL;
     }
@@ -13,7 +13,7 @@ void bawandglow_entrypoint_1(s32 arg0, s32 arg1) {
 
 
 void bawandglow_entrypoint_2(s32 arg0) {
-    PlayerState *self = func_800F53D0(arg0);
+    PlayerState *self = character_getPlayerState(arg0);
     if (self->wandglow->unk10) {
         self->wandglow->unkC = _chwandglow_entrypoint_0(arg0, _bawandglow_entrypoint_1);
     }

@@ -433,11 +433,11 @@ void func_80800D74_chhumba(Actor* arg0)
     s32 sp38;
     f32 sp2C[3];
 
-    if (func_800DC0C0() < 0.1f)
+    if (rand_f() < 0.1f)
     {
-        temp_v0 = func_800DC128(1, 3);
+        temp_v0 = rand_iBounded(1, 3);
         sp38 = func_800B53A4(temp_v0);
-        func_800EEB9C(sp2C, func_800DC178(0.0f, 360.0f), func_800DC178(0.0f, 1000.0f) * arg0->scale);
+        func_800EEB9C(sp2C, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 1000.0f) * arg0->scale);
         sp2C[1] = -50.0f;
         func_800BABB8(sp38, sp2C, NULL, 1.0f, &D_808026A0_chhumba);
         func_800BA22C(sp38, temp_v0);

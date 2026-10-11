@@ -116,7 +116,7 @@ void func_8008FD20()
 //Get Transformation state of active character
 TransformationId func_8008FD48()
 {
-    return func_800F5410(character_getActiveIndex());
+    return character_getTransform(character_getActiveIndex());
 }
 
 //Return the bit mask for the Allow transformation value for the active character

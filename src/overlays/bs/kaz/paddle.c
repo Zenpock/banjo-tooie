@@ -180,7 +180,7 @@ void func_8080070C_bskazpaddle(PlayerState *self) {
     BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
-    if ((func_8001210C(7) == 0) && (func_800DC0C0() < 0.5f)) {
+    if ((func_8001210C(7) == 0) && (rand_f() < 0.5f)) {
         func_8009FC34(self, 1);
     }
     if (bastick_getZone(self) == BS_STICK_ZONE_ID_1) {

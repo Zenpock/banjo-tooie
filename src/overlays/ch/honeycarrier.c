@@ -98,7 +98,7 @@ s32 func_808000C4_chhoneycarrier(Actor* arg0, s32 arg1, s32 arg2)
 
 void func_80800210_chhoneycarrier(Actor* arg0)
 {
-    if (func_800DC298(0.5f) != 0)
+    if (rand_percentChance(0.5f) != 0)
     {
         arg0->unk58 = 200.0f;
         return;
@@ -118,10 +118,10 @@ void func_80800260_chhoneycarrier(Actor* arg0)
     {
         var_s1 = 0;
         do {
-            if (func_800DC298(0.03f) != 0)
+            if (rand_percentChance(0.03f) != 0)
             {
                 func_80103DFC(arg0, sp58);
-                func_800EF214(sp58, func_800DC178(0.0f, 360.0f), func_800DC178(0.0f, 360.0f), 60.0f);
+                func_800EF214(sp58, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 60.0f);
                 _fxtwinkle_entrypoint_0(sp58);
             }
             var_s1 += 1;

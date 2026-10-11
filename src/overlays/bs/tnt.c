@@ -698,7 +698,7 @@ void func_80801980_bstnt(PlayerState* self, u32 arg1) {
 	self->unk15C.word = (s32)arg1;
 	switch (arg1) {
 	case 1:
-		func_8009DB04(self, 0x3F0, func_800DC178(0.96f, 1.04f), 0x2710);
+		func_8009DB04(self, 0x3F0, rand_fBounded(0.96f, 1.04f), 0x2710);
 		func_800A2EEC(self, 4);
 		func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
 		if (bastick_distance(self) != 0.0f) {

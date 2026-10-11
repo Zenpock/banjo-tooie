@@ -72,9 +72,9 @@ void chdoubloon_entrypoint_1(Actor* arg0)
         func_800F18FC(arg0->position, sp5C, sp68);
         for (var_s1 = 0; var_s1 < 4; var_s1++)
         {
-            if (func_800DC0C0() < 0.015f)
+            if (rand_f() < 0.015f)
             {
-                func_800EEC30(sp74, sp68[0] + func_800DC178(-90.0f, 90.0f), sp68[1] + func_800DC178(-90.0f, 90.0f), 30.0f);
+                func_800EEC30(sp74, sp68[0] + rand_fBounded(-90.0f, 90.0f), sp68[1] + rand_fBounded(-90.0f, 90.0f), 30.0f);
                 ml_vec3f_add(sp74, arg0->position);
                 sp74[1] += 30.0f;
                 _fxtwinkle_entrypoint_1(sp74, ASSET_9E2_GOLD_SPARKLE);

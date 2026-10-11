@@ -96,13 +96,13 @@ void func_80800334_bsledge(PlayerState* self) {
     temp_a1 = self->unk168.bytes[0];
     self->unk168.bytes[0]--;
     if (temp_a1 == 0) {
-        self->unk168.bytes[0] = func_800DC128(1, 3);
+        self->unk168.bytes[0] = rand_iBounded(1, 3);
         temp_a1 =  D_80801340_bsledge[ (self->unk168.bytes[1])];
         self->unk168.bytes[1]++;
         if (self->unk168.bytes[1] >= 3U) {
             self->unk168.bytes[1] = 0U;
         }
-        func_8009DF18(self, temp_a1, func_800DC178(0.8f, 1.0f), 10000);
+        func_8009DF18(self, temp_a1, rand_fBounded(0.8f, 1.0f), 10000);
     }
 }
 

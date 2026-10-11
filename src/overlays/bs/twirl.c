@@ -24,7 +24,7 @@ void bstwirl_init(PlayerState *self){
     baphysics_set_target_horizontal_velocity(self, 600.0f);
     func_800A0CF4(self, 1);
     baflag_set(self, 0x29);
-    if (func_800DC0C0() < 0.5f) {
+    if (rand_f() < 0.5f) {
         func_8009DE38(self, 0x57C, 1.0f);
     } else {
         func_8009DE38(self, 0x57E, 1.0f);

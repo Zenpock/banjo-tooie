@@ -151,9 +151,9 @@ s32 func_800F4BE4(s32);
 void func_800F4CC0(s32);
 void func_800F4CEC(s32, u32);
 void func_800F4F34(s32, f32*, f32, f32);
-PlayerState* func_800F53D0(s32 arg0);
-PlayerState* func_800F53E4(s32 arg0);
-TransformationId func_800F5410(s32);
+PlayerState* character_getPlayerState(s32 arg0);
+PlayerState* character_getPlayerStateBounded(s32 arg0);
+TransformationId character_getTransform(s32);
 //Get the character control index
 u32 character_getActiveIndex(void);
 s32 func_800F5578(s32);

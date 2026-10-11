@@ -105,7 +105,7 @@ void func_8080032C_bsvan(PlayerState* self) {
     func_80092C90(self, sp2C, 4);
     sp28 = func_800B5BE4(8);
     func_800BABB8(sp28, sp2C, NULL, 1.0f, &D_80801C40_bsvan);
-    func_800BA77C(sp28, 0, 0, (s16)(s32)func_800DC178(0.0f, 359.0f));
+    func_800BA77C(sp28, 0, 0, (s16)(s32)rand_fBounded(0.0f, 359.0f));
     func_800BA22C(sp28, 1);
 }
 
@@ -621,7 +621,7 @@ void func_8080145C_bsvan(PlayerState* self) {
         sp64[0] = -sp64[0] - 10/*.0f*/;
 
         func_800BA994((unkStruct800BA198*)sp3C, sp64[0], (sp64[1] - 10.0f), 0x96, sp64[0], (sp64[1] + 10.0f), 0xC8);
-        func_800BA77C(sp3C, 0, 0, func_800DC178(0.0f, 359.0f));
+        func_800BA77C(sp3C, 0, 0, rand_fBounded(0.0f, 359.0f));
         func_800BABB8(sp3C, sp40, NULL, 1.0f, &D_80801D0C_bsvan);
     }
     func_808000BC_bsvan(self);
@@ -698,7 +698,7 @@ void bsvan_entrypoint_15(s32 self)
     f32 sp28[3];
     f32 sp1C[3];
 
-    sp34 = func_800F53D0(self);
+    sp34 = character_getPlayerState(self);
     player_getCoords(sp34, sp28);
     ml_vec3f_copy(sp1C, sp34->bsvan->unk4);
     sp28[1] += 20.0f;

@@ -350,18 +350,18 @@ void func_800F53A4(s32 arg0)
     func_8008E938(D_80135490.unk0[arg0]);
 }
 
-PlayerState* func_800F53D0(s32 arg0) {
+PlayerState* character_getPlayerState(s32 arg0) {
     return D_80135490.unk0[arg0];
 }
 
-PlayerState* func_800F53E4(s32 arg0) {
+PlayerState* character_getPlayerStateBounded(s32 arg0) {
     if ((arg0 >= 0) && (arg0 < 8)) {
         return D_80135490.unk0[arg0];
     }
     return NULL;
 }
 
-TransformationId func_800F5410(s32 arg0)
+TransformationId character_getTransform(s32 arg0)
 {
     return player_getTransformation(D_80135490.unk0[arg0]);
 }
@@ -392,7 +392,7 @@ u32 character_getActiveIndex(void)
 	return D_801354DC;
 }
 
-s32 func_800F54F0(s32 arg0)
+s32 character_getControllerIndex(s32 arg0)
 {
     return bakey_getControllerIndex(D_80135490.unk0[arg0]);
 }
@@ -709,9 +709,9 @@ f32 func_800F5F50(s32 arg0)
     return yaw_getIdeal(D_80135490.unk0[arg0]);
 }
 
-void func_800F5F7C(s32 arg0)
+f32 func_800F5F7C(s32 arg0)
 {
-    player_getCoordVertical(D_80135490.unk0[arg0]);
+    return player_getCoordVertical(D_80135490.unk0[arg0]);
 }
 
 s32 func_800F5FA8(s32 arg0) {
@@ -720,12 +720,12 @@ s32 func_800F5FA8(s32 arg0) {
 }
 
 s32 func_800F5FE0(s32 arg0) {
-    bakey_setState(D_80135490.unk0[arg0], 9, 0);
+    bakey_setState(D_80135490.unk0[arg0], BUTTON_B, 0);
     return 1;
 }
 
 void func_800F6018(s32 arg0) {
-    bakey_setState(D_80135490.unk0[arg0], 8, 2);
+    bakey_setState(D_80135490.unk0[arg0], BUTTON_A, 2);
 }
 
 void func_800F604C(PlayerState* arg0, s32 arg1) {
@@ -1781,7 +1781,7 @@ void func_800F84FC(void) {
     func_800F9198();
 
     result = character_getActiveIndex();
-    newTransform = func_800F5410(result);
+    newTransform = character_getTransform(result);
     if (D_80135490.unk50 != -1
         && (result != D_80135490.unk50 || newTransform != D_80135490.unk52)
         && func_800D5240() == 0) {
@@ -1824,7 +1824,7 @@ s32 func_800F8730(s32 arg0, s32 arg1) {
     sp1C = D_80135490.unk0[arg0];
     func_800A3538(sp1C,arg1);
     sp18 = func_8009E7C8(sp1C, 0xA) == 2;
-    if ((sp18 != 0) && (func_800F5410(arg0) != arg1)) {
+    if ((sp18 != 0) && (character_getTransform(arg0) != arg1)) {
         _surestart_entrypoint_0(arg1);
     }
     return sp18;
@@ -1883,7 +1883,7 @@ s32 func_800F8914(unkStruct800F88A0* arg0, s32 arg1)
     func_800F5B38(arg1, arg0->unk30);
     _plcamera_entrypoint_14(arg1, arg0->unk4, arg0->unk10);
     arg0->unk2 = func_800F9214(arg1);
-    arg0->unk0 = func_800F5410(arg1);
+    arg0->unk0 = character_getTransform(arg1);
     arg0->unk1 = func_800F65D0(arg1);
     arg0->unk22 = func_800EA05C();
     arg0->unk21 = func_800EA090();
@@ -2029,13 +2029,13 @@ void func_800F8E78(s32 arg0) {
 
 void func_800F8EBC(s32 a0)
 {
-    func_800F8E78(func_800F5410(a0));
+    func_800F8E78(character_getTransform(a0));
 }
 
 void func_800F8EE4(s32 arg0) {
     void* temp_v0;
 
-    temp_v0 = func_800F88A0(func_800F5410(arg0));
+    temp_v0 = func_800F88A0(character_getTransform(arg0));
     if (temp_v0 != NULL) {
         func_800F8914(temp_v0, arg0);
         return;
@@ -2160,7 +2160,7 @@ void func_800F92CC(u32* arg0, enum transform_e* arg1, s32* arg2, s32* arg3) {
 
     temp_v0 = character_getActiveIndex();
     *arg0 = temp_v0;
-    temp_v0_2 = func_800F5410((s32) temp_v0);
+    temp_v0_2 = character_getTransform((s32) temp_v0);
     *arg1 = temp_v0_2;
     switch (temp_v0_2) {
     case TRANSFORM_A_BANJO:
@@ -2179,7 +2179,7 @@ void func_800F9354(u32* arg0, enum transform_e* arg1, s32* arg2) {
 
     temp_v0 = character_getActiveIndex();
     *arg0 = temp_v0;
-    temp_v0_2 = func_800F5410((s32) temp_v0);
+    temp_v0_2 = character_getTransform((s32) temp_v0);
     *arg1 = temp_v0_2;
     switch (temp_v0_2) {
     case TRANSFORM_A_BANJO:
@@ -2194,7 +2194,7 @@ void func_800F9354(u32* arg0, enum transform_e* arg1, s32* arg2) {
 void func_800F93C4(s32* arg0, s32* arg1) {
     s32 temp = character_getActiveIndex();
     *arg0 = temp;
-    *arg1 = func_800F5410(temp);
+    *arg1 = character_getTransform(temp);
 }
 
 void func_800F9400(s32 arg0) {

@@ -438,7 +438,7 @@ void func_80800CA4_bstrexsmall(PlayerState* self, s32 arg1)
         baphysics_set_horizontal_velocity(self, sp28, baphysics_get_target_horizontal_velocity(self));
         baphysics_set_vertical_velocity(self, 1100.0f);
         baphysics_set_gravity(self, -1800.0f);
-        if (func_800DC0C0() > 0.5f) {
+        if (rand_f() > 0.5f) {
             func_8009DBB0(self, 0x4D8, 1.3f, 1.35f, 0x55F0);
             return;
         }

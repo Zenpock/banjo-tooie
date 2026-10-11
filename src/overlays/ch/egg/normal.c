@@ -66,7 +66,7 @@ void func_80800000_cheggnormal(Actor* arg0)
         if (temp_s3->unk39_4)
         {
             func_800EFA20(sp68, &arg0->actorData[4], 0.125f);
-            if (func_800DC0C0() < 0.5f)
+            if (rand_f() < 0.5f)
             {
                 _fxegg_entrypoint_7(sp74, sp68, arg0->scale);
             }
@@ -75,7 +75,7 @@ void func_80800000_cheggnormal(Actor* arg0)
                 _fxegg_entrypoint_8(sp74, sp68, arg0->scale);
             }
         }
-        else if (func_800DC0C0() < 0.5f)
+        else if (rand_f() < 0.5f)
         {
             _fxegg_entrypoint_2(sp74, arg0->scale);
         }

@@ -296,9 +296,9 @@ void func_808002F4_chglowbo(Actor* arg0)
     if ((!arg0->unk64_19) || (_subaddiesect_entrypoint_0(arg0, sp74->unk17, 0xB) != 0))
     {
         gamespeed = time_getDelta();
-        if (arg0->unk7C_12 && (func_800DC298(0.05f) != 0))
+        if (arg0->unk7C_12 && (rand_percentChance(0.05f) != 0))
         {
-            ml_vec3f_assign_value(sp60, arg0->position[0] + func_800DC178(-30.0f, 30.0f), arg0->position[1] + func_800DC178(25.0f, 55.0f), arg0->position[2] + func_800DC178(-30.0f, 30.0f));
+            ml_vec3f_assign_value(sp60, arg0->position[0] + rand_fBounded(-30.0f, 30.0f), arg0->position[1] + rand_fBounded(25.0f, 55.0f), arg0->position[2] + rand_fBounded(-30.0f, 30.0f));
             _fxtwinkle_entrypoint_1(sp60, ASSET_9E4_RED_SPARKLE);
         }
         func_8010D254(GLOWBO_DATA(arg0)->unk0);
@@ -339,7 +339,7 @@ void func_808002F4_chglowbo(Actor* arg0)
                     func_800C8CB8(sp74->unk4, sp54);
                     func_80800000_chglowbo(arg0);
                 }
-                if (((sp74->unkC <= 0.0f) && (func_800DC298(0.1f) != 0)) && (func_8010CAC0(arg0->position, 0x5DCU) != 0))
+                if (((sp74->unkC <= 0.0f) && (rand_percentChance(0.1f) != 0)) && (func_8010CAC0(arg0->position, 0x5DCU) != 0))
                 {
                     sp74->unkC = 4.0f;
                     _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801420_chglowbo);
@@ -567,7 +567,7 @@ void func_80800E28_chglowbo(Actor* arg0)
     {
         arg0->scale = 0.25f;
     }
-    arg0->rotation[1] = (func_80090010() + func_800DC178(-110.0f, 110.0f));
+    arg0->rotation[1] = (func_80090010() + rand_fBounded(-110.0f, 110.0f));
     func_8010D254(sp3C);
     func_800EEB9C(GLOWBO_DATA(arg0)->unk0, arg0->rotation[1], 400.0f);
     ml_vec3f_add(GLOWBO_DATA(arg0)->unk0, arg0->position);
@@ -637,14 +637,14 @@ ActorData* chglowbo_entrypoint_3(void)
 
 Actor* chglowbo_entrypoint_4(void)
 {
-    return func_80108474(0x2A0, &D_80801618_chglowbo, func_800DC178(0.0f, 359.0f));
+    return func_80108474(0x2A0, &D_80801618_chglowbo, rand_fBounded(0.0f, 359.0f));
 }
 
 Actor* chglowbo_entrypoint_5(void)
 {
     f32 sp1C[3];
     func_8008FE94(1, sp1C);
-    return func_80108474(0x2A0U, sp1C, (s32)func_800DC178(0.0f, 359.0f));
+    return func_80108474(0x2A0U, sp1C, (s32)rand_fBounded(0.0f, 359.0f));
 }
 
 void chglowbo_entrypoint_6(void) 

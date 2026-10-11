@@ -375,7 +375,7 @@ void badata_entrypoint_19(PlayerState *self, s32 index, s32 *arg2, f32 *arg3, s3
 }
 
 s32 badata_entrypoint_20(PlayerState *self) {
-    if (0.5f < func_800DC0C0()) {
+    if (0.5f < rand_f()) {
         return D_80801568_badata[func_80800000_badata(self)].unk2;
     } else {
         return D_80801568_badata[func_80800000_badata(self)].unk4;

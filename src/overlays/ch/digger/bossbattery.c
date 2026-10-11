@@ -12,7 +12,7 @@ void func_8080000C_chdiggerbossbattery(Actor* arg0)
     ml_vec3f_copy(&arg0->actorData[0], arg0->position);
     ml_vec3f_clear(arg0->position);
     func_80102FDC(arg0, 0.25f);
-    arg0->unk58 = func_800DC178(1.5f, 3.0f);
+    arg0->unk58 = rand_fBounded(1.5f, 3.0f);
     if (flag_getValue(arg0->unk74_7 + 0xA1D) != 0)
     {
         actor_mark_delete(arg0);
@@ -27,7 +27,7 @@ void func_80800090_chdiggerbossbattery(Actor* arg0)
     _subaddieaudioloop_entrypoint_4(arg0, &arg0->actorData[0], 1U, &D_80800338_chdiggerbossbattery);
     if (func_800D9078(&arg0->unk58) != 0) {
         ml_vec3f_copy(sp2C, &arg0->actorData[0]);
-        if (func_800DC298(0.5f) != 0)
+        if (rand_percentChance(0.5f) != 0)
         {
             var_f0 = 1.0f;
         }
@@ -38,7 +38,7 @@ void func_80800090_chdiggerbossbattery(Actor* arg0)
         func_800EF1B8(sp2C, var_f0 * 90.0f, 80.0f);
         sp2C[1] += 300.0f;
         _chelectricfence_entrypoint_1(arg0, sp2C);
-        arg0->unk58 = func_800DC178(1.5f, 3.0f);
+        arg0->unk58 = rand_fBounded(1.5f, 3.0f);
     }
 }
 

@@ -807,7 +807,7 @@ void func_80801E2C_chclockworkmouse(Actor* actor) {
     switch (func_801022E4(actor)) {
     case 0x7D:
         _subaddieaudioquick_entrypoint_3(actor, actor->position, (u32 *)&D_80803964_chclockworkmouse, 0.1f);
-        if ((sp2C->unk0.f <= 0.0f) && (func_800DC298(0.03f) != 0) && (func_800C0638() == 0)) {
+        if ((sp2C->unk0.f <= 0.0f) && (rand_percentChance(0.03f) != 0) && (func_800C0638() == 0)) {
             _subaddieaudioquick_entrypoint_2(actor, actor->position, &D_80803950_chclockworkmouse);
             sp2C->unk0.f = 1.5f;
             return;

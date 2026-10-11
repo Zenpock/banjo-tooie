@@ -66,7 +66,7 @@ void func_8008E6F0(PlayerState* self)
 		if (func_8008DAA8(self) == 0)
 		{
 			charIndex = character_getActiveIndex();
-			switch (func_800F5410(charIndex))
+			switch (character_getTransform(charIndex))
 			{
 			case TRANSFORM_9_FIRSTPERSON:
 			{

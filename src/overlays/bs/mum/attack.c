@@ -152,7 +152,7 @@ void func_808003DC_bsmumattack(PlayerState *self) {
                 baflag_clear(self, BA_FLAG_2C);
             }
             if (_batimer_isZero(self, 0) != 0) {
-                if (func_800DC0C0() < 0.5f) {
+                if (rand_f() < 0.5f) {
                     func_8009DE38(self, 0x512, 1.0f);
                 } else {
                     func_8009DE38(self, 0x513, 1.0f);

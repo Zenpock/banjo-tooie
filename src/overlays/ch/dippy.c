@@ -386,7 +386,7 @@ void func_808009D8_chdippy(Actor* arg0)
     }
     if (sp88 > 0.3f && arg0->unk7C_12 && sp7C[1] > 1500.0f)
     {
-        sp78 = func_800DC128(0, 3);
+        sp78 = rand_iBounded(0, 3);
         for (i = 0; i < 4; i++) {
             _subaddieskeleton_entrypoint_2(arg0->unk0, i + 5, sp48[i].f);
         }
@@ -470,12 +470,12 @@ void func_80800D9C_chdippy(Actor* arg0)
             {
                 if (func_800D90A4(&DIPPY_DATA(arg0)->unkC) != 0)
                 {
-                    DIPPY_DATA(arg0)->unkC = func_800DC178(0.2f, 0.5f);
+                    DIPPY_DATA(arg0)->unkC = rand_fBounded(0.2f, 0.5f);
                     func_8010D930(9, -1, arg0->position, &D_80801734_chdippy);
                 }
                 if (DIPPY_DATA(arg0)->unk8 < 15.0f)
                 {
-                    if (func_800DC0C0() < func_800F10B4((f32)DIPPY_DATA(arg0)->unk8, 15.0f, 0.0f, 1.0f, 0.0f))
+                    if (rand_f() < func_800F10B4((f32)DIPPY_DATA(arg0)->unk8, 15.0f, 0.0f, 1.0f, 0.0f))
                     {
                         sp54 = 1;
                     }
@@ -571,7 +571,7 @@ void func_80801200_chdippy(Actor* arg0)
         func_80101FDC(arg0, 2U);
         arg0->unk64_16 = 1;
         (f32)arg0->actorData[2] = 30.0f;
-        (f32)arg0->actorData[3] = func_800DC178(0.2f, 0.5f);
+        (f32)arg0->actorData[3] = rand_fBounded(0.2f, 0.5f);
     }
     else if (flag_getValue(FLAG_327_UNK) == 0)
     {

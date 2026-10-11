@@ -56,7 +56,7 @@ void func_808000A0_chdinofamilymother(Actor* arg0)
         break;
     case 1:
         if (flag_getValue(FLAG_08A_UNK) != 0) {
-            if (func_800F5410(character_getActiveIndex()) == TRANSFORM_B_KAZOOIE)
+            if (character_getTransform(character_getActiveIndex()) == TRANSFORM_B_KAZOOIE)
             {
                 D_808013B8_chdinofamilymother = 0x1814;
             }
@@ -67,7 +67,7 @@ void func_808000A0_chdinofamilymother(Actor* arg0)
         }
         else
         {
-            switch (func_800F5410(character_getActiveIndex()))
+            switch (character_getTransform(character_getActiveIndex()))
             {
             case TRANSFORM_A_BANJO:
                 D_8080139C_chdinofamilymother = 0x1812;
@@ -108,7 +108,7 @@ void func_808005EC_chdinofamilymother(Actor* arg0, s32 arg1)
         if ((_subaddiefind_entrypoint_2(0x52D, 0) != NULL) || (_subaddiefind_entrypoint_2(0x291, 0) != NULL))
         {
             func_80801118_chdinofamilymother(arg0, arg0->unk0, 0, 0x10);
-            if (func_800F5410(character_getActiveIndex()) == TRANSFORM_A_BANJO)
+            if (character_getTransform(character_getActiveIndex()) == TRANSFORM_A_BANJO)
             {
                 _subaddiedialog_entrypoint_11(arg0->unk0, 0x1815U, 0xCU, (f32*)arg0->actorData, 0x65U);
             }
@@ -132,7 +132,7 @@ void func_808005EC_chdinofamilymother(Actor* arg0, s32 arg1)
         arg1 = 4;
         if (flag_getValue(FLAG_08A_UNK) == 0)
         {
-            switch (func_800F5410(character_getActiveIndex()))
+            switch (character_getTransform(character_getActiveIndex()))
             {
             case TRANSFORM_1_BK:
                 sp2C = 0x17BE;
@@ -215,7 +215,7 @@ void func_8080096C_chdinofamilymother(Actor* arg0)
             func_800BABB8(spCC, spDC, NULL, 1.0f, &D_80801404_chdinofamilymother);
             func_800BA1D0(spCC, spDC, spD0, 2);
             spD0[1] -= 50.0f;
-            func_800BA670(spC8, func_800DC0C0() < 0.5f ? 0x8A2 : 0x8A3);
+            func_800BA670(spC8, rand_f() < 0.5f ? 0x8A2 : 0x8A3);
             func_800BAA60(spC8, spD0, 0x64, 0xC8);
             spD0[1] += 50.0f;
             func_800BABB8(spC8, spD0, NULL, 1.0f, &D_80801440_chdinofamilymother);
@@ -229,7 +229,7 @@ void func_8080096C_chdinofamilymother(Actor* arg0)
             ml_vec3f_copy(spB0, spBC);
             spB0[1] -= 300.0f;
             func_800BEF00(spBC, spB0, spA4, 0);
-            func_800BA670(spA0, func_800DC0C0() < 0.5f ? 0x8A2 : 0x8A3);
+            func_800BA670(spA0, rand_f() < 0.5f ? 0x8A2 : 0x8A3);
             func_800BA930(spA0, -0x15E, 0x96, -0xC8, -0x12C, 0xC8, -0x96);
             func_800BA450(spA0, 0x64, -0x64, 0x32, 0xAF, -0xC8, 0x64);
             func_800BABB8(spA0, spB0, NULL, 1.0f, &D_80801440_chdinofamilymother);
@@ -249,12 +249,12 @@ void func_8080096C_chdinofamilymother(Actor* arg0)
         if (func_80101E14(arg0, 0.42f) != 0)
         {
             _subaddieskeleton_entrypoint_0(arg0, 0x2B, sp70);
-            func_800C4140((((u16)(func_800DC178(0.45f, 0.55f) * 1023.0f)) << 0x15) + 0xBBCCA, sp70, 0x0BB80190);
+            func_800C4140((((u16)(rand_fBounded(0.45f, 0.55f) * 1023.0f)) << 0x15) + 0xBBCCA, sp70, 0x0BB80190);
         }
         if (func_80101E14(arg0, 0.772f) != 0)
         {
             _subaddieskeleton_entrypoint_0(arg0, 0x2B, sp64);
-            func_800C4140((((u16)(func_800DC178(0.75f, 0.85f) * 1023.0f)) << 0x15) + 0xBBCCA, sp64, 0x0BB80190);
+            func_800C4140((((u16)(rand_fBounded(0.75f, 0.85f) * 1023.0f)) << 0x15) + 0xBBCCA, sp64, 0x0BB80190);
         }
     }
     else

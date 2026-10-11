@@ -123,7 +123,7 @@ void func_8080015C_chheggy(Actor* arg0)
     {
         if (sp64 != 0)
         {
-            func_800C4140(((func_800DC0C0() < 0.5f) ? 0x674 : 0x675) + 0x7FEBB800, arg0->position, 0x0FA00064);
+            func_800C4140(((rand_f() < 0.5f) ? 0x674 : 0x675) + 0x7FEBB800, arg0->position, 0x0FA00064);
         }
         if (sp60 != 0)
         {

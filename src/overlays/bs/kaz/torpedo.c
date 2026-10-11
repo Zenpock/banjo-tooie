@@ -111,7 +111,7 @@ void func_808002E0_bskaztorpedo(PlayerState *self) {
     sp38[0] = yaw_getIdeal(self);
     _bakaztorpedo_entrypoint_5(self, sp34 * 0.75f, func_80013728(sp38[0] - yaw_get(self)) * 0.75f);
     if (sp44 != 0) {
-        func_80091290(self, func_800F10B4(self->unk16C, 0.0f, 225.0f, func_800DC178(5.0f, 10.0f), 60.0f), 0, 0xD);
+        func_80091290(self, func_800F10B4(self->unk16C, 0.0f, 225.0f, rand_fBounded(5.0f, 10.0f), 60.0f), 0, 0xD);
     }
 }
 
@@ -377,7 +377,7 @@ void func_80800FB4_bskaztorpedo(PlayerState *self) {
         func_800BABB8(func_8009FBB0(self, sp3C, 80.0f), sp3C, sp48, 1.0f, D_80801770_bskaztorpedo);
         func_800F82C0(self->unk184);
         func_800F911C(1);
-        sp34 = func_800F53D0(_plsu_entrypoint_1(0xA));
+        sp34 = character_getPlayerState(_plsu_entrypoint_1(0xA));
         _baduo_entrypoint_7(sp34, 1);
         func_800A3410(sp34, 1);
         func_800A3904(sp34, 1);

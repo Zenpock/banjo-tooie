@@ -545,7 +545,7 @@ void func_808001F0_chnests(Actor* arg0, UnkArg2ChNest* arg1)
     case 2:
     case 3:
         temp_v0 = D_808011DC_chnests[temp_v1 - 1];
-        arg0->unk58 = func_800DC178((f32)temp_v0[0], (f32)temp_v0[1]);
+        arg0->unk58 = rand_fBounded((f32)temp_v0[0], (f32)temp_v0[1]);
         arg0->unk64_16 = 0;
         func_8010A570(arg0);
         func_80103110(arg0, 1U);
@@ -713,7 +713,7 @@ void func_808006C4_chnests(Actor* arg0)
     }
     func_80800000_chnests(arg0);
     ((f32*)arg0->actorData)[4] = arg0->rotation[1];
-    if (func_800DC298(0.5f) != 0)
+    if (rand_percentChance(0.5f) != 0)
     {
         var_f2 = -1.0f;
     }
@@ -722,8 +722,8 @@ void func_808006C4_chnests(Actor* arg0)
         var_f2 = 1.0f;
     }
     sp20 = var_f2;
-    ((f32*)arg0->actorData)[5] = (func_800DC178(540.0f, 630.0f) * var_f2);
-    arg0->rotation[1] = func_800DC178(0.0f, 360.0f);
+    ((f32*)arg0->actorData)[5] = (rand_fBounded(540.0f, 630.0f) * var_f2);
+    arg0->rotation[1] = rand_fBounded(0.0f, 360.0f);
 }
 
 //Update Note Nests
@@ -837,7 +837,7 @@ s32 func_80800A74_chnests(s32 nestIndex)
 
 void func_80800B4C_chnests(Actor* arg0)
 {
-    arg0->unk58 = func_800DC178(((f32*)&arg0->actorData)[4], ((f32*)&arg0->actorData)[5]);
+    arg0->unk58 = rand_fBounded(((f32*)&arg0->actorData)[4], ((f32*)&arg0->actorData)[5]);
     arg0->actorData[6] = 0;
 }
 

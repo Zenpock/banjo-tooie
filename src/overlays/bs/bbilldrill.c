@@ -56,7 +56,7 @@ void func_8080019C_bsbbilldrill(PlayerState* self) {
     f32 sp20;
     s32 sp1C;
 
-    if (func_800DC0C0() <= 0.2f) {
+    if (rand_f() <= 0.2f) {
         sp20 = 0.15f;
     } else {
         sp20 = 0.09f;

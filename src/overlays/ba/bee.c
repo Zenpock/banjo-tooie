@@ -37,7 +37,7 @@ void babee_entrypoint_1(s32 arg0) {
     BaBee *bee;
     f32 sp30;
     
-    self = func_800F53D0(arg0);
+    self = character_getPlayerState(arg0);
     bee = self->bee;
     sp3C = func_80092CDC(self, sp50, 4);
     sp40 = func_80092EB0(self);

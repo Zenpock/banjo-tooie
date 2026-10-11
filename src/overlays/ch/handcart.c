@@ -653,7 +653,7 @@ void func_80801290_chhandcart(Actor* arg0)
             }
             else
             {
-                temp_v0 = func_800DC128(8, 0xF);
+                temp_v0 = rand_iBounded(8, 0xF);
                 if (temp_v0 < spBC->unk87C[i])
                 {
                     spBC->unk87C[i] -= temp_v0;
@@ -684,7 +684,7 @@ void func_808014D8_chhandcart(Actor* arg0, u32 arg1)
             var_s0[0x87C] = 0xFFU;
             var_s0[0x87C + 0x3C] = (s8)arg1;
             ml_vec3f_clear(temp_v0->unkC[var_s2]);
-            ml_vec3f_assign_value(temp_v0->unkC[var_s2] + 0x168, func_800DC178(-15.0f, 15.0f), func_800DC178(80.0f, 120.0), func_800DC178(-50.0f, -85.0f));
+            ml_vec3f_assign_value(temp_v0->unkC[var_s2] + 0x168, rand_fBounded(-15.0f, 15.0f), rand_fBounded(80.0f, 120.0), rand_fBounded(-50.0f, -85.0f));
             var_s1 += 1;
             if (var_s1 >= 0x4)
             {
@@ -804,7 +804,7 @@ void func_80801850_chhandcart(Actor* arg0)
     {
         _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_808046F4_chhandcart);
         temp_v0->unk934[0] = 0.1f;
-        if (func_800DC0C0() < 0.5f)
+        if (rand_f() < 0.5f)
         {
             temp_v0->unk934[2] = -3.0f;
         }
@@ -813,12 +813,12 @@ void func_80801850_chhandcart(Actor* arg0)
     {
         _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_808046F4_chhandcart);
         temp_v0->unk934[1] = 0.1f;
-        if (func_800DC0C0() < 0.5f)
+        if (rand_f() < 0.5f)
         {
             temp_v0->unk934[2] = 3.0f;
         }
     }
-    if ((func_800DC0C0() < 0.1f) && (HANDCART_DATA(arg0)->unkC > 5.0f))
+    if ((rand_f() < 0.1f) && (HANDCART_DATA(arg0)->unkC > 5.0f))
     {
         if (temp_v0->unk934[2] < 0.0f)
         {
@@ -1196,7 +1196,7 @@ void func_80802690_chhandcart(Actor* arg0)
     {
     case 0x7D:
         _subaddieaudioquick_entrypoint_3(arg0, arg0->position, &D_808046C0_chhandcart, 0.1f);
-        if (((f32)temp_v0->unk0 <= 0.0f) && (func_800DC298(0.03f) != 0) && (func_800C0638() == 0))
+        if (((f32)temp_v0->unk0 <= 0.0f) && (rand_percentChance(0.03f) != 0) && (func_800C0638() == 0))
         {
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_808046D4_chhandcart);
             temp_v0->unk0 = 1.5f;

@@ -454,11 +454,11 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 				arg0->unk7A_12 = 1;
 			}
 		}
-		else if (func_800DC298(0.3f) != 0 && arg0->unk7A_9 < 3)
+		else if (rand_percentChance(0.3f) != 0 && arg0->unk7A_9 < 3)
 		{
 			arg0->unk7A_12 = 1;
 		}
-		else if (func_800DC298(0.05f) != 0 && arg0->unk7A_9 > 0)
+		else if (rand_percentChance(0.05f) != 0 && arg0->unk7A_9 > 0)
 		{
 			arg0->unk7A_12 = 2;
 		}

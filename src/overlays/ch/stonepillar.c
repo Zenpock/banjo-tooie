@@ -595,8 +595,8 @@ s32 func_80801238_chstonepillar(Actor* arg0)
     {
         sp28->unk24 = (f32)(sp28->unk24 - time_getDelta());
         ml_vec3f_copy(&sp2C, (f32*)arg0->actorData);
-        sp2C[0] += func_800DC178(-7.5f, 7.5f);
-        sp2C[2] += func_800DC178(-7.5f, 7.5f);
+        sp2C[0] += rand_fBounded(-7.5f, 7.5f);
+        sp2C[2] += rand_fBounded(-7.5f, 7.5f);
         ml_vec3f_copy(arg0->position, &sp2C);
         return 1;
     }

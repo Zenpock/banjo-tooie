@@ -4,7 +4,7 @@ void badialog_entrypoint_0(UNKBADIALOGARG0* arg0, s32 arg1, s32 arg2)
 {
     PlayerState* sp1C;
 
-    sp1C = func_800F53D0(arg0->unk1A_5);
+    sp1C = character_getPlayerState(arg0->unk1A_5);
     func_8009AD20(sp1C, arg1);
     func_8009AD2C(sp1C, arg2);
     func_8009E7C8(sp1C, 0x81);

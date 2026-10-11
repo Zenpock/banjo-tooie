@@ -149,8 +149,8 @@ void badust_entrypoint_7(PlayerState* arg0)
     }
     if (arg0->dust->unk8 != 0)
     {
-        sp40 = func_800136E4(yaw_get(arg0) + func_800DC178(70.0f, 90.0f));
-        func_800EFCD8(sp44, sp40, (func_800DC0C0() * 15.0f) + 20.0f);
+        sp40 = func_800136E4(yaw_get(arg0) + rand_fBounded(70.0f, 90.0f));
+        func_800EFCD8(sp44, sp40, (rand_f() * 15.0f) + 20.0f);
         sp44[1] = 0.0f;
     }
     switch (arg0->dust->unk8)
@@ -166,8 +166,8 @@ void badust_entrypoint_7(PlayerState* arg0)
         break;
     }
     func_800EFCD8(sp5C, yaw_get(arg0), 40.0f);
-    sp5C[1] = func_800DC178(50.0f, 90.0f);
-    badust_entrypoint_2(arg0, sp50, sp5C, func_800DC178(0.4f, 0.5f), func_800DC178(0.7f, 0.9f), func_800DC178(0.8f, 1.3f));
+    sp5C[1] = rand_fBounded(50.0f, 90.0f);
+    badust_entrypoint_2(arg0, sp50, sp5C, rand_fBounded(0.4f, 0.5f), rand_fBounded(0.7f, 0.9f), rand_fBounded(0.8f, 1.3f));
 }
 
 void badust_entrypoint_8(PlayerState* arg0)

@@ -506,7 +506,7 @@ void func_800C2000(u8 arg0) {
             if ((temp_v0->unk5A < temp_v0->unk4C) || (temp_v0->unk4E < temp_v0->unk5A)) {
                 temp_v0->unk5A = (s32)(temp_v0->unk4C + temp_v0->unk4E) / 2;
             }
-            new_var = func_800DC264(-1.0f, 1.0f);
+            new_var = rand2_fBounded(-1.0f, 1.0f);
             temp_v0->unk5A = (s32)((f32)temp_v0->unk5A + (new_var * temp_v0->unk50));
             temp_v0_2 = temp_v0->unk5A;
             temp_v1_3 = temp_v0->unk4E;
@@ -552,7 +552,7 @@ void func_800C2000(u8 arg0) {
             func_800C13A0(temp_v0, 4);
             break;
         case 2:
-            temp_v0->unk6C += func_800DC264(-temp_v0->unk30, temp_v0->unk30) * sp3C;
+            temp_v0->unk6C += rand2_fBounded(-temp_v0->unk30, temp_v0->unk30) * sp3C;
             temp_v0->unk6C = func_800F0D50(temp_v0->unk6C, temp_v0->unk2C, temp_v0->unk28);
             func_800C13A0(temp_v0, 4);
             break;
@@ -977,7 +977,7 @@ void func_800C3224(u8 id, f32 arg1, f32 arg2, f32 arg3) {
     } else if (arg2 < var_f20) {
         var_f20 = var_f20 - arg3;
     } else {
-        new_var = func_800DC264(-arg3, arg3);
+        new_var = rand2_fBounded(-arg3, arg3);
         var_f20 = func_800F0D50(var_f20 + new_var, arg1, arg2);
     }
     func_800C31DC(id, var_f20);
@@ -1564,7 +1564,7 @@ u8 func_800C4350(u8 arg0, f32* arg1, s16* arg2) {
         case 13:
             var_fa0 = *arg2++ * (1.0f / 256.0f);
             var_fa1 = *arg2++ * (1.0f / 256.0f);
-            var_v0->unk6C = func_800DC264(var_fa0, var_fa1);
+            var_v0->unk6C = rand2_fBounded(var_fa0, var_fa1);
             func_800C13A0(var_v0, 4);
             break;
         case 29:
@@ -1639,7 +1639,7 @@ u8 func_800C4350(u8 arg0, f32* arg1, s16* arg2) {
             func_800C3058(arg0, 0x7FFF);
             break;
         case 25:
-            func_800C3058(arg0, func_800DC214(arg2[0], arg2[1]));
+            func_800C3058(arg0, rand2_iBounded(arg2[0], arg2[1]));
             arg2 += 2;
             break;
         case 30:

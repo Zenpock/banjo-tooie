@@ -147,7 +147,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
     {
         return 0;
     }
-    sp24 = func_800F5410(temp_v0);
+    sp24 = character_getTransform(temp_v0);
     _gcgoto_entrypoint_0(&mapToEnter, &mapEntranceToUse);
     if ((func_800F6D24(temp_v0) != 0) || (func_800F8004((s32)temp_v0) != 0) || (func_800F6CC8(temp_v0) != 0) || (func_800F66F0(temp_v0) != 0) || (func_800F70BC(character_getActiveIndex()) != 0))
     {
@@ -245,7 +245,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
         case 12:
             if (func_800DA9E4(FLAG_409_RANDOMISER_CCL_SKULL_SET, 1) == 0)
             {
-                flag_setValue(FLAG_40A_RANDOMISER_CCL_SKULL_1, func_800DC298(0.5f) != 0 ? 0 : 1);
+                flag_setValue(FLAG_40A_RANDOMISER_CCL_SKULL_1, rand_percentChance(0.5f) != 0 ? 0 : 1);
             }
             switch (func_800EA05C())
             {
@@ -504,7 +504,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
 s32 func_80800D3C_gcsectionskip(MapId* arg0, s32* arg1)
 {
 
-    if (func_800F5410(character_getActiveIndex()) != 1)
+    if (character_getTransform(character_getActiveIndex()) != 1)
     {
         return 0;
     }

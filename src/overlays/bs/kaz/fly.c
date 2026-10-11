@@ -4,9 +4,9 @@ void func_80800000_bskazfly(PlayerState *self) {
     f32 sp24[3];
 
     player_getCoords(self, sp24);
-    sp24[0] += func_800DC178(-30, 30);
-    sp24[1] += 50.0f + func_800DC178(0, 30);
-    sp24[2] += func_800DC178(-30, 30);
+    sp24[0] += rand_fBounded(-30, 30);
+    sp24[1] += 50.0f + rand_fBounded(0, 30);
+    sp24[2] += rand_fBounded(-30, 30);
     func_800BBCB8(sp24, NULL, 1, 1, D_80801C10_bskazfly);
 }
 

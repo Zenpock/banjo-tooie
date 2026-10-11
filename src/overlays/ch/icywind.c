@@ -39,7 +39,7 @@ void func_80800044_chicywind(Actor* arg0)
         if (func_8010C9B0(arg0->position, 0x3E8U) != 0)
         {
             func_80101FDC(arg0, 2U);
-            arg0->unk58 = func_800DC178(0.15f, 0.2f);
+            arg0->unk58 = rand_fBounded(0.15f, 0.2f);
             return;
         }
         return;
@@ -49,7 +49,7 @@ void func_80800044_chicywind(Actor* arg0)
             ml_vec3f_copy(sp30, arg0->position);
             func_800EF1B8(sp30, arg0->rotation[1], -200.0f);
             func_800BBCB8(arg0->position, sp30, 1.0f, 1, &D_80800358_chicywind);
-            arg0->unk58 = func_800DC178(0.15f, 0.2f);
+            arg0->unk58 = rand_fBounded(0.15f, 0.2f);
         }
         func_808001AC_chicywind(arg0);
         if (func_8010C9B0(arg0->position, 0x708U) == 0)
@@ -70,7 +70,7 @@ void func_808001AC_chicywind(Actor* arg0)
     u32 characterIndex;
 
     characterIndex = character_getActiveIndex();
-    switch (func_800F5410(characterIndex))
+    switch (character_getTransform(characterIndex))
     {
     default:
         sp34 = 0.85f;

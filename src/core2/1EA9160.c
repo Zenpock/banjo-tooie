@@ -150,7 +150,7 @@ s32 func_800CFA90()
 	if (flag_getValue(FLAG_379_RANDOMISER_JINJO_SET) == 0)
 	{
 		//Get Random int between 0 and 0x21
-		var_s0 = func_800DC128(0, 0x21);
+		var_s0 = rand_iBounded(0, 0x21);
 		flag_setMultipleValue(FLAG_37A_RANDOMISER_JINJO_1, (u32)var_s0, 5);
 		flag_setValueTrue(FLAG_379_RANDOMISER_JINJO_SET);
 	}
@@ -168,12 +168,12 @@ s32 func_800CFA90()
 	for (index = 0; index < 0x2D; index++)
 	{
 		//Get Random int between 0 and 9
-		var_v0_2 = func_800DC128(0, 9);
+		var_v0_2 = rand_iBounded(0, 9);
 		var_v1 = &(&var_v0[0])[var_v0_2];
 		var_a0 = *var_v1;
 		while ((s32)var_v0_2 < var_a0)
 		{
-			var_v0_2 = func_800DC128(0, 9);
+			var_v0_2 = rand_iBounded(0, 9);
 			var_v1 = &(&var_v0[0])[var_v0_2];
 			var_a0 = *var_v1;
 		}
