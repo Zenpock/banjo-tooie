@@ -35,6 +35,6 @@ s32 func_8009AD14(PlayerState*, Unk80132ED0*);
 s32 func_8009AD20(PlayerState*, s32);
 s32 func_8009AD2C(PlayerState*, s32);
 s32 func_8009AD38(PlayerState*, s32);
-s32 func_8009AD44(PlayerState*, s32);
+s32 func_8009AD44(PlayerState*, f32[3]);
 
 #endif // __CORE2_1E72EA0_H__

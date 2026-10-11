@@ -922,17 +922,17 @@ int func_800F6640(s32 arg0) {
     return func_80092EA4(temp_a0) != 0 && func_80091E80(temp_a0, 1) != 0;
 }
 
-void func_800F6690(s32 arg0)
+s32 func_800F6690(s32 charIndex)
 {
-    func_80092EB0(D_80135490.unk0[arg0]);
+    return func_80092EB0(D_80135490.unk0[charIndex]);
 }
 
-void func_800F66BC(s32 arg0, s32 arg1, f32 arg2) {
-    func_8008DAE8(D_80135490.unk0[arg0], arg1, arg2);
+s32 func_800F66BC(s32 charIndex, f32* arg1, f32 arg2) {
+    return func_8008DAE8(D_80135490.unk0[charIndex], arg1, arg2);
 }
 
-s32 func_800F66F0(u32 arg0) {
-    return bs_getCurrentState(D_80135490.unk0[arg0]) == 0x6F;
+s32 func_800F66F0(u32 charIndex) {
+    return bs_getCurrentState(D_80135490.unk0[charIndex]) == 0x6F;
 }
 
 int func_800F6720(s32 arg0) {
@@ -1023,11 +1023,11 @@ s32 func_800F6A38(s32 arg0) {
     return var_v1;
 }
 
-int func_800F6AA4(s32 arg0) {
-    s32 temp_v0;
+int func_800F6AA4(s32 charIndex) {
+    BanjoStateId temp_v0;
 
-    temp_v0 = bs_getCurrentState(D_80135490.unk0[arg0]);
-    return temp_v0 == 0x1B || temp_v0 == 0x1C || temp_v0 == 0x1D || temp_v0 == 0x1E || temp_v0 == 0x1A || temp_v0 == 0xA4 || temp_v0 == 0xA5;
+    temp_v0 = bs_getCurrentState(D_80135490.unk0[charIndex]);
+    return temp_v0 == BS_STATE_1B_WONDERWING_IDLE || temp_v0 == BS_STATE_1C_WONDERWING_WALK || temp_v0 == BS_STATE_1D_WONDERWING_JUMP || temp_v0 == BS_STATE_1E_WONDERWING_EXIT || temp_v0 == BS_STATE_1A_WONDERWING_START || temp_v0 == 0xA4 || temp_v0 == 0xA5;
 }
 
 u8 func_800F6B34(void) {
@@ -1348,11 +1348,11 @@ s32 func_800F7700(u32 arg0, s32 arg1, f32* arg2) {
     PlayerState* sp1C;
     sp1C = D_80135490.unk0[arg0];
     func_8009AD20(sp1C, arg1);
-    func_8009AD44(sp1C, (s32) arg2);
+    func_8009AD44(sp1C, arg2);
     return func_8009E7C8(sp1C, 0x23) == 2;
 }
 
-s32 func_800F7750(s32 arg0, s32 arg1, f32 arg2, f32 arg3, s32 arg4) {
+s32 func_800F7750(s32 arg0, f32* arg1, f32 arg2, f32 arg3, s32 arg4) {
     s32 sp24;
     PlayerState* temp_s0;
 
@@ -1369,7 +1369,7 @@ s32 func_800F7750(s32 arg0, s32 arg1, f32 arg2, f32 arg3, s32 arg4) {
     return func_8009E7C8(temp_s0, sp24) == 2;
 }
 
-void func_800F77E8(s32 arg0, s32 arg1) {
+void func_800F77E8(u32 arg0, f32* arg1) {
     func_800F7750(arg0, arg1, 840.0f, -1500.0f, 0);
 }
 
@@ -1382,7 +1382,7 @@ void func_800F7844(s32 arg0, s32 arg1, f32 arg2, f32 arg3) {
     func_800F7750(arg0, arg1, arg2, arg3, 0);
 }
 
-s32 func_800F7874(s32 arg0, Unk80132ED0* arg1, s32 arg2) {
+s32 func_800F7874(s32 arg0, Unk80132ED0* arg1, f32* arg2) {
     PlayerState* sp1C;
     sp1C = D_80135490.unk0[arg0];
     func_8009AD44(sp1C, arg2);
@@ -1395,7 +1395,7 @@ void func_800F78C8(s32 arg0,s32 arg1)
     func_800F7C58(arg0,0x17,arg1);
 }
 
-s32 func_800F78EC(s32 arg0, s32 arg1, f32 arg2, f32 arg3) {
+s32 func_800F78EC(s32 arg0, f32* arg1, f32 arg2, f32 arg3) {
     PlayerState* temp_s0;
 
     temp_s0 = D_80135490.unk0[arg0];
@@ -1428,7 +1428,7 @@ s32 func_800F79DC(s32 arg0, s32 arg1, Unk80132ED0* arg2) {
 }
 
 
-s32 func_800F7A2C(s32 arg0, s32 arg1, s32 arg2) {
+s32 func_800F7A2C(s32 arg0, s32 arg1, f32* arg2) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
@@ -1437,7 +1437,7 @@ s32 func_800F7A2C(s32 arg0, s32 arg1, s32 arg2) {
     return func_8009E7C8(sp1C, 0x20) == 2;
 }
 
-s32 func_800F7A7C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+s32 func_800F7A7C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, f32* arg4) {
     PlayerState* temp_s0;
 
     temp_s0 = D_80135490.unk0[arg0];
@@ -1452,7 +1452,7 @@ void func_800F7AF4(s32 arg0, s32 arg1) {
     func_800F7B1C(arg0, arg1, 840.0f, -1500.0f);
 }
 
-s32 func_800F7B1C(s32 arg0, s32 arg1, f32 arg2, f32 arg3) {
+s32 func_800F7B1C(s32 arg0, f32* arg1, f32 arg2, f32 arg3) {
     PlayerState* temp_s0;
 
     temp_s0 = D_80135490.unk0[arg0];
@@ -1507,11 +1507,11 @@ void func_800F7CF4(s32 arg0, s32 arg1, f32* arg2) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    func_8009AD44(sp1C, (s32) arg2);
+    func_8009AD44(sp1C, arg2);
     func_8009E7C8(sp1C, arg1);
 }
 
-void func_800F7D38(s32 arg0, s32 arg1, s32 arg2, f32 arg3) {
+void func_800F7D38(s32 arg0, s32 arg1, f32* arg2, f32 arg3) {
     PlayerState* sp1C;
     PlayerState* temp_a0;
 
@@ -1521,7 +1521,7 @@ void func_800F7D38(s32 arg0, s32 arg1, s32 arg2, f32 arg3) {
     func_8009E7C8(sp1C, arg1);
 }
 
-void func_800F7D90(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+void func_800F7D90(s32 arg0, s32 arg1, f32* arg2, s32 arg3) {
     PlayerState* sp1C;
     
     sp1C = D_80135490.unk0[arg0];

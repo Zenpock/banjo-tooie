@@ -247,9 +247,9 @@ void func_800901A4()
     func_800F6634(character_getActiveIndex());
 }
 
-void func_800901CC(s32 arg0,s32 arg1)
+s32 func_800901CC(f32* arg0,f32 arg1)
 {
-    func_800F66BC(character_getActiveIndex(),arg0,arg1);
+    return func_800F66BC(character_getActiveIndex(),arg0,arg1);
 }
 
 s32 func_80090200()

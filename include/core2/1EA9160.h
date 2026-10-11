@@ -23,6 +23,7 @@
 
 void func_800CF870(s32);
 s32 func_800CF87C();
+void func_800CF9E4(s32, s32, s32);
 s32 func_800CFA90();
 void func_800CFBC8(Actor*, u32, s32, s32);
 s32 func_800CFC8C(s32, s32);
@@ -64,7 +65,7 @@ void func_800D1254(s32, s32, f32*);
 //Get Total Number of Jinjos of Type
 s32 func_800D129C(u32);
 //Get Total Number of Jinjos Collected of Type
-u32 func_800D1338(u32 JinjoColor);
+s32 func_800D1338(s32 JinjoColor);
 s32 func_800D13E8(s32, s32);
 
 #endif
