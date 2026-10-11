@@ -60,7 +60,7 @@ void func_80800000_cheggice(Actor* arg0)
     {
         temp_s3->unk28 += temp_f24;
         ml_vec3f_copy(sp74, arg0->position);
-        if (func_800DC0C0() < 0.5f)
+        if (rand_f() < 0.5f)
         {
             _fxegg_entrypoint_2(sp74, arg0->scale);
         }

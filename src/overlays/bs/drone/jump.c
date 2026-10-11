@@ -25,7 +25,7 @@ void bsdronejump_entrypoint_2(PlayerState* self) {
 	_badata_entrypoint_8(self, &sp30, &self->unk190.word, &self->unk194.word);
 	baanim_playForDuration_loopStartingAt(self, sp30, 1000.0f, self->unk190.word);
 	func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_2_NORMAL);
-	func_8009C128(self, sp34);
+	player_getCoords(self, sp34);
 	sp44 = ml_vec3f_distance(sp34, self->unk54->unk34);
 	yaw_setIdeal(self, func_800F1DF4(sp34, self->unk54->unk34));
 	_bamovegoto_entrypoint_0(self);

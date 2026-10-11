@@ -60,10 +60,10 @@ void batranslate_entrypoint_4(PlayerState *self) {
         }
         func_8008C9E4(self, 1);
     }
-    func_8009C128(self, sp2C);
+    player_getCoords(self, sp2C);
     ml_vec3f_subtract(sp2C, self->translate->unk8);
     func_8008C958(self, self->translate->unk8);
     func_80800008_batranslate(self, self->translate->unk8);
     ml_vec3f_add(sp2C, self->translate->unk8);
-    func_8009C0F8(self, sp2C);
+    player_setCoords(self, sp2C);
 }

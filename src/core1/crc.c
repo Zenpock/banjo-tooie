@@ -7,7 +7,7 @@ void func_800A1364();
 void func_800965D4();
 void func_8001C1C0();
 void func_800CFA90();
-void func_800D1510();
+void inventory_setup();
 void set_crc_entry(s32);
 
 extern u8 build_data_ROM_START[];
@@ -35,7 +35,7 @@ CrcEntry crc_entries[] = {
     {func_8009B7C0, 21, FALSE},
     {func_8001C1C0, 24, FALSE},
     {func_800CFA90, 27, FALSE},
-    {func_800D1510, 30, FALSE},
+    {inventory_setup, 30, FALSE},
 };
 
 u32* next_crc_word;

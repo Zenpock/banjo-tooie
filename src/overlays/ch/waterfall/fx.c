@@ -84,7 +84,7 @@ void func_808001F8_chwaterfallfx(Actor* arg0)
         }
         for (var_s3 = 0; var_s3 < var_s4; var_s3++)
         {
-            func_800EFE50(sp80, &arg0->actorData[4], arg0->actorData, func_800DC178(0.0f, 1.0f));
+            func_800EFE50(sp80, &arg0->actorData[4], arg0->actorData, rand_fBounded(0.0f, 1.0f));
             ml_vec3f_copy(sp8C, sp80);
             func_800EF1B8(sp8C, arg0->rotation[1], -100.0f);
             sp8C[1] += 100.0f;

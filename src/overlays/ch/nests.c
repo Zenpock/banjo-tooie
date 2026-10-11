@@ -45,6 +45,7 @@ void func_80800C3C_chnests(Actor*);
 void func_80800D8C_chnests(Actor*, s32);
 void func_80800ED8_chnests(Actor*);
 void func_80800F08_chnests(Actor*);
+int func_80801014_chnests(Actor* arg0);
 
 D_80801118_chnestsUnk D_80801118_chnests[]={ 
     {0x01CE,ABILITY_31_EGGS_BLUE,0x0003,0x0004,FLAG_02B_FTT_ITEM_EGG,0x40,20,0x02},
@@ -473,7 +474,7 @@ void func_80800000_chnests(Actor* arg0)
 
     if (var_v1 == 0xE)
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     arg0->actorData[1] = (u32)var_v1;
@@ -487,7 +488,7 @@ void func_80800000_chnests(Actor* arg0)
 void func_80800098_chnests(Actor* arg0)
 {
     func_80800000_chnests(arg0);
-    if ((func_800D3948() == 0) && (func_800F7150(func_800F54E4()) != 0))
+    if ((func_800D3948() == 0) && (func_800F7150(character_getActiveIndex()) != 0))
     {
         func_808002E0_chnests(arg0);
     }
@@ -545,7 +546,7 @@ void func_808001F0_chnests(Actor* arg0, UnkArg2ChNest* arg1)
     case 2:
     case 3:
         temp_v0 = D_808011DC_chnests[temp_v1 - 1];
-        arg0->unk58 = func_800DC178((f32)temp_v0[0], (f32)temp_v0[1]);
+        arg0->unk58 = rand_fBounded((f32)temp_v0[0], (f32)temp_v0[1]);
         arg0->unk64_16 = 0;
         func_8010A570(arg0);
         func_80103110(arg0, 1U);
@@ -598,84 +599,83 @@ s32 func_808003F4_chnests(Actor* arg0, s32 eventType, s32 arg2)
 {
     switch (eventType)
     {
-
-    case 0x3E:
-    {
-        UnkArg2ChNest* temp2 = arg2;    // = arg2;
-        // FAKE to force saving arg2 / temp2 on stack
-        if (&arg2);
-
-        if (func_800F4B4C(temp2->unk1A_5) == 0)
+        case EVENT_3E_ACTOR_TOUCHED:
         {
-            return 0;
-        }
-        switch (arg0->unk0->unk24_22)
-        {
-        case 0x1D9:
-        case 0x1DA:
-            func_80800670_chnests(arg0, temp2);
-            break;
-        case 0x1D4:
-            func_800F7C0C(temp2->unk1A_5, 0x5F, arg0->rotation[1]);
-            if (arg0->unk74_7 == 0x32)
+            UnkArg2ChNest* temp2 = arg2;    // = arg2;
+            // FAKE to force saving arg2 / temp2 on stack
+            if (&arg2);
+
+            if (func_800F4B4C(temp2->unk1A_5) == 0)
             {
+                return 0;
+            }
+            switch (arg0->unk0->unk24_22)
+            {
+            case 0x1D9:
+            case 0x1DA:
+                func_80800670_chnests(arg0, temp2);
+                break;
+            case 0x1D4:
+                func_800F7C0C(temp2->unk1A_5, 0x5F, arg0->rotation[1]);
+                if (arg0->unk74_7 == 0x32)
+                {
+                    func_808001F0_chnests(arg0, temp2);
+                }
+                else
+                {
+                    func_80800324_chnests(arg0, temp2);
+                }
+                break;
+
+            default:
                 func_808001F0_chnests(arg0, temp2);
+                break;
             }
-            else
+            return 1;
+        }
+        case EVENT_1F_ACTOR_ONSCREEN:
+            if (func_80801014_chnests(arg0) != 0)
             {
-                func_80800324_chnests(arg0, temp2);
+                func_8080093C_chnests(arg0, arg2);
+            }
+            else if (func_808010A0_chnests(arg0) != 0)
+            {
+                func_808009D4_chnests(arg0, arg2);
             }
             break;
-
-        default:
-            func_808001F0_chnests(arg0, temp2);
+        case EVENT_95_ACTOR_SPAWNED:
+            if ((arg0->unk6C_9 != PROP_1E9_EGGNEST) && (arg0->unk6C_9 != PROP_4A6_FEATHERNEST))
+            {
+                func_80103110(arg0, 0U);
+            }
+            func_80109EEC(arg0, 0x44);
             break;
-        }
-        return 1;
-    }
-    case 0x1F:
-        if (func_80801014_chnests(arg0) != 0)
-        {
-            func_8080093C_chnests(arg0, arg2);
-        }
-        else if (func_808010A0_chnests(arg0) != 0)
-        {
-            func_808009D4_chnests(arg0, arg2);
-        }
-        break;
-    case 0x95:
-        if ((arg0->unk6C_9 != PROP_1E9_EGGNEST) && (arg0->unk6C_9 != PROP_4A6_FEATHERNEST))
-        {
-            func_80103110(arg0, 0U);
-        }
-        func_80109EEC(arg0, 0x44);
-        break;
-    case 0x29:
-        if (func_80801014_chnests(arg0) != 0)
-        {
-            func_8010DC50(0);
-        }
-        else if (func_808010A0_chnests(arg0) != 0)
-        {
-            func_8010DC50(1);
-        }
-        break;
-    case 0x2A:
-        if (func_80801014_chnests(arg0) != 0)
-        {
-            func_8010DCB4(0);
-        }
-        else if (func_808010A0_chnests(arg0) != 0)
-        {
-            func_8010DCB4(1);
-        }
-        break;
-    case 0x76:
-        func_8080034C_chnests(arg0);
-        func_80101FDC(arg0, 1U);
-        break;
-    default:
-        return 0;
+        case 0x29:
+            if (func_80801014_chnests(arg0) != 0)
+            {
+                func_8010DC50(0);
+            }
+            else if (func_808010A0_chnests(arg0) != 0)
+            {
+                func_8010DC50(1);
+            }
+            break;
+        case 0x2A:
+            if (func_80801014_chnests(arg0) != 0)
+            {
+                func_8010DCB4(0);
+            }
+            else if (func_808010A0_chnests(arg0) != 0)
+            {
+                func_8010DCB4(1);
+            }
+            break;
+        case 0x76:
+            func_8080034C_chnests(arg0);
+            func_80101FDC(arg0, 1U);
+            break;
+        default:
+            return 0;
     }
 
     return 1;
@@ -689,7 +689,7 @@ void func_80800670_chnests(Actor* arg0, UnkArg2ChNest* arg1)
     {
         func_800D0BD4((s32)arg0->actorData[2], 6U);
     }
-    func_800FFAB0(arg0);
+    actor_mark_delete(arg0);
 }
 
 void func_808006C4_chnests(Actor* arg0)
@@ -702,19 +702,19 @@ void func_808006C4_chnests(Actor* arg0)
     temp_v0 = (arg0->unk74_7) - 0x32;
     if ((temp_v0 <= 0) || (temp_v0 >= 0x12))
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     temp_a0 = (func_800D13E8(6, D_8012762C) + (arg0->unk74_7)) - 0x32;
     arg0->actorData[2] = temp_a0;
     if (func_800D0B68(temp_a0, 6U) != 0)
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     func_80800000_chnests(arg0);
     ((f32*)arg0->actorData)[4] = arg0->rotation[1];
-    if (func_800DC298(0.5f) != 0)
+    if (rand_percentChance(0.5f) != 0)
     {
         var_f2 = -1.0f;
     }
@@ -723,8 +723,8 @@ void func_808006C4_chnests(Actor* arg0)
         var_f2 = 1.0f;
     }
     sp20 = var_f2;
-    ((f32*)arg0->actorData)[5] = (func_800DC178(540.0f, 630.0f) * var_f2);
-    arg0->rotation[1] = func_800DC178(0.0f, 360.0f);
+    ((f32*)arg0->actorData)[5] = (rand_fBounded(540.0f, 630.0f) * var_f2);
+    arg0->rotation[1] = rand_fBounded(0.0f, 360.0f);
 }
 
 //Update Note Nests
@@ -839,7 +839,7 @@ s32 func_80800A74_chnests(s32 nestIndex)
 
 void func_80800B4C_chnests(Actor* arg0)
 {
-    arg0->unk58 = func_800DC178(((f32*)&arg0->actorData)[4], ((f32*)&arg0->actorData)[5]);
+    arg0->unk58 = rand_fBounded(((f32*)&arg0->actorData)[4], ((f32*)&arg0->actorData)[5]);
     arg0->actorData[6] = 0;
 }
 

@@ -19,6 +19,7 @@
 s32 func_800EB854();
 void func_800EBB5C();
 void func_800EBD2C(unkCUnk0*, s32*, s32);
+void func_800EBFF4(Unk80132ED0*);
 void func_800EC030(unkCUnk0*, s32*, s32);
 void func_800EC058(s32[3], unkCUnk0*);
 void func_800EC0EC(f32[3], unkCUnk0*);

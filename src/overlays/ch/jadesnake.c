@@ -39,7 +39,7 @@ int func_8080009C_chjadesnake(s32 arg0)
     s32 currentHitbox;
     s32 unk;
 
-    currentPlayerIndex = func_800F54E4();
+    currentPlayerIndex = character_getActiveIndex();
     playerHorizontalUnk = func_800F651C(currentPlayerIndex);
     isGrounded = func_800F6C5C(currentPlayerIndex);
     justLanded = func_800F72DC(currentPlayerIndex);
@@ -111,7 +111,7 @@ void func_80800150_chjadesnake(Actor* arg0)
             Actor* jiggyActor;
             spawnFlag = func_800D0908(0xA,1);
             jiggyActor = _subaddiefind_entrypoint_0(arg0->position, PROP_21F_JIGGY_REAL, -1, 0);
-            func_800FFAB0(jiggyActor);
+            actor_mark_delete(jiggyActor);
             flag_setValueFalse(spawnFlag);
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_8080092C_chjadesnake);
         }
@@ -138,7 +138,7 @@ void func_80800150_chjadesnake(Actor* arg0)
     case 3:
         sp44 = func_80101F24(arg0);
         func_8010D254(sp38);
-        if ((func_800F56AC(func_800F54E4()) != 0x10) && (sp38[1] < 1160.0f))
+        if ((func_800F56AC(character_getActiveIndex()) != 0x10) && (sp38[1] < 1160.0f))
         {
             func_80102424(arg0, 4);
             if (arg0->unk64_20)
@@ -274,7 +274,7 @@ s32 func_808007DC_chjadesnake(Actor* arg0, s32 arg1, u32 arg2)
             func_80102FE8(temp_v0, 0);
         }
         break;
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         func_80800728_chjadesnake(arg0, ((s16*)(&arg2))[0], ((s16*)(&arg2))[1]);
         break;
     case 0x52:

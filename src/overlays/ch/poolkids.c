@@ -167,7 +167,7 @@ void func_80800618_chpoolkids(Actor* arg0)
     }
     if (_glcutDll_entrypoint_20() == 0)
     {
-        func_800EF1B8(arg0->position, func_800DC178(0.0f, 359.0f), func_800DC178(0.0f, 200.0f));
+        func_800EF1B8(arg0->position, rand_fBounded(0.0f, 359.0f), rand_fBounded(0.0f, 200.0f));
     }
     func_80103014(arg0);
 }
@@ -245,7 +245,7 @@ void func_808008DC_chpoolkids(Actor* arg0)
     if (arg0->unk58 <= 0.0f)
     {
         _fxripple_entrypoint_0(3, arg0->position);
-        arg0->unk58 = func_800DC178(0.6f, 1.2f);
+        arg0->unk58 = rand_fBounded(0.6f, 1.2f);
     }
 }
 

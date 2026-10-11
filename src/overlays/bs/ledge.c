@@ -96,13 +96,13 @@ void func_80800334_bsledge(PlayerState* self) {
     temp_a1 = self->unk168.bytes[0];
     self->unk168.bytes[0]--;
     if (temp_a1 == 0) {
-        self->unk168.bytes[0] = func_800DC128(1, 3);
+        self->unk168.bytes[0] = rand_iBounded(1, 3);
         temp_a1 =  D_80801340_bsledge[ (self->unk168.bytes[1])];
         self->unk168.bytes[1]++;
         if (self->unk168.bytes[1] >= 3U) {
             self->unk168.bytes[1] = 0U;
         }
-        func_8009DF18(self, temp_a1, func_800DC178(0.8f, 1.0f), 10000);
+        func_8009DF18(self, temp_a1, rand_fBounded(0.8f, 1.0f), 10000);
     }
 }
 
@@ -347,7 +347,7 @@ s32 func_80800CF4_bsledge(PlayerState *self, u8 *arg1, u32 arg2) {
 }
 
 s32 func_80800D24_bsledge(PlayerState* self) {
-    if (func_800A3274(self) == TRANSFORM_A_BANJO) {
+    if (player_getTransformation(self) == TRANSFORM_A_BANJO) {
         return func_80800CF4_bsledge(self, D_80801390_bsledge, 5);
     }
 

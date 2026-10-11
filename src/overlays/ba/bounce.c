@@ -85,7 +85,7 @@ void babounce_entrypoint_4(PlayerState *self, s32 arg1) {
     self->bounce->unk0 = 1.2f;
     self->bounce->unk4 = 1.4f;
     func_800A32C4(self, sp50);
-    func_8009C128(self, sp44);
+    player_getCoords(self, sp44);
     func_800F1E6C(sp50, sp44, sp3C);
     if ((sp34 == 0xE) || (sp34 == 0x10)) {
         func_80800008_babounce(self, 3);

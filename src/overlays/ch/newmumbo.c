@@ -197,73 +197,73 @@ s32 func_808004E8_chnewmumbo(Actor* arg0, s32 arg1, s32 arg2)
 
 	switch (arg1)
 	{
-	case 0x32:
-		switch (arg0->unk70_10)
-		{
-		case 2:
-			func_80800264_chnewmumbo(arg0, 5);
-			break;
-		case 3:
-			if (flag_getValue(func_8080011C_chnewmumbo()) != 0)
+		case 0x32:
+			switch (arg0->unk70_10)
 			{
-				func_8080073C_chnewmumbo(arg0, 1);
+			case 2:
+				func_80800264_chnewmumbo(arg0, 5);
+				break;
+			case 3:
+				if (flag_getValue(func_8080011C_chnewmumbo()) != 0)
+				{
+					func_8080073C_chnewmumbo(arg0, 1);
+					func_80800000_chnewmumbo(arg0, 2, 1U);
+					func_808000DC_chnewmumbo(arg0, 0x11DBU, 0x4EU);
+				}
+				else
+				{
+					func_80800000_chnewmumbo(arg0, 2, 1U);
+					func_8080073C_chnewmumbo(arg0, 1);
+					func_80800264_chnewmumbo(arg0, 7);
+				}
+				break;
+			case 4:                                     /* switch 2 */
 				func_80800000_chnewmumbo(arg0, 2, 1U);
 				func_808000DC_chnewmumbo(arg0, 0x11DBU, 0x4EU);
+				break;
+			}
+			break;
+		case EVENT_2E_ACTOR_DIALOG_ENDED:
+			func_808014FC_chnewmumbo(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
+			break;
+		case 0x52:
+			_gcdialogcamera_entrypoint_3(&D_80801AB8_chnewmumbo, arg0->scale);
+			if ((s32)arg0->unk70_10 < 0xE)
+			{
+				_gcdialogcamera_entrypoint_4(&D_80801AC8_chnewmumbo);
+			}
+			break;
+		case 0x57:
+			temp2 = (arg2 & 0xFFFF);
+			temp = (arg2 & 0xFFFF0000) >> 0x10;
+
+			if (_gcdialogcamera_entrypoint_0(temp2, temp) != 0)
+			{
+				func_80800000_chnewmumbo(arg0, temp2, temp);
+			}
+			break;
+		case EVENT_1F_ACTOR_ONSCREEN:
+			sp24 = (NewMumboStruct*)func_80100094(arg0, 0U);
+			func_801015D0(arg0);
+			if (sp24->unk1 != 0)
+			{
+				func_800DF744(5, 1);
 			}
 			else
 			{
-				func_80800000_chnewmumbo(arg0, 2, 1U);
-				func_8080073C_chnewmumbo(arg0, 1);
-				func_80800264_chnewmumbo(arg0, 7);
+				func_800DF744(5, 0);
+			}
+			if (sp24->unk2 != 0)
+			{
+				func_800DF744(4, 1);
+			}
+			else
+			{
+				func_800DF744(4, 0);
 			}
 			break;
-		case 4:                                     /* switch 2 */
-			func_80800000_chnewmumbo(arg0, 2, 1U);
-			func_808000DC_chnewmumbo(arg0, 0x11DBU, 0x4EU);
-			break;
-		}
-		break;
-	case 0x2E:
-		func_808014FC_chnewmumbo(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
-		break;
-	case 0x52:
-		_gcdialogcamera_entrypoint_3(&D_80801AB8_chnewmumbo, arg0->scale);
-		if ((s32)arg0->unk70_10 < 0xE)
-		{
-			_gcdialogcamera_entrypoint_4(&D_80801AC8_chnewmumbo);
-		}
-		break;
-	case 0x57:
-		temp2 = (arg2 & 0xFFFF);
-		temp = (arg2 & 0xFFFF0000) >> 0x10;
-
-		if (_gcdialogcamera_entrypoint_0(temp2, temp) != 0)
-		{
-			func_80800000_chnewmumbo(arg0, temp2, temp);
-		}
-		break;
-	case 0x1F:                                      /* switch 1 */
-		sp24 = (NewMumboStruct*)func_80100094(arg0, 0U);
-		func_801015D0(arg0);
-		if (sp24->unk1 != 0)
-		{
-			func_800DF744(5, 1);
-		}
-		else
-		{
-			func_800DF744(5, 0);
-		}
-		if (sp24->unk2 != 0)
-		{
-			func_800DF744(4, 1);
-		}
-		else
-		{
-			func_800DF744(4, 0);
-		}
-		break;
-	default:
-		return 0;
+		default:
+			return 0;
 	}
 	return 1;
 }
@@ -276,7 +276,7 @@ void func_8080073C_chnewmumbo(Actor* arg0, s32 arg1)
 		{
 			//func_800F7B9C(_plsu_entrypoint_1(1), 0x8DU);
 		}
-		func_800F8300(func_800F54E4(), 2, arg0->position);
+		func_800F8300(character_getActiveIndex(), 2, arg0->position);
 		arg0->unk64_19 = 1;
 	}
 }
@@ -285,7 +285,7 @@ void func_808007B0_chnewmumbo(Actor* arg0)
 {
 	if (arg0->unk64_19)
 	{
-		func_800F82D4(func_800F54E4(), 0);
+		func_800F82D4(character_getActiveIndex(), 0);
 		arg0->unk64_19 = 0;
 	}
 }
@@ -353,7 +353,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 
 	if ((flag_getValue(func_8080011C_chnewmumbo()) == 0) && (MUMBO_DATA(arg0)->unkC <= 0.0f))
 	{
-		func_800D1824(0x48);
+		inventory_showValue(0x48);
 	}
 
 	if (func_8010D278() == TRANSFORM_D_MUMBO)
@@ -455,11 +455,11 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 				arg0->unk7A_12 = 1;
 			}
 		}
-		else if (func_800DC298(0.3f) != 0 && arg0->unk7A_9 < 3)
+		else if (rand_percentChance(0.3f) != 0 && arg0->unk7A_9 < 3)
 		{
 			arg0->unk7A_12 = 1;
 		}
-		else if (func_800DC298(0.05f) != 0 && arg0->unk7A_9 > 0)
+		else if (rand_percentChance(0.05f) != 0 && arg0->unk7A_9 > 0)
 		{
 			arg0->unk7A_12 = 2;
 		}
@@ -539,7 +539,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 			func_80800264_chnewmumbo(arg0, 0x11);
 			func_80800000_chnewmumbo(arg0, 2, 1);
 			flag_setValueTrue(func_8080011C_chnewmumbo());
-			func_800D175C(0x48, -1);
+			inventory_addValue(0x48, -1);
 			return;
 		}
 		break;

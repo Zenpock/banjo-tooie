@@ -28,12 +28,14 @@ void func_8008FE68(f32*);
 void func_8008FE94(s32, f32*);
 f32 func_8008FEF0();
 void func_8008FF40(f32*);
+void func_8008FFBC(f32*);
 f32 func_80090010(void);
 s32 func_80090080();
 void func_800900D0(s32);
 s32 func_80090128();
 //Does the current character match given transformation
 s32 func_80090178(s32); 
+s32 func_800901CC(f32*, f32);
 s32 func_80090248(void);
 s32 func_80090270(void);
 s32 func_800902E4(f32*, f32, s32, Actor**);

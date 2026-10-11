@@ -26,7 +26,7 @@ void bawasher_entrypoint_2(PlayerState *self) {
 
 void bawasher_entrypoint_3(PlayerState *self, f32 arg1[3]) {
     if (!func_80092CDC(self, arg1, 5)) {
-        func_8009C128(self, arg1);
+        player_getCoords(self, arg1);
     }
 }
 
@@ -39,7 +39,7 @@ void bawasher_entrypoint_5(PlayerState *self, f32 arg1) {
 }
 
 void bawasher_entrypoint_6(s32 arg0) {
-    PlayerState *self = func_800F53D0(arg0);
+    PlayerState *self = character_getPlayerState(arg0);
     _chlaundry_entrypoint_1(self->washer->unk10, self->washer->unk1C, self->washer->unk28, arg0);
 }
 

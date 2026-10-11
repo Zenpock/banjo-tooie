@@ -23,7 +23,7 @@ void func_80800008_bsbbilldrill(PlayerState* self) {
             func_800C8E54(self->unk168.word, 80.0f, 350.0f);
             func_800C8F64(self->unk168.word, 0xB);
         }
-        func_8009C128(self, sp24);
+        player_getCoords(self, sp24);
         sp24[1] -= 10.0f;
         func_800C8CB8(self->unk168.word, sp24);
         func_800C8E84(self->unk168.word, func_8001210C(1) + &D_80800AB0_bsbbilldrill);
@@ -56,12 +56,12 @@ void func_8080019C_bsbbilldrill(PlayerState* self) {
     f32 sp20;
     s32 sp1C;
 
-    if (func_800DC0C0() <= 0.2f) {
+    if (rand_f() <= 0.2f) {
         sp20 = 0.15f;
     } else {
         sp20 = 0.09f;
     }
-    func_8009C128(self, sp24);
+    player_getCoords(self, sp24);
     sp24[1] -= 80.0f;
     sp1C = func_80800158_bsbbilldrill(sp24);
     func_800BA7C4(sp1C, sp20, sp20);
@@ -72,7 +72,7 @@ void func_8080019C_bsbbilldrill(PlayerState* self) {
 void func_80800250_bsbbilldrill(PlayerState* arg0) {
     f32 sp1C[3];
 
-    func_8009C128(arg0, sp1C);
+    player_getCoords(arg0, sp1C);
     sp1C[1] -= 80.0f;
     func_800BA22C(_fxdlsmoke_entrypoint_0(sp1C), 1);
 }

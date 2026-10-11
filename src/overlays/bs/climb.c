@@ -77,7 +77,7 @@ void func_808001D0_bsclimb(PlayerState* self)
 }
 
 void func_80800258_bsclimb(PlayerState* self, f32 arg1, f32 arg2) {
-	self->unk16C = (func_800DC0C0() * arg2) + arg1;
+	self->unk16C = (rand_f() * arg2) + arg1;
 }
 
 int func_80800298_bsclimb(PlayerState* self)

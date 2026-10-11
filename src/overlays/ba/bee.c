@@ -37,7 +37,7 @@ void babee_entrypoint_1(s32 arg0) {
     BaBee *bee;
     f32 sp30;
     
-    self = func_800F53D0(arg0);
+    self = character_getPlayerState(arg0);
     bee = self->bee;
     sp3C = func_80092CDC(self, sp50, 4);
     sp40 = func_80092EB0(self);
@@ -63,7 +63,7 @@ void babee_entrypoint_2(PlayerState *self) {
 
     if (!(0.0f < bee->cooldown)) {
         bee->cooldown += bee->unk0[bee->index].cooldown_time;
-        func_8009C128(self, sp20);
+        player_getCoords(self, sp20);
         func_8010D930(0xB, -1, sp20, &D_808003BC_babee);
         _chbaddiesetup_entrypoint_1(_babee_entrypoint_1, self->unk184);
     }

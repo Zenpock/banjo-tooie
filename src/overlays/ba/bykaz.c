@@ -5,7 +5,7 @@ s32 bababykaz_entrypoint_0(void) {
 }
 
 void bababykaz_entrypoint_1(PlayerState *self) {
-    if ((func_800A3274(self) == TRANSFORM_11_CLOCKWORK) && !func_800EA068(0x20)) {
+    if ((player_getTransformation(self) == TRANSFORM_11_CLOCKWORK) && !func_800EA068(0x20)) {
         func_8009EA94(self->babykaz->unk4);
     }
 }
@@ -91,7 +91,7 @@ void bababykaz_entrypoint_11(PlayerState *self) {
 
 
     if (player_inWater(self)) {
-        if (40.0f < (func_800964DC(self) - func_8009C150(self))) {
+        if (40.0f < (func_800964DC(self) - player_getCoordVertical(self))) {
             self->babykaz->unk1 = 1;
         }
     }

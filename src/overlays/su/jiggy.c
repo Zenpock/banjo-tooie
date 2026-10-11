@@ -84,19 +84,19 @@ u8 sujiggy_entrypoint_2(s32 arg0)
             break;
         }
         case 2: //Honeycomb
-            func_800D1844(0x49);
+            inventory_incrementValue(0x49);
             break;
         case 3: //Glowbo
-            func_800D1844(0x48);
+            inventory_incrementValue(0x48);
             break;
         case 4: //Cheato
-            func_800D1844(0x4A);
+            inventory_incrementValue(0x4A);
             break;
         case 7: //Doubloon
-            func_800D1844(0x4E);
+            inventory_incrementValue(0x4E);
             break;
         case 8: //Ticket
-            func_800D1844(0x4D);
+            inventory_incrementValue(0x4D);
             break;
         }
         return 0;

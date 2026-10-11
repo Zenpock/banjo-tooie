@@ -88,7 +88,7 @@ void bswasher_entrypoint_0(PlayerState* self) {
     s32 sp20;
 
     sp20 = func_800B5BE4(8);
-    func_8009C128(self, &sp24);
+    player_getCoords(self, &sp24);
     func_800BABB8(sp20, &sp24, NULL, 1.0f, &D_80801D60_bswasher);
 }
 
@@ -454,7 +454,7 @@ void func_80800F88_bswasher(PlayerState* self)
     if (self->unk164.bytes[1] != 0)
     {
         sp38 = func_8009BB5C(self);
-        func_8009C128(self, sp2C);
+        player_getCoords(self, sp2C);
         func_800C35E8(self->unk164.bytes[1], sp2C);
         func_800C31DC(self->unk164.bytes[1], func_800F10B4(sp38, 0.0f, 900.0f, 0.9f, 1.2f));
     }

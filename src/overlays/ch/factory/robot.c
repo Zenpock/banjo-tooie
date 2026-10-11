@@ -115,7 +115,7 @@ void func_80800058_chfactoryrobot(Actor* arg0)
 
     ml_vec3f_copy(sp3C, arg0->position);
     func_800EF1B8(sp3C, arg0->rotation[1], 40.0f);
-    func_800F4F34(func_800F54E4(), sp3C, 30.0f, 100.0f);
+    func_800F4F34(character_getActiveIndex(), sp3C, 30.0f, 100.0f);
     switch (arg0->unk70_10)
     {
     case 1:
@@ -124,7 +124,7 @@ void func_80800058_chfactoryrobot(Actor* arg0)
         arg0->unk50 = 20.0f;
         if (func_808006DC_chfactoryrobot(arg0, 1.0f, 15.0f) != 0)
         {
-            ((f32*)arg0->actorData)[0] = func_800DC178(1.0f, 1.2f);
+            ((f32*)arg0->actorData)[0] = rand_fBounded(1.0f, 1.2f);
             func_80101FDC(arg0, 2U);
             return;
         }
@@ -144,7 +144,7 @@ void func_80800058_chfactoryrobot(Actor* arg0)
         arg0->unk50 = 20.0f;
         if (func_808006DC_chfactoryrobot(arg0, 1.0f, 15.0f) != 0)
         {
-            ((f32*)arg0->actorData)[0] = func_800DC178(1.0f, 1.2f);
+            ((f32*)arg0->actorData)[0] = rand_fBounded(1.0f, 1.2f);
             func_80101FDC(arg0, 4U);
             return;
         }
@@ -207,7 +207,7 @@ s32 func_80800360_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
         func_808005D4_chfactoryrobot(arg0);
         func_80107070(arg0, 3);
         break;
-    case 0x1F:
+    case EVENT_1F_ACTOR_ONSCREEN:
         func_80800424_chfactoryrobot(arg0, arg2);
 
         break;
@@ -218,7 +218,7 @@ s32 func_80800360_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
             func_80800508_chfactoryrobot(arg0);
         }
         break;
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
 
         func_80800508_chfactoryrobot(arg0);
         break;
@@ -322,7 +322,7 @@ void func_808007C4_chfactoryrobot(Actor* arg0)
         _subaddierouteDll_entrypoint_3(arg0, &temp_s1->unk34, arg0->position);
         func_80107200(arg0);
         func_80801160_chfactoryrobot(arg0, 3);
-        temp_s1->unk6 = func_800DC178(100.0f, 200.0f);
+        temp_s1->unk6 = rand_fBounded(100.0f, 200.0f);
         return;
     }
     func_80801160_chfactoryrobot(arg0, 1);
@@ -361,7 +361,7 @@ void func_80800920_chfactoryrobot(Actor* arg0)
         {
             if (temp_v0->unk1C == 0.0f)
             {
-                if ((func_8010CFBC(arg0->position, (s32)(arg0->scale * 80.0f), (s32)(arg0->scale * 175.0f)) != 0) && (func_800F7B9C(func_800F54E4(), 0x51U) == 2))
+                if ((func_8010CFBC(arg0->position, (s32)(arg0->scale * 80.0f), (s32)(arg0->scale * 175.0f)) != 0) && (func_800F7B9C(character_getActiveIndex(), 0x51U) == 2))
                 {
                     if (arg0->unk64_29)
                     {
@@ -373,12 +373,12 @@ void func_80800920_chfactoryrobot(Actor* arg0)
                     }
                     temp_v0->unk18 = arg0->unk64_29;
                     temp_v0->unk20 = 0.4f;
-                    func_800F57F0(func_800F54E4(), &sp4C);
+                    func_800F57F0(character_getActiveIndex(), &sp4C);
                     _chelectricfence_entrypoint_1(arg0, &sp4C);
                 }
             }
             func_800C8CB8(temp_v0->unk14, arg0->position);
-            func_800C8E84(temp_v0->unk14, D_80802890_chfactoryrobot[func_800DC298(0.35f)]);
+            func_800C8E84(temp_v0->unk14, D_80802890_chfactoryrobot[rand_percentChance(0.35f)]);
         }
         else if (temp_v0_3 != 0)
         {
@@ -408,7 +408,7 @@ void func_80800920_chfactoryrobot(Actor* arg0)
                 if (func_80101DDC(arg0) != 0)
                 {
                     func_80801160_chfactoryrobot(arg0, 3);
-                    arg0->unk58 = func_800DC178(2.0f, 4.0f);
+                    arg0->unk58 = rand_fBounded(2.0f, 4.0f);
                     func_80801C7C_chfactoryrobot(arg0);
                 }
             }
@@ -429,11 +429,11 @@ void func_80800920_chfactoryrobot(Actor* arg0)
                     func_80801160_chfactoryrobot(arg0, 5);
                     if (arg0->unk64_29)
                     {
-                        arg0->unk58 = func_800DC178(2.0f, 3.0f);
+                        arg0->unk58 = rand_fBounded(2.0f, 3.0f);
                     }
                     else
                     {
-                        arg0->unk58 = func_800DC178(4.0f, 5.0f);
+                        arg0->unk58 = rand_fBounded(4.0f, 5.0f);
                     }
                 }
             }
@@ -450,7 +450,7 @@ void func_80800920_chfactoryrobot(Actor* arg0)
         if (!(arg0->unk64_29) && (temp_v0->unk18 != 0) && (temp_v0->unk20 == 0.0f) && (ml_vec3f_distance_sq(arg0->position, (f32*)arg0->actorData) < 62500.0f))
         {
             func_800C8FE0(temp_v0->unk14, 1);
-            temp_v0->unk20 = func_800DC178(1.2f, 1.6f);
+            temp_v0->unk20 = rand_fBounded(1.2f, 1.6f);
         }
     }
 }
@@ -482,47 +482,47 @@ s32 func_80800E40_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
     temp_v0 = func_80100094(arg0, 0U);
     switch (arg1)
     {
-    case 0x40:
-        func_80801160_chfactoryrobot(arg0, 7);
-        break;
-    case 0x2:
-        if (_subaddieDll_entrypoint_3(arg0) == 0)
-        {
-            func_80107070(arg0, 1);
-        }
-        break;
-    case 0x3E:
+        case 0x40:
+            func_80801160_chfactoryrobot(arg0, 7);
+            break;
+        case 0x2:
+            if (_subaddieDll_entrypoint_3(arg0) == 0)
+            {
+                func_80107070(arg0, 1);
+            }
+            break;
+        case EVENT_3E_ACTOR_TOUCHED:
 
-        temp_v0->unk1C = arg0->unk64_29 ? 1.5f : 6.0f;
+            temp_v0->unk1C = arg0->unk64_29 ? 1.5f : 6.0f;
 
-        temp_v0->unk18 = arg0->unk64_29;
-        break;
-    case 0x90:
-        temp_v0_2 = func_80106790(func_80101080());
-        _chexploder_entrypoint_9(temp_v0_2, 3, 0);
-        _chexploder_entrypoint_13(temp_v0_2, 0xAU);
-        if (func_80107070(arg0, 3) == 0)
-        {
-            func_800FFAB0(arg0);
-        }
-        break;
-    case 0x93:
-        func_80802470_chfactoryrobot(arg0, 0);
-        break;
-    case 0x95:
-        func_8080183C_chfactoryrobot(arg0);
-        break;
-    case 0x38:
-        return func_80801C50_chfactoryrobot((s32)arg0);
-    case 0x8F:
-        if (arg2 == 0)
-        {
-            func_8010A590(arg0);
-            func_80109FE8(arg0, 1);
-        }
-        break;
-    default:
-        return 0;
+            temp_v0->unk18 = arg0->unk64_29;
+            break;
+        case 0x90:
+            temp_v0_2 = func_80106790(func_80101080());
+            _chexploder_entrypoint_9(temp_v0_2, 3, 0);
+            _chexploder_entrypoint_13(temp_v0_2, 0xAU);
+            if (func_80107070(arg0, 3) == 0)
+            {
+                actor_mark_delete(arg0);
+            }
+            break;
+        case 0x93:
+            func_80802470_chfactoryrobot(arg0, 0);
+            break;
+        case EVENT_95_ACTOR_SPAWNED:
+            func_8080183C_chfactoryrobot(arg0);
+            break;
+        case 0x38:
+            return func_80801C50_chfactoryrobot((s32)arg0);
+        case 0x8F:
+            if (arg2 == 0)
+            {
+                func_8010A590(arg0);
+                func_80109FE8(arg0, 1);
+            }
+            break;
+        default:
+            return 0;
     }
     return 1;
 }
@@ -540,7 +540,7 @@ void func_80800FFC_chfactoryrobot(Actor* arg0, void* arg1)
     if ((temp_v0->unk20 > 0.0f) && !(arg0->unk7A_2))
     {
         temp_s0 = func_80100094(arg0, 0U);
-        temp_s0->unkA = func_800DC128(0, 4);
+        temp_s0->unkA = rand_iBounded(0, 4);
     }
 
 
@@ -624,14 +624,14 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
             if ((temp_s1->unk1C == 0.0f) && (func_800C0638() == 0)
                 && ((arg0->unk64_29) || ((func_8010D248() != 0) && (func_8010C500(arg0) != 0) && (_suchase_entrypoint_0() == arg0->unk0)))) {
                 temp_s1->unk18 = 1;
-                temp_s1->unk24 = func_800DC178(2.0f, 4.0f);
+                temp_s1->unk24 = rand_fBounded(2.0f, 4.0f);
 
                 switch (arg0->unk70_10)
                 {
                 case 4:
                 case 5:
                     func_80801160_chfactoryrobot(arg0, 2);
-                    temp_s1->unk6 = func_800DC178(100.0f, 200.0f);
+                    temp_s1->unk6 = rand_fBounded(100.0f, 200.0f);
                     break;
                 }
             }
@@ -686,9 +686,9 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
         else
         {
             sp44 = (((u32)(u16)arg0->unk0->unk12_1)) & 0xF;
-            if ((func_8001210C(0xF) == sp44) && (func_800DC298(0.6f) != 0))
+            if ((func_8001210C(0xF) == sp44) && (rand_percentChance(0.6f) != 0))
             {
-                arg0->unk54 = func_800DC178(0.0f, 359.0f);
+                arg0->unk54 = rand_fBounded(0.0f, 359.0f);
             }
             func_80801954_chfactoryrobot(arg0);
             func_800D9078(&temp_s1->unk24);
@@ -715,7 +715,7 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
                 else
                 {
                     func_80801C7C_chfactoryrobot(arg0);
-                    temp_s1->unk24 = func_800DC178(2.0f, 4.0f);
+                    temp_s1->unk24 = rand_fBounded(2.0f, 4.0f);
                 }
             }
             else
@@ -846,7 +846,7 @@ s32 func_80801BB0_chfactoryrobot(Actor* arg0)
     if ((arg0->unk64_29) && (_subaddiejoy_entrypoint_6(arg0, 1) != 0))
     {
         func_800C8FE0(temp_v0->unk14, 1);
-        temp_v0->unk20 = func_800DC178(1.2f, 1.6f);
+        temp_v0->unk20 = rand_fBounded(1.2f, 1.6f);
         return 1;
     }
     return 0;
@@ -864,7 +864,7 @@ void func_80801C7C_chfactoryrobot(Actor* arg0)
 
     temp_v0 = func_80100094(arg0, 0U);
     func_800CD1E0(arg0->unk70_25 - 1, arg0->actorData, (f32)temp_v0->unk0[1] + 60.0f, arg0);
-    temp_v0->unk6 = func_800DC178(100.0f, 200.0f);
+    temp_v0->unk6 = rand_fBounded(100.0f, 200.0f);
 }
 
 //Robot Tube
@@ -902,7 +902,7 @@ void func_80801D7C_chfactoryrobot(Actor* arg0)
     f32 sp3C;
 
     temp_s2 = func_80100094(arg0, 0U);
-    func_800F4F34(func_800F54E4(), arg0->position, 100.0f, 80.0f);
+    func_800F4F34(character_getActiveIndex(), arg0->position, 100.0f, 80.0f);
     switch (arg0->unk70_10)
     {
     case 1:
@@ -938,7 +938,7 @@ void func_80801D7C_chfactoryrobot(Actor* arg0)
                 {
                     func_80108B04(arg0, 0U);
                     func_80101FDC(arg0, 2U);
-                    arg0->unk58 = func_800DC178(1.5f, 2.5f);
+                    arg0->unk58 = rand_fBounded(1.5f, 2.5f);
                 }
             }
         }
@@ -1014,7 +1014,7 @@ void func_80801D7C_chfactoryrobot(Actor* arg0)
         {
             func_80108B04(arg0, 0U);
             func_80101FDC(arg0, 8U);
-            arg0->unk58 = func_800DC178(1.5f, 2.5f);
+            arg0->unk58 = rand_fBounded(1.5f, 2.5f);
         }
         break;
     case 3:
@@ -1072,13 +1072,13 @@ s32 func_80802240_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
                 temp_v0->unk74_7 = arg0->unk74_7;
             }
             break;
-        case 0x2E:
+        case EVENT_2E_ACTOR_DIALOG_ENDED:
             _capod_entrypoint_14();
             break;
-        case 0x1F:
+        case EVENT_1F_ACTOR_ONSCREEN:
             func_808021D4_chfactoryrobot(arg0, *(s32*)&arg2);
             break;
-        case 0x95:
+        case EVENT_95_ACTOR_SPAWNED:
             func_808025D4_chfactoryrobot(arg0);
             break;
         case 0x29:

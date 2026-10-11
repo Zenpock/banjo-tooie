@@ -141,14 +141,14 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
     if (_gcgoto_entrypoint_15() != 0) {
         return 0;
     }
-    temp_v0 = func_800F54E4();
+    temp_v0 = character_getActiveIndex();
     if ((arg4 != NULL) && (temp_v0 != (arg4->unk1A_5)))
     {
         return 0;
     }
-    sp24 = func_800F5410(temp_v0);
+    sp24 = character_getTransform(temp_v0);
     _gcgoto_entrypoint_0(&mapToEnter, &mapEntranceToUse);
-    if ((func_800F6D24(temp_v0) != 0) || (func_800F8004((s32)temp_v0) != 0) || (func_800F6CC8(temp_v0) != 0) || (func_800F66F0(temp_v0) != 0) || (func_800F70BC(func_800F54E4()) != 0))
+    if ((func_800F6D24(temp_v0) != 0) || (func_800F8004((s32)temp_v0) != 0) || (func_800F6CC8(temp_v0) != 0) || (func_800F66F0(temp_v0) != 0) || (func_800F70BC(character_getActiveIndex()) != 0))
     {
         func_808002A0_gcsectionskip(temp_v0, arg0);
         return 0;
@@ -244,7 +244,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
         case 12:
             if (func_800DA9E4(FLAG_409_RANDOMISER_CCL_SKULL_SET, 1) == 0)
             {
-                flag_setValue(FLAG_40A_RANDOMISER_CCL_SKULL_1, func_800DC298(0.5f) != 0 ? 0 : 1);
+                flag_setValue(FLAG_40A_RANDOMISER_CCL_SKULL_1, rand_percentChance(0.5f) != 0 ? 0 : 1);
             }
             switch (func_800EA05C())
             {
@@ -395,7 +395,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
             }
             break;
         case 25:
-            temp_a0 = func_800F54E4();
+            temp_a0 = character_getActiveIndex();
             if (sp24 == TRANSFORM_11_CLOCKWORK)
             {
                 func_80800374_gcsectionskip(temp_v0, arg0);
@@ -404,7 +404,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
             func_800F7C9C(temp_a0, 0x95, func_800EA05C(), 2);
             break;
         case 26:
-            sp1C = func_800F54E4();
+            sp1C = character_getActiveIndex();
             if (sp24 == TRANSFORM_11_CLOCKWORK)
             {
                 func_80800374_gcsectionskip(temp_v0, arg0);
@@ -503,7 +503,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
 s32 func_80800D3C_gcsectionskip(MapId* arg0, s32* arg1)
 {
 
-    if (func_800F5410(func_800F54E4()) != 1)
+    if (character_getTransform(character_getActiveIndex()) != 1)
     {
         return 0;
     }

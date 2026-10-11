@@ -53,7 +53,7 @@ void func_8008E6F0(PlayerState* self)
 	s32 i;
 	s32 i2;
 
-	func_8009C128(self, sp4C);
+	player_getCoords(self, sp4C);
 	func_800EC0EC(sp4C, self->unkC->unk0);
 	baflag_clear(self, BA_FLAG_8);
 	if (!self->unkC->unk0->unk28_9 || func_80091E80(self, 8) == 0)
@@ -65,8 +65,8 @@ void func_8008E6F0(PlayerState* self)
 	{
 		if (func_8008DAA8(self) == 0)
 		{
-			charIndex = func_800F54E4();
-			switch (func_800F5410(charIndex))
+			charIndex = character_getActiveIndex();
+			switch (character_getTransform(charIndex))
 			{
 			case TRANSFORM_9_FIRSTPERSON:
 			{

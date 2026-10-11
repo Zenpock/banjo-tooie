@@ -147,7 +147,7 @@ void func_80800154_chintrotext(Actor* arg0)
         _subaddiefade_entrypoint_1(arg0, (s32)func_800F12D4(arg0->unk58, 0, new_var->unk0[2], 0.0f, 255.0f));
         if (sp38 != 0)
         {
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
         }
         break;
     }

@@ -10,7 +10,7 @@ void bsbkflamethrower_entrypoint_0(PlayerState* self, f32 arg1[2], f32 arg2[2]) 
 
     sp1C = func_8009BFCC(self);
     func_800EEC30(arg2, -sp1C, yaw_get(self), 1.0f);
-    func_8009C128(self, arg1);
+    player_getCoords(self, arg1);
     func_800EFA98(sp24, arg2, 40.0f);
     ml_vec3f_add(arg1, sp24);
     arg1[1] += 94.0f;

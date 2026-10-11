@@ -30,7 +30,7 @@ void bskazdie_entrypoint_0(PlayerState *self) {
     anctrl_start(animCtrl);
     _basudie_entrypoint_1(self);
     func_8009D820(self, 1.8);
-    func_8009C128(self, &unk0);
+    player_getCoords(self, &unk0);
     func_800A32C4(self, &unk1);
     func_800F1E6C(&unk1, &unk0, &targetYaw);
     self->unk16C = 250;

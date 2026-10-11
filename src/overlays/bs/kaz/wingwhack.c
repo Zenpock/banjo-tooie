@@ -12,7 +12,7 @@ void func_80800000_bskazwingwhack(PlayerState *self, f32 arg1[3], f32 arg2, f32 
     f32 sp30[3];
 
     temp_s0 = func_800B5BE4(0xA);
-    func_8009C128(self, sp30);
+    player_getCoords(self, sp30);
     func_800BA77C(temp_s0, 0, func_800136E4(func_800F1DF4(sp30, arg1) + arg2), arg3);
     if (func_8009EA2C() != 0) {
         func_800BA670(temp_s0, 0x619);

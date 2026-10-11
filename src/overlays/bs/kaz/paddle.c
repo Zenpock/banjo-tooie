@@ -76,7 +76,7 @@ void func_808002A0_bskazpaddle(PlayerState *self) {
     s32 sp3C;
 
     next_state = BS_STATE_0_INVALID;
-    func_8009C128(self, sp40);
+    player_getCoords(self, sp40);
     sp40[1] = sp40[1] + 60.0f;
     sp3C = func_8009FBB0(self, sp40, 20);
     func_800BA930(sp3C, -30, -30, -30, 30, 30, 30);
@@ -180,7 +180,7 @@ void func_8080070C_bskazpaddle(PlayerState *self) {
     BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
-    if ((func_8001210C(7) == 0) && (func_800DC0C0() < 0.5f)) {
+    if ((func_8001210C(7) == 0) && (rand_f() < 0.5f)) {
         func_8009FC34(self, 1);
     }
     if (bastick_getZone(self) == BS_STICK_ZONE_ID_1) {

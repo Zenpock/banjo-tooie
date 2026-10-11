@@ -3,11 +3,11 @@
 void bsmum_entrypoint_13(PlayerState *self);
 
 void func_80800000_bsmum(PlayerState *self) {
-    func_8009DE38(self, 0x511, func_800DC178(0.8f, 1.1f));
+    func_8009DE38(self, 0x511, rand_fBounded(0.8f, 1.1f));
 }
 
 void func_80800040_bsmum(PlayerState *self) {
-    if (func_800DC0C0() < 0.5f) {
+    if (rand_f() < 0.5f) {
         func_8009DE38(self, 0x50F, 1.0f);
         return;
     }

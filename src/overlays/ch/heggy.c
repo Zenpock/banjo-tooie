@@ -123,7 +123,7 @@ void func_8080015C_chheggy(Actor* arg0)
     {
         if (sp64 != 0)
         {
-            func_800C4140(((func_800DC0C0() < 0.5f) ? 0x674 : 0x675) + 0x7FEBB800, arg0->position, 0x0FA00064);
+            func_800C4140(((rand_f() < 0.5f) ? 0x674 : 0x675) + 0x7FEBB800, arg0->position, 0x0FA00064);
         }
         if (sp60 != 0)
         {
@@ -329,7 +329,7 @@ void func_808009DC_chheggy(Actor* arg0)
             func_80800ECC_chheggy(arg0, 0x10);
         }
         func_800EFE50(arg0->position, (u8*)sp40 + 0x64, (u8*)sp40 + 0x70, sp3C);
-        func_800D1804(0x52);
+        inventory_decrementValue(0x52);
         break;
     case 16:
         if (func_800D90A4(&arg0->unk58) != 0)
@@ -384,7 +384,7 @@ void func_808009DC_chheggy(Actor* arg0)
     func_8080015C_chheggy(arg0);
     if (((flag_getValue(FLAG_3E4_SNS_EGG_HATCHED_BLUE) == 0) || (flag_getValue(FLAG_3E6_SNS_EGG_HATCHED_PINK) == 0)) && (_glcutDll_entrypoint_20() == 0))
     {
-        func_800D1824(0x52);
+        inventory_showValue(0x52);
     }
 }
 
@@ -468,7 +468,7 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
         _subaddiedialog_entrypoint_11(arg0->unk0, 0x1540U, 0xEU, arg0->position, 0xCBU);
         break;
     case 12:
-        func_800F82D4(func_800F54E4(), 2);
+        func_800F82D4(character_getActiveIndex(), 2);
         if (arg0->unk64_20)
         {
             if (flag_getValue(FLAG_3E4_SNS_EGG_HATCHED_BLUE) != 0)
@@ -522,10 +522,10 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
         break;
     case 16:
         arg0->unk58 = 2.0f;
-        arg0->unk54 = func_8010CD50(arg0, func_800F54E4());
+        arg0->unk54 = func_8010CD50(arg0, character_getActiveIndex());
         break;
     case 17:
-        func_800F82D4(func_800F54E4(), 0);
+        func_800F82D4(character_getActiveIndex(), 0);
         if (arg0->unk64_20)
         {
             flag_setValueTrue(FLAG_3E4_SNS_EGG_HATCHED_BLUE);
@@ -582,7 +582,7 @@ s32 func_80801570_chheggy(Actor* arg0, s32 arg1, s32 arg2)
 
     switch (arg1)
     {
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         if (_glcutDll_entrypoint_20() != 0)
         {
             func_80800ECC_chheggy(arg0, 0x14);
@@ -616,7 +616,7 @@ s32 func_80801570_chheggy(Actor* arg0, s32 arg1, s32 arg2)
             return 1;
         }
         break;
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         switch (((s16*)&arg2)[0])
         {
         case 0x153A:
@@ -743,7 +743,7 @@ s32 func_80801A00_chheggy(Actor* arg0, s32 arg1, s32 arg2)
         _chskeletonexplode_entrypoint_3(sp34, 2, 1);
         func_800FFA88(arg0->unk0);
         return 1;
-    case 0x1F:
+    case EVENT_1F_ACTOR_ONSCREEN:
         func_801015D0(arg0);
         func_800DF744(1, 1);
         func_800DF744(2, 0);

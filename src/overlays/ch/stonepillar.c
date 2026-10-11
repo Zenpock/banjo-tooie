@@ -159,7 +159,7 @@ s32 func_8080031C_chstonepillar(Actor* arg0, s32 arg1, s32 arg2)
 
     switch (arg1)
     {
-        case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
 
             sp1C = (StonePillarStruct*)func_80100094(arg0, 0U);
             func_80800704_chstonepillar(arg0);
@@ -182,7 +182,7 @@ s32 func_80800390_chstonepillar(Actor* arg0, s32 arg1, s32 arg2)
     case 0x3F:
         func_80800CC8_chstonepillar(arg0, *(s32*)&arg2);
         break;
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         func_80800C44_chstonepillar(arg0);
         break;
     default:
@@ -484,7 +484,7 @@ void func_80800CC8_chstonepillar(Actor* arg0, s32 arg1)
         }
         if (func_80800DD8_chstonepillar(arg0) != 0)
         {
-            func_800F7F98(func_800F54E4(), 1);
+            func_800F7F98(character_getActiveIndex(), 1);
         }
         func_800C3F48(0x7FF57C16U);
         func_808011CC_chstonepillar(arg0, 2U, 1.0f, 1.0f);
@@ -518,8 +518,8 @@ void func_80800E30_chstonepillar(Actor* arg0)
         flag_setMultipleValue(FLAG3_9CD_UNK, sp1C->unk2C + 1, 3);
         return;
     }
-    func_800F7F98(func_800F54E4(), 0);
-    if (func_800F6CC8(func_800F54E4()) == 0)
+    func_800F7F98(character_getActiveIndex(), 0);
+    if (func_800F6CC8(character_getActiveIndex()) == 0)
     {
         flag_setValueTrue(FLAG3_9D5_UNK);
         flag_setValueTrue(sp1C->unk2C + 0x65C);
@@ -580,7 +580,7 @@ void func_80800FE0_chstonepillar(Actor* arg0)
 
 void func_808010CC_chstonepillar(Actor* arg0)
 {
-    if ((flag_getValue(FLAG3_9D9_UNK) == 0) && (func_800EA05C() != MAP_B9_MT_PRISON_COMPOUND) && (func_800F6CC8(func_800F54E4()) == 0))
+    if ((flag_getValue(FLAG3_9D9_UNK) == 0) && (func_800EA05C() != MAP_B9_MT_PRISON_COMPOUND) && (func_800F6CC8(character_getActiveIndex()) == 0))
     {
         _glcutDll_entrypoint_6(0xB9U, 0xBU);
     }
@@ -634,8 +634,8 @@ s32 func_80801238_chstonepillar(Actor* arg0)
     {
         sp28->unk24 = (f32)(sp28->unk24 - time_getDelta());
         ml_vec3f_copy(&sp2C, (f32*)arg0->actorData);
-        sp2C[0] += func_800DC178(-7.5f, 7.5f);
-        sp2C[2] += func_800DC178(-7.5f, 7.5f);
+        sp2C[0] += rand_fBounded(-7.5f, 7.5f);
+        sp2C[2] += rand_fBounded(-7.5f, 7.5f);
         ml_vec3f_copy(arg0->position, &sp2C);
         return 1;
     }

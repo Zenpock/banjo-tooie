@@ -397,7 +397,7 @@ s32 func_800A4978(PlayerState* arg0) {
         return 0;
     }
 
-    switch (func_800A3274(arg0)) {
+    switch (player_getTransformation(arg0)) {
         case 0xB:
             var_a1 = 7;
             if (arg0->unk38->unk3 != 0) {

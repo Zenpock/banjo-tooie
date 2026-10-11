@@ -727,7 +727,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
     s16 var_a1;
     s16 sp1E;
 
-    var_a1 = func_800DC128(0xD7B, 0xD7D);
+    var_a1 = rand_iBounded(0xD7B, 0xD7D);
     switch (arg1)
     {
     case ALLOW_BANJO: //Banjo Moves
@@ -735,7 +735,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
         if (func_8010D278() == TRANSFORM_B_KAZOOIE)
         {
             //Randomize kazooie Refusal message to use for Banjo Move
-            var_a1 = func_800DC128(0xD71, 0xD73);
+            var_a1 = rand_iBounded(0xD71, 0xD73);
         }
         else
         {
@@ -743,7 +743,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
             if (func_8010D278() == TRANSFORM_1_BK)
             {
                 //Randomize message saying to get rid of kazooie
-                var_a1 = func_800DC128(0xD6F, 0xD71);
+                var_a1 = rand_iBounded(0xD6F, 0xD71);
             }
         }
         break;
@@ -752,7 +752,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
         if (func_8010D278() == TRANSFORM_A_BANJO)
         {
             //Randomize Banjo Refusal message to use for Kazooie Move
-            var_a1 = func_800DC128(0xD73, 0xD75);
+            var_a1 = rand_iBounded(0xD73, 0xD75);
         }
         else
         {
@@ -760,7 +760,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
             if (func_8010D278() == TRANSFORM_1_BK)
             {
                 //Randomize message saying to get rid of Banjo
-                var_a1 = func_800DC128(0xD75, 0xD77);
+                var_a1 = rand_iBounded(0xD75, 0xD77);
             }
         }
         break;
@@ -769,7 +769,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
         if (func_8010D278() == TRANSFORM_B_KAZOOIE)
         {
             //Randomize Kazooie Refusal message to use for BK Move
-            var_a1 = func_800DC128(0xD79, 0xD7B);
+            var_a1 = rand_iBounded(0xD79, 0xD7B);
         }
         else
         {
@@ -777,7 +777,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
             if (func_8010D278() == TRANSFORM_A_BANJO)
             {
                 //Randomize Banjo Refusal message to use for BK Move
-                var_a1 = func_800DC128(0xD77, 0xD79);
+                var_a1 = rand_iBounded(0xD77, 0xD79);
             }
         }
         break;

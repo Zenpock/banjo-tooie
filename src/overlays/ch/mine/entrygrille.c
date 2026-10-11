@@ -9,7 +9,7 @@ s32 func_80800000_chmineentrygrille(Actor* arg0, s32 arg1, u32 arg2) {
     if (flag_getValue(FLAG_393_PROGRESS_OPENED_WORLD_GGM)==0&&(flag_getValue(0x3D8) == 1 && func_800D035C(1) >= _sujiggy_entrypoint_2(1)))
     {
         flag_setValueTrue(FLAG_393_PROGRESS_OPENED_WORLD_GGM);
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
     }
     switch (arg1) 
     {
@@ -36,13 +36,13 @@ void func_808000C4_chmineentrygrille(s32 arg0)
     if (_sujiggy_entrypoint_20(1) != 0)
     {
         flag_setValueTrue(FLAG_393_PROGRESS_OPENED_WORLD_GGM);
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     //Check if the cheat is not active and something about cutscenes
-    if ((func_800D3E40(0xB) != 0) && (_glcutDll_entrypoint_19(0x7B) == 0))
+    if ((cheat_isActive(0xB) != 0) && (_glcutDll_entrypoint_19(0x7B) == 0))
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
     }
 }
 

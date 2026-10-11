@@ -58,7 +58,7 @@ s32 func_808004AC_chgoldfish(Actor* arg0, s32 arg1, s32 arg2)
         _gcdialogcamera_entrypoint_3(&D_80800D3C_chgoldfish, arg0->scale);
         return 1;
     case 0x3E:
-        if (((arg0->unk70_10 == 3) || (arg0->unk70_10 == 4)) && (func_800F64A4(func_800F54E4(), 1) != 0))
+        if (((arg0->unk70_10 == 3) || (arg0->unk70_10 == 4)) && (func_800F64A4(character_getActiveIndex(), 1) != 0))
         {
             func_808005F0_chgoldfish(arg0, 5);
         }

@@ -14,7 +14,7 @@ Actor* subaddiefind_entrypoint_0(f32* arg0, s32 propId, s32 arg2, f32* arg3)
     var_s3 = NULL;
     var_f20 = 0.0f;
     found = 0;
-    var_v0 = func_801067C4(&sp54);
+    var_v0 = actorList_getLast(&sp54);
     while (var_v0 != NULL)
     {
         if (((propId == var_v0->unk6C_9) || (propId < 0)) && (arg2 != (var_v0->unk70_10)) && (var_v0->unk6C_9 != 0x215) && (var_v0->unk6C_9 != 0x243) && !(var_v0->unk64_17))
@@ -29,7 +29,7 @@ Actor* subaddiefind_entrypoint_0(f32* arg0, s32 propId, s32 arg2, f32* arg3)
                 found = 1;
             }
         }
-        var_v0 = func_8010682C(&sp54);
+        var_v0 = actorList_getNext(&sp54);
     }
     if (arg3 != NULL)
     {
@@ -48,7 +48,7 @@ Actor* subaddiefind_entrypoint_1(Actor* arg0, s32 arg1, s32 arg2, f32* arg3)
 
     var_s5 = NULL;
     var_f20 = 1e10f;
-    var_v0 = func_801067C4(&sp48);
+    var_v0 = actorList_getLast(&sp48);
     while (var_v0 != NULL)
     {
         if (((arg1 == var_v0->unk6C_9) || (arg1 < 0)) && (arg2 != var_v0->unk70_10) && (var_v0->unk6C_9 != 0x215) && (var_v0->unk6C_9 != 0x243) && !(var_v0->unk64_17) && (var_v0->unk0 != arg0->unk0))
@@ -60,7 +60,7 @@ Actor* subaddiefind_entrypoint_1(Actor* arg0, s32 arg1, s32 arg2, f32* arg3)
                 var_s5 = var_v0;
             }
         }
-        var_v0 = func_8010682C(&sp48);
+        var_v0 = actorList_getNext(&sp48);
     }
     if (arg3 != NULL)
     {
@@ -74,7 +74,7 @@ Actor* subaddiefind_entrypoint_2(s32 propId, s32* arg1)
     Actor* var_v0;
     s32 sp20;
 
-    var_v0 = func_801067C4(&sp20);
+    var_v0 = actorList_getLast(&sp20);
     while (var_v0 != NULL)
     {
         if ((propId == var_v0->unk6C_9) && !(var_v0->unk64_17))
@@ -85,7 +85,7 @@ Actor* subaddiefind_entrypoint_2(s32 propId, s32* arg1)
             }
             return var_v0;
         }
-        var_v0 = func_8010682C(&sp20);
+        var_v0 = actorList_getNext(&sp20);
     }
     return NULL;
 }
@@ -94,14 +94,14 @@ Actor* subaddiefind_entrypoint_3(s32 propId, s32* arg1)
 {
     Actor* var_v0;
 
-    var_v0 = func_8010682C(arg1);
+    var_v0 = actorList_getNext(arg1);
     while (var_v0 != NULL)
     {
         if ((propId == var_v0->unk6C_9) && !(var_v0->unk64_17))
         {
             return var_v0;
         }
-        var_v0 = func_8010682C(arg1);
+        var_v0 = actorList_getNext(arg1);
     }
     return NULL;
 }
@@ -134,14 +134,14 @@ Actor* subaddiefind_entrypoint_8(s32 arg0)
     Actor* var_v0;
     s32 sp20;
 
-    var_v0 = func_801067C4(&sp20);
+    var_v0 = actorList_getLast(&sp20);
     while (var_v0 != NULL)
     {
         if ((arg0 == var_v0->unk0->unk12_1) && !(var_v0->unk64_17))
         {
             return var_v0;
         }
-        var_v0 = func_8010682C(&sp20);
+        var_v0 = actorList_getNext(&sp20);
     }
     return NULL;
 }
@@ -153,14 +153,14 @@ s32 subaddiefind_entrypoint_9(s32 propId)
     s32 sp2C;
 
     var_s0 = 0;
-    var_v0 = func_801067C4(&sp2C);
+    var_v0 = actorList_getLast(&sp2C);
     while (var_v0 != NULL)
     {
         if (propId == var_v0->unk6C_9 && !var_v0->unk64_17)
         {
             var_s0 += 1;
         }
-        var_v0 = func_8010682C(&sp2C);
+        var_v0 = actorList_getNext(&sp2C);
     }
     return var_s0;
 }
@@ -180,14 +180,14 @@ Actor* subaddiefind_entrypoint_12(s32 arg0)
     Actor* var_v0;
     s32 sp20;
 
-    var_v0 = func_801067C4(&sp20);
+    var_v0 = actorList_getLast(&sp20);
     while (var_v0 != NULL)
     {
         if (!(var_v0->unk64_17) && (arg0 == var_v0->unk6C_21))
         {
             return var_v0;
         }
-        var_v0 = func_8010682C(&sp20);
+        var_v0 = actorList_getNext(&sp20);
     }
     return NULL;
 }

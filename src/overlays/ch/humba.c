@@ -187,7 +187,7 @@ s32 func_80800450_chhumba(Actor* arg0, s32 arg1, s32 arg2)
         arg0->unk3C = temp_v0->unk0;
         func_80800E44_chhumba(arg0, 6);
         break;
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         func_80801DB0_chhumba(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
         break;
     case 0x2F:
@@ -231,7 +231,7 @@ s32 func_80800450_chhumba(Actor* arg0, s32 arg1, s32 arg2)
             break;
         }
         break;
-    case 0x1F:
+    case EVENT_1F_ACTOR_ONSCREEN:
         func_801015D0(arg0);
         temp_v0_2 = func_80103CB8(arg0, func_801039E4(arg0->unk0));
         temp_v0_2->unk0 = 1;
@@ -281,11 +281,11 @@ void func_808007F8_chhumba(Actor* arg0)
     flag_setValueTrue((arg0->unk6C_0) + 0xD5);
     if (arg0->unk74_29) 
     {
-        func_800D175C(0x54, -func_808007EC_chhumba((s32)arg0));
+        inventory_addValue(0x54, -func_808007EC_chhumba((s32)arg0));
     }
     else 
     {
-        func_800D175C(0x48, -func_808007EC_chhumba((s32)arg0));
+        inventory_addValue(0x48, -func_808007EC_chhumba((s32)arg0));
     }
     arg0->unk64_20 = 1;
 }
@@ -338,7 +338,7 @@ s32 func_80800934_chhumba(Actor* arg0, s32 arg1)
         {
             return 1;
         }
-        func_800F5FE0(func_800F54E4());
+        func_800F5FE0(character_getActiveIndex());
     }
 
     return 0;
@@ -358,7 +358,7 @@ s32 func_80800A50_chhumba(Actor* arg0)
     {
         return 0;
     }
-    if (func_800F71D4(func_800F54E4()) == 0) {
+    if (func_800F71D4(character_getActiveIndex()) == 0) {
         return 0;
     }
     if ((func_800EA05C() == MAP_120_JRL_WUMBA) && (sp20[1] > -100.0f)) {
@@ -433,11 +433,11 @@ void func_80800D74_chhumba(Actor* arg0)
     s32 sp38;
     f32 sp2C[3];
 
-    if (func_800DC0C0() < 0.1f)
+    if (rand_f() < 0.1f)
     {
-        temp_v0 = func_800DC128(1, 3);
+        temp_v0 = rand_iBounded(1, 3);
         sp38 = func_800B53A4(temp_v0);
-        func_800EEB9C(sp2C, func_800DC178(0.0f, 360.0f), func_800DC178(0.0f, 1000.0f) * arg0->scale);
+        func_800EEB9C(sp2C, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 1000.0f) * arg0->scale);
         sp2C[1] = -50.0f;
         func_800BABB8(sp38, sp2C, NULL, 1.0f, &D_808026A0_chhumba);
         func_800BA22C(sp38, temp_v0);
@@ -638,7 +638,7 @@ void func_8080144C_chhumba(f32 arg0)
         ml_getdiff_vec3f(sp70, sp98, sp8C);
         if ((((sp70[0] * sp70[0]) + (sp70[2] * sp70[2])) < ((var_f20 + 25.0f) * (var_f20 + 25.0f))) && (sp98[1] < sp8C[1]) && (sp8C[1] <= sp80[1]))
         {
-            func_800F7F50(func_800F54E4(), sp98, sp80, var_f20, 2, 1);
+            func_800F7F50(character_getActiveIndex(), sp98, sp80, var_f20, 2, 1);
         }
     }
 }
@@ -668,11 +668,11 @@ void func_808015DC_chhumba(Actor* arg0)
     {
         if (arg0->unk74_29)
         {
-            func_800D1824(0x54);
+            inventory_showValue(0x54);
         }
         else
         {
-            func_800D1824(0x48);
+            inventory_showValue(0x48);
         }
     }
     func_8008FB10(arg0->position, arg0->scale * 1350.0f, arg0->scale * 72.0f, arg0->scale * 350.0f);
@@ -959,7 +959,7 @@ void func_80801F74_chhumba(Actor* arg0)
     arg0->unk74_7 = 0;
     if (sp24 == NULL)
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
     _gspropctrl_entrypoint_11(sp24, (f32*)&arg0->actorData[4]);

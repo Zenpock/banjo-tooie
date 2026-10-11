@@ -231,7 +231,7 @@ void func_80800748_chwarppad(Actor* arg0)
         if (func_8010C9FC(arg0->position, 0xFA, 0xC8, -0x32) != 0)
         {
             numUnlockedWarppads = func_808000B4_chwarppad(arg0);
-            controlledCharacter = func_800F54E4();
+            controlledCharacter = character_getActiveIndex();
             if (func_80800380_chwarppad(arg0) == 0)
             {
                 //Activate Warp Pad
@@ -250,7 +250,7 @@ void func_80800748_chwarppad(Actor* arg0)
             //Switch to humba transformation
             else if(func_80016B30(0, 7) == 1)
             {
-                PlayerState* state = func_800F53D0(func_800F54E4());
+                PlayerState* state = character_getPlayerState(character_getActiveIndex());
                 u8 currentTransformation = func_8008FD48();
                 u8 targetTransformation = 1;
 
@@ -346,7 +346,7 @@ void func_80800748_chwarppad(Actor* arg0)
             //Switch to mumbo
             else if (func_80016B30(0, 8) == 1)
             {
-                PlayerState* state = func_800F53D0(func_800F54E4());
+                PlayerState* state = character_getPlayerState(character_getActiveIndex());
                 u8 currentTransformation = func_8008FD48();
                 u8 targetTransformation = 1;
 
@@ -436,7 +436,7 @@ void func_80800748_chwarppad(Actor* arg0)
             {
                 arg0->unk74_30 = 1;
                 func_808003B8_chwarppad(arg0);
-                if (func_800F64A4(func_800F54E4(), ALLOW_TREXLARGE | ALLOW_GOLDENGOLIATH) == 0)
+                if (func_800F64A4(character_getActiveIndex(), ALLOW_TREXLARGE | ALLOW_GOLDENGOLIATH) == 0)
                 {
                     func_80800F34_chwarppad(arg0, 4, 1);
                 }
@@ -461,19 +461,18 @@ s32 func_80800A1C_chwarppad(Actor* arg0, u32 arg1, s32 arg2)
 {
     switch (arg1)
     {
-        //Standing on the warppad
-    case 0x91:
-        arg0->unk64_19 = 1;
-    case 0x95:
-        break;
-    case 0x2E:
-        func_80800AB8_chwarppad(arg0, *(s16*)&arg2, *((s16*)&arg2 + 1));
-        break;
-    case 0x20:
-        func_80800B34_chwarppad(arg0, (OptionState*)func_80101080(), *(s16*)&arg2, *((s16*)&arg2 + 1));
-        break;
-    default:
-        return 0;
+        case EVENT_91_ACTOR_STOOD_ON:
+            arg0->unk64_19 = 1;
+        case EVENT_95_ACTOR_SPAWNED:
+            break;
+        case EVENT_2E_ACTOR_DIALOG_ENDED:
+            func_80800AB8_chwarppad(arg0, *(s16*)&arg2, *((s16*)&arg2 + 1));
+            break;
+        case 0x20:
+            func_80800B34_chwarppad(arg0, (OptionState*)func_80101080(), *(s16*)&arg2, *((s16*)&arg2 + 1));
+            break;
+        default:
+            return 0;
     }
     return 1;
 }
@@ -544,7 +543,7 @@ void func_80800C00_chwarppad(Actor* arg0)
 
     levelIndex = D_8012762C;
     //Get Character in control
-    sp3C = func_800F54E4();
+    sp3C = character_getActiveIndex();
     var_a2 = 0;
     while (D_808010B0_chwarppad[var_a2].unk0 != -2)
     {

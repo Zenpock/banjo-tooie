@@ -55,7 +55,7 @@ void func_80800030_chgruntyfireballbig(Actor* actor)
         ((f32*)actor->actorData)[2] = ((f32*)actor->actorData)[2] + (800.0f * sp2C);
         if (actor->position[1] <= ((f32*)actor->actorData)[1])
         {
-            func_800FFAB0(actor);
+            actor_mark_delete(actor);
         }
         break;
     }
@@ -88,7 +88,7 @@ s32 func_808001B4_chgruntyfireballbig(Actor* actor, s32 arg1, s32 arg2)
     case 0x40:
         func_8080034C_chgruntyfireballbig(actor);
         break;
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         actor->actorData[3] = func_800C8A98();
         func_800C8CB8(actor->actorData[3], actor->position);
         func_800C8D4C(actor->actorData[3], &D_8080070C_chgruntyfireballbig);
@@ -121,7 +121,7 @@ void func_8080034C_chgruntyfireballbig(Actor* actor)
     temp_s5 = func_800B53A4(0xA);
     for (var_s1 = 0; var_s1 < 0xA; var_s1++)
     {
-        func_800EEB9C(sp70, (f32)var_s1 * 36.0f, func_800DC178(60.0f, 80.0f));
+        func_800EEB9C(sp70, (f32)var_s1 * 36.0f, rand_fBounded(60.0f, 80.0f));
         ml_vec3f_add(sp70, actor->position);
         func_800BABB8(temp_s5, sp70, sp7C, 1.0f, &D_80800724_chgruntyfireballbig);
     }
@@ -130,7 +130,7 @@ void func_8080034C_chgruntyfireballbig(Actor* actor)
     {
         ((s32*)actor->actorData)[3] = _chlightfader_entrypoint_1(((s32*)actor->actorData)[3], 1.5f, 2);
     }
-    func_800FFAB0(actor);
+    actor_mark_delete(actor);
 }
 
 void func_808004C4_chgruntyfireballbig(Actor* actor)

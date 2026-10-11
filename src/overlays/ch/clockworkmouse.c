@@ -388,7 +388,7 @@ void func_80800D14_chclockworkmouse(Actor* actor, s32 arg1) {
     case 11:
         break;
     case 4: 
-        func_800F4CC0(func_800F54E4());
+        func_800F4CC0(character_getActiveIndex());
         break;
     case 23:
         func_80103140(actor, 0x8A0, ((u16*)actor->unk0)[0xB]);
@@ -402,7 +402,7 @@ void func_80800D14_chclockworkmouse(Actor* actor, s32 arg1) {
     case 4:
         func_800904F4(0x27, actor->unk0);
         sp24->unk100 = 1;
-        func_800F4CEC(func_800F54E4(), 0x3B);
+        func_800F4CEC(character_getActiveIndex(), 0x3B);
         break;
     case 5:
         func_800904F4(0x27, actor->unk0);
@@ -760,7 +760,7 @@ s32 func_80801BF0_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
     s32 sp18;
 
     switch (arg1) {
-    case 0x1F:
+    case EVENT_1F_ACTOR_ONSCREEN:
         func_80801A94_chclockworkmouse(actor);
         break;
     case 0xE:
@@ -826,7 +826,7 @@ void func_80801E2C_chclockworkmouse(Actor* actor) {
     switch (func_801022E4(actor)) {
     case 0x7D:
         _subaddieaudioquick_entrypoint_3(actor, actor->position, (u32 *)&D_80803964_chclockworkmouse, 0.1f);
-        if ((sp2C->unk0.f <= 0.0f) && (func_800DC298(0.03f) != 0) && (func_800C0638() == 0)) {
+        if ((sp2C->unk0.f <= 0.0f) && (rand_percentChance(0.03f) != 0) && (func_800C0638() == 0)) {
             _subaddieaudioquick_entrypoint_2(actor, actor->position, &D_80803950_chclockworkmouse);
             sp2C->unk0.f = 1.5f;
             return;
@@ -1352,7 +1352,7 @@ void func_80802CC8_chclockworkmouse(Actor* arg0) {
             func_80105634(arg0);
             func_808009F4_chclockworkmouse(sp34);
             sp34->unk3C = 0;
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
         }
         break;
     }

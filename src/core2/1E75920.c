@@ -26,21 +26,21 @@ void func_8009C0BC(PlayerState* self, f32* src)
     ml_vec3f_copy(self->posInfo->oldPos, src);
 }
 
-void func_8009C0F8(PlayerState* self, f32* src)
+void player_setCoords(PlayerState* self, f32* src)
 {
     ml_vec3f_copy(self->posInfo->current, src);
 }
 
-void func_8009C118(PlayerState* self, f32 src)
+void player_setCoordVertical(PlayerState* self, f32 src)
 {
     self->posInfo->current[1] = src;
 }
 
-void func_8009C128(PlayerState* self, f32* dst) {
+void player_getCoords(PlayerState* self, f32* dst) {
     ml_vec3f_copy(dst, self->posInfo->current);
 }
 
-f32 func_8009C150(PlayerState* self)
+f32 player_getCoordVertical(PlayerState* self)
 {
     return self->posInfo->current[1];
 }

@@ -825,7 +825,7 @@ void bsbtrot_entrypoint_32(PlayerState* self) {
     _bareact_entrypoint_1(self, func_80099A58(self));
     baanim_playForDuration_once(self, 0x66, 1.1f);
     func_8009D89C(self, 1.0f);
-    func_8009C128(self, sp40);
+    player_getCoords(self, sp40);
     func_800A32C4(self, sp34);
     func_800F1E6C(sp34, sp40, &sp4C);
     yaw_setIdeal(self, func_800136E4(sp4C + 180.0f));

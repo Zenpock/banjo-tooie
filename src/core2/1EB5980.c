@@ -13,7 +13,7 @@ s32 func_800DC090(void)
 }
 
 //Produces a random float between 1 and 0
-f32 func_800DC0C0(void)
+f32 rand_f(void)
 {
     s32 sp4;
     f32 returnV0;
@@ -23,16 +23,16 @@ f32 func_800DC0C0(void)
     return returnV0;
 }
 //Random int within bounds
-s32 func_800DC128(s32 lowerBound, s32 upperBound) {
-    return (s32)((func_800DC0C0() * (f32)(upperBound - lowerBound)) + (f32)lowerBound);
+s32 rand_iBounded(s32 lowerBound, s32 upperBound) {
+    return (s32)((rand_f() * (f32)(upperBound - lowerBound)) + (f32)lowerBound);
 }
 
 //Random float within bounds
-f32 func_800DC178(f32 lowerBound, f32 upperBound) {
-    return (func_800DC0C0() * (upperBound - lowerBound)) + lowerBound;
+f32 rand_fBounded(f32 lowerBound, f32 upperBound) {
+    return (rand_f() * (upperBound - lowerBound)) + lowerBound;
 }
 
-f32 func_800DC1AC(void)
+f32 rand2_f(void)
 {
     s32 sp4;
     f32 returnV0;
@@ -42,25 +42,25 @@ f32 func_800DC1AC(void)
     return returnV0;
 }
 
-s32 func_800DC214(s32 lowerBound, s32 upperBound)
+s32 rand2_iBounded(s32 lowerBound, s32 upperBound)
 {
-    return (s32)((func_800DC1AC() * (f32)(upperBound - lowerBound)) + (f32)lowerBound);
+    return (s32)((rand2_f() * (f32)(upperBound - lowerBound)) + (f32)lowerBound);
 }
 
-f32 func_800DC264(f32 lowerBound, f32 upperBound)
+f32 rand2_fBounded(f32 lowerBound, f32 upperBound)
 {
-    return (func_800DC1AC() * (upperBound - lowerBound)) + lowerBound;
+    return (rand2_f() * (upperBound - lowerBound)) + lowerBound;
 }
 
-int func_800DC298(f32 arg0)
+int rand_percentChance(f32 arg0)
 {
-    return func_800DC0C0() < arg0 ? 1 : 0;
+    return rand_f() < arg0 ? 1 : 0;
 }
 
-int func_800DC2D4(f32 arg0)
+int rand2_percentChance(f32 arg0)
 {
 
-    return func_800DC1AC() < arg0 ? 1 : 0;
+    return rand2_f() < arg0 ? 1 : 0;
 
 }
 

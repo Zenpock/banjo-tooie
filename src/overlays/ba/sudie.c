@@ -35,7 +35,7 @@ void basudie_entrypoint_4(PlayerState* self, f32 arg1, f32 arg2, f32 arg3, f32 a
 
 	basudie_entrypoint_1(self);
 	func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 2, BA_PHYSICS_3_LOCKED_ROTATION);
-	func_8009C128(self, sp40);
+	player_getCoords(self, sp40);
 	func_800A32C4(self, sp34);
 	func_800F1E6C(sp34, sp40, &sp4C);
 	yaw_setIdeal(self, func_800136E4(sp4C + 180.0f));
@@ -79,7 +79,7 @@ int basudie_entrypoint_7(PlayerState* self)
 	sp24 = func_800964DC(self);
 	sp20 = func_80096364(self);
 
-	return _batimer_get(self, 9) != 0.0f && func_80096544(self) && player_inWater(self) && func_8009C150(self) < sp24 - 150.0f && sp24 - sp20 > 100.0f;
+	return _batimer_get(self, 9) != 0.0f && func_80096544(self) && player_inWater(self) && player_getCoordVertical(self) < sp24 - 150.0f && sp24 - sp20 > 100.0f;
 }
 
 void basudie_entrypoint_8(PlayerState* self) {

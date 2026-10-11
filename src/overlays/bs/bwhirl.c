@@ -28,7 +28,7 @@ void func_80800008_bsbwhirl(PlayerState* self) {
             func_800C8E84(self->unk160.word, &D_80800F50_bsbwhirl);
         }
         sp24 = func_80092B8C(self, sp28);
-        func_8009C128(self, sp34);
+        player_getCoords(self, sp34);
         ml_vec3f_add(&sp34, sp28);
         func_800EF1B8(&sp34, func_80092BE8(self), sp24);
         sp34[1] += sp24;
@@ -86,7 +86,7 @@ void func_80800200_bsbwhirl(PlayerState* self)
     f32 sp48[3];
     f32 sp3C[3];
     s32 sp38;
-    func_8009C128(self, sp3C);
+    player_getCoords(self, sp3C);
     func_800EFCD8(sp60, yaw_get(self), 48.0f);
     sp60[1] = 0.0f;
     ml_vec3f_add(sp3C, sp60);

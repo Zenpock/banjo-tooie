@@ -96,7 +96,7 @@ void badrone_entrypoint_16(PlayerState* self, f32* arg1, f32 arg2) {
 	f32 sp2C[3];
 	f32 sp20[3];
 
-	func_8009C128(self, sp2C);
+	player_getCoords(self, sp2C);
 	ml_getdiff_vec3f(sp20, arg1, sp2C);
 	badrone_entrypoint_15(self, arg1, func_800EEFFC(sp20) / arg2);
 }

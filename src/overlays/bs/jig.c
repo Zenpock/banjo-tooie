@@ -45,7 +45,7 @@ void bsjig_entrypoint_2(s32 self)
 {
     PlayerState* temp_v0;
 
-    temp_v0 = func_800F53D0(self);
+    temp_v0 = character_getPlayerState(self);
     if (func_800A32F8(temp_v0) != NULL)
     {
         _chjigsawdance_entrypoint_1(func_80106790(func_800A32F8(temp_v0)), 4);

@@ -40,7 +40,7 @@ void func_80800000_chbubbleelevator(Actor* arg0)
         flag_setValueTrue(FLAG_399_PROGRESS_OPENED_WORLD_CCL);
     }
     //Check if the World Open Cheat is active
-    var_a1 = func_800D3E40(0xB) != 0;
+    var_a1 = cheat_isActive(0xB) != 0;
     if (var_a1 != 0)
     {
         var_a1 = _glcutDll_entrypoint_19(0x81) == 0;
@@ -80,10 +80,10 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         }
         _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1, D_80800C50_chbubbleelevator);
         _subaddieaudioloop_entrypoint_0(arg0, func_800F12D4(arg0->unk58, 0.0f, 5.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk10, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk14));
-        func_800F8294(func_800F54E4(), arg0->position);
+        func_800F8294(character_getActiveIndex(), arg0->position);
         return;
     case 2:
-        func_800F8294(func_800F54E4(), arg0->position);
+        func_800F8294(character_getActiveIndex(), arg0->position);
         return;
     case 3:
         if (ELEVATOR_DATA(arg0)->unk1C < 1.0f)
@@ -103,7 +103,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         if (func_8010C500(arg0) != 0)
         {
             //Check if we're banjo and kazooie
-            if (func_800F64A4(func_800F54E4(), ALLOW_BK) != 0)
+            if (func_800F64A4(character_getActiveIndex(), ALLOW_BK) != 0)
             {
                 func_808004DC_chbubbleelevator(arg0, 5);
             }
@@ -133,7 +133,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
     case 5:
         //Used when doing the little popup animation when getting into the bubble
         //Get Player Coordinates
-        func_800F5A00(func_800F54E4(), sp38);
+        func_800F5A00(character_getActiveIndex(), sp38);
         //If the player coordinates is within 50.0f of the bubble start moving bubble
         if (position_isWithinRangeOf(arg0->position, 50.0f, sp38) != 0)
         {
@@ -150,7 +150,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1, D_80800C50_chbubbleelevator);
         _subaddieaudioloop_entrypoint_0(arg0, func_800F12D4(arg0->unk58, 0.0f, 5.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk10, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk14));
         //Set Player Position to the bubble's position
-        func_800F8294(func_800F54E4(), arg0->position);
+        func_800F8294(character_getActiveIndex(), arg0->position);
         return;
     case 7:
         func_800D91EC(&arg0->unk58, 5.0f);
@@ -158,7 +158,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1, D_80800C50_chbubbleelevator);
         _subaddieaudioloop_entrypoint_0(arg0, func_800F12D4(arg0->unk58, 0.0f, 5.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk10, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk14));
         //Set Player Position to the bubble's position
-        func_800F8294(func_800F54E4(), arg0->position);
+        func_800F8294(character_getActiveIndex(), arg0->position);
         return;
     case 9:
         if (func_800D90A4(&ELEVATOR_DATA(arg0)->unk10) != 0)
@@ -182,11 +182,11 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
     case 1:
         arg0->unk58 = 5.0f;
         func_808008A8_chbubbleelevator(arg0);
-        func_800F7B9C(func_800F54E4(), 0x7C);
-        func_800F8294(func_800F54E4(), arg0->position);
+        func_800F7B9C(character_getActiveIndex(), 0x7C);
+        func_800F8294(character_getActiveIndex(), arg0->position);
         ml_vec3f_assign_value(&sp2C, 0.0f, func_800F1DF4(arg0->position, ELEVATOR_DATA(arg0)->unk0), 0.0f);
-        func_800F832C(func_800F54E4(), &sp2C);
-        func_800F80E4(func_800F54E4(), 0);
+        func_800F832C(character_getActiveIndex(), &sp2C);
+        func_800F80E4(character_getActiveIndex(), 0);
         _capod_entrypoint_13(arg0->unk0, arg0->unk0, D_80800C20_chbubbleelevator[(u32) arg0->unk79_4].unk0, 0x2001);
         arg0->unk6C_0 = func_80015184();
         func_80015178(3);
@@ -202,12 +202,12 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
         flag_setValueFalse(FLAG2_6CA_USING_BUBBLEELEVATOR);
         arg0->unk58 = 0.0f;
         func_808008A8_chbubbleelevator(arg0);
-        func_800F78EC(func_800F54E4(), ELEVATOR_DATA(arg0)->unk0, 840.0f, -1500.0f);
+        func_800F78EC(character_getActiveIndex(), ELEVATOR_DATA(arg0)->unk0, 840.0f, -1500.0f);
         ELEVATOR_DATA(arg0)->unk1C = 2.0f;
         arg0->unk50 = 3.0f;
         _subaddieaudioloop_entrypoint_2(arg0);
         func_800FC74C(0x4A);
-        func_800F80E4(func_800F54E4(), 1);
+        func_800F80E4(character_getActiveIndex(), 1);
         break;
 
     case 4:
@@ -224,7 +224,7 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
         //Entering Bubble
         func_800C3F48(0x7FF194D5);
         //Move the character towards the bubble
-        func_800F78EC(func_800F54E4(), arg0->position, 840.0f, -1500.0f);
+        func_800F78EC(character_getActiveIndex(), arg0->position, 840.0f, -1500.0f);
         new_var = arg0;
         _subaddieDll_entrypoint_4(new_var, 1U);
         break;
@@ -238,10 +238,10 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
         arg0->unk58 = 0.0f;
         func_808008A8_chbubbleelevator(arg0);
         //Set Bubbled Animation State
-        func_800F7B9C(func_800F54E4(), 0x7C);
-        func_800F80E4(func_800F54E4(), 0);
+        func_800F7B9C(character_getActiveIndex(), 0x7C);
+        func_800F80E4(character_getActiveIndex(), 0);
         //Move Player to bubble position
-        func_800F8294(func_800F54E4(), arg0->position);
+        func_800F8294(character_getActiveIndex(), arg0->position);
         //Set Cutscene camera
         _capod_entrypoint_13(arg0->unk0, arg0->unk0, D_80800C20_chbubbleelevator[(u32) arg0->unk79_4].unk1, 0x4001);
         arg0->unk6C_0 = func_80015184();
@@ -300,7 +300,7 @@ s32 func_8080090C_chbubbleelevator(Actor* arg0, s32 arg1, s32 arg2)
         //If we're in CCL and Canary Mary is not in CCL
         if ((func_800EA05C() == MAP_136_CCL_CLOUD_CUCKOOLAND) && (arg2 == D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk0 && (flag_getValue(FLAG_504_PROGRESS_CANARY_MARY_IN_CCL) == 0)))
         {
-            return func_80101180(0x383, 0xB, arg2);
+            return event_sendToActorsOfType(0x383, 0xB, arg2);
         }
         return 2;
     default:

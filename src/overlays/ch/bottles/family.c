@@ -71,25 +71,25 @@ void func_8080088C_chbottlesfamily(Actor* arg0, s32 arg1, s32 arg2)
         _glcutDll_entrypoint_6(0x142U, 0x66U);
         break;
 
-    default:
-        if (arg0->unk6C_0)
-        {
-            func_80800BC0_chbottlesfamily(arg0);
-        }
-        break;
-    }
-    if ((u32)(arg0->unk6C_9) == 0x43C)
-    {
-        if (func_800DC298(0.5f) != 0)
-        {
-            func_80800520_chbottlesfamily(arg0);
-            return;
-        }
-        func_80101FDC(arg0, 1U);
-        arg0->unk58 = func_800DC178(5.0f, 10.0f) * 0.5f;
-        return;
-    }
-    func_80101FDC(arg0, 1U);
+	default:
+		if (arg0->unk6C_0)
+		{
+			func_80800BC0_chbottlesfamily(arg0);
+		}
+		break;
+	}
+	if ((u32)(arg0->unk6C_9) == 0x43C)
+	{
+		if (rand_percentChance(0.5f) != 0)
+		{
+			func_80800520_chbottlesfamily(arg0);
+			return;
+		}
+		func_80101FDC(arg0, 1U);
+		arg0->unk58 = rand_fBounded(5.0f, 10.0f) * 0.5f;
+		return;
+	}
+	func_80101FDC(arg0, 1U);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/family/func_8080099C_chbottlesfamily.s")

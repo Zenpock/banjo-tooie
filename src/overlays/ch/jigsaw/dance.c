@@ -140,7 +140,7 @@ ActorData NewItem_chmoveitem =
 
 void func_80800210_chmoveitem(Actor* arg0)
 {
-    if (func_800DC298(0.5f) != 0)
+    if (rand_percentChance(0.5f) != 0)
     {
         arg0->unk58 = 200.0f;
         return;
@@ -160,10 +160,10 @@ void func_80800260_chmoveitem(Actor* arg0)
     {
         var_s1 = 0;
         do {
-            if (func_800DC298(0.03f) != 0)
+            if (rand_percentChance(0.03f) != 0)
             {
                 func_80103DFC(arg0, sp58);
-                func_800EF214(sp58, func_800DC178(0.0f, 360.0f), func_800DC178(0.0f, 360.0f), 60.0f);
+                func_800EF214(sp58, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 60.0f);
                 _fxtwinkle_entrypoint_0(sp58);
             }
             var_s1 += 1;
@@ -201,7 +201,7 @@ Unk80132ED0* chjigsawdance_entrypoint_1(s32 arg0, f32* arg1, s32 spawnStyle, u16
         sp2C = func_800D0CE0(PROP_21F_JIGGY_REAL, arg1, spawnStyle, &sp28);
         if (sp28 == 0)
         {
-            func_8010108C(sp2C, 0x14, 1);
+            event_sendToActor(sp2C, 0x14, 1);
         }
         func_800D05E4(itemFlag, itemType, sp2C->unk0);
         break;
@@ -209,14 +209,14 @@ Unk80132ED0* chjigsawdance_entrypoint_1(s32 arg0, f32* arg1, s32 spawnStyle, u16
         sp2C = func_800D0CE0(PROP_1F4_JINJO_REAL, arg1, spawnStyle, &sp28);
         if (sp28 == 0)
         {
-            func_8010108C(sp2C, 0x14, 1);
+            event_sendToActor(sp2C, 0x14, 1);
         }
         break;
     case 4:
         sp2C = func_800D0CE0(PROP_136_CHEATOPAGE_REAL, arg1, spawnStyle, &sp28);
         if (sp28 == 0)
         {
-            func_8010108C(sp2C, 0x14, 1);
+            event_sendToActor(sp2C, 0x14, 1);
         }
         break;
     case 2:

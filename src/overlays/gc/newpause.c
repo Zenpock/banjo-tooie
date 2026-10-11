@@ -850,7 +850,7 @@ void func_80800CE4_gcnewpause(PauseState* pauseMenu, OptionState *arg1, s32 sele
 			{
 				deathState = 0xDC;
 			}
-			bs_setState(func_800F53D0(func_800F54E4()), deathState);
+			bs_setState(character_getPlayerState(character_getActiveIndex()), deathState);
 		}
 		break;
 	}
@@ -895,7 +895,7 @@ s32 func_80800EA8_gcnewpause(PauseState* arg0, u32 arg1)
 	s32 sp20;
 	s32 temp_v0;
 	sp24 = func_8080105C_gcnewpause(0U, 0xCU, arg1, 1U);
-	temp_v0 = func_800D1A04(0x54);
+	temp_v0 = inventory_getValue(0x54);
 	sp20 = temp_v0;
 	if ((temp_v0 != 0) && (func_8080190C_gcnewpause((u32)sp20, 0x2F, func_800D27A4(func_800D1C5C(0x54)), 5U, arg1) != 0))
 	{
@@ -981,7 +981,7 @@ s32 func_8080105C_gcnewpause(s32 a0, s32 a1, u32 a2, u32 a3)
 		{
 			continue;
 		}
-		new_var = func_800D1A04(D_808020D8_gcnewpause[index].PropID);
+		new_var = inventory_getValue(D_808020D8_gcnewpause[index].PropID);
 		if (a3 != 0)
 		{
 			if (new_var == 0)
@@ -1508,7 +1508,7 @@ s32 func_80801E80_gcnewpause(s32 a0, s32 a1)
 	s32 s0 = 0;
 	for (s0 = a0; s0 < a0 + a1; s0++)
 	{
-		if (func_800D1A04(D_808020D8_gcnewpause[s0].PropID) != 0)
+		if (inventory_getValue(D_808020D8_gcnewpause[s0].PropID) != 0)
 		{
 			return 0x1;
 		}

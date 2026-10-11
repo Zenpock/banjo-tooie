@@ -91,7 +91,7 @@ void bssnowball_entrypoint_1(PlayerState* self) {
 }
 
 void bssnowball_entrypoint_2(PlayerState* self) {
-    if (func_800A3274(self) == TRANSFORM_2_SNOWBALL) {
+    if (player_getTransformation(self) == TRANSFORM_2_SNOWBALL) {
         if (self->unk164.bytes[1] != 0) {
             _basnowball_entrypoint_9(self, 0.0f);
         }
@@ -121,7 +121,7 @@ void func_808003D8_bssnowball(PlayerState* self) {
     sp28 = func_800B53A4(0x32);
     bssnowball_entrypoint_1(self);
     _basudie_entrypoint_9(self, 90.0f);
-    func_8009C128(self, sp2C);
+    player_getCoords(self, sp2C);
     func_8009DB04(self, 0x694, 1.0f, 0x7FFF);
     func_8009D9D4(self);
     func_800BBCB8(&sp2C, NULL, 1.0f, 1, D_80801028_bssnowball);

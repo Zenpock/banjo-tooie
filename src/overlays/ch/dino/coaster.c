@@ -23,7 +23,6 @@ s32 func_808001C8_chdinocoaster(Actor* arg0, s32 arg1, s32 arg2)
         func_8010A590((s32)arg0);
         if (split[0] == 0x17B8)
         {
-            
             volatile s32 type = 9;
             s32 flag = 16;
             if (type == 9)
@@ -34,8 +33,6 @@ s32 func_808001C8_chdinocoaster(Actor* arg0, s32 arg1, s32 arg2)
             {
                 _sujiggy_entrypoint_2(type << 16 | flag | 0x15000000);
             }
-            
-            
         }
         break;
     case 0x38:

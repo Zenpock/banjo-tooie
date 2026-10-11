@@ -11,7 +11,7 @@ int func_8008D0A0(PlayerState* arg0)
 //Can Beak Bomb
 int func_8008D0E0(PlayerState* arg0)
 {
-	return ability_getValue(ABILITY_01_BK_BEAK_BOMB) && baflag_isFalse(arg0, 0x39) && (func_800A3304(arg0) || func_800A3274(arg0) == TRANSFORM_B_KAZOOIE);
+	return ability_getValue(ABILITY_01_BK_BEAK_BOMB) && baflag_isFalse(arg0, 0x39) && (func_800A3304(arg0) || player_getTransformation(arg0) == TRANSFORM_B_KAZOOIE);
 }
 
 //Can Beak Bust
@@ -55,7 +55,7 @@ s32 func_8008D280(PlayerState* arg0)
     {
         return 0;
     }
-    temp_v0 = func_800A3274(arg0);
+    temp_v0 = player_getTransformation(arg0);
     if (((temp_v0 == TRANSFORM_1_BK) || (temp_v0 == TRANSFORM_A_BANJO)) && (func_800A3304(arg0) == 0)) {
         return 0;
     }
@@ -153,7 +153,7 @@ s32 func_8008D850(PlayerState* arg0)
 
 	if ((ability_getValue(ABILITY_1E_TALON_TORPEDO) != 0) && (func_800A3304(arg0) != 0) && (_bafpctrl_entrypoint_5(arg0) == 0))
 	{
-        func_8009C128(arg0, sp1C);
+        player_getCoords(arg0, sp1C);
         //Restrict Talon Torpedo when in the waterfall
         if ((func_800EA05C() == MAP_117_TDL_RIVER_PASSAGE) && (sp1C[2] < D_80124AD4))
         {
@@ -216,7 +216,7 @@ int func_8008DC90(PlayerState* arg0, f32* arg1, f32 arg2)
     f32 sp20[3];
     f32 sp18[2];
 
-    func_8009C128(arg0, sp20);
+    player_getCoords(arg0, sp20);
     func_8008FF40(sp2C);
     func_800F18FC(sp20, arg1, sp18);
     return func_800F20BC(sp2C[0], sp18[0], arg2) && func_800F20BC(sp2C[1], sp18[1], arg2);
@@ -224,7 +224,7 @@ int func_8008DC90(PlayerState* arg0, f32* arg1, f32 arg2)
 
 int func_8008DD04(PlayerState* arg0)
 {
-    return (func_8009C150(arg0) - func_80096364(arg0)) > 60.0f
+    return (player_getCoordVertical(arg0) - func_80096364(arg0)) > 60.0f
         && player_isStable(arg0) == 0;
 }
 
@@ -248,7 +248,7 @@ s32 func_8008DDEC(PlayerState* arg0, f32* arg1, f32 arg2)
 {
     f32 sp1C[3];
 
-    func_8009C128(arg0, sp1C);
+    player_getCoords(arg0, sp1C);
     return func_800F0064(arg1, arg2, sp1C);
 }
 
@@ -273,7 +273,7 @@ int func_8008DEA4(PlayerState* arg0, f32* arg1, f32 arg2)
 {
     f32 sp1C[3];
 
-    func_8009C128(arg0, sp1C);
+    player_getCoords(arg0, sp1C);
     return ((arg1[1] - arg2) <= sp1C[1]) && (sp1C[1] <= (arg1[1] + arg2));
 
 }

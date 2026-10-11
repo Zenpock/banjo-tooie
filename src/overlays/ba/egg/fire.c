@@ -25,14 +25,14 @@ void baeggfire_entrypoint_1(s32 arg0)
 {
 	PlayerState* temp_v0;
 
-	temp_v0 = func_800F53D0(arg0);
+	temp_v0 = character_getPlayerState(arg0);
 	temp_v0->unk6C->unk13 = 0;
 	func_80800008_baeggfire(temp_v0, 0);
 }
 
 void baeggfire_entrypoint_2(s32 arg0)
 {
-	func_800F53D0(arg0)->unk6C->unk13 = 0;
+	character_getPlayerState(arg0)->unk6C->unk13 = 0;
 }
 
 void func_808000B8_baeggfire(PlayerState* arg0)

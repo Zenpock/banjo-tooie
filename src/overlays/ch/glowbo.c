@@ -1,6 +1,16 @@
 #include "ch/glowbo.h"
 
 #define GLOWBO_DATA(arg0) ((GlowboActorData*)(arg0->actorData))
+void func_8080013C_chglowbo(Actor*);
+void func_808002F4_chglowbo(Actor*);
+s32 func_80800880_chglowbo(Actor*, s32, s32);
+void func_80800A48_chglowbo(Actor*);
+void func_80800B10_chglowbo(Actor*);
+void func_80800E28_chglowbo(Actor*);
+void func_80800F64_chglowbo(Actor*);
+void func_80801118_chglowbo(Actor*, s32);
+s32 func_8080115C_chglowbo(Actor*, s32, u32);
+void func_80801258_chglowbo(Actor* );
 
 f32 D_808013B0_chglowbo[] = {0,0,0.5f,1.0f,1.0f,1.0f,0.0f};
 s32 D_808013C8_chglowbo[] = {0,0,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F333333,0x02120000,0x3F666666,0x02130000,0x3F333333,0x02120000 };
@@ -215,7 +225,7 @@ void func_8080013C_chglowbo(Actor* arg0)
     }
     if ((arg0->unk74_29) && (flag_getValue(FLAG_056_STATE_MEGA_GLOWBO) != 0))
     {
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return;
     }
 
@@ -263,9 +273,9 @@ void func_808002F4_chglowbo(Actor* arg0)
     if ((!arg0->unk64_19) || (_subaddiesect_entrypoint_0(arg0, sp74->unk17, 0xB) != 0))
     {
         gamespeed = time_getDelta();
-        if (arg0->unk7C_12 && (func_800DC298(0.05f) != 0))
+        if (arg0->unk7C_12 && (rand_percentChance(0.05f) != 0))
         {
-            ml_vec3f_assign_value(sp60, arg0->position[0] + func_800DC178(-30.0f, 30.0f), arg0->position[1] + func_800DC178(25.0f, 55.0f), arg0->position[2] + func_800DC178(-30.0f, 30.0f));
+            ml_vec3f_assign_value(sp60, arg0->position[0] + rand_fBounded(-30.0f, 30.0f), arg0->position[1] + rand_fBounded(25.0f, 55.0f), arg0->position[2] + rand_fBounded(-30.0f, 30.0f));
             _fxtwinkle_entrypoint_1(sp60, ASSET_9E4_RED_SPARKLE);
         }
         func_8010D254(GLOWBO_DATA(arg0)->unk0);
@@ -280,7 +290,7 @@ void func_808002F4_chglowbo(Actor* arg0)
                 {
                     if ((func_80090128() != 0) && ((func_8010C500(arg0) != 0) || (func_8010C710(arg0) < 0x9C400)))
                     {
-                        arg0->unk54 = func_8010CD50(arg0, func_800F54E4()) - 180.0f;
+                        arg0->unk54 = func_8010CD50(arg0, character_getActiveIndex()) - 180.0f;
                     }
                     else
                     {
@@ -309,7 +319,7 @@ void func_808002F4_chglowbo(Actor* arg0)
                     func_800C8CB8(sp74->unk4, sp54);
                     func_80800000_chglowbo(arg0);
                 }
-                if (((sp74->unkC <= 0.0f) && (func_800DC298(0.1f) != 0)) && (func_8010CAC0(arg0->position, 0x5DCU) != 0))
+                if (((sp74->unkC <= 0.0f) && (rand_percentChance(0.1f) != 0)) && (func_8010CAC0(arg0->position, 0x5DCU) != 0))
                 {
                     sp74->unkC = 4.0f;
                     _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801420_chglowbo);
@@ -352,7 +362,7 @@ void func_808002F4_chglowbo(Actor* arg0)
             {
                 func_800C8B84(sp74->unk4);
             }
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
         }
     }
 }
@@ -384,12 +394,12 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
         if (arg0->unk74_29) {
             _subaddiedialog_entrypoint_11(arg0->unk0, 0xD03U, 0U, arg0->position, 0U);
             flag_setValueTrue(FLAG_056_STATE_MEGA_GLOWBO);
-            func_800D1844(0x54U);
+            inventory_incrementValue(0x54U);
         }
         else {
             _sudialog_entrypoint_0(0x2A, 0);
             func_800D0BD4(sp2C->unk0, 3U);
-            func_800D1844(0x48U);
+            inventory_incrementValue(0x48U);
         }
         _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801454_chglowbo);
         func_80101FDC(arg0, 1U);
@@ -516,7 +526,7 @@ void func_80800B10_chglowbo(Actor* arg0)
         return;
     case 1:
         func_800C8B84(temp_v0->unk4);
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         break;
     }
 }
@@ -549,7 +559,7 @@ void func_80800E28_chglowbo(Actor* arg0)
     {
         arg0->scale = 0.25f;
     }
-    arg0->rotation[1] = (func_80090010() + func_800DC178(-110.0f, 110.0f));
+    arg0->rotation[1] = (func_80090010() + rand_fBounded(-110.0f, 110.0f));
     func_8010D254(sp3C);
     func_800EEB9C(GLOWBO_DATA(arg0)->unk0, arg0->rotation[1], 400.0f);
     ml_vec3f_add(GLOWBO_DATA(arg0)->unk0, arg0->position);
@@ -612,22 +622,21 @@ s32 func_8080115C_chglowbo(Actor* arg0, s32 arg1, u32 arg2) {
     return 0;
 }
 
-
-u32* chglowbo_entrypoint_3(void) 
+ActorData* chglowbo_entrypoint_3(void)
 {
     return &D_808015D0_chglowbo;
 }
 
 Actor* chglowbo_entrypoint_4(void)
 {
-    return func_80108474(0x2A0, &D_80801618_chglowbo, func_800DC178(0.0f, 359.0f));
+    return func_80108474(0x2A0, &D_80801618_chglowbo, rand_fBounded(0.0f, 359.0f));
 }
 
 Actor* chglowbo_entrypoint_5(void)
 {
     f32 sp1C[3];
     func_8008FE94(1, sp1C);
-    return func_80108474(0x2A0U, sp1C, (s32)func_800DC178(0.0f, 359.0f));
+    return func_80108474(0x2A0U, sp1C, (s32)rand_fBounded(0.0f, 359.0f));
 }
 
 void chglowbo_entrypoint_6(void) 

@@ -28,6 +28,6 @@ void func_8080000C_chboilerbossdoor(Actor* arg0)
     }
     if (var_v1 == 0)
     {
-        func_8010108C(arg0, 8, 0);
+        event_sendToActor(arg0, 8, 0);
     }
 }

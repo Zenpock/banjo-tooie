@@ -63,7 +63,7 @@ void func_80800024_chpawnbroker(Actor* arg0)
     u32* sp3C;
     f32 temp[3];
     sp3C = func_80100094(arg0, 1U);
-    func_800D1824(0x4E);
+    inventory_showValue(0x4E);
     _sudeflect_entrypoint_1(&D_808010B8_chpawnbroker, 60.0f, 0.0f, 60.0f, 2);
     _sudeflect_entrypoint_1(arg0->position, 250.0f, 0.0f, 100.0f, 0xA);
     _suexpression_entrypoint_10(sp3C, arg0->unk0, 0U);
@@ -116,7 +116,7 @@ void func_80800024_chpawnbroker(Actor* arg0)
             {
                 func_80102424(arg0, 5);
                 //Explode the glass cage
-                func_80101180(0x353, 5, 0);
+                event_sendToActorsOfType(0x353, 5, 0);
                 flag_setValueTrue(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED);
                 return;
             }
@@ -140,7 +140,7 @@ void func_80800024_chpawnbroker(Actor* arg0)
             {
                 func_80102424(arg0, 8);
                 //Explode the glass cage
-                func_80101180(0x353, 5, 0);
+                event_sendToActorsOfType(0x353, 5, 0);
                 flag_setValueTrue(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED);
                 return;
             }
@@ -228,7 +228,7 @@ s32 func_80800534_chpawnbroker(Actor* actor, s32 eventType, s32 arg2)
     switch (eventType)
     {
         //Just Finished a dialog
-        case 0x2E:
+        case EVENT_2E_ACTOR_DIALOG_ENDED:
             func_8080083C_chpawnbroker(actor, temp[0], temp[1]);
             break;
         case 0x3D:
@@ -242,7 +242,7 @@ s32 func_80800534_chpawnbroker(Actor* actor, s32 eventType, s32 arg2)
         case 0xB:
             func_80800AA8_chpawnbroker(actor);
             return 4;
-        case 0x95:
+        case EVENT_95_ACTOR_SPAWNED:
             sp1C = _suexpression_entrypoint_7(actor, 1U, 0x53U);
             _suexpression_entrypoint_12((void*)sp1C, 70.0f, 30.0f);
             _suexpression_entrypoint_17(sp1C, 0x3E8);
@@ -455,10 +455,10 @@ s32 func_80800C00_chpawnbroker(s32 NumDoubloons, s32 SaleConfirmation)
     if (SaleConfirmation > 0)
     {
         //Check if we have enough doubloons
-        if (func_800D1A04(0x4E) >= NumDoubloons)
+        if (inventory_getValue(0x4E) >= NumDoubloons)
         {
             //Check the current player's transformation if valid
-            if (func_800F64A4(func_800F54E4(), ALLOW_BANJO | ALLOW_BK) != 0)
+            if (func_800F64A4(character_getActiveIndex(), ALLOW_BANJO | ALLOW_BK) != 0)
             {
                 //Sure
                 return 0x1040;
@@ -516,7 +516,7 @@ s32 func_80800D5C_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
         func_800BBCB8(arg0->position, arg0->position, arg0->scale, 0x28, &D_80801100_chpawnbroker);
         _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801134_chpawnbroker);
         func_8010A590(func_80106790(arg0->unk3C));
-        func_800FFAB0(arg0);
+        actor_mark_delete(arg0);
         return 1;
     }
     return 0;

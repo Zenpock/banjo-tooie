@@ -80,7 +80,7 @@ void __baanim_oscillateScale(f32 dst[3], f32 x, f32 min, f32 osc_size) {
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baanim/__baanim_applyBottlesBonus.s")
 #else
 void __baanim_applyBottlesBonus(s32 arg0, s32 arg1) {
-    PlayerState *self = func_800F53D0(arg1);
+    PlayerState *self = character_getPlayerState(arg1);
     f32 sp2C[3];
     f32 sp28;
     static s32 D_80126CD0;
