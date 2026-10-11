@@ -394,7 +394,7 @@ s32 bstrexsmall_entrypoint_7(PlayerState* self, f32* arg1)
     f32 temp_f0;
     f32 sp18[3];
 
-    func_8009C128(self, sp18);
+    player_getCoords(self, sp18);
     temp_f0 = func_800EFC7C(sp18, arg1);
     if (temp_f0 < 40000.0f)
     {
@@ -586,7 +586,7 @@ s32 bstrexsmall_entrypoint_11(s32 arg0) {
 void func_80801258_bstrexsmall(PlayerState* self, s32 arg1) {
     f32 sp1C[3];
 
-    func_8009C128(self, sp1C);
+    player_getCoords(self, sp1C);
     func_801013A8(sp1C, arg1, self->unk184);
 }
 

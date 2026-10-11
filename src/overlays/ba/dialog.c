@@ -20,7 +20,7 @@ s32 badialog_entrypoint_3(PlayerState* arg0, u32 arg1, u32 arg2)
 {
     f32 sp2C[3];
 
-    func_8009C128(arg0, sp2C);
+    player_getCoords(arg0, sp2C);
     return func_800C0534(arg1, arg2, sp2C, func_8008E938(arg0), _badialog_entrypoint_0, _badialog_entrypoint_1, _badialog_entrypoint_2, 0);
 }
 

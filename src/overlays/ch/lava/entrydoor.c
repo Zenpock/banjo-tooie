@@ -35,7 +35,7 @@ void func_808000CC_chlavaentrydoor(Actor* arg0)
         actor_mark_delete(arg0);
         return;
     }
-    if ((func_800D3E40(0xBU) != 0) && (_glcutDll_entrypoint_19(0x80U) == 0))
+    if ((cheat_isActive(0xBU) != 0) && (_glcutDll_entrypoint_19(0x80U) == 0))
     {
         actor_mark_delete(arg0);
     }

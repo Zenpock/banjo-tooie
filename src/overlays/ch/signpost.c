@@ -27,7 +27,7 @@ void func_80800058_chsignpost(Actor* arg0)
     case 1:
         if (flag_getValue(FLAG_03A_FTT_SIGNPOST) == 0)
         {
-            if ((func_8010CAC0(arg0->position, 0x15EU) != 0) && (func_8010CD88(arg0, 360.0f, 70.0f) != 0) && (func_800F4B8C(func_800F54E4(), -1U, 0) != 0))
+            if ((func_8010CAC0(arg0->position, 0x15EU) != 0) && (func_8010CD88(arg0, 360.0f, 70.0f) != 0) && (func_800F4B8C(character_getActiveIndex(), -1U, 0) != 0))
             {
                 _subaddiedialog_entrypoint_11(arg0->unk0, 0x16C2U, 0xEU, arg0->position, 0x28U);
                 func_80101FDC(arg0, 2U);
@@ -106,7 +106,7 @@ s32 func_80800274_chsignpost(Actor* arg0)
     if ((var_a1 >= 0x16B7) && (var_a1 < 0x16BF))
     {
         sp20 = var_a1;
-        if (func_800D3E40(6U) == 0)
+        if (cheat_isActive(CHEAT_6_GETJIGGY) == 0)
         {
             var_a1 = 0x16BF;
         }

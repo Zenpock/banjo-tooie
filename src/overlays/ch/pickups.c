@@ -81,7 +81,7 @@ s32 func_80800084_chpickups(Actor* arg0, s32 arg1, s32 arg2)
         case EVENT_95_ACTOR_SPAWNED:
             if (arg0->unk64_23)
             {
-                func_800F822C(func_800F54E4(), 0, 0);
+                func_800F822C(character_getActiveIndex(), 0, 0);
                 func_80101FDC(arg0, 3);
             }
 
@@ -102,7 +102,7 @@ void func_80800110_chpickups(Actor* arg0)
             _fxsparkle_entrypoint_1(arg0->position, 5U);
             func_800FC6B0(0xE);
         }
-        func_800F6388(func_800F54E4(), arg0->unk6C_9);
+        func_800F6388(character_getActiveIndex(), arg0->unk6C_9);
         actor_mark_delete(arg0);
     }
 }
@@ -193,7 +193,7 @@ void func_80800364_chpickups(Actor* arg0)
         {
             if ((arg0->unk0->unk24_22 != 0x37) && (arg0->unk0->unk24_22 == 0x67))
             {
-                func_80101180(0x4A5, 0x7D, 0);
+                event_sendToActorsOfType(0x4A5, 0x7D, 0);
                 actor_mark_delete(arg0);
             }
         }
@@ -209,13 +209,13 @@ void func_80800528_chpickups(Actor* arg0)
     f32 sp28[3];
     if (func_8008FDEC() != arg0->unk0)
     {
-        func_800F63E0(func_800F54E4(), arg0->unk6C_9);
+        func_800F63E0(character_getActiveIndex(), arg0->unk6C_9);
         actor_mark_delete(arg0);
         return;
     }
     if (arg0->unk64_22)
     {
-        func_800F5D44(func_800F54E4(), sp28);
+        func_800F5D44(character_getActiveIndex(), sp28);
         func_808001A0_chpickups(arg0->unk0, sp28);
     }
 }

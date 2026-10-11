@@ -202,7 +202,7 @@ void bafly_entrypoint_13(PlayerState* self, s32 arg1, enum asset_e arg2, f32 arg
         sp44 = -1200.0f;
         sp38 = 400.0f;
     }
-    func_8009C128(self, &sp54);
+    player_getCoords(self, &sp54);
     func_800E1610(2, 100.0f, 0.85f, &sp54);
     baanim_playForDuration_once(self, arg2, arg3);
     func_8009D9D4(self);
@@ -249,7 +249,7 @@ void bafly_entrypoint_16(PlayerState* self, enum asset_e arg1, f32 arg2) {
     f32 sp40[3];
     f32 sp34[3];
 
-    func_8009C128(self, &sp40);
+    player_getCoords(self, &sp40);
     func_800E1610(2, 100.0f, 0.85f, &sp40);
     baanim_playForDuration_once(self, arg1, arg2);
     func_8009DA40(self);

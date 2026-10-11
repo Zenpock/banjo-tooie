@@ -61,7 +61,7 @@ void func_800989E4(PlayerState* self) {
     {
         return;
     }
-    func_8009C128(self, sp2C);
+    player_getCoords(self, sp2C);
     if (temp_v0 != 2 && (func_800EFED0((self->unkBC->unkC), self->unkBC->unk0, sp2C) != 0))
     {
         return;
@@ -76,7 +76,7 @@ void func_800989E4(PlayerState* self) {
         }
         sp24 = 0;
         sp20 = 0;
-        switch (func_800A3274(self))
+        switch (player_getTransformation(self))
         {
         case TRANSFORM_11_CLOCKWORK:
             sp24 = 1;
@@ -221,7 +221,7 @@ void func_80098E64(PlayerState* self)
     s32 sp28;
     s32 var_a1;
 
-    if ((func_800A3274(self) == TRANSFORM_E_GOLDENGOLIATH) && (baflag_isTrue(self, 0x40) != 0))
+    if ((player_getTransformation(self) == TRANSFORM_E_GOLDENGOLIATH) && (baflag_isTrue(self, 0x40) != 0))
     {
         func_800A3410(self, 0xD);
         func_800F8EBC(self->unk184);
@@ -254,7 +254,7 @@ void func_80098E64(PlayerState* self)
         }
         func_8009EB0C(sp2C);
         func_8009EAF4(_bashoes_entrypoint_1(self));
-        func_8009E9D8(func_800A3274(self));
+        func_8009E9D8(player_getTransformation(self));
         func_8009E9FC(0.0f);
         switch (sp30)
         {
@@ -262,7 +262,7 @@ void func_80098E64(PlayerState* self)
             func_8009E9FC(bastatetimer_get(self, BA_STATE_TIMER_ID_2_LONGLEG));
             break;
         case 9:
-            if (func_800A3274(self) == TRANSFORM_6_BEE)
+            if (player_getTransformation(self) == TRANSFORM_6_BEE)
             {
                 func_8009EAD0(4);
             }
@@ -450,7 +450,7 @@ void func_800991B0(PlayerState* self)
         }
         func_80093448(self);
         func_800A2534(self);
-        if ((func_800D3E40(4U) != 0) && (func_8008DAA8(self) != 0) && (func_8008E124(self) == 0))
+        if ((cheat_isActive(CHEAT_4_HONEYBACK) != 0) && (func_8008DAA8(self) != 0) && (func_8008E124(self) == 0))
         {
             func_800A18E8(self);
         }

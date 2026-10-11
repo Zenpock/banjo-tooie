@@ -16,7 +16,7 @@ void* func_80101080()
     return D_80135A80;
 }
 
-s32 func_8010108C(Actor* actor, ActorEventId eventId, s32 arg2)
+s32 event_sendToActor(Actor* actor, ActorEventId eventId, s32 arg2)
 {
     s32 pad;
     s32 sp28;
@@ -47,10 +47,10 @@ s32 func_8010108C(Actor* actor, ActorEventId eventId, s32 arg2)
 
 s32 func_8010114C(s32 arg0, ActorEventId eventId, s32 arg2)
 {
-    return func_8010108C(func_80106790((Unk80132ED0*)arg0), eventId, arg2);
+    return event_sendToActor(func_80106790((Unk80132ED0*)arg0), eventId, arg2);
 }
 
-s32 func_80101180(s32 propId, ActorEventId eventId, s32 arg2)
+s32 event_sendToActorsOfType(s32 propId, ActorEventId eventId, s32 arg2)
 {
     Actor* actorToCheck;
     s32 LastIndex;
@@ -65,7 +65,7 @@ s32 func_80101180(s32 propId, ActorEventId eventId, s32 arg2)
         if (!(actorToCheck->unk64_17) && (propId == actorToCheck->unk6C_9))
         {
             //Send the event to the actor's event handler
-            temp_v0 = func_8010108C(actorToCheck, eventId, arg2);
+            temp_v0 = event_sendToActor(actorToCheck, eventId, arg2);
             if ((temp_v0 > 0) && (var_s0 == 0))
             {
                 var_s0 = temp_v0;

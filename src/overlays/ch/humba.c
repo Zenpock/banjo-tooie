@@ -337,7 +337,7 @@ s32 func_80800934_chhumba(Actor* arg0, s32 arg1)
         {
             return 1;
         }
-        func_800F5FE0(func_800F54E4());
+        func_800F5FE0(character_getActiveIndex());
     }
 
     return 0;
@@ -357,7 +357,7 @@ s32 func_80800A50_chhumba(Actor* arg0)
     {
         return 0;
     }
-    if (func_800F71D4(func_800F54E4()) == 0) {
+    if (func_800F71D4(character_getActiveIndex()) == 0) {
         return 0;
     }
     if ((func_800EA05C() == MAP_120_JRL_WUMBA) && (sp20[1] > -100.0f)) {
@@ -639,7 +639,7 @@ void func_8080144C_chhumba(f32 arg0)
         ml_getdiff_vec3f(sp70, sp98, sp8C);
         if ((((sp70[0] * sp70[0]) + (sp70[2] * sp70[2])) < ((var_f20 + 25.0f) * (var_f20 + 25.0f))) && (sp98[1] < sp8C[1]) && (sp8C[1] <= sp80[1]))
         {
-            func_800F7F50(func_800F54E4(), sp98, sp80, var_f20, 2, 1);
+            func_800F7F50(character_getActiveIndex(), sp98, sp80, var_f20, 2, 1);
         }
     }
 }

@@ -267,7 +267,7 @@ int func_8010038C(Actor* actor, f32* arg1)
 	if (!actor->unk7C_15)
 	{
 		actor->unk7C_15 = 1;
-		func_8010108C(actor, EVENT_95_ACTOR_SPAWNED, 0);
+		event_sendToActor(actor, EVENT_95_ACTOR_SPAWNED, 0);
 		if (actor->unk64_17)
 		{
 			return 0;

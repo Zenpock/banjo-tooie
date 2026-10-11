@@ -155,7 +155,7 @@ PlayerState* func_800F53D0(s32 arg0);
 PlayerState* func_800F53E4(s32 arg0);
 TransformationId func_800F5410(s32);
 //Get the character control index
-u32 func_800F54E4(void);
+u32 character_getActiveIndex(void);
 s32 func_800F5578(s32);
 s32 func_800F55A4(s32);
 s32 func_800F56AC(s32);

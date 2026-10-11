@@ -468,7 +468,7 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
         _subaddiedialog_entrypoint_11(arg0->unk0, 0x1540U, 0xEU, arg0->position, 0xCBU);
         break;
     case 12:
-        func_800F82D4(func_800F54E4(), 2);
+        func_800F82D4(character_getActiveIndex(), 2);
         if (arg0->unk64_20)
         {
             if (flag_getValue(FLAG_3E4_SNS_EGG_HATCHED_BLUE) != 0)
@@ -522,10 +522,10 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
         break;
     case 16:
         arg0->unk58 = 2.0f;
-        arg0->unk54 = func_8010CD50(arg0, func_800F54E4());
+        arg0->unk54 = func_8010CD50(arg0, character_getActiveIndex());
         break;
     case 17:
-        func_800F82D4(func_800F54E4(), 0);
+        func_800F82D4(character_getActiveIndex(), 0);
         if (arg0->unk64_20)
         {
             flag_setValueTrue(FLAG_3E4_SNS_EGG_HATCHED_BLUE);

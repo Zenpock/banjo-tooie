@@ -10,6 +10,7 @@
 void func_8009E880();
 void func_8009E8B4();
 void func_8009E8D4();
+s32 func_8009E958();
 void func_8009E9A0();
 void func_8009E9A8();
 void func_8009E9D8(TransformationId);

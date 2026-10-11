@@ -272,7 +272,7 @@ void func_808007F8_bsswim(PlayerState* self) {
 		func_80096440(self, sp24);
 		if (sp24[1] < -0.7f) {
 			sp20 = func_800964DC(self);
-			if ((sp20 - func_8009C150(self)) > 90.0f) {
+			if ((sp20 - player_getCoordVertical(self)) > 90.0f) {
 				nextState = func_80800000_bsswim(self);
 			}
 		}

@@ -12,7 +12,7 @@ void func_80800000_chterryteeth(Actor* arg0)
         actor_mark_delete(arg0);
         return;
     }
-    if ((func_800D3E40(0xB) != 0) && (_glcutDll_entrypoint_19(0x7EU) == 0))
+    if ((cheat_isActive(0xB) != 0) && (_glcutDll_entrypoint_19(0x7EU) == 0))
     {
         actor_mark_delete(arg0);
     }

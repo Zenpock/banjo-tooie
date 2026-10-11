@@ -63,7 +63,7 @@ void func_8009216C(PlayerState* arg0, f32* arg1, f32* arg2)
     arg0->unk50->unk20 = func_8009BFCC(arg0);
     temp_v0 = arg0->unk50;
     ml_vec3f_assign_value(arg2, temp_v0->unk20, temp_v0->unk28, temp_v0->unk24);
-    func_8009C128(arg0, arg1);
+    player_getCoords(arg0, arg1);
 }
 
 void func_800921E0(PlayerState* arg0, s32 arg1, f32* arg2)
@@ -71,7 +71,7 @@ void func_800921E0(PlayerState* arg0, s32 arg1, f32* arg2)
     func_8009C2A0(arg0->unk50->unk4, arg1,arg2);
     if (ml_vec3f_is_zero(arg2) != 0)
     {
-        func_8009C128(arg0, arg2);
+        player_getCoords(arg0, arg2);
     }
 }
 
@@ -178,7 +178,7 @@ void func_80092778(PlayerState* arg0)
     s16 sp1E;
     s16 sp1C;
 
-    _bapreload_entrypoint_0(arg0, func_800A3274(arg0), &sp1E, &sp1C);
+    _bapreload_entrypoint_0(arg0, player_getTransformation(arg0), &sp1E, &sp1C);
     func_80092EC8(arg0, sp1E);
     func_8009312C(arg0, sp1C);
 }
@@ -336,7 +336,7 @@ void func_80092C90(PlayerState* arg0, f32* arg1, s32 arg2)
     func_800DBEFC(arg0->unk50->unk4, arg2, arg1);
     if (ml_vec3f_is_zero(arg1) != 0)
     {
-        func_8009C128(arg0, arg1);
+        player_getCoords(arg0, arg1);
     }
 }
 
@@ -568,7 +568,7 @@ void func_80093448(PlayerState* arg0)
 
     if (arg0->unk50->unk84 == 0)
     {
-        func_8009C128(arg0, &sp2C);
+        player_getCoords(arg0, &sp2C);
         _chbaddiesetup_entrypoint_5((s32)func_800927C4, 0x215, sp2C[0], sp2C[1], sp2C[2], arg0->unk184);
     }
     func_80093388(arg0);

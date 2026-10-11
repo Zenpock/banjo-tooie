@@ -16,16 +16,16 @@ void func_8009C08C(PlayerState*);
 void func_8009C0BC(PlayerState*, f32*);
 
 //Set Player Coordinates
-void func_8009C0F8(PlayerState*, f32[3]);
+void player_setCoords(PlayerState*, f32[3]);
 
 //Set Player Vertical
-void func_8009C118(PlayerState*, f32);
+void player_setCoordVertical(PlayerState*, f32);
 
 //Get_Player_Coordinates
-void func_8009C128(PlayerState *, f32[3]);
+void player_getCoords(PlayerState *, f32[3]);
 
 //Get Player Vertical Coordinate
-f32 func_8009C150(PlayerState*);
+f32 player_getCoordVertical(PlayerState*);
 
 //Get Older Player Coordinates
 void func_8009C188(PlayerState*, f32*);

@@ -219,7 +219,7 @@ void func_80800B2C_bssub(PlayerState* self)
 void func_80800BD8_bssub(PlayerState* self) {
     _baspin_entrypoint_3(self);
     if (_batimer_decrement(self, 9) != 0) {
-        func_80101180(0x2C4, 0x71, self->unk184);
+        event_sendToActorsOfType(0x2C4, 0x71, self->unk184);
     }
 }
 

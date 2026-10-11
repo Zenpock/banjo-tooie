@@ -186,18 +186,18 @@ s32 func_800CFA90()
 
 void func_800CFBC8(Actor* arg0, u32 itemFlag, s32 itemType, s32 arg3)
 {
-	func_8010108C(arg0, 0x13, (s32)itemFlag);
+	event_sendToActor(arg0, 0x13, (s32)itemFlag);
 	if (func_800CF888((s32)itemFlag, itemType) != 0)
 	{
 		_subaddieDll_entrypoint_4(arg0, 1);
 	}
 	if (func_800CF8D0((s32)itemFlag, itemType) != 0)
 	{
-		func_8010108C(arg0, 0x12, 1);
+		event_sendToActor(arg0, 0x12, 1);
 	}
 	if (func_800CF918((s32)itemFlag, itemType) != -1)
 	{
-		func_8010108C(arg0, 0x55, 1);
+		event_sendToActor(arg0, 0x55, 1);
 	}
 }
 
@@ -719,7 +719,7 @@ Unk80132ED0* func_800D0DAC(s32 arg0, f32* arg1, s32 spawnStyle, u16* arg3)
         sp2C = func_800D0CE0(PROP_21F_JIGGY_REAL, arg1, spawnStyle, &sp28);
         if (sp28 == 0)
         {
-            func_8010108C(sp2C, 0x14, 1);
+            event_sendToActor(sp2C, 0x14, 1);
         }
         func_800D05E4(itemFlag, itemType, sp2C->unk0);
         break;
@@ -727,14 +727,14 @@ Unk80132ED0* func_800D0DAC(s32 arg0, f32* arg1, s32 spawnStyle, u16* arg3)
         sp2C = func_800D0CE0(PROP_1F4_JINJO_REAL, arg1, spawnStyle, &sp28);
         if (sp28 == 0)
         {
-            func_8010108C(sp2C, 0x14, 1);
+            event_sendToActor(sp2C, 0x14, 1);
         }
         break;
     case 4:
         sp2C = func_800D0CE0(PROP_136_CHEATOPAGE_REAL, arg1, spawnStyle, &sp28);
         if (sp28 == 0)
         {
-            func_8010108C(sp2C, 0x14, 1);
+            event_sendToActor(sp2C, 0x14, 1);
         }
         break;
     case 2:

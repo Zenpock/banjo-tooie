@@ -190,7 +190,7 @@ void func_8080062C_chhoneyb(Actor* arg0)
     func_800A1658(func_8008FD48());
     func_80800058_chhoneyb(arg0);
 
-    func_80101180(0x4B8, 0x23, func_80800B78_chhoneyb());
+    event_sendToActorsOfType(0x4B8, 0x23, func_80800B78_chhoneyb());
 }
 
 void func_80800680_chhoneyb(Actor* arg0)

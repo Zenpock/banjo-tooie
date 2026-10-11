@@ -8,6 +8,7 @@
 #include "core2/1EA0AA0.h"
 #include "core2/1EA1DA0.h"
 #include "core2/1EA3AA0.h"
+#include "core2/1EAAD80.h"
 #include "core2/1EB2840.h"
 #include "core2/1EBCFC0.h"
 #include "core2/1EC1380.h"
@@ -28,7 +29,7 @@ void func_800A7A90(s32);
 void func_800A7B18(u32);
 void func_800A7D30();
 s32 func_800A7D84(void);
-void func_800A7FB4();
+void func_800A7FB4(s32,s32);
 void func_800A7FD4(void);
 void func_800A8168(void);
 s16 func_800A8178(void);

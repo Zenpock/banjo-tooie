@@ -17,7 +17,7 @@ void func_800F3880(PlayerState* self)
 
 void func_800F3BB0(PlayerState* self, f32* arg1)
 {
-    func_8009C128(self,arg1);
+    player_getCoords(self,arg1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECD170/func_800F3BD0.s")

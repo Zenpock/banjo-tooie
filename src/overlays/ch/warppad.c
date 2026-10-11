@@ -231,7 +231,7 @@ void func_80800748_chwarppad(Actor* arg0)
         if (func_8010C9FC(arg0->position, 0xFA, 0xC8, -0x32) != 0)
         {
             numUnlockedWarppads = func_808000B4_chwarppad(arg0);
-            controlledCharacter = func_800F54E4();
+            controlledCharacter = character_getActiveIndex();
             if (func_80800380_chwarppad(arg0) == 0)
             {
                 //Activate Warp Pad
@@ -272,7 +272,7 @@ void func_80800748_chwarppad(Actor* arg0)
             {
                 arg0->unk74_30 = 1;
                 func_808003B8_chwarppad(arg0);
-                if (func_800F64A4(func_800F54E4(), ALLOW_TREXLARGE | ALLOW_GOLDENGOLIATH) == 0)
+                if (func_800F64A4(character_getActiveIndex(), ALLOW_TREXLARGE | ALLOW_GOLDENGOLIATH) == 0)
                 {
                     func_80800F34_chwarppad(arg0, 4, 1);
                 }
@@ -379,7 +379,7 @@ void func_80800C00_chwarppad(Actor* arg0)
 
     levelIndex = D_8012762C;
     //Get Character in control
-    sp3C = func_800F54E4();
+    sp3C = character_getActiveIndex();
     var_a2 = 0;
     while (D_808010B0_chwarppad[var_a2].unk0 != -2)
     {

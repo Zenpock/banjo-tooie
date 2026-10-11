@@ -153,7 +153,7 @@ int func_800EB15C(Unk80132ED0* arg0)
 	}
 	if (!func_800D3948())
 	{
-		if (!func_800F6774(func_800F54E4()))
+		if (!func_800F6774(character_getActiveIndex()))
 		{
 			if ((arg0->unk18_16) && (func_80102F74(func_80106790(arg0), 0x88000000)))
 			{

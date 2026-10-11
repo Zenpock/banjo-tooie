@@ -37,7 +37,7 @@ void func_808000C4_chmineentrygrille(s32 arg0)
         return;
     }
     //Check if the cheat is not active and something about cutscenes
-    if ((func_800D3E40(0xB) != 0) && (_glcutDll_entrypoint_19(0x7B) == 0))
+    if ((cheat_isActive(0xB) != 0) && (_glcutDll_entrypoint_19(0x7B) == 0))
     {
         actor_mark_delete(arg0);
     }

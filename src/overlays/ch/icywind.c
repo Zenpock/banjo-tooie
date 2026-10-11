@@ -69,7 +69,7 @@ void func_808001AC_chicywind(Actor* arg0)
     f32 sp34;
     u32 characterIndex;
 
-    characterIndex = func_800F54E4();
+    characterIndex = character_getActiveIndex();
     switch (func_800F5410(characterIndex))
     {
     default:

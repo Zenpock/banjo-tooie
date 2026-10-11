@@ -83,7 +83,7 @@ void bsmumswim_entrypoint_2(PlayerState *self) {
     s32 sp3C;
 
     next_state = BS_STATE_0_INVALID;
-    func_8009C128(self, sp40);
+    player_getCoords(self, sp40);
     sp40[1] += 60.0f;
     sp3C = func_8009FBB0(self, sp40, 20.0f);
     func_800BA930(sp3C, -30, -30, -30, 30, 30, 30);

@@ -3,7 +3,7 @@
 void func_80800000_bskazfly(PlayerState *self) {
     f32 sp24[3];
 
-    func_8009C128(self, sp24);
+    player_getCoords(self, sp24);
     sp24[0] += func_800DC178(-30, 30);
     sp24[1] += 50.0f + func_800DC178(0, 30);
     sp24[2] += func_800DC178(-30, 30);
@@ -228,7 +228,7 @@ s32 bskazfly_entrypoint_1(s32 idx) {
 void func_80800974_bskazfly(PlayerState *self) {
     f32 sp1C[3];
 
-    func_8009C128(self, sp1C);
+    player_getCoords(self, sp1C);
     ml_vec3f_add(sp1C, self->kazfly->unk10);
     func_800A34AC(self, sp1C);
     func_8009DF58(self, 0x40D, 1);
@@ -262,7 +262,7 @@ void func_808009C8_bskazfly(PlayerState *self, s32 arg1) {
             _ncbafly_entrypoint_5(func_800A4CA8(self), 1);
             func_8009DF94(self, 0x442E, 1, 28000);
             baflag_clear(self, BA_FLAG_1C);
-            func_8009C128(self, self->kazfly->unk4);
+            player_getCoords(self, self->kazfly->unk4);
             _chusefeather_entrypoint_1(self->unk184, 0);
             break;
         case 2:
@@ -378,7 +378,7 @@ void func_80800EB4_bskazfly(PlayerState *self) {
             anctrl_setPlaybackType(animCtrl, 2);
             anctrl_start(animCtrl);
         }
-        func_8009C128(self, unk0);
+        player_getCoords(self, unk0);
         ml_vec3f_subtract(unk0, self->kazfly->unk4);
         _bafly_entrypoint_6(self, func_800F10B4(func_800EEFD4(unk0), 0, 16000000, 0.2, 0.7f));
         if (func_800EEFD4(unk0) > 1.6e7f) {

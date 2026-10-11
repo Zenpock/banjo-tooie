@@ -487,7 +487,7 @@ void func_80800000_chnests(Actor* arg0)
 void func_80800098_chnests(Actor* arg0)
 {
     func_80800000_chnests(arg0);
-    if ((func_800D3948() == 0) && (func_800F7150(func_800F54E4()) != 0))
+    if ((func_800D3948() == 0) && (func_800F7150(character_getActiveIndex()) != 0))
     {
         func_808002E0_chnests(arg0);
     }

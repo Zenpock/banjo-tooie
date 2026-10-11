@@ -6,6 +6,7 @@
 #include "buttons.h"
 #include "core1/mlmtx.h"
 #include "physicstypes.h"
+#include "transformations.h"
 
 typedef struct unkCUnk0 {
 	s32 unk0;
@@ -236,6 +237,36 @@ typedef struct ba_hold_s {
     s32 unk14;
     f32 unk18;
 } BaHold;
+
+typedef struct ba_unkA0_s {
+    f32 unk0[3];
+    f32 unkC[3];
+    f32 unk18[3];
+    f32 unk24;
+    u8 unk28;
+    u8 transformation;
+    u8 unk2A;
+    u8 unk2B;
+    f32 unk2C[3];
+    f32 unk38;
+    u8 unk3C;
+    u8 unk3D;
+    u8 unk3E;
+    u8 unk3F;
+    f32 unk40;
+    Unk80132ED0* unk44;
+    f32 unk48;
+    f32 unk4C;
+    u8 unk50;
+    u8 unk51;
+    u8 unk52;
+    u8 unk53;
+    u8 unk54;
+    u8 unk55;
+    u8 unk56;
+    u8 unk57;
+} ba_unkA0_s;
+
 typedef struct ba_unknown_B8_s {
     void (*unk0)(s32);
     s32 unk4;
@@ -387,7 +418,7 @@ typedef struct player_state_s {
     /* 0x8C */ struct ba_unknown_8C_s* unk8C;
     u8 pad90[0xC];
     /* 0x9C */ BaHold* hold;
-    u8 padA0[0x4];
+    /* 0xA0 */ ba_unkA0_s* unkA0;
     /* 0xA4 */ struct ba_input_s *input;
     u8 padA8[0x10];
     /* 0xB8 */ struct ba_unknown_B8_s* unkB8;

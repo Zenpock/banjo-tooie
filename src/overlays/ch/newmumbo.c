@@ -274,7 +274,7 @@ void func_8080073C_chnewmumbo(Actor* arg0, s32 arg1)
 		{
 			func_800F7B9C(_plsu_entrypoint_1(1), 0x8DU);
 		}
-		func_800F8300(func_800F54E4(), 2, arg0->position);
+		func_800F8300(character_getActiveIndex(), 2, arg0->position);
 		arg0->unk64_19 = 1;
 	}
 }
@@ -283,7 +283,7 @@ void func_808007B0_chnewmumbo(Actor* arg0)
 {
 	if (arg0->unk64_19)
 	{
-		func_800F82D4(func_800F54E4(), 0);
+		func_800F82D4(character_getActiveIndex(), 0);
 		arg0->unk64_19 = 0;
 	}
 }

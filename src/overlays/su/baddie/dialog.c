@@ -30,7 +30,7 @@ s32 subaddiedialog_entrypoint_1(f32* a0, u32 a1, s32 arg2)
     {
         return 0;
     }
-    if (func_800F4B8C(func_800F54E4(), -1, arg2) == 0)
+    if (func_800F4B8C(character_getActiveIndex(), -1, arg2) == 0)
     {
         return 0;
     }
@@ -43,7 +43,7 @@ s32 subaddiedialog_entrypoint_2(f32* arg0, s32 arg1, s32 arg2, s32 arg3)
     {
         return 0;
     }
-    if (func_800F4B8C(func_800F54E4(), -1U, arg3) == 0)
+    if (func_800F4B8C(character_getActiveIndex(), -1U, arg3) == 0)
     {
         return 0;
     }
@@ -60,7 +60,7 @@ s32 subaddiedialog_entrypoint_3(f32* arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg
     {
         return 0;
     }
-    if (func_800F4B8C(func_800F54E4(), -1U, arg4) == 0)
+    if (func_800F4B8C(character_getActiveIndex(), -1U, arg4) == 0)
     {
         return 0;
     }
@@ -82,7 +82,7 @@ s32 subaddiedialog_entrypoint_4(f32* arg0, s32 arg1, s32 arg2)
     {
         return 0;
     }
-    return func_800F4BB8(func_800F54E4(), -1, arg2);
+    return func_800F4BB8(character_getActiveIndex(), -1, arg2);
 }
 
 s32 subaddiedialog_entrypoint_5(f32* arg0, s32 arg1, s32 arg2, s32 arg3)
@@ -100,7 +100,7 @@ s32 subaddiedialog_entrypoint_5(f32* arg0, s32 arg1, s32 arg2, s32 arg3)
     {
         return 0;
     }
-    return func_800F4BB8(func_800F54E4(), -1U, arg3);
+    return func_800F4BB8(character_getActiveIndex(), -1U, arg3);
 }
 
 s32 subaddiedialog_entrypoint_6(f32* arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4)
@@ -116,7 +116,7 @@ s32 subaddiedialog_entrypoint_6(f32* arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg
     if (func_80016B30(0U, 1U) != 1) {
         return 0;
     }
-    return func_800F4BB8(func_800F54E4(), -1U, arg4);
+    return func_800F4BB8(character_getActiveIndex(), -1U, arg4);
 }
 
 u32 subaddiedialog_entrypoint_7(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct0* arg2)
@@ -127,7 +127,7 @@ u32 subaddiedialog_entrypoint_7(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
     u32 var_a2;
 
     sp34 = (s32)arg2->unk16;
-    if (((arg2->unk8 != (-1)) && (arg2->unkC != 0)) && (func_800F64A4(func_800F54E4(), arg2->unk8) == 0))
+    if (((arg2->unk8 != (-1)) && (arg2->unkC != 0)) && (func_800F64A4(character_getActiveIndex(), arg2->unk8) == 0))
     {
         var_a2 = arg2->unkE;
         if ((var_a2 != 0) && (flag_getValue(arg2->unkE) == 0))
@@ -149,7 +149,7 @@ u32 subaddiedialog_entrypoint_7(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
             {
                 return 0U;
             }
-            if ((!(sp34 & 1)) && (func_800F4B8C(func_800F54E4(), -1U, (s32)arg2->unk12) == 0))
+            if ((!(sp34 & 1)) && (func_800F4B8C(character_getActiveIndex(), -1U, (s32)arg2->unk12) == 0))
             {
                 return 0U;
             }
@@ -203,7 +203,7 @@ u32 subaddiedialog_entrypoint_7(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
     if (func_80801394_subaddiedialog(arg0, sp34, arg2->unk0) != 0)
     {
         var_a2 = arg2->unk12;
-        if (func_800F64A4(func_800F54E4(), arg2->unk8) == 0)
+        if (func_800F64A4(character_getActiveIndex(), arg2->unk8) == 0)
         {
             return 0U;
         }
@@ -223,7 +223,7 @@ u32 subaddiedialog_entrypoint_7(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
         {
             return 0U;
         }
-        if ((!(sp34 & 1)) && (func_800F4B8C(func_800F54E4(), -1U, (s32)arg2->unk12) == 0))
+        if ((!(sp34 & 1)) && (func_800F4B8C(character_getActiveIndex(), -1U, (s32)arg2->unk12) == 0))
         {
             return 0U;
         }
@@ -246,7 +246,7 @@ u32 subaddiedialog_entrypoint_7(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
     }
     if (func_80801208_subaddiedialog(arg1, arg2->unk2, arg2->unk12, sp34) != 0)
     {
-        if (func_800F64A4(func_800F54E4(), arg2->unk8) == 0)
+        if (func_800F64A4(character_getActiveIndex(), arg2->unk8) == 0)
         {
             return func_8080141C_subaddiedialog();
         }
@@ -293,7 +293,7 @@ s32 subaddiedialog_entrypoint_8(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
     sp44 = 0;
     sp40 = 0;
     sp3C = arg2->unkC;
-    sp34 = func_800F54E4();
+    sp34 = character_getActiveIndex();
     var_s1 = 0;
     if (arg4 > 0)
     {
@@ -470,7 +470,7 @@ s32 subaddiedialog_entrypoint_8(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
 u8 subaddiedialog_entrypoint_9(Actor* arg0, s32 arg1, subaddiedialog_UnkStruct1* arg2, s32 arg3) {
     s32 var_s1;
     u32 temp_s2;
-    temp_s2 = func_800F54E4();
+    temp_s2 = character_getActiveIndex();
     var_s1 = 0;
     if (arg3 > 0)
     {
@@ -504,7 +504,7 @@ s32 func_808010C8_subaddiedialog(Actor* a0, s32 arg1, s32 arg2)
 {
     if (arg1 < 0)
     {
-        arg1 = func_8010108C(a0, 0xB8, (arg2 << 0x10) | (-arg1 & 0xFFFF));
+        arg1 = event_sendToActor(a0, 0xB8, (arg2 << 0x10) | (-arg1 & 0xFFFF));
     }
     return arg1;
 }
@@ -516,7 +516,7 @@ s32 func_8080110C_subaddiedialog(f32* arg0, s32 arg1, s32 arg2)
     f32 sp24;
     func_8010D254(sp2C);
     sp24 = func_800F1DF4(sp2C, arg0);
-    return mlAbsF(func_800F1DCC(func_800F5F24(func_800F54E4()), sp24)) < (f32)arg2;
+    return mlAbsF(func_800F1DCC(func_800F5F24(character_getActiveIndex()), sp24)) < (f32)arg2;
 }
 
 s32 func_8080118C_subaddiedialog(f32* arg0, s32 arg1, s32 arg2, s32 arg3)
@@ -547,7 +547,7 @@ s32 func_80801208_subaddiedialog(f32* arg0, s32 arg1, s32 arg2, s32 arg3)
     {
         return 0;
     }
-    return func_800F4BB8(func_800F54E4(), -1U, arg2);
+    return func_800F4BB8(character_getActiveIndex(), -1U, arg2);
 }
 
 u32 subaddiedialog_entrypoint_11(Unk80132ED0* arg0, u32 DialogId, u32 arg2, f32* CameraTarget, s16 arg4)
@@ -619,7 +619,7 @@ void func_808013E4_subaddiedialog(Actor* actor, s32 arg1, u32 Flag) {
 
 s32 func_8080141C_subaddiedialog(void)
 {
-    func_800F5FE0(func_800F54E4());
+    func_800F5FE0(character_getActiveIndex());
     return 0;
 }
 
@@ -631,7 +631,7 @@ s32 subaddiedialog_entrypoint_16(void)
     {
         return 0;
     }
-    temp_v0 = func_800F54E4();
+    temp_v0 = character_getActiveIndex();
     if ((temp_v0 == -1U) || (func_800F6438(temp_v0) == 0))
     {
         return 0;

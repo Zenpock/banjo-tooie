@@ -56,7 +56,7 @@ void func_808000A0_chdinofamilymother(Actor* arg0)
         break;
     case 1:
         if (flag_getValue(FLAG_08A_UNK) != 0) {
-            if (func_800F5410(func_800F54E4()) == TRANSFORM_B_KAZOOIE)
+            if (func_800F5410(character_getActiveIndex()) == TRANSFORM_B_KAZOOIE)
             {
                 D_808013B8_chdinofamilymother = 0x1814;
             }
@@ -67,7 +67,7 @@ void func_808000A0_chdinofamilymother(Actor* arg0)
         }
         else
         {
-            switch (func_800F5410(func_800F54E4()))
+            switch (func_800F5410(character_getActiveIndex()))
             {
             case TRANSFORM_A_BANJO:
                 D_8080139C_chdinofamilymother = 0x1812;
@@ -108,7 +108,7 @@ void func_808005EC_chdinofamilymother(Actor* arg0, s32 arg1)
         if ((_subaddiefind_entrypoint_2(0x52D, 0) != NULL) || (_subaddiefind_entrypoint_2(0x291, 0) != NULL))
         {
             func_80801118_chdinofamilymother(arg0, arg0->unk0, 0, 0x10);
-            if (func_800F5410(func_800F54E4()) == TRANSFORM_A_BANJO)
+            if (func_800F5410(character_getActiveIndex()) == TRANSFORM_A_BANJO)
             {
                 _subaddiedialog_entrypoint_11(arg0->unk0, 0x1815U, 0xCU, (f32*)arg0->actorData, 0x65U);
             }
@@ -116,7 +116,7 @@ void func_808005EC_chdinofamilymother(Actor* arg0, s32 arg1)
             {
                 _subaddiedialog_entrypoint_11(arg0->unk0, 0x17BCU, 0xCU, (f32*)arg0->actorData, 0x65U);
             }
-            func_80101180(0x291, 0x37, 0);
+            event_sendToActorsOfType(0x291, 0x37, 0);
             break;
         }
     case 3:
@@ -132,7 +132,7 @@ void func_808005EC_chdinofamilymother(Actor* arg0, s32 arg1)
         arg1 = 4;
         if (flag_getValue(FLAG_08A_UNK) == 0)
         {
-            switch (func_800F5410(func_800F54E4()))
+            switch (func_800F5410(character_getActiveIndex()))
             {
             case TRANSFORM_1_BK:
                 sp2C = 0x17BE;
@@ -156,7 +156,7 @@ void func_808005EC_chdinofamilymother(Actor* arg0, s32 arg1)
         func_80801118_chdinofamilymother(arg0, arg0->unk0, 0x1D, 0x30);
         break;
     case 7:
-        if (func_800F64A4(func_800F54E4(), 0x1000) != 0)
+        if (func_800F64A4(character_getActiveIndex(), 0x1000) != 0)
         {
             func_800D1000(TDL_SCROTTY, 1U, NULL, 1U, NULL);
             func_80801118_chdinofamilymother(arg0, arg0->unk0, 9, 0x10);

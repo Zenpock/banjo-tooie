@@ -382,7 +382,7 @@ void func_80800D14_chclockworkmouse(Actor* actor, s32 arg1) {
     case 11:
         break;
     case 4: 
-        func_800F4CC0(func_800F54E4());
+        func_800F4CC0(character_getActiveIndex());
         break;
     case 23:
         func_80103140(actor, 0x8A0, ((u16*)actor->unk0)[0xB]);
@@ -396,7 +396,7 @@ void func_80800D14_chclockworkmouse(Actor* actor, s32 arg1) {
     case 4:
         func_800904F4(0x27, actor->unk0);
         sp24->unk100 = 1;
-        func_800F4CEC(func_800F54E4(), 0x3B);
+        func_800F4CEC(character_getActiveIndex(), 0x3B);
         break;
     case 5:
         func_800904F4(0x27, actor->unk0);

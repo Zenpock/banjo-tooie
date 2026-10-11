@@ -48,7 +48,7 @@ void bacough_entrypoint_5(PlayerState *self) {
     ){
         sp20 = func_800DC0C0();
         sp1C = func_800DC178(0.97f, 1.03f);
-        switch (func_800A3274(self)) {
+        switch (player_getTransformation(self)) {
             case TRANSFORM_1_BK:
             case TRANSFORM_A_BANJO:
                 if(sp20 < 0.3333f) {

@@ -143,7 +143,7 @@ void func_80800544_bskazglide(PlayerState *self) {
     func_80800090_bskazglide(self);
     baanim_playForDuration_once(self, 0x11C, 1.1);
     func_8009D9D4(self);
-    func_8009C128(self, sp3C);
+    player_getCoords(self, sp3C);
     func_800A32C4(self, sp30);
     func_800F1E6C(sp30, sp3C, &sp2C);
     yaw_setIdeal(self, func_800136E4(sp2C + 180.0f));

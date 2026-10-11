@@ -8,6 +8,7 @@
 
 void inventory_setup();
 void inventory_free();
+void inventory_defrag(void);
 void func_800D162C();
 void inventory_addValue(s32, s32);
 void inventory_decrementValue(s32);

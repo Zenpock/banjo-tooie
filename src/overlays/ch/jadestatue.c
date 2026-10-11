@@ -62,10 +62,10 @@ void func_808001C0_chjadestatue(Actor* arg0)
 	switch (temp_v0)
 	{
 	case 10:
-		func_80101180(0x2B4, 7, 0);
+		event_sendToActorsOfType(0x2B4, 7, 0);
 		return;
 	case 20:
-		func_80101180(0x2B4, 7, 1);
+		event_sendToActorsOfType(0x2B4, 7, 1);
 		return;
 	}
 }
@@ -88,7 +88,7 @@ void func_808002A4_chjadestatue(Actor* arg0)
 	func_800D24E8(0xEE, temp_v0, 0);
 	if (sp1C >= 0x14)
 	{
-		func_80101180(PROP_2B3_JADETOTEM, 0x2C, 0);
+		event_sendToActorsOfType(PROP_2B3_JADETOTEM, 0x2C, 0);
 		actor_mark_delete(arg0);
 	}
 }

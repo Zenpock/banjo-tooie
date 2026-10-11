@@ -445,7 +445,7 @@ void func_80800CC8_chstonepillar(Actor* arg0, s32 arg1)
         }
         if (func_80800DD8_chstonepillar(arg0) != 0)
         {
-            func_800F7F98(func_800F54E4(), 1);
+            func_800F7F98(character_getActiveIndex(), 1);
         }
         func_800C3F48(0x7FF57C16U);
         func_808011CC_chstonepillar(arg0, 2U, 1.0f, 1.0f);
@@ -479,8 +479,8 @@ void func_80800E30_chstonepillar(Actor* arg0)
         flag_setMultipleValue(FLAG3_9CD_UNK, sp1C->unk2C + 1, 3);
         return;
     }
-    func_800F7F98(func_800F54E4(), 0);
-    if (func_800F6CC8(func_800F54E4()) == 0)
+    func_800F7F98(character_getActiveIndex(), 0);
+    if (func_800F6CC8(character_getActiveIndex()) == 0)
     {
         flag_setValueTrue(FLAG3_9D5_UNK);
         flag_setValueTrue(sp1C->unk2C + 0x65C);
@@ -541,7 +541,7 @@ void func_80800FE0_chstonepillar(Actor* arg0)
 
 void func_808010CC_chstonepillar(Actor* arg0)
 {
-    if ((flag_getValue(FLAG3_9D9_UNK) == 0) && (func_800EA05C() != MAP_B9_MT_PRISON_COMPOUND) && (func_800F6CC8(func_800F54E4()) == 0))
+    if ((flag_getValue(FLAG3_9D9_UNK) == 0) && (func_800EA05C() != MAP_B9_MT_PRISON_COMPOUND) && (func_800F6CC8(character_getActiveIndex()) == 0))
     {
         _glcutDll_entrypoint_6(0xB9U, 0xBU);
     }

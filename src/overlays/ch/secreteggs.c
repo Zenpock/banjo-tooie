@@ -85,7 +85,7 @@ void func_80800118_chsecreteggs(Actor* arg0)
             func_80800000_chsecreteggs(arg0);
             if (arg0->unk7A_5)
             {
-                func_800F7700(func_800F54E4(), 9, arg0->position);
+                func_800F7700(character_getActiveIndex(), 9, arg0->position);
                 return;
             }
         }
@@ -95,7 +95,7 @@ void func_80800118_chsecreteggs(Actor* arg0)
             {
                 flag_setValueTrue(FLAG_3E7_SNS_EGG_HATCHED_YELLOW);
 
-                func_80101180(0x514, 0x18, arg0->unk7A_5 ? 1 : 0);
+                event_sendToActorsOfType(0x514, 0x18, arg0->unk7A_5 ? 1 : 0);
             }
             _subaddiefade_entrypoint_3(arg0);
         }

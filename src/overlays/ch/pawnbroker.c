@@ -116,7 +116,7 @@ void func_80800024_chpawnbroker(Actor* arg0)
             {
                 func_80102424(arg0, 5);
                 //Explode the glass cage
-                func_80101180(0x353, 5, 0);
+                event_sendToActorsOfType(0x353, 5, 0);
                 flag_setValueTrue(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED);
                 return;
             }
@@ -140,7 +140,7 @@ void func_80800024_chpawnbroker(Actor* arg0)
             {
                 func_80102424(arg0, 8);
                 //Explode the glass cage
-                func_80101180(0x353, 5, 0);
+                event_sendToActorsOfType(0x353, 5, 0);
                 flag_setValueTrue(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED);
                 return;
             }
@@ -458,7 +458,7 @@ s32 func_80800C00_chpawnbroker(s32 NumDoubloons, s32 SaleConfirmation)
         if (inventory_getValue(0x4E) >= NumDoubloons)
         {
             //Check the current player's transformation if valid
-            if (func_800F64A4(func_800F54E4(), ALLOW_BANJO | ALLOW_BK) != 0)
+            if (func_800F64A4(character_getActiveIndex(), ALLOW_BANJO | ALLOW_BK) != 0)
             {
                 //Sure
                 return 0x1040;

@@ -47,7 +47,7 @@ s32 func_80800000_chlagoonufoext(Actor* arg0, s32 arg1, s32 arg2)
     case EVENT_95_ACTOR_SPAWNED:
         if ((flag_getValue(FLAG3_9F0_UNK) != 0) && (func_80090178(ALLOW_BK) != 0) && (func_800EA090() == 9))
         {
-            temp_v0 = func_800F54E4();
+            temp_v0 = character_getActiveIndex();
             func_800F608C(temp_v0, 1);
             func_800F497C(temp_v0);
             func_800F49D4(temp_v0, func_8010D5DC, arg0->unk0);

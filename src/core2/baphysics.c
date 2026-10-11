@@ -183,7 +183,7 @@ void func_8009B414(PlayerState* self)
 {
     f32 sp1C[3];
 
-    func_8009C128(self, sp1C);
+    player_getCoords(self, sp1C);
     ml_getdiff_vec3f(self->unkC8->unk28, self->unkC8->unk4, sp1C);
 }
 
@@ -212,8 +212,8 @@ void func_8009B4FC(PlayerState* self)
 void func_8009B590(PlayerState* self)
 {
 	f32 temp_t6;
-	func_8009C128(self, self->unkC8->unk4);
-	self->unkC8->unk4C[1] *= func_800A3048(self);
+	player_getCoords(self, self->unkC8->unk4);
+	self->unkC8->unk4C[1] *= player_getSpeedModifier(self);
 	switch (self->unkC8->currentPhysicsType)
 	{
 		case 0:
@@ -280,7 +280,7 @@ void func_8009B590(PlayerState* self)
 			_bamovehover_entrypoint_2(self);
 			break;
 	}
-	func_8009C0F8(self, self->unkC8->unk4);
+	player_setCoords(self, self->unkC8->unk4);
 	self->unkC8->unk4C[1] = 1.0f;
 }
 void func_8009B7C0(PlayerState* self)

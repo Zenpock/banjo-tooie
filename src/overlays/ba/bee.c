@@ -63,7 +63,7 @@ void babee_entrypoint_2(PlayerState *self) {
 
     if (!(0.0f < bee->cooldown)) {
         bee->cooldown += bee->unk0[bee->index].cooldown_time;
-        func_8009C128(self, sp20);
+        player_getCoords(self, sp20);
         func_8010D930(0xB, -1, sp20, &D_808003BC_babee);
         _chbaddiesetup_entrypoint_1(_babee_entrypoint_1, self->unk184);
     }

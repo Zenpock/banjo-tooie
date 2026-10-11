@@ -47,7 +47,7 @@ void func_80800000_chboggyfish(Actor* arg0, unkStructBoggyFish* arg1)
 {
 	if ((arg1->unk24 >> 0x16) == 0)
 	{
-		func_800F6388(func_800F54E4(), 0x4BA);
+		func_800F6388(character_getActiveIndex(), 0x4BA);
 		inventory_incrementValue(0x51);
 		func_800FC6B0(0xEU);
 		flag_setValueTrue(FLAG_438_UNK);

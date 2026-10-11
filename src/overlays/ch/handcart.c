@@ -514,7 +514,7 @@ void func_80800FA0_chhandcart(Actor* arg0, s32 arg1)
     case 11:
         break;
     case 4:
-        func_800F4CC0(func_800F54E4());
+        func_800F4CC0(character_getActiveIndex());
         break;
     case 23:
         func_80103140(arg0, 0x67C, arg0->unk0->unk16);
@@ -539,7 +539,7 @@ void func_80800FA0_chhandcart(Actor* arg0, s32 arg1)
     case 4:
         sp24->unk8FA = 1;
         func_800904F4(0x27, arg0->unk0);
-        func_800F4CEC(func_800F54E4(), 0x3B);
+        func_800F4CEC(character_getActiveIndex(), 0x3B);
         break;
     case 5:
         sp24->unk8FA = 1;

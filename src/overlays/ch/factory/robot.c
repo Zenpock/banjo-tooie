@@ -115,7 +115,7 @@ void func_80800058_chfactoryrobot(Actor* arg0)
 
     ml_vec3f_copy(sp3C, arg0->position);
     func_800EF1B8(sp3C, arg0->rotation[1], 40.0f);
-    func_800F4F34(func_800F54E4(), sp3C, 30.0f, 100.0f);
+    func_800F4F34(character_getActiveIndex(), sp3C, 30.0f, 100.0f);
     switch (arg0->unk70_10)
     {
     case 1:
@@ -361,7 +361,7 @@ void func_80800920_chfactoryrobot(Actor* arg0)
         {
             if (temp_v0->unk1C == 0.0f)
             {
-                if ((func_8010CFBC(arg0->position, (s32)(arg0->scale * 80.0f), (s32)(arg0->scale * 175.0f)) != 0) && (func_800F7B9C(func_800F54E4(), 0x51U) == 2))
+                if ((func_8010CFBC(arg0->position, (s32)(arg0->scale * 80.0f), (s32)(arg0->scale * 175.0f)) != 0) && (func_800F7B9C(character_getActiveIndex(), 0x51U) == 2))
                 {
                     if (arg0->unk64_29)
                     {
@@ -373,7 +373,7 @@ void func_80800920_chfactoryrobot(Actor* arg0)
                     }
                     temp_v0->unk18 = arg0->unk64_29;
                     temp_v0->unk20 = 0.4f;
-                    func_800F57F0(func_800F54E4(), &sp4C);
+                    func_800F57F0(character_getActiveIndex(), &sp4C);
                     _chelectricfence_entrypoint_1(arg0, &sp4C);
                 }
             }
@@ -901,7 +901,7 @@ void func_80801D7C_chfactoryrobot(Actor* arg0)
     f32 sp3C;
 
     temp_s2 = func_80100094(arg0, 0U);
-    func_800F4F34(func_800F54E4(), arg0->position, 100.0f, 80.0f);
+    func_800F4F34(character_getActiveIndex(), arg0->position, 100.0f, 80.0f);
     switch (arg0->unk70_10)
     {
     case 1:

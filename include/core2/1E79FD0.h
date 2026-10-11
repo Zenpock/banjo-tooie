@@ -18,7 +18,7 @@ void func_800A0CE8(PlayerState *, s32);
 void func_800A0CF4(PlayerState *, s32);
 void func_800A0D14(PlayerState *, s32, f32);
 // func_800A0D44
-// func_800A0D68
+void func_800A0D68(PlayerState*, s32);
 // func_800A0D74
 // func_800A0D84
 // func_800A0D94

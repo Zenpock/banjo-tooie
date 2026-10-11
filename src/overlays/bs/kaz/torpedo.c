@@ -186,7 +186,7 @@ void func_8080078C_bskaztorpedo(PlayerState *self) {
     }
     if (sp44 != -1) {
         func_800F5A00(sp44, sp38);
-        func_8009C128(self, sp2C);
+        player_getCoords(self, sp2C);
         sp38[1] += 50.0f;
         sp2C[1] += 50.0f;
         temp_f0 = ml_vec3f_distance_sq(sp38, sp2C);
@@ -372,7 +372,7 @@ void func_80800FB4_bskaztorpedo(PlayerState *self) {
     self->unk174 += 1200.0f * time_getDelta();
     func_80091290(self, 40.0f, 0, 0xD);
     if (_bamovegoto_entrypoint_4(self) != 0) {
-        func_8009C128(self, sp3C);
+        player_getCoords(self, sp3C);
         ml_vec3f_assign_value(sp48, sp3C[0], sp3C[1] - 50.0f, sp3C[2]);
         func_800BABB8(func_8009FBB0(self, sp3C, 80.0f), sp3C, sp48, 1.0f, D_80801770_bskaztorpedo);
         func_800F82C0(self->unk184);
@@ -498,7 +498,7 @@ void func_808014F8_bskaztorpedo(PlayerState *self) {
     _bareact_entrypoint_1(self, func_80099A58(self));
     baanim_playForDuration_once(self, 0x134, 1.1f);
     func_8009DA40(self);
-    func_8009C128(self, &sp40);
+    player_getCoords(self, &sp40);
     func_800A32C4(self, &sp34);
     func_800F1E6C(&sp34, &sp40, &sp4C);
     yaw_setIdeal(self, sp4C);

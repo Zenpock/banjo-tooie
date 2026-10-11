@@ -311,7 +311,7 @@ void func_808002F4_chglowbo(Actor* arg0)
                 {
                     if ((func_80090128() != 0) && ((func_8010C500(arg0) != 0) || (func_8010C710(arg0) < 0x9C400)))
                     {
-                        arg0->unk54 = func_8010CD50(arg0, func_800F54E4()) - 180.0f;
+                        arg0->unk54 = func_8010CD50(arg0, character_getActiveIndex()) - 180.0f;
                     }
                     else
                     {

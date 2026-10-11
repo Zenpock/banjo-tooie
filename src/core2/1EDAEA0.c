@@ -21,7 +21,7 @@ s32 func_801017D0(Actor* arg0)
     s32 temp_v0[2];
 
     temp_v0[0] = func_801039E4(arg0->unk0);
-    return func_8010108C(arg0, EVENT_1F_ACTOR_ONSCREEN, temp_v0[0]);
+    return event_sendToActor(arg0, EVENT_1F_ACTOR_ONSCREEN, temp_v0[0]);
 }
 
 // the real actor_draw?

@@ -36,7 +36,7 @@ void baalarm_entrypoint_3(PlayerState *self, f32 arg1, f32 arg2) {
         return;
     }
 
-    func_8009C128(self, sp64);
+    player_getCoords(self, sp64);
     if (arg2 < 1.0f) {
         if (arg1 != arg2) {
             func_80800294_baalarm(self->alarm->id, 2);

@@ -38,7 +38,7 @@ int func_8080009C_chjadesnake(s32 arg0)
     s32 currentHitbox;
     s32 unk;
 
-    currentPlayerIndex = func_800F54E4();
+    currentPlayerIndex = character_getActiveIndex();
     playerHorizontalUnk = func_800F651C(currentPlayerIndex);
     isGrounded = func_800F6C5C(currentPlayerIndex);
     justLanded = func_800F72DC(currentPlayerIndex);
@@ -131,7 +131,7 @@ void func_80800150_chjadesnake(Actor* arg0)
     case 3:
         sp44 = func_80101F24(arg0);
         func_8010D254(sp38);
-        if ((func_800F56AC(func_800F54E4()) != 0x10) && (sp38[1] < 1160.0f))
+        if ((func_800F56AC(character_getActiveIndex()) != 0x10) && (sp38[1] < 1160.0f))
         {
             func_80102424(arg0, 4);
             if (arg0->unk64_20)

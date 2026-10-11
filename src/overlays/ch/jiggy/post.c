@@ -62,7 +62,7 @@ void func_80800068_chjiggypost(Actor* arg0)
             {
                 temp = 0x1517;
             }
-            else if (func_800D3E40(0xB) != 0)
+            else if (cheat_isActive(0xB) != 0)
             {
                 temp = 0x155A;
             }

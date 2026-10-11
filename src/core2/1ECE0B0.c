@@ -42,7 +42,7 @@ void func_800F482C(s32 arg0)
     {
         if (D_80135490.unk0[index] != NULL)
         {
-            if (arg0 == 0 || func_800A3274(D_80135490.unk0[index]) == arg0)
+            if (arg0 == 0 || player_getTransformation(D_80135490.unk0[index]) == arg0)
             {
                 func_800F3880(D_80135490.unk0[index]);
                 func_800A91F4(index);
@@ -190,7 +190,7 @@ void func_800F4D18(s32 arg0, s32 arg1, s32 arg2) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    func_8009F678(sp1C, arg1, arg2, func_800A3048(sp1C) * 1000.0f);
+    func_8009F678(sp1C, arg1, arg2, player_getSpeedModifier(sp1C) * 1000.0f);
 }
 
 void func_800F4D74(s32 arg0, Vec3f* arg1, f32 arg2, f32 arg3, f32 arg4) {
@@ -201,28 +201,28 @@ void func_800F4D74(s32 arg0, Vec3f* arg1, f32 arg2, f32 arg3, f32 arg4) {
     sp24 = D_80135490.unk0[arg0];
     ml_vec3f_assign_value(sp34, arg1->pos.x - arg2, arg1->pos.y - arg3, arg1->pos.z - arg4);
     ml_vec3f_assign_value(sp28, arg1->pos.x + arg2, arg1->pos.y + arg3, arg1->pos.z + arg4);
-    func_8009F678(sp24, sp34, sp28, func_800A3048(sp24) * 1000.0f);
+    func_8009F678(sp24, sp34, sp28, player_getSpeedModifier(sp24) * 1000.0f);
 }
 
 void func_800F4E5C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     PlayerState* sp24;
 
     sp24 = D_80135490.unk0[arg0];
-    func_8009F440(sp24, arg1, arg2, arg3, arg4, func_800A3048(sp24) * 1000.0f);
+    func_8009F440(sp24, arg1, arg2, arg3, arg4, player_getSpeedModifier(sp24) * 1000.0f);
 }
 
 void func_800F4EC8(s32 arg0, s32 arg1, s32 arg2, volatile s32 arg3, f32 arg4) {
     PlayerState* sp24;
 
     sp24 = D_80135490.unk0[arg0];
-    func_8009F860(sp24, arg1, arg2, arg3, arg4, func_800A3048(sp24) * 1000.0f);
+    func_8009F860(sp24, arg1, arg2, arg3, arg4, player_getSpeedModifier(sp24) * 1000.0f);
 }
 
 void func_800F4F34(s32 arg0, f32* arg1, f32 arg2, f32 arg3) {
     PlayerState* sp24;
 
     sp24 = D_80135490.unk0[arg0];
-    func_8009FA20(sp24, arg1, arg2, arg3, func_800A3048(sp24) * 1000.0f);
+    func_8009FA20(sp24, arg1, arg2, arg3, player_getSpeedModifier(sp24) * 1000.0f);
 }
 
 void func_800F4F98(s32 arg0)
@@ -237,7 +237,7 @@ void func_800F4FC4(void) {
     if (temp_v0 != -1) {
         func_800F7B9C(temp_v0, 0x1FU);
     }
-    func_80101180(0x15E, 0x2C, 0);
+    event_sendToActorsOfType(0x15E, 0x2C, 0);
 }
 
 
@@ -316,9 +316,9 @@ s32 func_800F5268(s32 arg0) {
     return 1;
 }
 
-void func_800F52B8(s32 arg0)
+void func_800F52B8(s32 arg0,s32 arg1)
 {
-    func_8008EF3C(D_80135490.unk0[arg0]);
+    func_8008EF3C(D_80135490.unk0[arg0],arg1);
 }
 
 void func_800F52E4(s32 arg0)
@@ -363,12 +363,12 @@ PlayerState* func_800F53E4(s32 arg0) {
 
 TransformationId func_800F5410(s32 arg0)
 {
-    return func_800A3274(D_80135490.unk0[arg0]);
+    return player_getTransformation(D_80135490.unk0[arg0]);
 }
 
 s32 func_800F543C(s32 arg0)
 {
-    return 1 << (func_800A3274(D_80135490.unk0[arg0]) + 0x1F);
+    return 1 << (player_getTransformation(D_80135490.unk0[arg0]) + 0x1F);
 }
 
 void func_800F5470(s32 arg0,f32* arg1)
@@ -387,7 +387,7 @@ f32 func_800F549C(s32 arg0, s32 arg1) {
 }
 
 //Get Which Character is in Control
-u32 func_800F54E4(void) 
+u32 character_getActiveIndex(void) 
 {
 	return D_801354DC;
 }
@@ -590,7 +590,7 @@ f32 func_800F5B64(s32 arg0, f32* arg1) {
 
     sp1C = D_80135490.unk0[arg0];
     func_80095870(sp1C, &sp20, &sp24);
-    func_8009C128(sp1C, arg1);
+    player_getCoords(sp1C, arg1);
     arg1[1] += sp20;
     return sp24;
 }
@@ -609,7 +609,7 @@ f32 func_800F5BF0(s32 arg0, f32* arg1) {
 
     sp1C = D_80135490.unk0[arg0];
     sp2C = func_80092B8C(sp1C, arg1);
-    func_8009C128(sp1C, sp20);
+    player_getCoords(sp1C, sp20);
     ml_vec3f_add(arg1, sp20);
     return sp2C;
 }
@@ -618,7 +618,7 @@ f32 func_800F5C44(s32 arg0) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    if (func_800A3274(sp1C) != TRANSFORM_2_SNOWBALL) {
+    if (player_getTransformation(sp1C) != TRANSFORM_2_SNOWBALL) {
         return 0.0f;
     }
     return _basnowball_entrypoint_4(sp1C);
@@ -686,7 +686,7 @@ void func_800F5E7C(s32 arg0) {
         func_800964DC(sp1C);
         return;
     }
-    func_8009C150(sp1C);
+    player_getCoordVertical(sp1C);
 }
 
 void func_800F5ECC(s32 arg0)
@@ -711,7 +711,7 @@ f32 func_800F5F50(s32 arg0)
 
 void func_800F5F7C(s32 arg0)
 {
-    func_8009C150(D_80135490.unk0[arg0]);
+    player_getCoordVertical(D_80135490.unk0[arg0]);
 }
 
 s32 func_800F5FA8(s32 arg0) {
@@ -997,7 +997,7 @@ int func_800F6968(s32 arg0) {
 
     temp_a0 = D_80135490.unk0[arg0];
     sp1C = func_800964DC(temp_a0);
-    return ((sp1C - func_8009C150(temp_a0)) > 4.0f) != 0 && (func_800966BC(temp_a0) & 0x2000) != 0;
+    return ((sp1C - player_getCoordVertical(temp_a0)) > 4.0f) != 0 && (func_800966BC(temp_a0) & 0x2000) != 0;
 }
 
 int func_800F69E8(s32 arg0) {
@@ -1045,7 +1045,7 @@ int func_800F6B94(s32 arg0) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    return (func_800A3274(sp1C) == TRANSFORM_2_SNOWBALL) && (func_800A1718(sp1C) >= 5);
+    return (player_getTransformation(sp1C) == TRANSFORM_2_SNOWBALL) && (func_800A1718(sp1C) >= 5);
 }
 
 s32 func_800F6BE4(s32 arg0) {
@@ -1780,7 +1780,7 @@ void func_800F84FC(void) {
     D_80135490.unk49 = 0;
     func_800F9198();
 
-    result = func_800F54E4();
+    result = character_getActiveIndex();
     newTransform = func_800F5410(result);
     if (D_80135490.unk50 != -1
         && (result != D_80135490.unk50 || newTransform != D_80135490.unk52)
@@ -1822,7 +1822,7 @@ s32 func_800F8730(s32 arg0, s32 arg1) {
     s32 sp18;
 
     sp1C = D_80135490.unk0[arg0];
-    func_800A3538(sp1C);
+    func_800A3538(sp1C,arg1);
     sp18 = func_8009E7C8(sp1C, 0xA) == 2;
     if ((sp18 != 0) && (func_800F5410(arg0) != arg1)) {
         _surestart_entrypoint_0(arg1);
@@ -2158,7 +2158,7 @@ void func_800F92CC(u32* arg0, enum transform_e* arg1, s32* arg2, s32* arg3) {
     enum transform_e temp_v0_2;
     u32 temp_v0;
 
-    temp_v0 = func_800F54E4();
+    temp_v0 = character_getActiveIndex();
     *arg0 = temp_v0;
     temp_v0_2 = func_800F5410((s32) temp_v0);
     *arg1 = temp_v0_2;
@@ -2177,7 +2177,7 @@ void func_800F9354(u32* arg0, enum transform_e* arg1, s32* arg2) {
     enum transform_e temp_v0_2;
     u32 temp_v0;
 
-    temp_v0 = func_800F54E4();
+    temp_v0 = character_getActiveIndex();
     *arg0 = temp_v0;
     temp_v0_2 = func_800F5410((s32) temp_v0);
     *arg1 = temp_v0_2;
@@ -2192,7 +2192,7 @@ void func_800F9354(u32* arg0, enum transform_e* arg1, s32* arg2) {
 }
 
 void func_800F93C4(s32* arg0, s32* arg1) {
-    s32 temp = func_800F54E4();
+    s32 temp = character_getActiveIndex();
     *arg0 = temp;
     *arg1 = func_800F5410(temp);
 }
@@ -2429,7 +2429,7 @@ void func_800F9B54(void) {
     u32 sp1C;
     s32 sp18;
 
-    sp1C = func_800F54E4();
+    sp1C = character_getActiveIndex();
     sp18 = _plsu_entrypoint_1(0x11);
     func_800F8128((s32) sp1C);
     func_800F8268((s32) sp1C, 1, 1);

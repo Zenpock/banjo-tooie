@@ -47,7 +47,7 @@ void func_80800044_bstrexlarge(PlayerState* self)
     f32 sp30[3];
     s32 sp2C;
     s32 pad[2];
-    func_8009C128(self, sp3C);
+    player_getCoords(self, sp3C);
     func_80096394(self, sp30);
     sp4C = func_800962D4(self);
     sp2C = func_80096518(self) == 0;
@@ -400,7 +400,7 @@ s32 bstrexlarge_entrypoint_7(PlayerState* self, f32* arg1)
     f32 temp_f0;
     f32 sp18[3];
 
-    func_8009C128(self, sp18);
+    player_getCoords(self, sp18);
     temp_f0 = func_800EFC7C(sp18, arg1);
     if (temp_f0 < 160000.0f)
     {
@@ -585,7 +585,7 @@ s32 bstrexlarge_entrypoint_11(s32 arg0) {
 void func_80801110_bstrexlarge(PlayerState* self) {
     f32 sp24[3];
 
-    func_8009C128(self, sp24);
+    player_getCoords(self, sp24);
     self->unk160.word = func_800E1610(0, 30.0f, 1.0f, sp24);
     func_8009DF18(self, 0x56C, 1.0f, 0x7FFF);
     func_8009E5A4(self, 2, 1);
@@ -654,7 +654,7 @@ void func_808012EC_bstrexlarge(PlayerState* self)
     }
     if ((sp3C >= 0.3f) && (sp3C <= 0.7f))
     {
-        func_8009C128(self, sp28);
+        player_getCoords(self, sp28);
         func_801013A8(sp28, 0x1B, self->unk184);
     }
     if (baanim_isAt(self, 0.13f) != 0)
