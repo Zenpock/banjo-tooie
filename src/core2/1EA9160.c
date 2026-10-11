@@ -825,7 +825,7 @@ void func_800D1254(s32 arg0, s32 arg1, f32* arg2)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D129C.s")
 
-u32 func_800D1338(u32 JinjoColor)
+s32 func_800D1338(s32 JinjoColor)
 {
     s32 var_s0;
     u32 var_s2;
