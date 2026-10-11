@@ -147,7 +147,7 @@ void func_80800154_chintrotext(Actor* arg0)
         _subaddiefade_entrypoint_1(arg0, (s32)func_800F12D4(arg0->unk58, 0, new_var->unk0[2], 0.0f, 255.0f));
         if (sp38 != 0)
         {
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
         }
         break;
     }
@@ -240,7 +240,7 @@ void chintrotext_entrypoint_3(u32 arg0, s16 arg1, s32 arg2, s32 arg3)
     introTextMemory* temp_v0_2;
     char* temp_v0_3;
 
-    func_800EFD24(sp2C);
+    ml_vec3f_clear(sp2C);
     temp_v0 = func_80108474(0x3B0U, sp2C, 0);
     if (temp_v0 != NULL)
     {

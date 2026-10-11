@@ -42,7 +42,7 @@ void badeathmatch_entrypoint_2(PlayerState* self)
 
 void badeathmatch_entrypoint_3(PlayerState* self)
 {
-    if ((func_800A3274(self) != TRANSFORM_11_CLOCKWORK) && (bs_getCurrentState(self) != 0xD7))
+    if ((player_getTransformation(self) != TRANSFORM_11_CLOCKWORK) && (bs_getCurrentState(self) != 0xD7))
     {
         if (self->deathmatch->unk21 == 0)
         {
@@ -112,7 +112,7 @@ void badeathmatch_entrypoint_8(PlayerState* self, f32 arg1)
     _batimer_set(self, 0xD, arg1);
     if (self->deathmatch->unk21 == 0)
     {
-        func_80101180(0x1CD, 0x76, 0);
+        event_sendToActorsOfType(0x1CD, 0x76, 0);
     }
 }
 

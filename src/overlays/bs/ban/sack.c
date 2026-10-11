@@ -383,7 +383,7 @@ void func_80800AF4_bsbansack(PlayerState* self, s32 arg1)
     case 1:
         sp2C = baanim_getAnimCtrlPtr(self);
         func_80800A78_bsbansack(self);
-        func_8009DB04(self, 0x3F0, func_800DC178(0.96f, 1.04f), 0x2710);
+        func_8009DB04(self, 0x3F0, rand_fBounded(0.96f, 1.04f), 0x2710);
         func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
         baphysics_set_gravity(self, -1350.0f);
         if (bastick_distance(self) != 0.0f)
@@ -762,7 +762,7 @@ void func_80801680_bsbansack(PlayerState* self, s32 arg1)
         inWater = player_inWater(self);
         var_a2 = player_isStable(self) != 0 || inWater;
         func_80800A78_bsbansack(self);
-        func_8009DB04(self, 0x3F0, func_800DC178(0.96f, 1.04f), 0x2710);
+        func_8009DB04(self, 0x3F0, rand_fBounded(0.96f, 1.04f), 0x2710);
         func_800A2EEC(self, 4);
         func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
         if (bastick_distance(self) != 0.0f)

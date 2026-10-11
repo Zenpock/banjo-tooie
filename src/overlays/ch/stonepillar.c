@@ -155,7 +155,7 @@ s32 func_8080031C_chstonepillar(Actor* arg0, s32 arg1, s32 arg2)
 
     switch (arg1)
     {
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
 
         sp1C = (StonePillarStruct*)func_80100094(arg0, 0U);
         func_80800704_chstonepillar(arg0);
@@ -177,7 +177,7 @@ s32 func_80800390_chstonepillar(Actor* arg0, s32 arg1, s32 arg2)
     case 0x3F:
         func_80800CC8_chstonepillar(arg0, *(s32*)&arg2);
         break;
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         func_80800C44_chstonepillar(arg0);
         break;
     default:
@@ -242,14 +242,14 @@ void func_808005B4_chstonepillar(Actor* arg0, s32 arg1, f32* arg2)
         stonePillar_2 = func_80100094(stonePillar, 0U);
         if (arg1 == stonePillar_2->unk2C)
         {
-            func_800EE7F8(arg2, stonePillar_2->unk18);
+            ml_vec3f_copy(arg2, stonePillar_2->unk18);
             arg2[1] = (f32)(arg2[1] + (sp28 - ((f32)arg1 * 200.0f)));
             return;
         }
         stonePillar = _subaddiefind_entrypoint_3(0x12E, &sp2C);
     }
     stonePillar_2 = (StonePillarStruct*)func_80100094(arg0, 0U);
-    func_800EE7F8(arg2, stonePillar_2->unk18);
+    ml_vec3f_copy(arg2, stonePillar_2->unk18);
     arg2[1] = (f32)(arg2[1] + (sp28 - ((f32)arg1 * 200.0f)));
 }
 
@@ -303,7 +303,7 @@ void func_808007C8_chstonepillar(Actor* arg0)
             temp_v0 = func_80100094(var_v0, 0U);
             if ((temp_s1->unk2C + 1) == temp_v0->unk2C)
             {
-                func_800EE7F8(temp_s1->unkC, temp_v0);
+                ml_vec3f_copy(temp_s1->unkC, temp_v0);
             }
         }
         var_v0 = _subaddiefind_entrypoint_3(arg0->unk6C_9, &sp28);
@@ -427,7 +427,7 @@ void func_80800C44_chstonepillar(Actor* arg0)
     {
         temp_v0->unk2C = -1;
     }
-    func_800EE7F8(arg0->position, (f32*)arg0->actorData);
+    ml_vec3f_copy(arg0->position, (f32*)arg0->actorData);
 }
 
 void func_80800CC8_chstonepillar(Actor* arg0, s32 arg1)
@@ -445,7 +445,7 @@ void func_80800CC8_chstonepillar(Actor* arg0, s32 arg1)
         }
         if (func_80800DD8_chstonepillar(arg0) != 0)
         {
-            func_800F7F98(func_800F54E4(), 1);
+            func_800F7F98(character_getActiveIndex(), 1);
         }
         func_800C3F48(0x7FF57C16U);
         func_808011CC_chstonepillar(arg0, 2U, 1.0f, 1.0f);
@@ -479,8 +479,8 @@ void func_80800E30_chstonepillar(Actor* arg0)
         flag_setMultipleValue(FLAG3_9CD_UNK, sp1C->unk2C + 1, 3);
         return;
     }
-    func_800F7F98(func_800F54E4(), 0);
-    if (func_800F6CC8(func_800F54E4()) == 0)
+    func_800F7F98(character_getActiveIndex(), 0);
+    if (func_800F6CC8(character_getActiveIndex()) == 0)
     {
         flag_setValueTrue(FLAG3_9D5_UNK);
         flag_setValueTrue(sp1C->unk2C + 0x65C);
@@ -506,8 +506,8 @@ void func_80800EE0_chstonepillar(Actor* arg0)
     {
         arg0->rotation[1] = 0.0f;
     }
-    func_800EE7F8((f32*)arg0->actorData, arg0->position);
-    func_800EE7F8(temp_v0->unk18, arg0->position);
+    ml_vec3f_copy((f32*)arg0->actorData, arg0->position);
+    ml_vec3f_copy(temp_v0->unk18, arg0->position);
     if (func_800D0B68(8U, 1U) != 0) 
     {
         temp_v0->unk2C = -1;
@@ -541,7 +541,7 @@ void func_80800FE0_chstonepillar(Actor* arg0)
 
 void func_808010CC_chstonepillar(Actor* arg0)
 {
-    if ((flag_getValue(FLAG3_9D9_UNK) == 0) && (func_800EA05C() != MAP_B9_MT_PRISON_COMPOUND) && (func_800F6CC8(func_800F54E4()) == 0))
+    if ((flag_getValue(FLAG3_9D9_UNK) == 0) && (func_800EA05C() != MAP_B9_MT_PRISON_COMPOUND) && (func_800F6CC8(character_getActiveIndex()) == 0))
     {
         _glcutDll_entrypoint_6(0xB9U, 0xBU);
     }
@@ -594,13 +594,13 @@ s32 func_80801238_chstonepillar(Actor* arg0)
     if (sp28->unk24 > 0.0f)
     {
         sp28->unk24 = (f32)(sp28->unk24 - time_getDelta());
-        func_800EE7F8(&sp2C, (f32*)arg0->actorData);
-        sp2C[0] += func_800DC178(-7.5f, 7.5f);
-        sp2C[2] += func_800DC178(-7.5f, 7.5f);
-        func_800EE7F8(arg0->position, &sp2C);
+        ml_vec3f_copy(&sp2C, (f32*)arg0->actorData);
+        sp2C[0] += rand_fBounded(-7.5f, 7.5f);
+        sp2C[2] += rand_fBounded(-7.5f, 7.5f);
+        ml_vec3f_copy(arg0->position, &sp2C);
         return 1;
     }
-    func_800EE7F8(arg0->position, (f32*)arg0->actorData);
+    ml_vec3f_copy(arg0->position, (f32*)arg0->actorData);
     return 0;
 }
 

@@ -394,7 +394,7 @@ s32 bstrexsmall_entrypoint_7(PlayerState* self, f32* arg1)
     f32 temp_f0;
     f32 sp18[3];
 
-    func_8009C128(self, sp18);
+    player_getCoords(self, sp18);
     temp_f0 = func_800EFC7C(sp18, arg1);
     if (temp_f0 < 40000.0f)
     {
@@ -438,7 +438,7 @@ void func_80800CA4_bstrexsmall(PlayerState* self, s32 arg1)
         baphysics_set_horizontal_velocity(self, sp28, baphysics_get_target_horizontal_velocity(self));
         baphysics_set_vertical_velocity(self, 1100.0f);
         baphysics_set_gravity(self, -1800.0f);
-        if (func_800DC0C0() > 0.5f) {
+        if (rand_f() > 0.5f) {
             func_8009DBB0(self, 0x4D8, 1.3f, 1.35f, 0x55F0);
             return;
         }
@@ -586,7 +586,7 @@ s32 bstrexsmall_entrypoint_11(s32 arg0) {
 void func_80801258_bstrexsmall(PlayerState* self, s32 arg1) {
     f32 sp1C[3];
 
-    func_8009C128(self, sp1C);
+    player_getCoords(self, sp1C);
     func_801013A8(sp1C, arg1, self->unk184);
 }
 

@@ -74,9 +74,39 @@ void func_800EBC04(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EC030.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EC058.s")
+void func_800EC058(s32* arg0, unkCUnk0* arg1)
+{
+	s32 var_a2;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EC0EC.s")
+	if (arg1->unk10 & 1)
+	{
+		var_a2 = -1;
+	}
+	else
+	{
+		var_a2 = func_800BD97C(arg0);
+	}
+	if (var_a2 == arg1->unk1C)
+	{
+		func_800EC030(arg1, arg0, var_a2);
+	}
+	else
+	{
+		func_800EBD2C(arg1, arg0, var_a2);
+	}
+	if (arg1->unk28_10)
+	{
+		func_800CDFD0(arg1);
+	}
+}
+
+void func_800EC0EC(f32* arg0, unkCUnk0* arg1)
+{
+	s32 sp1C[3];
+
+	ml_vec3f_to_vec3i(sp1C, arg0);
+	func_800EC058(sp1C, arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EC124.s")
 
@@ -92,7 +122,10 @@ void func_800EBC04(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EC398.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EC3C4.s")
+CallbackTable* func_800EC3C4(Unk80132ED0* arg0)
+{
+	return arg0->unk8();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EC3E8.s")
 

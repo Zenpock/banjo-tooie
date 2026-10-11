@@ -34,19 +34,19 @@ s32 func_80800140_chjadestatue(Actor* arg0, s32 arg1, s32 arg2)
 	switch (arg1)
 	{
 
-	case 0x95:
-		func_80109EEC(arg0, 0x44);
-		break;
-	case 0x3E:
-		arg0->unk64_20 = 1;
-		_subaddieDll_entrypoint_4(arg0, 1U);
-		break;
+		case EVENT_95_ACTOR_SPAWNED:
+			func_80109EEC(arg0, 0x44);
+			break;
+		case EVENT_3E_ACTOR_TOUCHED:
+			arg0->unk64_20 = 1;
+			_subaddieDll_entrypoint_4(arg0, 1U);
+			break;
 
-	case 0x2C:
-		func_800FFAB0(arg0);
-		return 1;
-	default:
-		return 0;
+		case 0x2C:
+			actor_mark_delete(arg0);
+			return 1;
+		default:
+			return 0;
 	}
 	return 1;
 }
@@ -62,10 +62,10 @@ void func_808001C0_chjadestatue(Actor* arg0)
 	switch (temp_v0)
 	{
 	case 10:
-		func_80101180(0x2B4, 7, 0);
+		event_sendToActorsOfType(0x2B4, 7, 0);
 		return;
 	case 20:
-		func_80101180(0x2B4, 7, 1);
+		event_sendToActorsOfType(0x2B4, 7, 1);
 		return;
 	}
 }
@@ -74,7 +74,7 @@ void func_8080026C_chjadestatue(Actor* arg0)
 {
 	if (func_800D035C(5) >= 0x14)
 	{
-		func_800FFAB0(arg0);
+		actor_mark_delete(arg0);
 	}
 }
 
@@ -88,8 +88,8 @@ void func_808002A4_chjadestatue(Actor* arg0)
 	func_800D24E8(0xEE, temp_v0, 0);
 	if (sp1C >= 0x14)
 	{
-		func_80101180(PROP_2B3_JADETOTEM, 0x2C, 0);
-		func_800FFAB0(arg0);
+		event_sendToActorsOfType(PROP_2B3_JADETOTEM, 0x2C, 0);
+		actor_mark_delete(arg0);
 	}
 }
 

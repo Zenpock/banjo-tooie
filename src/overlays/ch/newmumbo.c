@@ -150,7 +150,7 @@ void func_80800264_chnewmumbo(Actor* arg0, s32 arg1) {
 			_suexpression_entrypoint_12(func_80100094(arg0, 1U), 60.0f, 0.0f);
 			return;
 		case 8:
-			if (func_800D1A04(0x48) > 0)
+			if (inventory_getValue(0x48) > 0)
 			{
 				func_808000DC_chnewmumbo(arg0, 0x11D7U, 0x46U);
 				return;
@@ -159,7 +159,7 @@ void func_80800264_chnewmumbo(Actor* arg0, s32 arg1) {
 			return;
 		case 18:
 			temp_v1->unk1 = 0;
-			func_800EE7F8(arg0->position, &D_808019F4_chnewmumbo);
+			ml_vec3f_copy(arg0->position, &D_808019F4_chnewmumbo);
 			return;
 		case 19:
 			temp_v1->unk2 = 1;
@@ -195,73 +195,73 @@ s32 func_808004E8_chnewmumbo(Actor* arg0, s32 arg1, s32 arg2)
 
 	switch (arg1)
 	{
-	case 0x32:
-		switch (arg0->unk70_10)
-		{
-		case 2:
-			func_80800264_chnewmumbo(arg0, 5);
-			break;
-		case 3:
-			if (flag_getValue(func_8080011C_chnewmumbo()) != 0)
+		case 0x32:
+			switch (arg0->unk70_10)
 			{
-				func_8080073C_chnewmumbo(arg0, 1);
+			case 2:
+				func_80800264_chnewmumbo(arg0, 5);
+				break;
+			case 3:
+				if (flag_getValue(func_8080011C_chnewmumbo()) != 0)
+				{
+					func_8080073C_chnewmumbo(arg0, 1);
+					func_80800000_chnewmumbo(arg0, 2, 1U);
+					func_808000DC_chnewmumbo(arg0, 0x11DBU, 0x4EU);
+				}
+				else
+				{
+					func_80800000_chnewmumbo(arg0, 2, 1U);
+					func_8080073C_chnewmumbo(arg0, 1);
+					func_80800264_chnewmumbo(arg0, 7);
+				}
+				break;
+			case 4:                                     /* switch 2 */
 				func_80800000_chnewmumbo(arg0, 2, 1U);
 				func_808000DC_chnewmumbo(arg0, 0x11DBU, 0x4EU);
+				break;
+			}
+			break;
+		case EVENT_2E_ACTOR_DIALOG_ENDED:
+			func_808014FC_chnewmumbo(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
+			break;
+		case 0x52:
+			_gcdialogcamera_entrypoint_3(&D_80801AB8_chnewmumbo, arg0->scale);
+			if ((s32)arg0->unk70_10 < 0xE)
+			{
+				_gcdialogcamera_entrypoint_4(&D_80801AC8_chnewmumbo);
+			}
+			break;
+		case 0x57:
+			temp2 = (arg2 & 0xFFFF);
+			temp = (arg2 & 0xFFFF0000) >> 0x10;
+
+			if (_gcdialogcamera_entrypoint_0(temp2, temp) != 0)
+			{
+				func_80800000_chnewmumbo(arg0, temp2, temp);
+			}
+			break;
+		case EVENT_1F_ACTOR_ONSCREEN:
+			sp24 = (NewMumboStruct*)func_80100094(arg0, 0U);
+			func_801015D0(arg0);
+			if (sp24->unk1 != 0)
+			{
+				func_800DF744(5, 1);
 			}
 			else
 			{
-				func_80800000_chnewmumbo(arg0, 2, 1U);
-				func_8080073C_chnewmumbo(arg0, 1);
-				func_80800264_chnewmumbo(arg0, 7);
+				func_800DF744(5, 0);
+			}
+			if (sp24->unk2 != 0)
+			{
+				func_800DF744(4, 1);
+			}
+			else
+			{
+				func_800DF744(4, 0);
 			}
 			break;
-		case 4:                                     /* switch 2 */
-			func_80800000_chnewmumbo(arg0, 2, 1U);
-			func_808000DC_chnewmumbo(arg0, 0x11DBU, 0x4EU);
-			break;
-		}
-		break;
-	case 0x2E:
-		func_808014FC_chnewmumbo(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
-		break;
-	case 0x52:
-		_gcdialogcamera_entrypoint_3(&D_80801AB8_chnewmumbo, arg0->scale);
-		if ((s32)arg0->unk70_10 < 0xE)
-		{
-			_gcdialogcamera_entrypoint_4(&D_80801AC8_chnewmumbo);
-		}
-		break;
-	case 0x57:
-		temp2 = (arg2 & 0xFFFF);
-		temp = (arg2 & 0xFFFF0000) >> 0x10;
-
-		if (_gcdialogcamera_entrypoint_0(temp2, temp) != 0)
-		{
-			func_80800000_chnewmumbo(arg0, temp2, temp);
-		}
-		break;
-	case 0x1F:                                      /* switch 1 */
-		sp24 = (NewMumboStruct*)func_80100094(arg0, 0U);
-		func_801015D0(arg0);
-		if (sp24->unk1 != 0)
-		{
-			func_800DF744(5, 1);
-		}
-		else
-		{
-			func_800DF744(5, 0);
-		}
-		if (sp24->unk2 != 0)
-		{
-			func_800DF744(4, 1);
-		}
-		else
-		{
-			func_800DF744(4, 0);
-		}
-		break;
-	default:
-		return 0;
+		default:
+			return 0;
 	}
 	return 1;
 }
@@ -274,7 +274,7 @@ void func_8080073C_chnewmumbo(Actor* arg0, s32 arg1)
 		{
 			func_800F7B9C(_plsu_entrypoint_1(1), 0x8DU);
 		}
-		func_800F8300(func_800F54E4(), 2, arg0->position);
+		func_800F8300(character_getActiveIndex(), 2, arg0->position);
 		arg0->unk64_19 = 1;
 	}
 }
@@ -283,7 +283,7 @@ void func_808007B0_chnewmumbo(Actor* arg0)
 {
 	if (arg0->unk64_19)
 	{
-		func_800F82D4(func_800F54E4(), 0);
+		func_800F82D4(character_getActiveIndex(), 0);
 		arg0->unk64_19 = 0;
 	}
 }
@@ -354,7 +354,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 
 	if ((flag_getValue(func_8080011C_chnewmumbo()) == 0) && (MUMBO_DATA(arg0)->unkC <= 0.0f))
 	{
-		func_800D1824(0x48);
+		inventory_showValue(0x48);
 	}
 	if (func_8010D278() == 0xD)
 	{
@@ -454,11 +454,11 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 				arg0->unk7A_12 = 1;
 			}
 		}
-		else if (func_800DC298(0.3f) != 0 && arg0->unk7A_9 < 3)
+		else if (rand_percentChance(0.3f) != 0 && arg0->unk7A_9 < 3)
 		{
 			arg0->unk7A_12 = 1;
 		}
-		else if (func_800DC298(0.05f) != 0 && arg0->unk7A_9 > 0)
+		else if (rand_percentChance(0.05f) != 0 && arg0->unk7A_9 > 0)
 		{
 			arg0->unk7A_12 = 2;
 		}
@@ -512,7 +512,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 				break;
 			case 3:
 				temp_v0_5 = func_80106790(arg0->unk3C);
-				func_800EE7F8((f32*)&temp_v0_5->actorData[0], sp5C->unk4);
+				ml_vec3f_copy((f32*)&temp_v0_5->actorData[0], sp5C->unk4);
 				temp_v0_5->unk74_30 = 1;
 				temp_v0_5->unk64_19 = 1;
 				sp5C->unk3 = 4U;
@@ -538,7 +538,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 			func_80800264_chnewmumbo(arg0, 0x11);
 			func_80800000_chnewmumbo(arg0, 2, 1);
 			flag_setValueTrue(func_8080011C_chnewmumbo());
-			func_800D175C(0x48, -1);
+			inventory_addValue(0x48, -1);
 			return;
 		}
 		break;
@@ -592,7 +592,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 			func_800F7B9C(_plsu_entrypoint_1(1), 0x3DU);
 			sp5C->unk0 = 0U;
 			func_80800264_chnewmumbo(arg0, 0x10);
-			func_800EE7F8(arg0->position, sp38);
+			ml_vec3f_copy(arg0->position, sp38);
 			func_808007B0_chnewmumbo(arg0);
 			return;
 		}
@@ -667,12 +667,12 @@ void func_808014FC_chnewmumbo(Actor* arg0, s32 arg1, s32 arg2)
 		func_808000DC_chnewmumbo(arg0, 0x11D9U, 7U);
 		return;
 	case 0x11D9:                                    /* switch 1 */
-		func_800EE7F8((f32*)arg0->actorData, arg0->position);
+		ml_vec3f_copy((f32*)arg0->actorData, arg0->position);
 		func_808007B0_chnewmumbo(arg0);
 		func_80800264_chnewmumbo(arg0, 0xA);
 		return;
 	case 0x11DA:                                    /* switch 1 */
-		func_800EE7F8((f32*)arg0->actorData, arg0->position);
+		ml_vec3f_copy((f32*)arg0->actorData, arg0->position);
 		func_808007B0_chnewmumbo(arg0);
 		func_80800264_chnewmumbo(arg0, 0xA);
 		return;
@@ -729,7 +729,7 @@ void func_808014FC_chnewmumbo(Actor* arg0, s32 arg1, s32 arg2)
 
 void chnewmumbo_entrypoint_0(Actor* arg0, f32 arg1[3])
 {
-	func_800EE7F8(arg1, ((NewMumboStruct*)func_80100094(arg0, 0U))->unk4);
+	ml_vec3f_copy(arg1, ((NewMumboStruct*)func_80100094(arg0, 0U))->unk4);
 }
 
 void func_8080172C_chnewmumbo(Actor* arg0) 
@@ -745,7 +745,7 @@ void func_80801760_chnewmumbo(Actor* arg0)
 	NewMumboStruct* sp2C;
 
 	sp2C = (NewMumboStruct*)func_80100094(arg0, 0U);
-	func_800EE7F8(arg0->position, &D_80801A00_chnewmumbo);
+	ml_vec3f_copy(arg0->position, &D_80801A00_chnewmumbo);
 	arg0->scale = 0.5f;
 	_suexpression_entrypoint_7(arg0, 1U, 0x10U);
 	if (func_8010D278() == 0xD)
@@ -758,7 +758,7 @@ void func_80801760_chnewmumbo(Actor* arg0)
 		sp2C->unk0 = 0;
 		if ((flag_getValue(func_8080011C_chnewmumbo()) != 0) || (_glcutDll_entrypoint_20() != 0))
 		{
-			func_800EE7F8(arg0->position, &D_808019F4_chnewmumbo);
+			ml_vec3f_copy(arg0->position, &D_808019F4_chnewmumbo);
 			func_80800264_chnewmumbo(arg0, 0x13);
 		}
 		else if (flag_getValue(FLAG_07D_FTT_MUMBO) != 0)

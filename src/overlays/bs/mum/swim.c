@@ -5,7 +5,7 @@ void func_80800000_bsmumswim(PlayerState *self) {
     s32 sp28;
 
     if (func_80096544(self) != 0) {
-        if (func_800DC0C0() > 0.5f) {
+        if (rand_f() > 0.5f) {
             func_80092C00(self, sp2C);
         } else {
             func_80092C24(self, sp2C);
@@ -83,7 +83,7 @@ void bsmumswim_entrypoint_2(PlayerState *self) {
     s32 sp3C;
 
     next_state = BS_STATE_0_INVALID;
-    func_8009C128(self, sp40);
+    player_getCoords(self, sp40);
     sp40[1] += 60.0f;
     sp3C = func_8009FBB0(self, sp40, 20.0f);
     func_800BA930(sp3C, -30, -30, -30, 30, 30, 30);
@@ -133,10 +133,10 @@ void func_8080056C_bsmumswim(PlayerState *self) {
 
     next_state = BS_STATE_0_INVALID;
     anim_ctrl = baanim_getAnimCtrlPtr(self);
-    if ((func_8001210C(7) == 0) && (func_800DC0C0() < 0.5f)) {
+    if ((func_8001210C(7) == 0) && (rand_f() < 0.5f)) {
         func_8009FC34(self, 1);
     }
-    if ((func_8001210C(7) == 0) && (func_800DC0C0() < 0.5f)) {
+    if ((func_8001210C(7) == 0) && (rand_f() < 0.5f)) {
         func_80800000_bsmumswim(self);
     }
     if ((anctrl_isAt(anim_ctrl, 0.01f) != 0) || (anctrl_isAt(anim_ctrl, 0.2f) != 0) || (anctrl_isAt(anim_ctrl, 0.4f) != 0) || (anctrl_isAt(anim_ctrl, 0.6f) != 0) || (anctrl_isAt(anim_ctrl, 0.8f) != 0)) {

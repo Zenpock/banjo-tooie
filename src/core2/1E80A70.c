@@ -47,7 +47,11 @@ s32* func_800A7180(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A73F4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7584.s")
+void func_800A7584(s32 arg0, s32 arg1)
+{
+    D_80127630.unk1A = arg0 + 1;
+    D_80127630.unk1B = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A759C.s")
 
@@ -140,29 +144,29 @@ s32 func_800A7D84(void)
     func_800FB968();
     switch (D_80127630.unk2)
     {
-    case 5:
-        func_800A9A14();
-        break;
-    case 3:
-        D_80127630.unkC += time_getDelta();
-        if ((D_801255F8 < D_80127630.unkC) && (func_800C0A34() != 0))
-        {
-            func_800A759C(4, 0U);
-        }
-        else if (sp1C == 0)
-        {
-            func_800A759C(3, 1U);
-        }
-        break;
-    case 4:
-        if (func_800C0948() != 0)
-        {
-            func_800EA334(1);
-            func_800EA34C(1);
-            func_800A759C(3, 0U);
-            func_800FFC14();
-            func_800F8850();
-        }
+        case 5:
+            func_800A9A14();
+            break;
+        case 3:
+            D_80127630.unkC += time_getDelta();
+            if ((D_801255F8 < D_80127630.unkC) && (func_800C0A34() != 0))
+            {
+                func_800A759C(4, 0U);
+            }
+            else if (sp1C == 0)
+            {
+                func_800A759C(3, 1U);
+            }
+            break;
+        case 4:
+            if (func_800C0948() != 0)
+            {
+                func_800EA334(1);
+                func_800EA34C(1);
+                func_800A759C(3, 0U);
+                func_800FFC14();
+                func_800F8850();
+            }
     }
     if (func_800A819C() != 0)
     {
@@ -173,9 +177,9 @@ s32 func_800A7D84(void)
 
 }
 
-void func_800A7FB4()
+void func_800A7FB4(s32 arg0, s32 arg1)
 {
-    func_800A7584();
+    func_800A7584(arg0,arg1);
 }
 
 
@@ -202,7 +206,6 @@ void func_800CCFEC(void);
 void func_800A5D6C(void);
 void func_800B5E3C(void);
 void func_800DA1E0(void);
-void func_800D15CC(void);
 void func_8010E030(void);
 void func_800C075C(void);
 void func_800C08C0(void);
@@ -250,7 +253,7 @@ void func_800A7FD4(void) {
     func_800A5D6C();
     func_800B5E3C();
     func_800DA1E0();
-    func_800D15CC();
+    inventory_defrag();
     func_8010E030();
     func_800C075C();
     if (D_80127630.unk2 == 4) {

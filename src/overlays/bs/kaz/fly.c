@@ -3,10 +3,10 @@
 void func_80800000_bskazfly(PlayerState *self) {
     f32 sp24[3];
 
-    func_8009C128(self, sp24);
-    sp24[0] += func_800DC178(-30, 30);
-    sp24[1] += 50.0f + func_800DC178(0, 30);
-    sp24[2] += func_800DC178(-30, 30);
+    player_getCoords(self, sp24);
+    sp24[0] += rand_fBounded(-30, 30);
+    sp24[1] += 50.0f + rand_fBounded(0, 30);
+    sp24[2] += rand_fBounded(-30, 30);
     func_800BBCB8(sp24, NULL, 1, 1, D_80801C10_bskazfly);
 }
 
@@ -228,8 +228,8 @@ s32 bskazfly_entrypoint_1(s32 idx) {
 void func_80800974_bskazfly(PlayerState *self) {
     f32 sp1C[3];
 
-    func_8009C128(self, sp1C);
-    func_800EF04C(sp1C, self->kazfly->unk10);
+    player_getCoords(self, sp1C);
+    ml_vec3f_add(sp1C, self->kazfly->unk10);
     func_800A34AC(self, sp1C);
     func_8009DF58(self, 0x40D, 1);
 }
@@ -262,7 +262,7 @@ void func_808009C8_bskazfly(PlayerState *self, s32 arg1) {
             _ncbafly_entrypoint_5(func_800A4CA8(self), 1);
             func_8009DF94(self, 0x442E, 1, 28000);
             baflag_clear(self, BA_FLAG_1C);
-            func_8009C128(self, self->kazfly->unk4);
+            player_getCoords(self, self->kazfly->unk4);
             _chusefeather_entrypoint_1(self->unk184, 0);
             break;
         case 2:
@@ -285,16 +285,16 @@ void func_80800BDC_bskazfly(PlayerState *self) {
     f32 unk2;
     f32 unk3;
 
-    func_800EE7F8(unk1, self->kazfly->unk10);
+    ml_vec3f_copy(unk1, self->kazfly->unk10);
     func_800CA9D8(func_800A4C48(self), &unk3);
-    func_800EFA4C(unk0, bastick_getX(self) * 1000.0f, 0.0f, 0.0f);
+    ml_vec3f_assign_value(unk0, bastick_getX(self) * 1000.0f, 0.0f, 0.0f);
     func_800EF8BC(unk0, unk0, unk3);
     func_800EF934(unk0, unk0, unk2);
-    func_800EF04C(unk1, unk0);
-    func_800EFA4C(unk0, 0.0f, -bastick_getY(self) * 1000.0f, 0.0f);
+    ml_vec3f_add(unk1, unk0);
+    ml_vec3f_assign_value(unk0, 0.0f, -bastick_getY(self) * 1000.0f, 0.0f);
     func_800EF8BC(unk0, unk0, unk3);
     func_800EF934(unk0, unk0, unk2);
-    func_800EF04C(unk1, unk0);
+    ml_vec3f_add(unk1, unk0);
     func_8009BA9C(self, unk1);
 }
 
@@ -329,9 +329,9 @@ BanjoStateId func_80800D24_bskazfly(PlayerState *self, BanjoStateId nextState) {
         sp28 = func_80096434(self);
     }
 
-    func_800EE7F8(sp2C, self->kazfly->unk10);
+    ml_vec3f_copy(sp2C, self->kazfly->unk10);
     func_800EF2A0(sp2C);
-    sp44 = mlAbsF(func_800EEAA4(sp38, sp2C));
+    sp44 = mlAbsF(ml_vec3f_dot_product(sp38, sp2C));
     if ((baflag_isTrue(self, BA_FLAG_8) != 0) || (sp28 & 0x80)) {
         func_80800974_bskazfly(self);
         nextState = BS_STATE_173;
@@ -378,8 +378,8 @@ void func_80800EB4_bskazfly(PlayerState *self) {
             anctrl_setPlaybackType(animCtrl, 2);
             anctrl_start(animCtrl);
         }
-        func_8009C128(self, unk0);
-        func_800EF3DC(unk0, self->kazfly->unk4);
+        player_getCoords(self, unk0);
+        ml_vec3f_subtract(unk0, self->kazfly->unk4);
         _bafly_entrypoint_6(self, func_800F10B4(func_800EEFD4(unk0), 0, 16000000, 0.2, 0.7f));
         if (func_800EEFD4(unk0) > 1.6e7f) {
             if (bakey_held(self, BUTTON_B) != 0) {

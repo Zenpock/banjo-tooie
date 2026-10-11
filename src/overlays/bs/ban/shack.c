@@ -315,7 +315,7 @@ void func_808009E4_bsbanshack(PlayerState* self)
     func_800A2CE8(self, 0.75f, 3);
     if (baanim_isAt(self, 0.51f) != 0)
     {
-        func_8009DF18(self, func_800DC0C0() < 0.5f ? 0x58A : 0x58B, 1.0f, 0x1388);
+        func_8009DF18(self, rand_f() < 0.5f ? 0x58A : 0x58B, 1.0f, 0x1388);
     }
     if ((bastick_getZone(self) == BS_STICK_ZONE_ID_0) && (func_8009BCD4(self, 3.0f) != 0))
     {

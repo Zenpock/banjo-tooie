@@ -117,16 +117,16 @@ void func_800C878C(s32 arg0, s32 arg1, s32 arg2) {
 }
 
 void func_800C87B8(s32* arg0) {
-    func_800EE830(arg0, D_8012AB04);
+    ml_vec3i_copy(arg0, D_8012AB04);
 }
 
 void func_800C87DC(s32* arg0) {
-    func_800EE830(arg0, &D_8012AB10);
+    ml_vec3i_copy(arg0, &D_8012AB10);
 }
 
 
 void func_800C8800(s32 arg0, f32* arg1) {
-    func_800EE88C(arg1, vector_at(D_8012AB00, arg0 - 1));
+    ml_vec3s_to_vec3f(arg1, vector_at(D_8012AB00, arg0 - 1));
 }
 
 void func_800C883C(s32 arg0, f32* arg1) {
@@ -148,7 +148,7 @@ void func_800C8900(s32 arg0, s32* arg1) {
     unkStruct800C85A0* temp_v0 = vector_at(D_8012AB00, arg0 - 1);
 
     if (temp_v0->unk17 == 0) {
-        func_800EFA88(arg1, 0, 0, 0);
+        ml_vec3i_assign_value(arg1, 0, 0, 0);
         return;
     }
     func_800F2EE0(arg1, &temp_v0->unkA);
@@ -156,10 +156,10 @@ void func_800C8900(s32 arg0, s32* arg1) {
 
 void func_800C8960(s32* arg0, f32* arg1) {
     if (arg0 != NULL) {
-        func_800EE830(arg0, D_8012AB1C);
+        ml_vec3i_copy(arg0, D_8012AB1C);
     }
     if (arg1 != NULL) {
-        func_800EE7F8(arg1, D_8012AB28);
+        ml_vec3f_copy(arg1, D_8012AB28);
     }
 }
 
@@ -253,7 +253,7 @@ s32 func_800C8C18(void) {
 }
 
 void func_800C8C90(s32* arg0) {
-    func_800EE830(D_8012AB04, arg0);
+    ml_vec3i_copy(D_8012AB04, arg0);
 }
 
 
@@ -262,9 +262,9 @@ void func_800C8CB8(s32 arg0, f32* arg1) {
     s16 sp1C[3];
 
     sp24 = vector_at(D_8012AB00, arg0 - 1);
-    func_800EE940(sp1C, arg1);
+    ml_vec3f_to_vec3s(sp1C, arg1);
     if ((sp24->unk0 != sp1C[0]) || (sp24->unk2 != sp1C[1]) || (sp24->unk4 != sp1C[2])) {
-        func_800EE814(&sp24->unk0, sp1C);
+        ml_vec3s_copy(&sp24->unk0, sp1C);
         sp24->unk16 = sp24->unk19 = 1;
     }
 }
@@ -316,10 +316,10 @@ void func_800C8E84(s32 arg0, u32* arg1) {
 
 void func_800C8F08(s32* arg0, f32* arg1) {
     if (arg0 != NULL) {
-        func_800EE830(D_8012AB1C, arg0);
+        ml_vec3i_copy(D_8012AB1C, arg0);
     }
     if (arg1 != NULL) {
-        func_800EE7F8(D_8012AB28, arg1);
+        ml_vec3f_copy(D_8012AB28, arg1);
         func_800EF2A0(D_8012AB28);
     }
 }
@@ -676,7 +676,7 @@ void func_800C9A38(unkStruct800C9A38* arg0) {
     f32* sp28;
 
     sp28 = arg0->unkC;
-    if (func_800EEEA8(sp28) != 0) {
+    if (ml_vec3f_is_zero(sp28) != 0) {
         _subaddiedialog_entrypoint_11(arg0->unk0, arg0->unk4, arg0->unk8, NULL, arg0->unk18);
         return;
     }
@@ -743,7 +743,7 @@ void func_800C9C70(f32 arg0, u32 arg1, f32 arg2, u32 arg3, f32* arg4, f32 arg5, 
     sp18.unk4 = arg2;
     sp18.unk18 = arg5;
     sp18.unk1C = arg6;
-    func_800EE7F8(sp18.unkC, arg4);
+    ml_vec3f_copy(sp18.unkC, arg4);
     func_800C9EF8(arg0, (u32*)func_800C99F0, &sp18);
 }
 
@@ -755,9 +755,9 @@ void func_800C9CD0(f32 arg0, Unk80132ED0* arg1, u32 arg2, u32 arg3, f32* arg4, s
     sp1C.unk8 = arg3;
     sp1C.unk18 = arg5;
     if (arg4 != NULL) {
-        func_800EE7F8(sp1C.unkC, arg4);
+        ml_vec3f_copy(sp1C.unkC, arg4);
     } else {
-        func_800EFD24(sp1C.unkC);
+        ml_vec3f_clear(sp1C.unkC);
     }
     func_800C9EF8(arg0, (u32*)func_800C9A38, &sp1C);
 }

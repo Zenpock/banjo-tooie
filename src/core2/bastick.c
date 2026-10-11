@@ -43,7 +43,7 @@ f32 bastick_getAngle(PlayerState *self) {
 
 f32 bastick_getAngleRelativeToBanjo(PlayerState *self) {
     f32 player_position[3];
-    func_8009C128(self, player_position);
+    player_getCoords(self, player_position);
     return func_800CAF00(func_800A4C48(self), self->stick->angle);
 }
 

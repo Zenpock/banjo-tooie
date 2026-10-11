@@ -16,6 +16,8 @@
 #include "core2/1ED8C80.h"
 #include "core2/1EDAEA0.h"
 #include "core2/1EDC7B0.h"
+
+void _chdoubloon_entrypoint_0(Actor*, void*);
 void _chdoubloon_entrypoint_1(Actor*);
 
 #endif

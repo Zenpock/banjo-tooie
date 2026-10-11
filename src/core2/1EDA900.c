@@ -16,7 +16,7 @@ void* func_80101080()
     return D_80135A80;
 }
 
-s32 func_8010108C(Actor* actor, s32 eventId, s32 arg2)
+s32 event_sendToActor(Actor* actor, ActorEventId eventId, s32 arg2)
 {
     s32 pad;
     s32 sp28;
@@ -45,12 +45,12 @@ s32 func_8010108C(Actor* actor, s32 eventId, s32 arg2)
     return -1;
 }
 
-s32 func_8010114C(s32 arg0, s32 eventId, s32 arg2)
+s32 func_8010114C(s32 arg0, ActorEventId eventId, s32 arg2)
 {
-    return func_8010108C(func_80106790((Unk80132ED0*)arg0), eventId, arg2);
+    return event_sendToActor(func_80106790((Unk80132ED0*)arg0), eventId, arg2);
 }
 
-s32 func_80101180(s32 propId, s32 eventId, s32 arg2)
+s32 event_sendToActorsOfType(s32 propId, ActorEventId eventId, s32 arg2)
 {
     Actor* actorToCheck;
     s32 LastIndex;
@@ -58,21 +58,21 @@ s32 func_80101180(s32 propId, s32 eventId, s32 arg2)
     s32 var_s0;
 
     var_s0 = 0;
-    actorToCheck = func_801067C4(&LastIndex);
+    actorToCheck = actorList_getLast(&LastIndex);
     //Loop through the actors to find matching propIds to send events to
     while (actorToCheck != NULL)
     {
         if (!(actorToCheck->unk64_17) && (propId == actorToCheck->unk6C_9))
         {
             //Send the event to the actor's event handler
-            temp_v0 = func_8010108C(actorToCheck, eventId, arg2);
+            temp_v0 = event_sendToActor(actorToCheck, eventId, arg2);
             if ((temp_v0 > 0) && (var_s0 == 0))
             {
                 var_s0 = temp_v0;
             }
         }
         //Get the next Actor in the list
-        actorToCheck = func_8010682C(&LastIndex);
+        actorToCheck = actorList_getNext(&LastIndex);
     }
     return var_s0;
 }

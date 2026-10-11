@@ -1,7 +1,7 @@
 #include "gc/collectDLL.h"
 
 s16 D_80800BE0_gccollectDll[0x16] = { 0x31,0x1,0x26,0x1,0xB,0x4,0xA,0x1,0x16,0x2,0x3D,0x1,0x4C,0x01,0xA,0x2,0x14,0x0,0x36,0x1,0x6,0x2 };
-s32 D_80800C0C_gccollectDll[3] = { 0,0,0};
+f32 D_80800C0C_gccollectDll[3] = { 0,0,0};
 u32 D_80800C18_gccollectDll[0x9] = { PROP_1F4_JINJO_REAL,PROP_21F_JIGGY_REAL,PROP_220_HONEYCOMB_REAL,PROP_21B_GLOWBO_REAL,PROP_136_CHEATOPAGE_REAL,0x0,0x0,PROP_4E5_DOUBLOON_REAL,PROP_3C6_TICKET_REAL };
 extern u8 D_8012762C;
 
@@ -206,7 +206,7 @@ s32 func_808003E0_gccollectDll(s32* arg0, s32* arg1)
                     //Get the coords of the jiggy
                     func_800D07CC(itemIndex, 1, sp44);
                     //Convert Float Coords
-                    func_800EE940(var_s2, sp44);
+                    ml_vec3f_to_vec3s(var_s2, sp44);
                     var_s2 += 3;
                 }
             }
@@ -300,7 +300,7 @@ void func_808007D8_gccollectDll(Prop* arg0)
         func_808005BC_gccollectDll((u32)arg0->FlagOrRotation, arg0);
         return;
     }
-    func_800EE88C(sp24, arg0->position);
+    ml_vec3s_to_vec3f(sp24, arg0->position);
     func_800D0778(arg0->FlagOrRotation, 1, &sp24);
 }
 

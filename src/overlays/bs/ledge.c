@@ -28,7 +28,7 @@ void func_80800040_bsledge(PlayerState *self, f32 arg1[3]) {
 
     stick_distance = bastick_distance(self);
     if (stick_distance == 0.0f) {
-        func_800EFD24(arg1);
+        ml_vec3f_clear(arg1);
         return;
     }
     angle = bastick_getAngleRelativeToBanjo(self);
@@ -39,7 +39,7 @@ void func_80800040_bsledge(PlayerState *self, f32 arg1[3]) {
         sp18 = 180.0f - sp18;
     }
     if (mlAbsF(sp18) < 10.0f) {
-        func_800EFD24(arg1);
+        ml_vec3f_clear(arg1);
         return;
     }
     self->unk15C.word = sp30 < 0.0f ? 1 : -1;
@@ -96,13 +96,13 @@ void func_80800334_bsledge(PlayerState* self) {
     temp_a1 = self->unk168.bytes[0];
     self->unk168.bytes[0]--;
     if (temp_a1 == 0) {
-        self->unk168.bytes[0] = func_800DC128(1, 3);
+        self->unk168.bytes[0] = rand_iBounded(1, 3);
         temp_a1 =  D_80801340_bsledge[ (self->unk168.bytes[1])];
         self->unk168.bytes[1]++;
         if (self->unk168.bytes[1] >= 3U) {
             self->unk168.bytes[1] = 0U;
         }
-        func_8009DF18(self, temp_a1, func_800DC178(0.8f, 1.0f), 10000);
+        func_8009DF18(self, temp_a1, rand_fBounded(0.8f, 1.0f), 10000);
     }
 }
 
@@ -171,7 +171,7 @@ void func_808005E0_bsledge(PlayerState* self) {
     }
     if (baanim_getTimer(self) > 0.6329f) {
         func_80800040_bsledge(self, sp20);
-        if (func_800EEF24(sp20) != 0) {
+        if (ml_vec3f_is_not_zero(sp20) != 0) {
             sp2C = BS_STATE_A7_GRIP_GRAB_MOVE;
         }
         if (func_808003D0_bsledge(self) != 0) {
@@ -347,7 +347,7 @@ s32 func_80800CF4_bsledge(PlayerState *self, u8 *arg1, u32 arg2) {
 }
 
 s32 func_80800D24_bsledge(PlayerState* self) {
-    if (func_800A3274(self) == TRANSFORM_A_BANJO) {
+    if (player_getTransformation(self) == TRANSFORM_A_BANJO) {
         return func_80800CF4_bsledge(self, D_80801390_bsledge, 5);
     }
 

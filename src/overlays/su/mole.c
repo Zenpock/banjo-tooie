@@ -26,7 +26,7 @@ void sumole_entrypoint_0(Actor* arg0, s32 arg1)
     temp_v0 = _gccubesearch_entrypoint_1(0x387U, arg0->position);
     if (temp_v0 == NULL)
     {
-        func_800EE7F8(MOLE_DATA(arg0)->unk0, arg0->position);
+        ml_vec3f_copy(MOLE_DATA(arg0)->unk0, arg0->position);
         func_800EF1B8(MOLE_DATA(arg0)->unk0, arg0->rotation[1] - 90.0f, 200.0f);
     }
     else
@@ -70,7 +70,7 @@ void func_808001E0_sumole(Actor* arg0, s32 arg1)
     f32 sp2C[3];
 
 
-    func_800EE7F8(sp2C, arg0->position);
+    ml_vec3f_copy(sp2C, arg0->position);
     func_800EF1B8(sp2C, arg0->rotation[1] + 15.0f, 150.0f);
     switch (arg1)
     {
@@ -580,7 +580,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
     s16 var_a1;
     s16 sp1E;
 
-    var_a1 = func_800DC128(0xD7B, 0xD7D);
+    var_a1 = rand_iBounded(0xD7B, 0xD7D);
     switch (arg1)
     {
         case ALLOW_BANJO: //Banjo Moves
@@ -588,7 +588,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
             if (func_8010D278() == TRANSFORM_B_KAZOOIE)
             {
                 //Randomize kazooie Refusal message to use for Banjo Move
-                var_a1 = func_800DC128(0xD71, 0xD73);
+                var_a1 = rand_iBounded(0xD71, 0xD73);
             }
             else
             {
@@ -596,7 +596,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
                 if (func_8010D278() == TRANSFORM_1_BK)
                 {
                     //Randomize message saying to get rid of kazooie
-                    var_a1 = func_800DC128(0xD6F, 0xD71);
+                    var_a1 = rand_iBounded(0xD6F, 0xD71);
                 }
             }
             break;
@@ -605,7 +605,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
             if (func_8010D278() == TRANSFORM_A_BANJO)
             {
                 //Randomize Banjo Refusal message to use for Kazooie Move
-                var_a1 = func_800DC128(0xD73, 0xD75);
+                var_a1 = rand_iBounded(0xD73, 0xD75);
             }
             else
             {
@@ -613,7 +613,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
                 if (func_8010D278() == TRANSFORM_1_BK)
                 {
                     //Randomize message saying to get rid of Banjo
-                    var_a1 = func_800DC128(0xD75, 0xD77);
+                    var_a1 = rand_iBounded(0xD75, 0xD77);
                 }
             }
             break;
@@ -622,7 +622,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
             if (func_8010D278() == TRANSFORM_B_KAZOOIE)
             {
                 //Randomize Kazooie Refusal message to use for BK Move
-                var_a1 = func_800DC128(0xD79, 0xD7B);
+                var_a1 = rand_iBounded(0xD79, 0xD7B);
             }
             else
             {
@@ -630,7 +630,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
                 if (func_8010D278() == TRANSFORM_A_BANJO)
                 {
                     //Randomize Banjo Refusal message to use for BK Move
-                    var_a1 = func_800DC128(0xD77, 0xD79);
+                    var_a1 = rand_iBounded(0xD77, 0xD79);
                 }
             }
             break;
@@ -787,15 +787,15 @@ void sumole_entrypoint_18(Actor* arg0, f32 arg1)
     if ((arg0->unk6C_0 == 2) || (arg0->unk6C_0 == 4))
     {
         func_8010D254(sp2C);
-        func_800EF3DC(sp2C, arg0->position);
+        ml_vec3f_subtract(sp2C, arg0->position);
         temp_f0 = func_800EEF94(sp2C);
         if (temp_f0 != 0.0f)
         {
             temp_f0 = arg1 / temp_f0;
             if (temp_f0 < 1.0f)
             {
-                func_800EF334(sp2C, temp_f0);
-                func_800EF04C(sp2C, arg0->position);
+                ml_vec3f_apply_scale(sp2C, temp_f0);
+                ml_vec3f_add(sp2C, arg0->position);
                 func_800907C0(sp2C);
             }
         }

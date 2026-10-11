@@ -36,7 +36,7 @@ s32 func_808002A8_cheggsplode(Actor* arg0, s32 arg1, s32 arg2)
         }
         return 1;
     }
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
     {
         if (func_800BF8E4() > 0)
         {

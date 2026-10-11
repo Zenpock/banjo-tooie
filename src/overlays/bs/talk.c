@@ -14,7 +14,7 @@ void bstalk_entrypoint_0(PlayerState* self)
     func_800A0110(self, sp3C);
     anctrl_setPlaybackType(sp3C, 2);
     anctrl_start(sp3C);
-    func_8009C128(self, sp2C);
+    player_getCoords(self, sp2C);
     func_800A33A0(self, sp20);
     func_800F1E6C(sp2C, sp20, &sp38);
     yaw_setIdeal(self, sp38);

@@ -80,7 +80,7 @@ void func_808000B8_cheggfire(Actor* arg0)
     case 1:
         if (_suegg_entrypoint_8(arg0) == 0)
         {
-            if (func_800EEEA8(&arg0->actorData[4]) != 0)
+            if (ml_vec3f_is_zero(&arg0->actorData[4]) != 0)
             {
                 sp2C->unk39_7 = 1;
             }

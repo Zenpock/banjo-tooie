@@ -24,7 +24,7 @@ void func_80800030_bsswim(PlayerState* self) {
 
 	if (func_80096544(self) != 0)
 	{
-		if (func_800DC0C0() > 0.5f)
+		if (rand_f() > 0.5f)
 		{
 			func_80092C00(self, sp2C);
 		}
@@ -157,11 +157,11 @@ void func_808004C4_bsswim(PlayerState* self)
 
 	nextState = BS_STATE_0_INVALID;
 	sp28 = baanim_getAnimCtrlPtr(self);
-	if ((func_8001210C(7) == 0) && (func_800DC0C0() < 0.5f))
+	if ((func_8001210C(7) == 0) && (rand_f() < 0.5f))
 	{
 		func_8009FC34(self, 1);
 	}
-	if ((func_8001210C(7) == 0) && (func_800DC0C0() < 0.5f))
+	if ((func_8001210C(7) == 0) && (rand_f() < 0.5f))
 	{
 		func_80800030_bsswim(self);
 	}
@@ -272,7 +272,7 @@ void func_808007F8_bsswim(PlayerState* self) {
 		func_80096440(self, sp24);
 		if (sp24[1] < -0.7f) {
 			sp20 = func_800964DC(self);
-			if ((sp20 - func_8009C150(self)) > 90.0f) {
+			if ((sp20 - player_getCoordVertical(self)) > 90.0f) {
 				nextState = func_80800000_bsswim(self);
 			}
 		}

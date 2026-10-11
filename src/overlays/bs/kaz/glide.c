@@ -143,7 +143,7 @@ void func_80800544_bskazglide(PlayerState *self) {
     func_80800090_bskazglide(self);
     baanim_playForDuration_once(self, 0x11C, 1.1);
     func_8009D9D4(self);
-    func_8009C128(self, sp3C);
+    player_getCoords(self, sp3C);
     func_800A32C4(self, sp30);
     func_800F1E6C(sp30, sp3C, &sp2C);
     yaw_setIdeal(self, func_800136E4(sp2C + 180.0f));
@@ -206,10 +206,10 @@ void func_80800780_bskazglide(PlayerState *self) {
     baphysics_set_terminal_velocity(self, func_800F10B4(temp_f0, 0, 1.2, -1000, -10.0f));
     anctrl_setDuration(sp34, func_800F10B4(sp2C, 0, 1.2, 0.7, 0.2f));
     if (anctrl_isAt(sp34, 0.65) != 0) {
-        func_8009DF94(self, 0x3FF, func_800DC178(0.92f, 1.08f), 9000);
+        func_8009DF94(self, 0x3FF, rand_fBounded(0.92f, 1.08f), 9000);
     }
     if (anctrl_isAt(sp34, 0.72) != 0) {
-        func_8009DF18(self, 0x4431, func_800DC178(0.95f, 1.05f), 17000);
+        func_8009DF18(self, 0x4431, rand_fBounded(0.95f, 1.05f), 17000);
     }
     if ((sp2C < 1.2f) && (bakey_released(self, 8) != 0)) {
         next_state = BS_STATE_DF;

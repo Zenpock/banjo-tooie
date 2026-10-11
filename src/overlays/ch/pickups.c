@@ -75,19 +75,19 @@ s32 func_80800084_chpickups(Actor* arg0, s32 arg1, s32 arg2)
 {
     switch (arg1)
     {
-    case 0x3E:
-        func_80800110_chpickups(arg0);
-        return 1;
-    case 0x95:
-        if (arg0->unk64_23)
-        {
-            func_800F822C(func_800F54E4(), 0, 0);
-            func_80101FDC(arg0, 3);
-        }
+        case EVENT_3E_ACTOR_TOUCHED:
+            func_80800110_chpickups(arg0);
+            return 1;
+        case EVENT_95_ACTOR_SPAWNED:
+            if (arg0->unk64_23)
+            {
+                func_800F822C(character_getActiveIndex(), 0, 0);
+                func_80101FDC(arg0, 3);
+            }
 
-        return 1;
-    default:
-        return 0;
+            return 1;
+        default:
+            return 0;
     }
 }
 
@@ -102,8 +102,8 @@ void func_80800110_chpickups(Actor* arg0)
             _fxsparkle_entrypoint_1(arg0->position, 5U);
             func_800FC6B0(0xE);
         }
-        func_800F6388(func_800F54E4(), arg0->unk6C_9);
-        func_800FFAB0(arg0);
+        func_800F6388(character_getActiveIndex(), arg0->unk6C_9);
+        actor_mark_delete(arg0);
     }
 }
 
@@ -118,7 +118,7 @@ void func_808001A0_chpickups(Unk80132ED0* arg0, f32* arg1)
     f32 var_f14;
 
     temp_s0 = func_80106790(arg0);
-    func_800EE904(sp50, arg1);
+    ml_vec3f_to_vec3i(sp50, arg1);
     switch (temp_s0->unk6C_9)
     {
     default:
@@ -133,7 +133,7 @@ void func_808001A0_chpickups(Unk80132ED0* arg0, f32* arg1)
         break;
     }
     func_80101FDC(temp_s0, 4U);
-    func_800EE7F8(PICKUPS_DATA(temp_s0)->unk0, arg1);
+    ml_vec3f_copy(PICKUPS_DATA(temp_s0)->unk0, arg1);
     PICKUPS_DATA(temp_s0)->unk10[0] = (sp50[0] - temp_s0->position[0]);
     PICKUPS_DATA(temp_s0)->unk10[1] = 28.0f;
     PICKUPS_DATA(temp_s0)->unk10[2] = (sp50[2] - temp_s0->position[2]);
@@ -149,7 +149,7 @@ void func_808001A0_chpickups(Unk80132ED0* arg0, f32* arg1)
     }
     PICKUPS_DATA(temp_s0)->unk10[0] = PICKUPS_DATA(temp_s0)->unk10[0] / var_f16;
     PICKUPS_DATA(temp_s0)->unk10[2] = PICKUPS_DATA(temp_s0)->unk10[2] / var_f16;
-    func_800EF334(PICKUPS_DATA(temp_s0)->unk10, 30.0f);
+    ml_vec3f_apply_scale(PICKUPS_DATA(temp_s0)->unk10, 30.0f);
     temp_s0->unk58 = var_f16 * 30.0f;
 }
 
@@ -193,8 +193,8 @@ void func_80800364_chpickups(Actor* arg0)
         {
             if ((arg0->unk0->unk24_22 != 0x37) && (arg0->unk0->unk24_22 == 0x67))
             {
-                func_80101180(0x4A5, 0x7D, 0);
-                func_800FFAB0(arg0);
+                event_sendToActorsOfType(0x4A5, 0x7D, 0);
+                actor_mark_delete(arg0);
             }
         }
         arg0->unk64_22 = 0;
@@ -209,13 +209,13 @@ void func_80800528_chpickups(Actor* arg0)
     f32 sp28[3];
     if (func_8008FDEC() != arg0->unk0)
     {
-        func_800F63E0(func_800F54E4(), arg0->unk6C_9);
-        func_800FFAB0(arg0);
+        func_800F63E0(character_getActiveIndex(), arg0->unk6C_9);
+        actor_mark_delete(arg0);
         return;
     }
     if (arg0->unk64_22)
     {
-        func_800F5D44(func_800F54E4(), sp28);
+        func_800F5D44(character_getActiveIndex(), sp28);
         func_808001A0_chpickups(arg0->unk0, sp28);
     }
 }

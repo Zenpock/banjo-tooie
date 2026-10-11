@@ -38,7 +38,7 @@ int func_8080009C_chjadesnake(s32 arg0)
     s32 currentHitbox;
     s32 unk;
 
-    currentPlayerIndex = func_800F54E4();
+    currentPlayerIndex = character_getActiveIndex();
     playerHorizontalUnk = func_800F651C(currentPlayerIndex);
     isGrounded = func_800F6C5C(currentPlayerIndex);
     justLanded = func_800F72DC(currentPlayerIndex);
@@ -131,7 +131,7 @@ void func_80800150_chjadesnake(Actor* arg0)
     case 3:
         sp44 = func_80101F24(arg0);
         func_8010D254(sp38);
-        if ((func_800F56AC(func_800F54E4()) != 0x10) && (sp38[1] < 1160.0f))
+        if ((func_800F56AC(character_getActiveIndex()) != 0x10) && (sp38[1] < 1160.0f))
         {
             func_80102424(arg0, 4);
             if (arg0->unk64_20)
@@ -206,7 +206,7 @@ void func_80800150_chjadesnake(Actor* arg0)
     if ((arg0->unk6C_0) && (func_800D0634(0xAU, 1U) != 0))
     {
         temp_v0_2 = func_80106790(func_800D0634(0xAU, 1U));
-        func_800EF04C(temp_v0_2->position, (f32*)&temp_v0_2->actorData[4]);
+        ml_vec3f_add(temp_v0_2->position, (f32*)&temp_v0_2->actorData[4]);
         arg0->unk6C_0--;
         if (arg0->unk6C_0 == 2)
         {
@@ -215,7 +215,7 @@ void func_80800150_chjadesnake(Actor* arg0)
         }
         if (arg0->unk6C_0 == 0)
         {
-            func_800EE7F8(temp_v0_2->position, (f32*)arg0->actorData);
+            ml_vec3f_copy(temp_v0_2->position, (f32*)arg0->actorData);
             func_80102FE8(temp_v0_2, 1);
             func_80103014(temp_v0_2);
         }
@@ -259,14 +259,14 @@ s32 func_808007DC_chjadesnake(Actor* arg0, s32 arg1, u32 arg2)
         if ((arg0->unk70_10) != 1)
         {
             temp_v0 = func_80106790(func_80101080());
-            func_800EFB24(&temp_v0->actorData[4], &arg0->actorData[0], &arg0->actorData[4]);
+            ml_getdiff_vec3f(&temp_v0->actorData[4], &arg0->actorData[0], &arg0->actorData[4]);
             //Apply Scale
-            func_800EF334(&temp_v0->actorData[4], 0.14285715f);
+            ml_vec3f_apply_scale(&temp_v0->actorData[4], 0.14285715f);
             arg0->unk6C_0 = 7;
             func_80102FE8(temp_v0, 0);
         }
         break;
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         func_80800728_chjadesnake(arg0, ((s16*)(&arg2))[0], ((s16*)(&arg2))[1]);
         break;
     case 0x52:

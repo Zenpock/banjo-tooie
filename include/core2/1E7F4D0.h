@@ -2,6 +2,7 @@
 #define __CORE2_1E7F4D0_H__
 
 #include "common.h"
+#include "core2/1ED8C80.h"
 
 typedef struct {
     u32 unk0;
@@ -20,6 +21,7 @@ typedef struct {
 }D_80127110_Data;
 
 void func_800A5BE0();
+void func_800A5CFC();
 void func_800A5D1C();
 D_80127110_Data* func_800A5D60();
 
