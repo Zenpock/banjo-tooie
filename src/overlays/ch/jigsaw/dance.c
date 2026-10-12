@@ -131,8 +131,8 @@ ActorData NewItem_chmoveitem =
     /*0x32*/ 0x14,
     /*0x34*/ func_80800210_chmoveitem,
     /*0x38*/ func_80107C2C,
-    /*0x3C*/ 0x8040,
-    /*0x3E*/ 0x5404,
+    /*0x3C*/ 0x8800, //randomizer change for physics mask
+    /*0x3E*/ 0x3000,
     /*0x40*/ moveItem_Handler,
     /*0x44*/ 0,
     /*0x46*/ 0

@@ -54,7 +54,7 @@ ActorData D_808014C0_chglowbo = {
         /*0x32*/ 0xC,
         /*0x34*/ func_8080013C_chglowbo,
         /*0x38*/ func_80107C2C,
-        /*0x3C*/ 0x8800,
+        /*0x3C*/ 0x8800, //randomizer change for physics mask
         /*0x3E*/ 0x3000,
         /*0x40*/ func_80800880_chglowbo,
         /*0x44*/ 0,

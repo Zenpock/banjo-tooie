@@ -1,5 +1,9 @@
 #include "ch/jinjo.h"
 
+void func_80800000_chjinjo(Actor*);
+void func_80800120_chjinjo(Actor*);
+void func_808002E0_chjinjo(Actor*);
+s32 func_80800C10_chjinjo(Actor*, s32, s32);
 void func_80800EE4_chjinjo(Actor*);
 void func_80800F14_chjinjo(Actor*);
 void func_80800F80_chjinjo(Actor*);
@@ -8,17 +12,74 @@ u32 func_80801098_chjinjo(Actor*, s32);
 s16 chjinjo_entrypoint_0(s32);
 s16 chjinjo_entrypoint_2(MapId);
 
-extern s16 D_80801300_chjinjo[];
-extern s32 D_80801324_chjinjo;
-extern u32 D_80801330_chjinjo;
-extern s32 D_8080133C_chjinjo;
-extern s32 D_80801348_chjinjo;
-extern u32 D_80801358_chjinjo;
-extern s16 D_80801368_chjinjo[];
-extern u32 D_8080137C_chjinjo;
-extern u16 D_80801390_chjinjo[];
-extern ActorData D_808013A4_chjinjo;
-extern ActorData D_808013EC_chjinjo;
+s32 D_808012B0_chjinjo[] = {0,0,0x3FC00000,0x2D0044,0x3FC00000,0x2D0042,0x3FC00000,0x2F0042,0x3F400000,0x310042,0x3FC00000,0x002D0044,0x3ECCCCCD,0x00310041,0x3FE00000,0x001F0042,0x4008887B,0x00240042,0x00000000,0x00000000 };
+s16 D_80801300_chjinjo[] = {0x145,0x4,0x146,0x8,0x147,0x2,0x148,0x6,0x14A,0x3,0x14B,0x1,0x14C,0x7,0x14D,0x5,0x14E,0x0};
+s32 D_80801324_chjinjo[3] = { 0x001303EE ,0x00166590,0 };
+u32 D_80801330_chjinjo[] = {0x0013041A,0x001655F0,0x00000000};
+s32 D_8080133C_chjinjo[] = {0x0013040F,0x001655F0,0x00000000 };
+s32 D_80801348_chjinjo[] = {0x0013043A,0x000A0180,0x00167FFF,0x00000000};
+u32 D_80801358_chjinjo[] = {0x00130404,0x000A01CC,0x00164650,0x00000000};
+s16 D_80801368_chjinjo[] = {0x0072,0x0015,0x0011,0x0074,0x0012,0x0070,0x0013,0x0014,0x0073,0x0000};
+u32 D_8080137C_chjinjo[] = {0x0306001B,0x00130410,0x000101F4,0x07D00016,0x27100000};
+u16 D_80801390_chjinjo[] = {0x1525,0x1526,0x1527,0x1528,0x1529,0x152A,0x152B,0x152C,0x152D,0x0000};
+ActorData D_808013A4_chjinjo =
+{
+    /*0x0*/ 0x005A,
+    /*0x2*/ PROP_1F4_JINJO_REAL,
+    /*0x4*/ 0x0643,
+    /*0x6*/ 0x0002,
+    /*0x8*/ D_808012B0_chjinjo,
+    /*0xC*/ func_808002E0_chjinjo,
+    /*0x10*/ func_80105834,
+    /*0x14*/ func_80101870,
+    /*0x18*/ 0x09C4,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0.8f,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x0080,
+    /*0x26*/ 0x0124,
+    /*0x28*/ func_80800120_chjinjo,
+    /*0x2C*/ func_80108ED0,
+    /*0x30*/ 0x0000,
+    /*0x32*/ 0x0000,
+    /*0x34*/ func_80800000_chjinjo,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8800, //Randomizer Change so we can touch it during cutscene
+    /*0x3E*/ 0x3000,
+    /*0x40*/ func_80800C10_chjinjo,
+    /*0x44*/ 0x0000,
+    /*0x46*/ 0x0000,
+};
+ActorData D_808013EC_chjinjo =
+{
+    /*0x0*/ 0x0374,
+    /*0x2*/ PROP_48F_JINJO_IN_HOME,
+    /*0x4*/ 0x0643,
+    /*0x6*/ 0x0002,
+    /*0x8*/ D_808012B0_chjinjo,
+    /*0xC*/ func_808002E0_chjinjo,
+    /*0x10*/ func_80105834,
+    /*0x14*/ func_80101870,
+    /*0x18*/ 0x09C4,
+    /*0x1A*/ 0x0000,
+    /*0x1C*/ 0.8f,
+    /*0x20*/ 0x0000,
+    /*0x22*/ 0x0000,
+    /*0x24*/ 0x0080,
+    /*0x26*/ 0x0120,
+    /*0x28*/ 0x00000000,
+    /*0x2C*/ 0x00000000,
+    /*0x30*/ 0x0000,
+    /*0x32*/ 0x0000,
+    /*0x34*/ func_80800000_chjinjo,
+    /*0x38*/ func_80107C2C,
+    /*0x3C*/ 0x8410,
+    /*0x3E*/ 0x6402,
+    /*0x40*/ func_80800C10_chjinjo,
+    /*0x44*/ 0x0000,
+    /*0x46*/ 0x0000,
+};
 
 void func_80800000_chjinjo(Actor* arg0)
 {
@@ -29,7 +90,7 @@ void func_80800000_chjinjo(Actor* arg0)
     {
         actor_mark_delete(arg0);
     }
-    if (arg0->unk6C_9 == 0x48F)
+    if (arg0->unk6C_9 == PROP_48F_JINJO_IN_HOME)
     {
         var_v0 = chjinjo_entrypoint_2(-1);
     }
@@ -37,7 +98,7 @@ void func_80800000_chjinjo(Actor* arg0)
     {
         var_v0 = func_800D0CC8(arg0->unk6C_0);
     }
-    if (arg0->unk6C_9 == 0x48F && (func_800D1338(var_v0) <= arg0->rotation[1]))
+    if (arg0->unk6C_9 == PROP_48F_JINJO_IN_HOME && (func_800D1338(var_v0) <= arg0->rotation[1]))
     {
         actor_mark_delete(arg0);
     }
@@ -131,7 +192,7 @@ void func_808002E0_chjinjo(Actor* arg0)
     {
         func_8010D254(sp74);
     }
-    if (arg0->unk6C_9 == 0x48F)
+    if (arg0->unk6C_9 == PROP_48F_JINJO_IN_HOME)
     {
         func_8010C908(arg0, arg0->position);
     }
@@ -376,10 +437,7 @@ s32 func_80800C10_chjinjo(Actor* arg0, s32 eventId, s32 arg2)
                 func_80102424(arg0, 6);
                 _subaddieDll_entrypoint_4(arg0, 1U);
                 func_8010A570(arg0);
-                if (func_800DA9E4(FLAG_035_FTT_JINJO, 1) == 0)
-                {
-                    func_800C05B8(0xCDA, 0xC, NULL, NULL, (s32)&_chjinjo_entrypoint_4, 0, func_808000DC_chjinjo(arg0));
-                }
+                //Randomizer Change Removed the FTT check
                 func_800D0BD4(arg0->unk6C_0, 0U);
                 func_800D24E8(sp40 + 0xE1, func_800D1338(sp40), func_800D129C(sp40));
                 func_80801098_chjinjo(arg0, (u32)pad->unk1A >> 5);
@@ -403,7 +461,7 @@ s32 func_80800C10_chjinjo(Actor* arg0, s32 eventId, s32 arg2)
         arg0->unk64_20 = 1;
         break;
     dummy:
-        if (arg0->unk6C_9 == 0x48F)
+        if (arg0->unk6C_9 == PROP_48F_JINJO_IN_HOME)
         {
             var_v0 = chjinjo_entrypoint_2(-1);
         }
@@ -428,7 +486,7 @@ void func_80800F14_chjinjo(Actor* arg0)
 {
     if (func_80101E14(arg0, 0.2f) != 0)
     {
-        if (arg0->unk6C_9 == 0x48F)
+        if (arg0->unk6C_9 == PROP_48F_JINJO_IN_HOME)
         {
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801348_chjinjo);
             return;
@@ -439,7 +497,7 @@ void func_80800F14_chjinjo(Actor* arg0)
 
 void func_80800F80_chjinjo(Actor* arg0)
 {
-    if (arg0->unk6C_9 != 0x48F)
+    if (arg0->unk6C_9 != PROP_48F_JINJO_IN_HOME)
     {
         _subaddieaudioquick_entrypoint_3(arg0, arg0->position, &D_80801330_chjinjo, 0.2f);
     }
@@ -475,22 +533,11 @@ u32 func_80801098_chjinjo(Actor* arg0, s32 arg1)
     arg0->unk74_30 = 0;
     arg0->actorData[4] = arg1;
     sp2C = func_800D1338(temp_v0) == func_800D129C(temp_v0);
-    if (func_800D035C(0) == 1)
-    {
-        flag_setMultipleValue(FLAG2_6D0_UNK, func_800D0CC8(arg0->unk6C_0), 4);
-    }
-    else if (sp2C != 0)
+    if (sp2C != 0)
     {
         arg0->unk74_30 = 1;
-        if (flag_getValue(FLAG_43D_FTT_COMPLETE_JINJO_FAMILY) == 0)
-        {
-            arg0->unk64_19 = 1;
-            func_800F82D4(arg0->actorData[4], 2);
-        }
-        else
-        {
-            func_80800FC4_chjinjo(arg0);
-        }
+        //Randomizer Change Removed the FTT check for completing a family
+        func_80800FC4_chjinjo(arg0);
     }
     return arg0->unk74_30;
 }

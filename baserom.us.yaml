@@ -8408,15 +8408,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x0204F460
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x0204F460, c, jinjo]
-      - [0x02050620, .rodata, jinjo]
-      - [0x02050710, data, jinjo]
-      - [0x020508A0, bss, jinjo]
+      - [auto, c, jinjo]
   - name: chevilmumbo_header
     dir: overlays/chevilmumbo
     type: bin

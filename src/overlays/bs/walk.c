@@ -71,25 +71,29 @@ void func_808001E4_bswalk(PlayerState* self)
     self->unk16C = func_800F0E00(0.0f, self->unk16C - time_getDelta());
 }
 
-s32 func_80800220_bswalk(PlayerState* arg0)
+s32 func_80800220_bswalk(PlayerState* self)
 {
-    return arg0->unk16C == 0.0f;
+    return self->unk16C == 0.0f;
 }
 
-BanjoStateId func_80800248_bswalk(PlayerState* arg0, BanjoStateId arg1)
+BanjoStateId func_80800248_bswalk(PlayerState* self, BanjoStateId arg1)
 {
-    if (bakey_pressed(arg0, BUTTON_B) != 0)
+    if (bakey_pressed(self, BUTTON_B) != 0)
     {
-        if (baphysics_get_target_horizontal_velocity(arg0) > 225.0f)
+        if (baphysics_get_target_horizontal_velocity(self) > 225.0f)
         {
-            arg1 = func_800A04F4(arg0, arg1);
+            arg1 = func_800A04F4(self, arg1);
         }
         else
         {
             //RANDOMIZER CHANGE TRY AND BASH IF WE ARE BK and DONT HAVE PECK
-            if (func_8008E23C(arg0) || func_8008D1B0(arg0))
+            if (func_8008E23C(self) || func_8008D1B0(self))
             {
-                arg1 = func_800A055C(arg0, arg1);
+                arg1 = func_800A055C(self, arg1);
+            }
+            else if (func_8009EA2C()) //Randomizer change Dragon without Peck
+            {
+                arg1 = BS_STATE_18A_FLAMETHROWER;
             }
             else if (ability_getValue(ABILITY_32_BREEGULL_BASH))
             {
@@ -149,74 +153,81 @@ void bswalk_entrypoint_3(PlayerState* self)
     }
 }
 
-void bswalk_entrypoint_4(PlayerState* arg0)
+//We are tiptoeing
+void bswalk_entrypoint_4(PlayerState* self)
 {
-    BanjoStateId var_s1;
+    BanjoStateId nextState;
 
-    var_s1 = BS_STATE_0_INVALID;
-    func_8080016C_bswalk(arg0);
-    if (bastick_distance(arg0) == 0.0f)
+    nextState = BS_STATE_0_INVALID;
+    func_8080016C_bswalk(self);
+    if (bastick_distance(self) == 0.0f)
     {
-        yaw_setIdeal(arg0, yaw_get(arg0));
+        yaw_setIdeal(self, yaw_get(self));
     }
-    func_800A2CE8(arg0, 0.47f, 4);
-    func_800A2CE8(arg0, 0.97f, 3);
-    func_80800000_bswalk(arg0);
-    switch (bastick_getZone(arg0))
+    func_800A2CE8(self, 0.47f, 4);
+    func_800A2CE8(self, 0.97f, 3);
+    func_80800000_bswalk(self);
+    switch (bastick_getZone(self))
     {
-    case BS_STICK_ZONE_ID_0:
-        if (func_8009BCD4(arg0, 1.0f) != 0) {
-            var_s1 = BS_STATE_1_IDLE;
-        }
-        break;
-    case BS_STICK_ZONE_ID_2:
-        var_s1 = BS_STATE_2_SLOW_WALK;
-        break;
-    case BS_STICK_ZONE_ID_3:
-        var_s1 = BS_STATE_3_WALK;
-        break;
-    case BS_STICK_ZONE_ID_4:
-        var_s1 = BS_STATE_4_RUN;
-        break;
-    }
-    if (func_8008DE24(arg0) != 0) {
-        var_s1 = 0x7A;
-    }
-    if (bainput_should_enter_first_person(arg0) != 0) {
-        var_s1 = _badrone_entrypoint_24(arg0);
-    }
-    if (func_8008DD04(arg0) != 0) {
-        var_s1 = BS_STATE_2F_FALL;
-    }
-    if (bakey_held(arg0, BUTTON_Z) != 0) {
-        var_s1 = BS_STATE_7_CROUCH;
-    }
-    var_s1 = func_80800248_bswalk(arg0, var_s1);
-    if (bakey_pressed(arg0, BUTTON_A) != 0)
-    {
-        var_s1 = bs_getTypeOfJump(arg0);
-        if (baphysics_get_target_horizontal_velocity(arg0) == 0.0f)
-        {
-            if (func_8008D714(arg0) != 0)
+        case BS_STICK_ZONE_ID_0:
+            if (func_8009BCD4(self, 1.0f) != 0) 
             {
-                var_s1 = 0xB8;
+                nextState = BS_STATE_1_IDLE;
             }
-            else if (func_8008D790(arg0) != 0)
+            break;
+        case BS_STICK_ZONE_ID_2:
+            nextState = BS_STATE_2_SLOW_WALK;
+            break;
+        case BS_STICK_ZONE_ID_3:
+            nextState = BS_STATE_3_WALK;
+            break;
+        case BS_STICK_ZONE_ID_4:
+            nextState = BS_STATE_4_RUN;
+            break;
+    }
+    //Randomizer Change added D UP Tiptoe
+    if (nextState != BS_STATE_1_IDLE && bakey_held(self, BUTTON_D_UP) != 0)
+    {
+        nextState = BS_STATE_0_INVALID;
+    }
+    if (func_8008DE24(self) != 0) {
+        nextState = 0x7A;
+    }
+    if (bainput_should_enter_first_person(self) != 0) {
+        nextState = _badrone_entrypoint_24(self);
+    }
+    if (func_8008DD04(self) != 0) {
+        nextState = BS_STATE_2F_FALL;
+    }
+    if (bakey_held(self, BUTTON_Z) != 0) {
+        nextState = BS_STATE_7_CROUCH;
+    }
+    nextState = func_80800248_bswalk(self, nextState);
+    if (bakey_pressed(self, BUTTON_A) != 0)
+    {
+        nextState = bs_getTypeOfJump(self);
+        if (baphysics_get_target_horizontal_velocity(self) == 0.0f)
+        {
+            if (func_8008D714(self) != 0)
             {
-                _baduo_entrypoint_12(arg0);
+                nextState = 0xB8;
+            }
+            else if (func_8008D790(self) != 0)
+            {
+                _baduo_entrypoint_12(self);
                 return;
             }
         }
     }
-    if (func_8008E148(arg0) != 0)
+    if (func_8008E148(self) != 0)
     {
-        var_s1 = _badrone_entrypoint_25(arg0);
+        nextState = _badrone_entrypoint_25(self);
     }
-    if (player_inWater(arg0) != 0)
+    if (player_inWater(self) != 0)
     {
-        var_s1 = 0x2D;
+        nextState = 0x2D;
     }
-    bs_setState(arg0, func_800A02DC(arg0, var_s1));
+    bs_setState(self, func_800A02DC(self, nextState));
 }
 
 s32 bswalk_entrypoint_5(s32 arg0)
@@ -253,10 +264,12 @@ void bswalk_entrypoint_6(PlayerState* arg0)
     }
 }
 
+
+//Slow walk
 void bswalk_entrypoint_7(PlayerState* self)
 {
-    BanjoStateId var_s1;
-    var_s1 = BS_STATE_0_INVALID;
+    BanjoStateId nextState;
+    nextState = BS_STATE_0_INVALID;
     func_8080016C_bswalk(self);
     if (bastick_distance(self) == 0.0f)
     {
@@ -270,43 +283,50 @@ void bswalk_entrypoint_7(PlayerState* self)
         case BS_STICK_ZONE_ID_0:
             if (func_8009BCD4(self, 3.0f) != 0)
             {
-                var_s1 = BS_STATE_1_IDLE;
+                nextState = BS_STATE_1_IDLE;
             }
             break;
         case BS_STICK_ZONE_ID_1:
-            var_s1 = BS_STATE_1F_TIPTOE;
+            nextState = BS_STATE_1F_TIPTOE;
             break;
         case BS_STICK_ZONE_ID_3:
-            var_s1 = BS_STATE_3_WALK;
+            nextState = BS_STATE_3_WALK;
             break;
         case BS_STICK_ZONE_ID_4:
-            var_s1 = BS_STATE_4_RUN;
+            nextState = BS_STATE_4_RUN;
             break;
     }
+
+    //Randomizer Change added D UP Tiptoe
+    if (bakey_held(self, BUTTON_D_UP) != 0)
+    {
+        nextState = BS_STATE_1F_TIPTOE;
+    }
+
     if (func_8008DE24(self) != 0)
     {
-        var_s1 = 0x7A;
+        nextState = 0x7A;
     }
     if (bainput_should_enter_first_person(self) != 0) {
-        var_s1 = _badrone_entrypoint_24(self);
+        nextState = _badrone_entrypoint_24(self);
     }
     if (func_8008DD04(self) != 0)
     {
-        var_s1 = BS_STATE_2F_FALL;
+        nextState = BS_STATE_2F_FALL;
     }
     if (bakey_held(self, BUTTON_Z) != 0)
     {
-        var_s1 = BS_STATE_7_CROUCH;
+        nextState = BS_STATE_7_CROUCH;
     }
-    var_s1 = func_80800248_bswalk(self, var_s1);
+    nextState = func_80800248_bswalk(self, nextState);
     if (bakey_pressed(self, BUTTON_A) != 0)
     {
-        var_s1 = bs_getTypeOfJump(self);
+        nextState = bs_getTypeOfJump(self);
         if (baphysics_get_target_horizontal_velocity(self) == 0.0f)
         {
             if (func_8008D714(self) != 0)
             {
-                var_s1 = 0xB8;
+                nextState = 0xB8;
             }
             else if (func_8008D790(self) != 0)
             {
@@ -317,13 +337,13 @@ void bswalk_entrypoint_7(PlayerState* self)
     }
     if (func_8008E148(self) != 0)
     {
-        var_s1 = _badrone_entrypoint_25(self);
+        nextState = _badrone_entrypoint_25(self);
     }
     if (player_inWater(self) != 0)
     {
-        var_s1 = BS_STATE_2D_SWIM_IDLE;
+        nextState = BS_STATE_2D_SWIM_IDLE;
     }
-    bs_setState(self, func_800A02DC(self, var_s1));
+    bs_setState(self, func_800A02DC(self, nextState));
 }
 
 void bswalk_entrypoint_8(PlayerState* self)
@@ -373,6 +393,7 @@ void bswalk_entrypoint_10(PlayerState* self)
     }
 }
 
+//Normal Walk
 void bswalk_entrypoint_11(PlayerState* self)
 {
     BanjoStateId nextState;
@@ -396,6 +417,11 @@ void bswalk_entrypoint_11(PlayerState* self)
         case BS_STICK_ZONE_ID_4:
             nextState = BS_STATE_4_RUN;
             break;
+    }
+    //Randomizer Change added D UP Tiptoe
+    if (bakey_held(self, BUTTON_D_UP) != 0)
+    {
+        nextState = BS_STATE_1F_TIPTOE;
     }
     if (func_8008DE24(self) != 0)
     {
@@ -503,7 +529,7 @@ void bswalk_entrypoint_14(PlayerState* self)
         _bapackctrl_entrypoint_5(self, 2);
     }
 }
-
+//Running
 void bswalk_entrypoint_15(PlayerState* self)
 {
     BanjoStateId nextState;
@@ -548,6 +574,11 @@ void bswalk_entrypoint_15(PlayerState* self)
                 nextState = _badrone_entrypoint_24(self);
             }
             break;
+    }
+    //Randomizer Change added D UP Tiptoe
+    if (bakey_held(self, BUTTON_D_UP) != 0)
+    {
+        nextState = BS_STATE_1F_TIPTOE;
     }
     if (func_8008DE24(self) != 0) {
         nextState = 0x7A;

@@ -61,7 +61,19 @@ void bsturn_entrypoint_1(PlayerState* self)
     }
     if (bakey_pressed(self, BUTTON_B) != 0)
     {
-        nextState = func_800A055C(self, nextState);
+        //RANDOMIZER CHANGE TRY AND BASH IF WE ARE BK and DONT HAVE PECK
+        if (func_8008E23C(self) || func_8008D1B0(self))
+        {
+            nextState = func_800A055C(self, nextState);
+        }
+        else if (func_8009EA2C()) //Randomizer change Dragon without Peck
+        {
+            nextState = BS_STATE_18A_FLAMETHROWER;
+        }
+        else if (ability_getValue(ABILITY_32_BREEGULL_BASH))
+        {
+            nextState = BS_STATE_189_BREEGULL_BASH;
+        }
     }
     if (bakey_pressed(self, BUTTON_A) != 0)
     {

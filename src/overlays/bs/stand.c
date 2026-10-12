@@ -49,6 +49,10 @@ BanjoStateId func_80800038_bsstand(PlayerState* self, BanjoStateId arg1)
         {
             arg1 = func_800A055C(self, arg1);
         }
+        else if (func_8009EA2C()) //Randomizer change Dragon without Peck
+        {
+            arg1 = BS_STATE_18A_FLAMETHROWER;
+        }
         else if (ability_getValue(ABILITY_32_BREEGULL_BASH))
         {
             arg1 = BS_STATE_189_BREEGULL_BASH;

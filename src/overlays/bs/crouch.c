@@ -214,8 +214,21 @@ BanjoStateId bscrouch_entrypoint_4(PlayerState* self, BanjoStateId arg1)
         arg1 = BS_STATE_1_IDLE;
         if (bakey_pressed(self, BUTTON_B))
         {
-            arg1 = func_800A055C(self, arg1);
+            //RANDOMIZER CHANGE TRY AND BASH IF WE ARE BK and DONT HAVE PECK
+            if (func_8008E23C(self) || func_8008D1B0(self))
+            {
+                arg1 = func_800A055C(self, arg1);
+            }
+            else if (func_8009EA2C()) //Randomizer change Dragon without Peck
+            {
+                arg1 = BS_STATE_18A_FLAMETHROWER;
+            }
+            else if (ability_getValue(ABILITY_32_BREEGULL_BASH))
+            {
+                arg1 = BS_STATE_189_BREEGULL_BASH;
+            }
         }
+
         if (bakey_pressed(self, BUTTON_A))
         {
             arg1 = bs_getTypeOfJump(self);

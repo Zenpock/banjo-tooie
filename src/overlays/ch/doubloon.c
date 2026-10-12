@@ -30,8 +30,8 @@ ActorData D_808002A0_chdoubloon =
     /*0x32*/ 0x0000,
     /*0x34*/ func_80800000_chdoubloon,
     /*0x38*/ func_80107C2C,
-    /*0x3C*/ 0x8000,
-    /*0x3E*/ 0x2000,
+    /*0x3C*/ 0x8800, //randomizer change for physics mask
+    /*0x3E*/ 0x3000,
     /*0x40*/ func_808001D4_chdoubloon,
     /*0x44*/ 0x0000,
     /*0x46*/ 0x0000
