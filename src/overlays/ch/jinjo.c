@@ -201,7 +201,8 @@ void func_808002E0_chjinjo(Actor* arg0)
     switch (arg0->unk70_10)
     {
     case 1:
-        if (rand_f() < 0.015f)
+		//Replace with rand_percent since it's smaller
+        if (rand_percentChance(0.015f))
         {
             if (func_800901CC(arg0->position, 55.0f) != 0)
             {
@@ -271,7 +272,8 @@ void func_808002E0_chjinjo(Actor* arg0)
         {
             for (sp60 = 0; sp60 < 4; sp60++) 
             {
-                if (rand_f() < 0.3f) 
+				//Replace with rand_percent since it's smaller
+                if (rand_percentChance(0.3f))
                 {
                     _subaddieskeleton_entrypoint_0(arg0, 3, &sp48);
                     func_800EF214(&sp48, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 15.0f);

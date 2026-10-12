@@ -92,7 +92,8 @@ void func_808001F8_chjigsaw(Actor* arg0)
     {
         for (var_s1 = 0; var_s1 < 4; var_s1++)
         {
-            if (rand_f() < 0.015f)
+			//Replace with rand_percent since it's smaller
+            if (rand_percentChance(0.015f))
             {
                 func_80103DFC(arg0, sp70);
                 func_800EF214(sp70, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 40.0f);
@@ -101,7 +102,8 @@ void func_808001F8_chjigsaw(Actor* arg0)
         }
         if (arg0->unk58 > 0.0f)
         {
-            if (rand_f() < (2.0f * (arg0->unk58 / 3.0f)))
+			//Replace with rand_percent since it's smaller
+            if (rand_percentChance((2.0f * (arg0->unk58 / 3.0f))))
             {
                 temp_s1 = func_800B5BE4(0x10);
                 func_800BABB8(temp_s1, arg0->position, arg0->position, 1.0f, _fxgenlist_entrypoint_1());

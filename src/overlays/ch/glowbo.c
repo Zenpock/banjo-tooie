@@ -374,12 +374,12 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
     sp2C = (glowboStruct*)func_80100094(arg0, 0U);
     switch (arg1)
     {
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         //_subaddierouteDll_entrypoint_1(arg0);
         func_8010A5B0(arg0, flag_getValue(FLAG2_64E_UNK));
         break;
     //Collide with the Glowbo
-    case 0x3E:
+    case EVENT_3E_ACTOR_TOUCHED:
 
         //Spawn text header to show what reward you get from the glowbo
         {
@@ -391,13 +391,17 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
         }
 
         _fxsparkle_entrypoint_1(arg0->position, 6U);
-        if (arg0->unk74_29) {
-            _subaddiedialog_entrypoint_11(arg0->unk0, 0xD03U, 0U, arg0->position, 0U);
+        if (arg0->unk74_29)
+		{
+			//Randomizer Change Removed the FTT
+            //_subaddiedialog_entrypoint_11(arg0->unk0, 0xD03U, 0U, arg0->position, 0U);
             flag_setValueTrue(FLAG_056_STATE_MEGA_GLOWBO);
             inventory_incrementValue(0x54U);
         }
-        else {
-            _sudialog_entrypoint_0(0x2A, 0);
+        else 
+		{
+			//Randomizer Change Removed the FTT
+            //_sudialog_entrypoint_0(0x2A, 0);
             func_800D0BD4(sp2C->unk0, 3U);
             inventory_incrementValue(0x48U);
         }

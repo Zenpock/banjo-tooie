@@ -56,7 +56,8 @@ void func_80800000_chhoneycarrier(Actor* arg0, unkStructHoneyCarrier* arg1)
         //Play collected sound effect
         func_800FC63C(9, 0x6D60);
         //Wait 2 seconds before trying to show the tutorial
-        func_800C9E20(2.0f, &_sudialog_entrypoint_0, FLAG_032_FTT_ITEM_EMPTY_HONEYCOMB, 0);
+		//Randomizer Change Removed the FTT
+        //func_800C9E20(2.0f, &_sudialog_entrypoint_0, FLAG_032_FTT_ITEM_EMPTY_HONEYCOMB, 0);
         //Increment Inventory Value for honeycomb
         inventory_incrementValue(0x49);
         _fxsparkle_entrypoint_1(arg0->position, 0);

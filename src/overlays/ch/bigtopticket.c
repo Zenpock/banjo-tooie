@@ -56,7 +56,6 @@ s32 func_8080008C_chbigtopticket(Actor* arg0, s32 arg1, s32 arg2)
     switch (arg1) 
     {
         case EVENT_3E_ACTOR_TOUCHED:
-            _sudialog_entrypoint_0(0x19F, 4);
             func_800D0BD4(arg0->unk54s, 8);
             inventory_incrementValue(0x4D);
             func_800FC6B0(0x73);

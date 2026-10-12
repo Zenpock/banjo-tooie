@@ -494,19 +494,6 @@ void func_80800098_chnests(Actor* arg0)
     }
 }
 
-void func_808000E8_chnests(Actor* arg0)
-{
-    D_80801118_chnestsUnk* sp1C;
-    sp1C = &D_80801118_chnests[arg0->actorData[1]];
-    if (sp1C->firstTimeFlag != 0)
-    {
-        if (flag_getValue((enum flag_e)sp1C->firstTimeFlag) == 0)
-        {
-            _sudialog_entrypoint_0(sp1C->firstTimeFlag, 0);
-        }
-    }
-}
-
 void func_80800144_chnests(Actor* arg0, UnkArg2ChNest* arg1) // some struct that has a unk1A...
 {
     D_80801118_chnestsUnk* var_v1;
@@ -539,7 +526,6 @@ void func_808001F0_chnests(Actor* arg0, UnkArg2ChNest* arg1)
     sp24 = arg0->unk0;
     temp_v1 = (arg0->unk74_7) - 0x32;
     func_80800144_chnests(arg0,arg1);
-    func_808000E8_chnests(arg0);
     switch (temp_v1)
     {
     case 1:
@@ -684,7 +670,6 @@ s32 func_808003F4_chnests(Actor* arg0, s32 eventType, s32 arg2)
 void func_80800670_chnests(Actor* arg0, UnkArg2ChNest* arg1)
 {
     func_80800144_chnests(arg0,arg1);
-    func_808000E8_chnests(arg0);
     if ((_gleeprom_entrypoint_0() >> 0x18) == 0x10)
     {
         func_800D0BD4((s32)arg0->actorData[2], 6U);
