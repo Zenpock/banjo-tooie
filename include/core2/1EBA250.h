@@ -24,6 +24,7 @@ typedef struct {
 } Unkfunc_800E0960_1;
 s16 func_800E09B8(s32);
 Unkfunc_800E0960_1 *func_800E0A28(s16);
+void func_800E0AC0(Unkfunc_800E0960_1* arg0);
 void func_800E0ACC(Unkfunc_800E0960_1 *);
 void func_800E0AF0(Unkfunc_800E0960_1 *, f32);
 void func_800E0AFC(Unkfunc_800E0960_1 *, u8, f32, f32, f32, f32);

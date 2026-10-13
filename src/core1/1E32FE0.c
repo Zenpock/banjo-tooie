@@ -8,6 +8,7 @@ typedef struct
 
 extern UNKD_8007BF10 D_8007BF10[];
 extern s32 D_8007C6E0;
+extern s32 D_8007C6E4;
 
 void func_8001B4B0(void)
 {
@@ -19,14 +20,74 @@ void func_8001B4B0(void)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E32FE0/func_8001B4E8.s")
+void func_8001B4E8(void)
+{
+	int index;
+	for (index = 2; index < 0xFA; index++)
+	{
+		if (D_8007BF10[index].unk0)
+		{
+
+		}
+	}
+}
 
 void func_8001B50C(void)
 {
     D_8007C6E0 = 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E32FE0/func_8001B518.s")
+void func_8001B518(s32 arg0)
+{
+	s32 var_s2;
+	s32 var_s4;
+	void* temp_a0;
+
+	if ((D_8007C6E0 != 0) && (arg0 == 0))
+	{
+		return;
+	}
+	D_8007C6E0 = 1;
+	if (arg0 != 0)
+	{
+		var_s4 = 0xFA;
+	}
+	else
+	{
+		var_s4 = 0x14;
+	}
+	for (var_s2 = 1; var_s2 < var_s4; var_s2++)
+	{
+		D_8007C6E4++;
+		if (D_8007C6E4 >= 250)
+		{
+			D_8007C6E4 = 0;
+		}
+		if (D_8007BF10[D_8007C6E4].unk0 == NULL)
+		{
+			continue;
+		}
+		temp_a0 = D_8007BF10[D_8007C6E4].unk0;
+		D_8007BF10[D_8007C6E4].unk0 = defrag(D_8007BF10[D_8007C6E4].unk0);
+		if (D_8007BF10[D_8007C6E4].unk0 != temp_a0)
+		{
+			switch (D_8007BF10[D_8007C6E4].unk4)
+			{
+			case 0:
+				break;
+			case 1:
+				func_800E0040(D_8007BF10[D_8007C6E4].unk0);
+				break;
+			case 3:
+				func_800E0AC0(D_8007BF10[D_8007C6E4].unk0);
+				break;
+			case 5:
+				vector_update_pointers(D_8007BF10[D_8007C6E4].unk0);
+				break;
+			}
+		}
+	}
+}
 
 s16 func_8001B668(s32 arg0, s32 arg1)
 {

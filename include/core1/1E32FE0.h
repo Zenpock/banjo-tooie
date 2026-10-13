@@ -4,6 +4,9 @@
 #include "common.h"
 #include "memory.h"
 #include "core1/heap.h"
+#include "core2/1EB93C0.h"
+#include "core2/1EBA250.h"
+#include "vector.h"
 
 void func_8001B4B0(void);
 void func_8001B50C(void);
