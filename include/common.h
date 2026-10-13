@@ -176,7 +176,7 @@ typedef struct Actor {
         };
     };
     /* 0x80 */ s16 pad80;
-    /* 0x82 */ s16 unk82[2];
+    /* 0x82 */ s16 unk82[2]; //Holds index of extra memory
     /* 0x86 */ s16 pad86;
     /* 0x88 */ u32 pad88;
     /* 0x8C */ s16 unk8C;
@@ -215,8 +215,8 @@ typedef struct ActorData {
 	};
     void (*unk28_func)(Actor* actor); //Destructor
     void* (*unk2C_func)();
-    s16 unk30;
-    s16 unk32;
+    s16 unk30; //Size of additional memory 1
+    s16 unk32; //Size of additional memory 2
     void (*unk34_func)(Actor* actor);
 	Actor* (*unk38_func)(void* arg0, s32 arg1, void* arg2, s32 arg3, void* arg4); // argument types unknown currently
 	union {

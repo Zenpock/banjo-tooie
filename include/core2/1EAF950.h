@@ -19,5 +19,6 @@ s32 func_800D721C(s16, s32);
 u8 func_800D731C(u16);
 void func_800D740C();
 void *func_800D7520(s32);
+void func_800D8808(u32);
 
 #endif

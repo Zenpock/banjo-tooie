@@ -42,6 +42,7 @@ void func_80100120(Actor*);
 
 //Get ActorData for given actor
 ActorData* func_80100368(Actor*);
+
 int func_8010038C(Actor*, f32[3]);
 
 #endif

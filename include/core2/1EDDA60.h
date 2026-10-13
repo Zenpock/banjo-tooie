@@ -6,5 +6,6 @@
 
 void func_80104170();
 void func_801041C8();
+void func_80104328(Actor*);
 
 #endif

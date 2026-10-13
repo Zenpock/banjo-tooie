@@ -89,7 +89,7 @@ void func_8001B518(s32 arg0)
 	}
 }
 
-s16 func_8001B668(s32 arg0, s32 arg1)
+s16 func_8001B668(s32 arg0, s32 size)
 {
     s32 index = 1;
     while (D_8007BF10[index].unk0 != 0)
@@ -98,7 +98,7 @@ s16 func_8001B668(s32 arg0, s32 arg1)
     }
     if (index < 0xFA)
     {
-        D_8007BF10[index].unk0 = heap_alloc_sided(arg1, 2);
+        D_8007BF10[index].unk0 = heap_alloc_sided(size, 2);
         D_8007BF10[index].unk4 = arg0;
         func_8001B3A0(D_8007BF10[index].unk0);
         return index;
@@ -106,28 +106,29 @@ s16 func_8001B668(s32 arg0, s32 arg1)
     return 0;
 }
 
-void func_8001B710(s16 arg0, s32 arg1)
+void* func_8001B710(s16 index, s32 size)
 {
-    D_8007BF10[arg0].unk0 = heap_realloc(D_8007BF10[arg0].unk0, arg1);
+	D_8007BF10[index].unk0 = heap_realloc(D_8007BF10[index].unk0, size);
+	return D_8007BF10[index].unk0;
 }
 
-void func_8001B754(s16 arg0)
+void func_8001B754(s16 index)
 {
-    heap_free(D_8007BF10[arg0].unk0);
-    D_8007BF10[arg0].unk0 = NULL;
+    heap_free(D_8007BF10[index].unk0);
+    D_8007BF10[index].unk0 = NULL;
 }
 
-void* func_8001B798(s16 arg0)
+void* func_8001B798(s16 index)
 {
-    return D_8007BF10[arg0].unk0;
+    return D_8007BF10[index].unk0;
 }
 
-void func_8001B7B8(s16 arg0) 
+s32 func_8001B7B8(s16 index)
 {
-    heap_get_allocation_size(D_8007BF10[arg0].unk0);
+    return heap_get_allocation_size(D_8007BF10[index].unk0);
 }
 
-void func_8001B7F0(s16 arg0, u8 arg1, s32 arg2)
+void func_8001B7F0(s16 index, u8 arg1, s32 arg2)
 {
-    rare_memset(D_8007BF10[arg0].unk0, arg1, arg2);
+    rare_memset(D_8007BF10[index].unk0, arg1, arg2);
 }

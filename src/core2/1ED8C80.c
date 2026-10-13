@@ -51,7 +51,29 @@ void func_800FF44C(void)
 	}
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FF4A4.s")
+void func_800FF4A4(Actor* arg0)
+{
+	Unk80132ED0* temp_s0;
+	u32 var_s0;
+
+	temp_s0 = arg0->unk0;
+	func_8010381C(arg0);
+	func_80103938(arg0);
+	if (arg0->unk7C_0)
+	{
+		func_800D8808(func_80105494(arg0)->unk24_6);
+		func_80105634(arg0);
+	}
+	temp_s0->unk24_22 = 0;
+	func_80104328(arg0);
+	_subaddieaudioloop_entrypoint_2(arg0);
+	func_80104504(arg0);
+	func_80106EE0(arg0);
+	for (var_s0 = 0; var_s0 < 3; var_s0++)
+	{
+		func_80100074(arg0, var_s0, 0U);
+	}
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FF564.s")
 
@@ -228,20 +250,22 @@ void func_800FFC14()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FFECC.s")
 
-u32* func_80100074(Actor* a0, u32 a1, u32 a2)
+//Allocate Extra Memory for Additional actor memory
+u32* func_80100074(Actor* actor, u32 index, u32 size)
 {
-    return func_800FFECC(a0,a1,a2);
+    return func_800FFECC(actor, index, size);
 }
 
-void* func_80100094(Actor* arg0, u32 arg1)
+//Retrieve a pointer to additional actor memory
+void* func_80100094(Actor* actor, u32 index)
 {
     s16 temp_a2;
     void* var_v0;
 
     var_v0 = NULL;
-    if (arg0->unk82[arg1] != 0)
+    if (actor->unk82[index] != 0)
     {
-        return func_8001B798(arg0->unk82[arg1]);
+        return func_8001B798(actor->unk82[index]);
     }
     return var_v0;
 }
@@ -256,9 +280,9 @@ void* func_80100094(Actor* arg0, u32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_801002C0.s")
 
-ActorData* func_80100368(Actor* arg0)
+ActorData* func_80100368(Actor* actor)
 {
-    return (*arg0->pointerToSyscallEntry)();
+    return (*actor->pointerToSyscallEntry)();
 }
 
 int func_8010038C(Actor* actor, f32* arg1)

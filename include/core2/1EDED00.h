@@ -5,6 +5,7 @@
 #include "freelist.h"
 
 void func_80105410();
+Unk80132ED0* func_80105494(Actor*);
 void func_801054D4(Actor*);
 void func_80105634(Actor*);
 void func_80105834(Actor*);
