@@ -101,7 +101,7 @@ typedef struct Actor {
     /* 0x64 */ u32 unk64_23 : 1;
     /* 0x64 */ u32 unk64_22 : 1;
     /* 0x64 */ u32 unk64_21 : 1;
-    /* 0x64 */ u32 unk64_20 : 1;
+    /* 0x64 */ u32 unk64_20 : 1; //unk65 & 0xFFEF or unk65 | 0x10
     /* 0x64 */ u32 unk64_19 : 1; // flags & 0x80000
     /* 0x64 */ u32 unk64_18 : 1;
     /* 0x64 */ u32 unk64_17 : 1; //Marked for Deletion?

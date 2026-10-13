@@ -4626,15 +4626,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F9FB30
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F9FB30, c, eatopage]
-      - [0x01F9FE60, .rodata, eatopage]
-      - [0x01F9FE60, data, eatopage]
-      - [0x01F9FEB0, bss, eatopage]
+      - [auto, c, eatopage]
   - name: chwarriorbaddy_header
     dir: overlays/chwarriorbaddy
     type: bin
