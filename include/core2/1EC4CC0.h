@@ -19,10 +19,14 @@
 s32 func_800EB854();
 void func_800EBB5C();
 void func_800EBD2C(unkCUnk0*, s32*, s32);
+Unk80132ED0* func_800EBED4(void*, s32, s16, s32);
 void func_800EBFF4(Unk80132ED0*);
 void func_800EC030(unkCUnk0*, s32*, s32);
 void func_800EC058(s32[3], unkCUnk0*);
 void func_800EC0EC(f32[3], unkCUnk0*);
+void func_800EC340(Unk80132ED0*, s32);
+void func_800EC360(Unk80132ED0*, u16);
+void func_800EC368(Unk80132ED0*, u16);
 CallbackTable* func_800EC3C4(Unk80132ED0*);
 f32 func_800EC75C(s32, f32*);
 #endif

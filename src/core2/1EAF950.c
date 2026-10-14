@@ -50,9 +50,9 @@ extern s32 D_8012BE70;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D731C.s")
 
-void func_800D738C()
+s32 func_800D738C(s32 arg0)
 {
-    func_800D58FC();
+    return func_800D58FC(arg0);
 }
 
 void func_800D73AC()

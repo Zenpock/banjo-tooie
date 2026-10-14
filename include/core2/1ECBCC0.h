@@ -6,5 +6,6 @@
 
 void func_800F23D0(MtxF*, s32, s32);
 void func_800F2EE0(s32*, u8*);
+void func_800F31FC(u8*, s32, s32, s32, s32);
 
 #endif

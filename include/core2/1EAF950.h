@@ -2,6 +2,7 @@
 #define __CORE2_1EAF950_H__
 
 #include <common.h>
+#include "core2/1EAED30.h"
 #include "ba/playerstate.h"
 typedef struct {
 	u8 pad[0x8];
@@ -17,6 +18,7 @@ s32 func_800D70F8(s16, s32);
 void func_800D71F4(s32);
 s32 func_800D721C(s16, s32);
 u8 func_800D731C(u16);
+s32 func_800D738C(s32);
 void func_800D740C();
 void *func_800D7520(s32);
 void func_800D8808(u32);

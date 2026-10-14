@@ -30,8 +30,8 @@ ActorData D_80800330_chcheatopage =
     /*0x32*/ 0x0000,
     /*0x34*/ func_8080000C_chcheatopage,
     /*0x38*/ func_80107C2C,
-    /*0x3C*/ 0x8410,
-    /*0x3E*/ 0x2010,
+    /*0x3C*/ 0x8800, //Randomizer Change so we can touch it during cutscene
+    /*0x3E*/ 0x3000,
     /*0x40*/ func_80800124_chcheatopage,
     /*0x44*/ 0x0000,
     /*0x46*/ 0x0000,

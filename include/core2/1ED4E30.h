@@ -2,21 +2,35 @@
 #define __CORE2_1ED4E30_H__
 
 #include "common.h"
+#include "core1/1E2E730.h"
 #include "core2/1ED68A0.h"
-#include "core2/1ED68A0.h"
+#include "freelist.h"
 
-typedef struct {
-    u8 pad0[0x28];
+typedef struct 
+{
+    f32 unk0;
+    f32 unk4;
+    u8 pad8[0x18];
+    u32 unk20;
+    u32 pad24;
     s16 unk28;
-    u8 pad2A[0x33 - 0x2A];
+    s16 unk2A;
+    u8 pad2C[4];
+    s8 unk30;
+    s8 unk31;
+    s8 unk32;
     u8 unk33;
+    u8 unk34;
 } unkStruct800FB540;
 
-s32 func_800FB650(s32, s32, s32);
+unkStruct800FB540* func_800FB5F8(s32);
+s32 func_800FB650(unkStruct800FB540*, s32, s32);
+void func_800FB6E0(unkStruct800FB540*, s32);
 void func_800FB968();
 void func_800FC124(u32);
 void func_800FC1A8(void);
 void func_800FC348(u32, u32, u32);
+void func_800FC508(s32, s32, s32, s32);
 void func_800FC63C(u32, u32);
 void func_800FC660(s32);
 void func_800FC6B0(u32);

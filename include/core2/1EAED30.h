@@ -3,6 +3,6 @@
 
 #include "common.h"
 
+s32 func_800D58FC(s32);
 void func_800D5D70();
-
 #endif

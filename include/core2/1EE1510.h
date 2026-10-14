@@ -6,9 +6,10 @@
 #include "ch/baddiesetup.h"
 #include "core2/1E97EF0.h"
 #include "core2/1EAF950.h"
-#include "core2/1EC4CC0.h"
 #include "core2/1EB3750.h"
+#include "core2/1EC4CC0.h"
 #include "core2/1EC8070.h"
+#include "core2/1ECBCC0.h"
 #include "core2/1ED8C80.h"
 #include "core2/1EDA900.h"
 #include "core2/1EDB4D0.h"
@@ -26,11 +27,13 @@
 #include "su/baddiezone.h"
 
 
-void func_80107C2C(void*, s32, void*, s32, void*);
+CallbackTable* func_80107C20();
+Actor* func_80107C2C(s32*, s32, ActorData*, s32, Prop*);
 void func_80108454(s32, s32*, s32);
 Actor* func_80108474(u32, f32*, s32);
 Actor* func_801084B0(s32, Actor**);
 Actor* func_80108528(s32, f32[3], s32, Actor **);
+void func_80108658(Actor*, s32, s32, void*);
 void func_801088A8(Actor*, s32, s32, s32);
 void func_80108944(Actor*, Actor*);
 void func_80108A30(s32, s32*, f32, s32);

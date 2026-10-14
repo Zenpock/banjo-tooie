@@ -5,7 +5,17 @@
 #include "freelist.h"
 
 void func_80105410();
-Unk80132ED0* func_80105494(Actor*);
+
+typedef struct {
+    u8 pad[0x24];
+    u32 unk24_22 : 10;
+    u32 unk24_16 : 6;
+    u32 pad24_9 : 7;
+    u32 unk24_6 : 3;
+    u32 unk24_0 : 6;
+} UNK80105494;
+
+UNK80105494* func_80105494(Actor*);
 void func_801054D4(Actor*);
 void func_80105634(Actor*);
 void func_80105834(Actor*);

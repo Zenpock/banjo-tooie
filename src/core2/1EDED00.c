@@ -16,7 +16,7 @@ void func_8010545C()
     }
 }
 
-void* func_80105494(Actor* arg0) {
+UNK80105494* func_80105494(Actor* arg0) {
     if (arg0->unk7C_0 == 0) {
         return NULL;
     }
