@@ -151,6 +151,57 @@ typedef struct ba_unk54_s {
 	f32 unk44;
 	s32 unk48;
 } BaUnknown54;
+typedef struct {
+    s32 unk0;
+    u8 pad4[0x18];
+    f32 unk1C[3][3];
+    u8 pad40[0x24];
+    f32 unk64[3];
+    f32 unk74;
+    f32 unk78;
+    s32 unk7C;
+    u8 pad80[0xC];
+    s16 unk8C;
+    u8 pad8E[5];
+    u8 unk93;
+    u8 pad94;
+    u8 unk95;
+} UNKfunc_800C68A0_ARG0;
+typedef struct ba_unknown_94_s {
+    UNKfunc_800C68A0_ARG0* unk0;
+    f32 unk4;
+    f32 unk8;
+    void (*unkC)(s32 arg0, void* arg1);
+    void (*unk10)(void* arg0);
+    s32 unk14;
+    u8 unk18[4];
+    s32 unk1C;
+    f32 unk20[3][3];
+    f32 unk44[3];
+    u8 unk50[0x14];
+    f32 unk64;
+    f32 unk68;
+    u8 unk6C[8];
+    s32 unk74;
+    f32 unk78[3];
+    f32 unk84[3];
+    f32 unk90[3];
+    s32 unk9C;
+    u8 unkA0[2];
+    u8 unkA2;
+    u8 unkA3;
+    u8 unkA4;
+    u8 padA5[3];
+    s32 unkA8;
+} ba_unknown_94_s;
+typedef struct ba_unknown_98_s {
+    f32 unk0[3];
+    f32 unkC[3];      // was: u8 padC[0xC];
+    f32 unk18[3];
+    u8 unk24;
+    u8 unk25;
+    u8 unk26;
+} ba_unknown_98_s;
 typedef struct ba_dust_s {
     s32 unk0;
     s32 unk4;
@@ -336,7 +387,9 @@ typedef struct player_state_s {
     /* 0x80 */ struct ba_flag_s *flag;
     u8 pad84[0x8];
     /* 0x8C */ struct ba_unknown_8C_s* unk8C;
-    u8 pad90[0xC];
+    u8 pad90[0x4];
+    /* 0x94 */ struct ba_unknown_94_s* unk94;
+    /* 0x98 */ struct ba_unknown_98_s* unk98;
     /* 0x9C */ BaHold* hold;
     u8 padA0[0x4];
     /* 0xA4 */ struct ba_input_s *input;

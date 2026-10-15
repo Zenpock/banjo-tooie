@@ -25,6 +25,8 @@ void func_8009C128(PlayerState *, f32[3]);
 //Get Player Vertical Coordinate
 f32 func_8009C150(PlayerState*);
 
+void func_8009C15C(PlayerState*, f32[3]);
+
 //Get Older Player Coordinates
 void func_8009C188(PlayerState*, f32*);
 
