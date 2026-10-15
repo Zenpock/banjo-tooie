@@ -32,15 +32,15 @@ f32 func_800BE600(f32 arg0[3], u32 arg1) {
         sp64[0] = arg0[0];
         sp64[1] = arg0[1];
         sp64[2] = arg0[2];
-        sp64[0] += func_800DC178(-1.0f, 1.0f);
+        sp64[0] += rand_fBounded(-1.0f, 1.0f);
         sp64[1] += (f32)phi_s2;
-        sp64[2] += func_800DC178(-1.0f, 1.0f);
+        sp64[2] += rand_fBounded(-1.0f, 1.0f);
         sp58[0] = arg0[0];
         sp58[1] = arg0[1];
         sp58[2] = arg0[2];
-        sp58[0] += func_800DC178(-1.0f, 1.0f);
+        sp58[0] += rand_fBounded(-1.0f, 1.0f);
         sp58[1] -= (f32)phi_s1;
-        sp58[2] += func_800DC178(-1.0f, 1.0f);
+        sp58[2] += rand_fBounded(-1.0f, 1.0f);
         if (func_800BEF00(&sp64, &sp58, &sp70, arg1)) {
             return sp58[1];
         }

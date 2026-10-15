@@ -13,6 +13,8 @@ typedef struct ba_translate_s {
     f32 unk14[3];
 } BaTranslate;
 
+void _batranslate_entrypoint_1(PlayerState*);
+void _batranslate_entrypoint_2(PlayerState*);
 void _batranslate_entrypoint_3(PlayerState *self, s32);
-
+void _batranslate_entrypoint_4(PlayerState*);
 #endif 

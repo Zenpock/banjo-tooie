@@ -51,7 +51,7 @@ void func_80800018_chmrsicecube(Actor* arg0)
         }
         if (flag_getValue(FLAG_378_PHYSICAL_HFP_KilledMildred) != 0)
         {
-            func_800FFAB0(arg0);
+            actor_mark_delete(arg0);
         }
     }
 }
@@ -108,7 +108,7 @@ void func_808000BC_chmrsicecube(Actor* arg0)
     if (temp_v0 != 0)
     {
         func_8080066C_chmrsicecube(arg0, sp30);
-        func_800EE7F8(temp_v0->position, sp30);
+        ml_vec3f_copy(temp_v0->position, sp30);
         if ((sp3C != 0) && (_subaddieskeleton_entrypoint_0(arg0, 3, sp24) != 0))
         {
             temp_v0->position[1] += (sp24[1] - arg0->position[1]);
@@ -123,43 +123,43 @@ s32 func_80800260_chmrsicecube(Actor* arg0, s32 arg1, s32 arg2)
 
     switch (arg1)
     {
-    case 0x2E:
-        temp_v0 = ((s16*)&arg2)[0];
-        if (_subaddiedialog_entrypoint_9(arg0, temp_v0, &D_808008F0_chmrsicecube, 4) == 1)
-        {
-            func_8010A590(arg0);
-        }
-        func_80102424(arg0, 5);
-        break;
-    case 0x40:
-        if (_subaddieDll_entrypoint_5(arg0, arg2) != 0)
-        {
-            func_80103110(arg0, 1U);
-            _subaddieDll_entrypoint_4(arg0, 1U);
-            func_80102424(arg0, 6);
-        }
-        else
-        {
-            func_808006C4_chmrsicecube(arg0);
-        }
-        break;
-    case 0x52:
-        _gcdialogcamera_entrypoint_3(&D_80800A2C_chmrsicecube, arg0->scale);
-        break;
-    case 0x95:
-        sp20 = func_80100094(arg0, 0U);
-        temp_v0 = func_80800508_chmrsicecube(arg0);
-        if (temp_v0 != 0)
-        {
-            _subaddielink_entrypoint_1(sp20, temp_v0);
-        }
-        else if ((arg0->actorData[4] != 0) || (_glcutDll_entrypoint_20() == 0))
-        {
-            func_800FFAB0(arg0);
-        }
-        break;
-    default:
-        return 0;
+        case EVENT_2E_ACTOR_DIALOG_ENDED:
+            temp_v0 = ((s16*)&arg2)[0];
+            if (_subaddiedialog_entrypoint_9(arg0, temp_v0, &D_808008F0_chmrsicecube, 4) == 1)
+            {
+                func_8010A590(arg0);
+            }
+            func_80102424(arg0, 5);
+            break;
+        case 0x40:
+            if (_subaddieDll_entrypoint_5(arg0, arg2) != 0)
+            {
+                func_80103110(arg0, 1U);
+                _subaddieDll_entrypoint_4(arg0, 1U);
+                func_80102424(arg0, 6);
+            }
+            else
+            {
+                func_808006C4_chmrsicecube(arg0);
+            }
+            break;
+        case 0x52:
+            _gcdialogcamera_entrypoint_3(&D_80800A2C_chmrsicecube, arg0->scale);
+            break;
+        case EVENT_95_ACTOR_SPAWNED:
+            sp20 = func_80100094(arg0, 0U);
+            temp_v0 = func_80800508_chmrsicecube(arg0);
+            if (temp_v0 != 0)
+            {
+                _subaddielink_entrypoint_1(sp20, temp_v0);
+            }
+            else if ((arg0->actorData[4] != 0) || (_glcutDll_entrypoint_20() == 0))
+            {
+                actor_mark_delete(arg0);
+            }
+            break;
+        default:
+            return 0;
     }
     return 1;
 }
@@ -187,7 +187,7 @@ Actor* func_8080043C_chmrsicecube(Actor* arg0, s32 arg1, f32* arg2)
     temp_v0 = _subaddiefind_entrypoint_0(arg0->position, arg1, -1, 0);
     if (temp_v0 != NULL)
     {
-        func_800EE7F8(arg2, temp_v0->position);
+        ml_vec3f_copy(arg2, temp_v0->position);
     }
     return temp_v0;
 }
@@ -206,7 +206,7 @@ Actor* func_8080048C_chmrsicecube(Actor* arg0, s32 arg1, f32* arg2)
     var_v1 = _subaddiefind_entrypoint_12(temp_v0[4] >> 21);
     if (var_v1 != NULL)
     {
-        func_800EE88C(arg2, temp_v0);
+        ml_vec3s_to_vec3f(arg2, temp_v0);
     }
     return var_v1;
 }
@@ -228,7 +228,7 @@ Unk80132ED0* func_80800508_chmrsicecube(Actor* arg0)
     {
         var_v0 = func_8080048C_chmrsicecube(arg0, D_80800910_chmrsicecube[temp_s0][0], sp2C);
     }
-    if ((var_v0 != NULL) && (func_800EEB40(&sp2C, arg0->position) < 40000.0f))
+    if ((var_v0 != NULL) && (ml_vec3f_distance_sq(&sp2C, arg0->position) < 40000.0f))
     {
         sp28->unk8 = var_v0->unk74_20;
         func_8010A570(var_v0);
@@ -255,7 +255,7 @@ void func_80800634_chmrsicecube(Actor* arg0)
 
 void func_8080066C_chmrsicecube(Actor* arg0, f32* arg1)
 {
-    func_800EE7F8(arg1, arg0->position);
+    ml_vec3f_copy(arg1, arg0->position);
     arg1[1] += arg0->scale * 100.0f;
 }
 
@@ -287,7 +287,7 @@ void func_808006C4_chmrsicecube(Actor* arg0)
         _chbounce_entrypoint_5(D_80800910_chmrsicecube[arg0->actorData[4]][1], temp_s0);
     }
     func_80800818_chmrsicecube(arg0);
-    func_800FFAB0(arg0);
+    actor_mark_delete(arg0);
 }
 
 void func_80800818_chmrsicecube(Actor* arg0)

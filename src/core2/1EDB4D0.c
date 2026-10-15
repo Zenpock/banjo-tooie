@@ -64,7 +64,7 @@ Unk80132ED0* func_80102394(Actor* arg0)
 {
     if (arg0->unk79_3)
     {
-        func_8010108C(arg0, 0x99, 0);
+        event_sendToActor(arg0, 0x99, 0);
         return func_80101080();
     }
     return func_80100368(arg0)->unk8;

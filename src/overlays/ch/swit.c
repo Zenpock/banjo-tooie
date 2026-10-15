@@ -48,7 +48,7 @@ void chswitch_entrypoint_4(Actor* arg0)
         func_80103110(arg0, 0U);
         func_800F7F98(arg0->actorData[4], 0);
         flag_setValueTrue((enum flag_e)arg0->actorData[7]);
-        func_8010108C(arg0, 7, 0);
+        event_sendToActor(arg0, 7, 0);
     }
 }
 
@@ -60,7 +60,7 @@ s32 chswitch_entrypoint_5(Actor* arg0, s32 arg1, u32 arg2)
     {
     case 0x29:
         return func_8080093C_chswitch(arg0);
-    case 0x91:
+    case EVENT_91_ACTOR_STOOD_ON:
         if (arg0->unk70_10 == 1)
         {
             _gcaudiolist_entrypoint_0(0);
@@ -72,7 +72,7 @@ s32 chswitch_entrypoint_5(Actor* arg0, s32 arg1, u32 arg2)
             break;
         }
         return 0;
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         if (flag_getValue(arg0->actorData[7]) != 0)
         {
             func_80102424(arg0, 3);
@@ -118,7 +118,7 @@ void chswitch_entrypoint_6(Actor* arg0)
                 {
                     func_80103110(arg0, 0U);
                 }
-                func_8010108C(arg0, 7, 0);
+                event_sendToActor(arg0, 7, 0);
             }
         }
         else if (!arg0->unk6C_0 || temp != 0)
@@ -143,7 +143,7 @@ void chswitch_entrypoint_6(Actor* arg0)
             func_80102424(arg0, 1);
             flag_setValueFalse((enum flag_e)arg0->actorData[7]);
             (s32)arg0->unk50 = 0;
-            func_8010108C(arg0, 8, 0);
+            event_sendToActor(arg0, 8, 0);
         }
         break;
     }
@@ -200,7 +200,7 @@ void chswitch_entrypoint_11(Actor* arg0)
             flag_setValueTrue((enum flag_e)arg0->actorData[7]);
             func_80102424(arg0, 3);
             func_800F7F98(arg0->actorData[4], 0);
-            func_8010108C(arg0, 7, 0);
+            event_sendToActor(arg0, 7, 0);
             return;
         }
     case 1:
@@ -219,7 +219,7 @@ void chswitch_entrypoint_11(Actor* arg0)
         {
             flag_setValueFalse((enum flag_e)arg0->actorData[7]);
             func_80102424(arg0, 1);
-            func_8010108C(arg0, 8, 0);
+            event_sendToActor(arg0, 8, 0);
         }
         break;
     }
@@ -278,10 +278,10 @@ void chswitch_entrypoint_13(Actor* arg0)
         {
             func_80102424(arg0, 3);
             func_80101EE4(arg0, 0.5f);
-            if (func_800F6CC8(func_800F54E4()) == 0)
+            if (func_800F6CC8(character_getActiveIndex()) == 0)
             {
                 flag_setValueTrue((enum flag_e)arg0->actorData[7]);
-                func_8010108C(arg0, 7, 0);
+                event_sendToActor(arg0, 7, 0);
                 return;
             }
         }
@@ -305,7 +305,7 @@ void chswitch_entrypoint_13(Actor* arg0)
         {
             flag_setValueFalse((enum flag_e)arg0->actorData[7]);
             func_80102424(arg0, 1);
-            func_8010108C(arg0, 8, 0);
+            event_sendToActor(arg0, 8, 0);
         }
         break;
     }

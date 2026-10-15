@@ -76,7 +76,7 @@ void func_80800190_bsfirstp(PlayerState* self)
 {
 	BsFirstP* temp = self->firstp;
 	func_80800858_bsfirstp(self, 0);
-	func_800EFD24(temp->unk2C);
+	ml_vec3f_clear(temp->unk2C);
 	temp->unk50 = 0.0f;
 }
 
@@ -192,7 +192,7 @@ void func_8080053C_bsfirstp(PlayerState* arg0) {
 
 	sp1C = arg0->firstp;
 	func_808004F8_bsfirstp(arg0);
-	func_800EFD24(sp1C->unk38);
+	ml_vec3f_clear(sp1C->unk38);
 }
 
 void func_8080056C_bsfirstp(PlayerState* arg0)
@@ -208,10 +208,10 @@ void func_8080056C_bsfirstp(PlayerState* arg0)
 	temp_s0 = arg0->firstp;
 	sp3C = func_800D9004();
 	func_8009B4D0(arg0, sp40);
-	func_800EF3DC(sp40, temp_s0->unk2C);
+	ml_vec3f_subtract(sp40, temp_s0->unk2C);
 	func_808004F8_bsfirstp(arg0);
-	func_800EF04C(sp40, temp_s0->unk2C);
-	func_800EF334(sp40, 1.0f / sp3C);
+	ml_vec3f_add(sp40, temp_s0->unk2C);
+	ml_vec3f_apply_scale(sp40, 1.0f / sp3C);
 	temp_s0->unk38[0] += (sp40[0] - temp_s0->unk38[0]) * 0.2f;
 	temp_s0->unk38[2] += (sp40[2] - temp_s0->unk38[2]) * 0.2f;
 	temp = func_800EEFFC(temp_s0->unk38);

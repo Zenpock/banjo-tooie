@@ -25,8 +25,8 @@ void func_80092018(PlayerState* arg0)
     {
         var_f0 = arg0->unk50->unk28;
     }
-    func_800EFA4C(sp34, arg0->unk50->unk20, var_f0, arg0->unk50->unk24);
-    func_800EE780(sp28, arg0->unk50->unk2C, arg0->unk50->unk44);
+    ml_vec3f_assign_value(sp34, arg0->unk50->unk20, var_f0, arg0->unk50->unk24);
+    ml_vec3f_sum(sp28, arg0->unk50->unk2C, arg0->unk50->unk44);
     func_80019CD4();
     func_80019750(arg0->unk50->unk44, &sp34, arg0->unk50->unk1C, sp28);
     if (arg0->unk50->unkC4 != 0)
@@ -62,16 +62,16 @@ void func_8009216C(PlayerState* arg0, f32* arg1, f32* arg2)
     arg0->unk50->unk24 = baroll_get(arg0);
     arg0->unk50->unk20 = func_8009BFCC(arg0);
     temp_v0 = arg0->unk50;
-    func_800EFA4C(arg2, temp_v0->unk20, temp_v0->unk28, temp_v0->unk24);
-    func_8009C128(arg0, arg1);
+    ml_vec3f_assign_value(arg2, temp_v0->unk20, temp_v0->unk28, temp_v0->unk24);
+    player_getCoords(arg0, arg1);
 }
 
 void func_800921E0(PlayerState* arg0, s32 arg1, f32* arg2)
 {
     func_8009C2A0(arg0->unk50->unk4, arg1,arg2);
-    if (func_800EEEA8(arg2) != 0)
+    if (ml_vec3f_is_zero(arg2) != 0)
     {
-        func_8009C128(arg0, arg2);
+        player_getCoords(arg0, arg2);
     }
 }
 
@@ -178,7 +178,7 @@ void func_80092778(PlayerState* arg0)
     s16 sp1E;
     s16 sp1C;
 
-    _bapreload_entrypoint_0(arg0, func_800A3274(arg0), &sp1E, &sp1C);
+    _bapreload_entrypoint_0(arg0, player_getTransformation(arg0), &sp1E, &sp1C);
     func_80092EC8(arg0, sp1E);
     func_8009312C(arg0, sp1C);
 }
@@ -191,8 +191,8 @@ void func_800927C4(s32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 arg4)
 
     if (func_800F6BE4(arg4) != 0)
     {
-        temp_s0 = func_800F53D0(arg4);
-        func_800EFA4C(sp28, arg1, arg2, arg3);
+        temp_s0 = character_getPlayerState(arg4);
+        ml_vec3f_assign_value(sp28, arg1, arg2, arg3);
         temp_s0->unk50->unk84 = func_80108474(arg0, sp28, 0)->unk0;
         func_800A70D0(temp_s0->unk50->unk84, temp_s0->unk184);
         func_800A7108(temp_s0->unk50->unk84, temp_s0->unk50->unk78);
@@ -232,9 +232,9 @@ void func_80092898(PlayerState* arg0)
     arg0->unk50->unk84 = 0;
     arg0->unk50->unk7C = 0;
     arg0->unk50->unk81 = 0;
-    func_800EFD24(arg0->unk50->unk2C);
-    func_800EFD24(&arg0->unk50->unk38);
-    func_800EFD24(arg0->unk50->unk44);
+    ml_vec3f_clear(arg0->unk50->unk2C);
+    ml_vec3f_clear(&arg0->unk50->unk38);
+    ml_vec3f_clear(arg0->unk50->unk44);
     arg0->unk50->unk28 = arg0->unk50->unk24 = arg0->unk50->unk20 = 0.0f;
     func_80093370(arg0, 1);
     func_8009337C(arg0, 1);
@@ -282,7 +282,7 @@ s32 func_80092B80(PlayerState* arg0)
 
 f32 func_80092B8C(PlayerState* arg0, f32* arg1)
 {
-    func_800EE7F8(arg1, arg0->unk50->unk64);
+    ml_vec3f_copy(arg1, arg0->unk50->unk64);
     return arg0->unk50->unk70;
 }
 
@@ -334,21 +334,21 @@ void func_80092C6C(s32 arg0,s32 arg1)
 void func_80092C90(PlayerState* arg0, f32* arg1, s32 arg2)
 {
     func_800DBEFC(arg0->unk50->unk4, arg2, arg1);
-    if (func_800EEEA8(arg1) != 0)
+    if (ml_vec3f_is_zero(arg1) != 0)
     {
-        func_8009C128(arg0, arg1);
+        player_getCoords(arg0, arg1);
     }
 }
 
 void func_80092CDC(PlayerState* arg0, f32* arg1, s32 arg2)
 {
     func_800DBEFC(arg0->unk50->unk4, arg2, arg1);
-    func_800EEF24(arg1);
+    ml_vec3f_is_not_zero(arg1);
 }
 
 void func_80092D18(PlayerState* arg0, f32* arg1)
 {
-    func_800EE7F8(arg1, arg0->unk50->unk44);
+    ml_vec3f_copy(arg1, arg0->unk50->unk44);
 }
 
 void func_80092D44(PlayerState* arg0, f32* arg1)
@@ -358,8 +358,8 @@ void func_80092D44(PlayerState* arg0, f32* arg1)
 
     func_800921E0(arg0, 4, &sp18);
     func_800921E0(arg0, 3, &sp24);
-    func_800EE780(arg1, sp18, sp24);
-    func_800EF334(arg1, 0.5f);
+    ml_vec3f_sum(arg1, sp18, sp24);
+    ml_vec3f_apply_scale(arg1, 0.5f);
 }
 
 void func_80092D9C(s32 arg0,s32 arg1)
@@ -480,7 +480,7 @@ void func_80093230(PlayerState* arg0, f32 arg1)
     arg0->unk50->unk1C = arg1;
     arg0->unk50->unk70 = arg0->unk50->unk5C * arg0->unk50->unk1C;
     arg0->unk50->unk74 = (arg0->unk50->unk60 * arg0->unk50->unk1C);
-    func_800EF334((f32*)arg0->unk50->unk64, arg0->unk50->unk1C);
+    ml_vec3f_apply_scale((f32*)arg0->unk50->unk64, arg0->unk50->unk1C);
 }
 
 void func_8009328C(PlayerState* arg0, f32 arg1)
@@ -518,7 +518,7 @@ void func_8009332C(PlayerState* arg0, f32 arg1)
 
 void func_8009333C(PlayerState* arg0, f32* arg1)
 {
-    func_800EE7F8(arg0->unk50->unk44, arg1);
+    ml_vec3f_copy(arg0->unk50->unk44, arg1);
 }
 
 void func_80093360(PlayerState* arg0, f32 arg1)
@@ -568,7 +568,7 @@ void func_80093448(PlayerState* arg0)
 
     if (arg0->unk50->unk84 == 0)
     {
-        func_8009C128(arg0, &sp2C);
+        player_getCoords(arg0, &sp2C);
         _chbaddiesetup_entrypoint_5((s32)func_800927C4, 0x215, sp2C[0], sp2C[1], sp2C[2], arg0->unk184);
     }
     func_80093388(arg0);
@@ -769,7 +769,7 @@ void func_80094864(PlayerState* arg0)
 			sp24 = _gcegg_entrypoint_5(func_80094510(arg0));
 			if (func_80094348(arg0, 4) == 0)
 			{
-				func_800D1824(sp24);
+				inventory_showValue(sp24);
 			}
 		}
 		if (func_80094348(arg0, 1) == 0)
@@ -853,7 +853,7 @@ void func_80094AB4(PlayerState* arg0)
 			if (_gcegg_entrypoint_6(eggType) != 0)
 			{
 				//Show amount of eggs we have of the given type
-				func_800D1824(_gcegg_entrypoint_5(eggType));
+				inventory_showValue(_gcegg_entrypoint_5(eggType));
 			}
 		}
 	}

@@ -81,7 +81,7 @@ void func_80801CDC_chdinoboss(Actor* arg0)
 
 void func_80801E90_chdinoboss(s32 arg0, s32 arg1)
 {
-    func_8010FFB0(func_800F5EF8(func_800F54E4()), arg0, arg1);
+    func_8010FFB0(func_800F5EF8(character_getActiveIndex()), arg0, arg1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/boss/func_80801ECC_chdinoboss.s")

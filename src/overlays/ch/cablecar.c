@@ -40,10 +40,10 @@ void func_808005E0_chcablecar(Actor* arg0) {
     temp_v0 = func_80100094(arg0, 0);
     temp_a0 = &temp_v0->unk10;
     if (temp_v0->unkC < 0.5f) {
-        if ((_mlwave_entrypoint_9(temp_a0, D_80800F40_chcablecar) != 0) && (func_800DC298(0.8f) != 0)) {
+        if ((_mlwave_entrypoint_9(temp_a0, D_80800F40_chcablecar) != 0) && (rand_percentChance(0.8f) != 0)) {
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, D_80800F4C_chcablecar);
         }
-    } else if ((_mlwave_entrypoint_9(temp_a0, D_80800F40_chcablecar) != 0) && (func_800DC298(0.8f) != 0)) {
+    } else if ((_mlwave_entrypoint_9(temp_a0, D_80800F40_chcablecar) != 0) && (rand_percentChance(0.8f) != 0)) {
         _subaddieaudioquick_entrypoint_2(arg0, arg0->position, D_80800F58_chcablecar);
     }
 }

@@ -5,11 +5,37 @@
 
 #include "buttons.h"
 #include "core1/mlmtx.h"
+#include "physicstypes.h"
+#include "transformations.h"
 
+typedef struct unkCUnk0 {
+	s32 unk0;
+	s32 unk4;
+	s32 unk8;
+	s32 unkC;
+	s32 unk10;
+	s32 unk14;
+	s16 unk18;
+    u16 unk1A;
+	s16 unk1C;
+	s16 unk1E;
+	s32 unk20;
+	s32 unk24;
+	union {
+		s32 unk28;
+		struct {
+			s32 unk28_11 : 21;
+			s32 unk28_10 : 1;
+			s32 unk28_9 : 1;
+		};
+	};
+
+} unkCUnk0;
 typedef struct ba_unknown_c_s {
-    u8 pad0[0xC];
-    s32 unkC[3];
-    u8 pad18[4];
+	unkCUnk0* unk0;
+	s32 pad4[2];
+	s32 unkC[3];
+	s32 unk18;
 } BaUnknownC;
 
 typedef struct ba_unknown_2C_s {
@@ -263,8 +289,55 @@ typedef struct ba_hold_s {
     f32 unk18;
 } BaHold;
 
+typedef struct ba_unkA0_s {
+    f32 unk0[3];
+    f32 unkC[3];
+    f32 unk18[3];
+    f32 unk24;
+    u8 unk28;
+    u8 transformation;
+    u8 unk2A;
+    u8 unk2B;
+    f32 unk2C[3];
+    f32 unk38;
+    u8 unk3C;
+    u8 unk3D;
+    u8 unk3E;
+    u8 unk3F;
+    f32 unk40;
+    Unk80132ED0* unk44;
+    f32 unk48;
+    f32 unk4C;
+    u8 unk50;
+    u8 unk51;
+    u8 unk52;
+    u8 unk53;
+    u8 unk54;
+    u8 unk55;
+    u8 unk56;
+    u8 unk57;
+} ba_unkA0_s;
+
+typedef struct ba_unknown_B8_s {
+    void (*unk0)(s32);
+    s32 unk4;
+    u8 unk8;
+    u8 unk9;
+    u8 unkA;
+    u8 unkB;
+} ba_unknown_B8_s;
+
+typedef struct ba_unknown_BC_s {
+    f32 unk0[3];
+    f32 unkC[3];
+    u8 unk18;
+    u8 unk19;
+    u8 unk1A;
+    u8 unk1B;
+} ba_unknown_BC_s;
+
 typedef struct ba_unknown_C8_s {
-    s32 unk0;
+    BaPhysicsType currentPhysicsType;
     f32 unk4[3];
     f32 unk10[3];
     f32 unk1C[3];
@@ -276,6 +349,13 @@ typedef struct ba_unknown_C8_s {
     f32 unkAC[3];
     f32 unkB8[3];
 } ba_unknown_C8_s;
+
+typedef struct ba_unknown_DC_s {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    f32 unkC;
+} ba_unknown_DC_s;
 
 typedef struct PositionInfo {
     f32 current[3];
@@ -391,13 +471,17 @@ typedef struct player_state_s {
     /* 0x94 */ struct ba_unknown_94_s* unk94;
     /* 0x98 */ struct ba_unknown_98_s* unk98;
     /* 0x9C */ BaHold* hold;
-    u8 padA0[0x4];
+    /* 0xA0 */ ba_unkA0_s* unkA0;
     /* 0xA4 */ struct ba_input_s *input;
-    u8 padA8[0x18];
+    u8 padA8[0x10];
+    /* 0xB8 */ struct ba_unknown_B8_s* unkB8;
+    /* 0xBC */ struct ba_unknown_BC_s* unkBC;
     /* 0xC0 */ struct ba_unknown_C0_s *unkC0; // 1E72EA0
     /* 0xC4 */ u8 *unkC4;
     /* 0xC8 */ struct ba_unknown_C8_s *unkC8;
-    u8 padCC[0xE4 - 0xCC];
+    u8 padCC[0xDC - 0xCC];
+    /* 0xDC */ ba_unknown_DC_s* unkDC;
+    u8 padE0[4];
     /* 0xE4 */ PositionInfo* posInfo;
 	/* 0xE8 */ ba_unknown_E8_s* unkE8;
 	u8 padEC[0x8];

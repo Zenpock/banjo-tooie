@@ -87,7 +87,7 @@ void func_8009E9A8(void) {
     func_8009EB0C(0.0f);
 }
 
-void func_8009E9D8(s32 arg0) {
+void func_8009E9D8(TransformationId arg0) {
     D_8012704C = arg0;
 }
 

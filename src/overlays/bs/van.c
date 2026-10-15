@@ -94,7 +94,7 @@ void bsvan_entrypoint_2(PlayerState* self) {
     s32 sp20;
 
     sp20 = func_800B5BE4(8);
-    func_8009C128(self, sp24);
+    player_getCoords(self, sp24);
     func_800BABB8(sp20, sp24, NULL, 1.0f, &D_80801B90_bsvan);
 }
 
@@ -105,7 +105,7 @@ void func_8080032C_bsvan(PlayerState* self) {
     func_80092C90(self, sp2C, 4);
     sp28 = func_800B5BE4(8);
     func_800BABB8(sp28, sp2C, NULL, 1.0f, &D_80801C40_bsvan);
-    func_800BA77C(sp28, 0, 0, (s16)(s32)func_800DC178(0.0f, 359.0f));
+    func_800BA77C(sp28, 0, 0, (s16)(s32)rand_fBounded(0.0f, 359.0f));
     func_800BA22C(sp28, 1);
 }
 
@@ -614,14 +614,14 @@ void func_8080145C_bsvan(PlayerState* self) {
     if ((baanim_isAt(self, 0.0122f) != 0) || (baanim_isAt(self, 0.5122f) != 0))
     {
         sp3C = func_800B5BE4(8);
-        func_8009C128(self, sp58);
+        player_getCoords(self, sp58);
         func_80092C90(self, sp40, 4);
-        func_800EFB24(sp4C, sp40, sp58);
+        ml_getdiff_vec3f(sp4C, sp40, sp58);
         func_800F1A88(sp4C, sp64);
         sp64[0] = -sp64[0] - 10/*.0f*/;
 
         func_800BA994((unkStruct800BA198*)sp3C, sp64[0], (sp64[1] - 10.0f), 0x96, sp64[0], (sp64[1] + 10.0f), 0xC8);
-        func_800BA77C(sp3C, 0, 0, func_800DC178(0.0f, 359.0f));
+        func_800BA77C(sp3C, 0, 0, rand_fBounded(0.0f, 359.0f));
         func_800BABB8(sp3C, sp40, NULL, 1.0f, &D_80801D0C_bsvan);
     }
     func_808000BC_bsvan(self);
@@ -649,7 +649,7 @@ s32 bsvan_entrypoint_14(s32 arg0) {
 void func_8080164C_bsvan(PlayerState* self, s32 arg1) {
     f32 sp24[3];
 
-    func_8009C128(self, sp24);
+    player_getCoords(self, sp24);
     switch (arg1)
     {
     case 1:
@@ -698,9 +698,9 @@ void bsvan_entrypoint_15(s32 self)
     f32 sp28[3];
     f32 sp1C[3];
 
-    sp34 = func_800F53D0(self);
-    func_8009C128(sp34, sp28);
-    func_800EE7F8(sp1C, sp34->bsvan->unk4);
+    sp34 = character_getPlayerState(self);
+    player_getCoords(sp34, sp28);
+    ml_vec3f_copy(sp1C, sp34->bsvan->unk4);
     sp28[1] += 20.0f;
     sp1C[1] += 40.0f;
     _chfaircoin_entrypoint_0(sp28, sp1C, 0.5f);

@@ -75,7 +75,7 @@ void func_80800194_chhoneyb(Actor* arg0)
 
     if (_subaddiemarker_entrypoint_0(arg0, 0x1C1, sp28, 1) != 0)
     {
-        func_800EE7F8(&arg0->actorData[0], sp28);
+        ml_vec3f_copy(&arg0->actorData[0], sp28);
     }
     _subaddieitem_entrypoint_0(&((unkSubGameStruct*)func_80100094(arg0, 1))->unk18, 0x4B7, 0x258, 3);
     func_80800058_chhoneyb(arg0);
@@ -109,7 +109,7 @@ void func_808002AC_chhoneyb(Actor* arg0)
     case 1:
         if (_glcutDll_entrypoint_20() == 0)
         {
-            func_800D1824(0x49);
+            inventory_showValue(0x49);
             if (arg0->actorData[4] == 0)
             {
                 if (func_80800B78_chhoneyb() < _gcextra_entrypoint_1())
@@ -190,7 +190,7 @@ void func_8080062C_chhoneyb(Actor* arg0)
     func_800A1658(func_8008FD48());
     func_80800058_chhoneyb(arg0);
 
-    func_80101180(0x4B8, 0x23, func_80800B78_chhoneyb());
+    event_sendToActorsOfType(0x4B8, 0x23, func_80800B78_chhoneyb());
 }
 
 void func_80800680_chhoneyb(Actor* arg0)
@@ -305,7 +305,7 @@ s32 func_80800968_chhoneyb(Actor* arg0, s32 arg1, s32 arg2)
 {
     switch (arg1)
     {
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         func_80800744_chhoneyb(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
         break;
     case 0x30:
@@ -319,7 +319,7 @@ s32 func_80800968_chhoneyb(Actor* arg0, s32 arg1, s32 arg2)
         break;
     case 0xB:
         return 3;
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         _suexpression_entrypoint_12(_suexpression_entrypoint_7(arg0, 0, 0x9B), 60.0f, 20.0f);
         if ((flag_getValue(0x4E9) == 0) && (_glcutDll_entrypoint_20() == 0))
         {
@@ -346,7 +346,7 @@ s32 func_80800B2C_chhoneyb(Actor* arg0)
 
 s32 func_80800B58_chhoneyb()
 {
-    return func_800D1A04(0x49);
+    return inventory_getValue(0x49);
 }
 
 s32 func_80800B78_chhoneyb()

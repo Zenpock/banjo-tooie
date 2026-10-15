@@ -593,7 +593,9 @@ segments:
       - [0x1EFE3C0, rodata]
       - [0x1EFE6F0, .rodata, 1E6F080]
       - [0x1EFE710, rodata]
-      - [0x1EFEC30, .rodata, baroll]
+      - [0x1EFE720, .rodata, 1E72180]
+      - [0x1EFE760, rodata]
+      - [0x1EFEB90, .rodata, baphysics]
       - [0x1EFEC30, .rodata, baroll]
       - [0x1EFEC40, rodata]
       - [0x1EFEE60, .rodata, 1E7D460]
@@ -6000,15 +6002,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01FDB220
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01FDB220, c, bigtopticket]
-      - [0x01FDB340, .rodata, bigtopticket]
-      - [0x01FDB340, data, bigtopticket]
-      - [0x01FDB390, bss, bigtopticket]
+      - [auto, c, bigtopticket]
   - name: chlagoonpirate_header
     dir: overlays/chlagoonpirate
     type: bin
@@ -8217,15 +8213,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020427F0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020427F0, c, glowbo]
-      - [0x02043B50, .rodata, glowbo]
-      - [0x02043BA0, data, glowbo]
-      - [0x02043E20, bss, glowbo]
+      - [auto, c, glowbo]
   - name: chhandcart_header
     dir: overlays/chhandcart
     type: bin
@@ -11122,15 +11112,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020B7960
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020B7960, c, doubloon]
-      - [0x020B7BE0, .rodata, doubloon]
-      - [0x020B7BF0, data, doubloon]
-      - [0x020B7C50, bss, doubloon]
+      - [auto, c, doubloon]
   - name: chdinofamilymissing_header
     dir: overlays/chdinofamilymissing
     type: bin

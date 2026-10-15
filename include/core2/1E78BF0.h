@@ -64,7 +64,7 @@ void func_8009FC34(PlayerState *, s32);
 void func_8009FC80(PlayerState*);
 void func_8009FD24(PlayerState *, s32);
 void func_8009FE58(PlayerState*);
-// func_8009FE78
+void func_8009FE78(PlayerState*);
 // bs_getTypeOfJump
 // func_8009FF00
 void func_8009FF44(PlayerState*, s32, f32, f32, f32, f32); 

@@ -141,7 +141,7 @@ s32 func_80800228_chgameselect(Actor* arg0, s32 arg1, s32 arg2)
     Actor* temp_v0;
     switch (arg1)
     {
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         func_80803D00_chgameselect(0, 0);
         break;
 

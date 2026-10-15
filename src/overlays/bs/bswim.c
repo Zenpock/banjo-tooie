@@ -268,7 +268,7 @@ void func_808006DC_bsbswim(PlayerState* self) {
     }
     if (func_8001210C(1) == 0)
     {
-        func_8009C128(self, sp38);
+        player_getCoords(self, sp38);
         sp38[1] += 60.0f;
         sp44 = func_8009FBB0(self, sp38, 40.0f);
         func_800BA930((unkStruct800BA198*)sp44, -0x3C, -0x32, -0x3C, 0x3C, 0x64, 0x3C);
@@ -415,7 +415,7 @@ void func_80800B10_bsbswim(PlayerState* self)
     _bareact_entrypoint_1(self, func_80099A58(self));
     baanim_playForDuration_once(self, 0x14, 1.4f);
     func_8009D89C(self, 1.0f);
-    func_8009C128(self, sp40);
+    player_getCoords(self, sp40);
     func_800A32C4(self, sp34);
     func_800F1E6C(sp34, sp40, &sp4C);
     yaw_setIdeal(self, sp4C);
@@ -436,7 +436,7 @@ void func_80800C0C_bsbswim(PlayerState* self)
     s32 sp34;
 
     nextState = BS_STATE_0_INVALID;
-    func_8009C128(self, sp38);
+    player_getCoords(self, sp38);
     sp38[1] += 60.0f;
     sp34 = func_8009FBB0(self, sp38, 25.0f);
     func_800BA930((unkStruct800BA198*)sp34, -0x3C, -0x32, -0x3C, 0x3C, 0x64, 0x3C);
@@ -636,7 +636,7 @@ void func_808011C0_bsbswim(PlayerState* self)
     }
     if (func_8001210C(1) == 0)
     {
-        func_8009C128(self, sp38);
+        player_getCoords(self, sp38);
         sp38[1] += 60.0f;
         sp44 = func_8009FBB0(self, sp38, 25.0f);
         func_800BA930((unkStruct800BA198*)sp44, -0x3C, -0x32, -0x3C, 0x3C, 0x64, 0x3C);
@@ -757,7 +757,7 @@ void func_808016B8_bsbswim(PlayerState* self)
     s32 sp3C;
 
     nextState = BS_STATE_0_INVALID;
-    func_8009C128(self, &sp40);
+    player_getCoords(self, &sp40);
     sp40[1] += 60.0f;
     sp3C = func_8009FBB0(self, &sp40, 20.0f);
     func_800BA930((unkStruct800BA198*)sp3C, -0x1E, -0x1E, -0x1E, 0x1E, 0x1E, 0x1E);
@@ -866,7 +866,7 @@ void func_808019E0_bsbswim(PlayerState* self)
         _baduo_entrypoint_21(self);
         func_800A3410(self, 0xA);
         self->unk164.bytes[1] = 1;
-        func_8009C128(self, sp30);
+        player_getCoords(self, sp30);
         sp30[1] += 60.0f;
         temp = func_8009FBB0(self, sp30, 70.0f);
         func_800BABB8(temp, sp30, sp30, 1.0f, &D_80801F20_bsbswim);

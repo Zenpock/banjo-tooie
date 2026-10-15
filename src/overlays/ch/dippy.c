@@ -186,7 +186,7 @@ s32 func_80800374_chdippy(Actor* arg0, s32 arg1, s32 arg2)
 {
     switch (arg1)
     {
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         func_8080047C_chdippy(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
         break;
     case 0xB:
@@ -205,7 +205,7 @@ s32 func_80800374_chdippy(Actor* arg0, s32 arg1, s32 arg2)
         default:
             return 3;
         }
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         if (_glcutDll_entrypoint_19(0x36U) != 0)
         {
             _subaddieDll_entrypoint_4(arg0, 1U);
@@ -248,7 +248,7 @@ void func_80800530_chdippy(Actor* arg0)
     u32 sp2C;
     f32 sp20[3];
 
-    sp2C = func_800F54E4();
+    sp2C = character_getActiveIndex();
     if ((func_8010D23C() != 0) && (func_800F6C5C((s32)sp2C) != 0) && (func_800F64A4((s32)sp2C, 0x601) != 0) && (func_8010C500(arg0) != 0))
     {
         if (flag_getValue(FLAG_328_UNK) == 0)
@@ -386,7 +386,7 @@ void func_808009D8_chdippy(Actor* arg0)
     }
     if (sp88 > 0.3f && arg0->unk7C_12 && sp7C[1] > 1500.0f)
     {
-        sp78 = func_800DC128(0, 3);
+        sp78 = rand_iBounded(0, 3);
         for (i = 0; i < 4; i++) {
             _subaddieskeleton_entrypoint_2(arg0->unk0, i + 5, sp48[i].f);
         }
@@ -470,12 +470,12 @@ void func_80800D9C_chdippy(Actor* arg0)
             {
                 if (func_800D90A4(&DIPPY_DATA(arg0)->unkC) != 0)
                 {
-                    DIPPY_DATA(arg0)->unkC = func_800DC178(0.2f, 0.5f);
+                    DIPPY_DATA(arg0)->unkC = rand_fBounded(0.2f, 0.5f);
                     func_8010D930(9, -1, arg0->position, &D_80801734_chdippy);
                 }
                 if (DIPPY_DATA(arg0)->unk8 < 15.0f)
                 {
-                    if (func_800DC0C0() < func_800F10B4((f32)DIPPY_DATA(arg0)->unk8, 15.0f, 0.0f, 1.0f, 0.0f))
+                    if (rand_f() < func_800F10B4((f32)DIPPY_DATA(arg0)->unk8, 15.0f, 0.0f, 1.0f, 0.0f))
                     {
                         sp54 = 1;
                     }
@@ -491,7 +491,7 @@ void func_80800D9C_chdippy(Actor* arg0)
                 if (sp54 != 0)
                 {
                     sp44 = func_800B53A4(sp54);
-                    func_800EE7F8(sp48, arg0->position);
+                    ml_vec3f_copy(sp48, arg0->position);
                     sp48[1] += 6000.0f;
                     func_800BA5A8(sp44, 0x200);
                     func_800BA714(sp44, 0x1F4, 0x1F4);
@@ -509,7 +509,7 @@ void func_80800D9C_chdippy(Actor* arg0)
             _glid_entrypoint_0(sp40, 2, _chdippy_entrypoint_3, arg0->unk0);
             if (arg0->unk79_4-- == 0)
             {
-                func_800FFAB0(arg0);
+                actor_mark_delete(arg0);
             }
             break;
     }
@@ -527,12 +527,12 @@ s32 func_80801110_chdippy(Actor* arg0, s32 arg1, s32 arg2)
     f32 sp34[3];
     switch (arg1)
     {
-        case 0x95:
+        case EVENT_95_ACTOR_SPAWNED:
         {
             func_80801200_chdippy();
             return 1;
         }
-        case 0x1F:
+        case EVENT_1F_ACTOR_ONSCREEN:
         {
             if (arg0->unk64_16)
             {
@@ -571,7 +571,7 @@ void func_80801200_chdippy(Actor* arg0)
         func_80101FDC(arg0, 2U);
         arg0->unk64_16 = 1;
         (f32)arg0->actorData[2] = 30.0f;
-        (f32)arg0->actorData[3] = func_800DC178(0.2f, 0.5f);
+        (f32)arg0->actorData[3] = rand_fBounded(0.2f, 0.5f);
     }
     else if (flag_getValue(FLAG_327_UNK) == 0)
     {

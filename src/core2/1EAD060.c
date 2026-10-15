@@ -132,7 +132,7 @@ void func_800D3A20(s32 arg0) {
 }
 
 void func_800D3A54(s32 arg0, s32 arg1) {
-    func_800D3B6C(2, &ability_setValueTrue, arg0, arg1, 0);
+    func_800D3B6C(2, &ability_setValue, arg0, arg1, 0);
 }
 
 void func_800D3A88(void) {
@@ -243,5 +243,5 @@ s32 func_800D3D58(void) {
 }
 
 void func_800D3DA4(void) {
-    func_800F54F0();
+    character_getControllerIndex();
 }

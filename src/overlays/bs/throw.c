@@ -36,7 +36,7 @@ void bsthrow_entrypoint_1(PlayerState* self) {
     {
         _bahold_entrypoint_6(self, temp_v0);
     }
-    func_8009C128(self, sp30);
+    player_getCoords(self, sp30);
     func_800A33CC(self, sp3C);
     func_800F1E6C(sp30, sp3C, &sp2C);
     yaw_setIdeal(self, sp2C);

@@ -10,7 +10,7 @@ void func_80800000_chmayaentrydoor(Unk80800000MayaEntryDoor* arg0)
         flag_setValueTrue(FLAG_392_PROGRESS_OPENED_WORLD_MT);
     }
     
-    if ((func_800D3E40(0xB) != 0) && (_glcutDll_entrypoint_19(0x7A) == 0))
+    if ((cheat_isActive(0xB) != 0) && (_glcutDll_entrypoint_19(0x7A) == 0))
     {
         sp2C = -1;
         func_80101FDC(arg0, 4U);

@@ -15,10 +15,10 @@ extern f32 D_80800E3C_bsbeefly[5];
 void func_80800000_bsbeefly(PlayerState* self) {
     f32 sp24[3];
 
-    func_8009C128(self, sp24);
-    sp24[0] += func_800DC178(-30.0f, 30.0f);
-    sp24[1] += 30.0f + func_800DC178(0, 30.0f);
-    sp24[2] += func_800DC178(-30.0f, 30.0f);
+    player_getCoords(self, sp24);
+    sp24[0] += rand_fBounded(-30.0f, 30.0f);
+    sp24[1] += 30.0f + rand_fBounded(0, 30.0f);
+    sp24[2] += rand_fBounded(-30.0f, 30.0f);
     func_800BBCB8(sp24, 0, 1.0f, 1, &D_80800DC0_bsbeefly);
 }
 
@@ -27,7 +27,7 @@ void func_808000A4_bsbeefly(PlayerState* self) {
     s32 sp20;
 
     sp20 = func_800B5BE4(0x22);
-    func_8009C128(self, sp24);
+    player_getCoords(self, sp24);
     sp24[1] += 45.0f;
     func_800BABB8(sp20, sp24, 0, 1.0f, &D_80800DE8_bsbeefly);
 }
@@ -198,7 +198,7 @@ void func_80800708_bsbeefly(PlayerState* self) {
     _bafly_entrypoint_11(self);
     func_8009BFCC(self);
     if (bakey_pressed(self, BUTTON_A)
-        && (func_8009C150(self) < 27500.0f)) // playerPosition_getY
+        && (player_getCoordVertical(self) < 27500.0f)) // playerPosition_getY
     {
         _baboost_entrypoint_2(self, 1.0f); // baflap_add()
     }

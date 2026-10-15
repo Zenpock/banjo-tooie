@@ -2,25 +2,25 @@
 
 extern Vector* D_80136EE0;
 
-void func_801065E0(void)
+void actorList_new(void)
 {
 	D_80136EE0 = vector_new(0x9CU, 0x1EU);
 }
 
-void func_80106608(void)
+void actorList_free(void)
 {
 	vector_free(D_80136EE0);
 	D_80136EE0 = NULL;
 }
 
-void func_80106630()
+void actorList_defrag()
 {
     if(D_80136EE0)
     {
        D_80136EE0 = vector_defrag(D_80136EE0);
     }
 }
-void* func_80106668(s32* indexCreated)
+void* actorList_pushback(s32* indexCreated)
 {
 	void* newElementAddress;
 
@@ -32,7 +32,7 @@ void* func_80106668(s32* indexCreated)
 }
 
 //Erase an actor at index
-void func_801066C0(u32 index)
+void actorList_erase(u32 index)
 {
 	Unk80132ED0* temp_v1;
 	//Erase the Actor
@@ -47,7 +47,7 @@ void func_801066C0(u32 index)
 }
 
 //Get Number of Active Actors
-s32 func_80106730(void)
+s32 actorList_getSize(void)
 {
 	if (D_80136EE0 == NULL)
 	{
@@ -57,7 +57,7 @@ s32 func_80106730(void)
 }
 
 //Get Actor at index
-Actor* func_80106768(s32 arg0)
+Actor* actorList_getAtIndex(s32 arg0)
 {
 	return vector_at(D_80136EE0, arg0);
 }
@@ -67,7 +67,7 @@ Actor* func_80106790(Unk80132ED0* arg0)
 	return vector_at(D_80136EE0, arg0->unk18_5);
 }
 
-Actor* func_801067C4(s32* lastIndex)
+Actor* actorList_getLast(s32* lastIndex)
 {
     if (D_80136EE0 == NULL)
     {
@@ -81,7 +81,7 @@ Actor* func_801067C4(s32* lastIndex)
     return NULL;
 }
 
-Actor* func_8010682C(s32* currentIndex)
+Actor* actorList_getNext(s32* currentIndex)
 {
     s32 NumActors;
     if (D_80136EE0 == NULL)

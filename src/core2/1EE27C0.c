@@ -77,7 +77,7 @@ void func_80109F08(Actor* arg0, s32 arg1)
 
 void func_80109F18(s32 arg0, s32 arg1)
 {
-    func_8010114C(arg0, 0x3E, arg1);
+    func_8010114C(arg0, EVENT_3E_ACTOR_TOUCHED, arg1);
     if (arg1) {}
 }
 

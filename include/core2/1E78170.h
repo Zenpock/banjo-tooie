@@ -31,6 +31,7 @@ typedef struct {
     s32 unk18;
 } D_80127068_STRUCT;
 
+void func_8009E880();
 void func_8009E8B4();
 void func_8009E8D4();
 u8 func_8009E958(void);
@@ -41,7 +42,7 @@ f32 func_8009E988(void);
 u8 func_8009E994(void);
 void func_8009E9A0();
 void func_8009E9A8();
-void func_8009E9D8(s32);
+void func_8009E9D8(TransformationId);
 void func_8009E9E4(s32);
 void func_8009E9F0(f32);
 void func_8009E9FC(f32);
@@ -64,7 +65,7 @@ void func_8009EAE8(s32);
 void func_8009EAF4(s32);
 void func_8009EB00(f32);
 void func_8009EB0C(f32);
-void func_8009EB18(s32);
+void func_8009EB18();
 void func_8009EB24(s16, s16);
 void func_8009EB8C(s16, s16);
 void func_8009EBD0(void);

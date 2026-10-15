@@ -15,7 +15,7 @@ void bsdronefired_entrypoint_1(PlayerState* self) {
     _babounce_entrypoint_4(self, 2);
     yaw_setIdeal(self, yaw_getIdeal(self) + 180.0f);
     yaw_applyIdeal(self);
-    switch (func_800A3274(self))
+    switch (player_getTransformation(self))
     {
     default:
         return;

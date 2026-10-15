@@ -2,7 +2,7 @@
 
 void func_80800000_chbanjocurrent()
 {
-    func_800F4C24(func_800F54E4());
+    func_800F4C24(character_getActiveIndex());
 }
 
 extern ActorData D_808007D0_chbanjocurrent;

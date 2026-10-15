@@ -69,7 +69,7 @@ void func_80800294_bsbflap(PlayerState *self) {
         func_8009DF18(self, 0x4431, 1.0f, 22000);
     }
     if ((anctrl_getIndex(anctrl) == 0x17) && anctrl_isAt(anctrl, 0.02f)) {
-        func_8009DF94(self, 0x3FF, func_800DC178(0.92f, 1.02f), 16000);
+        func_8009DF94(self, 0x3FF, rand_fBounded(0.92f, 1.02f), 16000);
     }
 }
 

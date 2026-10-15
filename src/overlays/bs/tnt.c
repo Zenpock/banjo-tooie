@@ -129,10 +129,10 @@ void func_8080030C_bstnt(PlayerState* self, f32* arg1)
 
 	for (var_s0 = 0; var_s0 != 0x168; var_s0 += 0x2D)
 	{
-		func_800EFA4C(sp78, 0.0f, var_s0, 480.0f);
+		ml_vec3f_assign_value(sp78, 0.0f, var_s0, 480.0f);
 		func_800BA994((unkStruct800BA198*)temp_v0, sp78[0], sp78[1], sp78[2], sp78[0], sp78[1], sp78[2]);
 		func_800BA22C(temp_v0, 1);
-		func_800EFA4C(sp78, -45.0f, var_s0, 430.0f);
+		ml_vec3f_assign_value(sp78, -45.0f, var_s0, 430.0f);
 		func_800BA994((unkStruct800BA198*)temp_v0, sp78[0], sp78[1], sp78[2], sp78[0], sp78[1], sp78[2]);
 		func_800BA22C(temp_v0, 1);
 	}
@@ -141,7 +141,7 @@ void func_8080030C_bstnt(PlayerState* self, f32* arg1)
 void func_808004F8_bstnt(PlayerState* self, f32* arg1) {
 	f32 sp24[3];
 
-	func_800EE7F8(sp24, arg1);
+	ml_vec3f_copy(sp24, arg1);
 	func_800CA3F4(func_800A4C48(self), sp24, 80.0f);
 	func_800BBCB8(sp24, NULL, 1.0f, 1, &D_808022FC_bstnt);
 }
@@ -151,7 +151,7 @@ void func_80800554_bstnt(PlayerState* self) {
 	s32 sp28;
 	s32 temp_v0;
 
-	func_8009C128(self, &sp2C);
+	player_getCoords(self, &sp2C);
 	func_800CA3F4(func_800A4C48(self), sp2C, 20.0f);
 	temp_v0 = func_800B5BE4(8);
 	sp28 = temp_v0;
@@ -163,7 +163,7 @@ void func_80800554_bstnt(PlayerState* self) {
 void func_808005F4_bstnt(PlayerState* self) {
 	f32 sp24[3];
 
-	func_8009C128(self, sp24);
+	player_getCoords(self, sp24);
 	_bashake_entrypoint_0(self, 3, 2);
 	func_8009DB04(self, 0x413, 1.0f, 0x7FFF);
 	func_808004F8_bstnt(self, sp24);
@@ -312,7 +312,7 @@ void func_80800B60_bstnt(PlayerState* self, s32 arg1) {
 		func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_0_NONE);
 		func_8010114C(self->unk164.word, 6, 0);
 		func_80101038(sp2C);
-		func_8009C128(self, sp38);
+		player_getCoords(self, sp38);
 		func_800F1E6C(sp38, sp2C, &sp44);
 		yaw_setIdeal(self, sp44);
 		_bamovegoto_entrypoint_0(self);
@@ -325,7 +325,7 @@ void func_80800B60_bstnt(PlayerState* self, s32 arg1) {
 		func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_6_AIRBORN);
 		baphysics_set_target_horizontal_velocity(self, 0.0f);
 		func_8008F880(self->unk164.word, sp2C);
-		func_8009C128(self, sp38);
+		player_getCoords(self, sp38);
 		func_800F1E6C(sp2C, sp38, &sp44);
 		yaw_setIdeal(self, sp44);
 		return;
@@ -442,7 +442,7 @@ void func_80801080_bstnt(PlayerState* self) {
 	bstnt_entrypoint_3(self);
 	_basudie_entrypoint_9(self, 50.0f);
 	func_80800554_bstnt(self);
-	func_8009C128(self, sp2C);
+	player_getCoords(self, sp2C);
 	func_808004F8_bstnt(self, sp2C);
 	func_8080030C_bstnt(self, sp2C);
 	func_808002AC_bstnt(self, sp2C);
@@ -698,7 +698,7 @@ void func_80801980_bstnt(PlayerState* self, u32 arg1) {
 	self->unk15C.word = (s32)arg1;
 	switch (arg1) {
 	case 1:
-		func_8009DB04(self, 0x3F0, func_800DC178(0.96f, 1.04f), 0x2710);
+		func_8009DB04(self, 0x3F0, rand_fBounded(0.96f, 1.04f), 0x2710);
 		func_800A2EEC(self, 4);
 		func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
 		if (bastick_distance(self) != 0.0f) {

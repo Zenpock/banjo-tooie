@@ -199,7 +199,7 @@ s32 func_808006A4_bscrouch(PlayerState* self)
     s32 temp_v0;
 
     sp24 = _bapackctrl_entrypoint_1(self);
-    func_8009C128(self, sp34);
+    player_getCoords(self, sp34);
     temp_v0 = func_800CB7C4(sp24, sp34, sp28);
     if (temp_v0 == 2)
     {

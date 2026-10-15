@@ -320,7 +320,7 @@ s32 func_800C19E4(unkStruct800C39D0* arg0, s32 arg1) {
     s32 var_v1;
 
     func_800C1070(sp3C, arg0);
-    func_800EFB24(sp30, arg0, sp3C);
+    ml_getdiff_vec3f(sp30, arg0, sp3C);
     temp_f0 = func_800EEFD4(sp30);
     temp_f12 = arg0->unkC;
     if (temp_f0 < temp_f12) {
@@ -346,7 +346,7 @@ void func_800C1AA4(unkStruct800C39D0* arg0) {
     Vec3f sp2C;
 
     func_800E3980(sp5C);
-    func_800EFB24(sp50.f, arg0->unk0, sp5C);
+    ml_getdiff_vec3f(sp50.f, arg0->unk0, sp5C);
     if ((SQ(sp50.f[0]) + SQ(sp50.f[1]) + SQ(sp50.f[2])) < 10.0f) {
         arg0->unk14 = 64.0f;
     } else {
@@ -506,7 +506,7 @@ void func_800C2000(u8 arg0) {
             if ((temp_v0->unk5A < temp_v0->unk4C) || (temp_v0->unk4E < temp_v0->unk5A)) {
                 temp_v0->unk5A = (s32)(temp_v0->unk4C + temp_v0->unk4E) / 2;
             }
-            new_var = func_800DC264(-1.0f, 1.0f);
+            new_var = rand2_fBounded(-1.0f, 1.0f);
             temp_v0->unk5A = (s32)((f32)temp_v0->unk5A + (new_var * temp_v0->unk50));
             temp_v0_2 = temp_v0->unk5A;
             temp_v1_3 = temp_v0->unk4E;
@@ -552,7 +552,7 @@ void func_800C2000(u8 arg0) {
             func_800C13A0(temp_v0, 4);
             break;
         case 2:
-            temp_v0->unk6C += func_800DC264(-temp_v0->unk30, temp_v0->unk30) * sp3C;
+            temp_v0->unk6C += rand2_fBounded(-temp_v0->unk30, temp_v0->unk30) * sp3C;
             temp_v0->unk6C = func_800F0D50(temp_v0->unk6C, temp_v0->unk2C, temp_v0->unk28);
             func_800C13A0(temp_v0, 4);
             break;
@@ -828,7 +828,7 @@ void func_800C2C4C(u8 id) {
     temp_v0->unk1B = 0;
     temp_v0->unk1C = 0;
     temp_v0->unk1D = 0;
-    func_800EFD24((f32*)temp_v0);
+    ml_vec3f_clear((f32*)temp_v0);
     func_800C13B0(temp_v0, 2);
     func_800C13B0(temp_v0, 0x20);
     func_800C13B0(temp_v0, 0x200);
@@ -888,7 +888,7 @@ void func_800C2E40(u8 arg0) {
     temp_v0->unk1A = 0;
     temp_v0->unk1B = 0;
     temp_v0->unk14 = 64.0f;
-    func_800EFD24((f32*)temp_v0);
+    ml_vec3f_clear((f32*)temp_v0);
     func_800C13B0(temp_v0, 2);
     func_800C13B0(temp_v0, 0x20);
     func_800C3418(arg0, 2);
@@ -931,7 +931,7 @@ void func_800C30B8(u8 arg0, s32 arg1, f32* arg2, f32 arg3, f32 arg4) {
     f32 var_f2;
 
     func_800C1070(sp24, arg2);
-    temp_f0 = func_800EEAD4(arg2, sp24);
+    temp_f0 = ml_vec3f_distance(arg2, sp24);
     if (arg4 <= temp_f0) {
         var_f2 = 0.0f;
     } else if (arg3 <= temp_f0) {
@@ -977,7 +977,7 @@ void func_800C3224(u8 id, f32 arg1, f32 arg2, f32 arg3) {
     } else if (arg2 < var_f20) {
         var_f20 = var_f20 - arg3;
     } else {
-        new_var = func_800DC264(-arg3, arg3);
+        new_var = rand2_fBounded(-arg3, arg3);
         var_f20 = func_800F0D50(var_f20 + new_var, arg1, arg2);
     }
     func_800C31DC(id, var_f20);
@@ -1092,7 +1092,7 @@ void func_800C35E8(u8 id, s32 arg1) {
 
     if (id != 0) {
         sp1C = func_800C1414(id);
-        func_800EE7F8(sp1C, arg1);
+        ml_vec3f_copy(sp1C, arg1);
         func_800C368C(id, 1);
         sp1C->unk5E = func_800EA05C();
     }
@@ -1366,7 +1366,7 @@ void func_800C401C(s32 arg0, f32 arg1, s32 arg2, f32* arg3, f32 arg4, f32 arg5, 
     f32 sp20[3];
 
     func_800C1070(sp20, arg3);
-    if (!(arg5 <= func_800EEAD4(sp20, arg3))) {
+    if (!(arg5 <= ml_vec3f_distance(sp20, arg3))) {
         temp_s0 = func_800C2E04();
         if (temp_s0 != 0) {
             func_800C3418(temp_s0, arg6);
@@ -1460,7 +1460,7 @@ u8 func_800C4350(u8 arg0, f32* arg1, s16* arg2) {
         var_v0 = func_800C1414(arg0);
     }
     if (arg1 != NULL) {
-        func_800EE7F8((f32*)var_v0, arg1);
+        ml_vec3f_copy((f32*)var_v0, arg1);
         func_800C13A0(var_v0, 2);
         var_v0->unk1B = 1;
         var_v0->unk5E = func_800EA05C();
@@ -1564,7 +1564,7 @@ u8 func_800C4350(u8 arg0, f32* arg1, s16* arg2) {
         case 13:
             var_fa0 = *arg2++ * (1.0f / 256.0f);
             var_fa1 = *arg2++ * (1.0f / 256.0f);
-            var_v0->unk6C = func_800DC264(var_fa0, var_fa1);
+            var_v0->unk6C = rand2_fBounded(var_fa0, var_fa1);
             func_800C13A0(var_v0, 4);
             break;
         case 29:
@@ -1639,7 +1639,7 @@ u8 func_800C4350(u8 arg0, f32* arg1, s16* arg2) {
             func_800C3058(arg0, 0x7FFF);
             break;
         case 25:
-            func_800C3058(arg0, func_800DC214(arg2[0], arg2[1]));
+            func_800C3058(arg0, rand2_iBounded(arg2[0], arg2[1]));
             arg2 += 2;
             break;
         case 30:

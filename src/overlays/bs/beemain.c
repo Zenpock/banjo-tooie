@@ -393,7 +393,7 @@ void func_80800C28_bsbeemain(PlayerState* self)
     anctrl_setPlaybackType(anim_ctrl, 1);
     anctrl_start(anim_ctrl);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 2, BA_PHYSICS_3_LOCKED_ROTATION);
-    func_8009C128(self, sp3C);
+    player_getCoords(self, sp3C);
     func_800A32C4(self, sp30);
     func_800F1E6C(sp30, sp3C, &sp48);
     yaw_setIdeal(self, func_800136E4(sp48 + 180.0f));
@@ -444,7 +444,7 @@ void func_80800E0C_bsbeemain(PlayerState* self) {
     }
     if (_batimer_decrement(self, 0)) {
         if (self->unk160.word) {
-            func_80101180(0x2C4, 0x71, self->unk184);
+            event_sendToActorsOfType(0x2C4, 0x71, self->unk184);
         } else {
             _basudie_entrypoint_0(self);
         }

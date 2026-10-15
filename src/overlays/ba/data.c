@@ -2,7 +2,7 @@
 
 s32 func_80800000_badata(PlayerState *self) {
     s32 sp1C  = bs_getCurrentState(self);
-    switch(func_800A3274(self)) {
+    switch(player_getTransformation(self)) {
         case TRANSFORM_2_SNOWBALL:
             return 2;
 
@@ -128,7 +128,7 @@ s32 func_80800388_badata(PlayerState *self) {
     f32 sp18;
 
     sp1C = func_8009EA4C();
-    switch (func_800A3274(self)) {
+    switch (player_getTransformation(self)) {
         case TRANSFORM_2_SNOWBALL:
             return 2;
         
@@ -150,7 +150,7 @@ s32 func_80800388_badata(PlayerState *self) {
                     return 0x21;
                 }
 
-                sp18 = func_8009C150(self);
+                sp18 = player_getCoordVertical(self);
                 if(func_800964DC(self) - 80.0f < sp18) {
                     return 0x4;
                 }
@@ -225,7 +225,7 @@ s32 func_80800388_badata(PlayerState *self) {
         case TRANSFORM_1_BK:
         default:
             if (player_inWater(self)) {
-                sp18 = func_8009C150(self);
+                sp18 = player_getCoordVertical(self);
                 if (func_800964DC(self) - 95.0f < sp18) {
                     return 4;
                 }
@@ -375,7 +375,7 @@ void badata_entrypoint_19(PlayerState *self, s32 index, s32 *arg2, f32 *arg3, s3
 }
 
 s32 badata_entrypoint_20(PlayerState *self) {
-    if (0.5f < func_800DC0C0()) {
+    if (0.5f < rand_f()) {
         return D_80801568_badata[func_80800000_badata(self)].unk2;
     } else {
         return D_80801568_badata[func_80800000_badata(self)].unk4;

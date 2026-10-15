@@ -62,11 +62,11 @@ void func_80800000_cheggnormal(Actor* arg0)
     while (temp_s3->unk28 <= 0.0f)
     {
         temp_s3->unk28 += temp_f24;
-        func_800EE7F8(sp74, arg0->position);
+        ml_vec3f_copy(sp74, arg0->position);
         if (temp_s3->unk39_4)
         {
             func_800EFA20(sp68, &arg0->actorData[4], 0.125f);
-            if (func_800DC0C0() < 0.5f)
+            if (rand_f() < 0.5f)
             {
                 _fxegg_entrypoint_7(sp74, sp68, arg0->scale);
             }
@@ -75,7 +75,7 @@ void func_80800000_cheggnormal(Actor* arg0)
                 _fxegg_entrypoint_8(sp74, sp68, arg0->scale);
             }
         }
-        else if (func_800DC0C0() < 0.5f)
+        else if (rand_f() < 0.5f)
         {
             _fxegg_entrypoint_2(sp74, arg0->scale);
         }
@@ -97,7 +97,7 @@ void func_80800194_cheggnormal(Actor* arg0)
     case 1:
         if (_suegg_entrypoint_8(arg0) == 0)
         {
-            if (func_800EEEA8(&arg0->actorData[4]) != 0)
+            if (ml_vec3f_is_zero(&arg0->actorData[4]) != 0)
             {
                 sp2C->unk39_7 = 1;
             }

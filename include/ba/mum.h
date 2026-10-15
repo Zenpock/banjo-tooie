@@ -4,6 +4,9 @@
 #include <ultra64.h>
 #include "ba/playerstate.h"
 
+void _bamum_entrypoint_1(PlayerState*);
+void _bamum_entrypoint_2(PlayerState*);
+void _bamum_entrypoint_3(PlayerState*);
 extern s32 _bamum_entrypoint_4(PlayerState *self, s32 idx);
 extern void _bamum_entrypoint_5(PlayerState *self, f32);
 

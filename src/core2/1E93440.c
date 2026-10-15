@@ -156,7 +156,7 @@ void func_800BAA60(unkStruct800BA198* arg0, f32* arg1, s16 arg2, s16 arg3)
     arg0->unk4 = 2;
     arg0->unkC4 = arg2;
     arg0->unkC6 = arg3;
-    func_800EE940(&arg0->unkC8, arg1);
+    ml_vec3f_to_vec3s(&arg0->unkC8, arg1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E93440/func_800BAA9C.s")

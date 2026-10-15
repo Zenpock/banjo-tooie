@@ -12,10 +12,12 @@
 #include "core2/1EBB4F0.h"
 #include "core2/1ECA640.h"
 
-
+void _baeggcursor_entrypoint_1(PlayerState*);
 void _baeggcursor_entrypoint_3(PlayerState*, f32*, f32*);
-
+void _baeggcursor_entrypoint_4(PlayerState*);
+void _baeggcursor_entrypoint_5(PlayerState*);
 void _baeggcursor_entrypoint_8(PlayerState*);
 void _baeggcursor_entrypoint_10(PlayerState*, f32, f32);
+void _baeggcursor_entrypoint_11(PlayerState*);
 
 #endif // __BA_EGG_CURSOR__

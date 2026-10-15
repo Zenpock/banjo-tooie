@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/mole_training.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mole/_training/func_80800000_chmole_training.s")
 

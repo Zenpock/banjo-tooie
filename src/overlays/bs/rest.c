@@ -54,7 +54,7 @@ void bsrest_entrypoint_0(PlayerState *self) {
     f32 sp24[3];
 
     if (func_8009CC68(self) != 0) {
-        func_8009C128(self, sp30);
+        player_getCoords(self, sp30);
         if (func_8009CC18(self, sp24) == 0) {
             func_801160DC(func_800A4CA8(self), 0);
             return;

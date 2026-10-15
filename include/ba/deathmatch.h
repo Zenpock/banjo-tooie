@@ -18,9 +18,9 @@
 #include "memory.h"
 
 void _badeathmatch_entrypoint_0(PlayerState*);
-// badeathmatch_entrypoint_1
-// badeathmatch_entrypoint_2
-// badeathmatch_entrypoint_3
+void _badeathmatch_entrypoint_1(PlayerState*);
+void _badeathmatch_entrypoint_2(PlayerState*); 
+void _badeathmatch_entrypoint_3(PlayerState*);
 // badeathmatch_entrypoint_4
 // badeathmatch_entrypoint_5
 s32 _badeathmatch_entrypoint_6(PlayerState*);

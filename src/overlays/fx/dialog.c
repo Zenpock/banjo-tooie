@@ -46,7 +46,7 @@ void fxdialog_entrypoint_3(u32 arg0, f32 arg1, s32 arg2, s32 arg3)
     temp_v0 = func_801040D0();
     sp40[1] = -24.0f;
     sp40[0] = 0.0f;
-    func_800EFA4C(sp34, (arg1 * 0.041666668f * B_80800290_fxdialog.unk14) - 2.0f, 0.0f, 0.0f);
+    ml_vec3f_assign_value(sp34, (arg1 * 0.041666668f * B_80800290_fxdialog.unk14) - 2.0f, 0.0f, 0.0f);
     func_800DFFA0(temp_v0, 0x2A, sp34);
     func_800DF41C(temp_v0);
     func_800DF410(arg3);

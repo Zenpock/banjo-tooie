@@ -137,7 +137,7 @@ void bsjump_entrypoint_1(PlayerState* self)
 	{
 		self->unk164.word = 0;
 	}
-	switch (func_800A3274(self))
+	switch (player_getTransformation(self))
 	{
 	case TRANSFORM_1_BK:
 		//If A is pressed and we can feathery flap
@@ -148,7 +148,7 @@ void bsjump_entrypoint_1(PlayerState* self)
 		//If B is pressed and we can rat a tat rap
 		if (bainput_func_80097F08(self) != 0)
 		{
-			playerHeight = func_8009C150(self);
+			playerHeight = player_getCoordVertical(self);
 			waterHeight = func_800964DC(self);
 			//self->unk160.word seems to make it so you can't ratatat rap twice in one jump
 			//self->unk160.word is 1 when you are jumping out of water
@@ -271,7 +271,7 @@ void bsjump_entrypoint_5(PlayerState* self)
 		{
 			nextState = BS_STATE_3D_FALL_TUMBLING;
 		}
-		switch (func_800A3274(self))
+		switch (player_getTransformation(self))
 		{
 		case TRANSFORM_1_BK:
 			if ((bainput_func_80097DF4(self) != 0) && (baflag_isFalse(self, BA_FLAG_5_HAS_PECKED) != 0))
@@ -527,7 +527,7 @@ void bsjump_entrypoint_18(PlayerState* self)
 	}
 	if (_batimer_isNonzero(self, 0) != 0)
 	{
-		switch (func_800A3274(self))
+		switch (player_getTransformation(self))
 		{
 		case TRANSFORM_1_BK:
 			if (bainput_func_80097DF4(self) != 0)
