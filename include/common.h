@@ -206,7 +206,7 @@ typedef struct Actor {
 typedef struct ActorData {
     s16 unk0;
     s16 unk2; //PropId
-    s16 Model;
+    u16 Model;
     s16 unk6;
     void *unk8;
     void (*update_func)(Actor* actor); //Update

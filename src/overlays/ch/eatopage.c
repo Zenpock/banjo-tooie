@@ -103,22 +103,7 @@ void func_80800194_chcheatopage(Actor* actor, unkCUnk0* arg1)
         inventory_incrementValue(0x4A);
         func_800D0BD4(*(s32*)&actor->unk50, 4U);
         func_800FC660(0x72);
-        //If we have collected 5 cheato pages try and play the cheato cutscene
-        if (func_800D035C(4) == 5)
-        {
-            _subaddiedialog_entrypoint_11(actor->unk0, 0x114AU, 4U, NULL, 0U);
-        }
-        if ((func_808002F0_chcheatopage(actor) == 0) && (func_800DA9E4(FLAG_067_FTT_ITEM_CHEATO_PAGE, 1) == 0))
-        {
-            func_800F82D4(character_getActiveIndex(), 2);
-            func_8010A570(actor);
-            func_80101FDC(actor, 2U);
-            actor->unk58 = 0.75f;
-            func_80103110(actor, 1U);
-            actor->unk64_16 = 0;
-            actor->unk74_20 = 0;
-            return;
-        }
+        //Randomizer Change Removed FTT
         actor_mark_delete(actor);
     }
 }

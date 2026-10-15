@@ -34,7 +34,7 @@ void func_80801118_chglowbo(Actor*, s32);
 s32 func_8080115C_chglowbo(Actor*, s32, u32);
 ActorData D_808014C0_chglowbo = {
         /*0x0*/ 0x39,
-        /*0x2*/ 0x21B,
+        /*0x2*/ PROP_21B_GLOWBO_REAL,
         /*0x4*/ 0x766,
         /*0x6*/ 0x2,
         /*0x8*/ D_808013C8_chglowbo,

@@ -42,10 +42,12 @@ Actor* func_80107C2C(s32* arg0, s32 arg1, ActorData* arg2, s32 arg3, Prop* arg4)
         temp_v0->unk0 = func_800EBED4(arg0, func_800D738C(arg2->Model) == 7 ? 0 : 1, arg2->unk0, arg2->unk24w & 0x400 ? 1 : 0);
     }
     temp_v0->unk0->unk18_16 = 1;
-    if (arg2->unk2C_func != NULL) {
+    if (arg2->unk2C_func != NULL)
+    {
         temp_v0->unk0->unk8 = (CallbackTable * (*)()) arg2->unk2C_func;
     }
-    else {
+    else 
+    {
         temp_v0->unk0->unk8 = func_80107C20;
     }
     func_800EC340(temp_v0->unk0, sp38);
