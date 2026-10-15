@@ -4,9 +4,7 @@
 void init_crc_check();
 void ovl_entrypoint();
 void func_800A1364();
-void func_800965D4();
 void func_8001C1C0();
-void func_800CFA90();
 void inventory_setup();
 void set_crc_entry(s32);
 

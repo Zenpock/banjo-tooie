@@ -113,6 +113,7 @@ typedef struct {
     u8 unk14;
 } unkStruct8012AB40;
 
+s32 func_800C84B0(s32);
 void func_800C8900(s32, s32*);
 s32 func_800C8A98(void);
 void func_800C8B84(s32);

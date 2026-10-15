@@ -3,5 +3,6 @@
 #include "common.h"
 
 s32 func_800C6A7C(f32*, f32*, f32*, s32);
+s32 func_800C6C94(f32*, f32, f32*, s32);
 
 #endif
