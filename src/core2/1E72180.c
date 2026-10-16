@@ -278,14 +278,6 @@ void func_80098E64(PlayerState* self)
             break;
         }
     }
-    if (func_8009E71C(self, 5) != 0)
-    {
-        var_a1 = 1;
-    }
-    else
-    {
-        var_a1 = 0;
-    }
     var_a1 = func_8009E71C(self, 5) ? 1 : 0;
     var_a1 &= func_800EA068(8) ? 1 : 0;
     func_8009EB18(var_a1);

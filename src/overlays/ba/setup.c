@@ -90,7 +90,7 @@ void basetup_entrypoint_1(s32 arg0, s32 arg1)
     switch (temp_v0_2)
     {
         case 1:
-            if ((sp24 != 0) && (ability_getValue(ABILITY_15_BREEGULL_BLASTER) != 0))
+            if ((sp24 != 0) && (ability_getValue(ABILITY_15_BREEGULL_BLASTER)|| ability_getValue(ABILITY_1A_BEAK_BAYONET)))
             {
                 nextState = BS_STATE_C8_FP_ENTER_SLOW;
             }
@@ -275,7 +275,7 @@ TransformationId func_80800778_basetup(s32 arg0)
             func_8009EB18(0);
         }
     }
-    else if ((func_800EA068(8) != 0) && (ability_getValue(ABILITY_15_BREEGULL_BLASTER) != 0))
+    else if ((func_800EA068(8) != 0) && (ability_getValue(ABILITY_15_BREEGULL_BLASTER)|| ability_getValue(ABILITY_1A_BEAK_BAYONET)))
     {
         temp_v0 = TRANSFORM_9_FIRSTPERSON;
     }
@@ -363,7 +363,7 @@ void basetup_entrypoint_2(PlayerState* self)
         *self->unk100 = -1;
         if (func_8009EA4C() == 2)
         {
-            if ((func_800EA068(8) != 0) && (ability_getValue(ABILITY_15_BREEGULL_BLASTER) != 0))
+            if ((func_800EA068(8) != 0) && (ability_getValue(ABILITY_15_BREEGULL_BLASTER)|| ability_getValue(ABILITY_1A_BEAK_BAYONET)))
             {
                 func_8009EAD0(1);
             }

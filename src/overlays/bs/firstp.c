@@ -445,7 +445,7 @@ s32 func_80802C90_bsfirstp(PlayerState* self)
     if (self->deathmatch == 0)
     {
         //Randomizer Change added gcegg to check if we have the egg type we are trying to fire
-        return func_80094BC0(self) && _gcegg_entrypoint_6(func_80094510(self));
+        return func_80094BC0(self) && _gcegg_entrypoint_6(func_80094510(self)) && ability_getValue(ABILITY_15_BREEGULL_BLASTER);
     }
     return _badeathmatch_entrypoint_9(self, _badeathmatch_entrypoint_6(self));
 }
