@@ -14,5 +14,6 @@ s32 _gccubesearch_entrypoint_3(s32, f32[3]);
 s16* _gccubesearch_entrypoint_6(s32*, s32);
 //Find all props of type
 s32 _gccubesearch_entrypoint_9(PropId, Prop**, s32);
+s32 _gccubesearch_entrypoint_14(s32, s32);
 
 #endif

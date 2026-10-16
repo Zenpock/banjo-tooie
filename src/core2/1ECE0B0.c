@@ -105,7 +105,7 @@ void func_800F4A58(s32 arg0, s32 arg1, f32 arg2) {
     _badrone_entrypoint_14(D_80135490.unk0[arg0], arg1, arg2);
 }
 
-void func_800F4A8C(s32 arg0, s32 arg1, f32 arg2) {
+void func_800F4A8C(s32 arg0, f32* arg1, f32 arg2) {
     _badrone_entrypoint_15(D_80135490.unk0[arg0], arg1, arg2);
 }
 
@@ -1859,7 +1859,7 @@ void func_800F8874(s32 arg0)
     func_8009224C(D_80135490.unk0[arg0]);
 }
 
-unkStruct800F88A0* func_800F88A0(s32 arg0) {
+unkStruct800F88A0* func_800F88A0(TransformationId arg0) {
     unkStruct800F88A0* sp1C;
     unkStruct800F88A0* temp_v0;
 
@@ -1901,13 +1901,16 @@ s32 func_800F89BC(void) {
     return 1;
 }
 
-s32 func_800F89E4(s32 arg0, f32* arg1) {
+s32 func_800F89E4(TransformationId arg0, f32* arg1) {
     s32 sp1C;
 
-    if (arg0 == 0xA) {
+    if (arg0 == TRANSFORM_A_BANJO) 
+    {
         ml_vec3f_copy(arg1, &D_80135500);
         sp1C = D_8013551C;
-    } else if (arg0 == 0xB) {
+    } 
+    else if (arg0 == TRANSFORM_B_KAZOOIE) 
+    {
         ml_vec3f_copy(arg1, &D_80135510);
         sp1C = D_8013551C;
     }
@@ -1969,7 +1972,7 @@ u8 func_800F8B70(void) {
     return D_801354F8.unk4;
 }
 
-u8 func_800F8B7C(void) {
+s32 func_800F8B7C(void) {
     return D_801354F8.unk5;
 }
 
@@ -1979,7 +1982,7 @@ u8 func_800F8B88(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F8B94.s")
 
-void func_800F8D50(s32 arg0, s32 arg1) {
+void func_800F8D50(s32 arg0, TransformationId arg1) {
     func_800F8D80(arg0, func_800F88A0(arg1));
 }
 
@@ -1987,7 +1990,7 @@ void func_800F8D80(s32 arg0, unkStruct800F88A0* arg1) {
     _plcamera_entrypoint_12(arg0, arg1->unk4, arg1->unk10);
 }
 
-s32 func_800F8DA8(s32 arg0) {
+s32 func_800F8DA8(TransformationId arg0) {
     s32 var_v1;
 
     if (func_800F88A0(arg0) != 0) {

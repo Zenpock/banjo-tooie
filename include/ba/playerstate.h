@@ -435,7 +435,9 @@ typedef struct player_state_s {
 	u8 padEC[0x8];
     /* 0xF4 */ struct ba_roll_s *roll;
     /* 0xF8 */ struct ba_yaw_s *yaw;
-    u8 padFC[0x24];
+    u8 padFC[0x4];
+    /* 0x100 */ s32* unk100;
+    u8 pad104[0x1C];
     /* 0x120 */ struct bs_state_s *state;
     u8 pad124[4];
     /* 0x128 */ struct ba_stick_s *stick;

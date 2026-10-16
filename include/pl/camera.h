@@ -4,6 +4,7 @@
 #include "common.h"
 
 void _plcamera_entrypoint_12(s32, f32*, f32*);
+void _plcamera_entrypoint_13(s32, f32);
 s32 _plcamera_entrypoint_14(s32, f32*, f32*);
 
 #endif
