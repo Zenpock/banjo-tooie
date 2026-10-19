@@ -1,11 +1,15 @@
-#include "common.h"
+#include "ch/jiggy/gamenew.h"
 
 extern ActorData D_80803D44_chjiggygamenew;
 ActorData* chjiggygamenew_entrypoint_0()
 {
     return &D_80803D44_chjiggygamenew;
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_8080000C_chjiggygamenew.s")
+
+u32 func_8080000C_chjiggygamenew(Unk80132ED0* arg0)
+{
+    return func_80106790(arg0)->actorData[2];
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80800030_chjiggygamenew.s")
 
@@ -21,7 +25,11 @@ ActorData* chjiggygamenew_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_808006E0_chjiggygamenew.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_808007BC_chjiggygamenew.s")
+s32 func_808007BC_chjiggygamenew(Unk80132ED0* arg0) 
+{
+    return func_80106790(arg0)->actorData[4] == 5;
+}
+
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_808007E4_chjiggygamenew.s")
 
@@ -77,15 +85,22 @@ ActorData* chjiggygamenew_entrypoint_3()
 void func_80803564_chjiggygamenew(s32 arg0) 
 {
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_8080356C_chjiggygamenew.s")
+void func_8080356C_chjiggygamenew(Unk80132ED0* arg0) {
+    func_80102424(func_80106790(arg0), 8);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80803598_chjiggygamenew.s")
+void func_80803598_chjiggygamenew(Unk80132ED0* arg0) {
+    func_80102424(func_80106790(arg0), 7);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_808035C4_chjiggygamenew.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_808035FC_chjiggygamenew.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_8080363C_chjiggygamenew.s")
+s32 func_8080363C_chjiggygamenew(Unk80132ED0* arg0)
+{
+    return (func_80106790(arg0)->unk70_10) == 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80803668_chjiggygamenew.s")
 

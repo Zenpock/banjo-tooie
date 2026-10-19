@@ -1,10 +1,20 @@
 #include "gc/game.h"
 
 typedef struct {
+    u8 inventoryId;
+    u8 amountToGive;
+} InventoryToGive;
+
+InventoryToGive inventoryToGive[] = { {0x49,0},{0x48,0},{0x4A,0},{0x4E,0},{0x4D,0},{0x40,100},{0x41,100},{0x42,100},{0x43,100},{0x44,100},{0x46,100},{0x47,100}};
+
+typedef struct {
     u16 isActive;
     u16 flag;
 } FlagHolder;
 FlagHolder flags[] = { {0,0} };
+
+extern s8 D_8012B3F1;
+
 void gcgame_func_Custom();
 void gcgame_entrypoint_0(s32 arg0) 
 {
@@ -63,5 +73,18 @@ void gcgame_func_Custom(void)
             flag_setValueFalse(flags[i].flag);
         }
         i++;
+    }
+    i= 0;
+    while (0 == 0)
+    {
+        if (i == ARRLEN(inventoryToGive))
+        {
+            break;
+        }
+        {
+            int inventoryIndex = inventory_getIndex(inventoryToGive[i].inventoryId);
+            inventory_setValue(inventoryIndex, inventoryToGive[i].amountToGive);
+            i++;
+        }
     }
 }

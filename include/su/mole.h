@@ -65,10 +65,12 @@ typedef struct {
 	u8 unkF;//F
 } MoveData;
 void _sumole_entrypoint_0(Actor*, u32);
+s32 _sumole_entrypoint_1(Actor*, s32, s32, s32);
 void sumole_entrypoint_2(Actor*, s32);
 void _sumole_entrypoint_3(Actor*, s32, s32, MoveData*);
 void _sumole_entrypoint_4(Actor*, MoveData*);
 s32 sumole_entrypoint_5(Actor*, AllowedTransformation, s32, s32); 
+s32 _sumole_entrypoint_6(Actor*, s32, f32);
 void sumole_entrypoint_7(Actor*);
 s32 sumole_entrypoint_8(Actor*, s32);
 s32 sumole_entrypoint_10(Actor*, s32);
@@ -77,7 +79,9 @@ s32 sumole_entrypoint_12(Actor*);
 s32 sumole_entrypoint_14(Actor*);
 s32 sumole_entrypoint_15(Actor*, s32, s32);
 void sumole_entrypoint_16(Actor*, s32);
+s32 _sumole_entrypoint_17(Actor*, s16, s32, s32);
 void sumole_entrypoint_18(Actor*, f32);
+void _sumole_entrypoint_19(Actor*, s32);
 void sumole_entrypoint_19(Actor*, s32);
 s32 sumole_entrypoint_20(Actor*, s32, s32);
 #endif

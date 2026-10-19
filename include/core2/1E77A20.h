@@ -5,6 +5,8 @@
 
 #include <ultra64.h>
 
+#include "core2/1E76360.h"
+
 #include "ba/playerstate.h"
 #include "bs/state.h"
 

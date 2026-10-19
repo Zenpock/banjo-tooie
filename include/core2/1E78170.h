@@ -3,6 +3,7 @@
 
 #include "common.h"
 #include "gameflags.h"
+#include "transformations.h"
 #include "core2/1EA0690.h"
 #include "core2/1EAD060.h"
 #include "core2/1EB3750.h"

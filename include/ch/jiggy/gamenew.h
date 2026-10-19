@@ -1,0 +1,36 @@
+#ifndef __CH_JIGGY_GAMENEW_H__
+#define __CH_JIGGY_GAMENEW_H__
+
+#include "common.h"
+#include "core1/1E2B200.h"
+#include "core2/1E91790.h"
+#include "core2/1E99980.h"
+#include "core2/1EA1DA0.h"
+#include "core2/1EA78C0.h"
+#include "core2/1EAF950.h"
+#include "core2/1EB2840.h"
+#include "core2/1EB3750.h"
+#include "core2/1EB5980.h"
+#include "core2/1EB5E70.h"
+#include "core2/1EBA250.h"
+#include "core2/1EC0300.h"
+#include "core2/1EC8070.h"
+#include "core2/1EC9740.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECB9F0.h"
+#include "core2/1ED4E30.h"
+#include "core2/1ED8C80.h"
+#include "core2/1EDAEA0.h"
+#include "core2/1EDB4D0.h"
+#include "core2/1EDC7B0.h"
+#include "core2/1EDFED0.h"
+#include "core2/1EE1510.h"
+#include "fx/kern.h"
+#include "gl/dbstring.h"
+#include "su/baddieaudioquick.h"
+#include "su/baddiedialog.h"
+#include "su/baddiefade.h"
+#include "su/jiggy.h"
+
+
+#endif

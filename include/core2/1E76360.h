@@ -5,8 +5,10 @@
 
 #include "common.h"
 #include "ba/playerstate.h"
+#include "bs/state.h"
 
 s32 func_8009CA70(PlayerState *, s32, s32);
+void (*func_8009CB90(PlayerState*, BanjoStateId))(PlayerState*);
 s32 func_8009CBDC(PlayerState*, s32);
 void func_8009CBFC(PlayerState*);
 

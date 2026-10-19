@@ -143,6 +143,7 @@ void func_800C9AB0();
 void func_800C9B30();
 void func_800C9BB4(f32, s32, f32, s32);
 void func_800C9C70(f32, u32, f32, u32, f32*, f32, f32);
+void func_800C9CD0(f32, Unk80132ED0*, s32, s32, s32, s32);
 void func_800C9DAC(f32, u32*);
 void func_800C9DE4(f32, u32*, s32);
 //Set a timer to execute the callback

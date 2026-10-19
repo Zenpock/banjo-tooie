@@ -86,4 +86,13 @@ BanjoStateId bs_getPreviousState(PlayerState *self) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E830.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E83C.s")
+void func_8009E83C(PlayerState* arg0)
+{
+    void (*temp_v0)(PlayerState*);
+
+    temp_v0 = func_8009CB90(arg0, arg0->state->current);
+    if (temp_v0 != NULL)
+    {
+        temp_v0(arg0);
+    }
+}
