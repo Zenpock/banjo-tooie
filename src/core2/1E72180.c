@@ -278,23 +278,9 @@ void func_80098E64(PlayerState* self)
             break;
         }
     }
-    if (func_8009E71C(self, 5) != 0)
-    {
-        var_a1 = 1;
-    }
-    else
-    {
-        var_a1 = 0;
-    }
-    if (func_800EA068(8) != 0)
-    {
-        var_v0 = 1;
-    }
-    else
-    {
-        var_v0 = 0;
-    }
-    func_8009EB18(var_a1 & var_v0, var_a1);
+    var_a1 = func_8009E71C(self, 5)?1:0;
+    var_a1 &= func_800EA068(8)?1:0;
+    func_8009EB18(var_a1);
     bs_setState(self, 0x5A);
     _baattach_entrypoint_3(self);
     func_8008E6BC(self);

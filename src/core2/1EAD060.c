@@ -242,6 +242,6 @@ s32 func_800D3D58(void) {
     }
 }
 
-void func_800D3DA4(void) {
-    character_getControllerIndex();
+s32 func_800D3DA4(void) {
+    return character_getControllerIndex();
 }

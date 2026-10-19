@@ -65,7 +65,7 @@ void func_8009EAE8(s32);
 void func_8009EAF4(s32);
 void func_8009EB00(f32);
 void func_8009EB0C(f32);
-void func_8009EB18();
+void func_8009EB18(s32);
 void func_8009EB24(s16, s16);
 void func_8009EB8C(s16, s16);
 void func_8009EBD0(void);
