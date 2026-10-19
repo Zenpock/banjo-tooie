@@ -41,7 +41,7 @@ BanjoStateId bskaz_entrypoint_3(PlayerState *self) {
 
 
 BanjoStateId bskaz_entrypoint_4(PlayerState *self) {
-    if (func_8009EA2C() != 0) {
+    if (bs_getDragonKazooieState() != 0) {
         return BS_STATE_18B;
     }
 

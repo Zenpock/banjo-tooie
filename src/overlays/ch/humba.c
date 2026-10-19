@@ -509,9 +509,9 @@ void func_80800E44_chhumba(Actor* arg0, u32 arg1)
     case 9:
         arg0->unk58 = 4.0f;
         func_800FC6B0(0xC);
-        if ((arg0->unk74_29) && (func_8009EA2C() == 0))
+        if ((arg0->unk74_29) && (bs_getDragonKazooieState() == 0))
         {
-            func_8009EAAC(1);
+            bs_setDragonKazooieState(1);
             func_800907EC(func_8008FD48());
             return;
         }
@@ -546,9 +546,9 @@ void func_80800E44_chhumba(Actor* arg0, u32 arg1)
     case 14:
         arg0->unk58 = 4.0f;
         func_800FC6B0(0xC);
-        if ((arg0->unk74_29) && (func_8009EA2C() != 0))
+        if ((arg0->unk74_29) && (bs_getDragonKazooieState() != 0))
         {
-            func_8009EAAC(0);
+            bs_setDragonKazooieState(0);
             func_800907EC(func_8008FD48());
             return;
         }
@@ -599,12 +599,12 @@ void func_8080138C_chhumba(Actor* arg0)
     if (0) {}
     if (func_80800A50_chhumba(arg0) != 0 && (func_80090270() == 0)) {
         currentTransformation = func_8008FD48();
-        if ((currentTransformation == TRANSFORM_1_BK) && ((func_8009EA2C() == 0) || !(arg0->unk74_29)))
+        if ((currentTransformation == TRANSFORM_1_BK) && ((bs_getDragonKazooieState() == 0) || !(arg0->unk74_29)))
         {
             func_80800E44_chhumba(arg0, 8);
             return;
         }
-        if ((func_80800384_chhumba(arg0) == currentTransformation) || ((func_8009EA2C() != 0) && (arg0->unk74_29)))
+        if ((func_80800384_chhumba(arg0) == currentTransformation) || ((bs_getDragonKazooieState() != 0) && (arg0->unk74_29)))
         {
             func_80800E44_chhumba(arg0, 0xD);
         }
@@ -968,7 +968,7 @@ void func_80801F74_chhumba(Actor* arg0)
             return;
         }
         if (func_80800878_chhumba(arg0) != 0) {
-            if ((func_8008FD48() == TRANSFORM_1_BK) && ((func_8009EA2C() == 0) || !(arg0->unk74_29)))
+            if ((func_8008FD48() == TRANSFORM_1_BK) && ((bs_getDragonKazooieState() == 0) || !(arg0->unk74_29)))
             {
                 func_80800E44_chhumba(arg0, 7);
                 return;

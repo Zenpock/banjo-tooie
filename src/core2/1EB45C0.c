@@ -106,7 +106,7 @@ s32 func_800DB83C(u8* arg0, s32 arg1) {
 }
 
 // strcat
-void func_800E6A10(char*, const char*);
+void string_concat(char*, const char*);
 // int to string
 void func_800E6DB4(char*, s32);
 
@@ -117,19 +117,19 @@ void func_800DB8BC(char* arg0, s32 time) {
     s32 seconds = time % 60;
 
     func_800E6DB4(arg0, hours);
-    func_800E6A10(arg0, ":");
+    string_concat(arg0, ":");
 
     if (minutes < 10) {
-        func_800E6A10(arg0, "0");
+        string_concat(arg0, "0");
     }
     func_800E6DB4(arg0, minutes);
-    func_800E6A10(arg0, ":");
+    string_concat(arg0, ":");
     
     if (seconds < 10) {
-        func_800E6A10(arg0, "0");
+        string_concat(arg0, "0");
     }
     func_800E6DB4(arg0, seconds);
-    func_800E6A10(arg0, "");
+    string_concat(arg0, "");
 }
 
 //Is in a cutscene

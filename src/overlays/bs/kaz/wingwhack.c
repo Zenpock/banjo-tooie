@@ -14,7 +14,7 @@ void func_80800000_bskazwingwhack(PlayerState *self, f32 arg1[3], f32 arg2, f32 
     temp_s0 = func_800B5BE4(0xA);
     player_getCoords(self, sp30);
     func_800BA77C(temp_s0, 0, func_800136E4(func_800F1DF4(sp30, arg1) + arg2), arg3);
-    if (func_8009EA2C() != 0) {
+    if (bs_getDragonKazooieState() != 0) {
         func_800BA670(temp_s0, 0x619);
     } else {
         func_800BA670(temp_s0, 0x618);

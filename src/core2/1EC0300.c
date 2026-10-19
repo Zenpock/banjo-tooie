@@ -1,26 +1,38 @@
 #include "core2/1EC0300.h"
 
+extern char* D_80125DC0;
+
 //strcat
-void func_800E6A10(char* dst, char* src) {
+void string_concat(char* dst, char* src) {
     while (*(dst) != '\0') {
         dst++;
     }
     while (*(src) != '\0') {
         *(dst++) = *(src++);
     }
-    *(dst) = 0;
+    *(dst) = '\0';
 }
 
 //strcatc
-void func_800E6A58(char* dst, char src) {
-    while (*(dst) != '\0') {
+void string_concatChar(char* dst, char src) 
+{
+    while (*(dst) != '\0') 
+	{
         dst++;
     }
     *(dst++) = src;
-    *(dst) = 0;
+    *(dst) = '\0';
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E6A90.s")
+void func_800E6A90(char* arg0, char* arg1)
+{
+
+	while (*arg1 != '\0')
+	{
+		func_800E6AFC(arg0, *(arg1++));
+		string_concat(arg0, &D_80125DC0);
+	}
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E6AFC.s")
 
@@ -41,7 +53,7 @@ void func_800E6A58(char* dst, char src) {
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E705C.s")
 
 //string compare
-s32 func_800E70DC(const char* str1, const char* str2) {
+s32 string_compare(const char* str1, const char* str2) {
     while (*str1 && *str2 && *str1 == *str2) {
         str1++;
         str2++;
@@ -56,15 +68,16 @@ s32 func_800E70DC(const char* str1, const char* str2) {
 }
 
 //string copy
-void func_800E715C(char* dst, char* src) {
-    while (*(src) != '\0') {
+void string_copy(char* dst, char* src) {
+    while (*(src) != '\0') 
+	{
         *(dst++) = *(src++);
     }
     *(dst) = 0;
 }
 
 //string length
-s32 func_800E7188(char* str) {
+s32 string_length(char* str) {
     char v0;
     s32 len;
 
@@ -80,8 +93,11 @@ s32 func_800E7188(char* str) {
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E71B8.s")
 
 //strcmptok
-s32 func_800E71EC(char *str1, char* str2, char* str3){
-    while (*str2 == *str3) {
+s32 func_800E71EC(char *str1, char* str2, char* str3)
+{
+
+    while (*str2 == *str3) 
+	{
         str2++;
         str3++;
         if ((*str2 == '\0' || *str2 == *str1) && (*str3 == '\0' || *str3 == *str1)){
@@ -105,32 +121,71 @@ char* func_800E7254(char* str, const char* delim)
 
 
 //strcpyToTok
-void func_800E729C(char* arg0, char* arg1, char* arg2) {
-    while ((*arg2 != '\0') && (*arg2 != *arg0)) {
-        *arg1 = *arg2;
-        arg2++;
-        arg1++;
+void string_copyToToken(char* delim, char* target, char* str) 
+{
+	//Copy str into target until we reach end terminator or the delimiter
+    while ((*str != '\0') && (*str != *delim))
+	{
+        *target = *str;
+		str++;
+		target++;
     }
-    *arg1 = '\0';
+    *target = '\0';
 }
 
 //strtoupper
-void func_800E72E0(char* str) {
+void string_toUpper(char* str) {
     char* ret = str;
-    while (*ret != '\0') {
-        if ((*ret >= 0x61) && (*ret < 0x7B)) {
+    while (*ret != '\0') 
+	{
+        if ((*ret >= 0x61) && (*ret < 0x7B)) 
+		{
             *ret -= 0x20;
         }
         ret++;
     }
     str = ret;
 }
+//strtolower
+void string_toLower(char* str)
+{
+	char* ret = str;
+	while (*ret != '\0')
+	{
+		if ((*ret >= 0x41) && (*ret < 0x5B))
+		{
+			*ret += 0x20;
+		}
+		ret++;
+	}
+	str = ret;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E7324.s")
+void func_800E7368(char* arg0, s32 arg1)
+{
+	s32 var_s0;
+	s32 var_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E7368.s")
+	var_s0 = 0x1F;
+	while (var_s0 >= 0)
+	{
+		if ((1 << var_s0) & arg1)
+		{
+			var_v0 = '1';
+		}
+		else
+		{
+			var_v0 = '0';
+		}
+		string_concatChar(arg0, var_v0);
+		var_s0 -= 1;
+	}
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E73D4.s")
+void func_800E73D4(char* arg0)
+{
+	*arg0 = '\0';
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E73DC.s")
 

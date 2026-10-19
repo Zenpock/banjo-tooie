@@ -93,7 +93,7 @@ void func_808002DC_bsbbilldrill(PlayerState* self, s32 arg1) {
             func_80098520(self, 0);
             _batimer_set(self, 0, 0.3f);
             
-            self->unk164.bytes[0] = (func_8009EA2C() != 0) ? func_8009D454(self, 0, &D_80800B30_bsbbilldrill) : func_8009D454(self, 0, &D_80800B10_bsbbilldrill);
+            self->unk164.bytes[0] = (bs_getDragonKazooieState() != 0) ? func_8009D454(self, 0, &D_80800B30_bsbbilldrill) : func_8009D454(self, 0, &D_80800B10_bsbbilldrill);
             self->unk15C.bytes[1] = 0;
             return;
         case 2:

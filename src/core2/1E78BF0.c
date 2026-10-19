@@ -81,7 +81,7 @@ BanjoStateId func_800A055C(PlayerState* arg0, BanjoStateId arg1)
 	if (func_8008D1B0(arg0) != 0)
 	{
 		//Is Dragon Kazooie
-		if (func_8009EA2C())
+		if (bs_getDragonKazooieState())
 		{
 			return BS_STATE_18A_FLAMETHROWER;
 		}

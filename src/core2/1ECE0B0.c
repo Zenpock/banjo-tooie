@@ -819,7 +819,8 @@ s32 func_800F6224(s32 arg0) {
     return 0;
 }
 
-PlayerState* func_800F6308(s32 arg0, s32 arg1, f32* arg2) {
+PlayerState* func_800F6308(s32 arg0, s32 arg1, f32* arg2) 
+{
     PlayerState* newPlayer;
 
     func_800A907C(arg0, arg1, func_800A8FDC());
