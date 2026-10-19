@@ -10,6 +10,7 @@ s32 func_800BEA88(s32);
 s32 func_800BEC10();
 s32 func_800BEC1C();
 void func_800BED18(s32*, s32*);
+s32 func_800BEE40(f32*, f32*, f32*, f32);
 s32 func_800BEF00(f32[3], f32[3], f32[3], s32);
 s32 func_800BF6B8();
 void func_800BF744(s32, s32);
