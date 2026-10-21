@@ -1,6 +1,7 @@
 #include "core2/1E66990.h"
 
 extern f32 D_80124AD4;
+extern f32 D_80124AE4;
 
 //Can Beak Barge
 int func_8008D0A0(PlayerState* arg0)
@@ -278,38 +279,102 @@ int func_8008DEA4(PlayerState* arg0, f32* arg1, f32 arg2)
 
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DF18.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DF8C.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/player_isStable.s")
-
-s32 func_8008E0C8(PlayerState* arg0)
+int func_8008DF18(PlayerState* self)
 {
-    return _bapackctrl_entrypoint_1(arg0);
+	return bastatetimer_isActive(self, BA_STATE_TIMER_ID_6_UNKNOWN) || func_800A3378(self) == 1.0f && func_8009659C(self, 0x40);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E0E8.s")
+int func_8008DF8C(PlayerState* arg0, s32 arg1)
+{
+	f32 sp24[3];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E124.s")
+	if (player_isStable(arg0))
+	{
+		return 1;
+	}
+	func_800963C0(arg0, sp24);
+	if ((sp24[1] < D_80124AE4) && (sp24[1] >= 0.0f))
+	{
+		return 0;
+	}
+	return baphysics_get_vertical_velocity(arg0) < 0.0f && (player_getCoordVertical(arg0) - func_80096364(arg0)) < (f32)arg1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E148.s")
+int player_isStable(PlayerState* self)
+{
+	return func_800A0FCC(self) && (baphysics_get_vertical_velocity(self) < 0.0f);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E1A0.s")
+s32 func_8008E0C8(PlayerState* self)
+{
+    return _bapackctrl_entrypoint_1(self);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E1C4.s")
+int func_8008E0E8(PlayerState* self)
+{
+	return (func_8008E23C(self) && !func_8008E0C8(self));
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E23C.s")
+s32 func_8008E124(PlayerState* self) {
+	return func_8009CC68(self) != 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E260.s")
+int func_8008E148(PlayerState* self)
+{
+	return bastatetimer_isActive(self, BA_STATE_TIMER_ID_5_UNKNOWN) != 0 || func_800A3378(self) == 1.0f;
+}
+
+s32 func_8008E1A0(PlayerState* self) {
+	return func_80096694(self) == 0x18;
+}
+
+int func_8008E1C4(PlayerState* self)
+{
+	s32 var_a2;
+	s32 var_v0;
+	s32 var_v0_2;
+
+	var_a2 = func_8009659C(self, 0x10) && baflag_isFalse(self, BA_FLAG_3);
+	var_v0_2 = func_8009659C(self, 0x40) && baflag_isFalse(self, BA_FLAG_4);
+	if ((var_a2) || (var_v0_2))
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+s32 func_8008E23C(PlayerState* self)
+{
+	return func_800F8B88() == 2;
+}
+
+s32 func_8008E260(PlayerState* self)
+{
+	s32 sp1C;
+
+	if (player_isStable(self) != 0)
+	{
+		return 0;
+	}
+	if (func_800954E8(self, &sp1C) == 0)
+	{
+		return 0;
+	}
+	return 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E2AC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E300.s")
+int func_8008E300(PlayerState* self) {
+	return (mlAbsF(func_800F1DCC(yaw_getIdeal(self), yaw_get(self))) > 135.0f);
+}
 
-s32 player_inWater(PlayerState* arg0)
+int player_inWater(PlayerState* self)
 {
-    return func_800A0FD8(arg0);
+    return func_800A0FD8(self);
 }
 
 s32 func_8008E37C(PlayerState* self)
@@ -317,12 +382,33 @@ s32 func_8008E37C(PlayerState* self)
     func_800A0FE4(self);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E39C.s")
+int func_8008E39C(PlayerState* self)
+{
+	s32 temp_v0;
+	temp_v0 = _bashoes_entrypoint_1(self);
+	return !(temp_v0 == 1) && !(temp_v0 == 0) && !(temp_v0 == 2);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E3E8.s")
+s32 func_8008E3E8(PlayerState* self) {
+	return _bashoes_entrypoint_1(self) == 3;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E40C.s")
+s32 func_8008E40C(PlayerState* self) {
+	return _bashoes_entrypoint_1(self) == 4;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E430.s")
+s32 func_8008E430(PlayerState* self) {
+	return _bashoes_entrypoint_1(self) == 5;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E454.s")
+s32 func_8008E454(PlayerState* self)
+{
+	f32 sp1C[3];
+
+	if ((func_800DB9B0() != 0) && (func_800BFAA4() != 0))
+	{
+		player_getCoords(self, sp1C);
+		return (_gcmapsects_entrypoint_4(sp1C) + 1) != 0;
+	}
+	return 1;
+}

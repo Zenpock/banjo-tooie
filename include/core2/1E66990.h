@@ -29,6 +29,7 @@
 
 #include "ba/playerstate.h"
 #include "ba/drone.h"
+#include "gc/mapsects.h"
 
 int func_8008D0A0(PlayerState*);
 int func_8008D0E0(PlayerState *);
@@ -67,24 +68,24 @@ s32 func_8008DDEC(PlayerState*, f32*, f32);
 s32 func_8008DE24(PlayerState *);
 s32 func_8008DE44(s32);
 s32 func_8008DE74(PlayerState*);
-int func_8008DEA4(PlayerState* arg0, f32* arg1, f32 arg2);
-s32 func_8008DF18(PlayerState *);
-s32 func_8008DF8C(PlayerState *, s32);
-s32 player_isStable(PlayerState*);
+int func_8008DEA4(PlayerState*, f32*, f32);
+int func_8008DF18(PlayerState *);
+int func_8008DF8C(PlayerState *, s32);
+int player_isStable(PlayerState*);
 s32 func_8008E0C8(PlayerState*);
-s32 func_8008E0E8(PlayerState*);
+int func_8008E0E8(PlayerState*);
 s32 func_8008E124(PlayerState*);
-s32 func_8008E148(PlayerState*);
+int func_8008E148(PlayerState*);
 s32 func_8008E1A0(PlayerState*);
-s32 func_8008E1C4(PlayerState*);
+int func_8008E1C4(PlayerState*);
 //Are we Solo Banjo
 s32 func_8008E23C(PlayerState *);
 s32 func_8008E260(PlayerState*);
 // func_8008E2AC
-s32 func_8008E300(PlayerState*); 
-s32 player_inWater(PlayerState*);
+int func_8008E300(PlayerState*); 
+int player_inWater(PlayerState*);
 s32 func_8008E37C(PlayerState*);
-s32 func_8008E39C(PlayerState*);
+int func_8008E39C(PlayerState*);
 s32 func_8008E3E8(PlayerState*);
 s32 func_8008E40C(PlayerState*);
 s32 func_8008E430(PlayerState*);
