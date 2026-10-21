@@ -5,6 +5,7 @@
 
 s32 func_800A8FDC(void);
 s32 func_800A907C(s32, s32, s32);
+void func_800A91A8(s32);
 void func_800A91F4(s32);
 void func_800A92A8(s32, s32);
 s32 func_800A93E4(s32);

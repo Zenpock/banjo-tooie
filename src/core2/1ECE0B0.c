@@ -558,7 +558,7 @@ void func_800F5A2C(s32 arg0, s32 arg1, f32* arg2)
 void func_800F5A58(s32 arg0, unkStruct800F5A58* arg1) {
     f32 sp1C[3];
 
-    func_800F3BB0(D_80135490.unk0[arg0], sp1C, arg1);
+    func_800F3BB0(D_80135490.unk0[arg0], sp1C);
     arg1->unk0 = (s32) sp1C[0];
     arg1->unk4 = (s32) sp1C[1];
     arg1->unk8 = (s32) sp1C[2];
@@ -573,9 +573,9 @@ f32 func_800F5AE0(s32 arg0)
     return func_8009BFCC(D_80135490.unk0[arg0]);
 }
 
-void func_800F5B0C(s32 arg0)
+s32 func_800F5B0C(s32 arg0)
 {
-    func_8009CC68(D_80135490.unk0[arg0]);
+    return func_8009CC68(D_80135490.unk0[arg0]);
 }
 
 void func_800F5B38(s32 arg0, f32* arg1)

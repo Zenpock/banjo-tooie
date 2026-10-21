@@ -3,6 +3,7 @@
 
 #include "common.h"
 
+void func_800D5034(TransformationId, TransformationId);
 s32 func_800D517C();
 s32 func_800D5234(s32);
 s32 func_800D5240(void);

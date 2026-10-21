@@ -11,6 +11,7 @@ void func_800A1364();
 void func_800A13A0();
 void func_800A13B0(s32);
 void func_800A1658(s32);
+void func_800A1694();
 void func_800A16BC(s32);
 void func_800A16F4(PlayerState*);
 s32 func_800A1718(PlayerState *);

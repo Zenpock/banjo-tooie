@@ -228,6 +228,16 @@ typedef struct ba_unknown_98_s {
     u8 unk25;
     u8 unk26;
 } ba_unknown_98_s;
+typedef struct ba_duo_s {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    u8 unk3;
+    f32 unk4;
+    f32 unk8[3];
+    //Size 0x14
+} BaDuo;
+
 typedef struct ba_dust_s {
     s32 unk0;
     s32 unk4;
@@ -466,7 +476,7 @@ typedef struct player_state_s {
     u8 pad49[0x7];
     struct ba_unknown_50_s* unk50;
     /* 0x54 */  BaUnknown54* unk54;
-    u8 pad58[0x4];
+    /* 0x58 */ BaDuo* duo;
     /* 0x5C */ BaDust* dust;
     u8 pad60[0x4];
     u8* unk64;

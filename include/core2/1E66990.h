@@ -42,6 +42,7 @@ s32 player_canEggShoot(PlayerState*);
 int player_canFeatheryFlap(PlayerState*);
 int player_canFlapFlip(s32);
 int player_canFly(PlayerState *);
+int func_8008D40C(PlayerState* self);
 s32 player_canFullJump(PlayerState *);
 int player_canPackWhack(PlayerState*);
 int player_canRataTatRap(PlayerState*);
