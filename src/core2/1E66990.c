@@ -1,23 +1,24 @@
 #include "core2/1E66990.h"
 
+extern f32 D_80124AD0;
 extern f32 D_80124AD4;
 extern f32 D_80124AE4;
 
 //Can Beak Barge
-int func_8008D0A0(PlayerState* arg0)
+int player_canBeakBarge(PlayerState* arg0)
 {
-	return ability_getValue(ABILITY_00_BK_BEAK_BARGE) && (func_800A3304(arg0) != 0);
+	return ability_getValue(ABILITY_00_BK_BEAK_BARGE) && (bs_isBKTogether(arg0) != 0);
 }
 
 //Can Beak Bomb
-int func_8008D0E0(PlayerState* arg0)
+int player_canBeakBomb(PlayerState* arg0)
 {
-	return ability_getValue(ABILITY_01_BK_BEAK_BOMB) && baflag_isFalse(arg0, 0x39) && (func_800A3304(arg0) || player_getTransformation(arg0) == TRANSFORM_B_KAZOOIE);
+	return ability_getValue(ABILITY_01_BK_BEAK_BOMB) && baflag_isFalse(arg0, 0x39) && (bs_isBKTogether(arg0) || player_getTransformation(arg0) == TRANSFORM_B_KAZOOIE);
 }
 
 //Can Beak Bust
-int func_8008D14C(PlayerState* arg0) {
-	return ability_getValue(ABILITY_02_BK_BEAK_BUSTER) && (func_800A3304(arg0) != 0);
+int player_canBeakBust(PlayerState* arg0) {
+	return ability_getValue(ABILITY_02_BK_BEAK_BUSTER) && (bs_isBKTogether(arg0) != 0);
 }
 
 
@@ -27,12 +28,12 @@ int func_8008D18C(PlayerState* arg0)
 }
 
 //Can Peck
-int func_8008D1B0(PlayerState* arg0) {
-	return ability_getValue(ABILITY_04_BK_STANDING_PECK) && (func_800A3304(arg0) != 0);
+int player_canPeck(PlayerState* arg0) {
+	return ability_getValue(ABILITY_04_BK_STANDING_PECK) && (bs_isBKTogether(arg0) != 0);
 }
 
 //Can Climb
-int func_8008D1F0(PlayerState* arg0)
+int player_canClimb(PlayerState* arg0)
 {
 	return ability_getValue(ABILITY_05_BK_CLIMB_TREES);
 }
@@ -44,7 +45,7 @@ int func_8008D214(PlayerState* arg0) {
 }
 
 //Can Use Eggs
-s32 func_8008D280(PlayerState* arg0)
+s32 player_canEggShoot(PlayerState* arg0)
 {
     enum transform_e temp_v0;
 
@@ -57,49 +58,85 @@ s32 func_8008D280(PlayerState* arg0)
         return 0;
     }
     temp_v0 = player_getTransformation(arg0);
-    if (((temp_v0 == TRANSFORM_1_BK) || (temp_v0 == TRANSFORM_A_BANJO)) && (func_800A3304(arg0) == 0)) {
+    if (((temp_v0 == TRANSFORM_1_BK) || (temp_v0 == TRANSFORM_A_BANJO)) && (bs_isBKTogether(arg0) == 0)) {
         return 0;
     }
     return 1;
 }
 
 //Can use feathery flap
-int func_8008D304(PlayerState* arg0) {
+int player_canFeatheryFlap(PlayerState* arg0) {
     return baflag_isFalse(arg0, BA_FLAG_12_HAS_FLAPPED)
         && baflag_isFalse(arg0, BA_FLAG_5_HAS_PECKED)
 		&& ability_getValue(ABILITY_07_BK_FEATHERY_FLAP)
-		&& func_800A3304(arg0);
+		&& bs_isBKTogether(arg0);
 }
 
 //Can use flap flip
-int func_8008D370(s32 arg0) {
-	return ability_getValue(ABILITY_08_BK_FLAP_FLIP) && func_800A3304(arg0);
+int player_canFlapFlip(s32 arg0) {
+	return ability_getValue(ABILITY_08_BK_FLAP_FLIP) && bs_isBKTogether(arg0);
 }
 
 //Can Fly
-int func_8008D3B0(PlayerState* arg0) {
-	return baflag_isTrue(arg0, BA_FLAG_1_ON_FLIGHT_PAD) && ability_getValue(ABILITY_09_BK_FLYING) && func_800F64A4(arg0->unk184, ALLOW_KAZOOIE | ALLOW_BK);
+int player_canFly(PlayerState* arg0) {
+	return baflag_isTrue(arg0, BA_FLAG_1_ON_FLIGHT_PAD) && ability_getValue(ABILITY_09_BK_FLYING) && character_includedInTransformMask(arg0->unk184, ALLOW_KAZOOIE | ALLOW_BK);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D40C.s")
+int func_8008D40C(PlayerState* self)
+{
+    f32 sp34[3];
+    s32 sp30;
+    f32 sp24[3];
+    s32 pad;
+    if ((bs_getSplitStatus() == SPLIT_STATE_SPLIT) && (_plsu_entrypoint_2()))
+    {
+        if (func_8008E0C8(self))
+        {
+            return 0;
+        }
+        if (func_800F99E8())
+        {
+            return 0;
+        }
+        switch (bs_getCurrentState(self))
+        {
+        case 0xB9:
+        case 0xBA:
+            return 0;
+        }
+        sp30 = _baduo_entrypoint_2(self);
+        if (!player_isStable(self) || !func_800F6C5C(sp30))
+        {
+            return 0;
+        }
+        if (!func_800F6774(character_getActiveIndex()))
+        {
+            return 0;
+        }
+        player_getCoords(self, sp24);
+        func_800F5A00(_baduo_entrypoint_2(self), sp34);
+        return ml_vec3f_distance_sq(sp24, sp34) < D_80124AD0;
+    }
+    return 0;
+}
 
 //Can Full Jump Height
-s32 func_8008D544(PlayerState* arg0)
+s32 player_canFullJump(PlayerState* arg0)
 {
 	return ability_getValue(ABILITY_0A_BK_FULL_JUMP_HEIGHT);
 }
 
 //Can Pack Whack
-int func_8008D568(PlayerState* arg0) {
+int player_canPackWhack(PlayerState* arg0) {
 	return ability_getValue(ABILITY_29_PACK_WHACK) != 0 && baflag_isFalse(arg0, BA_FLAG_5_HAS_PECKED) != 0 && baflag_isFalse(arg0, BA_FLAG_12_HAS_FLAPPED) != 0;
 }
 
 //Can Rat a Tat Rap
-int func_8008D5C4(PlayerState* arg0) {
+int player_canRataTatRap(PlayerState* arg0) {
     return baflag_isFalse(arg0, BA_FLAG_5_HAS_PECKED)
         && baflag_isFalse(arg0, BA_FLAG_12_HAS_FLAPPED)
 		&& ability_getValue(ABILITY_0B_BK_RAT_A_TAT_RAP)
-		&& func_800A3304(arg0);
+		&& bs_isBKTogether(arg0);
 }
 
 s32 func_8008D630(PlayerState* arg0) {
@@ -115,25 +152,25 @@ s32 func_8008D630(PlayerState* arg0) {
 }
 
 //Can Roll
-int func_8008D694(s32 arg0)
+int player_canRoll(s32 arg0)
 {
-	return ability_getValue(ABILITY_0C_BK_ROLL) && func_800A3304(arg0);
+	return ability_getValue(ABILITY_0C_BK_ROLL) && bs_isBKTogether(arg0);
 }
 
 //Can Shock Spring Jump
-int func_8008D6D4(PlayerState* arg0) {
-	return ability_getValue(ABILITY_0D_BK_SHOCK_SPRING_JUMP) && func_800A3304(arg0);
+int player_canShockSpring(PlayerState* arg0) {
+	return ability_getValue(ABILITY_0D_BK_SHOCK_SPRING_JUMP) && bs_isBKTogether(arg0);
 }
 
 
 int func_8008D714(PlayerState* arg0)
 {
-    return _baduo_entrypoint_3(arg0) && func_800A3304(arg0);
+    return _baduo_entrypoint_3(arg0) && bs_isBKTogether(arg0);
 }
 
 //Can Wading Boots
-int func_8008D750(PlayerState* arg0) {
-	return ability_getValue(ABILITY_0E_BK_WADING_BOOTS) && func_800A3304(arg0);
+int player_canWadingBoots(PlayerState* arg0) {
+	return ability_getValue(ABILITY_0E_BK_WADING_BOOTS) && bs_isBKTogether(arg0);
 }
 
 int func_8008D790(PlayerState* arg0) {
@@ -148,11 +185,11 @@ int func_8008D790(PlayerState* arg0) {
 }
 
 //Can Talon Torpedo
-s32 func_8008D850(PlayerState* arg0)
+s32 player_canTalonTorpedo(PlayerState* arg0)
 {
     f32 sp1C[3];
 
-	if ((ability_getValue(ABILITY_1E_TALON_TORPEDO) != 0) && (func_800A3304(arg0) != 0) && (_bafpctrl_entrypoint_5(arg0) == 0))
+	if ((ability_getValue(ABILITY_1E_TALON_TORPEDO) != 0) && (bs_isBKTogether(arg0) != 0) && (_bafpctrl_entrypoint_5(arg0) == 0))
 	{
         player_getCoords(arg0, sp1C);
         //Restrict Talon Torpedo when in the waterfall
@@ -166,18 +203,18 @@ s32 func_8008D850(PlayerState* arg0)
 }
 
 //Can Talon Trot
-int func_8008D8E4(PlayerState* arg0) {
-	return ability_getValue(ABILITY_10_BK_TALON_TROT) && func_800A3304(arg0);
+int player_canTalonTrot(PlayerState* arg0) {
+	return ability_getValue(ABILITY_10_BK_TALON_TROT) && bs_isBKTogether(arg0);
 }
 
 //Can Talon Trot Duplicate?
-int func_8008D924(PlayerState* arg0) {
-	return ability_getValue(ABILITY_10_BK_TALON_TROT) && func_800A3304(arg0);
+int player_canTalonTrot_dupe(PlayerState* arg0) {
+	return ability_getValue(ABILITY_10_BK_TALON_TROT) && bs_isBKTogether(arg0);
 }
 
 //Can Wonderwing
-int func_8008D964(PlayerState* arg0) {
-	return ability_getValue(ABILITY_12_BK_WONDERWING) && func_800A3304(arg0);
+int player_canWonderwing(PlayerState* arg0) {
+	return ability_getValue(ABILITY_12_BK_WONDERWING) && bs_isBKTogether(arg0);
 }
 
 s32 func_8008D9A4(PlayerState* arg0) {
@@ -194,7 +231,7 @@ s32 func_8008D9A4(PlayerState* arg0) {
 }
 
 //Can Grip Grab
-int func_8008DA24(PlayerState* arg0) {
+int player_canGripGrab(PlayerState* arg0) {
 	return ability_getValue(ABILITY_14_GRIP_GRAB)
 		&& baphysics_get_vertical_velocity(arg0) < 100.0f
         && func_800A0FCC(arg0) == 0
@@ -211,36 +248,36 @@ s32 func_8008DAC8(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DAE8.s")
 
-int func_8008DC90(PlayerState* arg0, f32* arg1, f32 arg2)
+int func_8008DC90(PlayerState* self, f32* arg1, f32 arg2)
 {
     f32 sp2C[3];
     f32 sp20[3];
     f32 sp18[2];
 
-    player_getCoords(arg0, sp20);
+    player_getCoords(self, sp20);
     func_8008FF40(sp2C);
     func_800F18FC(sp20, arg1, sp18);
     return func_800F20BC(sp2C[0], sp18[0], arg2) && func_800F20BC(sp2C[1], sp18[1], arg2);
 }
 
-int func_8008DD04(PlayerState* arg0)
+int func_8008DD04(PlayerState* self)
 {
-    return (player_getCoordVertical(arg0) - func_80096364(arg0)) > 60.0f
-        && player_isStable(arg0) == 0;
+    return (player_getCoordVertical(self) - func_80096364(self)) > 60.0f
+        && player_isStable(self) == 0;
 }
 
-s32 func_8008DD70(s32 arg0)
+s32 func_8008DD70(PlayerState* self)
 {
-    return func_8009E71C(arg0,0x5);
+    return func_8009E71C(self,0x5);
 }
 
-s32 func_8008DD90(PlayerState* arg0) {
-    if (func_8009E674(arg0, 0x10) != 0)
+s32 func_8008DD90(PlayerState* self) {
+    if (func_8009E674(self, 0x10) != 0)
     {
         return 1;
     }
-    if (func_8009E674(arg0, 8) != 0) {
-        return _badrone_entrypoint_1(arg0) == 0;
+    if (func_8009E674(self, 8) != 0) {
+        return _badrone_entrypoint_1(self) == 0;
     }
     return 0;
 }
@@ -312,7 +349,7 @@ s32 func_8008E0C8(PlayerState* self)
 
 int func_8008E0E8(PlayerState* self)
 {
-	return (func_8008E23C(self) && !func_8008E0C8(self));
+	return (player_isSplitUp(self) && !func_8008E0C8(self));
 }
 
 s32 func_8008E124(PlayerState* self) {
@@ -346,9 +383,9 @@ int func_8008E1C4(PlayerState* self)
 	}
 }
 
-s32 func_8008E23C(PlayerState* self)
+s32 player_isSplitUp(PlayerState* self)
 {
-	return func_800F8B88() == 2;
+	return bs_getSplitStatus() == SPLIT_STATE_SPLIT;
 }
 
 s32 func_8008E260(PlayerState* self)
@@ -386,19 +423,19 @@ int func_8008E39C(PlayerState* self)
 {
 	s32 temp_v0;
 	temp_v0 = _bashoes_entrypoint_1(self);
-	return !(temp_v0 == 1) && !(temp_v0 == 0) && !(temp_v0 == 2);
+	return !(temp_v0 == 1) && !(temp_v0 == 0) && !(temp_v0 == SHOETYPE_NO_SHOES);
 }
 
-s32 func_8008E3E8(PlayerState* self) {
-	return _bashoes_entrypoint_1(self) == 3;
+s32 player_wearingTurboTrainers(PlayerState* self) {
+	return _bashoes_entrypoint_1(self) == SHOETYPE_TURBO_TRAINER;
 }
 
-s32 func_8008E40C(PlayerState* self) {
-	return _bashoes_entrypoint_1(self) == 4;
+s32 player_wearingClawClambers(PlayerState* self) {
+	return _bashoes_entrypoint_1(self) == SHOETYPE_CLAW_CLAMBER;
 }
 
-s32 func_8008E430(PlayerState* self) {
-	return _bashoes_entrypoint_1(self) == 5;
+s32 player_wearingSpringyStep(PlayerState* self) {
+	return _bashoes_entrypoint_1(self) == SHOETYPE_SPRINGY_STEP;
 }
 
 s32 func_8008E454(PlayerState* self)

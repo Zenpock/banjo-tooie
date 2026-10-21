@@ -55,7 +55,7 @@ f32 player_getSpeedModifier(PlayerState* self)
     {
         return 1.0f;
     }
-    if (func_8008E40C(self) != 0)
+    if (player_wearingClawClambers(self) != 0)
     {
         return D_80125560;
     }
@@ -146,9 +146,9 @@ Unk80132ED0* func_800A32F8(PlayerState* self)
     return self->unkA0->unk44;
 }
 
-s32 func_800A3304(PlayerState* self)
+s32 bs_isBKTogether(PlayerState* self)
 {
-    return func_800F8B88() == 1;
+    return bs_getSplitStatus() == SPLIT_STATE_NOTSPLIT;
 }
 
 void func_800A3328(PlayerState* self, f32* arg1)

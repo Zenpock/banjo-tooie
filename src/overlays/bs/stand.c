@@ -93,7 +93,7 @@ void bsstand_entrypoint_0(PlayerState* self)
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
     baphysics_set_target_horizontal_velocity(self, 0.0f);
     func_800909CC(self);
-    if (func_8008E23C(self) != 0)
+    if (player_isSplitUp(self) != 0)
     {
         self->unk160.word = 0;
         self->unk164.word = 6;

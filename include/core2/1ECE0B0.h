@@ -60,6 +60,7 @@ typedef struct {
     s32 unk4;
     s32 unk8;
 } unkStruct800F5A58;
+
 typedef enum
 {
 	ALLOW_TREXLARGE = 1 << (TRANSFORM_13_TREXLARGE + 0x1F),
@@ -114,8 +115,16 @@ typedef struct {
     s8 unk2;
 } unkStructD_80135520;
 
+typedef enum
+{
+    SPLIT_STATE_INVALID = 0,
+    SPLIT_STATE_NOTSPLIT = 1,
+    SPLIT_STATE_SPLIT = 2,
+    SPLIT_STATE_TALON_TORPEDO = 3
+}SPLITUP_STATUS;
+
 typedef struct {
-    u8 unk0;
+    u8 splitStatus;
     u8 unk1;
     u8 pad2[2];
     u8 unk4;
@@ -177,7 +186,7 @@ void func_800F6388(s32, s32);
 void func_800F63E0(s32, u32);
 s32 func_800F6438(u32);
 s32 func_800F6478(s32);
-s32 func_800F64A4(s32 characterIndex, AllowedTransformation transformationType);
+s32 character_includedInTransformMask(s32 characterIndex, AllowedTransformation transformationType);
 s32 func_800F651C(u32);
 s32 func_800F66BC(s32, f32*, f32);
 s32 func_800F65D0(s32);
@@ -237,7 +246,7 @@ void func_800F8850();
 unkStruct800F88A0* func_800F88A0(s32);
 s32 func_800F8914(unkStruct800F88A0*, s32);
 s32 func_800F8B64(void);
-u8 func_800F8B88();
+SPLITUP_STATUS bs_getSplitStatus();
 void func_800F8B94(void);
 void func_800F8D80(s32, unkStruct800F88A0*);
 void func_800F8DD8();

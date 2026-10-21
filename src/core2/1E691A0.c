@@ -114,15 +114,15 @@ void func_8008FD20()
 }
 
 //Get Transformation state of active character
-TransformationId func_8008FD48()
+TransformationId activePlayer_getTransformation()
 {
     return character_getTransform(character_getActiveIndex());
 }
 
 //Return the bit mask for the Allow transformation value for the active character
-s32 func_8008FD70()
+s32 activePlayer_getTransformationBit()
 {
-    return func_800F543C(character_getActiveIndex());
+    return character_getTransformBit(character_getActiveIndex());
 }
 
 void func_8008FD98(s32 arg0)
@@ -237,9 +237,9 @@ void func_80090150()
     func_800F6478(character_getActiveIndex());
 }
 
-s32 func_80090178(s32 arg0)
+s32 activePlayer_includedInTransformMask(s32 arg0)
 {
-    return func_800F64A4(character_getActiveIndex(),arg0);
+    return character_includedInTransformMask(character_getActiveIndex(),arg0);
 }
 
 void func_800901A4()

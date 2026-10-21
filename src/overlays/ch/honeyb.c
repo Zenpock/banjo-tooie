@@ -187,7 +187,7 @@ void func_808002AC_chhoneyb(Actor* arg0)
 void func_8080062C_chhoneyb(Actor* arg0)
 {
     _gcextra_entrypoint_2(arg0->actorData[4]);
-    func_800A1658(func_8008FD48());
+    func_800A1658(activePlayer_getTransformation());
     func_80800058_chhoneyb(arg0);
 
     event_sendToActorsOfType(0x4B8, 0x23, func_80800B78_chhoneyb());

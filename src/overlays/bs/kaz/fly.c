@@ -190,7 +190,7 @@ void func_80800540_bskazfly(PlayerState *self) {
     }
     _bafly_entrypoint_8(self, 300, 80, 800, -300.0f, -50.0f, -700.0f, -1000.0f);
     self->kazfly->unk0 = func_800F0E00(self->kazfly->unk0 - time_getDelta(), 0);
-    if ((self->kazfly->unk0 == 0.0f) && (bakey_pressed(self, BUTTON_B) != 0) && (func_8008D0E0(self) != 0) && (_bafly_entrypoint_12(self) != 0)) {
+    if ((self->kazfly->unk0 == 0.0f) && (bakey_pressed(self, BUTTON_B) != 0) && (player_canBeakBomb(self) != 0) && (_bafly_entrypoint_12(self) != 0)) {
         next_state = BS_STATE_174;
     }
     if (player_inWater(self) != 0) {

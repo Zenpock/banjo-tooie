@@ -46,7 +46,7 @@ void bsdronebitten_entrypoint_3(PlayerState* self) {
     s32 var_t7;
     nextState = BS_STATE_0_INVALID;
     func_80800000_bsdronebitten(self);
-    if (func_800F64A4(self->unk184, 0x201) && func_8008DA24(self))
+    if (character_includedInTransformMask(self->unk184, 0x201) && player_canGripGrab(self))
     {
         nextState = BS_STATE_A8_GRIP_GRAB_START;
     }

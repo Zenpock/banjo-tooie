@@ -82,7 +82,7 @@ void func_8008E6F0(PlayerState* self)
 			}
 			case TRANSFORM_B_KAZOOIE:
 			{
-				if (func_800F8B88() == 3)
+				if (bs_getSplitStatus() == SPLIT_STATE_TALON_TORPEDO)
 				{
 					if (func_800F6D24(charIndex) != 0)
 					{

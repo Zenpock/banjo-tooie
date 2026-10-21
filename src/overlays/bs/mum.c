@@ -250,7 +250,7 @@ void func_808009F8_bsmum(PlayerState *self) {
         bsmum_entrypoint_13(self);
     }
     func_8009BB24(self, sp24);
-    if (((bakey_released(self, BUTTON_A) != 0) && (sp24[1] > 0.0f)) || (func_8008D544(self) == 0)) {
+    if (((bakey_released(self, BUTTON_A) != 0) && (sp24[1] > 0.0f)) || (player_canFullJump(self) == 0)) {
         baphysics_reset_gravity(self);
     }
     switch (self->unk15C.word) {

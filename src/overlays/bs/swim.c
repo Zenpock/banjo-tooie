@@ -9,7 +9,7 @@ extern s32 D_80800BD4_bsswim[];
 BanjoStateId func_80800000_bsswim(PlayerState* self) {
 	BanjoStateId var_v1;
 
-	if (func_8008E23C(self) != 0) {
+	if (player_isSplitUp(self) != 0) {
 		var_v1 = 0x6D;
 	}
 	else {

@@ -112,7 +112,7 @@ void bsbanbflip_update(PlayerState *self) {
             if(anctrl_isStopped(anctrl)) {
                 next_state = BS_STATE_2F_FALL;
             }
-            if (func_8008DA24(self)) {
+            if (player_canGripGrab(self)) {
                 next_state = BS_STATE_A8_GRIP_GRAB_START;
             }
             break;

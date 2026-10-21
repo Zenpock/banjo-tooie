@@ -458,7 +458,7 @@ s32 func_80800C00_chpawnbroker(s32 NumDoubloons, s32 SaleConfirmation)
         if (inventory_getValue(0x4E) >= NumDoubloons)
         {
             //Check the current player's transformation if valid
-            if (func_800F64A4(character_getActiveIndex(), ALLOW_BANJO | ALLOW_BK) != 0)
+            if (character_includedInTransformMask(character_getActiveIndex(), ALLOW_BANJO | ALLOW_BK) != 0)
             {
                 //Sure
                 return 0x1040;

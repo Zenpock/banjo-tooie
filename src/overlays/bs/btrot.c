@@ -21,26 +21,26 @@ void func_808008D0_bsbtrot(PlayerState*);
 
 s32 func_80800000_bsbtrot(PlayerState* self, s32 arg1, s32 arg2, s32 arg3, s32 arg4)
 {
-    if (func_8008E40C(self) != 0) {
+    if (player_wearingClawClambers(self) != 0) {
         return arg4;
     }
-    if (func_8008E3E8(self) != 0) {
+    if (player_wearingTurboTrainers(self) != 0) {
         return arg2;
     }
-    if (func_8008E430(self) != 0) {
+    if (player_wearingSpringyStep(self) != 0) {
         return arg3;
     }
     return arg1;
 }
 
 f32 func_80800070_bsbtrot(PlayerState* self, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    if (func_8008E40C(self) != 0) {
+    if (player_wearingClawClambers(self) != 0) {
         return arg4;
     }
-    if (func_8008E3E8(self) != 0) {
+    if (player_wearingTurboTrainers(self) != 0) {
         return arg2;
     }
-    if (func_8008E430(self) != 0) {
+    if (player_wearingSpringyStep(self) != 0) {
         return arg3;
     }
     return arg1;
@@ -110,7 +110,7 @@ void func_80800308_bsbtrot(PlayerState* self)
             func_8009E830(self, 2);
             return;
         case 0x58:
-            if ((self->unk160.word == 0) && (func_8008E40C(self) != 0))
+            if ((self->unk160.word == 0) && (player_wearingClawClambers(self) != 0))
             {
                 switch (bs_getCurrentState(self))
                 {
@@ -155,7 +155,7 @@ void func_80800438_bsbtrot(PlayerState* self)
 }
 
 void func_808004B4_bsbtrot(PlayerState* self) {
-    if ((func_8008E3E8(self) != 0) && (bastick_getZone(self) == BS_STICK_ZONE_ID_1) && (bastick_getZonePosition(self) > 0.8f)) {
+    if ((player_wearingTurboTrainers(self) != 0) && (bastick_getZone(self) == BS_STICK_ZONE_ID_1) && (bastick_getZonePosition(self) > 0.8f)) {
         func_800962B0(self, 1);
         return;
     }
@@ -222,13 +222,13 @@ BanjoStateId func_8080075C_bsbtrot(PlayerState* self, BanjoStateId arg1) {
     if (baflag_isTrue(self, BA_FLAG_F) != 0) {
         return arg1;
     }
-    if (func_8008D3B0(self) != 0) {
+    if (player_canFly(self) != 0) {
         return BS_STATE_23_FLIGHT_LAUNCH;
     }
-    if (func_8008E430(self) != 0) {
+    if (player_wearingSpringyStep(self) != 0) {
         return 0x9C;
     }
-    if (func_8008E40C(self) != 0) {
+    if (player_wearingClawClambers(self) != 0) {
         return BS_STATE_95;
     }
     return 8;
@@ -375,10 +375,10 @@ s32 func_80800C20_bsbtrot(PlayerState* self) {
 }
 
 void bsbtrot_entrypoint_4(PlayerState* self) {
-    if (func_8008E430(self) != 0) {
+    if (player_wearingSpringyStep(self) != 0) {
         baanim_playForDuration_loopSmooth(self, 0x29B, 1.3f);
     }
-    else if (func_8008E40C(self) != 0) {
+    else if (player_wearingClawClambers(self) != 0) {
         baanim_playForDuration_loopSmooth(self, 0x86, 1.3f);
     }
     else {
@@ -393,7 +393,7 @@ void bsbtrot_entrypoint_5(PlayerState* self) {
     func_808002A4_bsbtrot(self, func_80800C20_bsbtrot(self));
     func_80800120_bsbtrot(self);
     func_808004B4_bsbtrot(self);
-    if (func_8008E3E8(self) != 0) {
+    if (player_wearingTurboTrainers(self) != 0) {
         _bashoes_entrypoint_20(self);
     }
     func_8009D3A8(self, 1);
@@ -613,7 +613,7 @@ void bsbtrot_entrypoint_21(PlayerState* self) {
 
     nextState = BS_STATE_0_INVALID;
     func_808004B4_bsbtrot(self);
-    if (func_8008E3E8(self) != 0)
+    if (player_wearingTurboTrainers(self) != 0)
     {
         _bashoes_entrypoint_20(self);
     }
@@ -681,7 +681,7 @@ void bsbtrot_entrypoint_25(PlayerState* self) {
     nextState = BS_STATE_0_INVALID;
     sp30 = baanim_getAnimCtrlPtr(self);
     func_808004B4_bsbtrot(self);
-    if (func_8008E3E8(self) != 0) {
+    if (player_wearingTurboTrainers(self) != 0) {
         _bashoes_entrypoint_20(self);
     }
     if (baflag_isTrue(self, BA_FLAG_F) != 0) {
@@ -785,10 +785,10 @@ void bsbtrot_entrypoint_28(PlayerState* self)
 void bsbtrot_entrypoint_29(PlayerState* self) {
     func_80800538_bsbtrot(self);
     _bsrest_entrypoint_18(self);
-    if (func_8008E430(self) != 0) {
+    if (player_wearingSpringyStep(self) != 0) {
         baanim_playForDuration_loopSmooth(self, 0x29B, 1.3f);
     }
-    else if (func_8008E40C(self) != 0) {
+    else if (player_wearingClawClambers(self) != 0) {
         baanim_playForDuration_loopSmooth(self, 0x86, 1.3f);
     }
     else {
@@ -1126,7 +1126,7 @@ void bsbtrot_entrypoint_49(PlayerState* self) {
     {
         nextState = 0x17B;
     }
-    if ((func_80800710_bsbtrot(self) != 0) || (func_8008E40C(self) == 0))
+    if ((func_80800710_bsbtrot(self) != 0) || (player_wearingClawClambers(self) == 0))
     {
         nextState = BS_STATE_17_TTROT_EXIT;
     }
@@ -1185,7 +1185,7 @@ void bsbtrot_entrypoint_53(PlayerState* self) {
     func_80800120_bsbtrot(self);
     func_808004B4_bsbtrot(self);
     _bashoessuck_entrypoint_4(self);
-    if (func_8008E40C(self) == 0) {
+    if (player_wearingClawClambers(self) == 0) {
         nextState = BS_STATE_17_TTROT_EXIT;
     }
     bs_setState(self, func_808007E0_bsbtrot(self, nextState));

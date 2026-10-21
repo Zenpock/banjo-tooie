@@ -30,7 +30,7 @@ void func_80800030_bsbswim(PlayerState* self)
         baroll_setAngularVelocity(self, 130.0f, 0.9f);
         baphysics_set_gravity(self, 0.0f);
         baphysics_set_terminal_velocity(self, -399.99f);
-        if (func_800F8B88() != 3)
+        if (bs_getSplitStatus() != SPLIT_STATE_TALON_TORPEDO)
         {
             func_800A0CF4(self, 1);
         }
@@ -84,7 +84,7 @@ void func_808001C8_bsbswim(PlayerState* self) {
     func_80800030_bsbswim(self);
     func_8009BC5C(self, 0.4f);
     _baswim_entrypoint_8(self, 300.0f);
-    if (func_8008E23C(self) != 0) {
+    if (player_isSplitUp(self) != 0) {
         func_800A0CF4(self, 0);
     }
 }
@@ -97,7 +97,7 @@ void func_80800288_bsbswim(PlayerState* self)
     _baswim_entrypoint_11(self);
     _baswim_entrypoint_12(self);
     _baswim_entrypoint_13(self);
-    if (func_8008E23C(self) != 0) 
+    if (player_isSplitUp(self) != 0) 
     {
         if ((bakey_held(self, BUTTON_A) != 0) || (bakey_held(self, BUTTON_B) != 0)) 
         {

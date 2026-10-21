@@ -127,7 +127,7 @@ void func_80800264_chnewmumbo(Actor* arg0, s32 arg1) {
 			func_80800210_chnewmumbo((s32*)arg0);
 			return;
 		case 5:
-			func_8080073C_chnewmumbo(arg0, func_80090178(1));
+			func_8080073C_chnewmumbo(arg0, activePlayer_includedInTransformMask(1));
 			func_80800000_chnewmumbo(arg0, 2, 1);
 			return;
 		case 6:
@@ -374,7 +374,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 	switch (arg0->unk70_10)
 	{
 	case 19:
-		switch (func_8008FD70())
+		switch (activePlayer_getTransformationBit())
 		{
 		case 0x1:
 			if (!(arg0->unk74_30) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x2EEU, 0x5AU, 6) != 0)) {
@@ -401,7 +401,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 		{
 			_subaddieaudioquick_entrypoint_2(arg0, arg0->position, D_8080199C_chnewmumbo);
 		}
-		switch (func_8008FD70())
+		switch (activePlayer_getTransformationBit())
 		{
 		case 0x1:
 		case 0x200:
@@ -464,7 +464,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 		}
 		if (func_80101E14(arg0, 0.999f) != 0)
 		{
-			switch (func_8008FD70())
+			switch (activePlayer_getTransformationBit())
 			{
 			case 0x1:
 				func_80800264_chnewmumbo(arg0, 7);
@@ -625,7 +625,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 		func_80800264_chnewmumbo(arg0, 0xB);
 		return;
 	case 11:
-		switch (func_8008FD70())
+		switch (activePlayer_getTransformationBit())
 		{
 		case 0x1:
 			if (!(arg0->unk74_30) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x2EEU, 0x5AU, 6) != 0))

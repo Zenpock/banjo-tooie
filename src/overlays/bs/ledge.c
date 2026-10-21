@@ -13,7 +13,7 @@ extern s32 D_808013A8_bsledge[];
 /* .code */
 int func_80800000_bsledge(PlayerState* self)
 {
-    return !func_8008E23C(self) && bakey_pressed(self, BUTTON_B);
+    return !player_isSplitUp(self) && bakey_pressed(self, BUTTON_B);
 }
 
 void func_80800040_bsledge(PlayerState *self, f32 arg1[3]) {

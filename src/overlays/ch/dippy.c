@@ -249,7 +249,7 @@ void func_80800530_chdippy(Actor* arg0)
     f32 sp20[3];
 
     sp2C = character_getActiveIndex();
-    if ((func_8010D23C() != 0) && (func_800F6C5C((s32)sp2C) != 0) && (func_800F64A4((s32)sp2C, 0x601) != 0) && (func_8010C500(arg0) != 0))
+    if ((func_8010D23C() != 0) && (func_800F6C5C((s32)sp2C) != 0) && (character_includedInTransformMask((s32)sp2C, 0x601) != 0) && (func_8010C500(arg0) != 0))
     {
         if (flag_getValue(FLAG_328_UNK) == 0)
         {

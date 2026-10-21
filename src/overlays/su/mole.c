@@ -44,7 +44,7 @@ void sumole_entrypoint_0(Actor* arg0, s32 arg1)
 s32 sumole_entrypoint_1(Actor* arg0, s32 arg1, u32 arg2, s32 arg3)
 {
     //Control who can talk to jamjars at all
-    if (func_80090178(ALLOW_BK | ALLOW_BANJO | ALLOW_KAZOOIE | ALLOW_MUMBO | ALLOW_FIRSTPERSON) == 0)
+    if (activePlayer_includedInTransformMask(ALLOW_BK | ALLOW_BANJO | ALLOW_KAZOOIE | ALLOW_MUMBO | ALLOW_FIRSTPERSON) == 0)
     {
         return 0;
     }
@@ -327,7 +327,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
                     return;
                 }
                 sumole_entrypoint_2(arg0, 0xE);
-                if (func_80090178(ALLOW_BK | ALLOW_KAZOOIE | ALLOW_BANJO) != 0)
+                if (activePlayer_includedInTransformMask(ALLOW_BK | ALLOW_KAZOOIE | ALLOW_BANJO) != 0)
                 {
                     if ((arg1[(s32)arg0->unk54].AbilityToLearn != -1) && (ability_getValue(arg1[(s32)arg0->unk54].AbilityToLearn) == 0))
                     {
@@ -466,7 +466,7 @@ s32 sumole_entrypoint_5(Actor* arg0, AllowedTransformation arg1, s32 arg2, s32 a
         {
             arg0->unk70_10 = arg2;
         }
-        else if (func_80090178(arg1) != 0)
+        else if (activePlayer_includedInTransformMask(arg1) != 0)
         {
             arg0->unk70_10 = arg2;
         }
@@ -482,7 +482,7 @@ s32 sumole_entrypoint_5(Actor* arg0, AllowedTransformation arg1, s32 arg2, s32 a
         {
             return 1;
         }
-        if (func_80090178(arg1) != 0)
+        if (activePlayer_includedInTransformMask(arg1) != 0)
         {
             return 1;
         }
@@ -670,7 +670,7 @@ void sumole_entrypoint_16(Actor* arg0, s32 arg1)
         sumole_entrypoint_2(arg0, 0xA);
         return;
     case 2:
-        if (func_80090178(ALLOW_BK | ALLOW_KAZOOIE | ALLOW_BANJO) != 0)
+        if (activePlayer_includedInTransformMask(ALLOW_BK | ALLOW_KAZOOIE | ALLOW_BANJO) != 0)
         {
             sumole_entrypoint_2(arg0, 0x11);
             return;

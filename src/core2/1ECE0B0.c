@@ -366,7 +366,7 @@ TransformationId character_getTransform(s32 arg0)
     return player_getTransformation(D_80135490.unk0[arg0]);
 }
 
-s32 func_800F543C(s32 arg0)
+s32 character_getTransformBit(s32 arg0)
 {
     return 1 << (player_getTransformation(D_80135490.unk0[arg0]) + 0x1F);
 }
@@ -866,9 +866,9 @@ s32 func_800F6478(s32 arg0)
 }
 
 //Tranformation Type is a bitfield so you can check multiple transformations at once
-s32 func_800F64A4(s32 characterIndex, AllowedTransformation transformationType)
+s32 character_includedInTransformMask(s32 characterIndex, AllowedTransformation transformationType)
 {
-    return func_800F543C(characterIndex) & transformationType ? 1 : 0;
+    return character_getTransformBit(characterIndex) & transformationType ? 1 : 0;
 }
 
 void func_800F64DC(s32 arg0) {
@@ -1180,7 +1180,7 @@ s32 func_800F7058(s32 arg0) {
     PlayerState* sp1C;
     sp1C = D_80135490.unk0[arg0];
     if (func_8009E674(sp1C, 0x80) != 0) {
-        return _bashoes_entrypoint_1(sp1C) == 3 ? 2 : 1;
+        return _bashoes_entrypoint_1(sp1C) == SHOETYPE_TURBO_TRAINER ? 2 : 1;
     }
     return 0;
 }
@@ -1290,7 +1290,7 @@ s32 func_800F73C4(s32 arg0) {
     if (count == 0) {
         func_800F7E64(func_800F61E4(), 4);
     }
-    if (func_800F8B88() == 2) {
+    if (bs_getSplitStatus() == SPLIT_STATE_SPLIT) {
         a = _plsu_entrypoint_1(0xA);
         b = _plsu_entrypoint_1(0xB);
         if (a != -1 && b != -1) {
@@ -1896,7 +1896,7 @@ s32 func_800F8914(unkStruct800F88A0* arg0, s32 arg1)
 }
 
 s32 func_800F89BC(void) {
-    if (D_801354F8.unk0 == 2) {
+    if (D_801354F8.splitStatus == 2) {
         return 0xB;
     }
     return 1;
@@ -1974,8 +1974,8 @@ u8 func_800F8B7C(void) {
     return D_801354F8.unk5;
 }
 
-u8 func_800F8B88(void) {
-    return D_801354F8.unk0;
+SPLITUP_STATUS bs_getSplitStatus(void) {
+    return D_801354F8.splitStatus;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F8B94.s")
@@ -2011,7 +2011,7 @@ void func_800F8E08(void) {
     D_801354F8.unk1 = 0;
     D_801354F8.unk4 = 0;
     D_801354F8.unk5 = 0;
-    D_801354F8.unk0 = 0;
+    D_801354F8.splitStatus = 0;
     func_800F911C(1);
     ml_vec3f_clear(&D_80135500);
     ml_vec3f_clear(&D_80135510);
@@ -2050,7 +2050,7 @@ void func_800F8F3C(void) {
     unkStruct800F8F3C* temp_s2;
     unkStruct800F8F3C* s0;
 
-    if (D_801354F8.unk0 == 2 && D_801354F0 != 0) {
+    if (D_801354F8.splitStatus == 2 && D_801354F0 != 0) {
         temp_s2 = vector_begin(D_801354F0);
         temp_v0 = vector_end(D_801354F0);
         s0 = temp_s2;
@@ -2102,10 +2102,10 @@ void func_800F9110(s32 arg0) {
 }
 
 void func_800F911C(s32 arg0) {
-    if (D_801354F8.unk0 == 3) {
+    if (D_801354F8.splitStatus == 3) {
         func_800CF840(0);
     }
-    if ((u8) (D_801354F8.unk0 = arg0) == 3) {
+    if ((u8) (D_801354F8.splitStatus = arg0) == 3) {
         func_800CF840(1);
     }
 }
@@ -2149,7 +2149,7 @@ void func_800F9240(f32* arg0, s32 arg1) {
 
 
 s32 func_800F929C(void) {
-    if (func_800F8B88() == 2) {
+    if (bs_getSplitStatus() == SPLIT_STATE_SPLIT) {
         return 0xB;
     }
     return 1;
@@ -2444,7 +2444,7 @@ void func_800F9BA4()
 }
 
 void func_800F9BC4(void) {
-    if (func_800F8B88() != 3) {
+    if (bs_getSplitStatus() != SPLIT_STATE_TALON_TORPEDO) {
         return;
     }
     if (func_800DB9B0() != 0) {
@@ -2467,7 +2467,7 @@ void func_800F9BC4(void) {
 }
 
 void func_800F9C38(void) {
-    if (func_800F8B88() == 3) {
+    if (bs_getSplitStatus() == SPLIT_STATE_TALON_TORPEDO) {
         func_800F9488(0x13);
     }
 }

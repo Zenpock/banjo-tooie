@@ -222,7 +222,7 @@ BanjoStateId bscrouch_entrypoint_4(PlayerState* self, BanjoStateId arg1)
         }
         return arg1;
     }
-    else if (func_8008E23C(self) != 0)
+    else if (player_isSplitUp(self) != 0)
     {
         if ((bakey_pressed(self, BUTTON_C_DOWN) != 0) && (ability_getValue(ABILITY_21_SHACK_PACK)))
         {

@@ -265,7 +265,7 @@ void func_80800638_chpickups(Actor* arg0)
                 func_808005B8_chpickups(arg0, 0);
                 return;
             }
-            if (func_80090178(ALLOW_BK | ALLOW_BANJO) != 0)
+            if (activePlayer_includedInTransformMask(ALLOW_BK | ALLOW_BANJO) != 0)
             {
                 func_808005B8_chpickups(arg0, 1);
                 return;

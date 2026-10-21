@@ -82,7 +82,7 @@ void func_800989E4(PlayerState* self) {
             sp24 = 1;
             break;
         case TRANSFORM_B_KAZOOIE:
-            if (func_800F8B88() == 3)
+            if (bs_getSplitStatus() == SPLIT_STATE_TALON_TORPEDO)
             {
                 sp20 = 1;
             }

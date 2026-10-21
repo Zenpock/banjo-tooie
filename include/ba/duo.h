@@ -3,6 +3,7 @@
 
 #include "ba/playerstate.h"
 
+s32 _baduo_entrypoint_2(PlayerState*);
 s32 _baduo_entrypoint_3(PlayerState*);
 s32 _baduo_entrypoint_4(PlayerState*);
 void _baduo_entrypoint_5(PlayerState*);

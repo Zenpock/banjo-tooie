@@ -68,9 +68,9 @@ void func_8009FE58(PlayerState* arg0)
 
 BanjoStateId func_800A055C(PlayerState* arg0, BanjoStateId arg1)
 {
-	if (func_8008E23C(arg0))
+	if (player_isSplitUp(arg0))
 	{
-		if (func_8008D568(arg0) != 0)
+		if (player_canPackWhack(arg0) != 0)
 		{
 			return BS_STATE_E4_PACK_WHACK;
 		}
@@ -78,7 +78,7 @@ BanjoStateId func_800A055C(PlayerState* arg0, BanjoStateId arg1)
 		return arg1;
 	}
 	//We Can Peck
-	if (func_8008D1B0(arg0) != 0)
+	if (player_canPeck(arg0) != 0)
 	{
 		//Is Dragon Kazooie
 		if (bs_getDragonKazooieState())

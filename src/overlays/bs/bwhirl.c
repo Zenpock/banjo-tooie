@@ -345,7 +345,7 @@ void bsbwhirl_entrypoint_13(PlayerState* self) {
     }
     func_80800430_bsbwhirl(self, &nextState);
     func_80800008_bsbwhirl(self);
-    if (func_8008DA24(self) != 0)
+    if (player_canGripGrab(self) != 0)
     {
         nextState = BS_STATE_A8_GRIP_GRAB_START;
     }

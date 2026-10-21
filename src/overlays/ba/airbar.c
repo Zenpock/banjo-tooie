@@ -9,7 +9,7 @@ void baairbar_entrypoint_0(PlayerState *self, s32 arg1) {
         return;
     }
 
-    if (func_800F8B88() == 3) {
+    if (bs_getSplitStatus() == SPLIT_STATE_TALON_TORPEDO) {
         return;
     }
 

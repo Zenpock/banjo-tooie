@@ -261,7 +261,7 @@ void func_80800624_bsbfly(PlayerState* self)
     self->kazfly->unk0 = func_800F0E00(self->kazfly->unk0 - time_getDelta(), 0);
     if ((self->kazfly->unk0 == 0.0f)
         && bakey_pressed(self, BUTTON_B)
-        && func_8008D0E0(self)
+        && player_canBeakBomb(self)
         && _bafly_entrypoint_12(self))
     {
         next_state = 0x2A;

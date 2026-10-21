@@ -895,7 +895,7 @@ void func_80801D50_chhandcart(Actor* arg0)
     case 2:
         func_80800830_chhandcart(arg0);
         //Check if the player is Banjo and Kazooie
-        if ((func_80090178(ALLOW_BK) != 0) && (func_8010C9B0(arg0->position, 0x64) != 0))
+        if ((activePlayer_includedInTransformMask(ALLOW_BK) != 0) && (func_8010C9B0(arg0->position, 0x64) != 0))
         {
             //Set Flag True Canary Mary Race Intro
             flag_setValueTrue(FLAG_508_FTT_GGM_CANARY_MARY_RACE_INTRO);
@@ -1397,7 +1397,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
             break;
 
         case 25:
-            temp_v0 = func_8008FD70();
+            temp_v0 = activePlayer_getTransformationBit();
             if (temp_v0 != 1)
             {
                 if (temp_v0 == 0x4000)
@@ -1743,7 +1743,7 @@ void func_80803794_chhandcart(Actor* arg0)
         }
         else if (flag_getValue(FLAG0_001_STATE_CANARY_MARY_CAGE_BROKEN) == 0) //If we haven't spoken to canary mary in the cage
         {
-            if ((_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0x1F4, 0x46, 6) != 0) && (func_80090178(ALLOW_BK | ALLOW_DETONATOR) != 0))
+            if ((_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0x1F4, 0x46, 6) != 0) && (activePlayer_includedInTransformMask(ALLOW_BK | ALLOW_DETONATOR) != 0))
             {
                 if (func_800DA9E4(FLAG_42A_FTT_CANARY_MARY_CANARY_CAVE, 1) == 0) //If we havent spoken to canary mary set flag to true
                 {
@@ -1801,7 +1801,7 @@ void func_80803794_chhandcart(Actor* arg0)
         func_80803514_chhandcart(arg0);
         if (!arg0->unk74_30)
         {
-            if (func_80090178(ALLOW_BK) != 0)
+            if (activePlayer_includedInTransformMask(ALLOW_BK) != 0)
             {
                 if (flag_getValue(FLAG_508_FTT_GGM_CANARY_MARY_RACE_INTRO) != 0)
                 {

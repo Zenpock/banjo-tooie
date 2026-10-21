@@ -69,7 +69,7 @@ int func_80800374_chmasterjiggy(Actor* arg0)
     f32 sp1C[3];
 
     func_8008FE68(sp1C);
-    return sp1C[0] >= 1576.0f && func_8008FD48() == TRANSFORM_1_BK;
+    return sp1C[0] >= 1576.0f && activePlayer_getTransformation() == TRANSFORM_1_BK;
 }
 
 int func_808003D4_chmasterjiggy(s32 arg0)
