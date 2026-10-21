@@ -1,7 +1,11 @@
 #include "core2/1EC0300.h"
 
 extern char* D_80125DC0;
-
+extern char D_80125DC4;
+extern char D_80125DC8;
+extern char D_80125DCC;
+extern char D_80125DD0;
+extern char D_80125DD4;
 //strcat
 void string_concat(char* dst, char* src) {
     while (*(dst) != '\0') {
@@ -36,25 +40,222 @@ void func_800E6A90(char* arg0, char* arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E6AFC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E6B7C.s")
+s32 func_800E6B7C(s32 arg0, f32 arg1)
+{
+	s32 returnValue;
+	if (arg1 < 0.0f)
+	{
+		returnValue = -1;
+	}
+	else
+	{
+		returnValue = 1;
+	}
+	return returnValue;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E6BAC.s")
+void func_800E6BAC(char* arg0, f32 arg1)
+{
+	s32 temp_f4_2;
+	char* sp38;
+	switch (func_800E6B7C(&sp38, arg1))
+	{
+		case 0:
+			string_concat(arg0, sp38);
+			return;
+		case -1:
+			string_concat(arg0, &D_80125DC4);
+			arg1 = -arg1;
+		case 1:
+			string_IToA(arg0, (s32)arg1);
+			string_concat(arg0, &D_80125DC8);
+			temp_f4_2 = ((arg1 - (s32)arg1) * 100.0f);
+			if (temp_f4_2 < 0xA)
+			{
+				string_concat(arg0, &D_80125DCC);
+			}
+			string_IToA(arg0, temp_f4_2);
+			return;
+	}
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E6CA8.s")
+void func_800E6CA8(char* arg0, f32 arg1, s32 arg2)
+{
+	char* sp44;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/string_IToA.s")
+	switch (func_800E6B7C(&sp44, arg1))
+	{
+	case 0:
+		string_concat(arg0, sp44);
+		return;
+	case -1:
+		string_concat(arg0, &D_80125DD0);
+		arg1 = -arg1;
+	case 1:
+		string_IToA(arg0, arg1);
+		if (arg2 != 0)
+		{
+			string_concat(arg0, &D_80125DD4);
+			while (arg2--)
+			{
+				arg1 -= (s32)arg1;
+				arg1 *= 10.0f;
+				string_IToA(arg0, arg1);
+			}
+		}
+	}
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/string_IToAPrefix.s")
+void string_IToA(char* dst, s32 value)
+{
+	string_IToAPrefix(dst, value, 0, 0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E6F7C.s")
+void string_IToAPrefix(char* dst, s32 value, char prefix, s32 arg3)
+{
+	s32 powerOf10;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E6FEC.s")
+	while (*dst != '\0')
+	{
+		dst++;
+	}
+	if (value < 0)
+	{
+		*dst = '-';
+		dst++;
+		value = -value;
+	}
+	else if (prefix != '\0')
+	{
+		*dst = prefix;
+		dst++;
+	}
+	//Start at a billion
+	powerOf10 = 1000000000;
+	//Divide by 10 until we get a multiple of 10 with the same number of digits as value
+	while (value < powerOf10)
+	{
+		powerOf10 = powerOf10 / 10;
+	}
+	if (powerOf10 == 0)
+	{
+		*dst = '0';
+		dst++;
+	}
+	else
+	{
+		for (powerOf10; powerOf10 > 0; powerOf10 /= 10)
+		{
+			if (arg3 != 0)
+			{
+				*dst = (value / powerOf10) + 0x10;
+				dst++;
+			}
+			else
+			{
+				//convert value to the ascii
+				*dst = (value / powerOf10) + '0';
+				dst++;
+			}
+			//Remove the highest digit
+			value %= powerOf10;
+		}
+	}
+	*dst = '\0';
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E705C.s")
+void func_800E6F7C(char* arg0, u32 arg1)
+{
+	s32 temp_t0;
+	s32 var_v1;
+
+	while (*arg0 != '\0')
+	{
+		arg0++;
+	}
+	*arg0 = '0';
+	arg0++;
+	*arg0 = 'x';
+	arg0++;
+	for (var_v1 = 7; var_v1 >= 0; var_v1--)
+	{
+		temp_t0 = (arg1 >> var_v1 * 4) & 0xF;
+		if ((temp_t0 < 0xA) & 0xFF)
+		{
+			*arg0 = temp_t0 + '0';
+		}
+		else
+		{
+			*arg0 = temp_t0 + 'W';
+		}
+		arg0++;
+	}
+	*arg0 = '\0';
+}
+
+void func_800E6FEC(char* arg0, u32 arg1)
+{
+	s32 temp_t0;
+	s32 var_v1;
+
+	while (*arg0 != '\0')
+	{
+		arg0++;
+	}
+	*arg0 = '0';
+	arg0++;
+	*arg0 = '.';
+	arg0++;
+	for (var_v1 = 7; var_v1 >= 0; var_v1--)
+	{
+		temp_t0 = (arg1 >> var_v1 * 4) & 0xF;
+		if ((temp_t0 < 0xA) & 0xFF)
+		{
+			*arg0 = temp_t0 + '0';
+		}
+		else
+		{
+			*arg0 = temp_t0 + '7';
+		}
+		arg0++;
+	}
+	*arg0 = '\0';
+}
+
+void func_800E705C(char* arg0, char arg1)
+{
+	s32 temp_t0;
+	s32 var_v1;
+
+	while (*arg0 != '\0')
+	{
+		arg0++;
+	}
+	*arg0 = '0';
+	arg0++;
+	*arg0 = 'x';
+	arg0++;
+	for (var_v1 = 1; var_v1 >= 0; var_v1--)
+	{
+		temp_t0 = (arg1 >> var_v1 * 4) & 0xF;
+		if ((temp_t0 < 0xA) & 0xFF)
+		{
+			*arg0 = temp_t0 + '0';
+		}
+		else
+		{
+			*arg0 = temp_t0 + '7';
+		}
+		arg0++;
+	}
+	*arg0 = '\0';
+}
 
 //string compare
-s32 string_compare(const char* str1, const char* str2) {
-    while (*str1 && *str2 && *str1 == *str2) {
+s32 string_compare(const char* str1, const char* str2) 
+{
+    while (*str1 && *str2 && *str1 == *str2) 
+	{
         str1++;
         str2++;
     }
@@ -68,7 +269,8 @@ s32 string_compare(const char* str1, const char* str2) {
 }
 
 //string copy
-void string_copy(char* dst, char* src) {
+void string_copy(char* dst, char* src) 
+{
     while (*(src) != '\0') 
 	{
         *(dst++) = *(src++);
@@ -77,7 +279,8 @@ void string_copy(char* dst, char* src) {
 }
 
 //string length
-s32 string_length(char* str) {
+s32 string_length(char* str) 
+{
     char v0;
     s32 len;
 
@@ -90,7 +293,14 @@ s32 string_length(char* str) {
     return len;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E71B8.s")
+char* func_800E71B8(char* arg0)
+{
+	if (_gldialog_entrypoint_1() != 0)
+	{
+		return arg0 += 2;
+	}
+	return arg0;
+}
 
 //strcmptok
 s32 func_800E71EC(char *str1, char* str2, char* str3)
@@ -138,7 +348,7 @@ void string_toUpper(char* str) {
     char* ret = str;
     while (*ret != '\0') 
 	{
-        if ((*ret >= 0x61) && (*ret < 0x7B)) 
+        if ((*ret >= 'a') && (*ret <= 'z'))
 		{
             *ret -= 0x20;
         }
@@ -152,7 +362,7 @@ void string_toLower(char* str)
 	char* ret = str;
 	while (*ret != '\0')
 	{
-		if ((*ret >= 0x41) && (*ret < 0x5B))
+		if ((*ret >= 'A') && (*ret <= 'Z'))
 		{
 			*ret += 0x20;
 		}
@@ -161,15 +371,15 @@ void string_toLower(char* str)
 	str = ret;
 }
 
-void string_intToBinary(char* arg0, s32 arg1)
+//int to binary string
+void string_intToBinary(char* dst, s32 value)
 {
 	s32 var_s0;
 	s32 var_v0;
 
-	var_s0 = 0x1F;
-	while (var_s0 >= 0)
+	for (var_s0 = 31; var_s0 >= 0; var_s0--)
 	{
-		if ((1 << var_s0) & arg1)
+		if ((1 << var_s0) & value)
 		{
 			var_v0 = '1';
 		}
@@ -177,14 +387,14 @@ void string_intToBinary(char* arg0, s32 arg1)
 		{
 			var_v0 = '0';
 		}
-		string_concatChar(arg0, var_v0);
-		var_s0 -= 1;
+		string_concatChar(dst, var_v0);
 	}
 }
 
-void string_setNull(char* arg0)
+//string set null
+void string_setNull(char* str)
 {
-	*arg0 = '\0';
+	*str = '\0';
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E73DC.s")

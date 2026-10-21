@@ -1728,9 +1728,9 @@ void func_800F849C(s32 arg0, f32 arg1) {
     func_8009BD18(D_80135490.unk0[arg0], arg1);
 }
 
-void func_800F84D0(s32 arg0)
+void func_800F84D0(s32 arg0,s32 arg1)
 {
-    func_8009659C(D_80135490.unk0[arg0]);
+    func_8009659C(D_80135490.unk0[arg0],arg1);
 }
 
 void func_800F84FC(void) {
