@@ -1018,7 +1018,7 @@ void func_80802120_chhandcart(Actor* arg0)
     sp34->unk4 = 0.0f;
     if (_glcutDll_entrypoint_20() != 0)
     {
-        if (func_800EA05C() == MAP_C7_GGM_GLITTER_GULCH_MINE)
+        if (map_getCurrent() == MAP_C7_GGM_GLITTER_GULCH_MINE)
         {
             func_80108B04(arg0, 0);
         }
@@ -1250,7 +1250,7 @@ void func_808028F0_chhandcart(Actor* arg0)
     if (_glcutDll_entrypoint_20() != 0)
     {
         //Are we in GGM
-        if (func_800EA05C() == MAP_C7_GGM_GLITTER_GULCH_MINE)
+        if (map_getCurrent() == MAP_C7_GGM_GLITTER_GULCH_MINE)
         {
             func_8080282C_chhandcart(arg0, 0, 1);
             func_808031D0_chhandcart(arg0, 0x11);
@@ -1264,7 +1264,7 @@ void func_808028F0_chhandcart(Actor* arg0)
     else if (flag_getValue(FLAG_066_PROGRESS_GGM_CANARY_MARY_FREED_1) != 0) //Canary Mary has been freed from Cage
     {
         //Are we in Canary Cave
-        if (func_800EA05C() == MAP_DB_GGM_CANARY_CAVE)
+        if (map_getCurrent() == MAP_DB_GGM_CANARY_CAVE)
         {
             actor_mark_delete(arg0);
             return;
@@ -1307,7 +1307,7 @@ void func_808028F0_chhandcart(Actor* arg0)
             func_808031D0_chhandcart(arg0, 0x14);
         }
     }
-    else if (func_800EA05C() != MAP_DB_GGM_CANARY_CAVE) //If we aren't in Canary Cave
+    else if (map_getCurrent() != MAP_DB_GGM_CANARY_CAVE) //If we aren't in Canary Cave
     {
         actor_mark_delete(arg0);
         return;

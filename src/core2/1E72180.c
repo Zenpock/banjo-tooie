@@ -24,7 +24,7 @@ void func_80098898(PlayerState* self)
     s32 index;
     UNKD_80117EC0* temp;
 
-    sp2C = func_800EA05C();
+    sp2C = map_getCurrent();
     func_800BED18(sp30, sp3C);
     ml_vec3i_to_vec3f(self->unkBC->unkC, sp30);
     ml_vec3i_to_vec3f(self->unkBC->unk0, sp3C);

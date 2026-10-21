@@ -877,7 +877,7 @@ void func_80801D08_chfactoryrobot(Actor* arg0)
     {
         arg0->unk70_4 = 1;
     }
-    if (func_800EA05C() == MAP_101_GI_INSIDE)
+    if (map_getCurrent() == MAP_101_GI_INSIDE)
     {
         temp_v1->unk12 = 1;
         return;

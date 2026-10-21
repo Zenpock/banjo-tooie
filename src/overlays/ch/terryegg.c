@@ -429,7 +429,7 @@ void func_80800D88_chterryegg(s32 arg0, f32* arg1)
 
 s32 func_80800E0C_chterryegg(s32 arg0, s32 arg1, f32* arg2)
 {
-    if ((func_800EA05C() == MAP_113_TDL_TERRYS_NEST) && (func_800CBD84(arg1) != -1))
+    if ((map_getCurrent() == MAP_113_TDL_TERRYS_NEST) && (func_800CBD84(arg1) != -1))
     {
         func_80800D88_chterryegg(arg0, arg2);
         return 2;

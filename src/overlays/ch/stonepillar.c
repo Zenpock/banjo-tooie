@@ -541,7 +541,7 @@ void func_80800FE0_chstonepillar(Actor* arg0)
 
 void func_808010CC_chstonepillar(Actor* arg0)
 {
-    if ((flag_getValue(FLAG3_9D9_UNK) == 0) && (func_800EA05C() != MAP_B9_MT_PRISON_COMPOUND) && (func_800F6CC8(character_getActiveIndex()) == 0))
+    if ((flag_getValue(FLAG3_9D9_UNK) == 0) && (map_getCurrent() != MAP_B9_MT_PRISON_COMPOUND) && (func_800F6CC8(character_getActiveIndex()) == 0))
     {
         _glcutDll_entrypoint_6(0xB9U, 0xBU);
     }

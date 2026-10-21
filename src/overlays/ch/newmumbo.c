@@ -70,7 +70,7 @@ GameFlag func_8080011C_chnewmumbo(void) {
 	if (flag_getValue(0x9C5) == 0) {
 		return 0;
 	}
-	switch (func_800EA05C())
+	switch (map_getCurrent())
 	{
 		case MAP_B7_MT_MUMBO:
 			return FLAG_37F_PAID_GLOWBO_MUMBO_MT;

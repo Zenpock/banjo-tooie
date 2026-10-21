@@ -20,7 +20,7 @@
 #include "core2/1EDCA30.h"
 #include "core2/1EDFED0.h"
 
-MapId func_800EA05C(void);
+MapId map_getCurrent(void);
 s32 func_800EA068(s32);
 s32 func_800EA090(void);
 s32 func_800EA09C();

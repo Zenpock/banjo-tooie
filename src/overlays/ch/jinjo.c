@@ -78,7 +78,7 @@ s16 chjinjo_entrypoint_2(MapId arg0)
     s32 index;
     if (arg0 == -1)
     {
-        arg0 = func_800EA05C();
+        arg0 = map_getCurrent();
     }
     for (index = 0; index < 18; index += 2)
     {

@@ -411,7 +411,7 @@ s32 func_800C1D80(u8 arg0) {
     sp34 = 0;
     temp_v0 = func_800C1414(arg0);
     if ((temp_v0->unk7A_10 == 1) && (temp_v0->unk79 != 0)) {
-        sp28 = func_800EA05C() != temp_v0->unk5E;
+        sp28 = map_getCurrent() != temp_v0->unk5E;
         if (func_800C13C4(temp_v0, 4) != 0) {
             func_800C1950(temp_v0->unk79, temp_v0->unk6C);
         }
@@ -490,7 +490,7 @@ void func_800C2000(u8 arg0) {
         } else {
             temp_v0->unk5A = (s32)((f32)temp_v0->unk5A - (((f32)temp_v0->unk4E / temp_v0->unk44) * sp3C));
             temp_v0->unk5A = func_800F0E28(0, temp_v0->unk5A);
-            if (func_800EA05C() != temp_v0->unk5E) {
+            if (map_getCurrent() != temp_v0->unk5E) {
                 temp_v0->unk5C = func_800F1418(temp_v0->unk5C, temp_v0->unk5A);
             }
         }
@@ -525,7 +525,7 @@ void func_800C2000(u8 arg0) {
         } else {
             temp_v0->unk5A = (s32)(((1.0f - (((temp_v0->unk54 - temp_v0->unk40) - temp_v0->unk48) / temp_v0->unk44)) * (f32)(temp_v0->unk4C + temp_v0->unk4E)) / 2);
         }
-        if (func_800EA05C() != temp_v0->unk5E) {
+        if (map_getCurrent() != temp_v0->unk5E) {
             temp_v0->unk5C = func_800F1418(temp_v0->unk5C, temp_v0->unk5A);
         }
         func_800C13A0(temp_v0, 8);
@@ -801,7 +801,7 @@ void func_800C2C4C(u8 id) {
     temp_v0->unk79 = 0;
     temp_v0->unk62 = 0xFF;
     temp_v0->unk6C = 1.0f;
-    temp_v0_2 = func_800EA05C();
+    temp_v0_2 = map_getCurrent();
     temp_v0->unk40 = 1.0f;
     temp_v0->unk44 = 1.0f;
     temp_v0->unk48 = 3.0f;
@@ -863,7 +863,7 @@ void func_800C2E40(u8 arg0) {
     temp_v0->unk61 = 0x3F;
     temp_v0->unk62 = 0xFF;
     temp_v0->unk6C = 1.0f;
-    temp_v0_2 = func_800EA05C();
+    temp_v0_2 = map_getCurrent();
     temp_v0->unk40 = 1.0f;
     temp_v0->unk44 = 1.0f;
     temp_v0->unk48 = 3.0f;
@@ -1094,7 +1094,7 @@ void func_800C35E8(u8 id, s32 arg1) {
         sp1C = func_800C1414(id);
         ml_vec3f_copy(sp1C, arg1);
         func_800C368C(id, 1);
-        sp1C->unk5E = func_800EA05C();
+        sp1C->unk5E = map_getCurrent();
     }
 }
 
@@ -1103,7 +1103,7 @@ void func_800C3648(u8 id, s32 arg1) {
 
     if (id != 0) {
         sp1C = func_800C1414(id);
-        sp1C->unk5E = func_800EA05C();
+        sp1C->unk5E = map_getCurrent();
     }
 }
 
@@ -1463,7 +1463,7 @@ u8 func_800C4350(u8 arg0, f32* arg1, s16* arg2) {
         ml_vec3f_copy((f32*)var_v0, arg1);
         func_800C13A0(var_v0, 2);
         var_v0->unk1B = 1;
-        var_v0->unk5E = func_800EA05C();
+        var_v0->unk5E = map_getCurrent();
     }
     if (arg2 == NULL) {
         if (arg0 != 0) {

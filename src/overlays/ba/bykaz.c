@@ -32,7 +32,7 @@ s32 bababykaz_entrypoint_5(PlayerState *self) {
     s32 sp24 = (func_800F8B88() == 2) ? 0xB : 0x1;
     s32 pad0;
 
-    if(func_800F8A5C(sp24) != func_800EA05C()) {
+    if(func_800F8A5C(sp24) != map_getCurrent()) {
         return -1;
     } else {
         return _plsu_entrypoint_1(sp24);

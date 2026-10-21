@@ -42,9 +42,9 @@ void func_800E6A90(char* arg0, char* arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E6CA8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E6DB4.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/string_IToA.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E6DD8.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/string_IToAPrefix.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E6F7C.s")
 
@@ -108,7 +108,7 @@ s32 func_800E71EC(char *str1, char* str2, char* str3)
 }
 
 //strtok
-char* func_800E7254(char* str, const char* delim) 
+char* string_afterToken(char* str, const char* delim) 
 {
     while (*delim != '\0' && *delim != *str) {
         delim++;
@@ -161,7 +161,7 @@ void string_toLower(char* str)
 	str = ret;
 }
 
-void func_800E7368(char* arg0, s32 arg1)
+void string_intToBinary(char* arg0, s32 arg1)
 {
 	s32 var_s0;
 	s32 var_v0;
@@ -182,7 +182,7 @@ void func_800E7368(char* arg0, s32 arg1)
 	}
 }
 
-void func_800E73D4(char* arg0)
+void string_setNull(char* arg0)
 {
 	*arg0 = '\0';
 }

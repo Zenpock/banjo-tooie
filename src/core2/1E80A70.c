@@ -306,7 +306,7 @@ int func_800A81C4(void) {
         return 0;
     }
     a = _gcsectionDll_entrypoint_4(D_80127630.mapValue);
-    b = _gcsectionDll_entrypoint_4(func_800EA05C());
+    b = _gcsectionDll_entrypoint_4(map_getCurrent());
     return b != a && D_80127630.unk6 == 0;
 }
 

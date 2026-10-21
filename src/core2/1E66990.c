@@ -155,7 +155,7 @@ s32 func_8008D850(PlayerState* arg0)
 	{
         player_getCoords(arg0, sp1C);
         //Restrict Talon Torpedo when in the waterfall
-        if ((func_800EA05C() == MAP_117_TDL_RIVER_PASSAGE) && (sp1C[2] < D_80124AD4))
+        if ((map_getCurrent() == MAP_117_TDL_RIVER_PASSAGE) && (sp1C[2] < D_80124AD4))
         {
             return 0;
         }

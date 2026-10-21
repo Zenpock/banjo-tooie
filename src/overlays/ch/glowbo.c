@@ -270,7 +270,7 @@ void func_8080013C_chglowbo(Actor* arg0)
     }
     GLOWBO_DATA(arg0)->unkC = 100.0f;
 
-    switch (func_800EA05C()) {
+    switch (map_getCurrent()) {
     case MAP_1A7_JRL_JOLLY_ROGERS_LAGOON:
     case MAP_1A8_JRL_ATLANTIS:
     case MAP_1A9_JRL_SEA_BOTTOM:
@@ -442,7 +442,7 @@ void func_80800A48_chglowbo(Actor* arg0)
     s32 temp_v0;
 
     sp1C = (glowboStruct*)func_80100094(arg0, 0U);
-    if (func_800EA05C() == MAP_157_IOH_WUMBA)
+    if (map_getCurrent() == MAP_157_IOH_WUMBA)
     {
         arg0->unk74_29 = 1;
     }
@@ -551,7 +551,7 @@ void func_80800E28_chglowbo(Actor* arg0)
 {
     f32 sp3C[3];
 
-    if (func_800EA05C() == MAP_157_IOH_WUMBA)
+    if (map_getCurrent() == MAP_157_IOH_WUMBA)
     {
         arg0->unk74_29 = 1;
     }

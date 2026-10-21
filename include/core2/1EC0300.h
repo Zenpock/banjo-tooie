@@ -6,7 +6,8 @@
 void string_concat(char*, char*);
 void string_concatChar(char*, char);
 void func_800E6AFC(char*, char);
-
+// int to string
+void string_IToA(char*, s32);
 //strcmp
 s32 string_compare(const char* str1, const char* str2);
 //Copy Text

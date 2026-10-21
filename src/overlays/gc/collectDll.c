@@ -168,7 +168,7 @@ s32 func_808003E0_gccollectDll(s32* arg0, s32* arg1)
                 //Check if the current item index fits within the range allocated for the current level
                 jiggyMap = func_800D0684(itemIndex, 1);
                 //If we have a matching map, the item isn't a virtual object, and it has been spawned
-                if ((func_800EA05C() == jiggyMap) && (func_808002C4_gccollectDll(itemIndex, 1) == 0) && (flag_getValue(foundSpawnFlag) != 0))
+                if ((map_getCurrent() == jiggyMap) && (func_808002C4_gccollectDll(itemIndex, 1) == 0) && (flag_getValue(foundSpawnFlag) != 0))
                 {
                     activeJiggiesInCurrentMap += 1;
                 }
@@ -198,7 +198,7 @@ s32 func_808003E0_gccollectDll(s32* arg0, s32* arg1)
                 //Get the map at current item index fits within the range allocated for the current level
                 jiggyMap = func_800D0684(itemIndex, 1);
                 //If we have a matching map, the item isn't a virtual object, and it has been spawned
-                if ((func_800EA05C() == jiggyMap) && (func_808002C4_gccollectDll(itemIndex, 1) == 0) && (flag_getValue(foundSpawnFlag2) != 0))
+                if ((map_getCurrent() == jiggyMap) && (func_808002C4_gccollectDll(itemIndex, 1) == 0) && (flag_getValue(foundSpawnFlag2) != 0))
                 {
                     var_s2[0] = activeJiggiesInCurrentMap;
                     var_s2++;

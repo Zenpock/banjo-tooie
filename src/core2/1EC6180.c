@@ -17,7 +17,7 @@ void func_800EC898(unkStruct800EC898* arg0, s32 arg1, s32 arg2, s32 arg3) {
     s16 temp_v0_2;
     int new_var;
 
-    temp_v0 = func_800EA05C();
+    temp_v0 = map_getCurrent();
     var_t0 = (unkStruct800EC898_var_t0*) D_80123580;
     var_t7 = (unkStruct800EC898_var_t0*) D_80123580;
     while (var_t0->unk0 != 0) {

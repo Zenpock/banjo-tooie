@@ -57,7 +57,7 @@ void bafly_entrypoint_5(PlayerState* self) {
     self->unk8C->unk4 = 1.0f;
     self->unk8C->unk0 = 0.0f;
     self->unk8C->unk8 = 0;
-    temp_v0 = func_800EA05C();
+    temp_v0 = map_getCurrent();
     if ((temp_v0 != 0xE4) && (temp_v0 != 0x17B)) {
         self->unk8C->unkE = 0;
         return;

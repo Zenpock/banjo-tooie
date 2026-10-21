@@ -10,7 +10,7 @@ extern s16 D_80132DCA;
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800E9F20.s")
 
 // Get World Section
-MapId func_800EA05C(void) 
+MapId map_getCurrent(void) 
 {
 	return D_80132DC2;
 }

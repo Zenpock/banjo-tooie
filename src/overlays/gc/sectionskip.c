@@ -247,7 +247,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
             {
                 flag_setValue(FLAG_40A_RANDOMISER_CCL_SKULL_1, rand_percentChance(0.5f) != 0 ? 0 : 1);
             }
-            switch (func_800EA05C())
+            switch (map_getCurrent())
             {
             case MAP_136_CCL_CLOUD_CUCKOOLAND:
                 switch (mapToEnter)
@@ -402,7 +402,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
                 func_80800374_gcsectionskip(temp_v0, arg0);
                 return 0;
             }
-            func_800F7C9C(temp_a0, 0x95, func_800EA05C(), 2);
+            func_800F7C9C(temp_a0, 0x95, map_getCurrent(), 2);
             break;
         case 26:
             sp1C = character_getActiveIndex();
@@ -411,7 +411,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
                 func_80800374_gcsectionskip(temp_v0, arg0);
                 return 0;
             }
-            func_800F7C9C(sp1C, 0x95, func_800EA05C(), 2);
+            func_800F7C9C(sp1C, 0x95, map_getCurrent(), 2);
             func_800F7B9C(sp1C, 0x96U);
             break;
         case 27:
@@ -508,7 +508,7 @@ s32 func_80800D3C_gcsectionskip(MapId* arg0, s32* arg1)
     {
         return 0;
     }
-    switch (func_800EA05C())
+    switch (map_getCurrent())
     {
     case MAP_AF_SM_SPIRAL_MOUNTAIN:
         if (flag_getValue(FLAG_318_PROGRESS_DEFEATED_KLUNGO_1) != 0)

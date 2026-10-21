@@ -118,7 +118,7 @@ void func_80095A6C(s32 arg0, PlayerState* arg1) {
 }
 
 void func_80095A74(PlayerState* arg0, s32 arg1) {
-    if (func_800EA05C() == 0xB8) {
+    if (map_getCurrent() == 0xB8) {
         if (arg1 != 0) {
             func_80095A08(arg0, 8, 1);
             return;

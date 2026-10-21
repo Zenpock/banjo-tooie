@@ -22,7 +22,7 @@ void func_80800000_chbubbleelevator(Actor* arg0)
     {
         _gspropctrl_entrypoint_11(temp_v0, ELEVATOR_DATA(arg0)->unk0);
     }
-    temp_v0_2 = func_800EA05C();
+    temp_v0_2 = map_getCurrent();
     if (temp_v0_2 != MAP_136_CCL_CLOUD_CUCKOOLAND) //If Map is not CCL
     {
         if (temp_v0_2 == MAP_15A_IOH_WASTELAND) //If Map is Wasteland
@@ -298,7 +298,7 @@ s32 func_8080090C_chbubbleelevator(Actor* arg0, s32 arg1, s32 arg2)
             func_808004DC_chbubbleelevator(arg0, 3);
         }
         //If we're in CCL and Canary Mary is not in CCL
-        if ((func_800EA05C() == MAP_136_CCL_CLOUD_CUCKOOLAND) && (arg2 == D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk0 && (flag_getValue(FLAG_504_PROGRESS_CANARY_MARY_IN_CCL) == 0)))
+        if ((map_getCurrent() == MAP_136_CCL_CLOUD_CUCKOOLAND) && (arg2 == D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk0 && (flag_getValue(FLAG_504_PROGRESS_CANARY_MARY_IN_CCL) == 0)))
         {
             return event_sendToActorsOfType(0x383, 0xB, arg2);
         }

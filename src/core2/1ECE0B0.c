@@ -1886,7 +1886,7 @@ s32 func_800F8914(unkStruct800F88A0* arg0, s32 arg1)
     arg0->unk2 = func_800F9214(arg1);
     arg0->unk0 = character_getTransform(arg1);
     arg0->unk1 = func_800F65D0(arg1);
-    arg0->unk22 = func_800EA05C();
+    arg0->unk22 = map_getCurrent();
     arg0->unk21 = func_800EA090();
     arg0->unk20 = 2;
     arg0->unk1D = func_800F58F8(arg1);
@@ -2082,7 +2082,7 @@ void func_800F9098(s32 arg0, f32* arg1) {
     } else if (arg0 == 0xB) {
         ml_vec3f_copy(&D_80135510, arg1);
     }
-    D_8013551C = func_800EA05C();
+    D_8013551C = map_getCurrent();
 }
 
 void func_800F90EC(f32 arg0) {
@@ -2556,7 +2556,7 @@ void func_800F9C6C(void) {
         return;
     case 18:
         sp18 = func_800F8A5C(0xA);
-        if (func_800EA05C() == sp18) {
+        if (map_getCurrent() == sp18) {
             func_800F9488(0x10);
             return;
         }
@@ -2564,7 +2564,7 @@ void func_800F9C6C(void) {
         return;
     case 19:
         sp18 = func_800F8A5C(0xA);
-        if (func_800EA05C() == sp18) 
+        if (map_getCurrent() == sp18) 
         {
             func_800F9488(0x11);
         }
