@@ -864,7 +864,7 @@ void func_808019E0_bsbswim(PlayerState* self)
     {
         func_800A0CF4(self, 0);
         _baduo_entrypoint_21(self);
-        func_800A3410(self, 0xA);
+        player_setTransformation(self, TRANSFORM_A_BANJO);
         self->unk164.bytes[1] = 1;
         player_getCoords(self, sp30);
         sp30[1] += 60.0f;

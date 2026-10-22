@@ -60,7 +60,7 @@ f32 func_800A3378(PlayerState*);
 f32 func_800A3394(PlayerState *);
 void func_800A33A0(PlayerState*, f32*);
 void func_800A33CC(PlayerState*, f32*);
-void func_800A3410(PlayerState *, s32);
+void player_setTransformation(PlayerState *, TransformationId);
 void func_800A34AC(PlayerState *, f32[3]);
 void func_800A34D8(PlayerState*, s32);
 void func_800A3538(PlayerState*,s32);

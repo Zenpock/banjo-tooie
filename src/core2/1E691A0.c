@@ -342,7 +342,7 @@ void func_800905C4(s32 arg0,s32 arg1)
     func_800F7DE8(character_getActiveIndex(),arg0,arg1);
 }
 
-void func_800905F8(s32 arg0)
+void func_800905F8(TransformationId arg0)
 {
     func_800F7E64(character_getActiveIndex(),arg0);
 }

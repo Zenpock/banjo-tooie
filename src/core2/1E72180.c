@@ -223,7 +223,7 @@ void func_80098E64(PlayerState* self)
 
     if ((player_getTransformation(self) == TRANSFORM_E_GOLDENGOLIATH) && (baflag_isTrue(self, 0x40) != 0))
     {
-        func_800A3410(self, 0xD);
+        player_setTransformation(self, TRANSFORM_D_MUMBO);
         func_800F8EBC(self->unk184);
     }
     sp30 = func_8009CBDC(self, bs_getCurrentState(self));

@@ -170,7 +170,7 @@ void baduo_entrypoint_13(PlayerState* self)
             func_800F911C(1);
             func_800F80D8((u32)self->unk184);
             func_800D5034(player_getTransformation(self), TRANSFORM_1_BK);
-            func_800A3410(self, 1);
+            player_setTransformation(self, TRANSFORM_1_BK);
             func_800F8268(self->unk184, 0, 1);
             if (activeIndex != self->unk184)
             {
@@ -202,10 +202,10 @@ void baduo_entrypoint_14(PlayerState* self, f32* arg1)
     s32 sp24;
     PlayerState* temp_v0_2;
 
-    sp24 = func_800F6224(self->unk184);
+    sp24 = character_createNew(self->unk184);
     temp_v0_2 = character_getPlayerState(sp24);
     func_800F452C(temp_v0_2, arg1);
-    func_800A3410(temp_v0_2, 0x11);
+    player_setTransformation(temp_v0_2, TRANSFORM_11_CLOCKWORK);
     func_80092778(temp_v0_2);
     func_80800008_baduo(self, temp_v0_2);
     _bababykaz_entrypoint_8(temp_v0_2);
@@ -227,10 +227,10 @@ void baduo_entrypoint_15(PlayerState* self, f32* arg1)
     f32 sp34[3];
 
 
-    sp4C = func_800F6224(self->unk184);
+    sp4C = character_createNew(self->unk184);
     temp_v0_2 = character_getPlayerState(sp4C);
     func_800F452C(temp_v0_2, arg1);
-    func_800A3410(temp_v0_2, 0x11);
+    player_setTransformation(temp_v0_2, TRANSFORM_11_CLOCKWORK);
     func_80092778(temp_v0_2);
     _bababykaz_entrypoint_8(temp_v0_2);
     func_80800008_baduo(self, temp_v0_2);
@@ -259,7 +259,7 @@ void baduo_entrypoint_16(PlayerState* self)
     s32 sp24;
     PlayerState* temp_s0;
 
-    sp24 = func_800F6224(self->unk184);
+    sp24 = character_createNew(self->unk184);
     temp_s0 = character_getPlayerState(sp24);
     yaw_setIdeal(self, yaw_get(self));
     yaw_setIdeal(temp_s0, yaw_get(self));
@@ -285,7 +285,7 @@ void baduo_entrypoint_17(PlayerState* self, f32* arg1)
     f32 sp1C[3];
 
     player_getCoords(self, sp1C);
-    sp28 = character_getPlayerState(func_800F6224(self->unk184));
+    sp28 = character_getPlayerState(character_createNew(self->unk184));
     func_800F452C(sp28, arg1);
     bs_setState(sp28, BS_STATE_1_IDLE);
     func_800F45B0(sp28, 2, sp1C);
@@ -296,10 +296,10 @@ void baduo_entrypoint_18(PlayerState* self, f32* arg1)
     s32 sp24;
     PlayerState* temp_v0_2;
 
-    sp24 = func_800F6224(self->unk184);
+    sp24 = character_createNew(self->unk184);
     temp_v0_2 = character_getPlayerState(sp24);
     func_800F452C(temp_v0_2, arg1);
-    func_800A3410(temp_v0_2, 0xD);
+    player_setTransformation(temp_v0_2, TRANSFORM_D_MUMBO);
     func_80092778(temp_v0_2);
     bs_setState(temp_v0_2, BS_STATE_E5);
     func_80800008_baduo(self, temp_v0_2);
@@ -335,11 +335,11 @@ void baduo_entrypoint_20(PlayerState* self, f32* arg1, f32 arg2)
     s32 temp_v0;
     PlayerState* temp_v0_2;
 
-    temp_v0 = func_800F6224(self->unk184);
+    temp_v0 = character_createNew(self->unk184);
     temp_v0_2 = character_getPlayerState(temp_v0);
     func_800F452C(temp_v0_2, arg1);
     func_80800008_baduo(self, temp_v0_2);
-    func_800A3410(temp_v0_2, 0xE);
+    player_setTransformation(temp_v0_2, TRANSFORM_E_GOLDENGOLIATH);
     func_80092778(temp_v0_2);
     yaw_setIdeal(temp_v0_2, arg2);
     yaw_applyIdeal(temp_v0_2);
@@ -361,12 +361,12 @@ void baduo_entrypoint_21(PlayerState* self)
     f32 sp24[3];
 
     func_800F911C(3);
-    sp34 = func_800F6224(self->unk184);
+    sp34 = character_createNew(self->unk184);
     currentState = character_getPlayerState(sp34);
     player_getCoords(self, sp24);
     func_800F452C(currentState, sp24);
-    func_800A3410(self, 0xA);
-    func_800A3410(currentState, 0xB);
+    player_setTransformation(self, TRANSFORM_A_BANJO);
+    player_setTransformation(currentState, TRANSFORM_B_KAZOOIE);
     func_80092778(currentState);
     yaw_setIdeal(self, yaw_get(self));
     yaw_setIdeal(currentState, yaw_get(self));

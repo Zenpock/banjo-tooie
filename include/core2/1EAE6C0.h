@@ -6,13 +6,14 @@
 #include "core2/1ED4E30.h"
 #include "gc/extra.h"
 
-s32 func_800D4DD0(s32);
-u8 func_800D4E7C(s32);
-u8 func_800D4EB8(s32);
-void func_800D4FB8(s32, s32);
-s32 func_800D4F9C(s32);
+s32 func_800D4DD0(TransformationId);
+u8 transformation_getCurrentHealth(TransformationId);
+u8 transformation_getMaxHealth(TransformationId);
+s32 transformation_getStartMaxHealth(s32);
+void transformation_setCurrentHealth(TransformationId, s32);
+s32 transformation_isNotSnowball(s32);
 void func_800D5034(TransformationId, TransformationId);
-s32 func_800D517C();
+void transformation_setAllMaxHealth();
 void func_800D5234(s32);
 s32 func_800D5240(void);
 

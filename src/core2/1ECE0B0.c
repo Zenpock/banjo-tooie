@@ -792,7 +792,7 @@ void func_800F6204(s32 arg0) {
     func_800F6140(arg0);
 }
 
-s32 func_800F6224(s32 arg0) {
+s32 character_createNew(s32 arg0) {
     f32 sp3C[3];
     s32 i;
 
@@ -1544,11 +1544,11 @@ s32 func_800F7E3C(s32 arg0, s32 arg1) {
     return func_800F7C58(arg0, 0x84, arg1) == 2;
 }
 
-void func_800F7E64(s32 arg0, s32 arg1) {
+void func_800F7E64(s32 arg0, TransformationId arg1) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    func_800A3410(sp1C, arg1);
+    player_setTransformation(sp1C, arg1);
     func_80092778(sp1C);
 }
 
@@ -2335,8 +2335,8 @@ int func_800F9488(s32 arg0) {
         return;
     case 15:
         func_800F93C4(&sp58, &sp5C);
-        sp50 = func_800F6224(sp58);
-        func_800F7E64(sp50, 0xB);
+        sp50 = character_createNew(sp58);
+        func_800F7E64(sp50, TRANSFORM_B_KAZOOIE);
         func_800F608C(sp50, 1);
         func_800F9240(sp44, sp58);
         func_800F7CF4(sp50, 0x50, sp44);

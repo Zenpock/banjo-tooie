@@ -195,7 +195,7 @@ u8 func_800A3404(PlayerState* self)
     return self->unkA0->unk3F;
 }
 
-void func_800A3410(PlayerState* self, s32 arg1)
+void player_setTransformation(PlayerState* self, TransformationId nextTransform)
 {
     ba_unkA0_s* var_v0;
 
@@ -206,7 +206,7 @@ void func_800A3410(PlayerState* self, s32 arg1)
         func_800A0D68(self, 0);
         var_v0 = self->unkA0;
     }
-    var_v0->transformation = arg1;
+    var_v0->transformation = nextTransform;
     if (self->unkA0->transformation == TRANSFORM_A_BANJO)
     {
         func_800947EC(self, 1, 1);
@@ -359,7 +359,7 @@ void func_800A3820(PlayerState* self)
     self->unkA0->unk48 = temp_f0;
     self->unkA0->unk4C = temp_f0;
     self->unkA0->transformation = 0;
-    func_800A3410(self, func_8009E958());
+    player_setTransformation(self, func_8009E958());
     self->unkA0->unk54 = 1;
     self->unkA0->unk55 = 1;
     self->unkA0->unk3E = 1;
