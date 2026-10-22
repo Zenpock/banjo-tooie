@@ -26,7 +26,7 @@ s32 func_808003B4_cheggclockwork(Actor*, s32, s32);
 ActorData D_808008C0_cheggclockwork =
 {
 	/*0x0*/ 0x270,
-	/*0x2*/ 0x15E,
+	/*0x2*/ PROP_15E_CLOCKWORK_EGG,
 	/*0x4*/ 0x9C4,
 	/*0x6*/ 0x1,
 	/*0x8*/ 0,

@@ -105,7 +105,7 @@ void chswitch_entrypoint_6(Actor* arg0)
         }
         break;
     case 3:
-        temp_v0 = _plsu_entrypoint_1(*(s32*)&arg0->unk50);
+        temp_v0 = _character_findCharOfTransform(*(s32*)&arg0->unk50);
         temp = temp_v0 + 1 == 0;
         if (!(arg0->unk64_20) && (temp == 0))
         {

@@ -189,7 +189,7 @@ void func_800927C4(s32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 arg4)
     f32 sp28[3];
     f32 temp;
 
-    if (func_800F6BE4(arg4) != 0)
+    if (character_existsAtIndex(arg4) != 0)
     {
         temp_s0 = character_getPlayerState(arg4);
         ml_vec3f_assign_value(sp28, arg1, arg2, arg3);

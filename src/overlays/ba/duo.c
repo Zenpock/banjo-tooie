@@ -24,9 +24,9 @@ s32 baduo_entrypoint_2(PlayerState* self)
     switch (player_getTransformation(self))
     {
         case TRANSFORM_A_BANJO:
-            return _plsu_entrypoint_1(0xB);
+            return _character_findCharOfTransform(TRANSFORM_B_KAZOOIE);
         case TRANSFORM_B_KAZOOIE:
-            return _plsu_entrypoint_1(0xA);
+            return _character_findCharOfTransform(TRANSFORM_A_BANJO);
         default:
             return 0;
     }
@@ -151,7 +151,7 @@ void baduo_entrypoint_13(PlayerState* self)
             sp30 = baduo_entrypoint_2(self);
             if (activeIndex == self->unk184)
             {
-                func_800F8EBC(_plsu_entrypoint_1(0xB));
+                func_800F8EBC(_character_findCharOfTransform(TRANSFORM_B_KAZOOIE));
             }
             else
             {
@@ -318,7 +318,7 @@ void baduo_entrypoint_19(PlayerState* self)
 {
     s32 sp24;
 
-    sp24 = _plsu_entrypoint_1(0xD);
+    sp24 = _character_findCharOfTransform(TRANSFORM_D_MUMBO);
     func_800F457C(self, 0);
     func_800A38F0(self, 1, 1);
     func_800F8EBC(self->unk184);

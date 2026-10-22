@@ -29,13 +29,13 @@ s32 bababykaz_entrypoint_4(PlayerState *self) {
 }
 
 s32 bababykaz_entrypoint_5(PlayerState *self) {
-    s32 sp24 = (bs_getSplitStatus() == SPLIT_STATE_SPLIT) ? 0xB : 0x1;
+    TransformationId sp24 = (bs_getSplitStatus() == SPLIT_STATE_SPLIT) ? TRANSFORM_B_KAZOOIE : TRANSFORM_1_BK;
     s32 pad0;
 
     if(func_800F8A5C(sp24) != map_getCurrent()) {
         return -1;
     } else {
-        return _plsu_entrypoint_1(sp24);
+        return _character_findCharOfTransform(sp24);
     }
 }
 

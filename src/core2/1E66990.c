@@ -88,7 +88,7 @@ int func_8008D40C(PlayerState* self)
     s32 sp30;
     f32 sp24[3];
     s32 pad;
-    if ((bs_getSplitStatus() == SPLIT_STATE_SPLIT) && (_plsu_entrypoint_2()))
+    if ((bs_getSplitStatus() == SPLIT_STATE_SPLIT) && (_character_soloCharactersExist()))
     {
         if (func_8008E0C8(self))
         {

@@ -5835,8 +5835,8 @@ entrypoints = [
 name = "plsu"
 entrypoints = [
   "plsu_entrypoint_0",
-  "plsu_entrypoint_1",
-  "plsu_entrypoint_2",
+  "character_findCharOfTransform",
+  "character_soloCharactersExist",
   "plsu_entrypoint_3",
 ]
 

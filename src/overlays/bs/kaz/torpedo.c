@@ -180,7 +180,7 @@ void func_8080078C_bskaztorpedo(PlayerState *self) {
     f32 temp_f0;
     s32 temp_v0;
 
-    sp44 = _plsu_entrypoint_1(0xA);
+    sp44 = _character_findCharOfTransform(TRANSFORM_A_BANJO);
     if ((player_isStable(self) != 0) && (player_inWater(self) == 0)) {
         self->unk15C.word = 1;
     }
@@ -331,7 +331,7 @@ s32 bskaztorpedo_entrypoint_3(s32 idx) {
 void func_80800E98_bskaztorpedo(PlayerState *self) {
     f32 sp1C[3];
 
-    func_800F5A00(_plsu_entrypoint_1(0xA), sp1C);
+    func_800F5A00(_character_findCharOfTransform(TRANSFORM_A_BANJO), sp1C);
     sp1C[1] += 50.0f;
     _bamovegoto_entrypoint_12(self, sp1C);
 }
@@ -377,7 +377,7 @@ void func_80800FB4_bskaztorpedo(PlayerState *self) {
         func_800BABB8(func_8009FBB0(self, sp3C, 80.0f), sp3C, sp48, 1.0f, D_80801770_bskaztorpedo);
         func_800F82C0(self->unk184);
         func_800F911C(1);
-        sp34 = character_getPlayerState(_plsu_entrypoint_1(0xA));
+        sp34 = character_getPlayerState(_character_findCharOfTransform(TRANSFORM_A_BANJO));
         _baduo_entrypoint_7(sp34, 1);
         func_800A3410(sp34, 1);
         func_800A3904(sp34, 1);

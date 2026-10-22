@@ -272,7 +272,7 @@ void func_8080073C_chnewmumbo(Actor* arg0, s32 arg1)
 	{
 		if (arg1 != 0)
 		{
-			func_800F7B9C(_plsu_entrypoint_1(1), 0x8DU);
+			func_800F7B9C(_character_findCharOfTransform(TRANSFORM_1_BK), 0x8DU);
 		}
 		func_800F8300(character_getActiveIndex(), 2, arg0->position);
 		arg0->unk64_19 = 1;
@@ -359,7 +359,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 	if (func_8010D278() == 0xD)
 	{
 		func_8010D254(sp4C);
-		temp_v0 = _plsu_entrypoint_1(1);
+		temp_v0 = _character_findCharOfTransform(TRANSFORM_1_BK);
 		if (func_800F6D24(temp_v0) != 0)
 		{
 			func_800F8804(temp_v0, sp4C);
@@ -589,7 +589,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 		if ((func_800EFED0(D_80801AFC_chnewmumbo, D_80801B08_chnewmumbo, sp60) != 0) && (func_80090248() != 0))
 		{
 			func_8010D254(sp38);
-			func_800F7B9C(_plsu_entrypoint_1(1), 0x3DU);
+			func_800F7B9C(_character_findCharOfTransform(TRANSFORM_1_BK), 0x3DU);
 			sp5C->unk0 = 0U;
 			func_80800264_chnewmumbo(arg0, 0x10);
 			ml_vec3f_copy(arg0->position, sp38);
