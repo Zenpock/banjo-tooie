@@ -304,7 +304,7 @@ void func_808007C4_chfactoryrobot(Actor* arg0)
 
     temp_s1 = func_80100094(arg0, 0U);
     func_8010A3E8(arg0, 0.4f);
-    func_8010A590(arg0);
+    actor_enableCollision(arg0);
     ml_vec3f_to_vec3s(temp_s1->unk0, arg0->position);
     temp_f0 = arg0->rotation[1];
     temp_s1->unkC = temp_f0;
@@ -517,7 +517,7 @@ s32 func_80800E40_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
         case 0x8F:
             if (arg2 == 0)
             {
-                func_8010A590(arg0);
+                actor_enableCollision(arg0);
                 func_80109FE8(arg0, 1);
             }
             break;

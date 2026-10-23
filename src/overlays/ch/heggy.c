@@ -719,7 +719,7 @@ s32 func_80801A00_chheggy(Actor* arg0, s32 arg1, s32 arg2)
     case 0x3D:
         flag_setValueTrue(FLAG_581_PHYSICAL_IoH_HeggySplitUpCoverBroken);
         _chskeletonexplode_entrypoint_7(arg0, arg0->position);
-        func_8010A570(arg0);
+        actor_disableCollision(arg0);
         func_8010A624(arg0);
         return 1;
     case 0xF:

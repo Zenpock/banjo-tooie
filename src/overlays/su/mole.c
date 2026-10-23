@@ -428,8 +428,8 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
             sumole_entrypoint_17(arg0, 0xDB7, -1, 0);
             return;
         case 20:
-            var_v1 = func_8008FC00();
-            if (var_v1 >= func_8008FC28())
+            var_v1 = activePlayer_getCurrentHealth();
+            if (var_v1 >= activePlayer_getMaxHealth())
             {
                 if (_chmolehill_entrypoint_3(func_80106790(arg0->unk3C)) != 0)
                 {
@@ -442,10 +442,10 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
             MOLE_DATA(arg0)->unk18 -= time_getDelta();
             if (MOLE_DATA(arg0)->unk18 <= 0.0f)
             {
-                temp_a1 = func_800F10B4((f32)(func_8008FC00() + 1), 1.0f, 10.0f, 0.8f, 1.5f);
+                temp_a1 = func_800F10B4((f32)(activePlayer_getCurrentHealth() + 1), 1.0f, 10.0f, 0.8f, 1.5f);
                 MOLE_DATA(arg0)->unk18 = 0.2f;
                 func_800C3FC0(0x66C, temp_a1, 0x3E80);
-                func_8008FC50();
+                activePlayer_incrementCurrentHealth();
                 return;
             }
             break;

@@ -375,7 +375,7 @@ s32 func_80800C10_chjinjo(Actor* arg0, s32 eventId, s32 arg2)
                 _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801324_chjinjo);
                 func_80102424(arg0, 6);
                 _subaddieDll_entrypoint_4(arg0, 1U);
-                func_8010A570(arg0);
+                actor_disableCollision(arg0);
                 if (func_800DA9E4(FLAG_035_FTT_JINJO, 1) == 0)
                 {
                     func_800C05B8(0xCDA, 0xC, NULL, NULL, (s32)&_chjinjo_entrypoint_4, 0, func_808000DC_chjinjo(arg0));

@@ -224,7 +224,7 @@ void func_808005B8_chpickups(Actor* arg0, s32 arg1)
 {
     s32 var_v0;
 
-    func_8010A5B0(arg0, arg1);
+    actor_setCollision(arg0, arg1);
     if ((arg0->unk70_10) == 2)
     {
         var_v0 = 8;

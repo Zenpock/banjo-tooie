@@ -65,9 +65,9 @@ void func_800F48BC(s32 arg0, f32* arg1)
     func_800F4648(sp1C, sp2C);
 }
 
-void func_800F4924(s32 arg0,s32 a1)
+void character_affectCurrentHealth(s32 charIndex,s32 a1)
 {
-    func_800A17A8(D_80135490.unk0[arg0],a1);
+    player_affectCurrentHealth(D_80135490.unk0[charIndex],a1);
 }
 
 void func_800F4950(s32 arg0)
@@ -406,14 +406,14 @@ void func_800F554C(s32 arg0)
     func_80092BDC(D_80135490.unk0[arg0]);
 }
 
-s32 func_800F5578(s32 arg0)
+s32 character_getCurrentHealth(s32 arg0)
 {
-    return func_800A1718(D_80135490.unk0[arg0]);
+    return player_getCurrentHealth(D_80135490.unk0[arg0]);
 }
 
-s32 func_800F55A4(s32 arg0)
+s32 character_getMaxHealth(s32 arg0)
 {
-    return func_800A1760(D_80135490.unk0[arg0]);
+    return player_getMaxHealth(D_80135490.unk0[arg0]);
 }
 
 s32 func_800F55D0(s32 arg0)
@@ -1046,7 +1046,7 @@ int func_800F6B94(s32 arg0) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    return (player_getTransformation(sp1C) == TRANSFORM_2_SNOWBALL) && (func_800A1718(sp1C) >= 5);
+    return (player_getTransformation(sp1C) == TRANSFORM_2_SNOWBALL) && (player_getCurrentHealth(sp1C) >= 5);
 }
 
 s32 character_existsAtIndex(s32 arg0) {
@@ -1648,7 +1648,7 @@ void func_800F817C(s32 arg0, s32 arg1)
 
 void func_800F81A8(s32 arg0)
 {
-    func_800A1870(D_80135490.unk0[arg0]);
+    player_setCurrentHealth(D_80135490.unk0[arg0]);
 }
 
 void func_800F81D4(s32 arg0)

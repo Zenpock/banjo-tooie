@@ -410,8 +410,8 @@ s32 func_80800D80_bsbfly(PlayerState* self, s32 arg1)
             if (sp38[1] < 0.65f) 
             {
                 func_808009D0_bsbfly(self);
-                func_800A17A8(self, -1);
-                if (func_800A1718(self) != 0)
+                player_affectCurrentHealth(self, -1);
+                if (player_getCurrentHealth(self) != 0)
                 {
                     arg1 = 0x59;
                 } 
@@ -603,8 +603,8 @@ void func_808014E8_bsbfly(PlayerState* self)
     func_8009DF18(self, 0x417, 0.8f, 0x7FFF);
     func_8009D820(self, 1.8f);
     _bamotor_entrypoint_1(self, 1.0f, 0.5f, 0.5f);
-    func_800A17A8(self, -1);
-    if (func_800A1718(self) == 0) {
+    player_affectCurrentHealth(self, -1);
+    if (player_getCurrentHealth(self) == 0) {
         _basudie_entrypoint_1(self);
     }
     func_8080145C_bsbfly(self);

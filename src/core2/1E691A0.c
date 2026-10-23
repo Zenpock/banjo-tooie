@@ -61,9 +61,9 @@ void func_8008FA94(s32 arg0,s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_8008FB58.s")
 
-void func_8008FB94(s32 arg0)
+void activePlayer_affectCurrentHealth(s32 arg0)
 {
-    func_800F4924(character_getActiveIndex(),arg0);
+    character_affectCurrentHealth(character_getActiveIndex(),arg0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_8008FBC0.s")
@@ -73,19 +73,19 @@ void func_8008FBE0(u32 arg0)
     func_800A1624(arg0);
 }
 
-s32 func_8008FC00()
+s32 activePlayer_getCurrentHealth()
 {
-    return func_800F5578(character_getActiveIndex());
+    return character_getCurrentHealth(character_getActiveIndex());
 }
 
-s32 func_8008FC28()
+s32 activePlayer_getMaxHealth()
 {
-    return func_800F55A4(character_getActiveIndex());
+    return character_getMaxHealth(character_getActiveIndex());
 }
 
-void func_8008FC50()
+void activePlayer_incrementCurrentHealth()
 {
-    func_8008FB94(0x1);
+    activePlayer_affectCurrentHealth(0x1);
 }
 
 void func_8008FC70(s32 arg0)

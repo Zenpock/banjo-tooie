@@ -76,7 +76,7 @@ s32 func_808001B4_chgruntyfireballbig(Actor* actor, s32 arg1, s32 arg2)
     case 0xA:
         actor->unk6C_0 = (arg2 >> 0x10) & 0xFFFF;
         ((f32*)actor->actorData)[0] = func_80101068();
-        func_8010A590(actor);
+        actor_enableCollision(actor);
         func_80101FDC(actor, 2U);
         func_800F5A00(actor->unk6C_0, sp34);
         temp_a0 = &actor->actorData[4];
@@ -114,7 +114,7 @@ void func_8080034C_chgruntyfireballbig(Actor* actor)
     f32 sp70[3];
     s32 temp_s5;
     s32 var_s1;
-    func_8010A570(actor);
+    actor_disableCollision(actor);
     _subaddieaudioquick_entrypoint_2(actor, actor->position, &D_80800714_chgruntyfireballbig);
     ml_vec3f_copy(sp7C, actor->position);
     sp7C[1] += -10.0f;

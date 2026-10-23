@@ -61,7 +61,7 @@ void func_8080011C_chhoneyb(Actor* arg0)
     func_80102424(arg0, 3);
     *(f32*)&arg0->actorData[7] = 1.0f;
     arg0->unk58 = 0.25f;
-    temp_v0 = func_8008FC28();
+    temp_v0 = activePlayer_getMaxHealth();
     arg0->actorData[6] = temp_v0;
     arg0->actorData[3] = (s32)(arg0->actorData[4] + temp_v0);
     arg0->unk74_30 = 0;

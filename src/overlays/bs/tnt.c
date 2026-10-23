@@ -219,7 +219,7 @@ void func_808007EC_bstnt(PlayerState* self, s32 arg1) {
 	case 2:
 		func_808006B4_bstnt(self, 0xAU);
 		func_808005F4_bstnt(self);
-		func_800A17A8(self, -1);
+		player_affectCurrentHealth(self, -1);
 		func_800931AC(self, 3);
 		self->unk16C = 800.0f;
 		temp_f0 = yaw_get(self);
@@ -562,7 +562,7 @@ s32 bstnt_entrypoint_8(PlayerState* self)
 	{
 		return 0;;
 	}
-	if (func_800A1718(self) >= 2)
+	if (player_getCurrentHealth(self) >= 2)
 	{
 		return 1;
 	}

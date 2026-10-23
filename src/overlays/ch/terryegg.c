@@ -220,7 +220,7 @@ void func_808005C4_chterryegg(Actor* arg0)
                 _subaddiedialog_entrypoint_11(arg0->unk0, 0x17FEU, 0xFU, arg0->position, 0U);
                 flag_setMultipleValue(FLAG_361_UNK, (arg0->unk74_7) - 0x31, 3);
                 func_80102424(arg0, 4);
-                func_8010A590(arg0);
+                actor_enableCollision(arg0);
             }
             else
             {
@@ -285,7 +285,7 @@ void func_808005C4_chterryegg(Actor* arg0)
         if (_subaddietaxi_entrypoint_15(arg0, (arg0->unk74_7) - 0x2B) != 0)
         {
             func_80102424(arg0, 6);
-            func_8010A590(arg0);
+            actor_enableCollision(arg0);
         }
         break;
     }
@@ -344,7 +344,7 @@ s32 func_80800A2C_chterryegg(Actor* arg0, s32 arg1, s32 arg2)
             }
             else
             {
-                func_8010A570(arg0);
+                actor_disableCollision(arg0);
                 arg0->unk64_16 = 0;
                 arg0->unk74_20 = arg0->unk64_16;
             }
@@ -450,12 +450,12 @@ void func_80800E88_chterryegg(Actor* arg0, s32 arg1)
         if ((flag_getValue((arg0->unk74_7) + 0x143) != 0) || (func_80801138_chterryegg(arg0) != 0))
         {
             func_80102424(arg0, 6);
-            func_8010A590(arg0);
+            actor_enableCollision(arg0);
             return;
         }
         func_80800C08_chterryegg(arg0);
         func_80102424(arg0, 1);
-        func_8010A570(arg0);
+        actor_disableCollision(arg0);
         arg0->unk64_16 = 0;
         arg0->unk74_20 = arg0->unk64_16;
         return;
@@ -464,12 +464,12 @@ void func_80800E88_chterryegg(Actor* arg0, s32 arg1)
         return;
     case 4:
         func_80800D88_chterryegg(arg1, sp2C);
-        func_8010A570(arg0);
+        actor_disableCollision(arg0);
         _subaddietaxi_entrypoint_0(arg0, arg1, sp2C, 9);
         return;
     case 6:
         func_80102424(arg0, 0xB);
-        func_8010A570(arg0);
+        actor_disableCollision(arg0);
         return;
     }
 }

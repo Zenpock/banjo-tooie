@@ -61,7 +61,7 @@ s32 func_80800170_chdiggerbossbattery(Actor* arg0, s32 arg1, s32 arg2)
         temp_v0 = _subaddiefind_entrypoint_1(arg0, arg0->unk6C_9, -1, 0);
         if (temp_v0 != NULL)
         {
-            func_8010A570(temp_v0);
+            actor_disableCollision(temp_v0);
         }
         break;
     case 0x90:

@@ -46,7 +46,7 @@ void func_808000B8_chcauldronenergybars(Actor* arg0)
     case 1:
         if (func_800D9078(&CAULDRONENERGYBARS_DATA(arg0)->unk10) != 0)
         {
-            func_8010A590(arg0);
+            actor_enableCollision(arg0);
         }
         _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1, &D_808002C0_chcauldronenergybars);
         return;
@@ -81,7 +81,7 @@ s32 func_808001C4_chcauldronenergybars(Actor* arg0, s32 arg1, s32 arg2)
         arg0->unk58 = temp.f;
         func_80101FDC(arg0, 2);
         _subaddieDll_entrypoint_4(arg0, 1);
-        func_8010A570(arg0);
+        actor_disableCollision(arg0);
         flag_setValueTrue((arg0->unk74_7 == 0x32) ? (0x39A) : (0x39B));
         return 1;
 
@@ -90,7 +90,7 @@ s32 func_808001C4_chcauldronenergybars(Actor* arg0, s32 arg1, s32 arg2)
         func_800EC75C(new_var[0], sp30);
         _chelectricfence_entrypoint_1(arg0, sp30);
         CAULDRONENERGYBARS_DATA(arg0)->unk10 = 0.2f;
-        func_8010A570(arg0);
+        actor_disableCollision(arg0);
         return 1;
     }
 

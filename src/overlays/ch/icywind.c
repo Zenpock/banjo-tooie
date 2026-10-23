@@ -80,7 +80,7 @@ void func_808001AC_chicywind(Actor* arg0)
         sp34 = 0.65f;
         break;
     case TRANSFORM_2_SNOWBALL:
-        sp34 = func_800F10B4(func_800F5578(characterIndex), 1.0f, func_800F55A4(characterIndex), 0.6f, 1.0f);
+        sp34 = func_800F10B4(character_getCurrentHealth(characterIndex), 1.0f, character_getMaxHealth(characterIndex), 0.6f, 1.0f);
         break;
     }
     func_800F5A00(characterIndex, sp40);

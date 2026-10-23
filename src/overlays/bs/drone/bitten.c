@@ -166,7 +166,7 @@ void bsdronebitten_entrypoint_9(PlayerState* self) {
             func_8009DB04(self, 0x417, 0.8f, 0x4650);
             _bashake_entrypoint_0(self, 3, 1);
             _badust_entrypoint_8(self);
-            if (func_800A1718(self) == 0)
+            if (player_getCurrentHealth(self) == 0)
             {
                 nextState = _badata_entrypoint_20(self);
                 break;

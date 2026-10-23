@@ -65,7 +65,7 @@ s32 chswitch_entrypoint_5(Actor* arg0, s32 arg1, u32 arg2)
         {
             _gcaudiolist_entrypoint_0(0);
             func_80102424(arg0, 2);
-            func_8010A570(arg0);
+            actor_disableCollision(arg0);
             func_80103110(arg0, 1U);
             arg0->actorData[4] = arg2;
             func_800F7F98(arg2, 1);
@@ -77,7 +77,7 @@ s32 chswitch_entrypoint_5(Actor* arg0, s32 arg1, u32 arg2)
         {
             func_80102424(arg0, 3);
             arg0->unk64_20 = 1;
-            func_8010A570(arg0);
+            actor_disableCollision(arg0);
         }
         else
         {

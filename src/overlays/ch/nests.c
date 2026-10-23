@@ -547,7 +547,7 @@ void func_808001F0_chnests(Actor* arg0, UnkArg2ChNest* arg1)
         temp_v0 = D_808011DC_chnests[temp_v1 - 1];
         arg0->unk58 = rand_fBounded((f32)temp_v0[0], (f32)temp_v0[1]);
         arg0->unk64_16 = 0;
-        func_8010A570(arg0);
+        actor_disableCollision(arg0);
         func_80103110(arg0, 1U);
         _subaddieDll_entrypoint_4(arg0, 1U);
         arg0->actorData[0] = arg0->unk70_10;
@@ -564,7 +564,7 @@ void func_808001F0_chnests(Actor* arg0, UnkArg2ChNest* arg1)
 void func_808002E0_chnests(Actor* arg0)
 {
     arg0->unk64_16 = 0;
-    func_8010A570(arg0);
+    actor_disableCollision(arg0);
     arg0->actorData[0] = arg0->unk70_10;
     func_80101FDC(arg0, 4U);
 }
@@ -579,7 +579,7 @@ void func_8080034C_chnests(Actor* arg0)
     _subaddiefade_entrypoint_2(arg0);
     func_80103110(arg0, 0U);
     _subaddieDll_entrypoint_4(arg0, 0U);
-    func_8010A590(arg0);
+    actor_enableCollision(arg0);
     arg0->unk64_16 = 1;
     func_80101FDC(arg0, arg0->actorData[0]);
 }
@@ -900,7 +900,7 @@ void func_80800C3C_chnests(Actor* arg0)
         if (func_800D9078(&arg0->unk58) != 0)
         {
             _subaddiefade_entrypoint_2(arg0);
-            func_8010A590(arg0);
+            actor_enableCollision(arg0);
             _subaddieDll_entrypoint_4(arg0, 0U);
             arg0->unk64_16 = 1;
             func_80101FDC(arg0, arg0->actorData[0]);

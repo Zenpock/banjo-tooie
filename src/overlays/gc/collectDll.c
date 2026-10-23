@@ -231,7 +231,7 @@ void func_808005BC_gccollectDll(u32 arg0, Prop* arg1)
     func_800CFBC8(sp24, arg0, 1, 0);
     if ((_glreflight_entrypoint_0() & 0xFF) != 0xFE) 
     {
-        func_8010A570(sp24);
+        actor_disableCollision(sp24);
     }
 }
 
@@ -317,7 +317,7 @@ Actor* func_80800890_gccollectDll(Prop* arg0, u32 arg1)
         sp18 = func_80108C90(D_80800C18_gccollectDll[arg1], sp1C, arg0->FlagOrRotation, arg0);
         if ((_glreflight_entrypoint_0() & 0xFF) != 0xFE) 
         {
-            func_8010A570(sp18);
+            actor_disableCollision(sp18);
         }
         return sp18;
     }

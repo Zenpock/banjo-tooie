@@ -504,7 +504,7 @@ void func_80800CB4_chpawnbroker(Actor* arg0)
 
     arg0->unk3C = ItemForSale->unk0;
     //Disable Collision
-    func_8010A570(ItemForSale);
+    actor_disableCollision(ItemForSale);
     func_80102424(arg0, 2);
 }
 
@@ -515,7 +515,7 @@ s32 func_80800D5C_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
     {
         func_800BBCB8(arg0->position, arg0->position, arg0->scale, 0x28, &D_80801100_chpawnbroker);
         _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801134_chpawnbroker);
-        func_8010A590(func_80106790(arg0->unk3C));
+        actor_enableCollision(func_80106790(arg0->unk3C));
         actor_mark_delete(arg0);
         return 1;
     }

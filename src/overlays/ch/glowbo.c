@@ -396,7 +396,7 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
     {
         case EVENT_95_ACTOR_SPAWNED:
             _subaddierouteDll_entrypoint_1(arg0);
-            func_8010A5B0(arg0, flag_getValue(FLAG2_64E_UNK));
+            actor_setCollision(arg0, flag_getValue(FLAG2_64E_UNK));
             break;
         case EVENT_3E_ACTOR_TOUCHED:
             _fxsparkle_entrypoint_1(arg0->position, 6U);

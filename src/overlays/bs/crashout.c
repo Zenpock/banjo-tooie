@@ -75,7 +75,7 @@ void bscrashout_entrypoint_2(PlayerState* self) {
     {
         case 1:
             func_80800000_bscrashout(self);
-            if ((baanim_isAt(self, 0.2f) != 0) && (func_800A1718(self) == 0))
+            if ((baanim_isAt(self, 0.2f) != 0) && (player_getCurrentHealth(self) == 0))
             {
                 func_808000B0_bscrashout(self, 3);
             }

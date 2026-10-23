@@ -338,8 +338,8 @@ BanjoStateId func_80800D24_bskazfly(PlayerState *self, BanjoStateId nextState) {
     } else if (sp44 > 0.4f) {
         if (sp38[1] < 0.65f) {
             func_80800974_bskazfly(self);
-            func_800A17A8(self, -1);
-            if (func_800A1718(self) != 0) {
+            player_affectCurrentHealth(self, -1);
+            if (player_getCurrentHealth(self) != 0) {
                 nextState = BS_STATE_177;
             } else {
                 nextState = BS_STATE_101;
@@ -524,9 +524,9 @@ void func_80801448_bskazfly(PlayerState *self) {
     if (sp2C == 0xE0) {
         _bssplat_entrypoint_0(self);
     } else {
-        func_800A17A8(self, -1);
+        player_affectCurrentHealth(self, -1);
     }
-    if (func_800A1718(self) == 0) {
+    if (player_getCurrentHealth(self) == 0) {
         _basudie_entrypoint_1(self);
     }
     func_808013BC_bskazfly(self);
