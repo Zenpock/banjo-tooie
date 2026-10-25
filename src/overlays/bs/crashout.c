@@ -68,7 +68,7 @@ void bscrashout_entrypoint_2(PlayerState* self) {
     BanjoStateId nextState;
 
     nextState = BS_STATE_0_INVALID;
-    func_800F1574(&self->unk16C, time_getDelta() * 300.0f);
+    ml_timer_update(&self->unk16C, time_getDelta() * 300.0f);
     baphysics_set_target_horizontal_velocity(self, self->unk16C);
 
     switch (self->unk15C.word)

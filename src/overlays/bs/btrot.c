@@ -151,7 +151,7 @@ void func_80800438_bsbtrot(PlayerState* self)
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp2C, func_808001B8_bsbtrot(self), func_80800164_bsbtrot(self)));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp2C, func_808001B8_bsbtrot(self), func_80800164_bsbtrot(self)));
 }
 
 void func_808004B4_bsbtrot(PlayerState* self) {
@@ -312,11 +312,11 @@ void func_808008D0_bsbtrot(PlayerState* arg0)
 		}
 		break;
 	}
-	if (anctrl_isAt(sp24, func_800F13C4(sp1C + 0.2f, 1.0f)) != 0)
+	if (anctrl_isAt(sp24, ml_remainder_f(sp1C + 0.2f, 1.0f)) != 0)
 	{
 		func_808000DC_bsbtrot(arg0, 1);
 	}
-	if (anctrl_isAt(sp24, func_800F13C4(sp20 + 0.2f, 1.0f)) != 0)
+	if (anctrl_isAt(sp24, ml_remainder_f(sp20 + 0.2f, 1.0f)) != 0)
 	{
 		func_808000DC_bsbtrot(arg0, 0);
 	}
@@ -424,7 +424,7 @@ void func_80800DF4_bsbtrot(PlayerState* self) {
     func_8008C9F0(self, sp2C, sp30, sp34, func_808001EC_bsbtrot(self));
     if (func_8008E1A0(self) != 0)
     {
-        func_8008CA30(self, func_800F10B4(func_8009BBB8(self), 0.0f, 1.0f, 0.6f, 0.9f));
+        func_8008CA30(self, ml_map_f(func_8009BBB8(self), 0.0f, 1.0f, 0.6f, 0.9f));
         return;
     }
     func_8008CA30(self, 1.0f);
@@ -618,13 +618,13 @@ void bsbtrot_entrypoint_21(PlayerState* self) {
         _bashoes_entrypoint_20(self);
     }
     func_8009D658(self);
-    self->unk16C = func_800F0E00(self->unk16C - time_getDelta(), 0.0f);
+    self->unk16C = ml_max_f(self->unk16C - time_getDelta(), 0.0f);
     if (func_8008DF18(self) != 0)
     {
         func_800963C0(self, &sp38);
         func_800F1EA4(&sp38, &sp34);
         func_8009D3A8(self, 1);
-        baphysics_set_target_horizontal_velocity(self, func_800F10B4(func_8009BFD8(self), 20.0f, 60.0f, 550.0f, 700.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_map_f(func_8009BFD8(self), 20.0f, 60.0f, 550.0f, 700.0f));
         baphysics_set_target_yaw(self, sp34);
         _badust_entrypoint_1(self);
     }

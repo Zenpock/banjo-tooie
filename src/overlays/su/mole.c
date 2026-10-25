@@ -177,7 +177,7 @@ s32 sumole_entrypoint_3(Actor* arg0, s32 arg1, Arg2 arg2, MoveData* arg3)
             break;
         }
         break;
-    case 0x2E:
+    case EVENT_2E_ACTOR_DIALOG_ENDED:
         a1 = arg2.s_0;
         if (a1 == 0xD6C)
         {
@@ -442,7 +442,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
             MOLE_DATA(arg0)->unk18 -= time_getDelta();
             if (MOLE_DATA(arg0)->unk18 <= 0.0f)
             {
-                temp_a1 = func_800F10B4((f32)(activePlayer_getCurrentHealth() + 1), 1.0f, 10.0f, 0.8f, 1.5f);
+                temp_a1 = ml_map_f((f32)(activePlayer_getCurrentHealth() + 1), 1.0f, 10.0f, 0.8f, 1.5f);
                 MOLE_DATA(arg0)->unk18 = 0.2f;
                 func_800C3FC0(0x66C, temp_a1, 0x3E80);
                 activePlayer_incrementCurrentHealth();

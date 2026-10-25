@@ -61,7 +61,7 @@ void bskazmove_entrypoint_0(PlayerState *self) {
             break;
     }
 
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(value, min, max));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(value, min, max));
 }
 
 BanjoStateId func_808001C4_bskazmove(PlayerState *self, BanjoStateId nextState) {

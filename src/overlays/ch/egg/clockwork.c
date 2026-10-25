@@ -164,7 +164,7 @@ void func_80800048_cheggclockwork(Actor* arg0)
 
     temp_s1 = (EggNormalData*)func_80100094(arg0, 0U);
     temp_s1->unk28 -= time_getDelta();
-    temp_f20 = func_800F10B4(temp_s1->unk30, 0.0f, 2.0f, 0.0333f, 0.1f);
+    temp_f20 = ml_map_f(temp_s1->unk30, 0.0f, 2.0f, 0.0333f, 0.1f);
     while (temp_s1->unk28 <= 0)
     {
         temp_s1->unk28 += (temp_f20);
@@ -193,7 +193,7 @@ void func_80800124_cheggclockwork(Actor* arg0)
     }
     else
     {
-        arg0->scale = func_800F10B4(sp2C->unk30, 0.0f, 0.134f, 0.1f, 0.25f);
+        arg0->scale = ml_map_f(sp2C->unk30, 0.0f, 0.134f, 0.1f, 0.25f);
         if (_sueggmove_entrypoint_3(arg0) != 0)
         {
             _suegg_entrypoint_23(arg0);

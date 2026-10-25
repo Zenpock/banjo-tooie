@@ -163,10 +163,10 @@ void func_808002AC_chhoneyb(Actor* arg0)
                 if (*(f32*)&arg0->actorData[7] > 1.0f)
                 {
                     *(f32*)&arg0->actorData[7] = 1.0f;
-                    func_800C3FC0(0x66C, func_800F10B4(*(s32*)&arg0->actorData[6], 1/*.0f*/, 10.0f, 0.8f, 1.5f), 0x7D00);
+                    func_800C3FC0(0x66C, ml_map_f(*(s32*)&arg0->actorData[6], 1/*.0f*/, 10.0f, 0.8f, 1.5f), 0x7D00);
                 }
             }
-            if (func_800D9078(&arg0->unk58) != 0)
+            if (timer_reachedZero(&arg0->unk58) != 0)
             {
                 if ((s32)arg0->actorData[6] >= (s32)arg0->actorData[3])
                 {

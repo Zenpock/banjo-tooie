@@ -579,7 +579,7 @@ void func_80801260_chhumba(Actor* arg0)
 
     f32 sp34[3];
     ml_vec3f_apply_scale(sp44, arg0->scale);
-    func_8008FE68(sp34);
+    activePlayer_getCoords(sp34);
     index = 0;
     for (index = 0; index < 3; index++)
     {

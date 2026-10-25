@@ -105,7 +105,7 @@ u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
 		{
 			pauseMenu->unk3 = 0;
 		}
-		if (pauseMenu->unkE != 0 && func_800D9078(&pauseMenu->Timer) != 0)
+		if (pauseMenu->unkE != 0 && timer_reachedZero(&pauseMenu->Timer) != 0)
 		{
 			func_80801E08_gcnewpause(pauseMenu, &pauseMenu->optionState);
 		}
@@ -114,7 +114,7 @@ u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
 		break;
 	case 0x2: //Totals Pages
 		func_80016068(pauseMenu->unkC, &joystick);
-		func_800D9078(&pauseMenu->Timer);
+		timer_reachedZero(&pauseMenu->Timer);
 		if (pauseMenu->SoundEffectTimerPageOpen != 0)
 		{
 			pauseMenu->SoundEffectTimerPageOpen--;
@@ -201,7 +201,7 @@ u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
 
 	case 0x4:
 		func_80801CDC_gcnewpause(pauseMenu);
-		if (func_800D9078(&pauseMenu->Timer) != 0)
+		if (timer_reachedZero(&pauseMenu->Timer) != 0)
 		{
 			pauseMenu->GameOverFadingIn = 0;
 			func_800FCAE0(0x12, 0, 0xc8);
@@ -599,7 +599,7 @@ s32 func_80800FA8_gcnewpause(u32 arg0) {
 	for (index = 0; index != 9; index++)
 	{
 		if (1) {}
-		temp_v0 = func_800D1338(index);
+		temp_v0 = collectable_getNumJinjoCollectedColor(index);
 		if (temp_v0 != 0)
 		{
 			temp_s2 = func_800D27A4(index + 0xE1);
@@ -971,8 +971,8 @@ s32 func_808019A4_gcnewpause(u32 arg0, u32 arg1)
 	var_s5 = 0;
 	while (D_80802130_gcnewpause[index].itemType != -1)
 	{
-		temp_s1 = func_800D0018(D_80802130_gcnewpause[index].itemType, arg0);
-		temp_a1 = func_800CFC8C(D_80802130_gcnewpause[index].itemType, arg0);
+		temp_s1 = collectable_getCollectedInLevel(D_80802130_gcnewpause[index].itemType, arg0);
+		temp_a1 = collectable_getTotalInLevel(D_80802130_gcnewpause[index].itemType, arg0);
 		if (((arg1 != 1) || (temp_s1 != 0)) && (func_80801844_gcnewpause(temp_s1, temp_a1, D_80802130_gcnewpause[index].uiPosition, D_80802130_gcnewpause[index].itemIcon, 6, arg1) != 0))
 		{
 			var_s5 = 1;
@@ -1146,7 +1146,7 @@ u32 func_80801F18_gcnewpause(u32 a0)
 	u32 s0;
 	for (s0 = 0; s0 < 9; s0++)
 	{
-		if (func_800D1338(s0) != 0)
+		if (collectable_getNumJinjoCollectedColor(s0) != 0)
 		{
 			return 0x1;
 		}

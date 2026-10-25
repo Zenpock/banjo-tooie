@@ -177,7 +177,7 @@ void baduo_entrypoint_13(PlayerState* self)
                 func_80800008_baduo(character_getPlayerState(sp30), character_getPlayerState(self->unk184));
             }
             sp4C = yaw_get(self);
-            func_800F5A00(sp30, sp34);
+            character_getCoords(sp30, sp34);
             player_getCoords(self, sp40);
             func_800F759C(sp30);
             func_800A38F0(self, 1, 1);
@@ -235,7 +235,7 @@ void baduo_entrypoint_15(PlayerState* self, f32* arg1)
     _bababykaz_entrypoint_8(temp_v0_2);
     func_80800008_baduo(self, temp_v0_2);
     temp_s2 = func_800A4CA8(temp_v0_2);
-    func_800F3BB0(self, sp34);
+    player_getCoords_Dupe(self, sp34);
     if (ml_vec3f_distance_sq(arg1, sp34) > 1000000.0f)
     {
         for (var_s0 = 0; var_s0 < 0x3C; var_s0++)

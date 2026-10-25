@@ -40,9 +40,9 @@ void func_8008F9F8(f32* arg0,f32 arg1)
     func_800F4AC0(character_getActiveIndex(),arg0,arg1);
 }
 
-void func_8008FA2C(s32 arg0,s32 arg1)
+s32 func_8008FA2C(s32 arg0,s32 arg1)
 {
-    func_800F4B8C(character_getActiveIndex(),arg0,arg1);
+    return func_800F4B8C(character_getActiveIndex(),arg0,arg1);
 }
 
 s32 func_8008FA60(s32 arg0,s32 arg1)
@@ -150,9 +150,9 @@ void func_8008FE3C(s32 arg0)
     func_800F57F0(character_getActiveIndex(),arg0);
 }
 
-void func_8008FE68(f32* arg0)
+void activePlayer_getCoords(f32* arg0)
 {
-    func_800F5A00(character_getActiveIndex(),arg0);
+    character_getCoords(character_getActiveIndex(),arg0);
 }
 
 void func_8008FE94(s32 arg0,f32* arg1)

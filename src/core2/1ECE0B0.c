@@ -545,23 +545,23 @@ void func_800F59D4(s32 arg0)
     _bapackctrl_entrypoint_1(D_80135490.unk0[arg0]);
 }
 
-void func_800F5A00(s32 arg0,f32* a1)
+void character_getCoords(s32 charIdx,f32* a1)
 {
-    func_800F3BB0(D_80135490.unk0[arg0],a1);
+    player_getCoords_Dupe(D_80135490.unk0[charIdx],a1);
 }
 
-void func_800F5A2C(s32 arg0, s32 arg1, f32* arg2)
+void func_800F5A2C(s32 charIdx, s32 arg1, f32* arg2)
 {
-    func_800F3BD0(D_80135490.unk0[arg0], arg1, arg2);
+    func_800F3BD0(D_80135490.unk0[charIdx], arg1, arg2);
 }
 
-void func_800F5A58(s32 arg0, unkStruct800F5A58* arg1) {
+void character_getCoords3s(s32 charIdx, s32* arg1) {
     f32 sp1C[3];
 
-    func_800F3BB0(D_80135490.unk0[arg0], sp1C);
-    arg1->unk0 = (s32) sp1C[0];
-    arg1->unk4 = (s32) sp1C[1];
-    arg1->unk8 = (s32) sp1C[2];
+    player_getCoords_Dupe(D_80135490.unk0[charIdx], sp1C);
+    arg1[0] = (s32)sp1C[0];
+    arg1[1] = (s32)sp1C[1];
+    arg1[2] = (s32)sp1C[2];
 }
 
 f32 func_800F5AD0(s32 arg0) {
@@ -808,7 +808,7 @@ s32 character_createNew(s32 arg0) {
             newPlayer = func_800F43A8(i);
             D_80135490.unk0[i] = newPlayer;
             bakey_setControllerIndex(newPlayer, temp);
-            func_800F3BB0(refPlayer, sp3C);
+            player_getCoords_Dupe(refPlayer, sp3C);
             func_800F452C(newPlayer, sp3C);
             yaw_setIdeal(newPlayer, yaw_getIdeal(refPlayer));
             yaw_applyIdeal(newPlayer);
@@ -1751,7 +1751,7 @@ void func_800F84FC(void) {
         if (func_800F5924(i) == 0) {
             continue;
         }
-        func_800F5A00(i, buf1);
+        character_getCoords(i, buf1);
         func_800F5950(i, &out1, &out2, &out3);
         for (j = 0; j < 8; j++) {
             if (D_80135490.unk0[j] == NULL) {
@@ -1882,7 +1882,7 @@ unkStruct800F88A0* func_800F88A0(s32 arg0) {
 s32 func_800F8914(unkStruct800F88A0* arg0, s32 arg1)
 {
     s32 temp;
-    func_800F5A00(arg1, arg0->unk24);
+    character_getCoords(arg1, arg0->unk24);
     func_800F5B38(arg1, arg0->unk30);
     _plcamera_entrypoint_14(arg1, arg0->unk4, arg0->unk10);
     arg0->unk2 = func_800F9214(arg1);
@@ -2144,7 +2144,7 @@ s32 func_800F9214(s32 arg0) {
 
 void func_800F9240(f32* arg0, s32 arg1) {
     f32 buf[3];
-    func_800F5A00(arg1, buf);
+    character_getCoords(arg1, buf);
     buf[0] += 200.0f;
     ml_vec3f_assign_value(arg0, buf[0], buf[1], buf[2] + 200.0f);
 }
@@ -2345,8 +2345,8 @@ int func_800F9488(s32 arg0) {
     case 16:
         sp58 = _character_findCharOfTransform(TRANSFORM_B_KAZOOIE);
         sp50 = _character_findCharOfTransform(TRANSFORM_A_BANJO);
-        func_800F5A00(sp58, sp20);
-        func_800F5A00(sp50, sp2C);
+        character_getCoords(sp58, sp20);
+        character_getCoords(sp50, sp2C);
         if (ml_vec3f_distance_sq(sp20, sp2C) < 48400.0f) {
             ml_vec3f_copy(sp38, sp20);
         } else {

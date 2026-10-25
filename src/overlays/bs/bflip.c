@@ -5,7 +5,7 @@ void func_80800000_bsbflip(PlayerState *self) {
     if (!bastick_getZone(self)) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
     } else {
-        baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 80.0f, 200.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 80.0f, 200.0f));
     }
 }
 

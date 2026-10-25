@@ -52,7 +52,7 @@ void func_80800000_chhoneycarrier(Actor* arg0, unkStructHoneyCarrier* arg1)
             func_800C8B84(arg0->unk6C_0);
         }
         //Set the collected flag
-        func_800D0BD4(arg0->unk50, 2);
+        collectable_collectItem(arg0->unk50, 2);
         //Play collected sound effect
         func_800FC63C(9, 0x6D60);
         //Wait 2 seconds before trying to show the tutorial

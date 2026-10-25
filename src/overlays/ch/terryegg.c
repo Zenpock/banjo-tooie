@@ -67,7 +67,7 @@ void func_808000A8_chterryegg(Actor* arg0)
         }
         break;
     case 3:
-        if ((arg0->unk7C_12) && (func_800D9078(&arg0->unk58) != 0))
+        if ((arg0->unk7C_12) && (timer_reachedZero(&arg0->unk58) != 0))
         {
             _subaddiepalette_entrypoint_2(arg0, func_80100094(arg0, 1U), 0x7BE, 0x40200000);
             func_80102424(arg0, 4);
@@ -75,12 +75,12 @@ void func_808000A8_chterryegg(Actor* arg0)
         }
         break;
     case 4:
-        if (func_800D9078(&arg0->unk58) != 0)
+        if (timer_reachedZero(&arg0->unk58) != 0)
         {
             func_80102424(arg0, 5);
             _subaddieDll_entrypoint_4(arg0, 0U);
         }
-        *(f32*)&arg0->actorData[4] = func_800F10B4(arg0->unk58, 0, 2.5f, 0.0f, 255.0f);
+        *(f32*)&arg0->actorData[4] = ml_map_f(arg0->unk58, 0, 2.5f, 0.0f, 255.0f);
         break;
     case 5:
         temp_v0_2 = _plsu_entrypoint_3(arg0->unk0);
@@ -476,7 +476,7 @@ void func_80800E88_chterryegg(Actor* arg0, s32 arg1)
 
 void func_80800FE0_chterryegg(Actor* arg0)
 {
-    func_800D9078(&arg0->unk58);
+    timer_reachedZero(&arg0->unk58);
     if (arg0->unk58 <= 0.0f)
     {
         _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801410_chterryegg);

@@ -194,7 +194,7 @@ void bainput_setDiveCooldown(PlayerState *self, s32 arg1, f32 cooldown) {
 
 void bainput_update(PlayerState *self) {
     if (self->input->dive_cooldown != 0.0f) {
-        self->input->dive_cooldown = func_800F0E00(self->input->dive_cooldown - time_getDelta(), 0.0f);
+        self->input->dive_cooldown = ml_max_f(self->input->dive_cooldown - time_getDelta(), 0.0f);
     }
     bainput_enable(self, 6, 0);
 }

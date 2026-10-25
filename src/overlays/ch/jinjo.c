@@ -37,7 +37,7 @@ void func_80800000_chjinjo(Actor* arg0)
     {
         var_v0 = func_800D0CC8(arg0->unk6C_0);
     }
-    if (arg0->unk6C_9 == 0x48F && (func_800D1338(var_v0) <= arg0->rotation[1]))
+    if (arg0->unk6C_9 == 0x48F && (collectable_getNumJinjoCollectedColor(var_v0) <= arg0->rotation[1]))
     {
         actor_mark_delete(arg0);
     }
@@ -380,8 +380,8 @@ s32 func_80800C10_chjinjo(Actor* arg0, s32 eventId, s32 arg2)
                 {
                     func_800C05B8(0xCDA, 0xC, NULL, NULL, (s32)&_chjinjo_entrypoint_4, 0, func_808000DC_chjinjo(arg0));
                 }
-                func_800D0BD4(arg0->unk6C_0, 0U);
-                func_800D24E8(sp40 + 0xE1, func_800D1338(sp40), func_800D129C(sp40));
+                collectable_collectItem(arg0->unk6C_0, 0U);
+                func_800D24E8(sp40 + 0xE1, collectable_getNumJinjoCollectedColor(sp40), func_800D129C(sp40));
                 func_80801098_chjinjo(arg0, (u32)pad->unk1A >> 5);
             }
         }
@@ -474,7 +474,7 @@ u32 func_80801098_chjinjo(Actor* arg0, s32 arg1)
     arg0->unk64_19 = 0;
     arg0->unk74_30 = 0;
     arg0->actorData[4] = arg1;
-    sp2C = func_800D1338(temp_v0) == func_800D129C(temp_v0);
+    sp2C = collectable_getNumJinjoCollectedColor(temp_v0) == func_800D129C(temp_v0);
     if (func_800D035C(0) == 1)
     {
         flag_setMultipleValue(FLAG2_6D0_UNK, func_800D0CC8(arg0->unk6C_0), 4);

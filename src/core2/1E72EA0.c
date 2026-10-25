@@ -26,7 +26,7 @@ f32 func_80099A40(PlayerState *self) {
     return self->unkC0->unk4;
 }
 
-s32 func_80099A4C(PlayerState *self) {
+Unk80132ED0* func_80099A4C(PlayerState *self) {
     return self->unkC0->unk14;
 }
 

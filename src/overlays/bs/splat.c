@@ -37,7 +37,7 @@ void func_80800114_bssplat(PlayerState* self)
 
     nextState = BS_STATE_0_INVALID;
     sp20 = baanim_getAnimCtrlPtr(self);
-    baphysics_set_target_horizontal_velocity(self, func_800F0E00(0.0f, baphysics_get_target_horizontal_velocity(self) - 15.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_max_f(0.0f, baphysics_get_target_horizontal_velocity(self) - 15.0f));
     switch (self->unk15C.word) 
     {
     case 0:

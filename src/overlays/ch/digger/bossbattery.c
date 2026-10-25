@@ -25,7 +25,7 @@ void func_80800090_chdiggerbossbattery(Actor* arg0)
     f32 var_f0;
 
     _subaddieaudioloop_entrypoint_4(arg0, &arg0->actorData[0], 1U, &D_80800338_chdiggerbossbattery);
-    if (func_800D9078(&arg0->unk58) != 0) {
+    if (timer_reachedZero(&arg0->unk58) != 0) {
         ml_vec3f_copy(sp2C, &arg0->actorData[0]);
         if (rand_percentChance(0.5f) != 0)
         {

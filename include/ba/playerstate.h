@@ -449,7 +449,7 @@ typedef struct bs_firstp_s {
     f32 unk20C;
 } BsFirstP;
 typedef struct bs_van_s {
-    s32 unk0;
+    Unk80132ED0* unk0;
     f32 unk4[3];
     s32 unk10;
 } BsVan;
@@ -528,10 +528,12 @@ typedef struct player_state_s {
         u8 bytes[4];
     } unk15C; // Some sort of state
     union {
+        Unk80132ED0* object; //Unk80132ED0 is an object reference of some kind
         s32 word;
         u8 bytes[4];
     } unk160;
     union {
+        Unk80132ED0* object;
         s32 word;
         u8 bytes[4];
     } unk164;

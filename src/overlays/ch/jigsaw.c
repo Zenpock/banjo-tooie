@@ -9,14 +9,14 @@ void func_80800000_chjigsaw(Actor* arg0, unkCUnk0* arg1)
     if ((func_8010A6B0(arg0, (u32)arg1->unk1A >> 5) != 0) && (flag_getValue(FLAG2_665_UNK) == 0))
     {
         func_80108B04(arg0, 0U);
-        func_800D0BD4((s32)arg0->unk50, 1U);
+        collectable_collectItem((s32)arg0->unk50, 1U);
         _suautobaddies_entrypoint_3();
     }
 }
 
 void func_80800070_chjigsaw(Actor* arg0)
 {
-    if (func_800D0B68((u32)(s32)arg0->unk50, 1U) != 0)
+    if (collectable_isCollected((u32)(s32)arg0->unk50, 1U) != 0)
     {
         actor_mark_delete(arg0);
         return;

@@ -55,12 +55,6 @@
 
 #include "core2/1E75710.h"
 
-typedef struct {
-    s32 unk0;
-    s32 unk4;
-    s32 unk8;
-} unkStruct800F5A58;
-
 typedef enum
 {
 	ALLOW_TREXLARGE = 1 << (TRANSFORM_13_TREXLARGE + 0x1F),
@@ -164,6 +158,7 @@ void func_800F4F34(s32, f32*, f32, f32);
 PlayerState* character_getPlayerState(s32 arg0);
 PlayerState* character_getPlayerStateBounded(s32 arg0);
 TransformationId character_getTransform(s32);
+s32 character_getTransformBit(s32);
 //Get the character control index
 u32 character_getActiveIndex(void);
 s32 character_getCurrentHealth(s32);
@@ -173,8 +168,9 @@ s32 func_800F56AC(s32);
 Unk80132ED0* func_800F56D8(s32 arg0);
 void func_800F57F0(s32, f32*);
 s32 character_getMaxCharacters();
-void func_800F5A00(s32, f32[3]);
+void character_getCoords(s32, f32[3]);
 void func_800F5A2C(s32, s32, f32[3]);
+void character_getCoords3s(s32, s32[3]);
 f32 func_800F5AE0(s32);
 s32 func_800F5B0C(s32);
 void func_800F5D44(s32, f32*);
@@ -266,6 +262,7 @@ void func_800F9104(s32);
 void func_800F9110(s32);
 void func_800F911C(s32);
 void func_800F9178();
+s32 func_800F9184(void);
 // Might take in a PlayerState *
 void func_800F9198(void);
 s32 func_800F9214(s32);

@@ -258,7 +258,7 @@ void func_80800624_bsbfly(PlayerState* self)
     {
         next_state = BS_STATE_F_BBUSTER;
     }
-    self->kazfly->unk0 = func_800F0E00(self->kazfly->unk0 - time_getDelta(), 0);
+    self->kazfly->unk0 = ml_max_f(self->kazfly->unk0 - time_getDelta(), 0);
     if ((self->kazfly->unk0 == 0.0f)
         && bakey_pressed(self, BUTTON_B)
         && player_canBeakBomb(self)
@@ -460,7 +460,7 @@ void func_80800F10_bsbfly(PlayerState* self)
             }
             player_getCoords(self, unk0);
             ml_vec3f_subtract(unk0, self->kazfly->unk4);
-            _bafly_entrypoint_6(self, func_800F10B4(func_800EEFD4(unk0), 0, 16000000, 0.2, 0.7f));
+            _bafly_entrypoint_6(self, ml_map_f(func_800EEFD4(unk0), 0, 16000000, 0.2, 0.7f));
             if (func_800EEFD4(unk0) > 1.6e7f) {
                 if (bakey_held(self, BUTTON_B) != 0) {
                     func_80800A24_bsbfly(self, 3);

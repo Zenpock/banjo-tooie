@@ -189,7 +189,7 @@ void func_80800540_bskazfly(PlayerState *self) {
         func_8009DFD4(self, 1023, 0.6, 0.7, 10000, 12000);
     }
     _bafly_entrypoint_8(self, 300, 80, 800, -300.0f, -50.0f, -700.0f, -1000.0f);
-    self->kazfly->unk0 = func_800F0E00(self->kazfly->unk0 - time_getDelta(), 0);
+    self->kazfly->unk0 = ml_max_f(self->kazfly->unk0 - time_getDelta(), 0);
     if ((self->kazfly->unk0 == 0.0f) && (bakey_pressed(self, BUTTON_B) != 0) && (player_canBeakBomb(self) != 0) && (_bafly_entrypoint_12(self) != 0)) {
         next_state = BS_STATE_174;
     }
@@ -380,7 +380,7 @@ void func_80800EB4_bskazfly(PlayerState *self) {
         }
         player_getCoords(self, unk0);
         ml_vec3f_subtract(unk0, self->kazfly->unk4);
-        _bafly_entrypoint_6(self, func_800F10B4(func_800EEFD4(unk0), 0, 16000000, 0.2, 0.7f));
+        _bafly_entrypoint_6(self, ml_map_f(func_800EEFD4(unk0), 0, 16000000, 0.2, 0.7f));
         if (func_800EEFD4(unk0) > 1.6e7f) {
             if (bakey_held(self, BUTTON_B) != 0) {
                 func_808009C8_bskazfly(self, 3);

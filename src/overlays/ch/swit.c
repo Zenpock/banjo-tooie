@@ -41,7 +41,7 @@ s32 chswitch_entrypoint_3(Actor* arg0, enum flag_e arg1)
 
 void chswitch_entrypoint_4(Actor* arg0)
 {
-    if (arg0->unk70_10 == 2 && func_80101DDC(arg0) != 0 && !(arg0->unk64_20) && (func_800D9078(&arg0->unk54) != 0))
+    if (arg0->unk70_10 == 2 && func_80101DDC(arg0) != 0 && !(arg0->unk64_20) && (timer_reachedZero(&arg0->unk54) != 0))
     {
         arg0->unk64_20 = 1;
         func_80102424(arg0, 3);
@@ -109,7 +109,7 @@ void chswitch_entrypoint_6(Actor* arg0)
         temp = temp_v0 + 1 == 0;
         if (!(arg0->unk64_20) && (temp == 0))
         {
-            if (func_800D9078(&arg0->unk54) != 0)
+            if (timer_reachedZero(&arg0->unk54) != 0)
             {
                 func_800F7F98(temp_v0, 0);
                 flag_setValueTrue((enum flag_e)arg0->actorData[7]);
@@ -123,7 +123,7 @@ void chswitch_entrypoint_6(Actor* arg0)
         }
         else if (!arg0->unk6C_0 || temp != 0)
         {
-            if (func_800D90A4(&arg0->unk58) != 0)
+            if (timer_reachedZero_dupe(&arg0->unk58) != 0)
             {
                 _gcaudiolist_entrypoint_0(0U);
                 func_80102424(arg0, 4);

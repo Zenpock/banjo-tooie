@@ -30,7 +30,7 @@ void bsturn_entrypoint_1(PlayerState* self)
     f32 sp2C[3];
 
     nextState = BS_STATE_0_INVALID;
-    baphysics_set_target_horizontal_velocity(self, func_800F10B4(anctrl_getAnimTimer(baanim_getAnimCtrlPtr(self)), 0.18f, 1.0f, self->unk16C, 0.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_map_f(anctrl_getAnimTimer(baanim_getAnimCtrlPtr(self)), 0.18f, 1.0f, self->unk16C, 0.0f));
     self->unk15C.word++;
     if (self->unk15C.word >= 6)
     {

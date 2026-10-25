@@ -20,7 +20,7 @@ void func_80800000_bswalk(PlayerState* self)
             baphysics_set_target_horizontal_velocity(self, 0.0f);
             return;
         }
-        baphysics_set_target_horizontal_velocity(self, func_800F1214(bastick_distance(self), 30.0f, 150.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(bastick_distance(self), 30.0f, 150.0f));
         return;
     }
     switch (sp20)
@@ -29,16 +29,16 @@ void func_80800000_bswalk(PlayerState* self)
             baphysics_set_target_horizontal_velocity(self, 0.0f);
             return;
         case BS_STICK_ZONE_ID_1:
-            baphysics_set_target_horizontal_velocity(self, func_800F1214(sp24, 30.0f, 80.0f));
+            baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp24, 30.0f, 80.0f));
             return;
         case BS_STICK_ZONE_ID_2:
-            baphysics_set_target_horizontal_velocity(self, func_800F1214(sp24, 80.0f, 150.0f));
+            baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp24, 80.0f, 150.0f));
             return;
         case BS_STICK_ZONE_ID_3:
-            baphysics_set_target_horizontal_velocity(self, func_800F1214(sp24, 150.0f, 225.0f));
+            baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp24, 150.0f, 225.0f));
             return;
         case BS_STICK_ZONE_ID_4:
-            baphysics_set_target_horizontal_velocity(self, func_800F1214(sp24, 225.0f, 500.0f));
+            baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp24, 225.0f, 500.0f));
         default:
             return;
     }
@@ -48,7 +48,7 @@ void func_8080016C_bswalk(PlayerState* self)
 {
     if (func_8008E1A0(self) != 0)
     {
-        func_8008CA30(self, func_800F10B4(func_8009BBB8(self), 0.0f, 1.0f, 0.5f, 0.9f));
+        func_8008CA30(self, ml_map_f(func_8009BBB8(self), 0.0f, 1.0f, 0.5f, 0.9f));
         return;
     }
     func_8008CA30(self, 1.0f);
@@ -61,7 +61,7 @@ void func_808001D8_bswalk(PlayerState* self, f32 arg1)
 
 void func_808001E4_bswalk(PlayerState* self)
 {
-    self->unk16C = func_800F0E00(0.0f, self->unk16C - time_getDelta());
+    self->unk16C = ml_max_f(0.0f, self->unk16C - time_getDelta());
 }
 
 s32 func_80800220_bswalk(PlayerState* self)

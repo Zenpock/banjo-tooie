@@ -9,7 +9,7 @@ void func_80800000_bsdronebitten(PlayerState* self)
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 30.0f, 500.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 30.0f, 500.0f));
 }
 
 
@@ -112,7 +112,7 @@ void bsdronebitten_entrypoint_7(PlayerState* self) {
     }
     else
     {
-        sp38 = func_800F10B4(sp3C, 100.0f, 5000.0f, 0.4f, 4.5f);
+        sp38 = ml_map_f(sp3C, 100.0f, 5000.0f, 0.4f, 4.5f);
         _bamovegoto_entrypoint_7(self, sp38);
     }
     _bamovegoto_entrypoint_12(self, self->unk54->unk34);

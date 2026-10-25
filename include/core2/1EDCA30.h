@@ -11,6 +11,7 @@ typedef struct {
 
 void func_80103140(Actor*, u32, u16);
 s32 func_8010347C(Unk80132ED0*);
+void func_80103930(Actor*);
 s32 func_801039E4(Unk80132ED0*);
 unkStruct80103CB8* func_80103CB8(Actor*, s32);
 void func_80103DFC(Actor*, f32*);

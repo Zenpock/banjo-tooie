@@ -40,7 +40,7 @@ void func_80800148_bskazwingwhack(PlayerState *self) {
     baflag_set(self, BA_FLAG_36);
     baflag_set(self, BA_FLAG_5_HAS_PECKED);
     self->unk16C = func_8009BB5C(self);
-    self->unk16C = func_800F13F0(self->unk16C, 1200.0f);
+    self->unk16C = ml_min_f(self->unk16C, 1200.0f);
     baphysics_set_target_horizontal_velocity(self, self->unk16C);
     func_800931AC(self, 3);
     func_8009328C(self, yaw_get(self));
@@ -63,9 +63,9 @@ void func_80800278_bskazwingwhack(PlayerState *self) {
     baphysics_set_target_yaw(self, yaw_get(self));
     temp_f0 = baanim_getTimer(self);
     if (temp_f0 < 0.5f) {
-        var_f0 = func_800F10B4(temp_f0, 0.0f, 0.15f, self->unk170, 80.0f);
+        var_f0 = ml_map_f(temp_f0, 0.0f, 0.15f, self->unk170, 80.0f);
     } else {
-        var_f0 = func_800F10B4(temp_f0, 0.8f, 0.6f, self->unk170, 80.0f);
+        var_f0 = ml_map_f(temp_f0, 0.8f, 0.6f, self->unk170, 80.0f);
     }
     sp34 = temp_f0;
     func_8009E55C(self, 1, var_f0);

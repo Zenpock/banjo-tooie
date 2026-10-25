@@ -723,7 +723,7 @@ void func_80801538_bsbswim(PlayerState* self)
     sp28 = func_800A3298(self);
     if (bs_getPreviousState(self) == BS_STATE_F_BBUSTER)
     {
-        sp28 = func_800F0E00(sp28, 600.0f);
+        sp28 = ml_max_f(sp28, 600.0f);
     }
     if (sp28 > 80.0f)
     {
@@ -743,7 +743,7 @@ void func_80801538_bsbswim(PlayerState* self)
         anctrl_setStart(temp_s0, 0.6412f);
         anctrl_start(temp_s0);
     }
-    temp_f0 = func_800F10B4(sp28, 40.0f, 1000.0f, -300.0f, -1200.0f);
+    temp_f0 = ml_map_f(sp28, 40.0f, 1000.0f, -300.0f, -1200.0f);
     self->unk178 = temp_f0;
     baphysics_set_vertical_velocity(self, temp_f0);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_3_BOUNDED, 3, BA_PHYSICS_9_NO_GRAVITY);
@@ -764,7 +764,7 @@ void func_808016B8_bsbswim(PlayerState* self)
     func_800BA22C(sp3C, 1);
     if (self->unk178 < 0.0f)
     {
-        self->unk178 += func_800F0E00(mlAbsF(self->unk178) * 0.1f, 50.0f);
+        self->unk178 += ml_max_f(mlAbsF(self->unk178) * 0.1f, 50.0f);
         baphysics_set_vertical_velocity(self, self->unk178);
     }
     if (player_isStable(self) != 0)

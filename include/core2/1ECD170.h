@@ -5,11 +5,14 @@
 #include "ba/playerstate.h"
 #include "core2/1E72180.h"
 #include "core2/1EC3810.h"
+#include "core2/1ECE0B0.h"
 
 #include <ultra64.h>
 
 void func_800F3880(PlayerState*);
-void func_800F3BB0(PlayerState*, f32*);
+s32 func_800F38A8(PlayerState*, s32);
+s32 func_800F3930(PlayerState*, s32, s32);
+void player_getCoords_Dupe(PlayerState*, f32*);
 void func_800F3BD0(PlayerState*, s32, f32[3]);
 s32 func_800F3ED0(PlayerState*);
 s32 func_800F40EC(PlayerState*);

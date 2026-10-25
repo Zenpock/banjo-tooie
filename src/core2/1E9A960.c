@@ -489,9 +489,9 @@ void func_800C2000(u8 arg0) {
             temp_v0->unk5A = 0;
         } else {
             temp_v0->unk5A = (s32)((f32)temp_v0->unk5A - (((f32)temp_v0->unk4E / temp_v0->unk44) * sp3C));
-            temp_v0->unk5A = func_800F0E28(0, temp_v0->unk5A);
+            temp_v0->unk5A = ml_max_i(0, temp_v0->unk5A);
             if (map_getCurrent() != temp_v0->unk5E) {
-                temp_v0->unk5C = func_800F1418(temp_v0->unk5C, temp_v0->unk5A);
+                temp_v0->unk5C = ml_min_i(temp_v0->unk5C, temp_v0->unk5A);
             }
         }
         if (temp_v0->unk5A <= 0) {
@@ -526,7 +526,7 @@ void func_800C2000(u8 arg0) {
             temp_v0->unk5A = (s32)(((1.0f - (((temp_v0->unk54 - temp_v0->unk40) - temp_v0->unk48) / temp_v0->unk44)) * (f32)(temp_v0->unk4C + temp_v0->unk4E)) / 2);
         }
         if (map_getCurrent() != temp_v0->unk5E) {
-            temp_v0->unk5C = func_800F1418(temp_v0->unk5C, temp_v0->unk5A);
+            temp_v0->unk5C = ml_min_i(temp_v0->unk5C, temp_v0->unk5A);
         }
         func_800C13A0(temp_v0, 8);
     }
@@ -545,29 +545,29 @@ void func_800C2000(u8 arg0) {
         case 1:
             temp_v0->unk6C += temp_v0->unk28 * sp3C;
             if (temp_v0->unk28 > 0.0f) {
-                temp_v0->unk6C = func_800F13F0(temp_v0->unk6C, temp_v0->unk2C);
+                temp_v0->unk6C = ml_min_f(temp_v0->unk6C, temp_v0->unk2C);
             } else {
-                temp_v0->unk6C = func_800F0E00(temp_v0->unk6C, temp_v0->unk2C);
+                temp_v0->unk6C = ml_max_f(temp_v0->unk6C, temp_v0->unk2C);
             }
             func_800C13A0(temp_v0, 4);
             break;
         case 2:
             temp_v0->unk6C += rand2_fBounded(-temp_v0->unk30, temp_v0->unk30) * sp3C;
-            temp_v0->unk6C = func_800F0D50(temp_v0->unk6C, temp_v0->unk2C, temp_v0->unk28);
+            temp_v0->unk6C = ml_clamp_f(temp_v0->unk6C, temp_v0->unk2C, temp_v0->unk28);
             func_800C13A0(temp_v0, 4);
             break;
         case 3:
-            temp_v0->unk6C = func_800F10B4(temp_v0->unk54, temp_v0->unk28, temp_v0->unk2C, temp_v0->unk30, temp_v0->unk34);
+            temp_v0->unk6C = ml_map_f(temp_v0->unk54, temp_v0->unk28, temp_v0->unk2C, temp_v0->unk30, temp_v0->unk34);
             func_800C13A0(temp_v0, 4);
             break;
         case 4:
             sp2C = temp_v0->unk54;
             if (sp2C < temp_v0->unk28) {
-                temp_v0->unk6C = func_800F10B4(sp2C, 0.0f, temp_v0->unk28, temp_v0->unk34, temp_v0->unk38);
+                temp_v0->unk6C = ml_map_f(sp2C, 0.0f, temp_v0->unk28, temp_v0->unk34, temp_v0->unk38);
             } else if (sp2C < (temp_v0->unk28 + temp_v0->unk2C)) {
                 temp_v0->unk6C = temp_v0->unk38;
             } else {
-                temp_v0->unk6C = func_800F10B4(sp2C - (temp_v0->unk28 + temp_v0->unk2C), 0.0f, temp_v0->unk30, temp_v0->unk38, temp_v0->unk3C);
+                temp_v0->unk6C = ml_map_f(sp2C - (temp_v0->unk28 + temp_v0->unk2C), 0.0f, temp_v0->unk30, temp_v0->unk38, temp_v0->unk3C);
             }
             func_800C13A0(temp_v0, 4);
             break;
@@ -978,7 +978,7 @@ void func_800C3224(u8 id, f32 arg1, f32 arg2, f32 arg3) {
         var_f20 = var_f20 - arg3;
     } else {
         new_var = rand2_fBounded(-arg3, arg3);
-        var_f20 = func_800F0D50(var_f20 + new_var, arg1, arg2);
+        var_f20 = ml_clamp_f(var_f20 + new_var, arg1, arg2);
     }
     func_800C31DC(id, var_f20);
     if (var_f20) {

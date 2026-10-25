@@ -165,9 +165,9 @@ void func_80095C10(PlayerState* arg0) {
 
 f32 func_80095C34(f32 arg0, f32 arg1, f32 arg2) {
     if (arg1 < arg0) {
-        arg1 = func_800F13F0(arg0, arg1 + arg2);
+        arg1 = ml_min_f(arg0, arg1 + arg2);
     } else if (arg0 < arg1) {
-        arg1 = func_800F0E00(arg0, arg1 - arg2);
+        arg1 = ml_max_f(arg0, arg1 - arg2);
     }
     return arg1;
 }
@@ -228,7 +228,7 @@ f32 func_8009630C(PlayerState* arg0) {
 
     sp1C = player_getCoordVertical(arg0);
     sp20 = func_800C6784(arg0->unk94->unk0);
-    return sp1C - func_800F0E00(temp = sp20, func_800C67D8(arg0->unk94->unk0));
+    return sp1C - ml_max_f(temp = sp20, func_800C67D8(arg0->unk94->unk0));
 }
 
 f32 func_80096364(PlayerState* arg0) {

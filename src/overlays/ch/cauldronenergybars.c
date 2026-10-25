@@ -44,20 +44,20 @@ void func_808000B8_chcauldronenergybars(Actor* arg0)
     switch (arg0->unk70_10)
     {
     case 1:
-        if (func_800D9078(&CAULDRONENERGYBARS_DATA(arg0)->unk10) != 0)
+        if (timer_reachedZero(&CAULDRONENERGYBARS_DATA(arg0)->unk10) != 0)
         {
             actor_enableCollision(arg0);
         }
         _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1, &D_808002C0_chcauldronenergybars);
         return;
     case 2:
-        if (func_800D90A4(&arg0->unk58) != 0)
+        if (timer_reachedZero_dupe(&arg0->unk58) != 0)
         {
             actor_mark_delete(arg0);
         }
         _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1, &D_808002C0_chcauldronenergybars);
-        _subaddieaudioloop_entrypoint_0(arg0, func_800F10B4(arg0->unk58, CAULDRONENERGYBARS_DATA(arg0)->unk1C, 0.0f, 1.4f, 0.7f));
-        arg0->alpha = (u8)(s32)func_800F10B4(arg0->unk58, CAULDRONENERGYBARS_DATA(arg0)->unk1C, 0.0f, 255.0f, 0.0f);
+        _subaddieaudioloop_entrypoint_0(arg0, ml_map_f(arg0->unk58, CAULDRONENERGYBARS_DATA(arg0)->unk1C, 0.0f, 1.4f, 0.7f));
+        arg0->alpha = (u8)(s32)ml_map_f(arg0->unk58, CAULDRONENERGYBARS_DATA(arg0)->unk1C, 0.0f, 255.0f, 0.0f);
         return;
     }
 }

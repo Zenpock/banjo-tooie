@@ -78,7 +78,7 @@ s32 func_808001B4_chgruntyfireballbig(Actor* actor, s32 arg1, s32 arg2)
         ((f32*)actor->actorData)[0] = func_80101068();
         actor_enableCollision(actor);
         func_80101FDC(actor, 2U);
-        func_800F5A00(actor->unk6C_0, sp34);
+        character_getCoords(actor->unk6C_0, sp34);
         temp_a0 = &actor->actorData[4];
         sp34[1] += 50.0f;
         ml_getdiff_vec3f((f32*)temp_a0, sp34, actor->position);
@@ -153,7 +153,7 @@ void func_80800590_chgruntyfireballbig(Actor* actor)
 
     if (!(actor->unk64_20) && (func_800F6438(actor->unk6C_0) != 0))
     {
-        func_800F5A00(actor->unk6C_0, sp3C);
+        character_getCoords(actor->unk6C_0, sp3C);
         sp3C[1] += 50.0f;
         if (ml_vec3f_distance_sq(actor->position, sp3C) < (((f32*)actor->actorData)[0] * ((f32*)actor->actorData)[0]))
         {

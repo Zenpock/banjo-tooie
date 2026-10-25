@@ -45,9 +45,9 @@ s32 event_sendToActor(Actor* actor, ActorEventId eventId, s32 arg2)
     return -1;
 }
 
-s32 func_8010114C(s32 arg0, ActorEventId eventId, s32 arg2)
+s32 func_8010114C(Unk80132ED0* arg0, ActorEventId eventId, s32 arg2)
 {
-    return event_sendToActor(func_80106790((Unk80132ED0*)arg0), eventId, arg2);
+    return event_sendToActor(func_80106790(arg0), eventId, arg2);
 }
 
 s32 event_sendToActorsOfType(s32 propId, ActorEventId eventId, s32 arg2)

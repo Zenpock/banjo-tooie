@@ -13,7 +13,7 @@ s32 plsu_entrypoint_0(f32* arg0, f32* arg1)
     {
         if (character_existsAtIndex(charIndex) != 0)
         {
-            func_800F5A00(charIndex, &sp44);
+            character_getCoords(charIndex, &sp44);
             temp_f0 = ml_vec3f_distance_sq(&sp44, arg1);
             if (temp_f0 < var_f20)
             {

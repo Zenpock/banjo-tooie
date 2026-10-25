@@ -163,11 +163,11 @@ void func_80800320_chpawnbroker(Actor* arg0)
 
     temp_a1 = _gccubesearch_entrypoint_0(0x154U, arg0);
     ml_vec3s_to_vec3f((f32*)arg0->actorData, temp_a1->position);
-    if ((func_800D0B68(0x27U, 1U) != 0) && (func_800D0B68(0xAU, 4U) != 0))
+    if ((collectable_isCollected(0x27U, 1U) != 0) && (collectable_isCollected(0xAU, 4U) != 0))
     {
         sp44 = 8;
     }
-    else if (func_800D0B68(0x27U, 1U) != 0)
+    else if (collectable_isCollected(0x27U, 1U) != 0)
     {
         sp30 = 1;
         if ((_plsu_entrypoint_0(&sp34, arg0->actorData) != -1) && (ml_vec3f_distance(&sp34, (f32*)arg0->actorData) < 250.0f))
@@ -176,17 +176,17 @@ void func_80800320_chpawnbroker(Actor* arg0)
         }
         if (flag_getValue(FLAG_0B5_PROGRESS_JRL_PAWNOS_CHEATO_PAGE_PURCHASED) != 0)
         {
-            if (func_800D0A9C(0xAU, 4U) == 0)
+            if (collectable_isSpawned(0xAU, 4U) == 0)
             {
-                func_800D1000(0xAU, 4U, (f32*)arg0->actorData, 3U, NULL);
+                collectable_spawnItem(0xAU, 4U, (f32*)arg0->actorData, 3U, NULL);
             }
             sp44 = 8;
         }
         else if (sp30 != 0)
         {
-            if (func_800D0A9C(0xAU, 4U) == 0)
+            if (collectable_isSpawned(0xAU, 4U) == 0)
             {
-                func_800D1000(0xAU, 4U, (f32*)arg0->actorData, 3U, NULL);
+                collectable_spawnItem(0xAU, 4U, (f32*)arg0->actorData, 3U, NULL);
             }
             sp44 = 6;
         }
@@ -373,7 +373,7 @@ void func_8080083C_chpawnbroker(Actor* arg0, s32 dialogEnded, s32 choiceResult)
         if (flag_getValue(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0)
         {
             //If we have collected the jiggy and have spawned the second item
-            if ((func_800D0B68(0x27U, 1U) != 0) && (func_800D0A9C(0xAU, 4U) != 0))
+            if ((collectable_isCollected(0x27U, 1U) != 0) && (collectable_isSpawned(0xAU, 4U) != 0))
             {
                 //Go Collect item 2
                 NextState = 6;
@@ -492,12 +492,12 @@ void func_80800CB4_chpawnbroker(Actor* arg0)
 
     arg0->position[1] -= 40.0f;
     //Have we collected the jiggy
-    if (func_800D0B68(JRL_PAWNOS, 1U) == 0)
+    if (collectable_isCollected(JRL_PAWNOS, 1U) == 0)
     {
         ItemForSale = func_80106790(func_800D0634(JRL_PAWNOS, 1U));
     }
     //Have we collected the Cheato page
-    else if (func_800D0B68(0xAU, 4U) == 0)
+    else if (collectable_isCollected(0xAU, 4U) == 0)
     {
         ItemForSale = _subaddiefind_entrypoint_0(arg0->position, 0x136, -1, 0);
     }

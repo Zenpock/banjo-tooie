@@ -587,7 +587,7 @@ void func_8080034C_chnests(Actor* arg0)
 //Update for single type egg/feather nests
 void func_808003AC_chnests(Actor* arg0)
 {
-    if (((arg0->unk70_10) == 4) && (func_800D9078(&arg0->unk58) != 0))
+    if (((arg0->unk70_10) == 4) && (timer_reachedZero(&arg0->unk58) != 0))
     {
         func_8080034C_chnests(arg0);
     }
@@ -686,7 +686,7 @@ void func_80800670_chnests(Actor* arg0, UnkArg2ChNest* arg1)
     func_808000E8_chnests(arg0);
     if ((_gleeprom_entrypoint_0() >> 0x18) == 0x10)
     {
-        func_800D0BD4((s32)arg0->actorData[2], 6U);
+        collectable_collectItem((s32)arg0->actorData[2], 6U);
     }
     actor_mark_delete(arg0);
 }
@@ -706,7 +706,7 @@ void func_808006C4_chnests(Actor* arg0)
     }
     temp_a0 = (func_800D13E8(6, D_8012762C) + (arg0->unk74_7)) - 0x32;
     arg0->actorData[2] = temp_a0;
-    if (func_800D0B68(temp_a0, 6U) != 0)
+    if (collectable_isCollected(temp_a0, 6U) != 0)
     {
         actor_mark_delete(arg0);
         return;
@@ -874,7 +874,7 @@ void func_80800C3C_chnests(Actor* arg0)
     switch (arg0->actorData[6])
     {
     case 0:
-        if (!(arg0->unk79_0) && (func_800D9078(&arg0->unk58) != 0))
+        if (!(arg0->unk79_0) && (timer_reachedZero(&arg0->unk58) != 0))
         {
             arg0->unk6C_0 = (func_80800A74_chnests(arg0->actorData[1]));
             if ((arg0->unk6C_0) == arg0->actorData[1])
@@ -888,7 +888,7 @@ void func_80800C3C_chnests(Actor* arg0)
         }
         return;
     case 1:
-        if (func_800D9078(&arg0->unk58) != 0)
+        if (timer_reachedZero(&arg0->unk58) != 0)
         {
             func_80800BA0_chnests(arg0, arg0->unk6C_0);
             func_80800B4C_chnests(arg0);
@@ -897,7 +897,7 @@ void func_80800C3C_chnests(Actor* arg0)
         }
         break;
     case 2:
-        if (func_800D9078(&arg0->unk58) != 0)
+        if (timer_reachedZero(&arg0->unk58) != 0)
         {
             _subaddiefade_entrypoint_2(arg0);
             actor_enableCollision(arg0);

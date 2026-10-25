@@ -78,7 +78,7 @@ void func_80800154_chintrotext(Actor* arg0)
     s32 var_v1;
     s32 sp28;
     sp3C = (introTextMemory*)func_80100094(arg0, 1U);
-    sp38 = func_800D9078(&arg0->unk58);
+    sp38 = timer_reachedZero(&arg0->unk58);
     new_var = &D_808007A0_chintrotext[sp3C->unk3F];
     temp_a2 = (*new_var).unkC;
     switch (arg0->unk70_10)

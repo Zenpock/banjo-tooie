@@ -44,7 +44,7 @@ void func_80800040_bsledge(PlayerState *self, f32 arg1[3]) {
     }
     self->unk15C.word = sp30 < 0.0f ? 1 : -1;
     sp30 = -self->unk15C.word * 90.0f;
-    sp1C = func_800F1214(stick_distance, 40.0f, 200.0f);
+    sp1C = ml_mapNormal_f(stick_distance, 40.0f, 200.0f);
     arg1[1] = 0.0f;
     func_800EFCD8(arg1, sp34 + sp30, sp1C);
 }

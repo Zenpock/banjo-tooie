@@ -407,7 +407,7 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
             }
             else {
                 _sudialog_entrypoint_0(0x2A, 0);
-                func_800D0BD4(sp2C->unk0, 3U);
+                collectable_collectItem(sp2C->unk0, 3U);
                 inventory_incrementValue(0x48U);
             }
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801454_chglowbo);

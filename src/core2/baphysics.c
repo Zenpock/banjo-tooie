@@ -63,7 +63,7 @@ void func_8009AE08(PlayerState* self) {
 			{
 				if (func_8008E1C4(self) != 0)
 				{
-					sp38 = func_800F10B4(sp38, 0.0f, 1.0f, sp3C * 0.5f, -1.0f);
+					sp38 = ml_map_f(sp38, 0.0f, 1.0f, sp3C * 0.5f, -1.0f);
 				}
 				else
 				{

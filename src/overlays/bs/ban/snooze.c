@@ -52,7 +52,7 @@ void func_80800128_bsbansnooze(PlayerState* self, f32 arg1) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 50.0f, 100.0f) * arg1);
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 50.0f, 100.0f) * arg1);
 }
 
 void func_8080019C_bsbansnooze(PlayerState* self) {

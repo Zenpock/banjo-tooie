@@ -23,7 +23,7 @@ void func_80800000_bswasher(PlayerState* self) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 30.0f, 900.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 30.0f, 900.0f));
 }
 
 BanjoStateId func_80800064_bswasher(PlayerState* self, BanjoStateId arg1)
@@ -103,7 +103,7 @@ void func_80800300_bswasher(PlayerState* self) {
     temp_f0 = func_8009BB5C(self);
     if (temp_f0 > 1.0f)
     {
-        temp_f0 = func_800F10B4(temp_f0, 30.0f, 900.0f, 45.0f, 1350.0f);
+        temp_f0 = ml_map_f(temp_f0, 30.0f, 900.0f, 45.0f, 1350.0f);
     }
     else
     {
@@ -113,14 +113,14 @@ void func_80800300_bswasher(PlayerState* self) {
     temp_f0 = func_8009BB5C(self);
     if (temp_f0 > 0.0f)
     {
-        sp3C = func_800F10B4(temp_f0, 30.0f, 900.0f, 0.8f, 1.25f);
+        sp3C = ml_map_f(temp_f0, 30.0f, 900.0f, 0.8f, 1.25f);
     }
     else
     {
         sp3C = 0.8f;
     }
     if (player_isStable(self) == 0) {
-        func_800F13F0(1.9f, sp3C + 0.3f);
+        ml_min_f(1.9f, sp3C + 0.3f);
     }
     _bawasher_entrypoint_9(self);
 }
@@ -199,7 +199,7 @@ void func_80800608_bswasher(PlayerState* self)
     case 4:
         temp_f0 = self->unk16C;
         if (temp_f0 > 0.0f) {
-            self->unk16C = func_800F0E00(0.0f, temp_f0 - 10.0f);
+            self->unk16C = ml_max_f(0.0f, temp_f0 - 10.0f);
         }
         break;
     }
@@ -427,7 +427,7 @@ s32 bswasher_entrypoint_4(s32 self) {
 
 void func_80800EC8_bswasher(PlayerState* self) {
     if (func_8009E6EC(self) == 0x65) {
-        self->unk160.word = func_80099A4C(self);
+        self->unk160.object = func_80099A4C(self);
         bs_setState(self, 0x37);
     }
     func_80099B94(self);
@@ -456,7 +456,7 @@ void func_80800F88_bswasher(PlayerState* self)
         sp38 = func_8009BB5C(self);
         player_getCoords(self, sp2C);
         func_800C35E8(self->unk164.bytes[1], sp2C);
-        func_800C31DC(self->unk164.bytes[1], func_800F10B4(sp38, 0.0f, 900.0f, 0.9f, 1.2f));
+        func_800C31DC(self->unk164.bytes[1], ml_map_f(sp38, 0.0f, 900.0f, 0.9f, 1.2f));
     }
 }
 

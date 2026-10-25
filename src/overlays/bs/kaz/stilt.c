@@ -33,7 +33,7 @@ void func_80800064_bskazstilt(PlayerState *self) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 80.0f, 500.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 80.0f, 500.0f));
 }
 
 void func_808000C8_bskazstilt(PlayerState *self) {
@@ -360,7 +360,7 @@ void bskazstilt_entrypoint_17(PlayerState *self) {
             }
             break;
         case 2:
-            func_8008B10C(sp48, func_800F10B4(temp_f2, self->unk170, 1, self->unk16C, 0.6703f));
+            func_8008B10C(sp48, ml_map_f(temp_f2, self->unk170, 1, self->unk16C, 0.6703f));
             func_8009D2F0(self, 1, 0.5f);
             if (player_isStable(self) != 0)
             {
@@ -441,7 +441,7 @@ void bskazstilt_entrypoint_21(PlayerState *self) {
         func_800963C0(self, sp38);
         func_800F1EA4(&sp38, &sp34);
         func_8009D2F0(self, 1, 0.5f);
-        baphysics_set_target_horizontal_velocity(self, func_800F10B4(func_8009BFD8(self), 20.0f, 60, 550, 700.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_map_f(func_8009BFD8(self), 20.0f, 60, 550, 700.0f));
         baphysics_set_target_yaw(self, sp34);
         _badust_entrypoint_1(self);
     }

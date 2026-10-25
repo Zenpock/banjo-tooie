@@ -40,7 +40,7 @@ s32 bababykaz_entrypoint_5(PlayerState *self) {
 }
 
 void bababykaz_entrypoint_6(PlayerState *self){
-    _batimer_set(self, 0xC, func_800F10B4(self->babykaz->unk4, 0.0f, 20.0f, 0.0f, 20.0f));
+    _batimer_set(self, 0xC, ml_map_f(self->babykaz->unk4, 0.0f, 20.0f, 0.0f, 20.0f));
 
 }
 
@@ -82,8 +82,8 @@ void bababykaz_entrypoint_11(PlayerState *self) {
         self->babykaz->unk1 = 1;
     }
     tmp_f0 = _batimer_get(self, 0xC);
-    tmp0 = func_800F10B4(tmp_f0, 0.0f, 20.0f, 1.0f, 21.0f) - 0.0001f;
-    self->babykaz->unk4 = func_800F0E00(0.0f, (f32)tmp0);
+    tmp0 = ml_map_f(tmp_f0, 0.0f, 20.0f, 1.0f, 21.0f) - 0.0001f;
+    self->babykaz->unk4 = ml_max_f(0.0f, (f32)tmp0);
 
     if (sp28) {
         func_800D2498(0xC9, (s32)self->babykaz->unk4, 0);

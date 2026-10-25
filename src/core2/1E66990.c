@@ -114,7 +114,7 @@ int func_8008D40C(PlayerState* self)
             return 0;
         }
         player_getCoords(self, sp24);
-        func_800F5A00(_baduo_entrypoint_2(self), sp34);
+        character_getCoords(_baduo_entrypoint_2(self), sp34);
         return ml_vec3f_distance_sq(sp24, sp34) < D_80124AD0;
     }
     return 0;

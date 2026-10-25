@@ -65,7 +65,7 @@ void func_80800178_bsswim(PlayerState* self)
 		baphysics_set_target_horizontal_velocity(self, 0.0f);
 		return;
 	}
-	baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 30.0f, 300.0f));
+	baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 30.0f, 300.0f));
 }
 
 void func_808001DC_bsswim(PlayerState* self)
@@ -125,7 +125,7 @@ void func_808002E0_bsswim(PlayerState* self)
 		}
 		else if (sp30 != BS_STATE_4C_LANDING_IN_WATER)
 		{
-			func_8009DF18(self, 0x461, 1.0f, (s32)func_800F10B4(func_800CF67C(), 1.0f, 0.0f, 8000.0f, 30000.0f));
+			func_8009DF18(self, 0x461, 1.0f, (s32)ml_map_f(func_800CF67C(), 1.0f, 0.0f, 8000.0f, 30000.0f));
 		}
 		bainput_setDiveCooldown(self, 4, 0.7f);
 	}
