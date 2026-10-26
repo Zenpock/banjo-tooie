@@ -431,7 +431,7 @@ void func_800A3A80(PlayerState* self)
     temp_v0 = self->unkA0;
     if (temp_v0->unk40 != 0.0f)
     {
-        timer_reachedZero((f32*)&temp_v0->unk40);
+        timer_reachedZero(&temp_v0->unk40);
     }
     if (player_isStable(self) != 0)
     {

@@ -100,7 +100,7 @@ typedef struct Actor {
     /* 0x64 */ u32 unk64_22 : 1;
     /* 0x64 */ u32 unk64_21 : 1;
     /* 0x64 */ u32 unk64_20 : 1; //unk65 & 0xFFEF or unk65 | 0x10
-    /* 0x64 */ u32 unk64_19 : 1; // flags & 0x80000
+    /* 0x64 */ u32 unk64_19 : 1; // flags & 0x80000 (unk65 & 0xFFF7)
     /* 0x64 */ u32 unk64_18 : 1;
     /* 0x64 */ u32 unk64_17 : 1; //Marked for Deletion?
     /* 0x64 */ u32 unk64_16 : 1;
@@ -145,12 +145,12 @@ typedef struct Actor {
     /* 0x74 */ u32 unk74_6 : 1;
     /* 0x74 */ u32 unk74_5 : 1;
     /* 0x74 */ u32 unk74_4 : 1;
-	/* 0x74 */ u32 unk74_0 : 4;
+	/* 0x74 */ u32 unk74_0 : 4; //unk77 & 0xFFF0
     /* 0x78 */ u8 unk78;
     /* 0x79 */ u8 unk79_4 : 4;
     /* 0x79 */ u8 unk79_3 : 1; 
     /* 0x79 */ u8 unk79_2 : 1;
-    /* 0x79 */ u8 unk79_0 : 2;
+    /* 0x79 */ u8 unk79_0 : 2; //unk78 & 3
     /* 0x7A */ u16 unk7A_14 : 2;
     /* 0x7A */ u16 unk7A_12 : 2;
 	/* 0x7A */ u16 unk7A_9 : 3;
