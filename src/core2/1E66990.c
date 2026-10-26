@@ -416,7 +416,7 @@ int player_inWater(PlayerState* self)
 
 s32 func_8008E37C(PlayerState* self)
 {
-    func_800A0FE4(self);
+    return func_800A0FE4(self);
 }
 
 int func_8008E39C(PlayerState* self)
