@@ -117,7 +117,7 @@ int func_80800410_bsledge(PlayerState* arg0)
 }
 
 s32 func_80800450_bsledge(PlayerState* self) {
-    return func_8009BB5C(self) > 0.0f;
+    return baphysics_get_horizontal_velocity(self) > 0.0f;
 }
 
 void func_80800488_bsledge(PlayerState *self, f32 arg1[3]) {

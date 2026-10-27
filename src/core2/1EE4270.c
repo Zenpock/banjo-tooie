@@ -40,10 +40,7 @@ void func_8010AA9C(f32* arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010B13C.s")
 
-s32 func_8010B910(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
-    ml_vec3f_add(arg0->position, &((f32*)arg0->actorData)[4]);
-    return 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010B190.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010B1F4.s")
 
@@ -61,8 +58,10 @@ s32 func_8010B910(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010B8A4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010B910.s")
-
+s32 func_8010B910(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
+	ml_vec3f_add(arg0->position, &((f32*)arg0->actorData)[4]);
+	return 0;
+}
 s32 func_8010B94C(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
     func_800EF174(arg0->position, &((f32*)arg0->actorData)[4], time_getDelta());
     return 0;

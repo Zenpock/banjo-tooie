@@ -120,10 +120,10 @@ void bsvan_entrypoint_3(PlayerState* self)
 
     sp2C = yaw_getIdeal(self);
     _bavan_entrypoint_5(self, func_800F1DCC(sp2C, yaw_get(self)));
-    var_f12 = func_8009BB5C(self);
+    var_f12 = baphysics_get_horizontal_velocity(self);
     var_f12 = var_f12 > 1.0f ? ml_map_f(var_f12, 30.0f, 900.0f, 45.0f, 1350.0f) : 0.0f;
     _bavan_entrypoint_6(self, var_f12);
-    temp_f0 = func_8009BB5C(self);
+    temp_f0 = baphysics_get_horizontal_velocity(self);
     if (temp_f0 > 0.0f)
     {
         sp3C = ml_map_f(temp_f0, 30.0f, 900.0f, 0.8f, 1.25f);
@@ -383,7 +383,7 @@ void func_80800BDC_bsvan(PlayerState* self) {
     case 3:
         func_8009D2D8(self, 3);
         func_8009D3A8(self, 0);
-        if (func_8009BB5C(self) > 0.0f) {
+        if (baphysics_get_horizontal_velocity(self) > 0.0f) {
             nextState = 0x116;
         }
         else if (anctrl_isStopped(sp30) != 0) {

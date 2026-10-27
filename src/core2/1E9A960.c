@@ -321,7 +321,7 @@ s32 func_800C19E4(unkStruct800C39D0* arg0, s32 arg1) {
 
     func_800C1070(sp3C, arg0);
     ml_getdiff_vec3f(sp30, arg0, sp3C);
-    temp_f0 = func_800EEFD4(sp30);
+    temp_f0 = ml_vec3f_magnitude_sq(sp30);
     temp_f12 = arg0->unkC;
     if (temp_f0 < temp_f12) {
         var_v1 = arg1;

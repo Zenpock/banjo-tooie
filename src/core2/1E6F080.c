@@ -132,11 +132,11 @@ void func_80095AD0(PlayerState* arg0) {
 
     arg0->unk94->unkA3 = 0;
     temp_v0 = arg0->unk94->unkA3;
-    arg0->unk94->unk50[4] = temp_v0;
-    arg0->unk94->unkA0[1] = temp_v0;
+    arg0->unk94->unk54 = temp_v0;
+    arg0->unk94->atSurface = temp_v0;
     arg0->unk94->unk18[0] = temp_v0;
-    arg0->unk94->unk50[6] = temp_v0;
-    arg0->unk94->unkA0[0] = temp_v0;
+    arg0->unk94->unk56 = temp_v0;
+    arg0->unk94->touchingWater = temp_v0;
     func_800959FC(arg0, 0x400005);
     arg0->unk94->unk0 = func_800C5A38();
     ml_vec3f_clear(arg0->unk94->unk90);
@@ -231,7 +231,8 @@ f32 func_8009630C(PlayerState* arg0) {
     return sp1C - ml_max_f(temp = sp20, func_800C67D8(arg0->unk94->unk0));
 }
 
-f32 func_80096364(PlayerState* arg0) {
+//Get the height of the ground beneath the player's feet
+f32 player_getGroundHeight(PlayerState* arg0) {
     return func_800C6784(arg0->unk94->unk0);
 }
 
@@ -286,24 +287,25 @@ s32 func_800964D0(PlayerState* arg0) {
     return arg0->unk94->unkA8;
 }
 
-f32 func_800964DC(PlayerState* arg0) {
+//Get the water level beneath or above the player
+f32 player_getWaterHeight(PlayerState* arg0) {
     return func_800C67D8(arg0->unk94->unk0);
 }
 
-s32 func_80096500(PlayerState* arg0) {
-    return (s32) arg0->unk94->unkA0[1];
+s32 player_atWaterSurface(PlayerState* arg0) {
+    return arg0->unk94->atSurface;
 }
 
 s32 func_8009650C(PlayerState* arg0) {
-    return (s32) arg0->unk94->unk50[5];
+    return (s32) arg0->unk94->unk55;
 }
 
 s32 func_80096518(PlayerState* arg0) {
-    return (s32) arg0->unk94->unk50[6];
+    return (s32) arg0->unk94->unk56;
 }
 
-u8 func_80096524(PlayerState* arg0) {
-    return arg0->unk94->unkA0[0];
+s32 player_touchingWater(PlayerState* arg0) {
+    return arg0->unk94->touchingWater;
 }
 
 s32 func_80096530(PlayerState* arg0) {
@@ -326,8 +328,8 @@ u8 func_800965C8(PlayerState* arg0) {
     return arg0->unk94->unkA4;
 }
 
-s32 func_800965D4(PlayerState* arg0) {
-    return *(s32*)arg0->unk94->unk50;
+Unk80132ED0* func_800965D4(PlayerState* arg0) {
+    return arg0->unk94->unk50;
 }
 
 void func_800965E0(PlayerState* arg0, void* arg1) {
@@ -433,7 +435,7 @@ void func_800967C8(f32* arg0, f32* arg1, f32* arg2, f32* arg3) {
         return;
     }
 
-    if (func_800EEF94(sp38) < temp_f2) {
+    if (ml_vec3f_magnitude(sp38) < temp_f2) {
         return;
     }
 

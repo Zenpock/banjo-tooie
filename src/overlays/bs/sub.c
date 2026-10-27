@@ -59,7 +59,7 @@ void func_808000F0_bssub(PlayerState* self) {
     f32 temp_f0;
     f32 temp_f20;
 
-    temp_f20 = ml_map_f(func_8009BB94(self), 0.0f, 225.0f, 0.0f, 1.0f);
+    temp_f20 = ml_map_f(baphysics_get_velocity(self), 0.0f, 225.0f, 0.0f, 1.0f);
     if (player_inWater(self) != 0)
     {
         var_f22 = ml_mapNormal_f(temp_f20, 50.0f, 150.0f);
@@ -91,11 +91,11 @@ void func_80800634_bssub(PlayerState* self) {
 
     sp2C = bastick_getX(self);
     sp30 = time_getDelta();
-    temp_f0 = ml_map_f(func_8009BB94(self), 0.0f, 225.0f, 11.25f, 45.0f);
+    temp_f0 = ml_map_f(baphysics_get_velocity(self), 0.0f, 225.0f, 11.25f, 45.0f);
     baroll_setIdeal(self, ml_map_f(sp2C, -1.0f, 1.0f, -temp_f0, temp_f0));
     if (player_inWater(self) != 0)
     {
-        var_f2 = ml_map_f(func_8009BB94(self), 0.0f, 225.0f, 42.666668f, 128.0f);
+        var_f2 = ml_map_f(baphysics_get_velocity(self), 0.0f, 225.0f, 42.666668f, 128.0f);
     }
     else
     {
@@ -133,7 +133,7 @@ void func_80800834_bssub(PlayerState* self) {
         _basub_entrypoint_1(self);
     }
     if (bakey_pressed(self, BUTTON_Z) != 0) {
-        _basub_entrypoint_8(self, func_8009BB94(self));
+        _basub_entrypoint_8(self, baphysics_get_velocity(self));
     }
     if (bakey_pressed(self, BUTTON_B) != 0) {
         if (func_800EA068(0x40) != 0) {
@@ -313,7 +313,7 @@ void func_8080102C_bssub(PlayerState* self) {
     sp2C = baanim_getAnimCtrlPtr(self);
     sp28 = anctrl_getIndex(sp2C);
     func_8008CA4C(self, BAANIM_UPDATE_2_SCALE_HORZ);
-    if (func_8009BB94(self) < 300.0f)
+    if (baphysics_get_velocity(self) < 300.0f)
     {
         if (sp28 != 0x12E)
         {

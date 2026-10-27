@@ -54,12 +54,12 @@ s32 character_soloCharactersExist(void)
     return 1;
 }
 
-s32 plsu_entrypoint_3(s32 arg0)
+s32 plsu_entrypoint_3(Unk80132ED0* arg0)
 {
     s32 charIndex;
     for (charIndex = 0; charIndex < character_getMaxCharacters(); charIndex++)
     {
-        if ((character_existsAtIndex(charIndex)) && (func_800F6C5C(charIndex)) && (func_800F55D0(charIndex) == arg0))
+        if ((character_existsAtIndex(charIndex)) && (character_isStable(charIndex)) && (func_800F55D0(charIndex) == arg0))
         {
             return charIndex;
         }

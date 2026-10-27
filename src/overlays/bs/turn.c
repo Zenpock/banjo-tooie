@@ -40,15 +40,15 @@ void bsturn_entrypoint_1(PlayerState* self)
     {
         case -1:
             sp2C[1] = func_8009BB18(self);
-            _badust_entrypoint_3(self, sp2C[1] - 10.0f, func_8009BB5C(self) * 0.88f);
+            _badust_entrypoint_3(self, sp2C[1] - 10.0f, baphysics_get_horizontal_velocity(self) * 0.88f);
             break;
         case 0:
             sp2C[1] = func_8009BB18(self);
-            _badust_entrypoint_3(self, sp2C[1], func_8009BB5C(self));
+            _badust_entrypoint_3(self, sp2C[1], baphysics_get_horizontal_velocity(self));
             break;
         case 1:
             sp2C[1] = func_8009BB18(self);
-            _badust_entrypoint_3(self, sp2C[1] + 10.0f, func_8009BB5C(self) * 0.88f);
+            _badust_entrypoint_3(self, sp2C[1] + 10.0f, baphysics_get_horizontal_velocity(self) * 0.88f);
             break;
     }
     if (anctrl_isStopped(baanim_getAnimCtrlPtr(self)) != 0)
@@ -61,7 +61,7 @@ void bsturn_entrypoint_1(PlayerState* self)
     }
     if (bakey_pressed(self, BUTTON_B) != 0)
     {
-        nextState = func_800A055C(self, nextState);
+        nextState = bs_getTypeOfGroundedAttack(self, nextState);
     }
     if (bakey_pressed(self, BUTTON_A) != 0)
     {

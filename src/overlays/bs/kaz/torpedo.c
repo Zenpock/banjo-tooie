@@ -16,7 +16,7 @@ extern s32 D_80801894_bskaztorpedo[];
 extern s32 D_808018A4_bskaztorpedo[];
 
 f32 func_80800000_bskaztorpedo(PlayerState *self) {
-    return (func_8009BB94(self) * 100.0f) / 1500.0f;
+    return (baphysics_get_velocity(self) * 100.0f) / 1500.0f;
 }
 
 void func_80800034_bskaztorpedo(PlayerState *self) {
@@ -105,7 +105,7 @@ void func_808002E0_bskaztorpedo(PlayerState *self) {
         self->unk16C = 22.5f;
     }
     func_808000CC_bskaztorpedo(self);
-    _bakaztorpedo_entrypoint_7(self, ml_map_f(func_8009BB94(self), 0.0f, 1500.0f, 300.0f, 1200.0f));
+    _bakaztorpedo_entrypoint_7(self, ml_map_f(baphysics_get_velocity(self), 0.0f, 1500.0f, 300.0f, 1200.0f));
     sp2C[2] = func_8009BFD8(self);
     sp34 = func_80013728(sp2C[2] - func_8009BFCC(self));
     sp38[0] = yaw_getIdeal(self);

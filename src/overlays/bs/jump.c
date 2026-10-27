@@ -149,7 +149,7 @@ void bsjump_entrypoint_1(PlayerState* self)
 		if (bainput_func_80097F08(self) != 0)
 		{
 			playerHeight = player_getCoordVertical(self);
-			waterHeight = func_800964DC(self);
+			waterHeight = player_getWaterHeight(self);
 			//self->unk160.word seems to make it so you can't ratatat rap twice in one jump
 			//self->unk160.word is 1 when you are jumping out of water
 			temp = self->unk160.word;

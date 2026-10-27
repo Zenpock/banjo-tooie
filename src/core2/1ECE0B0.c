@@ -416,7 +416,7 @@ s32 character_getMaxHealth(s32 arg0)
     return player_getMaxHealth(D_80135490.unk0[arg0]);
 }
 
-s32 func_800F55D0(s32 arg0)
+Unk80132ED0* func_800F55D0(s32 arg0)
 {
     return func_800965D4(D_80135490.unk0[arg0]);
 }
@@ -426,9 +426,9 @@ s32 func_800F55FC(s32 arg0)
     return func_80096628(D_80135490.unk0[arg0]);
 }
 
-void func_800F5628(s32 arg0)
+f32 character_getGroundHeight(s32 arg0)
 {
-    func_80096364(D_80135490.unk0[arg0]);
+    return player_getGroundHeight(D_80135490.unk0[arg0]);
 }
 
 void func_800F5654(s32 arg0)
@@ -683,7 +683,7 @@ void func_800F5E7C(s32 arg0) {
 
     sp1C = D_80135490.unk0[arg0];
     if (func_80096544(sp1C) != 0) {
-        func_800964DC(sp1C);
+        player_getWaterHeight(sp1C);
         return;
     }
     player_getCoordVertical(sp1C);
@@ -997,7 +997,7 @@ int func_800F6968(s32 arg0) {
     f32 sp1C;
 
     temp_a0 = D_80135490.unk0[arg0];
-    sp1C = func_800964DC(temp_a0);
+    sp1C = player_getWaterHeight(temp_a0);
     return ((sp1C - player_getCoordVertical(temp_a0)) > 4.0f) != 0 && (func_800966BC(temp_a0) & 0x2000) != 0;
 }
 
@@ -1063,7 +1063,7 @@ s32 func_800F6C1C(s32 arg0) {
     return func_8009CB44(sp1C, bs_getCurrentState(sp1C)) != 0;
 }
 
-s32 func_800F6C5C(s32 arg0)
+s32 character_isStable(s32 arg0)
 {
     return player_isStable(D_80135490.unk0[arg0]);
 }
@@ -1153,7 +1153,7 @@ s32 func_800F6F00(s32 arg0) {
     if (*sp18 != 0.0f || sp2C[2] != 0.0f) {
         return 0;
     }
-    if (func_800F6C5C(arg0) == 0) {
+    if (character_isStable(arg0) == 0) {
         return 0;
     }
     func_800F5D70(arg0, sp20);

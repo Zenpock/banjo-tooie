@@ -151,7 +151,7 @@ s32 func_80800388_badata(PlayerState *self) {
                 }
 
                 sp18 = player_getCoordVertical(self);
-                if(func_800964DC(self) - 80.0f < sp18) {
+                if(player_getWaterHeight(self) - 80.0f < sp18) {
                     return 0x4;
                 }
                 
@@ -226,7 +226,7 @@ s32 func_80800388_badata(PlayerState *self) {
         default:
             if (player_inWater(self)) {
                 sp18 = player_getCoordVertical(self);
-                if (func_800964DC(self) - 95.0f < sp18) {
+                if (player_getWaterHeight(self) - 95.0f < sp18) {
                     return 4;
                 }
                 return 5;

@@ -335,7 +335,7 @@ void bskazstilt_entrypoint_17(PlayerState *self) {
     {
         baphysics_reset_gravity(self);
     }
-    temp_f2 = player_getCoordVertical(self) - func_80096364(self);
+    temp_f2 = player_getCoordVertical(self) - player_getGroundHeight(self);
     switch (self->unk15C.word) {
         case 0:
             if ((sp40 < 100.0f) || (temp_f2 < 10.0f))

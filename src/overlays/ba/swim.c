@@ -11,13 +11,13 @@ s32 baswim_entrypoint_0()
 
 s32 baswim_entrypoint_1(PlayerState* self)
 {
-    return (func_800964DC(self) - player_getCoordVertical(self)) < 100.0f;
+    return (player_getWaterHeight(self) - player_getCoordVertical(self)) < 100.0f;
 }
 
 int baswim_entrypoint_2(PlayerState* self)
 {
     s32 temp = func_80096544(self);
-    return temp && (player_getCoordVertical(self) > (func_800964DC(self) - 130.0f));
+    return temp && (player_getCoordVertical(self) > (player_getWaterHeight(self) - 130.0f));
 }
 
 int baswim_entrypoint_3(PlayerState* self)
@@ -134,7 +134,7 @@ f32 func_808003B8_baswim(PlayerState* self)
 {
     f32 sp24[3];
     func_8009BB24(self, sp24);
-    return ml_map_f(func_800EEF94(sp24), 50.0f, 200.0f, 0.0f, 1.0f);
+    return ml_map_f(ml_vec3f_magnitude(sp24), 50.0f, 200.0f, 0.0f, 1.0f);
 }
 void baswim_entrypoint_12(PlayerState* self)
 {

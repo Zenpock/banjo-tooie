@@ -40,7 +40,7 @@ int func_8080009C_chjadesnake(s32 arg0)
 
     currentPlayerIndex = character_getActiveIndex();
     playerHorizontalUnk = func_800F651C(currentPlayerIndex);
-    isGrounded = func_800F6C5C(currentPlayerIndex);
+    isGrounded = character_isStable(currentPlayerIndex);
     justLanded = func_800F72DC(currentPlayerIndex);
     currentHitbox = func_800F56AC(currentPlayerIndex) == 0x10;
     unk = func_800F6478(currentPlayerIndex);

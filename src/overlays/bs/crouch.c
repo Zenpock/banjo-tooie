@@ -214,7 +214,7 @@ BanjoStateId bscrouch_entrypoint_4(PlayerState* self, BanjoStateId arg1)
         arg1 = BS_STATE_1_IDLE;
         if (bakey_pressed(self, BUTTON_B))
         {
-            arg1 = func_800A055C(self, arg1);
+            arg1 = bs_getTypeOfGroundedAttack(self, arg1);
         }
         if (bakey_pressed(self, BUTTON_A))
         {

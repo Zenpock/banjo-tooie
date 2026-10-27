@@ -638,11 +638,11 @@ void func_8080166C_bstnt(PlayerState* self) {
 		}
 		break;
 	case 3:
-		baphysics_set_target_horizontal_velocity(self, func_8009BB5C(self) * 0.25f);
+		baphysics_set_target_horizontal_velocity(self, baphysics_get_horizontal_velocity(self) * 0.25f);
 		func_8009D2D8(self, 3);
 		func_8009D3A8(self, 0);
 		if (anctrl_isStopped(sp20) != 0) {
-			if (func_8009BB5C(self) > 0.0f) {
+			if (baphysics_get_horizontal_velocity(self) > 0.0f) {
 				sp24 = 0x108;
 			}
 			else {
@@ -727,7 +727,7 @@ void func_80801980_bstnt(PlayerState* self, u32 arg1) {
 		baanim_setEndAndDuration(self, 0.93f, 0.7f);
 		return;
 	case 4:
-		self->unk16C = func_8009BB5C(self) * 0.25f;
+		self->unk16C = baphysics_get_horizontal_velocity(self) * 0.25f;
 		func_8009D2D8(self, 3);
 		baphysics_set_target_horizontal_velocity(self, self->unk16C);
 		func_800A2FCC(self, 0);

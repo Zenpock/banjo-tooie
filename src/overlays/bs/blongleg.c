@@ -421,7 +421,7 @@ void bsblongleg_entrypoint_17(PlayerState* self) {
     if ((bakey_released(self, 8) != 0) && (sp34[1] > 0.0f)) {
         baphysics_reset_gravity(self);
     }
-    temp_f2 = player_getCoordVertical(self) - func_80096364(self);
+    temp_f2 = player_getCoordVertical(self) - player_getGroundHeight(self);
     switch (self->unk15C.word)
     {
         case 0:

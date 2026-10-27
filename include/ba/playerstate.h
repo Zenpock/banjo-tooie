@@ -182,7 +182,12 @@ typedef struct ba_unknown_94_s {
     s32 unk1C;
     f32 unk20[3][3];
     f32 unk44[3];
-    u8 unk50[0x14];
+	Unk80132ED0* unk50; //Object being stood on
+	u8 unk54;
+	u8 unk55;
+	u8 unk56;
+	u8 unk57;
+    u8 unk58[0xC];
     f32 unk64;
     f32 unk68;
     u8 unk6C[8];
@@ -191,7 +196,8 @@ typedef struct ba_unknown_94_s {
     f32 unk84[3];
     f32 unk90[3];
     s32 unk9C;
-    u8 unkA0[2];
+    u8 touchingWater; //0xA0 Touching Water
+	u8 atSurface; //0xA1 At surface of water e.g. can jump
     u8 unkA2;
     u8 unkA3;
     u8 unkA4;
@@ -334,7 +340,7 @@ typedef struct ba_unknown_BC_s {
 typedef struct ba_unknown_C8_s {
     BaPhysicsType currentPhysicsType;
     f32 unk4[3];
-    f32 unk10[3];
+    f32 unk10[3]; //Velocity
     f32 unk1C[3];
     f32 unk28[3];
     f32 unk34[3];
@@ -427,7 +433,7 @@ typedef struct ba_unknown_138_s {
 typedef struct BaUnknown150 {
     u8 unk0;
     u8 unk1;
-    u8 unk2;
+    u8 grounded;
     u8 unk3;
     f32 unk4;
     f32 unk8;
@@ -525,7 +531,7 @@ typedef struct player_state_s {
     u8 pad84[0x8];
     /* 0x8C */ struct ba_unknown_8C_s* unk8C;
     u8 pad90[0x4];
-    /* 0x94 */ struct ba_unknown_94_s* unk94;
+    /* 0x94 */ struct ba_unknown_94_s* unk94; //Player mesh collisions?
     /* 0x98 */ struct ba_unknown_98_s* unk98;
     /* 0x9C */ BaHold* hold;
     /* 0xA0 */ ba_unkA0_s* unkA0;

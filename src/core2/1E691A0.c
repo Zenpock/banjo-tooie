@@ -264,7 +264,7 @@ void func_80090220()
 
 s32 func_80090248()
 {
-    func_800F6C5C(character_getActiveIndex());
+    character_isStable(character_getActiveIndex());
 }
 
 s32 func_80090270()

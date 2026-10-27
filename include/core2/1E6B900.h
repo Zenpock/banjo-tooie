@@ -51,6 +51,7 @@ void func_80092AA4(PlayerState*);
 void func_80092AB0(PlayerState*);
 Unkfunc_800E0960_1 *func_80092AD8(PlayerState *);
 PlayerState *func_80092B04(PlayerState *, s32);
+s32 func_80092B80(PlayerState*);
 // This might take a s32 instead of a PlayerState pointer
 // This might return a s32 instead of a PlayerState pointer
 f32 func_80092B8C(PlayerState*, f32*);

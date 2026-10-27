@@ -152,7 +152,7 @@ void func_80800518_bskazpaddle(PlayerState *self) {
     if (bakey_pressed(self, BUTTON_B) != 0) {
         next_state = BS_STATE_15F;
     }
-    if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
+    if ((player_atWaterSurface(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
         next_state = BS_STATE_BD_KAZ_JUMP;
     }
     bs_setState(self, next_state);
@@ -195,7 +195,7 @@ void func_8080070C_bskazpaddle(PlayerState *self) {
     if (bakey_pressed(self, BUTTON_B) != 0) {
         next_state = BS_STATE_15F;
     }
-    if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
+    if ((player_atWaterSurface(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
         next_state = BS_STATE_BD_KAZ_JUMP;
     }
     bs_setState(self, next_state);

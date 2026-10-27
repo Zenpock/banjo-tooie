@@ -187,7 +187,7 @@ void func_808004C4_bsswim(PlayerState* self)
 	if (bainput_should_dive(self) != 0) {
 		nextState = func_80800000_bsswim(self);
 	}
-	if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0))
+	if ((player_atWaterSurface(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0))
 	{
 		nextState = BS_STATE_5_JUMP;
 	}
@@ -268,10 +268,10 @@ void func_808007F8_bsswim(PlayerState* self) {
 	if (player_inWater(self) == 0) {
 		nextState = BS_STATE_1_IDLE;
 	}
-	if ((func_8009650C(self) != 0) && (func_8008D214(self) != 0)) {
+	if ((func_8009650C(self) != 0) && (player_canDive(self) != 0)) {
 		func_80096440(self, sp24);
 		if (sp24[1] < -0.7f) {
-			sp20 = func_800964DC(self);
+			sp20 = player_getWaterHeight(self);
 			if ((sp20 - player_getCoordVertical(self)) > 90.0f) {
 				nextState = func_80800000_bsswim(self);
 			}
@@ -280,7 +280,7 @@ void func_808007F8_bsswim(PlayerState* self) {
 	if (bainput_should_dive(self) != 0) {
 		nextState = func_80800000_bsswim(self);
 	}
-	if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
+	if ((player_atWaterSurface(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
 		nextState = BS_STATE_5_JUMP;
 	}
 	if ((baflag_isTrue(self, BA_FLAG_6) != 0) || (baflag_isTrue(self, BA_FLAG_14_LOSE_BOGGY_RACE) != 0)) {

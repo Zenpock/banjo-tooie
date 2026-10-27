@@ -66,7 +66,7 @@ void func_8009FE58(PlayerState* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_800A04F4.s")
 
-BanjoStateId func_800A055C(PlayerState* arg0, BanjoStateId arg1)
+BanjoStateId bs_getTypeOfGroundedAttack(PlayerState* arg0, BanjoStateId arg1)
 {
 	if (player_isSplitUp(arg0))
 	{

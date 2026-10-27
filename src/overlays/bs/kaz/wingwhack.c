@@ -39,7 +39,7 @@ void func_80800148_bskazwingwhack(PlayerState *self) {
     yaw_setVelocityBounded(self, 400.0f, 7.5f);
     baflag_set(self, BA_FLAG_36);
     baflag_set(self, BA_FLAG_5_HAS_PECKED);
-    self->unk16C = func_8009BB5C(self);
+    self->unk16C = baphysics_get_horizontal_velocity(self);
     self->unk16C = ml_min_f(self->unk16C, 1200.0f);
     baphysics_set_target_horizontal_velocity(self, self->unk16C);
     func_800931AC(self, 3);

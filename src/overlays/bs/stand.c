@@ -43,16 +43,16 @@ BanjoStateId func_80800038_bsstand(PlayerState* self, BanjoStateId arg1)
     }
     if (bakey_pressed(self, BUTTON_B) != 0)
     {
-        arg1 = func_800A055C(self, arg1);
+        arg1 = bs_getTypeOfGroundedAttack(self, arg1);
     }
     if (bakey_pressed(self, BUTTON_A) != 0)
     {
         arg1 = bs_getTypeOfJump(self);
-        if (func_8008D714(self) != 0)
+        if (player_canSplitUp(self) != 0)
         {
             arg1 = 0xB8;
         }
-        else if (func_8008D790(self) != 0)
+        else if (player_canSwap(self) != 0)
         {
             _baduo_entrypoint_12(self);
             return BS_STATE_0_INVALID;

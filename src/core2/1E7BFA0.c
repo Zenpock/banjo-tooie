@@ -131,7 +131,7 @@ f32 func_800A328C(PlayerState* self)
 
 f32 func_800A3298(PlayerState* self)
 {
-    return self->unkA0->unk48 - func_800964DC(self);
+    return self->unkA0->unk48 - player_getWaterHeight(self);
 }
 
 void func_800A32C4(PlayerState* self, f32* arg1) { ml_vec3f_copy(arg1, self->unkA0->unk0); }

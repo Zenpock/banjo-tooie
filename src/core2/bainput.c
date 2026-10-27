@@ -142,7 +142,7 @@ int bainput_func_80097F08(PlayerState *self) {
 int bainput_should_dive(PlayerState *self) {
     return bakey_pressed(self, BUTTON_B) 
         && (self->input->dive_cooldown == 0.0f)
-        && func_8008D214(self);
+        && player_canDive(self);
 }
 
 int bainput_func_80097FB8(PlayerState *self) {

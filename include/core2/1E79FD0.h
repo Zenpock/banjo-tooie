@@ -4,10 +4,28 @@
 #include <ultra64.h>
 
 #include "ba/playerstate.h"
+#include "ba/physics.h"
+#include "core2/1E66990.h"
+#include "core2/1E6B900.h"
+#include "core2/1E6F080.h"
+#include "core2/1E75920.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E82660.h"
+#include "core2/1E93440.h"
+#include "core2/1EB2840.h"
+#include "core2/1EB5980.h"
+#include "core2/1EB5E70.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECD170.h"
+#include "fx/airbub.h"
+#include "fx/ripple.h"
+#include "fx/splash.h"
+#include "fx/splash25d.h"
+#include "player.h"
 
 s32 func_800A06E0();
 // func_800A06E8
-// func_800A0714
+void func_800A0714(PlayerState*, s32);
 s32 func_800A0C20(PlayerState*);
 f32 func_800A0C2C(PlayerState*);
 f32 func_800A0C38(PlayerState*);
@@ -31,7 +49,7 @@ void func_800A0DDC(PlayerState*);
 s32 func_800A0E50(void);
 f32 func_800A0E58(PlayerState*);
 void func_800A0E64(PlayerState*); 
-s32 func_800A0FCC(PlayerState*);
+s32 player_isGrounded(PlayerState*);
 s32 func_800A0FD8(PlayerState*);
 s32 func_800A0FE4(PlayerState*);
 void func_800A0FF0(PlayerState*); 

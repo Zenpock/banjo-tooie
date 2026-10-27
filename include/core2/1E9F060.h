@@ -2,6 +2,15 @@
 #define __CORE2_1E9F060_H__
 
 #include "common.h"
+#include "core1/1E29B60.h"
+#include "core1/heap.h"
+#include "core2/1E97EF0.h"
+#include "core2/1E9F060.h"
+#include "core2/1EA0210.h"
+#include "core2/1EB2840.h"
+#include "core2/1EB3750.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECA640.h"
 #include "core2/1ECB9F0.h"
 #include "ba/playerstate.h"
 

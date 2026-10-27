@@ -186,23 +186,23 @@ int ml_vec3f_is_not_zero(f32* arg0)
     return (arg0[0] != 0.0f || arg0[1] != 0.0f || arg0[2] != 0.0f);
 }
 
-f32 func_800EEF94(f32* arg0)
+f32 ml_vec3f_magnitude(f32* arg0)
 {
     return sqrtf(SQ(arg0[0]) + SQ(arg0[1]) + SQ(arg0[2]));
 }
 
 //ml_distanceSquared_vec3f
-f32 func_800EEFD4(f32* arg0)
+f32 ml_vec3f_magnitude_sq(f32* arg0)
 {
 	return (SQ(arg0[0]) + SQ(arg0[1]) + SQ(arg0[2]));
 }
 
-f32 func_800EEFFC(f32* arg0)
+f32 ml_vec2f_magnitude(f32* arg0)
 {
     return sqrtf(SQ(arg0[0]) + SQ(arg0[2]));
 }
 
-f32 func_800EF030(f32* arg0)
+f32 ml_vec2f_magnitude_sq(f32* arg0)
 {
     return (SQ(arg0[0])) + (SQ(arg0[2]));
 }

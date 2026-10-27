@@ -161,6 +161,6 @@ void func_80800590_chgruntyfireballbig(Actor* actor)
             return;
         }
         func_800F18FC(actor->position, sp3C, sp34);
-        func_800EEBF0(&actor->actorData[4], sp34, func_800EEF94(&actor->actorData[4]));
+        func_800EEBF0(&actor->actorData[4], sp34, ml_vec3f_magnitude(&actor->actorData[4]));
     }
 }

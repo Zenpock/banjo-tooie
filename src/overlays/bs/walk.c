@@ -79,7 +79,7 @@ BsStickZoneId func_80800248_bswalk(PlayerState* self, BsStickZoneId arg1)
         }
         else
         {
-            arg1 = func_800A055C(self, arg1);
+            arg1 = bs_getTypeOfGroundedAttack(self, arg1);
         }
     }
     return arg1;
@@ -188,11 +188,11 @@ void bswalk_entrypoint_4(PlayerState* self)
         nextState = bs_getTypeOfJump(self);
         if (baphysics_get_target_horizontal_velocity(self) == 0.0f)
         {
-            if (func_8008D714(self) != 0)
+            if (player_canSplitUp(self) != 0)
             {
                 nextState = 0xB8;
             }
-            else if (func_8008D790(self) != 0)
+            else if (player_canSwap(self) != 0)
             {
                 _baduo_entrypoint_12(self);
                 return;
@@ -296,11 +296,11 @@ void bswalk_entrypoint_7(PlayerState* self)
         var_s1 = bs_getTypeOfJump(self);
         if (baphysics_get_target_horizontal_velocity(self) == 0.0f)
         {
-            if (func_8008D714(self) != 0)
+            if (player_canSplitUp(self) != 0)
             {
                 var_s1 = 0xB8;
             }
-            else if (func_8008D790(self) != 0)
+            else if (player_canSwap(self) != 0)
             {
                 _baduo_entrypoint_12(self);
                 return;
@@ -393,7 +393,7 @@ void bswalk_entrypoint_11(PlayerState* self)
     {
         nextState = 0x7A;
     }
-    if ((func_8008E300(self) != 0) && (func_8009BB5C(self) > 125.0f))
+    if ((func_8008E300(self) != 0) && (baphysics_get_horizontal_velocity(self) > 125.0f))
     {
         nextState = BS_STATE_C_QUICK_TURN;
     }
@@ -415,11 +415,11 @@ void bswalk_entrypoint_11(PlayerState* self)
         nextState = bs_getTypeOfJump(self);
         if (baphysics_get_target_horizontal_velocity(self) == 0.0f)
         {
-            if (func_8008D714(self) != 0) 
+            if (player_canSplitUp(self) != 0) 
             {
                 nextState = 0xB8;
             }
-            else if (func_8008D790(self) != 0)
+            else if (player_canSwap(self) != 0)
             {
                 _baduo_entrypoint_12(self);
                 return;
@@ -463,7 +463,7 @@ void bswalk_entrypoint_14(PlayerState* self)
     {
         case BS_STATE_1_IDLE:
         case BS_STATE_2_SLOW_WALK:
-            if (func_8009BB5C(self) < 200.0f)
+            if (baphysics_get_horizontal_velocity(self) < 200.0f)
             {
                 _badust_entrypoint_3(self, 0.0f, 0.0f);
             }
@@ -544,7 +544,7 @@ void bswalk_entrypoint_15(PlayerState* self)
     if (func_8008DE24(self) != 0) {
         nextState = 0x7A;
     }
-    if ((func_8008E300(self) != 0) && (func_8009BB5C(self) > 125.0f)) {
+    if ((func_8008E300(self) != 0) && (baphysics_get_horizontal_velocity(self) > 125.0f)) {
         nextState = BS_STATE_C_QUICK_TURN;
     }
     if (func_8008DD04(self) != 0)
@@ -561,11 +561,11 @@ void bswalk_entrypoint_15(PlayerState* self)
         nextState = bs_getTypeOfJump(self);
         if (baphysics_get_target_horizontal_velocity(self) == 0.0f)
         {
-            if (func_8008D714(self) != 0)
+            if (player_canSplitUp(self) != 0)
             {
                 nextState = 0xB8;
             }
-            else if (func_8008D790(self) != 0)
+            else if (player_canSwap(self) != 0)
             {
                 _baduo_entrypoint_12(self);
                 return;

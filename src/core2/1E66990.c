@@ -39,9 +39,9 @@ int player_canClimb(PlayerState* arg0)
 }
 
 //Can Dive
-int func_8008D214(PlayerState* arg0) {
+int player_canDive(PlayerState* arg0) {
 
-	return ability_getValue(ABILITY_0F_BK_DIVING) && func_800964DC(arg0) - func_80096364(arg0) > 100.0f;
+	return ability_getValue(ABILITY_0F_BK_DIVING) && player_getWaterHeight(arg0) - player_getGroundHeight(arg0) > 100.0f;
 }
 
 //Can Use Eggs
@@ -105,7 +105,7 @@ int func_8008D40C(PlayerState* self)
             return 0;
         }
         sp30 = _baduo_entrypoint_2(self);
-        if (!player_isStable(self) || !func_800F6C5C(sp30))
+        if (!player_isStable(self) || !character_isStable(sp30))
         {
             return 0;
         }
@@ -163,7 +163,7 @@ int player_canShockSpring(PlayerState* arg0) {
 }
 
 
-int func_8008D714(PlayerState* arg0)
+int player_canSplitUp(PlayerState* arg0)
 {
     return _baduo_entrypoint_3(arg0) && bs_isBKTogether(arg0);
 }
@@ -173,7 +173,7 @@ int player_canWadingBoots(PlayerState* arg0) {
 	return ability_getValue(ABILITY_0E_BK_WADING_BOOTS) && bs_isBKTogether(arg0);
 }
 
-int func_8008D790(PlayerState* arg0) {
+int player_canSwap(PlayerState* arg0) {
     return _baduo_entrypoint_4(arg0)
         && func_8008E39C(arg0) == 0
         && player_isStable(arg0) != 0
@@ -234,7 +234,7 @@ s32 func_8008D9A4(PlayerState* arg0) {
 int player_canGripGrab(PlayerState* arg0) {
 	return ability_getValue(ABILITY_14_GRIP_GRAB)
 		&& baphysics_get_vertical_velocity(arg0) < 100.0f
-        && func_800A0FCC(arg0) == 0
+        && player_isGrounded(arg0) == 0
         && func_800976DC(arg0) != 0;
 }
 
@@ -262,7 +262,7 @@ int func_8008DC90(PlayerState* self, f32* arg1, f32 arg2)
 
 int func_8008DD04(PlayerState* self)
 {
-    return (player_getCoordVertical(self) - func_80096364(self)) > 60.0f
+    return (player_getCoordVertical(self) - player_getGroundHeight(self)) > 60.0f
         && player_isStable(self) == 0;
 }
 
@@ -334,12 +334,12 @@ int func_8008DF8C(PlayerState* arg0, s32 arg1)
 	{
 		return 0;
 	}
-	return baphysics_get_vertical_velocity(arg0) < 0.0f && (player_getCoordVertical(arg0) - func_80096364(arg0)) < (f32)arg1;
+	return baphysics_get_vertical_velocity(arg0) < 0.0f && (player_getCoordVertical(arg0) - player_getGroundHeight(arg0)) < (f32)arg1;
 }
 
 int player_isStable(PlayerState* self)
 {
-	return func_800A0FCC(self) && (baphysics_get_vertical_velocity(self) < 0.0f);
+	return player_isGrounded(self) && (baphysics_get_vertical_velocity(self) < 0.0f);
 }
 
 s32 func_8008E0C8(PlayerState* self)

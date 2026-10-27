@@ -460,8 +460,8 @@ void func_80800F10_bsbfly(PlayerState* self)
             }
             player_getCoords(self, unk0);
             ml_vec3f_subtract(unk0, self->kazfly->unk4);
-            _bafly_entrypoint_6(self, ml_map_f(func_800EEFD4(unk0), 0, 16000000, 0.2, 0.7f));
-            if (func_800EEFD4(unk0) > 1.6e7f) {
+            _bafly_entrypoint_6(self, ml_map_f(ml_vec3f_magnitude_sq(unk0), 0, 16000000, 0.2, 0.7f));
+            if (ml_vec3f_magnitude_sq(unk0) > 1.6e7f) {
                 if (bakey_held(self, BUTTON_B) != 0) {
                     func_80800A24_bsbfly(self, 3);
                 } else {

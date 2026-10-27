@@ -91,7 +91,7 @@ void bababykaz_entrypoint_11(PlayerState *self) {
 
 
     if (player_inWater(self)) {
-        if (40.0f < (func_800964DC(self) - player_getCoordVertical(self))) {
+        if (40.0f < (player_getWaterHeight(self) - player_getCoordVertical(self))) {
             self->babykaz->unk1 = 1;
         }
     }

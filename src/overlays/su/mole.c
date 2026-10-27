@@ -788,7 +788,7 @@ void sumole_entrypoint_18(Actor* arg0, f32 arg1)
     {
         func_8010D254(sp2C);
         ml_vec3f_subtract(sp2C, arg0->position);
-        temp_f0 = func_800EEF94(sp2C);
+        temp_f0 = ml_vec3f_magnitude(sp2C);
         if (temp_f0 != 0.0f)
         {
             temp_f0 = arg1 / temp_f0;
