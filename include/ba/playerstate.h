@@ -8,32 +8,10 @@
 #include "physicstypes.h"
 #include "transformations.h"
 
-typedef struct unkCUnk0 {
-	s32 unk0;
-	s32 unk4;
-	s32 unk8;
-	s32 unkC;
-	s32 unk10;
-	s32 unk14;
-	s16 unk18;
-    u16 unk1A;
-	s16 unk1C;
-	s16 unk1E;
-	s32 unk20;
-	s32 unk24;
-	union {
-		s32 unk28;
-		struct {
-			s32 unk28_11 : 21;
-			s32 unk28_10 : 1;
-			s32 unk28_9 : 1;
-		};
-	};
-
-} unkCUnk0;
 typedef struct ba_unknown_c_s {
-	unkCUnk0* unk0;
-	s32 pad4[2];
+    Unk80132ED0* unk0;
+	s32 unk4;
+    s32 unk8;
 	s32 unkC[3];
 	s32 unk18;
 } BaUnknownC;
@@ -327,7 +305,14 @@ typedef struct ba_unkA0_s {
     u8 unk56;
     u8 unk57;
 } ba_unkA0_s;
-
+typedef struct ba_unknown_AC_s {
+    u8 pad0[0x28];
+    s8 unk28;
+    s8 unk29;
+    s8 unk2A;
+    s8 unk2B;
+    f32 unk2C;
+} ba_unknown_AC_s;
 typedef struct ba_unknown_B8_s {
     void (*unk0)(s32);
     s32 unk4;
@@ -366,7 +351,21 @@ typedef struct ba_unknown_DC_s {
     f32 unk8;
     f32 unkC;
 } ba_unknown_DC_s;
-
+typedef struct ba_unknown_E0_s {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+    f32 unk18;
+    u8 pad1C[0x10];
+    u8 unk2C;
+    u8 unk2D;
+    u8 unk2E;
+    u8 unk2F;
+    f32 unk30;
+} ba_unknown_E0_s;
 typedef struct PositionInfo {
     f32 current[3];
     f32 oldPos[3];
@@ -391,7 +390,17 @@ typedef struct ba_shoes_s {
     u8 unk4;
     //Size 0x18
 } ba_shoes_s;
-
+typedef struct ba_unknown_114_2_s {
+    f32 unk0;
+    s16 unk4;
+    s16 unk6;
+    s32 unk8; //void (*arg2)(PlayerState*, s32, s32)
+    s8 padC[0x1C];
+    //Size 0x28
+} BaUnknown114_2;
+typedef struct ba_unknown_114_s {
+    BaUnknown114_2 unk0[2];
+} BaUnknown114;
 typedef struct ba_unknown_134_s {
     f32 unk0;
     f32 unk4;
@@ -521,7 +530,9 @@ typedef struct player_state_s {
     /* 0x9C */ BaHold* hold;
     /* 0xA0 */ ba_unkA0_s* unkA0;
     /* 0xA4 */ struct ba_input_s *input;
-    u8 padA8[0x10];
+    u8 padA8[0x4];
+    /* 0xAC */ ba_unknown_AC_s* unkAC;
+    u8 padB0[0x8];
     /* 0xB8 */ struct ba_unknown_B8_s* unkB8;
     /* 0xBC */ struct ba_unknown_BC_s* unkBC;
     /* 0xC0 */ struct ba_unknown_C0_s *unkC0; // 1E72EA0
@@ -529,7 +540,7 @@ typedef struct player_state_s {
     /* 0xC8 */ struct ba_unknown_C8_s *unkC8;
     u8 padCC[0xDC - 0xCC];
     /* 0xDC */ ba_unknown_DC_s* unkDC;
-    u8 padE0[4];
+    /* 0xE0 */ ba_unknown_E0_s* unkE0;
     /* 0xE4 */ PositionInfo* posInfo;
 	/* 0xE8 */ ba_unknown_E8_s* unkE8;
 	u8 padEC[0x8];
@@ -537,7 +548,9 @@ typedef struct player_state_s {
     /* 0xF8 */ struct ba_yaw_s *yaw;
     u8 padFC[0x10];
     /* 0x10C */ ba_shoes_s* shoes;
-    u8 pad110[0x10];
+    u8 pad110[0x4];
+    /* 0x114 */ BaUnknown114* unk114;
+    u8 pad118[0x8];
     /* 0x120 */ struct bs_state_s *state;
     u8 pad124[4];
     /* 0x128 */ struct ba_stick_s *stick;

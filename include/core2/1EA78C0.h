@@ -4,7 +4,7 @@
 #include "common.h"
 #include "ba/playerstate.h"
 
-void func_800CDFD0(unkCUnk0*);
+void func_800CDFD0(Unk80132ED0*);
 void func_800CE524();
 void func_800CE7DC();
 void func_800CE88C(s32, s32);

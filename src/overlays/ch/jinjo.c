@@ -333,7 +333,7 @@ void chjinjo_entrypoint_4(s32 arg0, s32 arg1, s32 arg2)
 
 s32 func_80800C10_chjinjo(Actor* arg0, s32 eventId, s32 arg2)
 {
-    unkCUnk0* pad;
+    Unk80132ED0* pad;
     s32 sp40;
     s32 var_v0;
 
@@ -369,7 +369,7 @@ s32 func_80800C10_chjinjo(Actor* arg0, s32 eventId, s32 arg2)
         pad = arg2;
         if ((s32)arg0->unk70_10 < 5)
         {
-            if (func_8010A6B0(arg0, (u32)pad->unk1A >> 5))
+            if (func_8010A6B0(arg0, pad->unk18_5))
             {
                 sp40 = func_800D0CC8(arg0->unk6C_0);
                 _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801324_chjinjo);
@@ -382,7 +382,7 @@ s32 func_80800C10_chjinjo(Actor* arg0, s32 eventId, s32 arg2)
                 }
                 collectable_collectItem(arg0->unk6C_0, 0U);
                 func_800D24E8(sp40 + 0xE1, collectable_getNumJinjoCollectedColor(sp40), func_800D129C(sp40));
-                func_80801098_chjinjo(arg0, (u32)pad->unk1A >> 5);
+                func_80801098_chjinjo(arg0, pad->unk18_5);
             }
         }
         break;

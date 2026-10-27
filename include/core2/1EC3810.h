@@ -30,5 +30,5 @@ void func_800EA34C(s32);
 void func_800EA45C();
 void func_800EA51C();
 int func_800EB15C(Unk80132ED0* arg0);
-void func_800EB210(Unk80132ED0*, unkCUnk0*, s32);
+void func_800EB210(Unk80132ED0*, Unk80132ED0*, s32);
 #endif

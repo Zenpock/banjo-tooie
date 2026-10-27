@@ -5,7 +5,10 @@ s32 func_8009E130()
     return 0xF4;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E138.s")
+f32 func_8009E138(PlayerState* self, s32 arg1) {
+    return self->unk114->unk0[arg1].unk0;
+}
+
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E154.s")
 
@@ -18,7 +21,9 @@ void func_8009E388(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E4AC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E4E0.s")
+void func_8009E4E0(PlayerState* self, s32 arg1, void (*arg2)(PlayerState*, s32, s32)) {
+    self->unk114->unk0[arg1].unk8 = arg2;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E4FC.s")
 
@@ -26,11 +31,13 @@ void func_8009E388(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E55C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E5A4.s")
+void func_8009E5A4(PlayerState* self, s32 arg1, s32 arg2) {
+    self->unk114->unk0[arg1].unk4 = arg2;
+}
 
 s32 func_8009E5C0(void) 
 {
-    return 0x14;
+    return sizeof(BanjoState);
 }
 
 
@@ -80,10 +87,16 @@ BanjoStateId bs_getPreviousState(PlayerState *self) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E77C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E7AC.s")
+void func_8009E7AC(PlayerState* self) {
+    self->state->previous = BS_STATE_0_INVALID;
+    self->state->current = BS_STATE_0_INVALID;
+    self->state->next = BS_STATE_0_INVALID;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E7C8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E830.s")
+void func_8009E830(PlayerState* self, s32 arg1) {
+    self->state->unkE = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E83C.s")

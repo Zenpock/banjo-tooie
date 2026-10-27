@@ -165,7 +165,7 @@ int func_800EB15C(Unk80132ED0* arg0)
 	return 1;
 }
 
-void func_800EB210(Unk80132ED0* arg0, unkCUnk0* arg1, s32 arg2)
+void func_800EB210(Unk80132ED0* arg0, Unk80132ED0* arg1, s32 arg2)
 {
 	CallbackTable* temp_v0;
 

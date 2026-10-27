@@ -74,11 +74,11 @@ void func_800EBC04(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EC030.s")
 
-void func_800EC058(s32* arg0, unkCUnk0* arg1)
+void func_800EC058(s32* arg0, Unk80132ED0* arg1)
 {
 	s32 var_a2;
 
-	if (arg1->unk10 & 1)
+	if (arg1->unk12_0)
 	{
 		var_a2 = -1;
 	}
@@ -100,7 +100,7 @@ void func_800EC058(s32* arg0, unkCUnk0* arg1)
 	}
 }
 
-void func_800EC0EC(f32* arg0, unkCUnk0* arg1)
+void func_800EC0EC(f32* arg0, Unk80132ED0* arg1)
 {
 	s32 sp1C[3];
 
