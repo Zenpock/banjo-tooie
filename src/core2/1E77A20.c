@@ -9,8 +9,53 @@ f32 func_8009E138(PlayerState* self, s32 arg1) {
     return self->unk114->unk0[arg1].unk0;
 }
 
+//Remove
+void func_80092CDC(PlayerState*, f32*, s32);
+void func_80092D18(PlayerState*, f32*);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E154.s")
+void func_8009E154(PlayerState* arg0, s32 arg1, f32* arg2)
+{
+	f32 sp7C[3];
+	f32 sp70[3];
+	f32 sp64[3];
+	f32 sp58[3];
+	f32 sp4C[3];
+	f32 sp40[3];
+
+	if (arg0->unk114->unk0[arg1].unk8 != 0)
+	{
+		((void (*)(PlayerState*, f32*, s32)) arg0->unk114->unk0[arg1].unk8)(arg0, sp7C, arg0->unk114->unk0[arg1].unk4);
+	}
+	else
+	{
+		func_80092CDC(arg0, sp7C, arg0->unk114->unk0[arg1].unk4);
+		player_getCoords(arg0, sp64);
+		func_80092D18(arg0, sp4C);
+		ml_vec3f_add(sp64, sp4C);
+		if (ml_vec3f_is_zero(sp7C) != 0)
+		{
+			ml_vec3f_copy(sp58, arg0->unk114->unk0[arg1].unkC);
+			func_800EF8BC(sp58, sp58, func_8009BFCC(arg0));
+			func_800EF934(sp58, sp58, yaw_get(arg0));
+			ml_vec3f_sum(sp7C, sp64, sp58);
+		}
+		else
+		{
+			ml_getdiff_vec3f(sp58, sp7C, sp64);
+			func_800EF934(sp58, sp58, -yaw_get(arg0));
+			func_800EF8BC(sp58, sp58, -func_8009BFCC(arg0));
+			ml_vec3f_copy(arg0->unk114->unk0[arg1].unkC, sp58);
+		}
+	}
+	sp7C[1] += arg0->unk114->unk0[arg1].unk18;
+	if (arg0->unk114->unk0[arg1].unk1C != 0.0f) {
+		func_800EF4E4(sp70, arg0->unk114->unk0[arg1].unk20, func_800136E4(yaw_get(arg0) + arg0->unk114->unk0[arg1].unk24), 0.0f, 0.0f, arg0->unk114->unk0[arg1].unk1C);
+		ml_vec3f_add(sp7C, sp70);
+	}
+	func_80096394(arg0, sp40);
+	ml_vec3f_add(sp7C, sp40);
+	ml_vec3f_copy(arg2, sp7C);
+}
 
 void func_8009E388(s32 arg0) 
 {
