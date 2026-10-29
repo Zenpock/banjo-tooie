@@ -1,4 +1,9 @@
 spimdisasm==1.35.0
 toml>=0.10.2
 mapfile-parser>=2.4.0,<3.0.0
-
+# diff.py
+colorama
+ansiwrap
+watchdog
+python-Levenshtein
+cxxfilt
