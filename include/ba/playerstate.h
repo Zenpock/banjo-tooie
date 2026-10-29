@@ -433,11 +433,19 @@ typedef struct ba_unknown_114_2_s {
     s16 unk4;
     s16 unk6;
     s32 unk8; //void (*arg2)(PlayerState*, s32, s32)
-    s8 padC[0x1C];
+	f32 unkC[3];
+	f32 unk18;
+	f32 unk1C;
+	f32 unk20;
+	f32 unk24;
     //Size 0x28
 } BaUnknown114_2;
 typedef struct ba_unknown_114_s {
-    BaUnknown114_2 unk0[2];
+    BaUnknown114_2 unk0[6];
+	s8 unkF0;
+	s8 unkF1;
+	s8 unkF2;
+	s8 unkF3;
 } BaUnknown114;
 typedef struct ba_unknown_134_s {
     f32 unk0;
