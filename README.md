@@ -15,7 +15,7 @@
   - `git submodule update --init --recursive`
 - Install packages for the C++ libraries fmtlib and toml11.
   - Ubuntu: `sudo apt install libfmt-dev libtoml11-dev gcc-mips-linux-gnu`
-  - Rocky Linux / RHEL (with EPEL enabled): `sudo dnf install fmt-devel toml11-devel zlib-devel gcc-mips64-linux-gnu binutils-mips64-linux-gnu`
+  - Rocky Linux / RHEL: `sudo dnf install fmt-devel toml11-devel zlib-devel gcc-mips64-linux-gnu binutils-mips64-linux-gnu`
     - The build expects `mips-linux-gnu-*` tools, so link the `mips64-linux-gnu-*` tools to those names somewhere on your `PATH`:
       ```bash
       for f in /usr/bin/mips64-linux-gnu-*; do ln -sf "$f" ~/.local/bin/mips-linux-gnu-${f#/usr/bin/mips64-linux-gnu-}; done
