@@ -1,6 +1,6 @@
 #include "core2/1ECD170.h"
 
-void func_800F3880(PlayerState* self)
+void player_destroy(PlayerState* self)
 {
     func_80098E64(self);
     heap_free(self);
@@ -89,7 +89,14 @@ void player_getCoords_Dupe(PlayerState* self, f32* arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECD170/func_800F452C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECD170/func_800F457C.s")
+void func_800F457C(PlayerState* arg0, s32 arg1)
+{
+	if (arg1 == 0) {
+		func_8009CCA4(arg0);
+		return;
+	}
+	func_8009CCFC(arg0,arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECD170/func_800F45B0.s")
 

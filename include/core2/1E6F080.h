@@ -95,6 +95,5 @@ s32 func_800976DC(PlayerState*);
 void func_80097858(PlayerState*);
 void func_8009788C(PlayerState*);
 void func_800978A4(PlayerState*);
-void func_800C5BA4(void*);
 
 #endif // __CORE2_1E6F080_H__

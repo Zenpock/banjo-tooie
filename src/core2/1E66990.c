@@ -82,7 +82,7 @@ int player_canFly(PlayerState* arg0) {
 	return baflag_isTrue(arg0, BA_FLAG_1_ON_FLIGHT_PAD) && ability_getValue(ABILITY_09_BK_FLYING) && character_includedInTransformMask(arg0->unk184, ALLOW_KAZOOIE | ALLOW_BK);
 }
 
-int func_8008D40C(PlayerState* self)
+int player_shouldRejoin(PlayerState* self)
 {
     f32 sp34[3];
     s32 sp30;
@@ -104,7 +104,7 @@ int func_8008D40C(PlayerState* self)
         case 0xBA:
             return 0;
         }
-        sp30 = _baduo_entrypoint_2(self);
+        sp30 = _duo_getOtherCharacter(self);
         if (!player_isStable(self) || !character_isStable(sp30))
         {
             return 0;
@@ -114,7 +114,7 @@ int func_8008D40C(PlayerState* self)
             return 0;
         }
         player_getCoords(self, sp24);
-        character_getCoords(_baduo_entrypoint_2(self), sp34);
+        character_getCoords(_duo_getOtherCharacter(self), sp34);
         return ml_vec3f_distance_sq(sp24, sp34) < D_80124AD0;
     }
     return 0;

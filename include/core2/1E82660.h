@@ -2,6 +2,14 @@
 #define __CORE2_1E82660_H__
 
 #include "common.h"
+#include "core2/1E80A70.h"
+#include "core2/1EA3AA0.h"
+#include "core2/1EBCFC0.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECE0B0.h"
+#include "core2/1EE92B0.h"
+#include "gc/sectionDll.h"
+#include "gc/statusDll.h"
 
 s32 func_800A8FDC(void);
 s32 func_800A907C(s32, s32, s32);

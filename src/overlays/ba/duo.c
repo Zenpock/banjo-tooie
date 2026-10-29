@@ -19,7 +19,7 @@ s32 baduo_entrypoint_1(PlayerState* self) {
     return self->duo->unk0;
 }
 
-s32 baduo_entrypoint_2(PlayerState* self)
+s32 duo_getOtherCharacter(PlayerState* self)
 {
     switch (player_getTransformation(self))
     {
@@ -139,7 +139,7 @@ void baduo_entrypoint_13(PlayerState* self)
     switch (self->duo->unk0)
     {
     case 3:
-        if ((player_getTransformation(self) == TRANSFORM_A_BANJO) && (func_8008D40C(self) != 0))
+        if ((player_getTransformation(self) == TRANSFORM_A_BANJO) && (player_shouldRejoin(self) != 0))
         {
             baduo_entrypoint_7(self, 4);
             return;
@@ -148,7 +148,7 @@ void baduo_entrypoint_13(PlayerState* self)
     case 4:
         if (func_800F5B0C(activeIndex) == 2)
         {
-            sp30 = baduo_entrypoint_2(self);
+            sp30 = duo_getOtherCharacter(self);
             if (activeIndex == self->unk184)
             {
                 func_800F8EBC(_character_findCharOfTransform(TRANSFORM_B_KAZOOIE));

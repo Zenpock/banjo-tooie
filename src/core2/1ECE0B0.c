@@ -34,7 +34,7 @@ void func_800F47C0(void (*arg0)(PlayerState*))
     }
 }
 
-void func_800F482C(s32 arg0)
+void transformation_destroy(TransformationId arg0)
 {
     s32 index;
 
@@ -44,7 +44,7 @@ void func_800F482C(s32 arg0)
         {
             if (arg0 == 0 || player_getTransformation(D_80135490.unk0[index]) == arg0)
             {
-                func_800F3880(D_80135490.unk0[index]);
+                player_destroy(D_80135490.unk0[index]);
                 func_800A91F4(index);
                 D_80135490.unk0[index] = NULL;
             }
@@ -1239,10 +1239,11 @@ int func_800F72DC(u32 arg0) {
     return (func_8009640C(sp1C) != 0) || (baflag_isTrue(sp1C, 0x26) != 0);
 }
 
+//Delete Clockwork
 void func_800F732C(void) {
     D_801354DA = 1;
-    func_800F482C(0x11);
-    func_800F482C(0);
+    transformation_destroy(TRANSFORM_11_CLOCKWORK);
+    transformation_destroy(0);
     D_801354DA = 0;
 }
 
@@ -1318,10 +1319,10 @@ void func_800F759C(s32 arg0) {
         return;
     }
     func_80101238(0xB5, arg0);
-    func_800F3880(D_80135490.unk0[arg0]);
+    player_destroy(D_80135490.unk0[arg0]);
     func_800A91F4(arg0);
     D_80135490.unk0[arg0] = NULL;
-    *(&D_801354B0 + arg0) = 0;
+	D_80135490.unk20[arg0] = 0;
 }
 
 void func_800F7620(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
@@ -1675,7 +1676,7 @@ void func_800F8294(s32 arg0,f32* a1)
     func_800F452C(D_80135490.unk0[arg0],a1);
 }
 void func_800F82C0(s32 arg0) {
-    *(&D_801354B0 + arg0) = 1;
+	D_80135490.unk20[arg0] = 1;
 }
 
 
