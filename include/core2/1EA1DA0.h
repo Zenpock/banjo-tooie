@@ -113,6 +113,7 @@ typedef struct {
     u8 unk14;
 } unkStruct8012AB40;
 
+s32 func_800C84B0(s32);
 void func_800C8900(s32, s32*);
 s32 func_800C8A98(void);
 void func_800C8B84(s32);
@@ -140,7 +141,7 @@ void func_800C99B4(s32, s32, s32);
 void func_800C99F0(unkStruct800C99F0*);
 void func_800C9A38(unkStruct800C9A38*);
 void func_800C9AB0();
-void func_800C9B30();
+void func_800C9B30(Unk80132ED0*, s32, s32);
 void func_800C9BB4(f32, s32, f32, s32);
 void func_800C9C70(f32, u32, f32, u32, f32*, f32, f32);
 void func_800C9CD0(f32, Unk80132ED0*, u32, u32, f32*, s16);

@@ -4,8 +4,9 @@
 
 #include <ultra64.h>
 #include "common.h"
+#include "ba/playerstate.h"
 
-// bahitspline_entrypoint_0
+void _bahitspline_entrypoint_0(PlayerState*);
 void bahitspline_entrypoint_1(s32 arg0);
 // bahitspline_entrypoint_2
 

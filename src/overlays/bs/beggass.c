@@ -26,7 +26,7 @@ void bsbeggass_entrypoint_1(PlayerState* arg0) {
     //Randomizer change adding gcegg_entrypoint_6
 
     if (bainput_should_poop_egg(arg0) && func_80094B14(arg0)) {
-        arg0->unk15C.word = func_800F1418(arg0->unk15C.word + 1, func_800944E0(arg0, arg0->unk164.word));
+        arg0->unk15C.word = ml_min_i(arg0->unk15C.word + 1, func_800944E0(arg0, arg0->unk164.word));
     }
     if (_gcegg_entrypoint_6(arg0->unk164.word) && has_eggs) {
         if (anctrl_isAt(plyr_mvmt, 0.3837f)) {

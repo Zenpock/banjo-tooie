@@ -19,7 +19,7 @@ void gcgame_func_Custom();
 void gcgame_entrypoint_0(s32 arg0) 
 {
     func_80016864();
-    func_800DC310();
+    rand_setInitSeed();
     func_800EBB5C();
     func_80012128();
     func_800DA0B4();

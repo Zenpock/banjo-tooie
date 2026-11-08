@@ -34,7 +34,7 @@ void func_800F47C0(void (*arg0)(PlayerState*))
     }
 }
 
-void func_800F482C(s32 arg0)
+void transformation_destroy(TransformationId arg0)
 {
     s32 index;
 
@@ -44,7 +44,7 @@ void func_800F482C(s32 arg0)
         {
             if (arg0 == 0 || player_getTransformation(D_80135490.unk0[index]) == arg0)
             {
-                func_800F3880(D_80135490.unk0[index]);
+                player_destroy(D_80135490.unk0[index]);
                 func_800A91F4(index);
                 D_80135490.unk0[index] = NULL;
             }
@@ -60,14 +60,14 @@ void func_800F48BC(s32 arg0, f32* arg1)
 
     sp1C = D_80135490.unk0[arg0];
     func_800F4200(sp1C, sp2C);
-    func_800EFA20(sp20, arg1, time_getDelta());
+    ml_getScaledVec3f(sp20, arg1, time_getDelta());
     ml_vec3f_add(sp2C, sp20);
     func_800F4648(sp1C, sp2C);
 }
 
-void func_800F4924(s32 arg0,s32 a1)
+void character_affectCurrentHealth(s32 charIndex,s32 a1)
 {
-    func_800A17A8(D_80135490.unk0[arg0],a1);
+    player_affectCurrentHealth(D_80135490.unk0[charIndex],a1);
 }
 
 void func_800F4950(s32 arg0)
@@ -204,7 +204,7 @@ void func_800F4D74(s32 arg0, Vec3f* arg1, f32 arg2, f32 arg3, f32 arg4) {
     func_8009F678(sp24, sp34, sp28, player_getSpeedModifier(sp24) * 1000.0f);
 }
 
-void func_800F4E5C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+void func_800F4E5C(s32 arg0, f32* arg1, f32* arg2, s32* arg3, s32* arg4) {
     PlayerState* sp24;
 
     sp24 = D_80135490.unk0[arg0];
@@ -233,11 +233,11 @@ void func_800F4F98(s32 arg0)
 void func_800F4FC4(void) {
     s32 temp_v0;
 
-    temp_v0 = _plsu_entrypoint_1(0x11);
+    temp_v0 = _character_findCharOfTransform(TRANSFORM_11_CLOCKWORK);
     if (temp_v0 != -1) {
         func_800F7B9C(temp_v0, 0x1FU);
     }
-    event_sendToActorsOfType(0x15E, 0x2C, 0);
+    event_sendToActorsOfType(PROP_15E_CLOCKWORK_EGG, 0x2C, 0);
 }
 
 
@@ -366,7 +366,7 @@ TransformationId character_getTransform(s32 arg0)
     return player_getTransformation(D_80135490.unk0[arg0]);
 }
 
-AllowedTransformation func_800F543C(s32 arg0)
+s32 character_getTransformBit(s32 arg0)
 {
     return 1 << (player_getTransformation(D_80135490.unk0[arg0]) + 0x1F);
 }
@@ -406,19 +406,19 @@ void func_800F554C(s32 arg0)
     func_80092BDC(D_80135490.unk0[arg0]);
 }
 
-s32 func_800F5578(s32 arg0)
+s32 character_getCurrentHealth(s32 arg0)
 {
-    return func_800A1718(D_80135490.unk0[arg0]);
+    return player_getCurrentHealth(D_80135490.unk0[arg0]);
 }
 
-s32 func_800F55A4(s32 arg0)
+s32 character_getMaxHealth(s32 arg0)
 {
-    return func_800A1760(D_80135490.unk0[arg0]);
+    return player_getMaxHealth(D_80135490.unk0[arg0]);
 }
 
-void func_800F55D0(s32 arg0)
+Unk80132ED0* func_800F55D0(s32 arg0)
 {
-    func_800965D4(D_80135490.unk0[arg0]);
+    return func_800965D4(D_80135490.unk0[arg0]);
 }
 
 s32 func_800F55FC(s32 arg0)
@@ -426,9 +426,9 @@ s32 func_800F55FC(s32 arg0)
     return func_80096628(D_80135490.unk0[arg0]);
 }
 
-void func_800F5628(s32 arg0)
+f32 character_getGroundHeight(s32 arg0)
 {
-    func_80096364(D_80135490.unk0[arg0]);
+    return player_getGroundHeight(D_80135490.unk0[arg0]);
 }
 
 void func_800F5654(s32 arg0)
@@ -504,7 +504,7 @@ void func_800F586C(s32 arg0,f32* arg1, f32* arg2)
     func_80098B5C(D_80135490.unk0[arg0],arg1,arg2);
 }
 
-s32 func_800F5898(void) 
+s32 character_getMaxCharacters(void) 
 {
 	return 8;
 }
@@ -545,23 +545,23 @@ void func_800F59D4(s32 arg0)
     _bapackctrl_entrypoint_1(D_80135490.unk0[arg0]);
 }
 
-void func_800F5A00(s32 arg0,f32* a1)
+void character_getCoords(s32 charIdx,f32* a1)
 {
-    func_800F3BB0(D_80135490.unk0[arg0],a1);
+    player_getCoords_Dupe(D_80135490.unk0[charIdx],a1);
 }
 
-void func_800F5A2C(s32 arg0, s32 arg1, f32* arg2)
+void func_800F5A2C(s32 charIdx, s32 arg1, f32* arg2)
 {
-    func_800F3BD0(D_80135490.unk0[arg0], arg1, arg2);
+    func_800F3BD0(D_80135490.unk0[charIdx], arg1, arg2);
 }
 
-void func_800F5A58(s32 arg0, unkStruct800F5A58* arg1) {
+void character_getCoords3s(s32 charIdx, s32* arg1) {
     f32 sp1C[3];
 
-    func_800F3BB0(D_80135490.unk0[arg0], sp1C, arg1);
-    arg1->unk0 = (s32) sp1C[0];
-    arg1->unk4 = (s32) sp1C[1];
-    arg1->unk8 = (s32) sp1C[2];
+    player_getCoords_Dupe(D_80135490.unk0[charIdx], sp1C);
+    arg1[0] = (s32)sp1C[0];
+    arg1[1] = (s32)sp1C[1];
+    arg1[2] = (s32)sp1C[2];
 }
 
 f32 func_800F5AD0(s32 arg0) {
@@ -573,9 +573,9 @@ f32 func_800F5AE0(s32 arg0)
     return func_8009BFCC(D_80135490.unk0[arg0]);
 }
 
-void func_800F5B0C(s32 arg0)
+s32 func_800F5B0C(s32 arg0)
 {
-    func_8009CC68(D_80135490.unk0[arg0]);
+    return func_8009CC68(D_80135490.unk0[arg0]);
 }
 
 void func_800F5B38(s32 arg0, f32* arg1)
@@ -683,7 +683,7 @@ void func_800F5E7C(s32 arg0) {
 
     sp1C = D_80135490.unk0[arg0];
     if (func_80096544(sp1C) != 0) {
-        func_800964DC(sp1C);
+        player_getWaterHeight(sp1C);
         return;
     }
     player_getCoordVertical(sp1C);
@@ -709,9 +709,9 @@ f32 func_800F5F50(s32 arg0)
     return yaw_getIdeal(D_80135490.unk0[arg0]);
 }
 
-f32 func_800F5F7C(s32 arg0)
+f32 func_800F5F7C(s32 charIndex)
 {
-    return player_getCoordVertical(D_80135490.unk0[arg0]);
+    return player_getCoordVertical(D_80135490.unk0[charIndex]);
 }
 
 s32 func_800F5FA8(s32 arg0) {
@@ -792,7 +792,7 @@ void func_800F6204(s32 arg0) {
     func_800F6140(arg0);
 }
 
-s32 func_800F6224(s32 arg0) {
+s32 character_createNew(s32 arg0) {
     f32 sp3C[3];
     s32 i;
 
@@ -808,7 +808,7 @@ s32 func_800F6224(s32 arg0) {
             newPlayer = func_800F43A8(i);
             D_80135490.unk0[i] = newPlayer;
             bakey_setControllerIndex(newPlayer, temp);
-            func_800F3BB0(refPlayer, sp3C);
+            player_getCoords_Dupe(refPlayer, sp3C);
             func_800F452C(newPlayer, sp3C);
             yaw_setIdeal(newPlayer, yaw_getIdeal(refPlayer));
             yaw_applyIdeal(newPlayer);
@@ -819,7 +819,8 @@ s32 func_800F6224(s32 arg0) {
     return 0;
 }
 
-PlayerState* func_800F6308(s32 arg0, s32 arg1, f32* arg2) {
+PlayerState* func_800F6308(s32 arg0, s32 arg1, f32* arg2) 
+{
     PlayerState* newPlayer;
 
     func_800A907C(arg0, arg1, func_800A8FDC());
@@ -865,9 +866,9 @@ s32 func_800F6478(s32 arg0)
 }
 
 //Tranformation Type is a bitfield so you can check multiple transformations at once
-s32 func_800F64A4(s32 characterIndex, AllowedTransformation transformationType)
+s32 character_includedInTransformMask(s32 characterIndex, AllowedTransformation transformationType)
 {
-    return func_800F543C(characterIndex) & transformationType ? 1 : 0;
+    return character_getTransformBit(characterIndex) & transformationType ? 1 : 0;
 }
 
 void func_800F64DC(s32 arg0) {
@@ -883,7 +884,7 @@ s32 func_800F651C(u32 arg0) {
     if (baphysics_get_target_horizontal_velocity(sp1C) == 0.0f) {
         return 1;
     }
-    if (bs_getCurrentState(sp1C) == 1) {
+    if (bs_getCurrentState(sp1C) == BS_STATE_1_IDLE) {
         return 1;
     }
     return func_8009E674(sp1C, 0x1000);
@@ -996,7 +997,7 @@ int func_800F6968(s32 arg0) {
     f32 sp1C;
 
     temp_a0 = D_80135490.unk0[arg0];
-    sp1C = func_800964DC(temp_a0);
+    sp1C = player_getWaterHeight(temp_a0);
     return ((sp1C - player_getCoordVertical(temp_a0)) > 4.0f) != 0 && (func_800966BC(temp_a0) & 0x2000) != 0;
 }
 
@@ -1045,10 +1046,10 @@ int func_800F6B94(s32 arg0) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    return (player_getTransformation(sp1C) == TRANSFORM_2_SNOWBALL) && (func_800A1718(sp1C) >= 5);
+    return (player_getTransformation(sp1C) == TRANSFORM_2_SNOWBALL) && (player_getCurrentHealth(sp1C) >= 5);
 }
 
-s32 func_800F6BE4(s32 arg0) {
+s32 character_existsAtIndex(s32 arg0) {
     if ((arg0 >= 0) && (arg0 < 8) && (D_80135490.unk0[arg0] != NULL)) {
         return 1;
     }
@@ -1062,7 +1063,7 @@ s32 func_800F6C1C(s32 arg0) {
     return func_8009CB44(sp1C, bs_getCurrentState(sp1C)) != 0;
 }
 
-s32 func_800F6C5C(s32 arg0)
+s32 character_isStable(s32 arg0)
 {
     return player_isStable(D_80135490.unk0[arg0]);
 }
@@ -1152,7 +1153,7 @@ s32 func_800F6F00(s32 arg0) {
     if (*sp18 != 0.0f || sp2C[2] != 0.0f) {
         return 0;
     }
-    if (func_800F6C5C(arg0) == 0) {
+    if (character_isStable(arg0) == 0) {
         return 0;
     }
     func_800F5D70(arg0, sp20);
@@ -1179,7 +1180,7 @@ s32 func_800F7058(s32 arg0) {
     PlayerState* sp1C;
     sp1C = D_80135490.unk0[arg0];
     if (func_8009E674(sp1C, 0x80) != 0) {
-        return _bashoes_entrypoint_1(sp1C) == 3 ? 2 : 1;
+        return _bashoes_entrypoint_1(sp1C) == SHOETYPE_TURBO_TRAINER ? 2 : 1;
     }
     return 0;
 }
@@ -1238,10 +1239,11 @@ int func_800F72DC(u32 arg0) {
     return (func_8009640C(sp1C) != 0) || (baflag_isTrue(sp1C, 0x26) != 0);
 }
 
+//Delete Clockwork
 void func_800F732C(void) {
     D_801354DA = 1;
-    func_800F482C(0x11);
-    func_800F482C(0);
+    transformation_destroy(TRANSFORM_11_CLOCKWORK);
+    transformation_destroy(0);
     D_801354DA = 0;
 }
 
@@ -1281,24 +1283,24 @@ s32 func_800F73C4(s32 arg0) {
     }
     func_800F8B94();
     count = 0;
-    for (i = 0; i < func_800F5898(); i++) {
-        if (func_800F6BE4(i) != 0) {
+    for (i = 0; i < character_getMaxCharacters(); i++) {
+        if (character_existsAtIndex(i) != 0) {
             count++;
         }
     }
     if (count == 0) {
         func_800F7E64(func_800F61E4(), 4);
     }
-    if (func_800F8B88() == 2) {
-        a = _plsu_entrypoint_1(0xA);
-        b = _plsu_entrypoint_1(0xB);
+    if (bs_getSplitStatus() == SPLIT_STATE_SPLIT) {
+        a = _character_findCharOfTransform(TRANSFORM_A_BANJO);
+        b = _character_findCharOfTransform(TRANSFORM_B_KAZOOIE);
         if (a != -1 && b != -1) {
             if (func_800F65D0(b) != 0) {
                 controller = b;
             } else if (func_800F65D0(a) != 0) {
                 controller = a;
             } else {
-                controller = _plsu_entrypoint_1(0x11);
+                controller = _character_findCharOfTransform(TRANSFORM_11_CLOCKWORK);
             }
             func_800F8128(controller);
         }
@@ -1317,10 +1319,10 @@ void func_800F759C(s32 arg0) {
         return;
     }
     func_80101238(0xB5, arg0);
-    func_800F3880(D_80135490.unk0[arg0]);
+    player_destroy(D_80135490.unk0[arg0]);
     func_800A91F4(arg0);
     D_80135490.unk0[arg0] = NULL;
-    *(&D_801354B0 + arg0) = 0;
+	D_80135490.unk20[arg0] = 0;
 }
 
 void func_800F7620(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
@@ -1543,11 +1545,11 @@ s32 func_800F7E3C(s32 arg0, s32 arg1) {
     return func_800F7C58(arg0, 0x84, arg1) == 2;
 }
 
-void func_800F7E64(s32 arg0, s32 arg1) {
+void func_800F7E64(s32 arg0, TransformationId arg1) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    func_800A3410(sp1C, arg1);
+    player_setTransformation(sp1C, arg1);
     func_80092778(sp1C);
 }
 
@@ -1647,7 +1649,7 @@ void func_800F817C(s32 arg0, s32 arg1)
 
 void func_800F81A8(s32 arg0)
 {
-    func_800A1870(D_80135490.unk0[arg0]);
+    player_setCurrentHealth(D_80135490.unk0[arg0]);
 }
 
 void func_800F81D4(s32 arg0)
@@ -1674,7 +1676,7 @@ void func_800F8294(s32 arg0,f32* a1)
     func_800F452C(D_80135490.unk0[arg0],a1);
 }
 void func_800F82C0(s32 arg0) {
-    *(&D_801354B0 + arg0) = 1;
+	D_80135490.unk20[arg0] = 1;
 }
 
 
@@ -1727,9 +1729,9 @@ void func_800F849C(s32 arg0, f32 arg1) {
     func_8009BD18(D_80135490.unk0[arg0], arg1);
 }
 
-void func_800F84D0(s32 arg0)
+void func_800F84D0(s32 arg0,s32 arg1)
 {
-    func_8009659C(D_80135490.unk0[arg0]);
+    func_8009659C(D_80135490.unk0[arg0],arg1);
 }
 
 void func_800F84FC(void) {
@@ -1750,7 +1752,7 @@ void func_800F84FC(void) {
         if (func_800F5924(i) == 0) {
             continue;
         }
-        func_800F5A00(i, buf1);
+        character_getCoords(i, buf1);
         func_800F5950(i, &out1, &out2, &out3);
         for (j = 0; j < 8; j++) {
             if (D_80135490.unk0[j] == NULL) {
@@ -1798,7 +1800,7 @@ void func_800F84FC(void) {
     D_80135490.unk52 = newTransform;
 }
 
-void func_800F86C4(s32 arg0, s32 arg1) {
+void func_800F86C4(s32 arg0, TransformationId arg1) {
     D_80135490.unk50 = arg0;
     D_80135490.unk52 = arg1;
 }
@@ -1865,8 +1867,10 @@ unkStruct800F88A0* func_800F88A0(TransformationId arg0) {
 
     sp1C = vector_begin(D_801354F0);
     temp_v0 = vector_end(D_801354F0);
-    while (sp1C < temp_v0) {
-        if (arg0 == sp1C->unk0) {
+    while (sp1C < temp_v0) 
+    {
+        if (arg0 == sp1C->unk0) 
+        {
             return sp1C;
         }
 
@@ -1879,13 +1883,13 @@ unkStruct800F88A0* func_800F88A0(TransformationId arg0) {
 s32 func_800F8914(unkStruct800F88A0* arg0, s32 arg1)
 {
     s32 temp;
-    func_800F5A00(arg1, arg0->unk24);
+    character_getCoords(arg1, arg0->unk24);
     func_800F5B38(arg1, arg0->unk30);
     _plcamera_entrypoint_14(arg1, arg0->unk4, arg0->unk10);
     arg0->unk2 = func_800F9214(arg1);
     arg0->unk0 = character_getTransform(arg1);
     arg0->unk1 = func_800F65D0(arg1);
-    arg0->unk22 = func_800EA05C();
+    arg0->unk22 = map_getCurrent();
     arg0->unk21 = func_800EA090();
     arg0->unk20 = 2;
     arg0->unk1D = func_800F58F8(arg1);
@@ -1895,7 +1899,7 @@ s32 func_800F8914(unkStruct800F88A0* arg0, s32 arg1)
 }
 
 s32 func_800F89BC(void) {
-    if (D_801354F8.unk0 == 2) {
+    if (D_801354F8.splitStatus == 2) {
         return 0xB;
     }
     return 1;
@@ -1923,7 +1927,7 @@ f32 func_800F8A50(void)
 	return D_8013550C;
 }
 
-s16 func_800F8A5C(s32 arg0) {
+MapId func_800F8A5C(s32 arg0) {
     return func_800F88A0(arg0)->unk22;
 }
 
@@ -1976,8 +1980,8 @@ s32 func_800F8B7C(void) {
     return D_801354F8.unk5;
 }
 
-u8 func_800F8B88(void) {
-    return D_801354F8.unk0;
+SPLITUP_STATUS bs_getSplitStatus(void) {
+    return D_801354F8.splitStatus;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F8B94.s")
@@ -2013,7 +2017,7 @@ void func_800F8E08(void) {
     D_801354F8.unk1 = 0;
     D_801354F8.unk4 = 0;
     D_801354F8.unk5 = 0;
-    D_801354F8.unk0 = 0;
+    D_801354F8.splitStatus = 0;
     func_800F911C(1);
     ml_vec3f_clear(&D_80135500);
     ml_vec3f_clear(&D_80135510);
@@ -2052,7 +2056,7 @@ void func_800F8F3C(void) {
     unkStruct800F8F3C* temp_s2;
     unkStruct800F8F3C* s0;
 
-    if (D_801354F8.unk0 == 2 && D_801354F0 != 0) {
+    if (D_801354F8.splitStatus == 2 && D_801354F0 != 0) {
         temp_s2 = vector_begin(D_801354F0);
         temp_v0 = vector_end(D_801354F0);
         s0 = temp_s2;
@@ -2084,7 +2088,7 @@ void func_800F9098(s32 arg0, f32* arg1) {
     } else if (arg0 == 0xB) {
         ml_vec3f_copy(&D_80135510, arg1);
     }
-    D_8013551C = func_800EA05C();
+    D_8013551C = map_getCurrent();
 }
 
 void func_800F90EC(f32 arg0) {
@@ -2104,10 +2108,10 @@ void func_800F9110(s32 arg0) {
 }
 
 void func_800F911C(s32 arg0) {
-    if (D_801354F8.unk0 == 3) {
+    if (D_801354F8.splitStatus == 3) {
         func_800CF840(0);
     }
-    if ((u8) (D_801354F8.unk0 = arg0) == 3) {
+    if ((u8) (D_801354F8.splitStatus = arg0) == 3) {
         func_800CF840(1);
     }
 }
@@ -2144,17 +2148,17 @@ s32 func_800F9214(s32 arg0) {
 
 void func_800F9240(f32* arg0, s32 arg1) {
     f32 buf[3];
-    func_800F5A00(arg1, buf);
+    character_getCoords(arg1, buf);
     buf[0] += 200.0f;
     ml_vec3f_assign_value(arg0, buf[0], buf[1], buf[2] + 200.0f);
 }
 
 
-s32 func_800F929C(void) {
-    if (func_800F8B88() == 2) {
-        return 0xB;
+TransformationId func_800F929C(void) {
+    if (bs_getSplitStatus() == SPLIT_STATE_SPLIT) {
+        return TRANSFORM_B_KAZOOIE;
     }
-    return 1;
+    return TRANSFORM_1_BK;
 }
 
 void func_800F92CC(u32* arg0, enum transform_e* arg1, s32* arg2, s32* arg3) {
@@ -2173,7 +2177,7 @@ void func_800F92CC(u32* arg0, enum transform_e* arg1, s32* arg2, s32* arg3) {
         *arg3 = 0xA;
         break;
     }
-    *arg2 = _plsu_entrypoint_1(*arg3);
+    *arg2 = _character_findCharOfTransform(*arg3);
 }
 
 void func_800F9354(u32* arg0, enum transform_e* arg1, s32* arg2) {
@@ -2312,7 +2316,7 @@ int func_800F9488(s32 arg0) {
         return;
     case 10:
         func_800F93C4(&sp58, &sp5C);
-        sp50 = _plsu_entrypoint_1(0x11);
+        sp50 = _character_findCharOfTransform(TRANSFORM_11_CLOCKWORK);
         func_800F8128(sp58);
         func_800F759C(sp50);
         func_800F8268(sp58, 1, 1);
@@ -2335,18 +2339,18 @@ int func_800F9488(s32 arg0) {
         return;
     case 15:
         func_800F93C4(&sp58, &sp5C);
-        sp50 = func_800F6224(sp58);
-        func_800F7E64(sp50, 0xB);
+        sp50 = character_createNew(sp58);
+        func_800F7E64(sp50, TRANSFORM_B_KAZOOIE);
         func_800F608C(sp50, 1);
         func_800F9240(sp44, sp58);
         func_800F7CF4(sp50, 0x50, sp44);
         func_800F9400(TRANSFORM_A_BANJO);
         return;
     case 16:
-        sp58 = _plsu_entrypoint_1(0xB);
-        sp50 = _plsu_entrypoint_1(0xA);
-        func_800F5A00(sp58, sp20);
-        func_800F5A00(sp50, sp2C);
+        sp58 = _character_findCharOfTransform(TRANSFORM_B_KAZOOIE);
+        sp50 = _character_findCharOfTransform(TRANSFORM_A_BANJO);
+        character_getCoords(sp58, sp20);
+        character_getCoords(sp50, sp2C);
         if (ml_vec3f_distance_sq(sp20, sp2C) < 48400.0f) {
             ml_vec3f_copy(sp38, sp20);
         } else {
@@ -2358,8 +2362,8 @@ int func_800F9488(s32 arg0) {
         func_800F8268(sp50, 1, 1);
         return;
     case 17:
-        sp58 = _plsu_entrypoint_1(0xB);
-        sp50 = _plsu_entrypoint_1(0xA);
+        sp58 = _character_findCharOfTransform(TRANSFORM_B_KAZOOIE);
+        sp50 = _character_findCharOfTransform(TRANSFORM_A_BANJO);
         func_800F759C(sp58);
         func_800D5234(0);
         func_800A16BC(0);
@@ -2395,7 +2399,7 @@ void func_800F9A44(void) {
 
 
 void func_800F9A6C(void) {
-    if (_plsu_entrypoint_2() != 0) {
+    if (_character_soloCharactersExist() != 0) {
         func_800F9488(2);
         return;
     }
@@ -2422,7 +2426,7 @@ void func_800F9AFC(void) {
     s32 sp1C;
 
     func_800F93C4(&sp20, &sp24);
-    sp1C = _plsu_entrypoint_1(func_800F929C());
+    sp1C = _character_findCharOfTransform(func_800F929C());
     func_800F8128(sp1C);
     func_800F8EBC(sp1C);
     func_800F8268(sp1C, 1, 1);
@@ -2433,7 +2437,7 @@ void func_800F9B54(void) {
     s32 sp18;
 
     sp1C = character_getActiveIndex();
-    sp18 = _plsu_entrypoint_1(0x11);
+    sp18 = _character_findCharOfTransform(TRANSFORM_11_CLOCKWORK);
     func_800F8128((s32) sp1C);
     func_800F8268((s32) sp1C, 1, 1);
     func_800F82C0(sp18);
@@ -2446,7 +2450,7 @@ void func_800F9BA4()
 }
 
 void func_800F9BC4(void) {
-    if (func_800F8B88() != 3) {
+    if (bs_getSplitStatus() != SPLIT_STATE_TALON_TORPEDO) {
         return;
     }
     if (func_800DB9B0() != 0) {
@@ -2469,7 +2473,7 @@ void func_800F9BC4(void) {
 }
 
 void func_800F9C38(void) {
-    if (func_800F8B88() == 3) {
+    if (bs_getSplitStatus() == SPLIT_STATE_TALON_TORPEDO) {
         func_800F9488(0x13);
     }
 }
@@ -2529,7 +2533,7 @@ void func_800F9C6C(void) {
         func_800F9488(1);
         return;
     case 12:
-        if (_plsu_entrypoint_1(func_800F929C()) == -1) {
+        if (_character_findCharOfTransform(func_800F929C()) == -1) {
             func_800F9488(7);
             return;
         }
@@ -2558,7 +2562,7 @@ void func_800F9C6C(void) {
         return;
     case 18:
         sp18 = func_800F8A5C(0xA);
-        if (func_800EA05C() == sp18) {
+        if (map_getCurrent() == sp18) {
             func_800F9488(0x10);
             return;
         }
@@ -2566,7 +2570,7 @@ void func_800F9C6C(void) {
         return;
     case 19:
         sp18 = func_800F8A5C(0xA);
-        if (func_800EA05C() == sp18) 
+        if (map_getCurrent() == sp18) 
         {
             func_800F9488(0x11);
         }

@@ -54,7 +54,7 @@ void func_80800134_chtemplelobbydoor(Actor* actor, s32 arg1)
 {
     s8* temp_v0;
 
-    temp_v0 = func_80100094(actor, 0U);
+    temp_v0 = actor_getAdditionalMem(actor, 0U);
     *temp_v0 = 0;
     switch (func_800EA090())
     {

@@ -173,7 +173,7 @@ u8 D_GlOWBOREWARDNAMES[] =
 
 void func_80800000_chglowbo(Actor* arg0) 
 {
-    glowboStruct* temp_v0 = (glowboStruct*)func_80100094(arg0, 0U);
+    glowboStruct* temp_v0 = (glowboStruct*)actor_getAdditionalMem(arg0, 0U);
     s32 sp18[3] = D_80801460_chglowbo;
 
     if (temp_v0->unk16 == 1)
@@ -203,7 +203,7 @@ void func_8080013C_chglowbo(Actor* arg0)
 {
     glowboStruct* sp2C;
 
-    sp2C = (glowboStruct*)func_80100094(arg0, 0U);
+    sp2C = (glowboStruct*)actor_getAdditionalMem(arg0, 0U);
     if (arg0->scale == 2.0f)
     {
 
@@ -245,7 +245,7 @@ void func_8080013C_chglowbo(Actor* arg0)
     }
     GLOWBO_DATA(arg0)->unkC = 100.0f;
 
-    switch (func_800EA05C()) {
+    switch (map_getCurrent()) {
     case MAP_1A7_JRL_JOLLY_ROGERS_LAGOON:
     case MAP_1A8_JRL_ATLANTIS:
     case MAP_1A9_JRL_SEA_BOTTOM:
@@ -255,7 +255,7 @@ void func_8080013C_chglowbo(Actor* arg0)
         break;
 
     }
-    //_subaddierouteDll_entrypoint_3(arg0, func_80100094(arg0, 1U), arg0->position);
+    //_subaddierouteDll_entrypoint_3(arg0, actor_getAdditionalMem(arg0, 1U), arg0->position);
 }
 
 //update
@@ -268,8 +268,8 @@ void func_808002F4_chglowbo(Actor* arg0)
     f32 sp60[3];
     f32 sp54[3];
     f32 sp48[3];
-    sp74 = (glowboStruct*)func_80100094(arg0, 0U);
-    sp70 = (glowboStruct2*)func_80100094(arg0, 1U);
+    sp74 = (glowboStruct*)actor_getAdditionalMem(arg0, 0U);
+    sp70 = (glowboStruct2*)actor_getAdditionalMem(arg0, 1U);
     if ((!arg0->unk64_19) || (_subaddiesect_entrypoint_0(arg0, sp74->unk17, 0xB) != 0))
     {
         gamespeed = time_getDelta();
@@ -334,7 +334,7 @@ void func_808002F4_chglowbo(Actor* arg0)
 
             case 0xa:
                 ml_vec3f_copy(arg0->position, &GLOWBO_DATA(arg0)->unk10);
-                func_800EF1B8(arg0->position, arg0->rotation[1] - 90.0f, arg0->unk74_7);
+                ml_translateAngleDist(arg0->position, arg0->rotation[1] - 90.0f, arg0->unk74_7);
                 arg0->rotation[1] += (time_getDelta() * 100.0f) * func_800F3780(func_80101F24(arg0), &D_808013B0_chglowbo, 3);
                 if (sp74->unk4 != 0)
                 {
@@ -371,12 +371,12 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
 {
     glowboStruct* sp2C;
 
-    sp2C = (glowboStruct*)func_80100094(arg0, 0U);
+    sp2C = (glowboStruct*)actor_getAdditionalMem(arg0, 0U);
     switch (arg1)
     {
     case EVENT_95_ACTOR_SPAWNED:
         //_subaddierouteDll_entrypoint_1(arg0);
-        func_8010A5B0(arg0, flag_getValue(FLAG2_64E_UNK));
+        actor_setCollision(arg0, flag_getValue(FLAG2_64E_UNK));
         break;
     //Collide with the Glowbo
     case EVENT_3E_ACTOR_TOUCHED:
@@ -402,7 +402,7 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
 		{
 			//Randomizer Change Removed the FTT
             //_sudialog_entrypoint_0(0x2A, 0);
-            func_800D0BD4(sp2C->unk0, 3U);
+            collectable_collectItem(sp2C->unk0, 3U);
             inventory_incrementValue(0x48U);
         }
         _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801454_chglowbo);
@@ -437,8 +437,8 @@ void func_80800A48_chglowbo(Actor* arg0)
     glowboStruct* sp1C;
     s32 temp_v0;
 
-    sp1C = (glowboStruct*)func_80100094(arg0, 0U);
-    if (func_800EA05C() == MAP_157_IOH_WUMBA)
+    sp1C = (glowboStruct*)actor_getAdditionalMem(arg0, 0U);
+    if (map_getCurrent() == MAP_157_IOH_WUMBA)
     {
         arg0->unk74_29 = 1;
     }
@@ -464,7 +464,7 @@ void func_80800A48_chglowbo(Actor* arg0)
 
 void func_80800B10_chglowbo(Actor* arg0)
 {
-    glowboStruct* temp_v0 = (glowboStruct*)func_80100094(arg0, 0U);
+    glowboStruct* temp_v0 = (glowboStruct*)actor_getAdditionalMem(arg0, 0U);
     func_800BBCB8(arg0->position, NULL, 1.0f, 1, &D_80801508_chglowbo);
     switch (arg0->unk70_10)
     {
@@ -547,7 +547,7 @@ void func_80800E28_chglowbo(Actor* arg0)
 {
     f32 sp3C[3];
 
-    if (func_800EA05C() == MAP_157_IOH_WUMBA)
+    if (map_getCurrent() == MAP_157_IOH_WUMBA)
     {
         arg0->unk74_29 = 1;
     }
@@ -565,7 +565,7 @@ void func_80800E28_chglowbo(Actor* arg0)
     }
     arg0->rotation[1] = (func_80090010() + rand_fBounded(-110.0f, 110.0f));
     func_8010D254(sp3C);
-    func_800EEB9C(GLOWBO_DATA(arg0)->unk0, arg0->rotation[1], 400.0f);
+    ml_vec3f_getVecFromYaw(GLOWBO_DATA(arg0)->unk0, arg0->rotation[1], 400.0f);
     ml_vec3f_add(GLOWBO_DATA(arg0)->unk0, arg0->position);
     GLOWBO_DATA(arg0)->unk0[1] = (f32)(sp3C[1] + 20.0f);
     GLOWBO_DATA(arg0)->unk1C = -80.0f;
@@ -583,7 +583,7 @@ void func_80800F64_chglowbo(Actor* arg0)
         if ((GLOWBO_DATA(arg0)->unk0[1] < arg0->position[1]) || (GLOWBO_DATA(arg0)->unk14 > 0.0f))
         {
             GLOWBO_DATA(arg0)->unk14 += (GLOWBO_DATA(arg0)->unk1C * time_getDelta());
-            func_800EF1B8(arg0->position, arg0->rotation[1], GLOWBO_DATA(arg0)->unkC);
+            ml_translateAngleDist(arg0->position, arg0->rotation[1], GLOWBO_DATA(arg0)->unkC);
             arg0->position[1] = (f32)(arg0->position[1] + GLOWBO_DATA(arg0)->unk14);
         }
         if ((arg0->position[1] <= GLOWBO_DATA(arg0)->unk0[1]) && (GLOWBO_DATA(arg0)->unk14 <= 0.0f))
@@ -592,7 +592,7 @@ void func_80800F64_chglowbo(Actor* arg0)
             arg0->position[1] = (f32)GLOWBO_DATA(arg0)->unk0[1];
             GLOWBO_DATA(arg0)->unk14 = 0.0f;
             GLOWBO_DATA(arg0)->unkC = 100.0f;
-            arg0->rotation[0] = func_800136E4(arg0->rotation[0]);
+            arg0->rotation[0] = ml_normalizeAngle_f(arg0->rotation[0]);
             arg0->unk58 = 6.0f;
             func_80101FDC(arg0, 9);
             return;

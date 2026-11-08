@@ -98,7 +98,7 @@ void func_80800000_chjinjo(Actor* arg0)
     {
         var_v0 = func_800D0CC8(arg0->unk6C_0);
     }
-    if (arg0->unk6C_9 == PROP_48F_JINJO_IN_HOME && (func_800D1338(var_v0) <= arg0->rotation[1]))
+    if (arg0->unk6C_9 == PROP_48F_JINJO_IN_HOME && (collectable_getNumJinjoCollectedColor(var_v0) <= arg0->rotation[1]))
     {
         actor_mark_delete(arg0);
     }
@@ -139,7 +139,7 @@ s16 chjinjo_entrypoint_2(MapId arg0)
     s32 index;
     if (arg0 == -1)
     {
-        arg0 = func_800EA05C();
+        arg0 = map_getCurrent();
     }
     for (index = 0; index < 18; index += 2)
     {
@@ -183,7 +183,7 @@ void func_808002E0_chjinjo(Actor* arg0)
         return;
     }
 
-    _suexpression_entrypoint_10(func_80100094(arg0, 1U), arg0->unk0, 0U);
+    _suexpression_entrypoint_10(actor_getAdditionalMem(arg0, 1U), arg0->unk0, 0U);
     if (arg0->unk74_29)
     {
         func_800E3980(sp74);
@@ -266,7 +266,7 @@ void func_808002E0_chjinjo(Actor* arg0)
         break;
     case 7:
     case 8:
-        _suexpression_entrypoint_12(func_80100094(arg0, 1U), 0.0f, 0.0f);
+        _suexpression_entrypoint_12(actor_getAdditionalMem(arg0, 1U), 0.0f, 0.0f);
         sp58 = arg0->unk70_10 == 7;
         if (((sp58 == 0) || (func_80101F24(arg0) > 0.1f)) && ((func_8008FFBC(sp68), ml_vec3f_apply_scale(sp68, sp64 * 6.0f), ml_vec3f_add(sp68, sp74), ml_vec3f_subtract(sp68, arg0->position), ml_vec3f_apply_scale(sp68, sp64 * 3.0f), ml_vec3f_add(arg0->position, sp68), (sp58 != 0)) || (func_80101F24(arg0) < 0.8f))) 
         {
@@ -276,7 +276,7 @@ void func_808002E0_chjinjo(Actor* arg0)
                 if (rand_percentChance(0.3f))
                 {
                     _subaddieskeleton_entrypoint_0(arg0, 3, &sp48);
-                    func_800EF214(&sp48, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 15.0f);
+                    ml_translateAngleDist_3D(&sp48, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 15.0f);
                     _fxtwinkle_entrypoint_0(&sp48);
                 }
             }
@@ -396,7 +396,7 @@ void chjinjo_entrypoint_4(s32 arg0, s32 arg1, s32 arg2)
 
 s32 func_80800C10_chjinjo(Actor* arg0, s32 eventId, s32 arg2)
 {
-    unkCUnk0* pad;
+    Unk80132ED0* pad;
     s32 sp40;
     s32 var_v0;
 
@@ -432,17 +432,17 @@ s32 func_80800C10_chjinjo(Actor* arg0, s32 eventId, s32 arg2)
         pad = arg2;
         if ((s32)arg0->unk70_10 < 5)
         {
-            if (func_8010A6B0(arg0, (u32)pad->unk1A >> 5))
+            if (func_8010A6B0(arg0, (u32)pad->unk18_5))
             {
                 sp40 = func_800D0CC8(arg0->unk6C_0);
                 _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801324_chjinjo);
                 func_80102424(arg0, 6);
                 _subaddieDll_entrypoint_4(arg0, 1U);
-                func_8010A570(arg0);
+                actor_disableCollision(arg0);
                 //Randomizer Change Removed the FTT check
-                func_800D0BD4(arg0->unk6C_0, 0U);
-                func_800D24E8(sp40 + 0xE1, func_800D1338(sp40), func_800D129C(sp40));
-                func_80801098_chjinjo(arg0, (u32)pad->unk1A >> 5);
+                collectable_collectItem(arg0->unk6C_0, 0U);
+                func_800D24E8(sp40 + 0xE1, collectable_getNumJinjoCollectedColor(sp40), func_800D129C(sp40));
+                func_80801098_chjinjo(arg0, (u32)pad->unk18_5);
             }
         }
         break;
@@ -534,7 +534,7 @@ u32 func_80801098_chjinjo(Actor* arg0, s32 arg1)
     arg0->unk64_19 = 0;
     arg0->unk74_30 = 0;
     arg0->actorData[4] = arg1;
-    sp2C = func_800D1338(temp_v0) == func_800D129C(temp_v0);
+    sp2C = collectable_getNumJinjoCollectedColor(temp_v0) == func_800D129C(temp_v0);
     if (sp2C != 0)
     {
         arg0->unk74_30 = 1;

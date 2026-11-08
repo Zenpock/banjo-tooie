@@ -73,14 +73,14 @@ u8 sujiggy_entrypoint_2(s32 arg0)
         s32 type = (arg0 >> 16) & 0xFF;
         s32 flag = arg0 & 0xFFFF;
 
-        func_800D0BD4(flag, type);
+        collectable_collectItem(flag, type);
         switch (type)
         {
         case 0:
         {
             s32 jinjoColor = func_800D0CC8(flag);
             _gcgamefix_entrypoint_1(0);
-            func_800D24E8(jinjoColor + 0xE1, func_800D1338(jinjoColor), func_800D129C(jinjoColor));
+            func_800D24E8(jinjoColor + 0xE1, collectable_getNumJinjoCollectedColor(jinjoColor), func_800D129C(jinjoColor));
             break;
         }
         case 2: //Honeycomb
@@ -342,7 +342,7 @@ s32 sujiggy_entrypoint_19(void)
 
 int sujiggy_entrypoint_20(s32 arg0)
 {
-    return (_glcutDll_entrypoint_19(arg0 + 0x7A) == 0) && (arg0 < sujiggy_entrypoint_0()) && flag_getValue(arg0 + 0x392) == 0;
+    return (_glcutDll_entrypoint_19(arg0 + 0x7A) == 0) && (arg0 < sujiggy_entrypoint_0()) && flag_getValue(arg0 + FLAG_392_PROGRESS_OPENED_WORLD_MT) == 0;
 }
 
 s32 sujiggy_entrypoint_21(void)

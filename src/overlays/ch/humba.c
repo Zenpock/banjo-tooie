@@ -3,7 +3,7 @@
 extern s32 D_80802590_chhumba;
 extern s32 D_80802648_chhumba[];
 extern s16 D_8080266E_chhumba[];
-extern u32 D_80802684_chhumba;
+extern f32 D_80802684_chhumba;
 extern f32 D_80802694_chhumba;
 extern f32 D_808026F0_chhumba[3];
 extern Vec3f D_808026FC_chhumba[];
@@ -99,7 +99,7 @@ void func_80800294_chhumba(Actor* arg0, s32 arg1)
     {
         func_800904C8(0x8D);
     }
-    if (func_800EA05C() != MAP_122_TDL_BIG_WUMBA)
+    if (map_getCurrent() != MAP_122_TDL_BIG_WUMBA)
     {
         if (arg1 != 0)
         {
@@ -124,23 +124,27 @@ void func_80800338_chhumba(Actor* arg0, u32 arg1, u32 arg2)
     arg0->unk74_30 = 1;
 }
 
-s32 func_80800384_chhumba(Actor* arg0) {
-    if (func_800EA05C() == MAP_122_TDL_BIG_WUMBA)
+TransformationId func_80800384_chhumba(Actor* arg0)
+{
+    if (map_getCurrent() == MAP_122_TDL_BIG_WUMBA)
     {
-        return 0x13;
+        return TRANSFORM_13_TREXLARGE;
     }
     return D_80802648_chhumba[arg0->unk6C_0];
 }
 
-s16 func_808003CC_chhumba(Actor* arg0) {
-    if (func_800EA05C() == MAP_122_TDL_BIG_WUMBA) {
+s16 func_808003CC_chhumba(Actor* arg0)
+{
+    if (map_getCurrent() == MAP_122_TDL_BIG_WUMBA)
+    {
         return 0x11AA;
     }
     return D_8080266E_chhumba[arg0->unk6C_0];
 }
 
-s32 func_80800414_chhumba(Actor* arg0) {
-    if (func_800EA05C() == MAP_122_TDL_BIG_WUMBA)
+s32 func_80800414_chhumba(Actor* arg0)
+{
+    if (map_getCurrent() == MAP_122_TDL_BIG_WUMBA)
     {
         return 0x346;
     }
@@ -246,7 +250,7 @@ s32 func_80800450_chhumba(Actor* arg0, s32 arg1, s32 arg2)
 
 s32 func_8080071C_chhumba(s32 arg0)
 {
-    switch (func_800EA05C())
+    switch (map_getCurrent())
     {
     case MAP_B6_MT_WUMBAS:
         return 1;
@@ -361,7 +365,7 @@ s32 func_80800A50_chhumba(Actor* arg0)
     if (func_800F71D4(character_getActiveIndex()) == 0) {
         return 0;
     }
-    if ((func_800EA05C() == MAP_120_JRL_WUMBA) && (sp20[1] > -100.0f)) {
+    if ((map_getCurrent() == MAP_120_JRL_WUMBA) && (sp20[1] > -100.0f)) {
         return 0;
     }
     return 1;
@@ -437,7 +441,7 @@ void func_80800D74_chhumba(Actor* arg0)
     {
         temp_v0 = rand_iBounded(1, 3);
         sp38 = func_800B53A4(temp_v0);
-        func_800EEB9C(sp2C, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 1000.0f) * arg0->scale);
+        ml_vec3f_getVecFromYaw(sp2C, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 1000.0f) * arg0->scale);
         sp2C[1] = -50.0f;
         func_800BABB8(sp38, sp2C, NULL, 1.0f, &D_808026A0_chhumba);
         func_800BA22C(sp38, temp_v0);
@@ -509,10 +513,10 @@ void func_80800E44_chhumba(Actor* arg0, u32 arg1)
     case 9:
         arg0->unk58 = 4.0f;
         func_800FC6B0(0xC);
-        if ((arg0->unk74_29) && (func_8009EA2C() == 0))
+        if ((arg0->unk74_29) && (bs_getDragonKazooieState() == 0))
         {
-            func_8009EAAC(1);
-            func_800907EC(func_8008FD48());
+            bs_setDragonKazooieState(1);
+            func_800907EC(activePlayer_getTransformation());
             return;
         }
         func_800907EC(func_80800384_chhumba(arg0));
@@ -546,10 +550,10 @@ void func_80800E44_chhumba(Actor* arg0, u32 arg1)
     case 14:
         arg0->unk58 = 4.0f;
         func_800FC6B0(0xC);
-        if ((arg0->unk74_29) && (func_8009EA2C() != 0))
+        if ((arg0->unk74_29) && (bs_getDragonKazooieState() != 0))
         {
-            func_8009EAAC(0);
-            func_800907EC(func_8008FD48());
+            bs_setDragonKazooieState(0);
+            func_800907EC(activePlayer_getTransformation());
             return;
         }
         func_800907EC(TRANSFORM_1_BK);
@@ -579,7 +583,7 @@ void func_80801260_chhumba(Actor* arg0)
 
     f32 sp34[3];
     ml_vec3f_apply_scale(sp44, arg0->scale);
-    func_8008FE68(sp34);
+    activePlayer_getCoords(sp34);
     index = 0;
     for (index = 0; index < 3; index++)
     {
@@ -598,13 +602,13 @@ void func_8080138C_chhumba(Actor* arg0)
     TransformationId currentTransformation;
 
     if ((func_80800A50_chhumba(arg0) != 0) && (func_80090270() == 0)) {
-        currentTransformation = func_8008FD48();
-        if ((currentTransformation == TRANSFORM_1_BK) && ((func_8009EA2C() == 0) || !(arg0->unk74_29)))
+        currentTransformation = activePlayer_getTransformation();
+        if ((currentTransformation == TRANSFORM_1_BK) && ((bs_getDragonKazooieState() == 0) || !(arg0->unk74_29)))
         {
             func_80800E44_chhumba(arg0, 8);
             return;
         }
-        if ((func_80800384_chhumba(arg0) == currentTransformation) || ((func_8009EA2C() != 0) && (arg0->unk74_29)))
+        if ((func_80800384_chhumba(arg0) == currentTransformation) || ((bs_getDragonKazooieState() != 0) && (arg0->unk74_29)))
         {
             func_80800E44_chhumba(arg0, 0xD);
         }
@@ -632,7 +636,7 @@ void func_8080144C_chhumba(f32 arg0)
     }
     for (index = 0; index < 4; index++)
     {
-        func_800EFA20(sp98, D_808026FC_chhumba[index].f, arg0);
+        ml_getScaledVec3f(sp98, D_808026FC_chhumba[index].f, arg0);
         ml_vec3f_copy(sp80, sp98);
         sp80[1] = 610.0f * arg0;
         ml_getdiff_vec3f(sp70, sp98, sp8C);
@@ -650,7 +654,7 @@ void func_808015DC_chhumba(Actor* arg0)
     s32 var_a2;
     s32 var_a1;
 
-    _suexpression_entrypoint_10(func_80100094(arg0, 1U), arg0->unk0, 0U);
+    _suexpression_entrypoint_10(actor_getAdditionalMem(arg0, 1U), arg0->unk0, 0U);
     func_8080144C_chhumba(arg0->scale * 5.0f);
     if (func_800C0638() != 0)
     {
@@ -676,14 +680,14 @@ void func_808015DC_chhumba(Actor* arg0)
         }
     }
     func_8008FB10(arg0->position, arg0->scale * 1350.0f, arg0->scale * 72.0f, arg0->scale * 350.0f);
-    if (func_80090178(ALLOW_CLOCKWORK) == 0)
+    if (activePlayer_includedInTransformMask(ALLOW_CLOCKWORK) == 0)
     {
         switch (arg0->unk70_10)
         {
         case 1:
-            if (func_800EA05C() == MAP_120_JRL_WUMBA) {
+            if (map_getCurrent() == MAP_120_JRL_WUMBA) {
                 func_8010D254(sp44);
-                if ((sp44[1] > -30.0f) && (func_80090178(ALLOW_TREXLARGE | ALLOW_TREXSMALL | ALLOW_VAN | ALLOW_SUB | ALLOW_DETONATOR | ALLOW_STONY | ALLOW_WASHINGMACHINE | ALLOW_BEE | ALLOW_SNOWBALL | ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x15EU, 0x32U, 6) != 0)) {
+                if ((sp44[1] > -30.0f) && (activePlayer_includedInTransformMask(ALLOW_TREXLARGE | ALLOW_TREXSMALL | ALLOW_VAN | ALLOW_SUB | ALLOW_DETONATOR | ALLOW_STONY | ALLOW_WASHINGMACHINE | ALLOW_BEE | ALLOW_SNOWBALL | ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x15EU, 0x32U, 6) != 0)) {
                     func_80800E44_chhumba(arg0, 3);
                 }
                 if (func_80800934_chhumba(arg0, ALLOW_TREXLARGE | ALLOW_TREXSMALL | ALLOW_VAN | ALLOW_SUB | ALLOW_DETONATOR | ALLOW_STONY | ALLOW_WASHINGMACHINE | ALLOW_BEE | ALLOW_SNOWBALL | ALLOW_BK) != 0) {
@@ -692,7 +696,7 @@ void func_808015DC_chhumba(Actor* arg0)
                 }
             }
             else {
-                if ((func_80090178(ALLOW_TREXLARGE | ALLOW_TREXSMALL | ALLOW_VAN | ALLOW_SUB | ALLOW_DETONATOR | ALLOW_STONY | ALLOW_WASHINGMACHINE | ALLOW_BEE | ALLOW_SNOWBALL | ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x15EU, 0x32U, 0) != 0)) {
+                if ((activePlayer_includedInTransformMask(ALLOW_TREXLARGE | ALLOW_TREXSMALL | ALLOW_VAN | ALLOW_SUB | ALLOW_DETONATOR | ALLOW_STONY | ALLOW_WASHINGMACHINE | ALLOW_BEE | ALLOW_SNOWBALL | ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x15EU, 0x32U, 0) != 0)) {
                     func_80800E44_chhumba(arg0, 3);
                 }
                 if (func_80800934_chhumba(arg0, ALLOW_TREXLARGE | ALLOW_TREXSMALL | ALLOW_VAN | ALLOW_SUB | ALLOW_DETONATOR | ALLOW_STONY | ALLOW_WASHINGMACHINE | ALLOW_BEE | ALLOW_SNOWBALL | ALLOW_BK) != 0) {
@@ -707,7 +711,7 @@ void func_808015DC_chhumba(Actor* arg0)
                 if (arg0->unk74_29)
                 {
                     /* Disable Payment
-                    if (func_800D1A04(0x54) >= func_808007EC_chhumba(arg0))
+                    if (inventory_getValue(0x54) >= func_808007EC_chhumba(arg0))
                     {
                         func_80800338_chhumba(arg0, 0x11BE, 0x4E);
                         return;
@@ -716,7 +720,7 @@ void func_808015DC_chhumba(Actor* arg0)
                     return;
                 }
                 /* Disable Payment
-                if (func_800D1A04(0x48) >= func_808007EC_chhumba(arg0))
+                if (inventory_getValue(0x48) >= func_808007EC_chhumba(arg0))
                 {
                     func_80800338_chhumba(arg0, 0x11B0, 0x4E);
                     return;
@@ -731,7 +735,7 @@ void func_808015DC_chhumba(Actor* arg0)
             func_80800CC8_chhumba(arg0);
             return;
         case 4:
-            if (func_800EA05C() == MAP_120_JRL_WUMBA) {
+            if (map_getCurrent() == MAP_120_JRL_WUMBA) {
                 func_80108B04(arg0, 0U);
                 return;
             }
@@ -759,7 +763,7 @@ void func_808015DC_chhumba(Actor* arg0)
             }
             break;
         case 7:
-            if (((func_80090178(ALLOW_TREXLARGE | ALLOW_TREXSMALL | ALLOW_VAN | ALLOW_SUB | ALLOW_DETONATOR | ALLOW_STONY | ALLOW_WASHINGMACHINE | ALLOW_BEE | ALLOW_SNOWBALL | ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x15EU, 0x32U, 6) != 0)) || (func_80800934_chhumba(arg0, 0x6C8E3) != 0)) {
+            if (((activePlayer_includedInTransformMask(ALLOW_TREXLARGE | ALLOW_TREXSMALL | ALLOW_VAN | ALLOW_SUB | ALLOW_DETONATOR | ALLOW_STONY | ALLOW_WASHINGMACHINE | ALLOW_BEE | ALLOW_SNOWBALL | ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x15EU, 0x32U, 6) != 0)) || (func_80800934_chhumba(arg0, 0x6C8E3) != 0)) {
                 func_80800338_chhumba(arg0, 0x11B8, 0xF);
                 return;
             }
@@ -784,7 +788,7 @@ void func_808015DC_chhumba(Actor* arg0)
             func_80801260_chhumba(arg0);
             return;
         case 12:
-            if (((func_80090178(ALLOW_TREXLARGE | ALLOW_TREXSMALL | ALLOW_VAN | ALLOW_SUB | ALLOW_DETONATOR | ALLOW_STONY | ALLOW_WASHINGMACHINE | ALLOW_BEE | ALLOW_SNOWBALL | ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x15EU, 0x32U, 0) != 0)) || (func_80800934_chhumba(arg0, 0x6C8E3) != 0)) {
+            if (((activePlayer_includedInTransformMask(ALLOW_TREXLARGE | ALLOW_TREXSMALL | ALLOW_VAN | ALLOW_SUB | ALLOW_DETONATOR | ALLOW_STONY | ALLOW_WASHINGMACHINE | ALLOW_BEE | ALLOW_SNOWBALL | ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x15EU, 0x32U, 0) != 0)) || (func_80800934_chhumba(arg0, 0x6C8E3) != 0)) {
                 func_80800338_chhumba(arg0, 0x11B9, 0xF);
                 return;
             }
@@ -817,7 +821,7 @@ void func_808015DC_chhumba(Actor* arg0)
             break;
         case 19:
             if ((_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x15EU, 0x32U, 0) != 0) || (func_80800934_chhumba(arg0, ALLOW_BANJO | ALLOW_KAZOOIE) != 0)) {
-                if (func_80090178(ALLOW_BANJO) != 0)
+                if (activePlayer_includedInTransformMask(ALLOW_BANJO) != 0)
                 {
                     var_a1 = 0x121C;
                 }
@@ -919,7 +923,7 @@ void func_80801F74_chhumba(Actor* arg0)
     if (1)
     {
         s32 GlowboFlag=0;
-        switch (func_800EA05C())
+        switch (map_getCurrent())
         {
         case MAP_B6_MT_WUMBAS:
             GlowboFlag = 0x2;
@@ -948,14 +952,14 @@ void func_80801F74_chhumba(Actor* arg0)
             break;
         }
 
-        if (func_800D0B68(GlowboFlag, 3) || (GlowboFlag == 0 && flag_getValue(FLAG_056_STATE_MEGA_GLOWBO)))
+        if (collectable_isCollected(GlowboFlag, 3) || (GlowboFlag == 0 && flag_getValue(FLAG_056_STATE_MEGA_GLOWBO)))
         {
             flag_setValueTrue((func_8080071C_chhumba(arg0)) + 0xD5);
         }
     }
 
     sp24 = _gccubesearch_entrypoint_1(0x226, arg0->position);
-    currentMap = func_800EA05C();
+    currentMap = map_getCurrent();
     arg0->unk74_7 = 0;
     if (sp24 == NULL)
     {
@@ -965,8 +969,9 @@ void func_80801F74_chhumba(Actor* arg0)
     _gspropctrl_entrypoint_11(sp24, (f32*)&arg0->actorData[4]);
     arg0->unk6C_0 = func_8080071C_chhumba(arg0);
     _suexpression_entrypoint_7(arg0, 1U, 0x40U);
-    _suexpression_entrypoint_12(func_80100094(arg0, 1U), 0.0f, 0.0f);
-    switch (currentMap) {
+    _suexpression_entrypoint_12(actor_getAdditionalMem(arg0, 1U), 0.0f, 0.0f);
+    switch (currentMap)
+    {
     case MAP_135_HP_WUMBA:
         func_800BF744(1, 1);
         break;
@@ -985,7 +990,7 @@ void func_80801F74_chhumba(Actor* arg0)
         func_80800E44_chhumba(arg0, 0x14);
         return;
     }
-    switch (func_8008FD70())
+    switch (activePlayer_getTransformationBit())
     {
     case ALLOW_MUMBO:
         func_80800E44_chhumba(arg0, 0x11);
@@ -1006,7 +1011,7 @@ void func_80801F74_chhumba(Actor* arg0)
             return;
         }
         if (func_80800878_chhumba(arg0) != 0) {
-            if ((func_8008FD48() == TRANSFORM_1_BK) && ((func_8009EA2C() == 0) || !(arg0->unk74_29)))
+            if ((activePlayer_getTransformation() == TRANSFORM_1_BK) && ((bs_getDragonKazooieState() == 0) || !(arg0->unk74_29)))
             {
                 func_80800E44_chhumba(arg0, 7);
                 return;
@@ -1022,7 +1027,7 @@ void func_80801F74_chhumba(Actor* arg0)
 
 void func_808021F4_chhumba(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }
@@ -1032,8 +1037,10 @@ ActorData* chhumba_entrypoint_0(void) {
     return &D_80802738_chhumba;
 }
 
-void func_80802234_chhumba(Actor* arg0) {
-    if (func_800EA05C() == MAP_122_TDL_BIG_WUMBA) {
+void func_80802234_chhumba(Actor* arg0) 
+{
+    if (map_getCurrent() == MAP_122_TDL_BIG_WUMBA) 
+    {
         arg0->scale = 2.0f;
         return;
     }

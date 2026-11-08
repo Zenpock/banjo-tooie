@@ -7,7 +7,7 @@ void* func_8001B798(s16); // get
 void* func_8001B710(s16, s32); // realloc
 void func_8001B754(s16); // free
 
-// vector getter related to func_800B2D70
+// vector getter related to vector_new
 Vector* func_800B2890(s16 arg0) {
     return (Vector*)func_8001B798(arg0);
 }

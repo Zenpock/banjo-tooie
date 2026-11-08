@@ -30,7 +30,7 @@ void bsturn_entrypoint_1(PlayerState* self)
     f32 sp2C[3];
 
     nextState = BS_STATE_0_INVALID;
-    baphysics_set_target_horizontal_velocity(self, func_800F10B4(anctrl_getAnimTimer(baanim_getAnimCtrlPtr(self)), 0.18f, 1.0f, self->unk16C, 0.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_map_f(anctrl_getAnimTimer(baanim_getAnimCtrlPtr(self)), 0.18f, 1.0f, self->unk16C, 0.0f));
     self->unk15C.word++;
     if (self->unk15C.word >= 6)
     {
@@ -40,15 +40,15 @@ void bsturn_entrypoint_1(PlayerState* self)
     {
         case -1:
             sp2C[1] = func_8009BB18(self);
-            _badust_entrypoint_3(self, sp2C[1] - 10.0f, func_8009BB5C(self) * 0.88f);
+            _badust_entrypoint_3(self, sp2C[1] - 10.0f, baphysics_get_horizontal_velocity(self) * 0.88f);
             break;
         case 0:
             sp2C[1] = func_8009BB18(self);
-            _badust_entrypoint_3(self, sp2C[1], func_8009BB5C(self));
+            _badust_entrypoint_3(self, sp2C[1], baphysics_get_horizontal_velocity(self));
             break;
         case 1:
             sp2C[1] = func_8009BB18(self);
-            _badust_entrypoint_3(self, sp2C[1] + 10.0f, func_8009BB5C(self) * 0.88f);
+            _badust_entrypoint_3(self, sp2C[1] + 10.0f, baphysics_get_horizontal_velocity(self) * 0.88f);
             break;
     }
     if (anctrl_isStopped(baanim_getAnimCtrlPtr(self)) != 0)
@@ -62,11 +62,11 @@ void bsturn_entrypoint_1(PlayerState* self)
     if (bakey_pressed(self, BUTTON_B) != 0)
     {
         //RANDOMIZER CHANGE TRY AND BASH IF WE ARE BK and DONT HAVE PECK
-        if (func_8008E23C(self) || func_8008D1B0(self))
+        if (player_isSplitUp(self) || player_canPeck(self))
         {
-            nextState = func_800A055C(self, nextState);
+            nextState = bs_getTypeOfGroundedAttack(self, nextState);
         }
-        else if (func_8009EA2C()) //Randomizer change Dragon without Peck
+        else if (bs_getDragonKazooieState()) //Randomizer change Dragon without Peck
         {
             nextState = BS_STATE_18A_FLAMETHROWER;
         }
@@ -84,7 +84,7 @@ void bsturn_entrypoint_1(PlayerState* self)
 
 void bsturn_entrypoint_2(PlayerState* self)
 {
-    yaw_set(self, func_800136E4(yaw_get(self) - 180.0f));
+    yaw_set(self, ml_normalizeAngle_f(yaw_get(self) - 180.0f));
     func_8009BF5C(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
 }

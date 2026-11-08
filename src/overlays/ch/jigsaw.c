@@ -4,19 +4,19 @@ extern ActorData D_80800770_chjigsaw;
 extern ActorData D_808007B8_chjigsaw;
 
 
-void func_80800000_chjigsaw(Actor* arg0, unkCUnk0* arg1)
+void func_80800000_chjigsaw(Actor* arg0, Unk80132ED0* arg1)
 {
-    if ((func_8010A6B0(arg0, (u32)arg1->unk1A >> 5) != 0) && (flag_getValue(FLAG2_665_UNK) == 0))
+    if ((func_8010A6B0(arg0, arg1->unk18_5) != 0) && (flag_getValue(FLAG2_665_UNK) == 0))
     {
         func_80108B04(arg0, 0U);
-        func_800D0BD4((s32)arg0->unk50, 1U);
+        collectable_collectItem((s32)arg0->unk50, 1U);
         _suautobaddies_entrypoint_3();
     }
 }
 
 void func_80800070_chjigsaw(Actor* arg0)
 {
-    if (func_800D0B68((u32)(s32)arg0->unk50, 1U) != 0)
+    if (collectable_isCollected((u32)(s32)arg0->unk50, 1U) != 0)
     {
         actor_mark_delete(arg0);
         return;
@@ -96,7 +96,7 @@ void func_808001F8_chjigsaw(Actor* arg0)
             if (rand_percentChance(0.015f))
             {
                 func_80103DFC(arg0, sp70);
-                func_800EF214(sp70, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 40.0f);
+                ml_translateAngleDist_3D(sp70, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 40.0f);
                 _fxtwinkle_entrypoint_0(sp70);
             }
         }
@@ -145,7 +145,7 @@ s32 func_80800518_chjigsaw(Actor* arg0, s32 eventId, s32 arg2)
     switch (eventId)
     {
         case EVENT_3E_ACTOR_TOUCHED:
-            func_80800000_chjigsaw(arg0, (unkCUnk0*)arg2);
+            func_80800000_chjigsaw(arg0, (Unk80132ED0*)arg2);
             break;
         case 0x12:
             arg0->unk64_19 = (u32)arg2;

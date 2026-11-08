@@ -4,7 +4,6 @@
 void init_crc_check();
 void ovl_entrypoint();
 void func_800A1364();
-void func_800965D4();
 void func_8001C1C0();
 void inventory_setup();
 void set_crc_entry(s32);
@@ -33,7 +32,7 @@ CrcEntry crc_entries[] = {
     {func_800965D4, 18, FALSE},
     {func_8009B7C0, 21, FALSE},
     {func_8001C1C0, 24, FALSE},
-    {func_800CFA90, 27, FALSE},
+    {collectable_setJinjoPattern, 27, FALSE},
     {inventory_setup, 30, FALSE},
 };
 

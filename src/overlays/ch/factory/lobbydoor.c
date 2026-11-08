@@ -12,7 +12,7 @@ ActorData* chfactorylobbydoor_entrypoint_0()
 }
 void func_8080000C_chfactorylobbydoor(Actor* actor)
 {
-    if ((func_800EA090() == 1) && ((func_800D0A9C(0x35U, 1U) == 0) || (func_8009E958() != 1)))
+    if ((func_800EA090() == 1) && ((collectable_isSpawned(0x35U, 1U) == 0) || (func_8009E958() != 1)))
     {
         func_80101FDC(actor, 1U);
     }

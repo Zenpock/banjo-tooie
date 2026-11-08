@@ -14,7 +14,7 @@ void func_80800008_basetup(PlayerState* self)
     MapId sp1C;
     s32 sp18;
 
-    sp1C = func_800EA05C();
+    sp1C = map_getCurrent();
     sp18 = func_800EA090();
     if ((func_800DB9B0() == 0) && (((sp1C == MAP_13A_CCL_CENTRAL_CAVERN) && (sp18 == 0xE)) || ((sp1C == MAP_136_CCL_CLOUD_CUCKOOLAND) && (sp18 == 0x1B))) && (flag_getValue(FLAG_327_UNK) != 0))
     {
@@ -66,7 +66,7 @@ void func_80800194_basetup(PlayerState* arg0, f32* arg1, f32* arg2)
     s32 sp1C;
 
     currentTransform = player_getTransformation(arg0);
-    currentMap = func_800EA05C();
+    currentMap = map_getCurrent();
     sp1C = func_800EA090();
     if ((func_800DB9B0() == 0) && (((currentMap == MAP_112_TDL_TERRYDACTYLAND) && (sp1C == 0xF)) || ((currentMap == MAP_116_TDL_INSIDE_MOUNTAIN) && (sp1C == 2))) && (currentTransform == TRANSFORM_12_TREXSMALL))
     {
@@ -139,7 +139,7 @@ void func_80800394_basetup(PlayerState* self)
     s32 stateInvalid;
     s32 var_v0;
 
-    sp34 = func_800F8B88() == 3;
+    sp34 = bs_getSplitStatus() == SPLIT_STATE_TALON_TORPEDO;
     sp30 = func_8008DAA8(self);
     currentTransform = player_getTransformation(self);
     currentState = bs_getCurrentState(self);
@@ -158,9 +158,9 @@ void func_80800394_basetup(PlayerState* self)
     if (sp30 == 0)
     {
         currentTransform2 = player_getTransformation(self);
-        if (func_800F64A4(character_getActiveIndex(), 0x10000) != 0)
+        if (character_includedInTransformMask(character_getActiveIndex(), 0x10000) != 0)
         {
-            if ((func_8008E23C(self) != 0) && (currentTransform2 == TRANSFORM_A_BANJO))
+            if ((player_isSplitUp(self) != 0) && (currentTransform2 == TRANSFORM_A_BANJO))
             {
                 func_800F457C(self, 2);
             }
@@ -218,7 +218,7 @@ s32 func_80800534_basetup(PlayerState* self)
     if (func_8008DAA8(self) == 0)
     {
         func_80800394_basetup(self);
-        if ((func_800F99FC() == 0) && (func_800F99E8() == 0) && (func_800F8B7C() != 0) && (func_8008E23C(self) != 0))
+        if ((func_800F99FC() == 0) && (func_800F99E8() == 0) && (func_800F8B7C() != 0) && (player_isSplitUp(self) != 0))
         {
             _plcamera_entrypoint_13(self->unk184, func_800F8A50());
         }
@@ -236,7 +236,7 @@ s32 func_80800534_basetup(PlayerState* self)
         func_80800394_basetup(self);
         return 1;
     }
-    if ((func_800F8B7C() != 0) && (func_8008E23C(self) != 0))
+    if ((func_800F8B7C() != 0) && (player_isSplitUp(self) != 0))
     {
         func_800F89E4(player_getTransformation(self), &sp2C);
         func_800F452C(self, &sp2C);
@@ -269,7 +269,7 @@ TransformationId func_80800778_basetup(s32 arg0)
     temp_v0 = func_8009E958();
     if (temp_v0 != TRANSFORM_1_BK)
     {
-        if ((temp_v0 == TRANSFORM_9_FIRSTPERSON) && (func_800EA05C() == MAP_116_TDL_INSIDE_MOUNTAIN))
+        if ((temp_v0 == TRANSFORM_9_FIRSTPERSON) && (map_getCurrent() == MAP_116_TDL_INSIDE_MOUNTAIN))
         {
             temp_v0 = TRANSFORM_1_BK;
             func_8009EB18(0);
@@ -281,7 +281,7 @@ TransformationId func_80800778_basetup(s32 arg0)
     }
     if (func_800EA068(0x40) != 0)
     {
-        switch (func_800EA05C())
+        switch (map_getCurrent())
         {
         case MAP_182_MP_SUBMARINE:
             temp_v0 = TRANSFORM_C_SUB;
@@ -351,7 +351,7 @@ void basetup_entrypoint_2(PlayerState* self)
                 func_800A3544(self, D_8012762C == 0x1B ? 1 : 0);
             }
         }
-        func_800A3410(self, sp3C);
+        player_setTransformation(self, sp3C);
         func_80092778(self);
         func_800F44DC(self, 0);
         if (sp64 != 0)

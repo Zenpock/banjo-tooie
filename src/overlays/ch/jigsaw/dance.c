@@ -155,7 +155,7 @@ void func_80800260_chmoveitem(Actor* arg0)
     f32 sp58[3];
 
     arg0->rotation[1] += time_getDelta() * arg0->unk58;
-    arg0->rotation[1] = func_800136E4(arg0->rotation[1]);
+    arg0->rotation[1] = ml_normalizeAngle_f(arg0->rotation[1]);
     if (arg0->unk7C_12)
     {
         var_s1 = 0;
@@ -163,7 +163,7 @@ void func_80800260_chmoveitem(Actor* arg0)
             if (rand_percentChance(0.03f) != 0)
             {
                 func_80103DFC(arg0, sp58);
-                func_800EF214(sp58, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 60.0f);
+                ml_translateAngleDist_3D(sp58, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 60.0f);
                 _fxtwinkle_entrypoint_0(sp58);
             }
             var_s1 += 1;
@@ -198,7 +198,7 @@ Unk80132ED0* chjigsawdance_entrypoint_1(s32 arg0, f32* arg1, s32 spawnStyle, u16
     switch (itemType)
     {
     case 1:
-        sp2C = func_800D0CE0(PROP_21F_JIGGY_REAL, arg1, spawnStyle, &sp28);
+        sp2C = collectable_itemSpawnMovement(PROP_21F_JIGGY_REAL, arg1, spawnStyle, &sp28);
         if (sp28 == 0)
         {
             event_sendToActor(sp2C, 0x14, 1);
@@ -206,33 +206,33 @@ Unk80132ED0* chjigsawdance_entrypoint_1(s32 arg0, f32* arg1, s32 spawnStyle, u16
         func_800D05E4(itemFlag, itemType, sp2C->unk0);
         break;
     case 0:
-        sp2C = func_800D0CE0(PROP_1F4_JINJO_REAL, arg1, spawnStyle, &sp28);
+        sp2C = collectable_itemSpawnMovement(PROP_1F4_JINJO_REAL, arg1, spawnStyle, &sp28);
         if (sp28 == 0)
         {
             event_sendToActor(sp2C, 0x14, 1);
         }
         break;
     case 4:
-        sp2C = func_800D0CE0(PROP_136_CHEATOPAGE_REAL, arg1, spawnStyle, &sp28);
+        sp2C = collectable_itemSpawnMovement(PROP_136_CHEATOPAGE_REAL, arg1, spawnStyle, &sp28);
         if (sp28 == 0)
         {
             event_sendToActor(sp2C, 0x14, 1);
         }
         break;
     case 2:
-        sp2C = func_800D0CE0(PROP_220_HONEYCOMB_REAL, arg1, spawnStyle, &sp28);
+        sp2C = collectable_itemSpawnMovement(PROP_220_HONEYCOMB_REAL, arg1, spawnStyle, &sp28);
         break;
     case 3:
-        sp2C = func_800D0CE0(PROP_21B_GLOWBO_REAL, arg1, spawnStyle, &sp28);
+        sp2C = collectable_itemSpawnMovement(PROP_21B_GLOWBO_REAL, arg1, spawnStyle, &sp28);
         break;
     case 7:
-        sp2C = func_800D0CE0(PROP_4E5_DOUBLOON_REAL, arg1, spawnStyle, &sp28);
+        sp2C = collectable_itemSpawnMovement(PROP_4E5_DOUBLOON_REAL, arg1, spawnStyle, &sp28);
         break;
     case 8:
-        sp2C = func_800D0CE0(PROP_3C6_TICKET_REAL, arg1, spawnStyle, &sp28);
+        sp2C = collectable_itemSpawnMovement(PROP_3C6_TICKET_REAL, arg1, spawnStyle, &sp28);
         break;
     case 9:
-        sp2C = func_800D0CE0(PROP_187_CUSTOM_MOVE_ITEM, arg1, spawnStyle, &sp28);
+        sp2C = collectable_itemSpawnMovement(PROP_187_CUSTOM_MOVE_ITEM, arg1, spawnStyle, &sp28);
         break;
     default:
         break;
@@ -362,7 +362,7 @@ s32 moveItem_Handler(Actor* arg0, s32 arg1, s32 arg2)
         break;
     //Start
     case 0x95:
-        if (ability_getValue(arg0->unk74_7) || (func_800D0A9C(arg0->unk74_7,0x9) == 0))
+        if (ability_getValue(arg0->unk74_7) || (collectable_isSpawned(arg0->unk74_7,0x9) == 0))
         {
             func_800FFA88(arg0->unk0);
         }

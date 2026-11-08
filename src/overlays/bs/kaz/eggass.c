@@ -28,7 +28,7 @@ void bskazeggass_entrypoint_1(PlayerState *self) {
     //Randomizer change adding gcegg_entrypoint_6
 
     if ((bainput_should_poop_egg(self) != 0) && (func_80094B14(self) != 0)) {
-        self->unk15C.word = func_800F1418(self->unk15C.word + 1, func_800944E0(self, self->unk164.word));
+        self->unk15C.word = ml_min_i(self->unk15C.word + 1, func_800944E0(self, self->unk164.word));
     }
     if (_gcegg_entrypoint_6(self->unk164.word) && has_eggs != 0) {
         if (anctrl_isAt(sp28, 0.38) != 0) {

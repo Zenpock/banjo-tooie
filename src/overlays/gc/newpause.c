@@ -319,7 +319,7 @@ u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
 		{
 			pauseMenu->unk3 = 0;
 		}
-		if (pauseMenu->unkE != 0 && func_800D9078(&pauseMenu->Timer) != 0)
+		if (pauseMenu->unkE != 0 && timer_reachedZero(&pauseMenu->Timer) != 0)
 		{
 			func_80801E08_gcnewpause(pauseMenu, &pauseMenu->optionState);
 		}
@@ -328,7 +328,7 @@ u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
 		break;
 	case 0x2: //Totals Pages
 		func_80016068(pauseMenu->unkC, &joystick);
-		func_800D9078(&pauseMenu->Timer);
+		timer_reachedZero(&pauseMenu->Timer);
 		if (pauseMenu->SoundEffectTimerPageOpen != 0)
 		{
 			pauseMenu->SoundEffectTimerPageOpen--;
@@ -415,7 +415,7 @@ u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
 
 	case 0x4:
 		func_80801CDC_gcnewpause(pauseMenu);
-		if (func_800D9078(&pauseMenu->Timer) != 0)
+		if (timer_reachedZero(&pauseMenu->Timer) != 0)
 		{
 			pauseMenu->GameOverFadingIn = 0;
 			func_800FCAE0(0x12, 0, 0xc8);
@@ -438,7 +438,7 @@ u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
 }
 //#endif
 //Draw UI
-void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu)
+void gcnewpause_entrypoint_3(GraphicsBuffers* arg0, PauseState* pauseMenu)
 {
 	u8 temp_v0;
 	int index = 0;
@@ -461,24 +461,24 @@ void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu)
 
 				if (flag_getValue(checkBox.PaidFlag))
 				{
-					func_800B7B8C(0x4F, 0xF4, 0x2F);//GREEN
+					graphics_setSimpleTextColors(0x4F, 0xF4, 0x2F);//GREEN
 				}
-				else if (func_800D0B68(checkBox.GlowboFlag, 3) && checkBox.GlowboFlag != 0x12|| checkBox.GlowboFlag == 0x12 && flag_getValue(FLAG_056_STATE_MEGA_GLOWBO))
+				else if (collectable_isCollected(checkBox.GlowboFlag, 3) && checkBox.GlowboFlag != 0x12|| checkBox.GlowboFlag == 0x12 && flag_getValue(FLAG_056_STATE_MEGA_GLOWBO))
 				{
-					func_800B7BA4(0.9f);
-					func_800B7B8C(0xFF, 0xFF, 0x0);//YELLOW
+					graphics_setSimpleTextScale(0.9f);
+					graphics_setSimpleTextColors(0xFF, 0xFF, 0x0);//YELLOW
 				}
 				else
 				{
-					func_800B7BA4(0.8f);
-					func_800B7B8C(0xFF, 0x44, 0x3F);//RED
+					graphics_setSimpleTextScale(0.8f);
+					graphics_setSimpleTextColors(0xFF, 0x44, 0x3F);//RED
 				}
 
-				func_800B798C(checkBox.x, checkBox.y, titleString);
+				graphics_addSimpleText(checkBox.x, checkBox.y, titleString);
 				_fxdialog_entrypoint_1(checkBox.x, checkBox.y);
 				_fxdialog_entrypoint_2(0.60546875f);
 				_fxdialog_entrypoint_3(&D_80127658, (8.0f * strlen(titleString)) + 3.078125f, 0, 0xFF);
-				func_800B7BA4(1.0f);
+				graphics_setSimpleTextScale(1.0f);
 			}
 			break;
 		}
@@ -491,25 +491,25 @@ void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu)
 
 				if (ability_getValue(ability.AbilityId))
 				{
-					func_800B7B8C(0x4F, 0xF4, 0x2F);
+					graphics_setSimpleTextColors(0x4F, 0xF4, 0x2F);
 				}
 				else
 				{
-					func_800B7BA4(0.85f);
-					func_800B7B8C(0xFF, 0x44, 0x3F);
+					graphics_setSimpleTextScale(0.85f);
+					graphics_setSimpleTextColors(0xFF, 0x44, 0x3F);
 				}
 
-				func_800B798C(ability.x, ability.y, titleString);
+				graphics_addSimpleText(ability.x, ability.y, titleString);
 				_fxdialog_entrypoint_1(ability.x, ability.y);
 				_fxdialog_entrypoint_2(0.60546875f);
 				_fxdialog_entrypoint_3(&D_80127658, (8.0f * strlen(titleString)) + 3.078125f, 0, 0xFF);
-				func_800B7BA4(1.0f);
+				graphics_setSimpleTextScale(1.0f);
 			}
 		}
 		break;
 	}
-	func_80801410_gcnewpause(pauseMenu, (s32)arg0);
-	func_808012CC_gcnewpause(pauseMenu, (u32*)arg0);
+	func_80801410_gcnewpause(pauseMenu, arg0);
+	func_808012CC_gcnewpause(pauseMenu, arg0);
 }
 
 //Change Page
@@ -629,7 +629,7 @@ void gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3)
 	case 4: //Handle any Are You Sure Popups/Start Closing Options Page
 	{
 		u32 failed = 0;
-		switch (func_800EA05C())
+		switch (map_getCurrent())
 		{
 			default:
 				break;
@@ -644,7 +644,7 @@ void gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3)
 			case MAP_13C_WW_STAR_SPINNER_SOP:
 				failed = 1;
 		}
-		if (D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].AreYouSure == 2 && (func_8008FD48() != TRANSFORM_1_BK || failed != 0)) //Ensure We Are Banjo and kazooie Otherwise we cannot use this option
+		if (D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].AreYouSure == 2 && (activePlayer_getTransformation() != TRANSFORM_1_BK || failed != 0)) //Ensure We Are Banjo and kazooie Otherwise we cannot use this option
 		{
 			//Play Failure Sound
 			func_800172D4(0x1, 0xF);
@@ -846,7 +846,7 @@ void func_80800CE4_gcnewpause(PauseState* pauseMenu, OptionState *arg1, s32 sele
 		pauseMenu->ExitType = 1;
 		{
 			u32 deathState = 0x41;
-			if (func_8008FD48() == TRANSFORM_9_FIRSTPERSON)
+			if (activePlayer_getTransformation() == TRANSFORM_9_FIRSTPERSON)
 			{
 				deathState = 0xDC;
 			}
@@ -948,7 +948,7 @@ s32 func_80800FA8_gcnewpause(u32 arg0) {
 	for (index = 0; index != 9; index++)
 	{
 		if (1) {}
-		temp_v0 = func_800D1338(index);
+		temp_v0 = collectable_getNumJinjoCollectedColor(index);
 		if (temp_v0 != 0)
 		{
 			temp_s2 = func_800D27A4(index + 0xE1);
@@ -1021,7 +1021,7 @@ u32 func_808011BC_gcnewpause(void)
 	s32 var_a0;
 	u32 var_a1;
 
-	temp_v0 = func_800EA05C();
+	temp_v0 = map_getCurrent();
 	if ((temp_v0 == MAP_D0_CHUFFYS_CAB) || (temp_v0 == MAP_121_INSIDE_CHUFFY_WAGON))
 	{
 		var_a1 = _chchuffycont_entrypoint_3();
@@ -1070,13 +1070,13 @@ u8 func_80801248_gcnewpause(s16* a0, u8* a1, u32 a2) {
 	return var_v1;
 }
 //Draw Page Titles
-void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
+void func_808012CC_gcnewpause(PauseState* pauseMenu, GraphicsBuffers* a1)
 {
 	char* Version = "V.1 . 2 .0"; //I dont know where the kerning option is so I'm doing it manually
 	if (pauseMenu->DrawPageHeader != 0)
 	{
 		_fxkern_entrypoint_2();
-		func_800B8CE0(0xC28);
+		graphics_setTextPattern(0xC28);
 		if (pauseMenu->SubPage < 0xE)
 			_fxkern_entrypoint_1(a1, pauseMenu->pageTitleOffset + 0x20, _gldbstring_entrypoint_1(pauseMenu->textPointer, pauseMenu->SubPage));
 		else if (pauseMenu->SubPage < 0x10) //BT
@@ -1089,7 +1089,7 @@ void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
 	else
 	{
 		_fxkern_entrypoint_2();
-		func_800B8CE0(0xC27);
+		graphics_setTextPattern(0xC27);
 		_fxkern_entrypoint_0(a1, 0x15, 0xBA, Version);
 		func_80801844_gcnewpause(_sujiggy_entrypoint_2(0x1A), _sujiggy_entrypoint_2(0x1B), 0x2B, func_800D27A4(0x63), 1, pauseMenu->unk3);
 	}
@@ -1126,7 +1126,7 @@ void func_8080136C_gcnewpause(PauseState* pauseMenu)
 }
 
 //Draw Joystick and Buttons
-void func_80801410_gcnewpause(PauseState* pauseMenu, s32 arg1)
+void func_80801410_gcnewpause(PauseState* pauseMenu, GraphicsBuffers* arg1)
 {
 	Coords2D sp30;
 	ImageStruct* imageData;
@@ -1137,25 +1137,25 @@ void func_80801410_gcnewpause(PauseState* pauseMenu, s32 arg1)
 	{
 		sp30.x = 0x260;
 		sp30.y = (-pauseMenu->B_Button_Pos * 4) + 0x340;
-		imageData = func_800D674C(0xB59);
+		imageData = asset_load(ASSET_B59_SPRITE_B_BUTTON);
 
 		sp28 = func_800E8C58(pauseMenu->ShowBButton);
-		func_800E30E0(arg1, imageData, sp28, &sp30);
+		draw_2D_Image(arg1, imageData, sp28, &sp30);
 	}
 
 	if (pauseMenu->JoystickIndicator != 0)
 	{
-		imageData = func_800D674C(0xB57);
+		imageData = asset_load(ASSET_B57_SPRITE_ANALOG_STICK);
 		sp28 = func_800E8C58(pauseMenu->JoystickIndicator);
 
 		sp30.x = 0x78;
 		sp30.y = (-pauseMenu->LeftJoystickPos * 4) + 0x340;
 		func_800E2568(imageData->unk8 * -4, imageData->unkA * 4);
-		func_800E30E0(arg1, imageData, sp28, &sp30);
+		draw_2D_Image(arg1, imageData, sp28, &sp30);
 
 		sp30.x = 0x448;
 		sp30.y = (-pauseMenu->RightJoystickPos * 4) + 0x340;
-		func_800E30E0(arg1, imageData, sp28, &sp30);
+		draw_2D_Image(arg1, imageData, sp28, &sp30);
 	}
 }
 
@@ -1353,8 +1353,8 @@ s32 func_808019A4_gcnewpause(u32 arg0, u32 arg1)
 	var_s5 = 0;
 	while (D_80802130_gcnewpause[index].itemType != -1)
 	{
-		temp_s1 = func_800D0018(D_80802130_gcnewpause[index].itemType, arg0);
-		temp_a1 = func_800CFC8C(D_80802130_gcnewpause[index].itemType, arg0);
+		temp_s1 = collectable_getCollectedInLevel(D_80802130_gcnewpause[index].itemType, arg0);
+		temp_a1 = collectable_getTotalInLevel(D_80802130_gcnewpause[index].itemType, arg0);
 		if (((arg1 != 1) || (temp_s1 != 0)) && (func_80801844_gcnewpause(temp_s1, temp_a1, D_80802130_gcnewpause[index].uiPosition, D_80802130_gcnewpause[index].itemIcon, 6, arg1) != 0))
 		{
 			var_s5 = 1;
@@ -1485,7 +1485,7 @@ void func_80801DA0_gcnewpause(PauseState* pauseMenu, u32 a1)
 	coord[1] = 171.0f;
 
 	func_800DF410(pauseMenu->GameOverTransparency);
-	func_800DF944(a1, coord, 0.0f, 0.25f, 0, 1, func_800D674C(0x640));
+	func_800DF944(a1, coord, 0.0f, 0.25f, 0, 1, asset_load(0x640));
 }
 
 //Handle Switching between are you sure and the button prompts
@@ -1528,7 +1528,7 @@ u32 func_80801F18_gcnewpause(u32 a0)
 	u32 s0;
 	for (s0 = 0; s0 < 9; s0++)
 	{
-		if (func_800D1338(s0) != 0)
+		if (collectable_getNumJinjoCollectedColor(s0) != 0)
 		{
 			return 0x1;
 		}

@@ -45,11 +45,11 @@ BanjoStateId func_80800038_bsstand(PlayerState* self, BanjoStateId arg1)
     if (bakey_pressed(self, BUTTON_B) != 0)
     {
         //RANDOMIZER CHANGE TRY AND BASH IF WE ARE BK and DONT HAVE PECK
-        if (func_8008E23C(self) || func_8008D1B0(self))
+        if (player_isSplitUp(self) || player_canPeck(self))
         {
-            arg1 = func_800A055C(self, arg1);
+            arg1 = bs_getTypeOfGroundedAttack(self, arg1);
         }
-        else if (func_8009EA2C()) //Randomizer change Dragon without Peck
+        else if (bs_getDragonKazooieState()) //Randomizer change Dragon without Peck
         {
             arg1 = BS_STATE_18A_FLAMETHROWER;
         }
@@ -61,11 +61,11 @@ BanjoStateId func_80800038_bsstand(PlayerState* self, BanjoStateId arg1)
     if (bakey_pressed(self, BUTTON_A) != 0)
     {
         arg1 = bs_getTypeOfJump(self);
-        if (func_8008D714(self) != 0)
+        if (player_canSplitUp(self) != 0)
         {
             arg1 = 0xB8;
         }
-        else if (func_8008D790(self) != 0)
+        else if (player_canSwap(self) != 0)
         {
             _baduo_entrypoint_12(self);
             return BS_STATE_0_INVALID;
@@ -106,7 +106,7 @@ void bsstand_entrypoint_0(PlayerState* self)
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
     baphysics_set_target_horizontal_velocity(self, 0.0f);
     func_800909CC(self);
-    if (func_8008E23C(self) != 0)
+    if (player_isSplitUp(self) != 0)
     {
         self->unk160.word = 0;
         self->unk164.word = 6;

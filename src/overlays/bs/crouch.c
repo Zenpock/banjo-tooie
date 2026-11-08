@@ -21,7 +21,7 @@ void func_80800068_bscrouch(PlayerState* self) {
 }
 
 void func_808000B4_bscrouch(AnimCtrl* self, f32 arg1) {
-    anctrl_setDuration(self, func_800F10B4(arg1, 0.0f, 180.0f, 0.5f, 0.2f));
+    anctrl_setDuration(self, ml_map_f(arg1, 0.0f, 180.0f, 0.5f, 0.2f));
 }
 
 void func_808000FC_bscrouch(PlayerState* self, AnimCtrl* arg1) {
@@ -87,7 +87,7 @@ void bscrouch_entrypoint_1(PlayerState* self)
     sp34 = baanim_getAnimCtrlPtr(self);
     _batimer_decrement(self, 0);
     _batimer_decrement(self, 1);
-    temp_f0 = func_800F10B4(_batimer_get(self, 0), 0.0f, 0.3f, 0.0f, self->unk16C);
+    temp_f0 = ml_map_f(_batimer_get(self, 0), 0.0f, 0.3f, 0.0f, self->unk16C);
     baphysics_set_target_horizontal_velocity(self, temp_f0);
     if (temp_f0 > 220.0f) {
         _badust_entrypoint_9(self);
@@ -215,11 +215,11 @@ BanjoStateId bscrouch_entrypoint_4(PlayerState* self, BanjoStateId arg1)
         if (bakey_pressed(self, BUTTON_B))
         {
             //RANDOMIZER CHANGE TRY AND BASH IF WE ARE BK and DONT HAVE PECK
-            if (func_8008E23C(self) || func_8008D1B0(self))
+            if (player_isSplitUp(self) || player_canPeck(self))
             {
-                arg1 = func_800A055C(self, arg1);
+                arg1 = bs_getTypeOfGroundedAttack(self, arg1);
             }
-            else if (func_8009EA2C()) //Randomizer change Dragon without Peck
+            else if (bs_getDragonKazooieState()) //Randomizer change Dragon without Peck
             {
                 arg1 = BS_STATE_18A_FLAMETHROWER;
             }
@@ -235,7 +235,7 @@ BanjoStateId bscrouch_entrypoint_4(PlayerState* self, BanjoStateId arg1)
         }
         return arg1;
     }
-    else if (func_8008E23C(self) != 0)
+    else if (player_isSplitUp(self) != 0)
     {
         if ((bakey_pressed(self, BUTTON_C_DOWN) != 0) && (ability_getValue(ABILITY_21_SHACK_PACK)))
         {

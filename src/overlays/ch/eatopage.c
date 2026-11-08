@@ -3,7 +3,7 @@
 void func_8080000C_chcheatopage(Actor*);
 void func_80800070_chcheatopage(Actor*);
 s32 func_80800124_chcheatopage(Actor*, s32, s32);
-void func_80800194_chcheatopage(Actor*, unkCUnk0*);
+void func_80800194_chcheatopage(Actor*, Unk80132ED0*);
 void func_808002A0_chcheatopage(Actor*, void*);
 s32 func_808002F0_chcheatopage(Actor*);
 
@@ -45,7 +45,7 @@ ActorData* chcheatopage_entrypoint_0()
 void func_8080000C_chcheatopage(Actor* actor)
 {
     func_80103110(actor, 0U);
-    func_8010A5B0(actor, flag_getValue(FLAG2_666_UNK) == 0);
+    actor_setCollision(actor, flag_getValue(FLAG2_666_UNK) == 0);
     if (actor->unk64_20)
     {
         func_800FC660(0x77);
@@ -63,7 +63,7 @@ void func_80800070_chcheatopage(Actor* actor)
         func_80103110(actor, 0U);
         return;
     case 2:
-        if (func_800D9078(&actor->unk58) != 0)
+        if (timer_reachedZero(&actor->unk58) != 0)
         {
             func_800F82D4(character_getActiveIndex(), 0);
             actor_mark_delete(actor);
@@ -95,13 +95,13 @@ s32 func_80800124_chcheatopage(Actor* actor, s32 eventId, s32 arg2)
 }
 
 //Handle Touching the cheato page
-void func_80800194_chcheatopage(Actor* actor, unkCUnk0* arg1)
+void func_80800194_chcheatopage(Actor* actor, Unk80132ED0* arg1)
 {
-    if (func_8010A6B0(actor, ((u32)arg1->unk1A >> 5)) != 0)
+    if (func_8010A6B0(actor, ((u32)arg1->unk18_5)) != 0)
     {
         _fxsparkle_entrypoint_1(actor->position, 0x14U);
         inventory_incrementValue(0x4A);
-        func_800D0BD4(*(s32*)&actor->unk50, 4U);
+        collectable_collectItem(*(s32*)&actor->unk50, 4U);
         func_800FC660(0x72);
         //Randomizer Change Removed FTT
         actor_mark_delete(actor);

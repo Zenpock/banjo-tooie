@@ -19,7 +19,7 @@ extern u32 _chmole_training_entrypoint_0;
 
 void func_80800000_chmole_training(Actor* arg0)
 {
-    if (func_80100094(arg0, 0U) != NULL)
+    if (actor_getAdditionalMem(arg0, 0U) != NULL)
     {
         _gcnewoption_entrypoint_6((OptionState*)arg0, 0U);
     }
@@ -48,7 +48,7 @@ void func_80800088_chmole_training(Actor* arg0)
             func_80800A48_chmole_training(arg0);
             return;
         case 5:
-            _gcnewoption_entrypoint_0(func_80100094(arg0, 0U));
+            _gcnewoption_entrypoint_0(actor_getAdditionalMem(arg0, 0U));
             return;
         case 7:
             _gcnewoption_entrypoint_6((OptionState*)arg0, 0U);
@@ -99,7 +99,7 @@ void func_80800270_chmole_training(Actor* arg0)
         }
         else
         {
-            if ((func_8008FD70() & 0x701) && (_sumole_entrypoint_1(arg0, -1, 0, 0) != 0))
+            if ((activePlayer_getTransformationBit() & 0x701) && (_sumole_entrypoint_1(arg0, -1, 0, 0) != 0))
             {
                 func_80101FDC(arg0, 2U);
                 return;
@@ -115,7 +115,7 @@ void func_80800270_chmole_training(Actor* arg0)
     case 4:
     case 5:
     case 7:
-        if ((func_8008FD70() & 0x701) && (_sumole_entrypoint_1(arg0, -1, 0, 0) != 0))
+        if ((activePlayer_getTransformationBit() & 0x701) && (_sumole_entrypoint_1(arg0, -1, 0, 0) != 0))
         {
             func_80101FDC(arg0, 2U);
         }
@@ -265,7 +265,7 @@ void func_80800988_chmole_training(Actor* arg0, u32 arg1, u32 arg2)
     OptionState* temp_v0;
 
     _gcnewoption_entrypoint_4(arg0, 0U, &_chmole_training_entrypoint_0, 0U, 0x184A);
-    temp_v0 = func_80100094(arg0, 0U);
+    temp_v0 = actor_getAdditionalMem(arg0, 0U);
     _gcnewoption_entrypoint_8(temp_v0, arg1);
     _gcnewoption_entrypoint_9(temp_v0, arg2);
     _gcnewoption_entrypoint_10(temp_v0, 0U);

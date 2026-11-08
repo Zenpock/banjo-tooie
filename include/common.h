@@ -20,12 +20,14 @@ typedef union {
 // size: unknown
 typedef struct {
     /* 0x00 */ u32 unk0;
-    /* 0x04 */ u32 unk4;
-    /* 0x08 */ u32 unk8_16 : 22;
-    /* 0x08 */ u32 unk8_14 : 2;
-    /* 0x08 */ u32 unk8_4 : 4;
-    /* 0x08 */ u32 unk8_7 : 1;
-    /* 0x08 */ u32 unk8_0 : 3;
+    /* 0x04 */ s16 unk4;
+    /* 0x06 */ s16 unk6;
+    /* 0x08 */ s16 unk8;
+    /* 0x0A */ u16 unkA_16 : 6;
+    /* 0x0A */ u16 unkA_14 : 2;
+    /* 0x0A */ u16 unkA_4 : 4;
+    /* 0x0A */ u16 unkA_3 : 1;
+    /* 0x0A */ u16 unkA_0 : 3;
     /* 0x0C */ u32 unkC;
 } Unk80132ED0_2;
 
@@ -45,14 +47,15 @@ typedef struct {
     /* 0x12 */ u16 unk12_2 : 14;
     /* 0x12 */ u16 unk12_1 : 1;
     /* 0x12 */ u16 unk12_0 : 1;
-    /* 0x14 */ u16 unk14;
+    /* 0x14 */ u16 unk14; //Model
     /* 0x16 */ u16 unk16;
 	/* 0x18 */ u32 unk18_17 : 15;
 	/* 0x18 */ u32 unk18_16 : 1;
-	/* 0x18 */ u32 unk18_5 : 11;
+	/* 0x18 */ u32 unk18_5 : 11; //Actor Index
 	/* 0x18 */ u32 unk18_1 : 4;
 	/* 0x18 */ u32 unk18_0 : 1;
-    /* 0x1C */ u32 unk1C;
+    /* 0x1C */ s16 unk1C;
+    /* 0x1E */ s16 unk1E;
     /* 0x20 */ u32 unk20;
     /* 0x24 */ u32 unk24_22 : 10;
     /* 0x24 */ u32 unk24_16 : 6;
@@ -62,7 +65,8 @@ typedef struct {
 	/* 0x28 */ u32 unk28_14 : 9;
 	/* 0x28 */ u32 unk28_13 : 1;
 	/* 0x28 */ u32 unk28_12 : 1;
-    /* 0x28 */ u32 pad28_10 : 2;
+    /* 0x28 */ u32 unk28_11 : 1;
+    /* 0x28 */ u32 unk28_10 : 1;
     /* 0x28 */ u32 unk28_9 : 1;
     /* 0x28 */ u32 unk28_0 : 9;
     /* 0x2C */ u32 unk2C;
@@ -101,7 +105,7 @@ typedef struct Actor {
     /* 0x64 */ u32 unk64_22 : 1;
     /* 0x64 */ u32 unk64_21 : 1;
     /* 0x64 */ u32 unk64_20 : 1; //unk65 & 0xFFEF or unk65 | 0x10
-    /* 0x64 */ u32 unk64_19 : 1; // flags & 0x80000
+    /* 0x64 */ u32 unk64_19 : 1; // flags & 0x80000 (unk65 & 0xFFF7)
     /* 0x64 */ u32 unk64_18 : 1;
     /* 0x64 */ u32 unk64_17 : 1; //Marked for Deletion?
     /* 0x64 */ u32 unk64_16 : 1;
@@ -114,7 +118,7 @@ typedef struct Actor {
     /* 0x70 */ u32 unk70_24 : 1;
     /* 0x70 */ u32 unk70_23 : 1;
 	/* 0x70 */ u32 unk70_22 : 1;
-	/* 0x70 */ u32 unk70_21 : 1;
+    /* 0x70 */ u32 unk70_21 : 1;
     /* 0x70 */ u32 unk70_20 : 1;
     /* 0x70 */ u32 unk70_19 : 1;
     /* 0x70 */ u32 unk70_18 : 1;
@@ -146,12 +150,12 @@ typedef struct Actor {
     /* 0x74 */ u32 unk74_6 : 1;
     /* 0x74 */ u32 unk74_5 : 1;
     /* 0x74 */ u32 unk74_4 : 1;
-	/* 0x74 */ u32 unk74_0 : 4;
+	/* 0x74 */ u32 unk74_0 : 4; //unk77 & 0xFFF0
     /* 0x78 */ u8 unk78;
     /* 0x79 */ u8 unk79_4 : 4;
     /* 0x79 */ u8 unk79_3 : 1; 
     /* 0x79 */ u8 unk79_2 : 1;
-    /* 0x79 */ u8 unk79_0 : 2;
+    /* 0x79 */ u8 unk79_0 : 2; //unk78 & 3
     /* 0x7A */ u16 unk7A_14 : 2;
     /* 0x7A */ u16 unk7A_12 : 2;
 	/* 0x7A */ u16 unk7A_9 : 3;
@@ -190,8 +194,8 @@ typedef struct Actor {
     /* 0x92 */ s16 unk92;
     /* 0x94 */ u32 unk94_31 : 1;
     /* 0x94 */ u32 unk94_30 : 1;
-	/* 0x94 */ u32 unk94_20 : 10; //(unk94 * 4) >> 0x16
-	/* 0x94 */ u32 pad94_18 : 2;
+    /* 0x94 */ u32 unk94_20 : 10; //(unk94 * 4) >> 0x16
+    /* 0x94 */ u32 pad94_18 : 2;
     /* 0x94 */ u32 unk94_17 : 1;
     /* 0x94 */ u32 unk94_16 : 1;
     /* 0x94 */ u32 pad94_15 : 1;
@@ -202,49 +206,9 @@ typedef struct Actor {
     /* 0x9A */ u8 unk9A; //b
     /* 0x9B */ u8 alpha; //a
 } Actor;
-
-typedef struct ActorData {
-    s16 unk0;
-    s16 unk2; //PropId
-    u16 Model;
-    s16 unk6;
-    void *unk8;
-    void (*update_func)(Actor* actor); //Update
-    void (*unk10_func)(Actor* actor);
-    void (*unk14_func)(Actor* arg0, void* arg1);//Draw Function
-    u16 unk18;
-    u16 unk1A;
-    f32 unk1C;
-    s16 unk20;
-    s16 unk22;
-	union {
-		struct {
-			s16 unk24;
-			s16 unk26;
-		};
-		s32 unk24w;
-	};
-    void (*unk28_func)(Actor* actor); //Destructor
-    void* (*unk2C_func)();
-    s16 unk30; //Size of additional memory 1
-    s16 unk32; //Size of additional memory 2
-    void (*unk34_func)(Actor* actor);
-	Actor* (*unk38_func)(void* arg0, s32 arg1, void* arg2, s32 arg3, void* arg4); // argument types unknown currently
-	union {
-		struct {
-			s16 unk3C;
-			s16 unk3E;
-		};
-		s32 unk3Cw; //Collision Mask?
-	};
-    s32 (*eventHandler)(Actor* actor, ActorEventId arg1, s32 arg2);
-    s16 unk44;
-    s16 unk46;
-} ActorData;
-
 typedef struct {
     /* 0x0 */ s16 position[3];
-    /* 0x6 */ u16 unk6_7 : 9; //Directly moved into unk74_7 in Actor
+    /* 0x6 */ u16 unk6_7 : 9;
     /* 0x6 */ u16 unk6_1 : 6; //unk4 << 0x19 >> 0x1A
     /* 0x6 */ u16 unk6_0 : 1; //unk6 >> 0x7 << 0x7
     /* 0x8 */ u16 PropID;
@@ -260,6 +224,52 @@ typedef struct {
     /* 0x12 */ u16 unk12_1 : 1;
     /* 0x12 */ u16 unk12_0 : 1;
 } Prop;
+typedef struct {
+    Gfx* gfx;
+    Mtx* mtx;
+} GraphicsBuffers;
+
+typedef struct ActorData {
+    s16 unk0;
+    s16 unk2; //PropId
+    u16 Model;
+    s16 unk6;
+    void *unk8;
+    void (*update_func)(Actor* actor); //Update
+    void (*unk10_func)(Actor* actor);
+    void (*unk14_func)(Actor* arg0, GraphicsBuffers* arg1);
+    u16 unk18;
+    u16 unk1A;
+    f32 unk1C;
+    s16 unk20;
+    u16 unk22;
+	union {
+		struct {
+			s16 unk24;
+			s16 unk26;
+		};
+		s32 unk24w;
+	};
+    void (*unk28_func)(Actor* actor); //Destructor
+    void* (*unk2C_func)();
+    s16 unk30; //Size of additional memory 1
+    s16 unk32; //Size of additional memory 2
+    void (*unk34_func)(Actor* actor);
+    //Arg2 is ActorData*
+	Actor* (*unk38_func)(void* arg0, s32 arg1, void* arg2, s32 arg3, Prop* arg4); // argument types unknown currently
+	union {
+		struct {
+			s16 unk3C;
+			s16 unk3E;
+		};
+		s32 unk3Cw; //Collision Mask?
+	};
+    s32 (*eventHandler)(Actor* actor, ActorEventId arg1, s32 arg2);
+    s16 unk44;
+    s16 unk46;
+} ActorData;
+
+
 
 
 #endif // __COMMON_H__
