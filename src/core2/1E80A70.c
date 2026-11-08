@@ -205,7 +205,7 @@ void func_800BF58C(void);
 void func_800BD600(void);
 void func_800CCFEC(void);
 void func_800A5D6C(void);
-void func_800B5E3C(void);
+void graphics_defragSimpleText(void);
 void func_800DA1E0(void);
 void func_8010E030(void);
 void func_800C075C(void);
@@ -252,7 +252,7 @@ void func_800A7FD4(void) {
     func_800BD600();
     func_800CCFEC();
     func_800A5D6C();
-    func_800B5E3C();
+    graphics_defragSimpleText();
     func_800DA1E0();
     inventory_defrag();
     func_8010E030();

@@ -5,18 +5,18 @@ typedef struct {
     /* 0x0 */   s16 coordX;
     /* 0x2 */   s16 coordY;
     /* 0x4 */   s16 unk4;
-    /* 0x6 */   u8 unk6_4 : 4;
-    /* 0x6 */   u8 unk6_3 : 1;
-    /* 0x6 */   u8 unk6_2 : 1;
-    /* 0x6 */   u8 unk6_1 : 1;
+    /* 0x6 */   u8 font : 4;
+    /* 0x6 */   u8 kern : 1;
+    /* 0x6 */   u8 background : 1;
+    /* 0x6 */   u8 shaky : 1;
     /* 0x6 */   u8 unk6_0 : 1;
     /* 0x7 */   u8 unk7;
-    /* 0x8 */   f32 unk8;
+    /* 0x8 */   f32 scale;
     /* 0xC */   char* text;
-    /* 0x10 */  u8 unk10;
-    /* 0x11 */  u8 unk11;
-    /* 0x12 */  u8 unk12;
-    /* 0x13 */  u8 unk13;
+    /* 0x10 */  u8 red;
+    /* 0x11 */  u8 green;
+    /* 0x12 */  u8 blue;
+    /* 0x13 */  u8 alpha;
 } UNKTEXTSTRUCT;
 
 typedef struct {
@@ -24,16 +24,16 @@ typedef struct {
     s16 unk4;
     s16 unk6;
     f32 unk8;
-    u8 unkC;
-    u8 unkD;
-    u8 unkE;
-    u8 unkF;
-    u8 unk10;
-    u8 unk11;
-    u8 unk12;
-    u8 unk13;
+    u8 red;
+    u8 green;
+    u8 blue;
+    u8 alpha;
+    u8 background;
+    u8 font;
+    u8 kern;
+    u8 shaky;
     s16 unk14;
-    f32 unk18;
+    f32 scale;
 } UNK80128180;
 extern UNK80128180 D_80128180;
 
@@ -91,9 +91,14 @@ void func_800B5DF4(void) {
 void func_800B5DFC(void) {
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8F430/func_800B5E04.s")
+void graphics_freeSimpleText(void) {
+    if (D_80128180.unk0 != NULL) {
+        vector_free(D_80128180.unk0);
+        D_80128180.unk0 = NULL;
+    }
+}
 
-void func_800B5E3C(void) {
+void graphics_defragSimpleText(void) {
     if (D_80128180.unk0 != 0) {
         D_80128180.unk0 = vector_defrag(D_80128180.unk0);
     }
@@ -113,7 +118,7 @@ void func_800B5E3C(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8F430/func_800B7448.s")
 
-void func_800B798C(s32 coordX, s32 coordY, char* text)
+void graphics_addSimpleText(s32 coordX, s32 coordY, char* text)
 {
     UNKTEXTSTRUCT* textStruct;
 
@@ -127,34 +132,34 @@ void func_800B798C(s32 coordX, s32 coordY, char* text)
         textStruct->coordX = coordX;
         textStruct->coordY = coordY;
         textStruct->text = text;
-        textStruct->unk6_4 = D_80128180.unk11;
-        textStruct->unk6_3 = D_80128180.unk12;
-        textStruct->unk6_2 = D_80128180.unk10;
-        textStruct->unk6_1 = D_80128180.unk13;
+        textStruct->font = D_80128180.font;
+        textStruct->kern = D_80128180.kern;
+        textStruct->background = D_80128180.background;
+        textStruct->shaky = D_80128180.shaky;
         textStruct->unk4 = D_80128180.unk14;
-        textStruct->unk8 = D_80128180.unk18;
-        textStruct->unk10 = D_80128180.unkC;
-        textStruct->unk11 = D_80128180.unkD;
-        textStruct->unk12 = D_80128180.unkE;
-        textStruct->unk13 = D_80128180.unkF;
+        textStruct->scale = D_80128180.scale;
+        textStruct->red = D_80128180.red;
+        textStruct->green = D_80128180.green;
+        textStruct->blue = D_80128180.blue;
+        textStruct->alpha = D_80128180.alpha;
     }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8F430/func_800B7A98.s")
 
-void func_800B7ADC(s32 arg0) {
-    D_80128180.unkF = arg0;
+void graphics_setSimpleTextAlpha(s32 arg0) {
+    D_80128180.alpha = arg0;
 }
 
-void func_800B7AE8(s32 arg0) {
+void graphics_setSimpleTextBackground(s32 arg0) {
     if (arg0 != 0) {
-        D_80128180.unk10 = 1;
+        D_80128180.background = 1;
     }
     else {
-        D_80128180.unk10 = 0;
+        D_80128180.background = 0;
     }
     if (arg0 != 0) {
-        func_800B7B68(1);
+        graphics_setSimpleTextKern(1);
     }
 }
 
@@ -162,39 +167,40 @@ void func_800B7B2C(s32 arg0) {
     D_80128180.unk14 = arg0;
 }
 
-void func_800B7B38(s32 arg0) {
-    D_80128180.unk11 = arg0;
+void graphics_setSimpleTextFont(s32 arg0) {
+    D_80128180.font = arg0;
 }
 
-void func_800B7B44(s32 arg0)
+void graphics_setSimpleTextShaky(s32 arg0)
 {
     if (arg0 != 0)
     {
-        D_80128180.unk13 = 1;
+        D_80128180.shaky = 1;
         return;
     }
-    D_80128180.unk13 = 0;
+    D_80128180.shaky = 0;
 }
 
-void func_800B7B68(s32 arg0)
+void graphics_setSimpleTextKern(s32 arg0)
 {
     if (arg0 != 0)
     {
-        D_80128180.unk12 = 1;
+        D_80128180.kern = 1;
         return;
     }
-    D_80128180.unk12 = 0;
+    D_80128180.kern = 0;
 }
 
 //Set Text Colors
-void func_800B7B8C(s32 arg0, s32 arg1, s32 arg2) {
-    D_80128180.unkC = arg0;
-    D_80128180.unkD = arg1;
-    D_80128180.unkE = arg2;
+void graphics_setSimpleTextColors(s32 arg0, s32 arg1, s32 arg2) {
+    D_80128180.red = arg0;
+    D_80128180.green = arg1;
+    D_80128180.blue = arg2;
 }
 
-void func_800B7BA4(f32 arg0) {
-    D_80128180.unk18 = arg0;
+//set text scale
+void graphics_setSimpleTextScale(f32 arg0) {
+    D_80128180.scale = arg0;
 }
 
 void func_800B7BB0(void) {

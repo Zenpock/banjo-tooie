@@ -19,7 +19,7 @@ void func_800B43E0();
 void func_800B5B40();
 void func_800B5B88();
 s32 func_800B5BE4(s32);
-void func_800B7B68(s32);
-void func_800B7BA4(f32);
+void graphics_setSimpleTextKern(s32);
+void graphics_setSimpleTextScale(f32);
 
 #endif // __CORE2_1E8F430_H__
