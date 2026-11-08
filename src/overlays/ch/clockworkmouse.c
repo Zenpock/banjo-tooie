@@ -523,7 +523,7 @@ void func_80801240_chclockworkmouse(Actor* actor) {
             temp_f0 = func_800C7B7C(temp_s5, temp_v0->unkEC, 250.0f, 1.0f);
             temp_v0->unkEC = temp_f0;
             temp_v0->unk84[var_s3] = temp_f0;
-            func_800C7A68(temp_s5, temp_v0->unkEC, (s32)&temp_v0->unkC.vecs[var_s3]);
+            func_800C7A68(temp_s5, temp_v0->unkEC, temp_v0->unkC.vecs[var_s3].f);
             temp_v0->unkF0[var_s3] = 2U;
             temp_v0->unkAC[var_s3] = temp_v0->unkDC;
             temp_v0->unkDC += 0.0075000003f;
