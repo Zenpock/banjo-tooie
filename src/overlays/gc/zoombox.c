@@ -337,7 +337,7 @@ void gczoombox_entrypoint_31(ZoomboxStruct* arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_34.s")
 
-void gczoombox_entrypoint_35(ZoomboxStruct* arg0, Unk80132ED0* arg1, s16 arg2, s32 arg3) {
+void gczoombox_entrypoint_35(ZoomboxStruct* arg0, ActorMarker* arg1, s16 arg2, s32 arg3) {
     arg0->unk130 = arg1;
     arg0->unk13A = arg2;
     arg0->unk13C = arg3;

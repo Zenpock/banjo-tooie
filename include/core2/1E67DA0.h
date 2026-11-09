@@ -28,11 +28,11 @@
 #include "core2/1EDA900.h"
 #include "core2/1EDFED0.h"
 
-void func_8008E530(PlayerState*, Unk80132ED0*);
+void func_8008E530(PlayerState*, ActorMarker*);
 void func_8008E618(PlayerState*);
 void func_8008E6BC(PlayerState*);
 void func_8008E6F0(PlayerState*);
-Unk80132ED0* func_8008E938(PlayerState*);
+ActorMarker* func_8008E938(PlayerState*);
 void func_8008E944(PlayerState *);
 void func_8008E95C(PlayerState *);
 s32 func_8008E9AC(PlayerState*);

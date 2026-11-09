@@ -30,5 +30,5 @@ void bsbflip_end(PlayerState *self);
 void bsbflip_init(PlayerState *self);
 void bsbflip_update(PlayerState *self);
 BsScript bsbflip_entrypoint_3(BsScriptType type);
-
+void (*_bsbflip_entrypoint_3(BsScriptType))(PlayerState*);
 #endif // __BS_BFLIP__

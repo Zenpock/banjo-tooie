@@ -62,7 +62,7 @@ void func_800FF62C(void)
 	s32 actorIterator;
 	f32 sp40[3];
 	s32 pad;
-	Unk80132ED0* temp_s1;
+	ActorMarker* temp_s1;
 	s32 var_s3;
 
 	if (func_800BEC1C() != 0)
@@ -165,7 +165,7 @@ void func_800FF62C(void)
 
 void func_800FFA3C(Actor* actor)
 {
-	Unk80132ED0* sp1C;
+	ActorMarker* sp1C;
 
 	sp1C = actor->unk0;
 	func_800FF3EC(actor);
@@ -175,7 +175,7 @@ void func_800FFA3C(Actor* actor)
 }
 
 
-void func_800FFA88(Unk80132ED0* a0)
+void func_800FFA88(ActorMarker* a0)
 {
     actor_mark_delete(func_80106790(a0));
 }
@@ -183,13 +183,13 @@ void func_800FFA88(Unk80132ED0* a0)
 void actor_mark_delete(Actor* actor)
 {
 	Actor* temp_v0;
-	Unk80132ED0* temp_a2;
+	ActorMarker* temp_a2;
 	actor->unk64_17 = 1;
 	D_80135A50++;
 	temp_a2 = actor->unk40;
 	if (temp_a2 != 0 && actor->unk6C_9 != 0x243)
 	{
-		temp_v0 = func_80106790((Unk80132ED0*)actor->unk40);
+		temp_v0 = func_80106790((ActorMarker*)actor->unk40);
 		temp_v0->unk64_17 = 1;
 		actor->unk40 = 0;
 		temp_v0->unk40 = 0;

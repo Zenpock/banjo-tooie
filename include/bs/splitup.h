@@ -4,7 +4,7 @@
 
 #include <ultra64.h>
 #include "common.h"
-
+#include "bs.h"
 // bssplitup_entrypoint_0
 // bssplitup_entrypoint_1
 // bssplitup_entrypoint_2
@@ -21,10 +21,10 @@ void bssplitup_entrypoint_10(s32 arg0);
 // bssplitup_entrypoint_12
 // bssplitup_entrypoint_13
 void bssplitup_entrypoint_14(s32 arg0);
-// bssplitup_entrypoint_15
+BsScript _bssplitup_entrypoint_15(BsScriptType);
 // bssplitup_entrypoint_16
 // bssplitup_entrypoint_17
 void bssplitup_entrypoint_18(s32 arg0);
-// bssplitup_entrypoint_19
+BsScript _bssplitup_entrypoint_19(BsScriptType);
 
 #endif // __BS_SPLITUP__

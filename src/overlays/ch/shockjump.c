@@ -45,7 +45,7 @@ s32 func_808000AC_chshockjump(s32 arg0, s32 arg1, s32 arg2)
 	return 1;
 }
 
-void chshockjump_entrypoint_2(Unk80132ED0* arg0)
+void chshockjump_entrypoint_2(ActorMarker* arg0)
 {
 	Actor* temp_v0;
 

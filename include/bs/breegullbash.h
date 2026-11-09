@@ -20,7 +20,8 @@
 #include "core2/1E78BF0.h"
 #include "core2/1EC8070.h"
 #include "player.h"
-
+#include "bs.h"
+BsScript _bsbreegullbash_entrypoint_3(BsScriptType);
 
 
 #endif // __BS_BREEGULLBASH__

@@ -26,7 +26,7 @@ f32 func_80099A40(PlayerState *self) {
     return self->unkC0->unk4;
 }
 
-Unk80132ED0* func_80099A4C(PlayerState *self) {
+ActorMarker* func_80099A4C(PlayerState *self) {
     return self->unkC0->unk14;
 }
 
@@ -62,7 +62,7 @@ void func_8009AD04(PlayerState* arg0, f32 arg1) {
     arg0->unkC0->unk4 = arg1;
 }
 
-void func_8009AD14(PlayerState* arg0, Unk80132ED0* arg1) {
+void func_8009AD14(PlayerState* arg0, ActorMarker* arg1) {
     arg0->unkC0->unk14 = arg1;
 }
 

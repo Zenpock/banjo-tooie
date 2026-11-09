@@ -18,6 +18,7 @@
 #include "core2/1E78BF0.h"
 #include "core2/1E7D460.h"
 #include "nc/ba/die.h"
-
+#include "bs.h"
+BsScript _bschokedie_entrypoint_3(BsScriptType);
 
 #endif // __BS_CHOKEDIE__

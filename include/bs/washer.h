@@ -47,5 +47,16 @@
 #include "core2/1ECB0F0.h"
 #include "core2/anctrl.h"
 #include "player.h"
+#include "bs.h"
+BsScript _bswasher_entrypoint_1(BsScriptType);
+BsScript _bswasher_entrypoint_3(BsScriptType);
+BsScript _bswasher_entrypoint_4(BsScriptType);
+BsScript _bswasher_entrypoint_5(BsScriptType);
+
+BsScript _bswasher_entrypoint_8(BsScriptType);
+BsScript _bswasher_entrypoint_9(BsScriptType);
+BsScript _bswasher_entrypoint_10(BsScriptType);
+BsScript _bswasher_entrypoint_11(BsScriptType);
+
 
 #endif // __BS_WASHER__

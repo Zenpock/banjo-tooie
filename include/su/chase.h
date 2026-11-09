@@ -3,6 +3,6 @@
 
 #include "common.h"
 
-Unk80132ED0* _suchase_entrypoint_0();
+ActorMarker* _suchase_entrypoint_0();
 
 #endif

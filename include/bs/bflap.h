@@ -37,5 +37,6 @@ void func_80800294_bsbflap(PlayerState *self);
 void bsbflap_update(PlayerState *self);
 void bsbflap_end(PlayerState *self);
 BsScript bsbflap_entrypoint_3(BsScriptType type);
+BsScript _bsbflap_entrypoint_3(BsScriptType);
 
 #endif // __BS_BFLAP__

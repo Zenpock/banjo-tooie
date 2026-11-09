@@ -42,5 +42,14 @@
 #include "core2/1ECA640.h"
 #include "core2/anctrl.h"
 #include "player.h"
+#include "bs.h"
+BsScript _bstrexsmall_entrypoint_8(BsScriptType);
+BsScript _bstrexsmall_entrypoint_9(BsScriptType);
+BsScript _bstrexsmall_entrypoint_10(BsScriptType);
+BsScript _bstrexsmall_entrypoint_11(BsScriptType);
+BsScript _bstrexsmall_entrypoint_12(BsScriptType);
+BsScript _bstrexsmall_entrypoint_13(BsScriptType);
+BsScript _bstrexsmall_entrypoint_14(BsScriptType);
+BsScript _bstrexsmall_entrypoint_15(BsScriptType);
 
 #endif

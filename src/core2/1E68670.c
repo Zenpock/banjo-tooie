@@ -48,7 +48,7 @@ void func_8008F854(s32 arg0, s32 arg1)
 	inventory_showValue(func_800D1B34(arg1));
 }
 
-void func_8008F880(Unk80132ED0* arg0, f32* arg1)
+void func_8008F880(ActorMarker* arg0, f32* arg1)
 {
 	ml_vec3f_copy(arg1, func_80106790(arg0)->position);
 }

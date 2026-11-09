@@ -58,7 +58,7 @@ typedef struct {
 	u8 unk5F;
 	f32 unk60;
 	s32 unk64;
-	Unk80132ED0* unk68;
+	ActorMarker* unk68;
 	u8 unk6C;
 	u8 unk6D;
 	u8 unk6E;
@@ -102,14 +102,14 @@ typedef struct {
 	u8 unkCE;
 	u8 unkCF;
 	f32 unkD0;
-	Unk80132ED0* unkD4;
+	ActorMarker* unkD4;
 	u8 unkD8;
 	u8 unkD9;
 	u8 unkDA;
 	u8 unkDB;
 	s32 unkDC;
 	f32 unkE0;
-	Unk80132ED0* unkE4;
+	ActorMarker* unkE4;
 	s32 unkE8;
 	s32 unkEC;
 	s32 unkF0;
@@ -173,7 +173,7 @@ typedef struct {
 	u8 unkA7;
 	s32 unkA8;
 	s32 unkAC;
-	Unk80132ED0* unkB0[4];
+	ActorMarker* unkB0[4];
 	f32 unkC0[2];
 	s32 unkC8;
 	s32 unkCC;
@@ -1481,7 +1481,7 @@ void func_808023D8_chdiggerboss(Actor* arg0)
 	Hag1AdditionalMem0* sp3C;
 	Actor* temp_v0;
 	Actor* temp_v0_2;
-	Unk80132ED0* temp_a0;
+	ActorMarker* temp_a0;
 	u32 var_s0;
 
 	sp3C = actor_getAdditionalMem(arg0, 0U);
@@ -1633,7 +1633,7 @@ void func_80802938_chdiggerboss(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
 	case 2:
 		sp1C->unk8 = 1;
 	case 1:
-		_capod_entrypoint_6((Unk80132ED0*)arg1, arg2, arg3 | 0x80000);
+		_capod_entrypoint_6((ActorMarker*)arg1, arg2, arg3 | 0x80000);
 		return;
 	}
 }
@@ -1948,7 +1948,7 @@ void func_80803558_chdiggerboss(s32 arg0, s32 arg1, s32 arg2) {
 	*temp_v0_2 &= ~(1 << (arg1 & 7));
 }
 
-void chdiggerboss_entrypoint_2(s32 arg0, Unk80132ED0* arg1)
+void chdiggerboss_entrypoint_2(s32 arg0, ActorMarker* arg1)
 {
 	Actor* sp1C;
 	DiggerBossAdditionalMem0* sp18;
@@ -2708,7 +2708,7 @@ void func_808057D0_chdiggerboss(Actor* arg0) {
 	}
 }
 
-void func_808058B0_chdiggerboss(Actor* arg0, Unk80132ED0* arg1)
+void func_808058B0_chdiggerboss(Actor* arg0, ActorMarker* arg1)
 {
 	Hag1AdditionalMem0* sp24;
 	f32 sp18[3];
@@ -3516,7 +3516,7 @@ void func_808088CC_chdiggerboss(Actor* arg0)
 
 //Hag-1
 void func_80808948_chdiggerboss(Actor* arg0) {
-	Unk80132ED0* temp_a0;
+	ActorMarker* temp_a0;
 	s32 var_s0;
 	Hag1AdditionalMem0* hag1Mem;
 
@@ -3538,7 +3538,7 @@ void func_80808948_chdiggerboss(Actor* arg0) {
 
 void func_80808B40_chdiggerboss(Actor* arg0, s32 arg1)
 {
-	Unk80132ED0* temp_a0;
+	ActorMarker* temp_a0;
 	s32 var_s1;
 	Hag1AdditionalMem0* temp_v0;
 
@@ -3689,7 +3689,7 @@ void func_80809310_chdiggerboss(Actor* arg0)
 	Actor* temp_s0;
 	DiggerBossAdditionalMem0* sp20;
 	Actor* temp_v0_2;
-	Unk80132ED0* temp_a0;
+	ActorMarker* temp_a0;
 
 	temp_s0 = func_80106790(func_80101080());
 	sp20 = actor_getAdditionalMem(arg0, 0U);

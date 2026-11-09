@@ -43,7 +43,7 @@ ActorData D_808003F4_chhoneycarrier=
 };
 
 //Called when the object is touched
-void func_80800000_chhoneycarrier(Actor* arg0, Unk80132ED0* arg1)
+void func_80800000_chhoneycarrier(Actor* arg0, ActorMarker* arg1)
 {
     if ((func_800F4B4C(arg1->unk18_5) != 0) && (flag_getValue(FLAG2_663_EMPTY_HONEYCOMB_COLLISION) == 0))
     {
@@ -70,7 +70,7 @@ s32 func_808000C4_chhoneycarrier(Actor* arg0, s32 arg1, s32 arg2)
     switch (arg1)
     {
         case EVENT_3E_ACTOR_TOUCHED:
-            func_80800000_chhoneycarrier(arg0, (Unk80132ED0*)arg2);
+            func_80800000_chhoneycarrier(arg0, (ActorMarker*)arg2);
             break;
         case 0x12:
             arg0->unk64_19 = arg2;

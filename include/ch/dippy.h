@@ -28,6 +28,6 @@ typedef struct {
 } ChDippyUnk;
 
 void _chdippy_entrypoint_2(s32, f32*);
-void _chdippy_entrypoint_3(s32, ChDippyUnk*, ChDippyUnk*, s32, Unk80132ED0*);
+void _chdippy_entrypoint_3(s32, ChDippyUnk*, ChDippyUnk*, s32, ActorMarker*);
 
 #endif

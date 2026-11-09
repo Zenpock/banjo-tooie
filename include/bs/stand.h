@@ -35,15 +35,15 @@
 // func_80800274_bsstand
 // bsstand_entrypoint_1
 // bsstand_entrypoint_2
-// bsstand_entrypoint_3
+BsScript _bsstand_entrypoint_3(BsScriptType);
 // bsstand_entrypoint_4
 // bsstand_entrypoint_5
 void bsstand_entrypoint_6(s32);
-// bsstand_entrypoint_7
+BsScript _bsstand_entrypoint_7(BsScriptType);
 BanjoStateId _bsstand_entrypoint_8(PlayerState*, BanjoStateId); 
 void bsstand_entrypoint_9(PlayerState*);
 void bsstand_entrypoint_10(PlayerState*);
 void bsstand_entrypoint_11(PlayerState*);
-// bsstand_entrypoint_12
+BsScript _bsstand_entrypoint_12(BsScriptType);
 
 #endif // __BS_STAND_H__

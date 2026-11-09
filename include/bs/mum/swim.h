@@ -31,7 +31,7 @@
 #include "common.h"
 #include "player.h"
 #include <ultra64.h>
-
+#include "bs.h"
 extern s32 D_80800B30_bsmumswim[];
 extern s32 D_80800B40_bsmumswim[];
 extern s32 D_80800B50_bsmumswim[];
@@ -41,10 +41,10 @@ extern s32 D_80800B70_bsmumswim[];
 extern void _bsmumswim_entrypoint_0(PlayerState *self);
 extern void _bsmumswim_entrypoint_1(PlayerState *self);
 extern void _bsmumswim_entrypoint_2(PlayerState *self);
-extern s32 _bsmumswim_entrypoint_3(s32 idx);
-extern s32 _bsmumswim_entrypoint_4(s32 idx);
-extern s32 _bsmumswim_entrypoint_5(s32 idx);
-extern s32 _bsmumswim_entrypoint_6(s32 idx);
-extern s32 _bsmumswim_entrypoint_7(s32 idx);
+BsScript _bsmumswim_entrypoint_3(BsScriptType);
+BsScript _bsmumswim_entrypoint_4(BsScriptType);
+BsScript _bsmumswim_entrypoint_5(BsScriptType);
+BsScript _bsmumswim_entrypoint_6(BsScriptType);
+BsScript _bsmumswim_entrypoint_7(BsScriptType);
 
 #endif // __BS_MUM_SWIM_H__

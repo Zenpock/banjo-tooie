@@ -29,7 +29,7 @@ typedef struct {
     /* 0x0A */ u16 unkA_3 : 1;
     /* 0x0A */ u16 unkA_0 : 3;
     /* 0x0C */ u32 unkC;
-} Unk80132ED0_2;
+} ActorMarker_2;
 
 typedef struct {
 	void ( *unk0) (s32, s32);
@@ -39,7 +39,7 @@ typedef struct {
 
 // size: unknown
 typedef struct {
-    /* 0x00 */ Unk80132ED0_2* unk0;
+    /* 0x00 */ ActorMarker_2* unk0;
     /* 0x04 */ u32* unk4;
     /* 0x08 */ CallbackTable* (*unk8)(void);
     /* 0x0C */ u32 unkC;
@@ -69,18 +69,18 @@ typedef struct {
     /* 0x28 */ u32 unk28_9 : 1;
     /* 0x28 */ u32 unk28_0 : 9;
     /* 0x2C */ u32 unk2C;
-} Unk80132ED0;
+} ActorMarker;
 
 // size: unknown
 typedef struct Actor {
-    /* 0x00 */ Unk80132ED0* unk0;
+    /* 0x00 */ ActorMarker* unk0;
     /* 0x04 */ f32 position[3];
     /* 0x10 */ void* (*pointerToSyscallEntry)();
     /* 0x14 */ u32 unk14;
     /* 0x18 */ u32 actorData[8]; //Cast this array to struct in actor
     /* 0x38 */ f32 scale;
-    /* 0x3C */ Unk80132ED0* unk3C; //Child Object?
-    /* 0x40 */ Unk80132ED0* unk40; //Shadow Reference?
+    /* 0x3C */ ActorMarker* unk3C; //Child Object?
+    /* 0x40 */ ActorMarker* unk40; //Shadow Reference?
     /* 0x44 */ f32 rotation[3];
     /* 0x50 */ f32 unk50;
     union

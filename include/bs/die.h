@@ -23,19 +23,19 @@
 #include "core2/1ECA640.h"
 #include "core2/anctrl.h"
 #include "player.h"
-
+#include "bs.h"
 void bsdie_entrypoint_0(PlayerState* self);
 void bsdie_entrypoint_1(PlayerState* self);
 void bsdie_entrypoint_2(PlayerState* self);
-s32 bsdie_entrypoint_3(s32 arg0);
+BsScript _bsdie_entrypoint_3(BsScriptType);
 void bsdie_entrypoint_4(PlayerState* self);
 void bsdie_entrypoint_5(PlayerState* self);
 void bsdie_entrypoint_6(PlayerState* self);
-s32 bsdie_entrypoint_7(s32 arg0);
+BsScript _bsdie_entrypoint_7(BsScriptType);
 void bsdie_entrypoint_8(PlayerState* self);
 void bsdie_entrypoint_9(PlayerState* self);
 void bsdie_entrypoint_10(PlayerState* self);
-s32 bsdie_entrypoint_11(s32 arg0);
+BsScript _bsdie_entrypoint_11(BsScriptType);
 
 
 #endif // __BS_DIE__

@@ -136,7 +136,7 @@ void func_8080015C_chheggy(Actor* arg0)
     }
 }
 
-void func_808006C4_chheggy(Actor* arg0, Unk80132ED0* arg1, s32 arg2, s32 arg3)
+void func_808006C4_chheggy(Actor* arg0, ActorMarker* arg1, s32 arg2, s32 arg3)
 {
 
     switch (arg0->actorData[4])
@@ -153,7 +153,7 @@ void func_808006C4_chheggy(Actor* arg0, Unk80132ED0* arg1, s32 arg2, s32 arg3)
     }
 }
 
-void func_80800750_chheggy(Actor* arg0, Unk80132ED0* arg1, s32 arg2, s32 arg3)
+void func_80800750_chheggy(Actor* arg0, ActorMarker* arg1, s32 arg2, s32 arg3)
 {
     switch (arg0->actorData[4])
     {
@@ -392,7 +392,7 @@ void func_808009DC_chheggy(Actor* arg0)
 void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
 {
     Unk80100094* sp34;
-    Unk80132ED0** temp_v0;
+    ActorMarker** temp_v0;
 
     s32 sp2C;
     s32 var_a2;
@@ -655,12 +655,12 @@ s32 func_80801570_chheggy(Actor* arg0, s32 arg1, s32 arg2)
         temp_v0_2->unk64_16 = 0;
         if (arg0->actorData[7] == 0x515)
         {
-            temp_v1->unk48[5] = (Unk80132ED0*)temp_v0_2->unk0;
+            temp_v1->unk48[5] = (ActorMarker*)temp_v0_2->unk0;
             func_80103140(temp_v0_2, 0x975, arg0->unk0->unk16);
             func_80102424(temp_v0_2, 1);
             return 1;
         }
-        temp_v1->unk48[6] = (Unk80132ED0*)temp_v0_2->unk0;
+        temp_v1->unk48[6] = (ActorMarker*)temp_v0_2->unk0;
         func_80103140(temp_v0_2, 0x974, arg0->unk0->unk16);
         func_80102424(temp_v0_2, 1);
         return 1;

@@ -16,7 +16,6 @@
 #include "core2/1EDA900.h"
 
 extern s32 D_808004E0_bskazhatch[];
-
-extern s32 _bskazhatch_entrypoint_0(s32 idx);
+BsScript _bskazhatch_entrypoint_0(BsScriptType);
 
 #endif // __BS_KAZ_HATCH_H__

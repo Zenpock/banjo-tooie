@@ -31,18 +31,18 @@
 extern void _bskazjump_entrypoint_0(PlayerState *self);
 extern void _bskazjump_entrypoint_1(PlayerState *self);
 extern void _bskazjump_entrypoint_2(PlayerState *self);
-extern s32 _bskazjump_entrypoint_3(s32 idx);
+BsScript _bskazjump_entrypoint_3(BsScriptType);
 extern void _bskazjump_entrypoint_4(PlayerState *self);
 extern void _bskazjump_entrypoint_5(PlayerState *self);
 extern void _bskazjump_entrypoint_6(PlayerState *self);
-extern s32 _bskazjump_entrypoint_7(s32 idx);
+BsScript _bskazjump_entrypoint_7(BsScriptType);
 extern void _bskazjump_entrypoint_8(PlayerState *self);
 extern void _bskazjump_entrypoint_9(PlayerState *self);
 extern void _bskazjump_entrypoint_10(PlayerState *self);
-extern s32 _bskazjump_entrypoint_11(s32 idx);
+BsScript _bskazjump_entrypoint_11(BsScriptType);
 extern void _bskazjump_entrypoint_12(PlayerState *self);
 extern void _bskazjump_entrypoint_13(PlayerState *self);
 extern void _bskazjump_entrypoint_14(PlayerState *self);
-extern s32 _bskazjump_entrypoint_15(s32 idx);
+BsScript _bskazjump_entrypoint_15(BsScriptType);
 
 #endif // __BS_KAZ_JUMP_H__

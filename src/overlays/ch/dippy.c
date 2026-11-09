@@ -593,7 +593,7 @@ void func_80801200_chdippy(Actor* arg0)
     }
 }
 
-void chdippy_entrypoint_3(s32 arg0, ChDippyUnk* arg1, ChDippyUnk* arg2, s32 arg3, Unk80132ED0* arg4)
+void chdippy_entrypoint_3(s32 arg0, ChDippyUnk* arg1, ChDippyUnk* arg2, s32 arg3, ActorMarker* arg4)
 {
     s16 temp_v1;
     ChDippyUnk* end;

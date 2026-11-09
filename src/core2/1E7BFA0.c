@@ -141,7 +141,7 @@ u8 func_800A32EC(PlayerState* self)
     return self->unkA0->unk2B;
 }
 
-Unk80132ED0* func_800A32F8(PlayerState* self)
+ActorMarker* func_800A32F8(PlayerState* self)
 {
     return self->unkA0->unk44;
 }

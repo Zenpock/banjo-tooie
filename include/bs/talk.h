@@ -18,8 +18,10 @@
 
 void _bstalk_entrypoint_0(PlayerState*);
 void _bstalk_entrypoint_1(PlayerState*);
+
 void _bstalk_entrypoint_2(s32);
-s32 _bstalk_entrypoint_3(s32);
+extern BsScript _bstalk_entrypoint_3(BsScriptType);
+
 void _bstalk_entrypoint_4(PlayerState*);
 
 #endif // __BS_TALK__

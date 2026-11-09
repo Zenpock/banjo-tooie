@@ -23,7 +23,7 @@
 #include "core2/1E79FD0.h"
 #include "core2/1EA0690.h"
 #include "core2/1EC8070.h"
-
+#include "bs.h"
 // Code
 void _bsbkflamethrower_entrypoint_0(PlayerState*, f32*, f32*);
 void func_80800094_bsbkflamethrower(PlayerState*, u32);
@@ -31,5 +31,6 @@ void bsbkflamethrower_entrypoint_1(PlayerState*);
 void bsbkflamethrower_entrypoint_2(PlayerState*);
 void bsbkflamethrower_entrypoint_3(PlayerState*);
 s32 bsbkflamethrower_entrypoint_4(s32);
+BsScript _bsbkflamethrower_entrypoint_4(BsScriptType);
 
 #endif // __BS_BKFLAMETHROWER_H__

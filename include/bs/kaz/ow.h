@@ -10,8 +10,8 @@
 #include "bs/kaz.h"
 #include "bs/kaz/move.h"
 #include "player.h"
-
-extern s32 _bskazow_entrypoint_0(s32 idx);
-extern s32 _bskazow_entrypoint_1(s32 idx);
+#include "bs.h"
+BsScript _bskazow_entrypoint_0(BsScriptType);
+BsScript _bskazow_entrypoint_1(BsScriptType);
 
 #endif // __BS_KAZ_OW_H__

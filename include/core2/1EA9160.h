@@ -34,7 +34,7 @@ s32 collectable_getCollectedInLevel(CollectableId, s32);
 s32 func_800D035C(s16 a0);
 void func_800D053C(u32, u32);
 void func_800D0594(s32, CollectableId, s16);
-void func_800D05E4(s32, CollectableId, Unk80132ED0*);
+void func_800D05E4(s32, CollectableId, ActorMarker*);
 s32 func_800D0634(s32, CollectableId);
 s16 func_800D0684(s32, CollectableId);
 //Get Associated Level Id of given item
@@ -56,9 +56,9 @@ void collectable_collectItem(s32, CollectableId);
 void func_800D0C78(s32, CollectableId, u32);
 //Set Item Collected Flag
 s32 func_800D0CC8(s32);
-Unk80132ED0* collectable_itemSetup(s32, f32*, s32, Unk80132ED0*);
+ActorMarker* collectable_itemSetup(s32, f32*, s32, ActorMarker*);
 //Spawn Collectable
-void collectable_spawnItem(u32, CollectableId, f32*, u32, Unk80132ED0*);
+void collectable_spawnItem(u32, CollectableId, f32*, u32, ActorMarker*);
 //Despawn Collectable
 void func_800D119C(s32, CollectableId);
 void func_800D1218(s32, CollectableId, f32*);

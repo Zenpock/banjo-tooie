@@ -20,6 +20,6 @@ extern void _bskazflamethrower_entrypoint_0(PlayerState *self, f32 arg1[3], s32 
 extern void _bskazflamethrower_entrypoint_1(PlayerState *self);
 extern void _bskazflamethrower_entrypoint_2(PlayerState *self);
 extern void _bskazflamethrower_entrypoint_3(PlayerState *self);
-extern s32 _bskazflamethrower_entrypoint_4(s32 idx);
+BsScript _bskazflamethrower_entrypoint_4(BsScriptType);
 
 #endif // __BS_KAZ_FLAMETHROWER_H__

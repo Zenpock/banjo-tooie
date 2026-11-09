@@ -24,11 +24,11 @@
 #include "core2/1E78BF0.h"
 #include "core2/1E7BFA0.h"
 #include "core2/1ECA640.h"
-
-s32 _bscarry_entrypoint_0(s32);
-s32 _bscarry_entrypoint_1(s32);
-s32 _bscarry_entrypoint_2(s32);
-s32 _bscarry_entrypoint_3(s32);
-s32 _bscarry_entrypoint_4(s32);
+#include "bs.h"
+BsScript _bscarry_entrypoint_0(BsScriptType);
+BsScript _bscarry_entrypoint_1(BsScriptType);
+BsScript _bscarry_entrypoint_2(BsScriptType);
+BsScript _bscarry_entrypoint_3(BsScriptType);
+BsScript _bscarry_entrypoint_4(BsScriptType);
 
 #endif // __BS_CARRY__

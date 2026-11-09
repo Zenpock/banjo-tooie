@@ -135,7 +135,7 @@ s32 func_8008FDC4()
     return func_800F55FC(character_getActiveIndex());
 }
 
-Unk80132ED0* func_8008FDEC()
+ActorMarker* func_8008FDEC()
 {
     return func_800F56D8(character_getActiveIndex());
 }
@@ -317,7 +317,7 @@ void func_800904C8(s32 arg0)
     func_800F7B9C(character_getActiveIndex(),arg0);
 }
 
-void func_800904F4(s32 arg0, Unk80132ED0* arg1)
+void func_800904F4(s32 arg0, ActorMarker* arg1)
 {
     func_800F7BC8(character_getActiveIndex(),arg0,arg1);
 }

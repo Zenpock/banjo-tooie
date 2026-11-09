@@ -41,6 +41,8 @@
 #include "core2/1ED4E30.h"
 #include "core2/anctrl.h"
 #include "player.h"
-
-
+#include "bs.h"
+BsScript _bsbwhirl_entrypoint_3(BsScriptType);
+BsScript _bsbwhirl_entrypoint_23(BsScriptType);
+BsScript _bsbwhirl_entrypoint_27(BsScriptType);
 #endif // __BS_BWHIRL__

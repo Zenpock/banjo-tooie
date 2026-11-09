@@ -4,7 +4,7 @@
 
 #include <ultra64.h>
 #include "common.h"
-
+#include "bs.h"
 // func_80800000_bsride
 // func_8080008C_bsride
 // func_808000F0_bsride
@@ -17,7 +17,7 @@ void func_8080016C_bsride();
 // func_808004AC_bsride
 // func_808004D8_bsride
 // func_80800524_bsride
-// bsride_entrypoint_1
+BsScript _bsride_entrypoint_1(BsScriptType);
 void func_808005B8_bsride();
 // func_808005D8_bsride
 // func_8080060C_bsride

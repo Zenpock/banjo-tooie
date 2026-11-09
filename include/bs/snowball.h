@@ -35,5 +35,12 @@
 #include "core2/1ECA640.h"
 #include "core2/anctrl.h"
 #include "player.h"
+extern BsScript _bssnowball_entrypoint_3(BsScriptType);
+extern BsScript _bssnowball_entrypoint_4(BsScriptType);
+extern BsScript _bssnowball_entrypoint_5(BsScriptType);
+extern BsScript _bssnowball_entrypoint_6(BsScriptType);
+extern BsScript _bssnowball_entrypoint_8(BsScriptType);
+extern BsScript _bssnowball_entrypoint_9(BsScriptType);
+extern BsScript _bssnowball_entrypoint_10(BsScriptType);
 
 #endif // __BS_SNOWBALL__

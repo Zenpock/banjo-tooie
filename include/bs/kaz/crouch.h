@@ -27,6 +27,6 @@ extern void _bskazcrouch_entrypoint_1(PlayerState *self);
 // This might be inaccurate
 // extern void _bskazcrouch_entrypoint_2(PlayerState *self);
 extern void _bskazcrouch_entrypoint_3(PlayerState *self);
-extern s32 _bskazcrouch_entrypoint_4(s32 idx);
+BsScript _bskazcrouch_entrypoint_4(BsScriptType);
 
 #endif // __BS_KAZ_CROUCH_H__

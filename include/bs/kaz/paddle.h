@@ -30,12 +30,12 @@
 #include "core2/1ECA640.h"
 #include "core2/1ECB9F0.h"
 #include "player.h"
-
-extern s32 _bskazpaddle_entrypoint_0(s32 idx);
-extern s32 _bskazpaddle_entrypoint_1(s32 idx);
-extern s32 _bskazpaddle_entrypoint_2(s32 idx);
-extern s32 _bskazpaddle_entrypoint_3(s32 idx);
-extern s32 _bskazpaddle_entrypoint_4(s32 idx);
-extern s32 _bskazpaddle_entrypoint_5(s32 idx);
+#include "bs.h"
+BsScript _bskazpaddle_entrypoint_0(BsScriptType);
+BsScript _bskazpaddle_entrypoint_1(BsScriptType);
+BsScript _bskazpaddle_entrypoint_2(BsScriptType);
+BsScript _bskazpaddle_entrypoint_3(BsScriptType);
+BsScript _bskazpaddle_entrypoint_4(BsScriptType);
+BsScript _bskazpaddle_entrypoint_5(BsScriptType);
 
 #endif // __BS_KAZ_PADDLE_H__

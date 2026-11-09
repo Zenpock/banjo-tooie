@@ -31,7 +31,7 @@ void bahold_entrypoint_1(PlayerState* self)
 void bahold_entrypoint_2(PlayerState* self)
 {
 }
-void func_80800088_bahold(Unk80132ED0* arg0, f32* arg1, f32* arg2)
+void func_80800088_bahold(ActorMarker* arg0, f32* arg1, f32* arg2)
 {
     Actor* temp_v0;
 

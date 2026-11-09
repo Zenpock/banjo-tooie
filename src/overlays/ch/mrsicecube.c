@@ -18,7 +18,7 @@ typedef struct {
     u32 unk8;
 } MRSICECUBEStruct;
 
-Unk80132ED0* func_80800508_chmrsicecube(Actor*);
+ActorMarker* func_80800508_chmrsicecube(Actor*);
 void func_80800634_chmrsicecube(Actor*);
 void func_8080066C_chmrsicecube(Actor*, f32*);
 void func_808006C4_chmrsicecube(Actor*);
@@ -211,7 +211,7 @@ Actor* func_8080048C_chmrsicecube(Actor* arg0, s32 arg1, f32* arg2)
     return var_v1;
 }
 
-Unk80132ED0* func_80800508_chmrsicecube(Actor* arg0)
+ActorMarker* func_80800508_chmrsicecube(Actor* arg0)
 {
     u32 temp_s0;
     Actor* var_v0;

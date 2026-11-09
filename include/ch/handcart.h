@@ -152,7 +152,7 @@ s32 func_80800194_chhandcart(Actor* arg0);
 void func_808002B8_chhandcart(Actor*, s32);
 void func_80800528_chhandcart(Actor*);
 void func_808007F0_chhandcart(Actor* arg0);
-void func_80800998_chhandcart(Actor*, u32, u32, Unk80132ED0*);
+void func_80800998_chhandcart(Actor*, u32, u32, ActorMarker*);
 void func_80800B00_chhandcart(Actor*);
 void func_80800CD0_chhandcart(Actor*);
 void func_80800FA0_chhandcart(Actor*, s32);

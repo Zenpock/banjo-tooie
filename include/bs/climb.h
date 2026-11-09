@@ -31,7 +31,8 @@
 #include "core2/1ECB9F0.h"
 #include "core2/anctrl.h"
 #include "ba/playerstate.h"
-
-
+#include "bs.h"
+BsScript _bsclimb_entrypoint_3(BsScriptType);
+BsScript _bsclimb_entrypoint_7(BsScriptType);
 
 #endif // __BS_CLIMB__

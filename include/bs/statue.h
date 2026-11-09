@@ -5,7 +5,7 @@
 #include <ultra64.h>
 #include "common.h"
 #include "ba/playerstate.h"
-
+#include "bs.h"
 // func_80800000_bsstatue
 // func_80800050_bsstatue
 void func_80800078_bsstatue(s32 arg0);
@@ -35,7 +35,7 @@ void _bsstatue_entrypoint_1(PlayerState*);
 // func_80800C64_bsstatue
 // func_80800C98_bsstatue
 // func_80800CCC_bsstatue
-// bsstatue_entrypoint_5
+BsScript _bsstatue_entrypoint_5(BsScriptType);
 // func_80800D20_bsstatue
 // func_80800D84_bsstatue
 // func_80800DB8_bsstatue
@@ -46,15 +46,15 @@ void func_80800EAC_bsstatue(s32 arg0);
 void func_80800FCC_bsstatue();
 // func_80800FEC_bsstatue
 // func_80801060_bsstatue
-// bsstatue_entrypoint_7
+BsScript _bsstatue_entrypoint_7(BsScriptType);
 void func_808010B4_bsstatue();
 // func_808010D4_bsstatue
 // func_80801144_bsstatue
-// bsstatue_entrypoint_8
+BsScript _bsstatue_entrypoint_8(BsScriptType);
 void func_80801218_bsstatue();
 // func_80801238_bsstatue
 // func_808012E8_bsstatue
-// bsstatue_entrypoint_9
+BsScript _bsstatue_entrypoint_9(BsScriptType);
 // func_8080147C_bsstatue
 
 #endif // __BS_STATUE__

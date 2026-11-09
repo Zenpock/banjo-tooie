@@ -20,7 +20,7 @@
 #include "core2/1EDED00.h"
 #include "core2/1EE1510.h"
 
-void _chegggrenade_entrypoint_0(Unk80132ED0* arg0);
+void _chegggrenade_entrypoint_0(ActorMarker* arg0);
 
 
 #endif

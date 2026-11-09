@@ -111,7 +111,7 @@ void func_80800144_chevilmumbo(Actor* arg0, s32 arg1, s32 arg2)
     }
 
 }
-void func_808001F4_chevilmumbo(Actor* arg0, s32 arg1, s32 arg2, Unk80132ED0* arg3)
+void func_808001F4_chevilmumbo(Actor* arg0, s32 arg1, s32 arg2, ActorMarker* arg3)
 {
     CHEVILMUMBO* sp1C;
 

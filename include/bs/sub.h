@@ -49,6 +49,10 @@
 #include "core2/anctrl.h"
 #include "fx/airbub.h"
 #include "player.h"
-
-
+#include "bs.h"
+BsScript _bssub_entrypoint_1(BsScriptType);
+BsScript _bssub_entrypoint_4(BsScriptType);
+BsScript _bssub_entrypoint_5(BsScriptType);
+BsScript _bssub_entrypoint_6(BsScriptType);
+BsScript _bssub_entrypoint_7(BsScriptType);
 #endif // __BS_SUB__

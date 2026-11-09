@@ -402,7 +402,7 @@ s32 func_80800CF4_chterryegg(Actor* arg0, f32 arg1)
     return 1;
 }
 
-void func_80800D20_chterryegg(s32 arg0, s32* arg1, u32 arg2, Unk80132ED0* arg3)
+void func_80800D20_chterryegg(s32 arg0, s32* arg1, u32 arg2, ActorMarker* arg3)
 {
     if (flag_getValue(arg0 + 0x16E) == 0)
     {

@@ -73,7 +73,7 @@ typedef struct {
 } unkStruct800C9750;
 
 typedef struct {
-    Unk80132ED0* unk0;
+    ActorMarker* unk0;
     f32 unk4;
     u32 unk8;
     f32 unkC[3];
@@ -82,7 +82,7 @@ typedef struct {
 } unkStruct800C99F0;
 
 typedef struct {
-    Unk80132ED0* unk0;
+    ActorMarker* unk0;
     u32 unk4;
     u32 unk8;
     f32 unkC[3];
@@ -141,7 +141,7 @@ void func_800C99B4(s32, s32, s32);
 void func_800C99F0(unkStruct800C99F0*);
 void func_800C9A38(unkStruct800C9A38*);
 void func_800C9AB0();
-void func_800C9B30(Unk80132ED0*, s32, s32);
+void func_800C9B30(ActorMarker*, s32, s32);
 void func_800C9BB4(f32, s32, f32, s32);
 void func_800C9C70(f32, u32, f32, u32, f32*, f32, f32);
 void func_800C9DAC(f32, u32*);

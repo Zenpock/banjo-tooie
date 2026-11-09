@@ -18,10 +18,10 @@
 #include "core2/1E79FD0.h"
 #include "core2/1EA0690.h"
 #include "core2/1ECA640.h"
-
+#include "bs.h"
 extern void _bskazegghead_entrypoint_0(PlayerState *self);
 extern void _bskazegghead_entrypoint_1(PlayerState *self);
 extern void _bskazegghead_entrypoint_2(PlayerState *self);
-extern s32 _bskazegghead_entrypoint_3(s32 idx);
+BsScript _bskazegghead_entrypoint_3(BsScriptType);
 
 #endif // __BS_KAZ_EGGHEAD_H__

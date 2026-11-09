@@ -190,7 +190,7 @@ void func_808004B0_chclockworkmouse(Actor* actor) {
     }
 }
 
-void func_80800700_chclockworkmouse(Unk80132ED0 **arg0, s32 arg1) {
+void func_80800700_chclockworkmouse(ActorMarker **arg0, s32 arg1) {
     _capod_entrypoint_2(*arg0, 0x1C, arg1 | 0x800);
 }
 
@@ -231,7 +231,7 @@ void func_8080079C_chclockworkmouse(Actor *actor, Actor *arg1, s32 arg2, s32 arg
     }
 }
 
-void func_80800850_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, Unk80132ED0 *arg3) {
+void func_80800850_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, ActorMarker *arg3) {
     Unk80100094* sp1C;
 
     sp1C = ((Unk80100094 *)actor_getAdditionalMem(actor, 0));
@@ -251,7 +251,7 @@ void func_80800850_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, Unk80132ED
     }
 }
 
-void func_808008DC_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, Unk80132ED0 *arg3) {
+void func_808008DC_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, ActorMarker *arg3) {
     Unk80100094* sp1C;
 
     sp1C = ((Unk80100094 *)actor_getAdditionalMem(actor, 0));

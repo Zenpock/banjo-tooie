@@ -25,7 +25,7 @@
 void _bsthrow_entrypoint_0(PlayerState* self);
 void _bsthrow_entrypoint_1(PlayerState* self);
 void _bsthrow_entrypoint_2(PlayerState* self);
-s32 _bsthrow_entrypoint_3(s32 arg0);
+extern BsScript _bsthrow_entrypoint_3(BsScriptType);
 void _bsthrow_entrypoint_4(PlayerState* self);
 
 #endif // __BS_THROW__

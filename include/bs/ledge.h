@@ -51,30 +51,30 @@ void func_808004D8_bsledge(PlayerState*);
 void func_80800504_bsledge(PlayerState*);
 void func_80800540_bsledge(PlayerState*);
 void func_808005E0_bsledge(PlayerState*);
-s32 _bsledge_entrypoint_0(s32);
+extern BsScript _bsledge_entrypoint_0(BsScriptType);
 void func_8080072C_bsledge(PlayerState*);
 void func_80800764_bsledge(PlayerState*);
 void func_808007F4_bsledge(PlayerState*);
-s32 _bsledge_entrypoint_1(s32);
+extern BsScript _bsledge_entrypoint_1(BsScriptType);
 void func_808008D4_bsledge(PlayerState*);
 void func_808008F4_bsledge(PlayerState*);
 void func_808009C8_bsledge(PlayerState*);
-s32 _bsledge_entrypoint_2(s32);
+extern BsScript _bsledge_entrypoint_2(BsScriptType);
 AssetId func_80800AA0_bsledge(PlayerState*);
 void func_80800AC0_bsledge(PlayerState*);
 void func_80800AE0_bsledge(PlayerState*);
 void func_80800B70_bsledge(PlayerState*);
-s32 _bsledge_entrypoint_3(s32);
+extern BsScript _bsledge_entrypoint_3(BsScriptType);
 s32 func_80800CF4_bsledge(PlayerState*, u8*, u32);
 s32 func_80800D24_bsledge(PlayerState*);
 // func_80800D78_bsledge
 void func_80800EE0_bsledge(PlayerState*);
 void func_80800F0C_bsledge(PlayerState*);
 void func_80800F70_bsledge(PlayerState*);
-s32 _bsledge_entrypoint_4(s32);
+extern BsScript _bsledge_entrypoint_4(BsScriptType);
 void _bsledge_entrypoint_5(PlayerState*);
 void _bsledge_entrypoint_6(PlayerState*);
 void _bsledge_entrypoint_7(PlayerState*);
-s32 _bsledge_entrypoint_8(s32);
+extern BsScript _bsledge_entrypoint_8(BsScriptType);
 
 #endif // __BS_LEDGE__

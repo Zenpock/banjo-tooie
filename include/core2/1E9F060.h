@@ -14,6 +14,7 @@
 #include "core2/1ECB9F0.h"
 #include "ba/playerstate.h"
 
+void func_800C57C0();
 s32 func_800C5A10(UNKfunc_800C68A0_ARG0*, s32);
 UNKfunc_800C68A0_ARG0* func_800C5A38();
 void func_800C5B84(UNKfunc_800C68A0_ARG0*);

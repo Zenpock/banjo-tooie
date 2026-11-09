@@ -21,10 +21,10 @@
 #include "core2/1E79FD0.h"
 #include "core2/1EA0690.h"
 #include "core2/1EB5980.h"
-
 void func_80800000_bstwirl(PlayerState *self);
 void bstwirl_init(PlayerState *self);
 void bstwirl_update(PlayerState *self);
 BsScript bstwirl_entrypoint_0(BsScriptType type);
+BsScript _bstwirl_entrypoint_0(BsScriptType);
 
 #endif // __BS_TWIRL__

@@ -101,20 +101,20 @@ void func_800EBFD4(s32 a0, s32 a1, s32 a2)
 	func_800EBF8C(a0, a1, a2, 0);
 }
 
-void func_800EBFF4(Unk80132ED0* arg0)
+void func_800EBFF4(ActorMarker* arg0)
 {
 	func_800E9AC0(func_800BDB9C(arg0->unk1C), arg0->unk0);
 	func_800EBE24(arg0);
 }
 
-void func_800EC030(Unk80132ED0* arg0, s32* arg1)
+void func_800EC030(ActorMarker* arg0, s32* arg1)
 {
 	arg0->unk0->unk4 = arg1[0];
 	arg0->unk0->unk6 = arg1[1];
 	arg0->unk0->unk8 = arg1[2];
 }
 
-void func_800EC058(s32* arg0, Unk80132ED0* arg1)
+void func_800EC058(s32* arg0, ActorMarker* arg1)
 {
 	s32 var_a2;
 
@@ -140,7 +140,7 @@ void func_800EC058(s32* arg0, Unk80132ED0* arg1)
 	}
 }
 
-void func_800EC0EC(f32* arg0, Unk80132ED0* arg1)
+void func_800EC0EC(f32* arg0, ActorMarker* arg1)
 {
 	s32 sp1C[3];
 
@@ -150,40 +150,40 @@ void func_800EC0EC(f32* arg0, Unk80132ED0* arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EC124.s")
 
-void func_800EC340(Unk80132ED0* arg0, s32 arg1)
+void func_800EC340(ActorMarker* arg0, s32 arg1)
 {
 	arg0->unk18_5 = arg1;
 }
 
-void func_800EC358(Unk80132ED0* arg0, s32 arg1) {
+void func_800EC358(ActorMarker* arg0, s32 arg1) {
 	arg0->unkC = arg1;
 }
 
-void func_800EC360(Unk80132ED0* arg0, s32 arg1) {
+void func_800EC360(ActorMarker* arg0, s32 arg1) {
 	arg0->unk14 = arg1;
 }
 
-void func_800EC368(Unk80132ED0* arg0, s32 arg1) {
+void func_800EC368(ActorMarker* arg0, s32 arg1) {
 	arg0->unk16 = arg1;
 }
 
-void func_800EC370(Unk80132ED0* arg0, s16* arg1)
+void func_800EC370(ActorMarker* arg0, s16* arg1)
 {
 	arg1[0] = (arg0->unk0->unk4);
 	arg1[1] = (arg0->unk0->unk6);
 	arg1[2] = (arg0->unk0->unk8);
 }
 
-void func_800EC398(Unk80132ED0* arg0, f32* arg1) {
+void func_800EC398(ActorMarker* arg0, f32* arg1) {
 	ml_vec3s_to_vec3f(arg1, &arg0->unk0->unk4);
 }
 
-CallbackTable* func_800EC3C4(Unk80132ED0* arg0)
+CallbackTable* func_800EC3C4(ActorMarker* arg0)
 {
 	return arg0->unk8();
 }
 
-ImageStruct* func_800EC3E8(Unk80132ED0* arg0)
+ImageStruct* func_800EC3E8(ActorMarker* arg0)
 {
 	if ((arg0->unk14 == 0) || (arg0->unk14 == 0xFFFF)) {
 		return NULL;
@@ -203,12 +203,12 @@ ImageStruct* func_800EC3E8(Unk80132ED0* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EC75C.s")
 
-void func_800EC7D4(Unk80132ED0* arg0, GraphicsBuffers* arg1)
+void func_800EC7D4(ActorMarker* arg0, GraphicsBuffers* arg1)
 {
 	func_8010A79C(func_80106790(arg0), arg1);
 }
 
-int func_800EC800(Unk80132ED0* arg0)
+int func_800EC800(ActorMarker* arg0)
 {
 	return (arg0->unk18_16) && arg0->unk14;
 }

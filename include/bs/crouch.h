@@ -39,7 +39,7 @@
 void _bscrouch_entrypoint_0(PlayerState*);
 void _bscrouch_entrypoint_1(PlayerState*);
 void _bscrouch_entrypoint_2(PlayerState*);
-s32 _bscrouch_entrypoint_3(s32);
+BsScript _bscrouch_entrypoint_3(BsScriptType);
 BanjoStateId _bscrouch_entrypoint_4(PlayerState*, BanjoStateId);
 
 #endif // __BS_CROUCH__

@@ -23,7 +23,7 @@ void func_80109F18(s32, s32);
 void func_80109F40(s32, s32);
 void func_80109F68(s32, s32);
 void func_80109F90(s32, s32);
-void func_80109FB8(Unk80132ED0*, Unk80132ED0*);
+void func_80109FB8(ActorMarker*, ActorMarker*);
 void func_80109FE8(Actor*, s32);
 void func_8010A3E8(Actor*, f32);
 f32 func_8010A40C(Actor*);

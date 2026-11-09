@@ -26,5 +26,6 @@ void bsbegghead_entrypoint_0(PlayerState* player);
 void bsbegghead_entrypoint_1(PlayerState* player);
 void bsbegghead_entrypoint_2(PlayerState* player);
 void* bsbegghead_entrypoint_3(s32 arg0);
+BsScript _bsbegghead_entrypoint_3(BsScriptType);
 
 #endif // __BS_BEGGHEAD__

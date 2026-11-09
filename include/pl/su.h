@@ -8,6 +8,6 @@
 s32 _plsu_entrypoint_0(f32*, u32*);
 s32 _character_findCharOfTransform(TransformationId);
 s32 _character_soloCharactersExist();
-s32 _plsu_entrypoint_3(Unk80132ED0*);
+s32 _plsu_entrypoint_3(ActorMarker*);
 
 #endif // __PL_SU_H__

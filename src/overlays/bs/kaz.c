@@ -25,15 +25,15 @@ void bskaz_entrypoint_2(PlayerState *self) {
 
 BanjoStateId bskaz_entrypoint_3(PlayerState *self) {
     if (player_wearingSpringyStep(self) != 0) {
-        return BS_STATE_186;
+        return BS_STATE_186_KAZ_SPRINGY_LAUNCH;
     }
     
     if (player_canFly(self) != 0) {
-        return BS_STATE_161;
+        return BS_STATE_161_KAZ_FLIGHT_LAUNCH;
     }
     
     if ((bakey_held(self, BUTTON_Z) != 0) && (ability_getValue(ABILITY_24_LEG_SPRING) != 0)) {
-        return BS_STATE_C6;
+        return BS_STATE_C6_LEG_SPRING;
     }
     
     return BS_STATE_BD_KAZ_JUMP;
@@ -42,8 +42,8 @@ BanjoStateId bskaz_entrypoint_3(PlayerState *self) {
 
 BanjoStateId bskaz_entrypoint_4(PlayerState *self) {
     if (bs_getDragonKazooieState() != 0) {
-        return BS_STATE_18B;
+        return BS_STATE_18B_KAZ_FLAMETHOWER;
     }
 
-    return BS_STATE_C2;
+    return BS_STATE_C2_WING_WHACK_FROM_STILL;
 }

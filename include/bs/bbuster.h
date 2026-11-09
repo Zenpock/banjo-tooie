@@ -34,5 +34,6 @@ void bsbbuster_end(PlayerState *self);
 void bsbbuster_init(PlayerState *self);
 void bsbbuster_update(PlayerState *self);
 BsScript bsbbuster_entrypoint_0(BsScriptType type);
+BsScript _bsbbuster_entrypoint_0(BsScriptType);
 
 #endif // __BS_BBUSTER__
