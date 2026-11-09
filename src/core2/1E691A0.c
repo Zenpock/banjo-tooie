@@ -202,7 +202,7 @@ s32 func_8008FFE8()
 
 f32 func_80090010()
 {
-    return func_800F5F24(character_getActiveIndex());
+    return character_getYaw(character_getActiveIndex());
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_80090038.s")

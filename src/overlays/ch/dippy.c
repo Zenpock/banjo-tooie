@@ -259,7 +259,7 @@ void func_80800530_chdippy(Actor* arg0)
         if ((func_80016B30(0U, 1U) == 1) && (func_800F4BB8(sp2C, -1U, 0) != 0))
         {
             func_8010D254(sp20);
-            if (func_800F20BC(func_800F5F24(sp2C), func_800F1DF4(sp20, arg0->position), 60.0f) == 0)
+            if (func_800F20BC(character_getYaw(sp2C), func_800F1DF4(sp20, arg0->position), 60.0f) == 0)
             {
                 func_800F5FE0((s32)sp2C);
                 return;

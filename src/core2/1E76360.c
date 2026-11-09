@@ -461,7 +461,7 @@ void (*func_8009CB44(PlayerState* arg0, BanjoStateId arg1))(PlayerState*)
     return NULL;
 }
 
-void (*func_8009CB90(PlayerState* self, BanjoStateId arg1))(PlayerState*)
+void (*bs_getStateUpdateFunc(PlayerState* self, BanjoStateId arg1))(PlayerState*)
 {
     BsScript(*temp_v0)(BsScriptType);
 

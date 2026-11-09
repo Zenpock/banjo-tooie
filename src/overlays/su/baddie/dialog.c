@@ -516,7 +516,7 @@ s32 func_8080110C_subaddiedialog(f32* arg0, s32 arg1, s32 arg2)
     f32 sp24;
     func_8010D254(sp2C);
     sp24 = func_800F1DF4(sp2C, arg0);
-    return mlAbsF(func_800F1DCC(func_800F5F24(character_getActiveIndex()), sp24)) < (f32)arg2;
+    return mlAbsF(func_800F1DCC(character_getYaw(character_getActiveIndex()), sp24)) < (f32)arg2;
 }
 
 s32 func_8080118C_subaddiedialog(f32* arg0, s32 arg1, s32 arg2, s32 arg3)

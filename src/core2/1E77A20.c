@@ -199,13 +199,13 @@ void func_8009E830(PlayerState* self, s32 arg1) {
     self->state->unkE = arg1;
 }
 
-void func_8009E83C(PlayerState* arg0)
+void bs_stateUpdate(PlayerState* self)
 {
-	void (*temp_v0)(PlayerState*);
+	void (*updateFunc)(PlayerState*);
 
-	temp_v0 = func_8009CB90(arg0, arg0->state->current);
-	if (temp_v0 != NULL)
+	updateFunc = bs_getStateUpdateFunc(self, self->state->current);
+	if (updateFunc != NULL)
 	{
-		temp_v0(arg0);
+		updateFunc(self);
 	}
 }

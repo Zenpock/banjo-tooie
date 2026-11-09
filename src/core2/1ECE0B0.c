@@ -629,14 +629,14 @@ void func_800F5C94(s32 arg0)
     func_800F3ED0(D_80135490.unk0[arg0]);
 }
 
-void func_800F5CC0(s32 arg0)
+f32 character_bastickGetAngle(s32 arg0)
 {
-    bastick_getAngle(D_80135490.unk0[arg0]);
+    return bastick_getAngle(D_80135490.unk0[arg0]);
 }
 
-void func_800F5CEC(s32 arg0)
+f32 character_bastickGetDistance(s32 arg0)
 {
-    bastick_distance(D_80135490.unk0[arg0]);
+    return bastick_distance(D_80135490.unk0[arg0]);
 }
 
 s32 func_800F5D18(s32 arg0)
@@ -699,17 +699,17 @@ s32 func_800F5EF8(s32 arg0)
     return func_800A4C88(D_80135490.unk0[arg0]);
 }
 
-f32 func_800F5F24(u32 arg0)
+f32 character_getYaw(u32 arg0)
 {
     return yaw_get(D_80135490.unk0[arg0]);
 }
 
-f32 func_800F5F50(s32 arg0)
+f32 character_getYawIdeal(s32 arg0)
 {
     return yaw_getIdeal(D_80135490.unk0[arg0]);
 }
 
-f32 func_800F5F7C(s32 charIndex)
+f32 character_getCoordVertical(s32 charIndex)
 {
     return player_getCoordVertical(D_80135490.unk0[charIndex]);
 }
