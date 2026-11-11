@@ -8,10 +8,11 @@ void string_concat(char*, char*);
 void string_concatChar(char*, char);
 void func_800E6A90(char*, char*);
 void func_800E6AFC(char*, char);
-s32 func_800E6B7C(s32, f32);
-void func_800E6CA8(char*, f32, s32);
+s32 float_getSign(s32, f32);
+void string_FToAPrecision(char*, f32, s32);
 void string_IToA(char*, s32);
 void string_IToAPrefix(char*, s32, char, s32);
+void func_800E6FEC(char* arg0, u32 arg1);
 //strcmp
 s32 string_compare(const char* str1, const char* str2);
 //Copy Text

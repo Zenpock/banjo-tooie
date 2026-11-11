@@ -248,7 +248,7 @@ void chintrotext_entrypoint_3(u32 arg0, s16 arg1, s32 arg2, s32 arg3)
         temp_v0_3 = _gldbstring_entrypoint_1(_gldbstring_entrypoint_0(NULL, arg0), arg1);
         func_80100074(temp_v0, 0U, string_length(temp_v0_3) + 1);
         string_copy(actor_getAdditionalMem(temp_v0, 0U), temp_v0_3);
-        _gldbstring_entrypoint_2(arg0);
+        _gldbstring_free(arg0);
         temp_v0_2->unk3E = arg2;
         temp_v0_2->unk3F = arg3;
     }

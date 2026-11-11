@@ -1,5 +1,7 @@
 #include "gc/newoption.h"
 
+void func_8080103C_gcnewoption(OptionState*);
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/func_80800000_gcnewoption.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/func_80800038_gcnewoption.s")
@@ -14,7 +16,7 @@ s32 func_80800070_gcnewoption(OptionState* arg0, s32 arg1) {
 
 int gcnewoption_entrypoint_2(void)
 {
-	return 0x260;
+	return sizeof(OptionState);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_3.s")
@@ -25,7 +27,14 @@ int gcnewoption_entrypoint_2(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_6.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_7.s")
+void gcnewoption_entrypoint_7(OptionState* a0)
+{
+	if ((a0->unk0 != 0xD) || (a0->unk20 != 0))
+	{
+		func_8080103C_gcnewoption(a0);
+	}
+	_gldbstring_free(a0->unk240);
+}
 
 void gcnewoption_entrypoint_8(OptionState* arg0, s32 arg1) {
 	arg0->unk2 = arg1;

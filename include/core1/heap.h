@@ -69,7 +69,7 @@ struct EmptyHeapBlock {
 #define TERMINATOR_BLOCK() \
     AS_EMPTY_BLOCK(HEAP_END())
 
-s32 func_8001A6C0(s32 arg0, s32 size);
+s32 heap_outOfMemory(s32 arg0, s32 size);
 void heap_update_empty_block(struct EmptyHeapBlock* block);
 // heap_init_empty_block
 void heap_init_empty_block(struct HeapHeader* block);

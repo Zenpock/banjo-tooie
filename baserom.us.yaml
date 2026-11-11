@@ -13551,15 +13551,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02121E00
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02121E00, c, dbstring]
-      - [0x02121F90, .rodata, dbstring]
-      - [0x02121F90, data, dbstring]
-      - [0x02121F90, bss, dbstring]
+      - [auto, c, dbstring]
   - name: gldialog_header
     dir: overlays/gldialog
     type: bin

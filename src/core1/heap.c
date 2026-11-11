@@ -10,8 +10,8 @@ void heap_merge_free_block(struct EmptyHeapBlock* block);
 extern s32 D_8003F750;
 extern s32 D_8007BF00;
 
-s32 func_8001A6C0(s32 arg0, s32 size) {
-    func_8001E5DC(5);
+s32 heap_outOfMemory(s32 arg0, s32 size) {
+    debugger_displayError(5);
     return 0;
 }
 
@@ -181,7 +181,7 @@ void* heap_alloc_sided(s32 size, s32 alloc_side) {
     struct EmptyHeapBlock* new_block;
 
     if (FIRST_BLOCK()->next_free == LAST_BLOCK()) {
-        func_8001A6C0(1, size);
+        heap_outOfMemory(1, size);
     }
 
     // Align the allocation size and prevent 0-byte allocations
@@ -193,7 +193,7 @@ void* heap_alloc_sided(s32 size, s32 alloc_side) {
     if (cur_block == NULL) {
         alloc_side = 0;
         if (func_800A9D90(size) == 0) {
-            func_8001A6C0(1, size);
+            heap_outOfMemory(1, size);
             return NULL;
         }
         cur_block = find_free_block(size, alloc_side);

@@ -255,7 +255,7 @@ void func_80800534_gcnewpause(PauseState* pauseMenu, u32 targetPage)
 			_gcnewoption_entrypoint_7(&pauseMenu->optionState);
 			break;
 		case 3: //Any Totals Page
-			_gldbstring_entrypoint_2(0x1864U);
+			_gldbstring_free(0x1864U);
 			pauseMenu->textPointer = NULL;
 			func_8080152C_gcnewpause(pauseMenu);
 			break;

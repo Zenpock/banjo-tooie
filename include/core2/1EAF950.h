@@ -32,7 +32,7 @@ typedef struct {
     u32 unk0_5 : 27; // <<  5
     u32 unk0_1 : 4;  // <<  1
     u32 unk0_0 : 1;  // <<  0
-    ModelBin* unk4;
+    ModelBin* unk4; //Can be ModelBin but also other Asset structs
     u32 id : 14;       // << 18
     u32 unk8_17 : 1;   // << 17
     u32 unk8_16 : 1;   // << 16
@@ -45,16 +45,18 @@ extern unkD_8012B800 D_8012B800[136];
 extern s16 D_8012BE62;
 
 s32 func_800D6060(s32);
-s32 func_800D6254(s32);
+s32 func_800D61B4(unkD_8012B800*);
+s32 asset_findIndex(s32);
 void func_800D62E4(s32, s32, PlayerState*);
+s32 func_800D6408(unkD_8012B800*);
 void func_800D66AC();
 //Load Asset
 void *asset_load(s32 a0);
-s32 func_800D6CEC(s16);
+s32 func_800D6CEC(s32);
 void func_800D70D0(s32);
-s32 func_800D70F8(s16, s32);
+s32 func_800D70F8(s32, s32);
 void func_800D71F4(s32);
-s32 func_800D721C(s16, s32);
+s32 func_800D721C(s32, s32);
 u8 func_800D731C(u16);
 s32 func_800D738C(s32);
 void func_800D740C();

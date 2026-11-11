@@ -8,13 +8,88 @@ extern s16 D_8012BE64;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D61B4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D6254.s")
+//Binary Search through the asset table
+s32 asset_findIndex(s32 asset_id)
+{
+    s32 temp_t6;
+    s32 upperBound;
+    s32 lowerBound;
+    s32 tempId;
+    upperBound = D_8012BE62 - 1;
+    lowerBound = 0;
+    while (upperBound >= lowerBound)
+    {
+        temp_t6 = (upperBound + lowerBound) >> 1;
+        tempId = D_8012B800[temp_t6].id;
+        if (asset_id > tempId)
+        {
+            lowerBound = temp_t6 + 1;
+        }
+        else if (asset_id < tempId)
+        {
+            upperBound = temp_t6 - 1;
+        }
+        else
+        {
+            return temp_t6;
+        }
+    }
+    return -1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D62E4.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D6378.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D6408.s")
+s32 func_800D6408(unkD_8012B800* arg0) {
+    s32 sp24;
+
+    switch (arg0->unk0_1)
+    {
+        case 6:
+        case 7:
+            if ((s32)arg0->unk0_5 + 1 < func_8001211C())
+            {
+                sp24 = func_800D56C4(arg0->unk4);
+            }
+            else
+            {
+                func_800D5E54(arg0->unk4);
+                sp24 = -1;
+            }
+            break;
+        case 2:
+            if ((s32)arg0->unk0_5 + 1 < func_8001211C())
+            {
+                sp24 = func_800D56C4(arg0->unk4);
+            }
+            else if (!arg0->unk8_17 && !arg0->unk8_16 && !(arg0->unk0_0))
+            {
+                sp24 = func_800D56C4(arg0->unk4);
+            }
+            else
+            {
+                func_800D5E54(arg0->unk4);
+                sp24 = -1;
+            }
+            if (arg0->unk8_0 != 0) {
+                func_800DBB9C(arg0->unk8_0);
+                arg0->unk8_0 = 0U;
+            }
+            break;
+        case 3:
+        case 4:
+        case 5:
+        case 8:
+        case 9:
+            sp24 = func_800D56C4(arg0->unk4);
+            break;
+        case 1:
+            break;
+    }
+    func_800D61B4(arg0);
+    return sp24;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D6550.s")
 
@@ -27,7 +102,7 @@ void* asset_load(s32 id) {
     void* sp28;
     void* sp24;
 
-    index = func_800D6254(id);
+    index = asset_findIndex(id);
     // If the asset is already loaded, return it.
     if (index != -1) {
         D_8011B910 = index;
@@ -128,7 +203,21 @@ void* asset_load(s32 id) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D6C64.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D6CEC.s")
+s32 func_800D6CEC(s32 asset_id)
+{
+    s32 temp_v0;
+
+    temp_v0 = asset_findIndex(asset_id);
+    if (temp_v0 != -1)
+    {
+        if ((D_8012B800[temp_v0].unk8_12) != 0)
+        {
+            return 1;
+        }
+        return func_800D6408(&D_8012B800[temp_v0]);
+    }
+    return 2;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D6D68.s")
 
