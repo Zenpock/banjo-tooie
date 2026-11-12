@@ -416,7 +416,7 @@ s32 character_getMaxHealth(s32 arg0)
     return player_getMaxHealth(D_80135490.unk0[arg0]);
 }
 
-Unk80132ED0* func_800F55D0(s32 arg0)
+ActorMarker* func_800F55D0(s32 arg0)
 {
     return func_800965D4(D_80135490.unk0[arg0]);
 }
@@ -446,13 +446,13 @@ s32 func_800F56AC(s32 arg0)
     return func_80096694(D_80135490.unk0[arg0]);
 }
 
-Unk80132ED0* func_800F56D8(s32 arg0)
+ActorMarker* func_800F56D8(s32 arg0)
 {
     return _bahold_entrypoint_5(D_80135490.unk0[arg0]);
 }
 
 u32 func_800F5704(s32 arg0) {
-    Unk80132ED0* temp;
+    ActorMarker* temp;
 
     temp = _bahold_entrypoint_5(D_80135490.unk0[arg0]);
     if (temp != NULL) {
@@ -462,7 +462,7 @@ u32 func_800F5704(s32 arg0) {
 }
 
 u32 func_800F5754(s32 arg0) {
-    Unk80132ED0* temp;
+    ActorMarker* temp;
 
     temp = _bahold_entrypoint_5(D_80135490.unk0[arg0]);
     if (temp != NULL) {
@@ -629,14 +629,14 @@ void func_800F5C94(s32 arg0)
     func_800F3ED0(D_80135490.unk0[arg0]);
 }
 
-void func_800F5CC0(s32 arg0)
+f32 character_bastickGetAngle(s32 arg0)
 {
-    bastick_getAngle(D_80135490.unk0[arg0]);
+    return bastick_getAngle(D_80135490.unk0[arg0]);
 }
 
-void func_800F5CEC(s32 arg0)
+f32 character_bastickGetDistance(s32 arg0)
 {
-    bastick_distance(D_80135490.unk0[arg0]);
+    return bastick_distance(D_80135490.unk0[arg0]);
 }
 
 s32 func_800F5D18(s32 arg0)
@@ -699,17 +699,17 @@ s32 func_800F5EF8(s32 arg0)
     return func_800A4C88(D_80135490.unk0[arg0]);
 }
 
-f32 func_800F5F24(u32 arg0)
+f32 character_getYaw(u32 arg0)
 {
     return yaw_get(D_80135490.unk0[arg0]);
 }
 
-f32 func_800F5F50(s32 arg0)
+f32 character_getYawIdeal(s32 arg0)
 {
     return yaw_getIdeal(D_80135490.unk0[arg0]);
 }
 
-f32 func_800F5F7C(s32 charIndex)
+f32 character_getCoordVertical(s32 charIndex)
 {
     return player_getCoordVertical(D_80135490.unk0[charIndex]);
 }
@@ -1337,7 +1337,7 @@ void func_800F7664(u32 arg0, s32 arg1, s32 arg2) {
     func_8009E7C8(sp1C, 0x7D);
 }
 
-s32 func_800F76B0(s32 arg0, s32 arg1, Unk80132ED0* arg2) {
+s32 func_800F76B0(s32 arg0, s32 arg1, ActorMarker* arg2) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
@@ -1384,7 +1384,7 @@ void func_800F7844(s32 arg0, s32 arg1, f32 arg2, f32 arg3) {
     func_800F7750(arg0, arg1, arg2, arg3, 0);
 }
 
-s32 func_800F7874(s32 arg0, Unk80132ED0* arg1, f32* arg2) {
+s32 func_800F7874(s32 arg0, ActorMarker* arg1, f32* arg2) {
     PlayerState* sp1C;
     sp1C = D_80135490.unk0[arg0];
     func_8009AD44(sp1C, arg2);
@@ -1421,7 +1421,7 @@ s32 func_800F798C(s32 arg0, s32 arg1, s32 arg2) {
     return func_8009E7C8(sp1C, 0x1F) == 2;
 }
 
-s32 func_800F79DC(s32 arg0, s32 arg1, Unk80132ED0* arg2) {
+s32 func_800F79DC(s32 arg0, s32 arg1, ActorMarker* arg2) {
     PlayerState* sp1C;
     sp1C = D_80135490.unk0[arg0];
     func_8009AD20(sp1C, arg1);
@@ -1471,7 +1471,7 @@ s32 func_800F7B9C(s32 arg0,u32 a1)
 }
 
 
-void func_800F7BC8(s32 arg0, s32 arg1, Unk80132ED0* arg2) {
+void func_800F7BC8(s32 arg0, s32 arg1, ActorMarker* arg2) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
@@ -1532,7 +1532,7 @@ void func_800F7D90(s32 arg0, s32 arg1, f32* arg2, s32 arg3) {
     func_8009E7C8(sp1C, arg1);
 }
 
-s32 func_800F7DE8(s32 arg0, Unk80132ED0* arg1, s32 arg2) {
+s32 func_800F7DE8(s32 arg0, ActorMarker* arg1, s32 arg2) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];

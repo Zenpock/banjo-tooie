@@ -586,6 +586,8 @@ segments:
       - [0x1EF1550, .data, overlays]
       - [0x1EF1560, .data, baanim]
       - [0x1EF1590, data]
+      - [0x1EF1820, .data, 1E76360]
+      - [0x1EF2AF0, data]
       - [0x1EF5280, .data, 1EB3750]
       - [0x1EF5290, data]
       - [0x1EFE380, rodata]
@@ -13520,15 +13522,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02121E00
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02121E00, c, dbstring]
-      - [0x02121F90, .rodata, dbstring]
-      - [0x02121F90, data, dbstring]
-      - [0x02121F90, bss, dbstring]
+      - [auto, c, dbstring]
   - name: gldialog_header
     dir: overlays/gldialog
     type: bin

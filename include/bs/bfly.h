@@ -56,7 +56,7 @@
 #include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
 #include "core2/1ECB9F0.h"
-
+#include "bs.h"
 // Code
 void func_80800000_bsbfly(PlayerState*);
 void func_808000AC_bsbfly(PlayerState*);
@@ -66,11 +66,13 @@ void func_80800248_bsbfly(PlayerState*);
 void func_80800320_bsbfly(PlayerState*);
 void func_808003E0_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_0(s32);
+BsScript _bsbfly_entrypoint_0(BsScriptType);
 void func_8080042C_bsbfly(PlayerState*);
 void func_80800454_bsbfly(PlayerState*);
 void func_8080050C_bsbfly(PlayerState*);
 void func_80800624_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_1(s32);
+BsScript _bsbfly_entrypoint_1(BsScriptType);
 void func_808009D0_bsbfly(PlayerState*);
 void func_80800A24_bsbfly(PlayerState*, s32);
 void func_80800C38_bsbfly(PlayerState*);
@@ -79,36 +81,43 @@ s32 func_80800D80_bsbfly(PlayerState*, s32);
 void func_80800F10_bsbfly(PlayerState*);
 void func_80801138_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_2(s32);
+BsScript _bsbfly_entrypoint_2(BsScriptType);
 void func_80801178_bsbfly(PlayerState*);
 void func_80801208_bsbfly(PlayerState*);
 void func_80801334_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_3(s32);
+BsScript _bsbfly_entrypoint_3(BsScriptType);
 void func_8080145C_bsbfly(PlayerState*);
 void func_808014E8_bsbfly(PlayerState*);
 void func_808015C4_bsbfly(PlayerState*);
 void func_808016B4_bsbfly(PlayerState*);
 void func_8080183C_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_4(s32);
+BsScript _bsbfly_entrypoint_4(BsScriptType);
 void func_8080188C_bsbfly(PlayerState*);
 void func_808018D0_bsbfly(PlayerState*);
 void func_808018F4_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_5(s32);
+BsScript _bsbfly_entrypoint_5(BsScriptType);
 void func_8080193C_bsbfly(PlayerState*);
 void func_80801980_bsbfly(PlayerState*);
 void func_808019A4_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_6(s32);
+BsScript _bsbfly_entrypoint_6(BsScriptType);
 void func_808019EC_bsbfly(PlayerState*);
 void func_80801A1C_bsbfly(PlayerState*);
 void func_80801A44_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_7(s32);
+BsScript _bsbfly_entrypoint_7(BsScriptType);
 void func_80801A80_bsbfly(PlayerState*);
 void func_80801AEC_bsbfly(PlayerState*);
 void func_80801B80_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_8(s32);
+BsScript _bsbfly_entrypoint_8(BsScriptType);
 void func_80801BB4_bsbfly(PlayerState*);
 void func_80801C58_bsbfly(PlayerState*);
 void func_80801C9C_bsbfly(PlayerState*);
 void func_80801CBC_bsbfly(PlayerState*);
 s32 bsbfly_entrypoint_9(s32);
-
+BsScript _bsbfly_entrypoint_9(BsScriptType);
 #endif // __BS_BFLY_H__

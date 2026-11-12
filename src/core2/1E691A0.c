@@ -135,7 +135,7 @@ s32 func_8008FDC4()
     return func_800F55FC(character_getActiveIndex());
 }
 
-Unk80132ED0* func_8008FDEC()
+ActorMarker* func_8008FDEC()
 {
     return func_800F56D8(character_getActiveIndex());
 }
@@ -202,7 +202,7 @@ s32 func_8008FFE8()
 
 f32 func_80090010()
 {
-    return func_800F5F24(character_getActiveIndex());
+    return character_getYaw(character_getActiveIndex());
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_80090038.s")
@@ -317,7 +317,7 @@ void func_800904C8(s32 arg0)
     func_800F7B9C(character_getActiveIndex(),arg0);
 }
 
-void func_800904F4(s32 arg0, Unk80132ED0* arg1)
+void func_800904F4(s32 arg0, ActorMarker* arg1)
 {
     func_800F7BC8(character_getActiveIndex(),arg0,arg1);
 }

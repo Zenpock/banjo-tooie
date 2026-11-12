@@ -21,7 +21,7 @@
 void _bsclaw_entrypoint_0(PlayerState* arg0);
 void _bsclaw_entrypoint_1(PlayerState* arg0);
 void _bsclaw_entrypoint_2(PlayerState* arg0);
-// bsclaw_entrypoint_3
+BsScript _bsclaw_entrypoint_3(BsScriptType);
 
 
 

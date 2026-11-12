@@ -11,7 +11,7 @@ typedef struct
 void func_808005EC_chdinofamilymother(Actor*, s32);
 void func_808008E4_chdinofamilymother(Actor*);
 void func_8080096C_chdinofamilymother(Actor*);
-void func_80801118_chdinofamilymother(Actor*, Unk80132ED0*, s32, s32);
+void func_80801118_chdinofamilymother(Actor*, ActorMarker*, s32, s32);
 void func_8080119C_chdinofamilymother(Actor*, s32, s32, s32);
 void func_80801228_chdinofamilymother(Actor*);
 extern unkDinoFamilyMother D_80801344_chdinofamilymother[];
@@ -282,7 +282,7 @@ void func_8080096C_chdinofamilymother(Actor* arg0)
     }
 }
 
-void func_80801118_chdinofamilymother(Actor* arg0, Unk80132ED0* arg1, s32 arg2, s32 arg3)
+void func_80801118_chdinofamilymother(Actor* arg0, ActorMarker* arg1, s32 arg2, s32 arg3)
 {
     switch (arg0->actorData[7])
     {

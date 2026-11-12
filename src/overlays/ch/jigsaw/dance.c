@@ -186,7 +186,7 @@ ActorData* chjigsawdance_entrypoint_0(void)
     return &NewItem_chmoveitem;
 }
 
-Unk80132ED0* chjigsawdance_entrypoint_1(s32 arg0, f32* arg1, s32 spawnStyle, u16* arg3)
+ActorMarker* chjigsawdance_entrypoint_1(s32 arg0, f32* arg1, s32 spawnStyle, u16* arg3)
 {
     s32 itemType;
     s32 itemFlag;

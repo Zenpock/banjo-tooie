@@ -107,7 +107,7 @@ void func_80800110_chpickups(Actor* arg0)
     }
 }
 
-void func_808001A0_chpickups(Unk80132ED0* arg0, f32* arg1)
+void func_808001A0_chpickups(ActorMarker* arg0, f32* arg1)
 {
     Actor* temp_s0;
     s32 sp50[3];

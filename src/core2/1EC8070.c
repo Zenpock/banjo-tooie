@@ -479,17 +479,18 @@ void ml_vec3i_assign_value(s32* dst, s32 arg1, s32 arg2, s32 arg3)
 	dst[2] = arg3;
 }
 
-void func_800EFA98(f32* arg0, f32* arg1, f32 arg2)
+//ml_vec3f_getVectorOfMagnitude
+void ml_vec3f_getVectorOfMagnitude(f32* dst, f32* src, f32 newlength)
 {
-    f32 temp_f14;
+    f32 length_sq;
 
-    temp_f14 = arg1[0] * arg1[0] + arg1[1] * arg1[1] + arg1[2] * arg1[2];
-    if (temp_f14 != 0.0f)
+	length_sq = SQ(src[0])+ SQ(src[1]) + SQ(src[2]);
+    if (length_sq != 0.0f)
     {
-        ml_getScaledVec3f(arg0, arg1, arg2 / sqrtf(temp_f14));
+        ml_getScaledVec3f(dst, src, newlength / sqrtf(length_sq));
         return;
     }
-    ml_vec3f_copy(arg0, arg1);
+    ml_vec3f_copy(dst, src);
 }
 
 //ml_getdiff_vec3f

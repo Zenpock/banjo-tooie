@@ -3,9 +3,10 @@
 
 #include "common.h"
 #include "gl/dialog.h"
+#include "core2/1EAF950.h"
 
-u32 *_gldbstring_entrypoint_0(u32* TextAddress, u32 a1);
-char *_gldbstring_entrypoint_1(u32* TextAddress, s16 index);
-void _gldbstring_entrypoint_2(s32 a0); // this may return something
+char* _gldbstring_entrypoint_0(char* TextAddress, u32 asset_id);
+char* _gldbstring_entrypoint_1(char* TextAddress, s16 index);
+void _gldbstring_free(s32 asset_id);
 
 #endif

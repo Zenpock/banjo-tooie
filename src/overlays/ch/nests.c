@@ -519,7 +519,7 @@ void func_80800144_chnests(Actor* arg0, UnkArg2ChNest* arg1) // some struct that
 
 void func_808001F0_chnests(Actor* arg0, UnkArg2ChNest* arg1)
 {
-    Unk80132ED0* sp24;
+    ActorMarker* sp24;
     s32 temp_v1;
     s16* temp_v0;
 
@@ -844,7 +844,7 @@ void func_80800BA0_chnests(Actor* arg0, s32 arg1)
 
 void func_80800BD8_chnests(Actor* arg0, s32 arg1, f32 arg2, f32 arg3)
 {
-    Unk80132ED0* temp_v0;
+    ActorMarker* temp_v0;
 
     temp_v0 = arg0->unk0;
     temp_v0->unk24_22 = arg1;

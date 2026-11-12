@@ -23,6 +23,7 @@
 #include "ba/sudie.h"
 #include "ba/timer.h"
 #include "ba/yaw.h"
+#include "bs.h"
 #include "bs/drone.h"
 #include "bs/splat.h"
 #include "ch/usefeather.h"
@@ -69,15 +70,15 @@ s32 D_80801CA8_bskazfly[];
 s32 D_80801CB8_bskazfly[];
 s32 D_80801CC8_bskazfly[];
 
-extern s32 _bskazfly_entrypoint_0(s32 idx);
-extern s32 _bskazfly_entrypoint_1(s32 idx);
-extern s32 _bskazfly_entrypoint_2(s32 idx);
-extern s32 _bskazfly_entrypoint_3(s32 idx);
-extern s32 _bskazfly_entrypoint_4(s32 idx);
-extern s32 _bskazfly_entrypoint_5(s32 idx);
-extern s32 _bskazfly_entrypoint_6(s32 idx);
-extern s32 _bskazfly_entrypoint_7(s32 idx);
-extern s32 _bskazfly_entrypoint_8(s32 idx);
-extern s32 _bskazfly_entrypoint_9(s32 idx);
+BsScript _bskazfly_entrypoint_0(BsScriptType);
+BsScript _bskazfly_entrypoint_1(BsScriptType);
+BsScript _bskazfly_entrypoint_2(BsScriptType);
+BsScript _bskazfly_entrypoint_3(BsScriptType);
+BsScript _bskazfly_entrypoint_4(BsScriptType);
+BsScript _bskazfly_entrypoint_5(BsScriptType);
+BsScript _bskazfly_entrypoint_6(BsScriptType);
+BsScript _bskazfly_entrypoint_7(BsScriptType);
+BsScript _bskazfly_entrypoint_8(BsScriptType);
+BsScript _bskazfly_entrypoint_9(BsScriptType);
 
 #endif // __BS_KAZ_FLY_H__

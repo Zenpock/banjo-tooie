@@ -99,7 +99,7 @@ void func_80109F90(s32 arg0, s32 arg1)
     if (arg1) {}
 }
 
-void func_80109FB8(Unk80132ED0* arg0, Unk80132ED0* arg1)
+void func_80109FB8(ActorMarker* arg0, ActorMarker* arg1)
 {
     func_80106790(arg1)->unk3C = arg0;
     if (arg1) {}

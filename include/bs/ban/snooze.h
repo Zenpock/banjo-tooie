@@ -31,12 +31,11 @@
 #include "player.h"
 
 #include "bs/ban/snooze.h"
-
-s32 _bsbansnooze_entrypoint_0(s32);
-s32 _bsbansnooze_entrypoint_1(s32);
-s32 _bsbansnooze_entrypoint_2(s32);
-s32 _bsbansnooze_entrypoint_3(s32);
-s32 _bsbansnooze_entrypoint_4(s32);
-s32 _bsbansnooze_entrypoint_5(s32);
+BsScript _bsbansnooze_entrypoint_0(BsScriptType);
+BsScript _bsbansnooze_entrypoint_1(BsScriptType);
+BsScript _bsbansnooze_entrypoint_2(BsScriptType);
+BsScript _bsbansnooze_entrypoint_3(BsScriptType);
+BsScript _bsbansnooze_entrypoint_4(BsScriptType);
+BsScript _bsbansnooze_entrypoint_5(BsScriptType);
 
 #endif // __BS_BAN_SNOOZE__

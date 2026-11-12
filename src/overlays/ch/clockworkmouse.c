@@ -194,7 +194,7 @@ void func_808004B0_chclockworkmouse(Actor* actor) {
     }
 }
 
-void func_80800700_chclockworkmouse(Unk80132ED0 **arg0, s32 arg1) {
+void func_80800700_chclockworkmouse(ActorMarker **arg0, s32 arg1) {
     _capod_entrypoint_2(*arg0, 0x1C, arg1 | 0x800);
 }
 
@@ -235,7 +235,7 @@ void func_8080079C_chclockworkmouse(Actor *actor, Actor *arg1, s32 arg2, s32 arg
     }
 }
 
-void func_80800850_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, Unk80132ED0 *arg3) {
+void func_80800850_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, ActorMarker *arg3) {
     Unk80100094* sp1C;
 
     sp1C = ((Unk80100094 *)actor_getAdditionalMem(actor, 0));
@@ -255,7 +255,7 @@ void func_80800850_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, Unk80132ED
     }
 }
 
-void func_808008DC_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, Unk80132ED0 *arg3) {
+void func_808008DC_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, ActorMarker *arg3) {
     Unk80100094* sp1C;
 
     sp1C = ((Unk80100094 *)actor_getAdditionalMem(actor, 0));
@@ -529,7 +529,7 @@ void func_80801240_chclockworkmouse(Actor* actor) {
             temp_f0 = func_800C7B7C(temp_s5, temp_v0->unkEC, 250.0f, 1.0f);
             temp_v0->unkEC = temp_f0;
             temp_v0->unk84[var_s3] = temp_f0;
-            func_800C7A68(temp_s5, temp_v0->unkEC, (s32)&temp_v0->unkC.vecs[var_s3]);
+            func_800C7A68(temp_s5, temp_v0->unkEC, temp_v0->unkC.vecs[var_s3].f);
             temp_v0->unkF0[var_s3] = 2U;
             temp_v0->unkAC[var_s3] = temp_v0->unkDC;
             temp_v0->unkDC += 0.0075000003f;

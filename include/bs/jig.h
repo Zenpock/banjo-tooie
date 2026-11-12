@@ -9,7 +9,6 @@
 #include "ba/physics.h"
 #include "ba/playerstate.h"
 #include "ba/yaw.h"
-#include "bs/jig.h"
 #include "bs/state.h"
 #include "ch/jigsawdance.h"
 #include "core2/1E67DA0.h"
@@ -28,17 +27,18 @@
 #include "core2/1ED4E30.h"
 #include "core2/1EDFED0.h"
 #include "core2/anctrl.h"
+#include "bs.h"
 s32 _bsjig_entrypoint_0(s32);
 void _bsjig_entrypoint_1(PlayerState*);
 void _bsjig_entrypoint_2(s32);
 void _bsjig_entrypoint_3(PlayerState*);
 void _bsjig_entrypoint_4(PlayerState*);
 void _bsjig_entrypoint_5(PlayerState*);
-s32 _bsjig_entrypoint_6(s32);
+BsScript _bsjig_entrypoint_6(BsScriptType);
 void _bsjig_entrypoint_7(PlayerState*);
 void _bsjig_entrypoint_8(PlayerState*);
 void _bsjig_entrypoint_9(PlayerState*);
 void _bsjig_entrypoint_10(PlayerState*);
-s32 _bsjig_entrypoint_11(s32);
+BsScript _bsjig_entrypoint_11(BsScriptType);
 
 #endif // __BS_JIG__

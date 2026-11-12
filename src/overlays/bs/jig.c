@@ -84,7 +84,7 @@ void bsjig_entrypoint_3(PlayerState* self)
 
 void bsjig_entrypoint_4(PlayerState* self)
 {
-    Unk80132ED0* temp_v0;
+    ActorMarker* temp_v0;
 
     temp_v0 = func_800A32F8(self);
     if (temp_v0 != NULL) {

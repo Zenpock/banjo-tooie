@@ -13,7 +13,7 @@ s32 D_808025B4_sumole[] = {0xDAB,0x0,0xDB1,0x1,0xDAD,0x2,0xDAF,0x3,0x0,0x0,0x0};
 
 extern s32 _sumole_entrypoint_21;
 s32 sumole_entrypoint_17(Actor* arg0, s16 arg1, s32 arg2, s32 arg3);
-Unk80132ED0* func_80802178_sumole(Actor* arg0);
+ActorMarker* func_80802178_sumole(Actor* arg0);
 s32 func_IsCollected(Actor*, MoveData*);
 
 s32 func_80800000_sumole(Actor* arg0, MoveData* arg1)
@@ -898,8 +898,8 @@ void sumole_entrypoint_16(Actor* arg0, s32 arg1)
 
 s32 sumole_entrypoint_17(Actor* arg0, s16 message, s32 arg2, s32 arg3)
 {
-    Unk80132ED0* temp_a3;
-    Unk80132ED0* temp_v0;
+    ActorMarker* temp_a3;
+    ActorMarker* temp_v0;
     s32 var_v1;
 
     temp_v0 = func_80802178_sumole(arg0);
@@ -1092,7 +1092,7 @@ s32 sumole_entrypoint_20(Actor* arg0, s32 arg1, s32 arg2)
     return 0;
 }
 
-Unk80132ED0* func_80802178_sumole(Actor* arg0)
+ActorMarker* func_80802178_sumole(Actor* arg0)
 {
     Actor* temp_v0;
 
@@ -1104,7 +1104,7 @@ Unk80132ED0* func_80802178_sumole(Actor* arg0)
     return 0;
 }
 
-void sumole_entrypoint_21(Unk80132ED0* arg0, s32 arg1)
+void sumole_entrypoint_21(ActorMarker* arg0, s32 arg1)
 {
     Actor* sp24;
     Actor* sp20;

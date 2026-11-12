@@ -49,7 +49,7 @@ void func_80800028_chhumba(Actor* arg0, s32 arg1, s32 arg2)
     }
 }
 
-void func_808000D4_chhumba(Actor* arg0, s32 arg1, s32 arg2, Unk80132ED0* arg3)
+void func_808000D4_chhumba(Actor* arg0, s32 arg1, s32 arg2, ActorMarker* arg3)
 {
     switch (arg0->unk74_7)
     {
@@ -64,7 +64,7 @@ void func_808000D4_chhumba(Actor* arg0, s32 arg1, s32 arg2, Unk80132ED0* arg3)
     }
 }
 
-void func_8080015C_chhumba(Actor* arg0, s32 arg1, s32 arg2, Unk80132ED0* arg3)
+void func_8080015C_chhumba(Actor* arg0, s32 arg1, s32 arg2, ActorMarker* arg3)
 {
     switch (arg0->unk74_7)
     {

@@ -11,10 +11,11 @@
 #include "bs/kaz/move.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E78BF0.h"
-
+#include "bs.h"
 extern void _bskazshoesspringjump_entrypoint_0(PlayerState *self);
 extern void _bskazshoesspringjump_entrypoint_1(PlayerState *self);
 extern void _bskazshoesspringjump_entrypoint_2(PlayerState *self);
-extern s32 _bskazshoesspringjump_entrypoint_3(s32 idx);
+BsScript _bskazshoesspringjump_entrypoint_3(BsScriptType);
+
 
 #endif // __BS_KAZ_SHOESSPRINGJUMP_H__

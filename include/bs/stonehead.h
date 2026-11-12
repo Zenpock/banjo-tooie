@@ -6,7 +6,7 @@
 #include "common.h"
 #include "player.h"
 #include "ba/playerstate.h"
-
-
+#include "bs.h"
+BsScript _bsstonehead_entrypoint_27(BsScriptType);
 
 #endif // __BS_STONEHEAD__

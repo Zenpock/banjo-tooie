@@ -167,7 +167,7 @@ void func_80800160_chmolehill(Actor* arg0)
     }
 }
 
-void chmolehill_entrypoint_0(Unk80132ED0* arg0)
+void chmolehill_entrypoint_0(ActorMarker* arg0)
 {
     Actor* sp24;
     Actor* temp_v0;
@@ -217,7 +217,7 @@ void func_8080058C_chmolehill(Actor* arg0)
 
 void chmolehill_entrypoint_1(Actor* arg0, s32 arg1)
 {
-    Unk80132ED0* temp_a0;
+    ActorMarker* temp_a0;
 
     arg0->unk79_4 = arg1;
     switch (arg0->unk79_4)

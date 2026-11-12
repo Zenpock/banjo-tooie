@@ -27,5 +27,5 @@ void _chmolehill_entrypoint_1(Actor*, s32);
 void chmolehill_entrypoint_1(Actor*, s32);
 void chmolehill_entrypoint_2(Actor*, s32);
 s32 _chmolehill_entrypoint_3(Actor*);
-void _chmolehill_entrypoint_4(Actor*, Unk80132ED0*);
+void _chmolehill_entrypoint_4(Actor*, ActorMarker*);
 #endif

@@ -30,7 +30,7 @@ void func_8001E380()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E35DD0/func_8001E578.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E35DD0/func_8001E5DC.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E35DD0/debugger_displayError.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E35DD0/func_8001E7A0.s")
 

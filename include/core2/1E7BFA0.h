@@ -54,7 +54,7 @@ TransformationId player_getTransformation(PlayerState *);
 s32 func_800A3280();
 f32 func_800A3298(PlayerState *);
 void func_800A32C4(PlayerState *, f32[3]);
-Unk80132ED0* func_800A32F8(PlayerState*);
+ActorMarker* func_800A32F8(PlayerState*);
 s32 bs_isBKTogether(PlayerState*);
 f32 func_800A3378(PlayerState*);
 f32 func_800A3394(PlayerState *);

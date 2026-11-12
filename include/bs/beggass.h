@@ -26,5 +26,6 @@ void bsbeggass_entrypoint_0(PlayerState* arg0);
 void bsbeggass_entrypoint_1(PlayerState* arg0);
 void bsbeggass_entrypoint_2(PlayerState* arg0);
 void* bsbeggass_entrypoint_3(s32 arg0);
+BsScript _bsbeggass_entrypoint_3(BsScriptType);
 
 #endif // __BS_BEGGASS__

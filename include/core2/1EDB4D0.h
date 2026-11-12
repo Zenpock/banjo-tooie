@@ -24,7 +24,7 @@ s32 func_801022E4(Actor*);
 s32 func_80102320(Actor*, f32, f32);
 //Set actor state 
 void func_80102424(Actor*, s32);
-s32 func_8010262C(Unk80132ED0*, u32);
+s32 func_8010262C(ActorMarker*, u32);
 
 typedef struct Vec3s32 {
     s32 x, y, z;

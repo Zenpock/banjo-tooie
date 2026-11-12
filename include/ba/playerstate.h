@@ -9,7 +9,7 @@
 #include "transformations.h"
 
 typedef struct ba_unknown_c_s {
-    Unk80132ED0* unk0;
+    ActorMarker* unk0;
 	s32 unk4;
     s32 unk8;
 	s32 unkC[3];
@@ -200,7 +200,7 @@ typedef struct ba_unknown_94_s {
     s32 unk1C;
     f32 unk20[3][3];
     f32 unk44[3];
-	Unk80132ED0* unk50; //Object being stood on
+	ActorMarker* unk50; //Object being stood on
 	u8 unk54;
 	u8 unk55;
 	u8 unk56;
@@ -318,7 +318,7 @@ typedef struct ba_unkA0_s {
     u8 unk3E;
     u8 unk3F;
     f32 unk40;
-    Unk80132ED0* unk44;
+    ActorMarker* unk44;
     f32 unk48;
     f32 unk4C;
     u8 unk50;
@@ -534,7 +534,7 @@ typedef struct bs_firstp_s {
     f32 unk20C;
 } BsFirstP;
 typedef struct bs_van_s {
-    Unk80132ED0* unk0;
+    ActorMarker* unk0;
     f32 unk4[3];
     s32 unk10;
 } BsVan;
@@ -596,7 +596,7 @@ typedef struct player_state_s {
     /* 0xF8 */ struct ba_yaw_s *yaw;
     u8 padFC[0x4];
     /* 0x100 */ s32* unk100;
-    u8 pad104[0x4];
+    u8 pad104[0x8];
     /* 0x10C */ ba_shoes_s* shoes;
     u8 pad110[0x4];
     /* 0x114 */ BaUnknown114* unk114;
@@ -621,12 +621,12 @@ typedef struct player_state_s {
         u8 bytes[4];
     } unk15C; // Some sort of state
     union {
-        Unk80132ED0* object; //Unk80132ED0 is an object reference of some kind
+        ActorMarker* object; //ActorMarker is an object reference of some kind
         s32 word;
         u8 bytes[4];
     } unk160;
     union {
-        Unk80132ED0* object;
+        ActorMarker* object;
         s32 word;
         u8 bytes[4];
     } unk164;

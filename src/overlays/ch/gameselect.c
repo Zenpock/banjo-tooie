@@ -48,7 +48,7 @@ typedef struct {
 extern unkD_80807DFC_GAMESELECT D_80807DFC_chgameselect[];
 
 void func_80801658_chgameselect(s32, s32);
-s32 func_80800D3C_chgameselect(Unk80132ED0*);
+s32 func_80800D3C_chgameselect(ActorMarker*);
 s32 func_80801338_chgameselect(Actor*, s32);
 s32 func_808013C8_chgameselect(Actor*, s32);
 s32 func_808014F0_chgameselect(Actor*, u8*);
@@ -446,7 +446,7 @@ void func_808027D4_chgameselect(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80802AD4_chgameselect.s")
 
-void func_80802BE8_chgameselect(Unk80132ED0* arg0)
+void func_80802BE8_chgameselect(ActorMarker* arg0)
 {
     func_808029D8_chgameselect(func_80106790(arg0));
 }

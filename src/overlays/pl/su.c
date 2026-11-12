@@ -54,7 +54,7 @@ s32 character_soloCharactersExist(void)
     return 1;
 }
 
-s32 plsu_entrypoint_3(Unk80132ED0* arg0)
+s32 plsu_entrypoint_3(ActorMarker* arg0)
 {
     s32 charIndex;
     for (charIndex = 0; charIndex < character_getMaxCharacters(); charIndex++)

@@ -22,7 +22,7 @@ s32 babee_entrypoint_0(void) {
 
 void func_80800008_babee(f32 arg0[3], f32 arg1[3], f32 arg2) {
     f32 sp24[3];
-    func_800EFA98(sp24, arg1, arg2);
+    ml_vec3f_getVectorOfMagnitude(sp24, arg1, arg2);
     ml_vec3f_add(sp24, arg0);
     func_800BBCB8(sp24, NULL, 1.0f, 1, &D_80800390_babee);
 }

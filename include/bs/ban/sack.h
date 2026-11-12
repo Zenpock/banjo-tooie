@@ -52,16 +52,16 @@
 void func_80800434_bsbansack(PlayerState*);
 // func_8080045C_bsbansack
 // func_808004B0_bsbansack
-// bsbansack_entrypoint_0
+BsScript _bsbansack_entrypoint_0(BsScriptType);
 // func_80800508_bsbansack
 // func_80800540_bsbansack
 // func_808005BC_bsbansack
-// bsbansack_entrypoint_1
+BsScript _bsbansack_entrypoint_1(BsScriptType);
 // func_80800710_bsbansack
 void func_8080077C_bsbansack(PlayerState*);
 // func_808007A4_bsbansack
 // func_80800810_bsbansack
-// bsbansack_entrypoint_2
+BsScript _bsbansack_entrypoint_2(BsScriptType);
 // func_80800A14_bsbansack
 // func_80800A78_bsbansack
 // func_80800AA4_bsbansack
@@ -69,7 +69,7 @@ void func_8080077C_bsbansack(PlayerState*);
 void func_80800D4C_bsbansack(PlayerState*);
 // func_80800D78_bsbansack
 // func_80800DAC_bsbansack
-// bsbansack_entrypoint_3
+BsScript _bsbansack_entrypoint_3(BsScriptType);
 // func_8080101C_bsbansack
 void func_80801158_bsbansack(PlayerState*);
 // func_80801178_bsbansack
@@ -89,15 +89,15 @@ void func_808015B0_bsbansack(PlayerState* self);
 void func_808015E4_bsbansack(PlayerState*);
 void func_8080160C_bsbansack(PlayerState*);
 // func_80801634_bsbansack
-// bsbansack_entrypoint_7
+BsScript _bsbansack_entrypoint_7(BsScriptType);
 // func_80801680_bsbansack
 void func_80801A04_bsbansack(PlayerState*);
 // func_80801A30_bsbansack
 // func_80801A64_bsbansack
-// bsbansack_entrypoint_8
+BsScript _bsbansack_entrypoint_8(BsScriptType);
 void func_80801CB4_bsbansack(PlayerState*);
 // func_80801CD4_bsbansack
 // func_80801D20_bsbansack
-// bsbansack_entrypoint_9
+BsScript _bsbansack_entrypoint_9(BsScriptType);
 
 #endif // __BS_BAN_SACK__

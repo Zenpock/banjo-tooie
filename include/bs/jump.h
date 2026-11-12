@@ -37,19 +37,20 @@
 // bsjump_entrypoint_0
 // bsjump_entrypoint_1
 // bsjump_entrypoint_2
-// bsjump_entrypoint_3
+BsScript _bsjump_entrypoint_3(BsScriptType);
+
 // bsjump_entrypoint_4
 // bsjump_entrypoint_5
 void bsjump_entrypoint_6(PlayerState* self);
-// bsjump_entrypoint_7
+BsScript _bsjump_entrypoint_7(BsScriptType);
 // bsjump_entrypoint_8
 // bsjump_entrypoint_9
 void bsjump_entrypoint_10(PlayerState* self);
-// bsjump_entrypoint_11
+BsScript _bsjump_entrypoint_11(BsScriptType);
 // bsjump_entrypoint_12
 // bsjump_entrypoint_13
 void bsjump_entrypoint_14(PlayerState* self);
-// bsjump_entrypoint_15
+BsScript _bsjump_entrypoint_15(BsScriptType);
 // bsjump_entrypoint_16
 // bsjump_entrypoint_17
 // bsjump_entrypoint_18

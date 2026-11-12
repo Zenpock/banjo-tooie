@@ -16,7 +16,7 @@ s32 *func_8008E4B8(PlayerState *self) {
     return self->unkC->unkC;
 }
 
-void func_8008E530(PlayerState* self, Unk80132ED0* arg1)
+void func_8008E530(PlayerState* self, ActorMarker* arg1)
 {
 	Actor* temp_v0;
 	s32 sp18;
@@ -140,7 +140,7 @@ void func_8008E6F0(PlayerState* self)
 s32 func_8008E92C(PlayerState* arg0) {
 	return arg0->unkC->unk18;
 }
-Unk80132ED0* func_8008E938(PlayerState* arg0)
+ActorMarker* func_8008E938(PlayerState* arg0)
 {
 	return arg0->unkC->unk0;
 }

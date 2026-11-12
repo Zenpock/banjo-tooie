@@ -37,7 +37,7 @@ typedef struct {
 	u8 unk1D_0 : 1;
 	u8 unk1E;
 	u8 unk1F;
-	f32 unk20;
+	s32 unk20;
 	u8 unk24;
 	u8 unk25;
 	s16 unk26;
@@ -48,7 +48,9 @@ typedef struct {
 	u8 unk34[0xB0-0x34];
 	s16 unkB0;
 	s16 unkB2;
-	u8 unkB4[0x250-0xB4];
+	u8 unkB4[0x240-0xB4];
+	s16 unk240;//Text Asset Id
+	u8 unk242[0x250 - 0x242];
 	s8 unk250;
 	s8 unk251;
 	s8 unk252;

@@ -306,7 +306,7 @@ void func_80800858_chhandcart(Actor* arg0, Actor* arg1, s32 arg2, s32 arg3)
     }
 }
 
-void func_8080090C_chhandcart(Actor* arg0, s32 arg1, s32 arg2, Unk80132ED0 *arg3)
+void func_8080090C_chhandcart(Actor* arg0, s32 arg1, s32 arg2, ActorMarker *arg3)
 {
     HandcartMemory* sp1C;
     sp1C = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
@@ -325,7 +325,7 @@ void func_8080090C_chhandcart(Actor* arg0, s32 arg1, s32 arg2, Unk80132ED0 *arg3
     }
 }
 
-void func_80800998_chhandcart(Actor* arg0, u32 arg1, u32 arg2, Unk80132ED0* arg3) {
+void func_80800998_chhandcart(Actor* arg0, u32 arg1, u32 arg2, ActorMarker* arg3) {
     HandcartMemory* sp1C;
 
     sp1C = (HandcartMemory*) actor_getAdditionalMem(arg0, 0U);
@@ -2126,7 +2126,7 @@ void func_8080436C_chhandcart(void)
 
 void chhandcart_entrypoint_1(Actor* arg0)
 {
-    func_80101F24(func_80106790((Unk80132ED0*)arg0));
+    func_80101F24(func_80106790((ActorMarker*)arg0));
 }
 
 ActorData* chhandcart_entrypoint_2(void) 

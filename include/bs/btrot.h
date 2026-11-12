@@ -51,7 +51,8 @@
 #include "core2/anctrl.h"
 #include "player.h"
 #include "ba/playerstate.h"
-
+#include "bs.h"
+BsScript _bsbtrot_entrypoint_3(BsScriptType);
 
 
 #endif // __BS_BTROT__

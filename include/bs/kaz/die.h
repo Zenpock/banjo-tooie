@@ -28,10 +28,10 @@
 #include "core2/1E7D460.h"
 #include "core2/1ECA640.h"
 #include "core2/1ECB0F0.h"
-
+#include "bs.h"
 extern void _bskazdie_entrypoint_0(PlayerState *self);
 extern void _bskazdie_entrypoint_1(PlayerState *self);
 extern void _bskazdie_entrypoint_2(PlayerState *self);
-extern s32 _bskazdie_entrypoint_3(s32 idx);
+BsScript _bskazdie_entrypoint_3(BsScriptType);
 
 #endif // __BS_KAZ_DIE_H__

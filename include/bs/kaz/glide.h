@@ -42,11 +42,10 @@ extern s32 D_80800AC0_bskazglide[];
 extern s32 D_80800AD0_bskazglide[];
 extern s32 D_80800AE0_bskazglide[];
 extern s32 D_80800AF0_bskazglide[];
-
-extern s32 _bskazglide_entrypoint_0(s32 idx);
-extern s32 _bskazglide_entrypoint_1(s32 idx);
-extern s32 _bskazglide_entrypoint_2(s32 idx);
-extern s32 _bskazglide_entrypoint_3(s32 idx);
-extern s32 _bskazglide_entrypoint_4(s32 idx);
+extern BsScript _bskazglide_entrypoint_0(BsScriptType);
+extern BsScript _bskazglide_entrypoint_1(BsScriptType);
+extern BsScript _bskazglide_entrypoint_2(BsScriptType);
+extern BsScript _bskazglide_entrypoint_3(BsScriptType);
+extern BsScript _bskazglide_entrypoint_4(BsScriptType);
 
 #endif // __BS_KAZ_GLIDE_H__

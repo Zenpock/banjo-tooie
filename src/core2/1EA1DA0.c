@@ -703,9 +703,9 @@ void func_800C9AB0(s32 arg0) {
     }
 }
 
-void func_800C9B30(Unk80132ED0* arg0, s32 arg1, s32 arg2)
+void func_800C9B30(ActorMarker* arg0, s32 arg1, s32 arg2)
 {
-    Unk80132ED0* sp1C = arg0;
+    ActorMarker* sp1C = arg0;
     s32* p2 = &arg2;
     s32* p1 = &arg1;
     s32* p0 = (s32*)&arg0;
@@ -749,7 +749,7 @@ void func_800C9C70(f32 arg0, u32 arg1, f32 arg2, u32 arg3, f32* arg4, f32 arg5, 
     func_800C9EF8(arg0, (u32*)func_800C99F0, &sp18);
 }
 
-void func_800C9CD0(f32 arg0, Unk80132ED0* arg1, u32 arg2, u32 arg3, f32* arg4, s16 arg5) {
+void func_800C9CD0(f32 arg0, ActorMarker* arg1, u32 arg2, u32 arg3, f32* arg4, s16 arg5) {
     unkStruct800C9A38 sp1C;
 
     sp1C.unk0 = arg1;

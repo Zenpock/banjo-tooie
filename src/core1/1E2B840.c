@@ -302,7 +302,7 @@ void func_8001443C(void){
         }
     }
     if (sp30) {
-        func_8001E5DC(1);
+        debugger_displayError(1);
     }
     D_80078480 = 0;
     D_8003F434++;
@@ -458,7 +458,7 @@ void func_80014A88(void *arg0){
         else if((u32)msg == SCHEDULER_EVENT_DP)          { func_800142F0(); }
         else if((u32)msg == SCHEDULER_EVENT_SP)          { func_800146D8(); }
         else if((u32)msg == SCHEDULER_EVENT_AUDIO_TIMER) { func_800148C4(); }
-        else if((u32)msg == SCHEDULER_EVENT_FAULT)       { func_8001E5DC(0); }
+        else if((u32)msg == SCHEDULER_EVENT_FAULT)       { debugger_displayError(0); }
         else if((u32)msg == SCHEDULER_EVENT_PRENMI)      { func_800149BC(); }
         else if((u32)msg == 12) { }
         else if((u32)msg == SCHEDULER_EVENT_CONT_TIMER)  { pfsManager_getStartReadData(); }

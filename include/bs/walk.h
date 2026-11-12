@@ -30,5 +30,10 @@
 #include "player.h"
 
 void _bswalk_entrypoint_1(PlayerState *self);
+BsScript _bswalk_entrypoint_5(BsScriptType);
+BsScript _bswalk_entrypoint_9(BsScriptType);
+BsScript _bswalk_entrypoint_13(BsScriptType);
+BsScript _bswalk_entrypoint_17(BsScriptType);
+BsScript _bswalk_entrypoint_21(BsScriptType);
 
 #endif // __BS_WALK_H__

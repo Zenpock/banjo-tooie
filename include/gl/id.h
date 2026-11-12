@@ -3,6 +3,6 @@
 
 #include "common.h"
 
-void _glid_entrypoint_0(s32, s32, void* , Unk80132ED0*);
+void _glid_entrypoint_0(s32, s32, void* , ActorMarker*);
 
 #endif

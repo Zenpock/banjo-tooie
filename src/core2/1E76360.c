@@ -1,33 +1,483 @@
 #include "core2/1E76360.h"
 
 typedef struct {
-    void (*unk0)(PlayerState*);
+    s16 unk0;
+    s16 unk2;
     s32 unk4;
-    s32 unk8;
+    BsScript (*unk8)(BsScriptType);
 }BSStateArray;
 
-extern BSStateArray D_80117F38[];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E76360/func_8009CA70.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E76360/func_8009CAAC.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E76360/func_8009CAF8.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E76360/func_8009CB44.s")
-
-void (*func_8009CB90(PlayerState* self, BanjoStateId arg1))(PlayerState*)
+BSStateArray D_80117F30[] =
 {
-    void (*(*temp_v0)(s32))(PlayerState*);
+    {0,0,0,0},
+    {0x0001,0x0000,0x00500000,_bsstand_entrypoint_3},
+    {0x0002,0x0000,0x00500000,_bswalk_entrypoint_9},
+    {0x0003,0x0000,0x00500000,_bswalk_entrypoint_13},
+    {0x0004,0x0000,0x00500000,_bswalk_entrypoint_17},
+    {0x0005,0x0000,0x00500000,_bsjump_entrypoint_3},
+    {0x0006,0x0000,0x00500000,_bsclaw_entrypoint_3},
+    {0x0007,0x0000,0x00508000,_bscrouch_entrypoint_3},
+    {0x0008,0x0000,0x005000C0,_bsbtrot_entrypoint_15},
+    {0x0009,0x0000,0x00180000,_bsbegghead_entrypoint_3},
+    {0x000A,0x0000,0x00180000,_bsbeggass_entrypoint_3},
+    {0x000B,0x0000,0x00000000,0x00000000},
+    {0x000C,0x0000,0x00500000,_bsturn_entrypoint_3},
+    {0x000D,0x0000,0x00500000,_bstimeout_entrypoint_7},
+    {0x000E,0x0000,0x00402000,_bsow_entrypoint_3},
+    {0x000F,0x0000,0x00500000,_bsbbuster_entrypoint_0},
+    {0x0010,0x0000,0x00500000,_bsbflap_entrypoint_3},
+    {0x0011,0x0000,0x00500000,_bsbpeck_entrypoint_3},
+    {0x0012,0x0000,0x00500000,_bsbflip_entrypoint_3},
+    {0x0013,0x0000,0x00500000,_bsbbarge_entrypoint_0},
+    {0x0014,0x0000,0x00500040,_bsbtrot_entrypoint_3},
+    {0x0015,0x0000,0x005000C0,_bsbtrot_entrypoint_7},
+    {0x0016,0x0000,0x005000C0,_bsbtrot_entrypoint_11},
+    {0x0017,0x0000,0x005000C0,_bsbtrot_entrypoint_19},
+    {0x0018,0x0009,0x00000000,_bsbfly_entrypoint_7},
+    {0x0019,0x000B,0x00100002,_bsbswim_entrypoint_2},
+    {0x001A,0x0000,0x00500000,_bsbwhirl_entrypoint_3},
+    {0x001B,0x0000,0x00500000,_bsbwhirl_entrypoint_7},
+    {0x001C,0x0000,0x00500000,_bsbwhirl_entrypoint_11},
+    {0x001D,0x0000,0x00500000,_bsbwhirl_entrypoint_15},
+    {0x001E,0x0000,0x00500000,_bsbwhirl_entrypoint_19},
+    {0x001F,0x0000,0x00501000,_bswalk_entrypoint_5},
+    {0x0020,0x0000,0x00500000,_bsstand_entrypoint_7},
+    {0x0021,0x0000,0x00100000,_bsbshock_entrypoint_3},
+    {0x0022,0x0000,0x00100000,_bsbshock_entrypoint_7},
+    {0x0023,0x0000,0x00000000,_bsbfly_entrypoint_0},
+    {0x0024,0x0009,0x00000000,_bsbfly_entrypoint_1},
+    {0x0025,0x0008,0x00000000,_bsblongleg_entrypoint_3},
+    {0x0026,0x0008,0x00000000,_bsblongleg_entrypoint_7},
+    {0x0027,0x0008,0x00000000,_bsblongleg_entrypoint_11},
+    {0x0028,0x0008,0x00000000,_bsblongleg_entrypoint_19},
+    {0x0029,0x0008,0x00000000,_bsblongleg_entrypoint_15},
+    {0x002A,0x0009,0x00000000,_bsbfly_entrypoint_2},
+    {0x002B,0x000B,0x00100002,_bsbswim_entrypoint_0},
+    {0x002C,0x000B,0x00100002,_bsbswim_entrypoint_1},
+    {0x002D,0x0000,0x00100001,_bsswim_entrypoint_0},
+    {0x002E,0x0000,0x00100001,_bsswim_entrypoint_1},
+    {0x002F,0x0000,0x00500000,_bsjump_entrypoint_7},
+    {0x0030,0x000B,0x00100002,_bsbswim_entrypoint_7},
+    {0x0031,0x0000,0x00500000,_bstwirl_entrypoint_0},
+    {0x0032,0x0015,0x00000000,_bswasher_entrypoint_9},
+    {0x0033,0x0015,0x00000000,_bswasher_entrypoint_5},
+    {0x0034,0x0000,0x00000000,_bsjig_entrypoint_11},
+    {0x0035,0x0015,0x00000000,_bswasher_entrypoint_4},
+    {0x0036,0x0015,0x00000000,_bswasher_entrypoint_3},
+    {0x0037,0x0015,0x00000000,_bswasher_entrypoint_10},
+    {0x0038,0x0015,0x00000000,_bswasher_entrypoint_11},
+    {0x0039,0x000B,0x00100002,_bsbswim_entrypoint_3},
+    {0x003A,0x0000,0x00100400,_bscarry_entrypoint_1},
+    {0x003B,0x0000,0x00100400,_bscarry_entrypoint_2},
+    {0x003C,0x0000,0x00000000,_bstalk_entrypoint_3},
+    {0x003D,0x0000,0x00000000,_bsjump_entrypoint_20},
+    {0x003E,0x0015,0x00002000,_bswasher_entrypoint_6},
+    {0x003F,0x0000,0x00000000,_bsjump_entrypoint_15},
+    {0x0040,0x0000,0x00000408,_bscarry_entrypoint_3},
+    {0x0041,0x0000,0x00000004,_bsdie_entrypoint_3},
+    {0x0042,0x0000,0x00000000,_bssilowait_entrypoint_0},
+    {0x0043,0x0015,0x00000004,_bswasher_entrypoint_1},
+    {0x0044,0x0000,0x00000000,_bsjig_entrypoint_6},
+    {0x0045,0x0000,0x001000C0,_bsbtrot_entrypoint_23},
+    {0x0046,0x000F,0x00000002,_bssub_entrypoint_5},
+    {0x0047,0x0008,0x00000000,_bskazstilt_entrypoint_3},
+    {0x0048,0x0008,0x00000000,_bskazstilt_entrypoint_7},
+    {0x0049,0x0008,0x00000000,_bskazstilt_entrypoint_11},
+    {0x004A,0x0008,0x00000000,_bskazstilt_entrypoint_19},
+    {0x004B,0x0008,0x00000000,_bskazstilt_entrypoint_15},
+    {0x004C,0x0000,0x00140002,_bsbswim_entrypoint_10},
+    {0x004D,0x0008,0x00000000,_bskazstilt_entrypoint_23},
+    {0x004E,0x0008,0x00000000,_bskazstilt_entrypoint_27},
+    {0x004F,0x000A,0x00000000,_bsclimb_entrypoint_3},
+    {0x0050,0x000A,0x00000000,_bsclimb_entrypoint_7},
+    {0x0051,0x0000,0x00000000,_bsjump_entrypoint_11},
+    {0x0052,0x0000,0x00000000,0x00000000},
+    {0x0053,0x0000,0x00000000,_bstimeout_entrypoint_3},
+    {0x0054,0x000B,0x00000002,_bsbswim_entrypoint_8},
+    {0x0055,0x0008,0x00000000,_bsblongleg_entrypoint_23},
+    {0x0056,0x0000,0x00000000,_bsrebound_entrypoint_0},
+    {0x0057,0x0009,0x00000000,_bsbfly_entrypoint_3},
+    {0x0058,0x0000,0x00000000,_bsbfly_entrypoint_4},
+    {0x0059,0x0009,0x00002000,_bsbfly_entrypoint_5},
+    {0x005A,0x0000,0x00000000,0x00000000},
+    {0x005B,0x0000,0x00000000,_bsthrow_entrypoint_3},
+    {0x005C,0x0008,0x00000008,_bskazstilt_entrypoint_31},
+    {0x005D,0x0015,0x00000008,_bswasher_entrypoint_2},
+    {0x005E,0x0013,0x00000008,_bsbanshack_entrypoint_4},
+    {0x005F,0x0013,0x00000010,_bsbanshack_entrypoint_5},
+    {0x0060,0x0014,0x00000008,_bsbansnooze_entrypoint_3},
+    {0x0061,0x0014,0x00000010,_bsbansnooze_entrypoint_4},
+    {0x0062,0x0008,0x00000010,_bsblongleg_entrypoint_27},
+    {0x0063,0x000C,0x00000008,_bstntswim_entrypoint_4},
+    {0x0064,0x000C,0x00000010,_bstntswim_entrypoint_3},
+    {0x0065,0x0000,0x00100001,_bskazpaddle_entrypoint_4},
+    {0x0066,0x0000,0x00100009,_bskazpaddle_entrypoint_5},
+    {0x0067,0x0000,0x00180000,_bskazegghead_entrypoint_3},
+    {0x0068,0x0000,0x00180000,_bskazeggass_entrypoint_3},
+    {0x0069,0x0000,0x00000000,_bssplitup_entrypoint_19},
+    {0x006A,0x0000,0x00000000,_bssplitup_entrypoint_15},
+    {0x006B,0x0001,0x00000010,_bsbeemain_entrypoint_10},
+    {0x006C,0x0000,0x00500000,_bsbanbflip_entrypoint_3},
+    {0x006D,0x000B,0x00100002,_bsbanswim_entrypoint_0},
+    {0x006E,0x0012,0x00000008,_bsbansack_entrypoint_6},
+    {0x006F,0x000E,0x00008000,_bstaxi_entrypoint_6},
+    {0x0070,0x0007,0x00000010,_bsstatue_entrypoint_5},
+    {0x0071,0x0000,0x000000C0,_bsbtrot_entrypoint_27},
+    {0x0072,0x0000,0x00000000,_bssplat_entrypoint_1},
+    {0x0073,0x0000,0x00000010,_bsrest_entrypoint_4},
+    {0x0074,0x0000,0x00000010,_bsrest_entrypoint_12},
+    {0x0075,0x0000,0x00000010,_bsrest_entrypoint_8},
+    {0x0076,0x0009,0x00000010,_bsbfly_entrypoint_8},
+    {0x0077,0x0000,0x00100011,_bsswim_entrypoint_2},
+    {0x0078,0x000B,0x00100012,_bsbswim_entrypoint_9},
+    {0x0079,0x0000,0x000000D0,_bsbtrot_entrypoint_31},
+    {0x007A,0x0000,0x00100000,_bswalk_entrypoint_21},
+    {0x007B,0x0000,0x000020C0,_bsbtrot_entrypoint_35},
+    {0x007C,0x0000,0x00002000,_bsride_entrypoint_0},
+    {0x007D,0x0012,0x00002000,_bsbansack_entrypoint_4},
+    {0x007E,0x0012,0x00000000,_bsbansack_entrypoint_5},
+    {0x007F,0x000B,0x00002002,_bsbswim_entrypoint_4},
+    {0x0080,0x0012,0x00000010,_bsbansack_entrypoint_7},
+    {0x0081,0x000B,0x00100002,_bsbanswim_entrypoint_1},
+    {0x0082,0x000B,0x00100002,_bsbanswim_entrypoint_2},
+    {0x0083,0x000F,0x00100002,_bssub_entrypoint_4},
+    {0x0084,0x000B,0x00108002,_bsbswim_entrypoint_14},
+    {0x0085,0x0001,0x00000000,_bsbeemain_entrypoint_0},
+    {0x0086,0x0001,0x00000000,_bsbeemain_entrypoint_1},
+    {0x0087,0x0001,0x00000000,_bsbeemain_entrypoint_2},
+    {0x0088,0x0001,0x00000000,_bsbeemain_entrypoint_3},
+    {0x0089,0x0001,0x00002000,_bsbeemain_entrypoint_7},
+    {0x008A,0x0001,0x00000004,_bsbeemain_entrypoint_9},
+    {0x008B,0x0001,0x00000000,_bsbeefly_entrypoint_0},
+    {0x008C,0x0001,0x00004000,_bsbeefly_entrypoint_1},
+    {0x008D,0x0001,0x00004010,_bsbeefly_entrypoint_2},
+    {0x008E,0x0015,0x00000000,_bswasher_entrypoint_7},
+    {0x008F,0x0000,0x00000090,_bskazstill_entrypoint_10},
+    {0x0090,0x000B,0x00100002,_bsbanswim_entrypoint_3},
+    {0x0091,0x0009,0x00002000,_bsbfly_entrypoint_6},
+    {0x0092,0x0015,0x00000010,_bswasher_entrypoint_8},
+    {0x0093,0x0000,0x00100088,_bskazstill_entrypoint_9},
+    {0x0094,0x0000,0x00002020,_bsbabykaz_entrypoint_12},
+    {0x0095,0x0000,0x001000C0,_bsbtrot_entrypoint_47},
+    {0x0096,0x0000,0x00100009,_bsswim_entrypoint_3},
+    {0x0097,0x000B,0x0010000A,_bsbswim_entrypoint_11},
+    {0x0098,0x0000,0x00100008,_bsstand_entrypoint_12},
+    {0x0099,0x0009,0x00000008,_bsbfly_entrypoint_9},
+    {0x009A,0x0000,0x000000C8,_bsbtrot_entrypoint_39},
+    {0x009B,0x0008,0x00000008,_bsblongleg_entrypoint_31},
+    {0x009C,0x0000,0x001000C0,_bsbtrot_entrypoint_43},
+    {0x009D,0x0001,0x00000008,_bsbeemain_entrypoint_11},
+    {0x009E,0x000A,0x00000010,_bsclimb_entrypoint_11},
+    {0x009F,0x0000,0x00001400,_bscarry_entrypoint_0},
+    {0x00A0,0x0000,0x00000400,_bscarry_entrypoint_4},
+    {0x00A1,0x0005,0x00020020,_bsfirstp_entrypoint_31},
+    {0x00A2,0x000B,0x00000002,_bsbswim_entrypoint_6},
+    {0x00A3,0x0001,0x00000000,_bsbeemain_entrypoint_8},
+    {0x00A4,0x0000,0x00000008,_bsbwhirl_entrypoint_23},
+    {0x00A5,0x0000,0x00000010,_bsbwhirl_entrypoint_27},
+    {0x00A6,0x0002,0x00000000,_bsledge_entrypoint_4},
+    {0x00A7,0x0002,0x00000000,_bsledge_entrypoint_3},
+    {0x00A8,0x0002,0x00000000,_bsledge_entrypoint_2},
+    {0x00A9,0x0002,0x00000000,_bsledge_entrypoint_0},
+    {0x00AA,0x0002,0x00000000,_bsledge_entrypoint_1},
+    {0x00AB,0x0003,0x00000004,_bsstonehead_entrypoint_7},
+    {0x00AC,0x0003,0x00100008,_bsstonehead_entrypoint_11},
+    {0x00AD,0x0003,0x00100000,_bsstonehead_entrypoint_15},
+    {0x00AE,0x0003,0x00100000,_bsstonehead_entrypoint_19},
+    {0x00AF,0x0003,0x00002000,_bsstonehead_entrypoint_27},
+    {0x00B0,0x0003,0x00000000,_bsstonehead_entrypoint_31},
+    {0x00B1,0x0003,0x00000010,_bsstonehead_entrypoint_35},
+    {0x00B2,0x0003,0x00100000,_bsstonehead_entrypoint_23},
+    {0x00B3,0x0003,0x00100000,_bsstonehead_entrypoint_43},
+    {0x00B4,0x0003,0x00100000,_bsstonehead_entrypoint_3},
+    {0x00B5,0x0003,0x00100000,_bsstonehead_entrypoint_39},
+    {0x00B6,0x0000,0x00100000,_bsbbilldrill_entrypoint_3},
+    {0x00B7,0x0000,0x00000000,_bsride_entrypoint_2},
+    {0x00B8,0x0000,0x00000000,_bssplitup_entrypoint_11},
+    {0x00B9,0x0000,0x00000000,_bssplitup_entrypoint_3},
+    {0x00BA,0x0000,0x00000000,_bssplitup_entrypoint_7},
+    {0x00BB,0x0000,0x00500080,_bskazstill_entrypoint_3},
+    {0x00BC,0x0000,0x00500080,_bskazmove_entrypoint_4},
+    {0x00BD,0x0000,0x00500080,_bskazjump_entrypoint_3},
+    {0x00BE,0x0000,0x00400200,_bskazglide_entrypoint_0},
+    {0x00BF,0x000B,0x00000002,_bsbswim_entrypoint_5},
+    {0x00C0,0x0001,0x00004000,_bsbeefly_entrypoint_3},
+    {0x00C1,0x0000,0x00100000,_bskazshock_entrypoint_8},
+    {0x00C2,0x0000,0x00500000,_bskazwingwhack_entrypoint_1},
+    {0x00C3,0x0000,0x00100000,_bskazshock_entrypoint_4},
+    {0x00C4,0x0000,0x00100000,_bskazwingwhack_entrypoint_0},
+    {0x00C5,0x0000,0x00008000,_bskazhatch_entrypoint_0},
+    {0x00C6,0x0000,0x00500000,_bskazspring_entrypoint_0},
+    {0x00C7,0x0000,0x00500080,_bskazmove_entrypoint_10},
+    {0x00C8,0x0005,0x00000000,_bsfirstp_entrypoint_19},
+    {0x00C9,0x0005,0x00000000,_bsfirstp_entrypoint_22},
+    {0x00CA,0x0005,0x00010000,_bsfirstp_entrypoint_35},
+    {0x00CB,0x0005,0x00000000,_bsfirstp_entrypoint_20},
+    {0x00CC,0x0005,0x00000000,_bsfirstp_entrypoint_21},
+    {0x00CD,0x0005,0x00000008,_bsfirstp_entrypoint_23},
+    {0x00CE,0x0005,0x00000008,_bsfirstp_entrypoint_24},
+    {0x00CF,0x0005,0x00000000,_bsfirstp_entrypoint_32},
+    {0x00D0,0x0005,0x00000000,_bsfirstp_entrypoint_33},
+    {0x00D1,0x0005,0x00010000,_bsfirstp_entrypoint_36},
+    {0x00D2,0x0005,0x00000000,_bsfirstp_entrypoint_34},
+    {0x00D3,0x0000,0x00000000,0x00000000},
+    {0x00D4,0x0000,0x00000000,0x00000000},
+    {0x00D5,0x0000,0x00000000,0x00000000},
+    {0x00D6,0x0005,0x00010000,_bsfirstp_entrypoint_8},
+    {0x00D7,0x0005,0x00020000,_bsfirstp_entrypoint_29},
+    {0x00D8,0x0005,0x00010000,_bsfirstp_entrypoint_9},
+    {0x00D9,0x0005,0x00000000,_bsfirstp_entrypoint_11},
+    {0x00DA,0x0005,0x00000000,_bsfirstp_entrypoint_15},
+    {0x00DB,0x0005,0x00000004,_bsfirstp_entrypoint_16},
+    {0x00DC,0x0005,0x00000004,_bsfirstp_entrypoint_17},
+    {0x00DD,0x0000,0x00508000,_bskazcrouch_entrypoint_4},
+    {0x00DE,0x0000,0x00500080,_bskazstill_entrypoint_8},
+    {0x00DF,0x0000,0x00000080,_bskazjump_entrypoint_7},
+    {0x00E0,0x0000,0x00000000,_bskazjump_entrypoint_15},
+    {0x00E1,0x0000,0x00000000,_bskazjump_entrypoint_11},
+    {0x00E2,0x0000,0x00000000,0x00000000},
+    {0x00E3,0x0000,0x00000000,0x00000000},
+    {0x00E4,0x0000,0x00000000,_bsbanpackwhack_entrypoint_3},
+    {0x00E5,0x0006,0x00500000,_bsmumstill_entrypoint_1},
+    {0x00E6,0x0006,0x00500000,_bsmummove_entrypoint_4},
+    {0x00E7,0x0006,0x00500000,_bsmummove_entrypoint_3},
+    {0x00E8,0x0006,0x00500000,_bsmum_entrypoint_6},
+    {0x00E9,0x0006,0x00500000,_bsmum_entrypoint_5},
+    {0x00EA,0x0006,0x00402000,_bsmum_entrypoint_7},
+    {0x00EB,0x0006,0x00000004,_bsmum_entrypoint_3},
+    {0x00EC,0x0006,0x00400000,_bsmum_entrypoint_11},
+    {0x00ED,0x000B,0x00008102,_bsbswim_entrypoint_13},
+    {0x00EE,0x0006,0x00000000,_bsmum_entrypoint_14},
+    {0x00EF,0x0006,0x00500000,_bsmumstill_entrypoint_0},
+    {0x00F0,0x0006,0x00100001,_bsmumswim_entrypoint_4},
+    {0x00F1,0x0006,0x00100001,_bsmumswim_entrypoint_5},
+    {0x00F2,0x0006,0x00100011,_bsmumswim_entrypoint_6},
+    {0x00F3,0x0006,0x00100009,_bsmumswim_entrypoint_7},
+    {0x00F4,0x0006,0x00140002,_bsmumswim_entrypoint_3},
+    {0x00F5,0x0006,0x00100008,_bsmum_entrypoint_4},
+    {0x00F6,0x0006,0x00000010,_bsmum_entrypoint_12},
+    {0x00F7,0x0006,0x00500000,_bsmumattack_entrypoint_0},
+    {0x00F8,0x0007,0x00000000,_bsstatue_entrypoint_7},
+    {0x00F9,0x0007,0x00000000,_bsstatue_entrypoint_8},
+    {0x00FA,0x0007,0x00000000,_bsstatue_entrypoint_9},
+    {0x00FB,0x0007,0x00000000,_bsstatue_entrypoint_3},
+    {0x00FC,0x0007,0x00000000,_bsstatue_entrypoint_4},
+    {0x00FD,0x0007,0x00000000,_bsstatue_entrypoint_6},
+    {0x00FE,0x0007,0x00000008,_bsstatue_entrypoint_2},
+    {0x00FF,0x0006,0x00000000,_bsmumsplat_entrypoint_0},
+    {0x0100,0x0000,0x00002080,_bskazow_entrypoint_0},
+    {0x0101,0x0000,0x00000004,_bskazdie_entrypoint_3},
+    {0x0102,0x0000,0x00000004,_bsdie_entrypoint_7},
+    {0x0103,0x0000,0x00000004,_bsdie_entrypoint_11},
+    {0x0104,0x000C,0x00000004,_bstnt_entrypoint_5},
+    {0x0105,0x000C,0x00000008,_bstnt_entrypoint_6},
+    {0x0106,0x000C,0x00000000,_bstnt_entrypoint_7},
+    {0x0107,0x000C,0x00000000,_bstnt_entrypoint_9},
+    {0x0108,0x000C,0x00000000,_bstnt_entrypoint_11},
+    {0x0109,0x000C,0x00002000,_bstnt_entrypoint_12},
+    {0x010A,0x000C,0x00000000,_bstnt_entrypoint_13},
+    {0x010B,0x000C,0x00000010,_bstnt_entrypoint_14},
+    {0x010C,0x000C,0x00000000,_bstnt_entrypoint_15},
+    {0x010D,0x000C,0x00000000,_bstnt_entrypoint_1},
+    {0x010E,0x000C,0x00000000,_bstnt_entrypoint_0},
+    {0x010F,0x000C,0x00100001,_bstntswim_entrypoint_1},
+    {0x0110,0x000C,0x00100001,_bstntswim_entrypoint_2},
+    {0x0111,0x000C,0x00140002,_bstntswim_entrypoint_0},
+    {0x0112,0x000D,0x00000004,_bsvan_entrypoint_4},
+    {0x0113,0x000D,0x00000008,_bsvan_entrypoint_5},
+    {0x0114,0x000D,0x00000000,_bsvan_entrypoint_6},
+    {0x0115,0x000D,0x00000000,_bsvan_entrypoint_7},
+    {0x0116,0x000D,0x00000000,_bsvan_entrypoint_10},
+    {0x0117,0x000D,0x00002000,_bsvan_entrypoint_11},
+    {0x0118,0x000D,0x00000000,_bsvan_entrypoint_12},
+    {0x0119,0x000D,0x00000010,_bsvan_entrypoint_13},
+    {0x011A,0x000D,0x00000000,_bsvan_entrypoint_14},
+    {0x011B,0x000D,0x00000001,_bsvanswim_entrypoint_1},
+    {0x011C,0x000D,0x00000001,_bsvanswim_entrypoint_2},
+    {0x011D,0x000D,0x00040002,_bsvanswim_entrypoint_0},
+    {0x011E,0x0006,0x00000000,_bsmumcast_entrypoint_4},
+    {0x011F,0x0000,0x00000000,_bscrashout_entrypoint_3},
+    {0x0120,0x0000,0x00000004,_bschokedie_entrypoint_3},
+    {0x0121,0x000D,0x00000000,_bsvan_entrypoint_16},
+    {0x0122,0x000E,0x00108000,_bstaxi_entrypoint_10},
+    {0x0123,0x000E,0x00108000,_bstaxi_entrypoint_22},
+    {0x0124,0x000E,0x00108000,_bstaxi_entrypoint_31},
+    {0x0125,0x000E,0x00108000,_bstaxi_entrypoint_35},
+    {0x0126,0x000E,0x00108000,_bstaxi_entrypoint_18},
+    {0x0127,0x000E,0x00108000,_bstaxi_entrypoint_26},
+    {0x0128,0x000E,0x00108000,_bstaxi_entrypoint_5},
+    {0x0129,0x000E,0x00108000,_bstaxi_entrypoint_14},
+    {0x012A,0x0000,0x00002000,_bsride_entrypoint_1},
+    {0x012B,0x0000,0x00002000,_bsride_entrypoint_3},
+    {0x012C,0x000F,0x00000002,_bssub_entrypoint_2},
+    {0x012D,0x000F,0x00002002,_bssub_entrypoint_3},
+    {0x012E,0x000F,0x00000006,_bssub_entrypoint_0},
+    {0x012F,0x000F,0x00000012,_bssub_entrypoint_6},
+    {0x0130,0x000F,0x0000000A,_bssub_entrypoint_1},
+    {0x0131,0x000F,0x00000002,_bssub_entrypoint_7},
+    {0x0132,0x0000,0x00000020,_bsbabykaz_entrypoint_2},
+    {0x0133,0x0000,0x00000020,_bsbabykaz_entrypoint_7},
+    {0x0134,0x0000,0x00000020,_bsbabykaz_entrypoint_8},
+    {0x0135,0x0000,0x00000020,_bsbabykaz_entrypoint_10},
+    {0x0136,0x0000,0x00000020,_bsbabykaz_entrypoint_11},
+    {0x0137,0x0000,0x00000030,_bsbabykaz_entrypoint_9},
+    {0x0138,0x0000,0x00000028,_bsbabykaz_entrypoint_6},
+    {0x0139,0x0005,0x00020020,_bsfirstp_entrypoint_30},
+    {0x013A,0x0000,0x00000000,_bskazow_entrypoint_1},
+    {0x013B,0x0010,0x00000000,_bstrexsmall_entrypoint_0},
+    {0x013C,0x0010,0x00000004,_bstrexsmall_entrypoint_4},
+    {0x013D,0x0010,0x00000008,_bstrexsmall_entrypoint_5},
+    {0x013E,0x0010,0x00000000,_bstrexsmall_entrypoint_6},
+    {0x013F,0x0010,0x00000000,_bstrexsmall_entrypoint_8},
+    {0x0140,0x0010,0x00002000,_bstrexsmall_entrypoint_9},
+    {0x0141,0x0010,0x00000000,_bstrexsmall_entrypoint_10},
+    {0x0142,0x0010,0x00000010,_bstrexsmall_entrypoint_11},
+    {0x0143,0x0010,0x00200000,_bstrexsmall_entrypoint_12},
+    {0x0144,0x0010,0x00000000,_bstrexsmall_entrypoint_13},
+    {0x0145,0x0010,0x00000000,_bstrexsmall_entrypoint_14},
+    {0x0146,0x0010,0x00000000,_bstrexsmall_entrypoint_15},
+    {0x0147,0x0011,0x00000000,_bstrexlarge_entrypoint_0},
+    {0x0148,0x0011,0x00000004,_bstrexlarge_entrypoint_4},
+    {0x0149,0x0011,0x00000008,_bstrexlarge_entrypoint_5},
+    {0x014A,0x0011,0x00000000,_bstrexlarge_entrypoint_6},
+    {0x014B,0x0011,0x00000000,_bstrexlarge_entrypoint_8},
+    {0x014C,0x0011,0x00002000,_bstrexlarge_entrypoint_9},
+    {0x014D,0x0011,0x00000000,_bstrexlarge_entrypoint_10},
+    {0x014E,0x0011,0x00000010,_bstrexlarge_entrypoint_11},
+    {0x014F,0x0011,0x00200000,_bstrexlarge_entrypoint_12},
+    {0x0150,0x0011,0x00000000,_bstrexlarge_entrypoint_13},
+    {0x0151,0x0011,0x00000000,_bstrexlarge_entrypoint_14},
+    {0x0152,0x0011,0x00000000,_bstrexlarge_entrypoint_15},
+    {0x0153,0x0000,0x00008102,_bskaztorpedo_entrypoint_0},
+    {0x0154,0x0000,0x00008102,_bskaztorpedo_entrypoint_1},
+    {0x0155,0x0000,0x00008112,_bskaztorpedo_entrypoint_2},
+    {0x0156,0x0000,0x0000810A,_bskaztorpedo_entrypoint_3},
+    {0x0157,0x000B,0x00008102,_bsbswim_entrypoint_12},
+    {0x0158,0x0000,0x00008102,_bskaztorpedo_entrypoint_4},
+    {0x0159,0x0000,0x00008102,_bskaztorpedo_entrypoint_5},
+    {0x015A,0x0000,0x0000A102,_bskaztorpedo_entrypoint_6},
+    {0x015B,0x0000,0x00002200,_bskazglide_entrypoint_1},
+    {0x015C,0x0000,0x00000000,_bskazglide_entrypoint_2},
+    {0x015D,0x0000,0x00100001,_bskazpaddle_entrypoint_2},
+    {0x015E,0x0000,0x00100001,_bskazpaddle_entrypoint_1},
+    {0x015F,0x0000,0x00100001,_bskazpaddle_entrypoint_3},
+    {0x0160,0x0000,0x00140002,_bskazpaddle_entrypoint_0},
+    {0x0161,0x0000,0x00000000,_bskazfly_entrypoint_0},
+    {0x0162,0x0009,0x00000000,_bskazfly_entrypoint_1},
+    {0x0163,0x0012,0x00000000,_bsbansack_entrypoint_1},
+    {0x0164,0x0012,0x00000000,_bsbansack_entrypoint_2},
+    {0x0165,0x0012,0x00000000,_bsbansack_entrypoint_9},
+    {0x0166,0x0012,0x00000000,_bsbansack_entrypoint_8},
+    {0x0167,0x0012,0x00000001,_bsbansack_entrypoint_0},
+    {0x0168,0x0000,0x00008102,_bskaztorpedo_entrypoint_7},
+    {0x0169,0x0012,0x00000000,_bsbansack_entrypoint_3},
+    {0x016A,0x0013,0x00000000,_bsbanshack_entrypoint_0},
+    {0x016B,0x0013,0x00000000,_bsbanshack_entrypoint_1},
+    {0x016C,0x0013,0x00000000,_bsbanshack_entrypoint_6},
+    {0x016D,0x0013,0x00000000,_bsbanshack_entrypoint_3},
+    {0x016E,0x0013,0x00000000,_bsbanshack_entrypoint_2},
+    {0x016F,0x0014,0x00000000,_bsbansnooze_entrypoint_5},
+    {0x0170,0x0014,0x00000000,_bsbansnooze_entrypoint_2},
+    {0x0171,0x0014,0x00000000,_bsbansnooze_entrypoint_0},
+    {0x0172,0x0014,0x00000000,_bsbansnooze_entrypoint_1},
+    {0x0173,0x0009,0x00000000,_bskazfly_entrypoint_7},
+    {0x0174,0x0009,0x00000000,_bskazfly_entrypoint_2},
+    {0x0175,0x0009,0x00000000,_bskazfly_entrypoint_3},
+    {0x0176,0x0000,0x00000000,_bskazfly_entrypoint_4},
+    {0x0177,0x0009,0x00002000,_bskazfly_entrypoint_5},
+    {0x0178,0x0009,0x00000010,_bskazfly_entrypoint_8},
+    {0x0179,0x0009,0x00002000,_bskazfly_entrypoint_6},
+    {0x017A,0x0009,0x00000008,_bskazfly_entrypoint_9},
+    {0x017B,0x0000,0x000008C0,_bsbtrot_entrypoint_55},
+    {0x017C,0x0000,0x000008C0,_bsbtrot_entrypoint_51},
+    {0x017D,0x0016,0x00000000,_bssnowball_entrypoint_11},
+    {0x017E,0x0016,0x00000000,_bssnowball_entrypoint_7},
+    {0x017F,0x0016,0x00000000,_bssnowball_entrypoint_6},
+    {0x0180,0x0016,0x00000000,_bssnowball_entrypoint_5},
+    {0x0181,0x0016,0x00002000,_bssnowball_entrypoint_8},
+    {0x0182,0x0016,0x00000000,_bssnowball_entrypoint_3},
+    {0x0183,0x0016,0x00000008,_bssnowball_entrypoint_4},
+    {0x0184,0x0016,0x00000000,_bssnowball_entrypoint_9},
+    {0x0185,0x0016,0x00000010,_bssnowball_entrypoint_10},
+    {0x0186,0x0000,0x00000080,_bskazshoesspringjump_entrypoint_3},
+    {0x0187,0x0000,0x00000880,_bskazshoessuckspline_entrypoint_8},
+    {0x0188,0x0000,0x00000880,_bskazshoessuckspline_entrypoint_4},
+    {0x0189,0x0000,0x00100000,_bsbreegullbash_entrypoint_3},
+    {0x018A,0x0000,0x00000000,_bsbkflamethrower_entrypoint_4},
+    {0x018B,0x0000,0x00000000,_bskazflamethrower_entrypoint_4},
+    {0x018C,0x0001,0x00004000,_bsbeefly_entrypoint_4},
+    {0x018D,0x0000,0x00000210,_bskazglide_entrypoint_3},
+    {0x018E,0x0000,0x00000208,_bskazglide_entrypoint_4},
+    {0x018F,0x0002,0x00000000,_bsledge_entrypoint_8},
+    {0xFFFF,0x0000,0x00000000,0x00000000}
+};
 
-    temp_v0 = D_80117F38[arg1].unk0;
-    if (temp_v0 != NULL)
+s32 func_8009CA70(PlayerState* arg0, BanjoStateId arg1, s32 arg2)
+{
+    s32 var_v0;
+    if (D_80117F30[arg1].unk4 & arg2)
     {
-        return temp_v0(2);
+        var_v0 = 1;
+
+    }
+    else
+    {
+        var_v0 = 0;
+    }
+    return var_v0;
+}
+
+void (*func_8009CAAC(PlayerState* arg0, BanjoStateId arg1))(PlayerState*)
+{
+    BsScript(*temp_v0)(BsScriptType);
+
+    temp_v0 = D_80117F30[arg1].unk8;
+    if (temp_v0 != NULL) {
+        return temp_v0(BS_SCRIPT_TYPE_0);
     }
     return NULL;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E76360/func_8009CBDC.s")
+void (*func_8009CAF8(PlayerState* arg0, BanjoStateId arg1))(PlayerState*)
+{
+    BsScript(*temp_v0)(BsScriptType);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E76360/func_8009CBFC.s")
+    temp_v0 = D_80117F30[arg1].unk8;
+    if (temp_v0 != NULL) {
+        return temp_v0(BS_SCRIPT_TYPE_1_INIT);
+    }
+    return NULL;
+}
+
+void (*func_8009CB44(PlayerState* arg0, BanjoStateId arg1))(PlayerState*)
+{
+    BsScript (*temp_v0)(BsScriptType);
+
+    temp_v0 = D_80117F30[arg1].unk8;
+    if (temp_v0 != NULL) {
+        return temp_v0(BS_SCRIPT_TYPE_3);
+    }
+    return NULL;
+}
+
+void (*bs_getStateUpdateFunc(PlayerState* self, BanjoStateId arg1))(PlayerState*)
+{
+    BsScript(*temp_v0)(BsScriptType);
+
+    temp_v0 = D_80117F30[arg1].unk8;
+    if (temp_v0 != NULL)
+    {
+        return temp_v0(BS_SCRIPT_TYPE_2_UPDATE);
+    }
+    return NULL;
+}
+
+s32 func_8009CBDC(PlayerState* arg0, s32 arg1)
+{
+    return D_80117F30[arg1].unk2;
+}
+
+void func_8009CBFC(PlayerState* arg0) {
+
+}

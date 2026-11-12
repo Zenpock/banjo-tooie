@@ -25,10 +25,11 @@
 #include "core2/1EB2840.h"
 #include "core2/1ECA640.h"
 #include "nc/ba/die.h"
-
+#include "bs.h"
 void _bscrashout_entrypoint_0(PlayerState*);
 void _bscrashout_entrypoint_1(PlayerState*);
 void _bscrashout_entrypoint_2(PlayerState*);
-s32 _bscrashout_entrypoint_3(s32);
+BsScript _bscrashout_entrypoint_3(BsScriptType);
+
 
 #endif // __BS_CRASHOUT__

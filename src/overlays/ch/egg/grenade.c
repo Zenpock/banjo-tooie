@@ -67,7 +67,7 @@ void func_80800000_chegggrenade(Actor* arg0)
     }
 }
 
-void chegggrenade_entrypoint_0(Unk80132ED0* arg0)
+void chegggrenade_entrypoint_0(ActorMarker* arg0)
 {
     Actor* temp_v0;
     s32 pad;

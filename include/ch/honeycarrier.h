@@ -31,7 +31,7 @@
 
 #include "gameflags.h"
 
-void func_80800000_chhoneycarrier(Actor* arg0, Unk80132ED0* arg1);
+void func_80800000_chhoneycarrier(Actor* arg0, ActorMarker* arg1);
 s32 func_808000C4_chhoneycarrier(Actor*, s32, s32);
 void func_80800210_chhoneycarrier(Actor*);
 void func_80800260_chhoneycarrier(Actor*);

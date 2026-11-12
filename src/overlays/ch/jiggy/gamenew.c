@@ -6,7 +6,7 @@ ActorData* chjiggygamenew_entrypoint_0()
     return &D_80803D44_chjiggygamenew;
 }
 
-u32 func_8080000C_chjiggygamenew(Unk80132ED0* arg0)
+u32 func_8080000C_chjiggygamenew(ActorMarker* arg0)
 {
     return func_80106790(arg0)->actorData[2];
 }
@@ -25,7 +25,7 @@ u32 func_8080000C_chjiggygamenew(Unk80132ED0* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_808006E0_chjiggygamenew.s")
 
-s32 func_808007BC_chjiggygamenew(Unk80132ED0* arg0) 
+s32 func_808007BC_chjiggygamenew(ActorMarker* arg0) 
 {
     return func_80106790(arg0)->actorData[4] == 5;
 }
@@ -85,11 +85,11 @@ ActorData* chjiggygamenew_entrypoint_3()
 void func_80803564_chjiggygamenew(s32 arg0) 
 {
 }
-void func_8080356C_chjiggygamenew(Unk80132ED0* arg0) {
+void func_8080356C_chjiggygamenew(ActorMarker* arg0) {
     func_80102424(func_80106790(arg0), 8);
 }
 
-void func_80803598_chjiggygamenew(Unk80132ED0* arg0) {
+void func_80803598_chjiggygamenew(ActorMarker* arg0) {
     func_80102424(func_80106790(arg0), 7);
 }
 
@@ -97,7 +97,7 @@ void func_80803598_chjiggygamenew(Unk80132ED0* arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_808035FC_chjiggygamenew.s")
 
-s32 func_8080363C_chjiggygamenew(Unk80132ED0* arg0)
+s32 func_8080363C_chjiggygamenew(ActorMarker* arg0)
 {
     return (func_80106790(arg0)->unk70_10) == 1;
 }

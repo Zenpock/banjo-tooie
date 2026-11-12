@@ -141,7 +141,7 @@ void func_800EA398(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EADFC.s")
 
-int func_800EB15C(Unk80132ED0* arg0)
+int func_800EB15C(ActorMarker* arg0)
 {
 	if (arg0->unk18_0)
 	{
@@ -165,7 +165,7 @@ int func_800EB15C(Unk80132ED0* arg0)
 	return 1;
 }
 
-void func_800EB210(Unk80132ED0* arg0, Unk80132ED0* arg1, s32 arg2)
+void func_800EB210(ActorMarker* arg0, ActorMarker* arg1, s32 arg2)
 {
 	CallbackTable* temp_v0;
 

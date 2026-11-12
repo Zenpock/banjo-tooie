@@ -23,7 +23,8 @@
 #include "core2/1EA0690.h"
 #include "core2/anctrl.h"
 #include "player.h"
-
-
+#include "bs.h"
+BsScript _bsbshock_entrypoint_3(BsScriptType);
+BsScript _bsbshock_entrypoint_7(BsScriptType);
 
 #endif // __BS_HOCK__

@@ -20,7 +20,8 @@
 #include "core2/1ECA640.h"
 #include "core2/anctrl.h"
 #include "player.h"
-
+#include "bs.h"
 extern void _bssplat_entrypoint_0(PlayerState *self);
+BsScript _bssplat_entrypoint_1(BsScriptType);
 
 #endif // __BS_SPLAT_H__

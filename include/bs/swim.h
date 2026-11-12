@@ -35,10 +35,10 @@
 #include "core2/1ECA640.h"
 #include "core2/anctrl.h"
 #include "player.h"
-
-s32 _bsswim_entrypoint_0(s32 arg0);
-s32 _bsswim_entrypoint_1(s32 arg0);
-s32 _bsswim_entrypoint_2(s32 arg0);
-s32 _bsswim_entrypoint_3(s32 arg0);
+#include "bs.h"
+extern BsScript _bsswim_entrypoint_0(BsScriptType);
+extern BsScript _bsswim_entrypoint_1(BsScriptType);
+BsScript _bsswim_entrypoint_2(BsScriptType);
+BsScript _bsswim_entrypoint_3(BsScriptType);
 
 #endif // __BS_SWIM__

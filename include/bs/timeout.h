@@ -18,14 +18,14 @@
 #include "core2/1ED4E30.h"
 #include "core2/anctrl.h"
 #include "nc/ba/die.h"
-
+#include "bs.h"
 void _bstimeout_entrypoint_0(PlayerState* self);
 void _bstimeout_entrypoint_1(PlayerState* self);
 void _bstimeout_entrypoint_2(PlayerState* self);
-s32 _bstimeout_entrypoint_3(s32 arg0);
+BsScript _bstimeout_entrypoint_3(BsScriptType);
 void _bstimeout_entrypoint_4(PlayerState* self);
 void _bstimeout_entrypoint_5(PlayerState* self);
 void _bstimeout_entrypoint_6(PlayerState* self);
-s32 _bstimeout_entrypoint_7(s32 arg0);
+extern BsScript _bstimeout_entrypoint_7(BsScriptType);
 
 #endif // __BS_TIMEOUT__

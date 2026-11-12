@@ -346,7 +346,7 @@ void func_800991B0(PlayerState* self)
         {
             _baduo_entrypoint_13(self);
         }
-        func_8009E83C(self);
+        bs_stateUpdate(self);
         if ((func_80091E80(self, 2) != 0) && (func_8008E454(self) != 0))
         {
             func_8009B590(self);

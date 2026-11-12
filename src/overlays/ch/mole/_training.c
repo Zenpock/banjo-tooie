@@ -189,7 +189,7 @@ void func_808004D0_chmole_training(Actor* arg0, OptionState* arg1)
     }
 }
 
-void chmole_training_entrypoint_0(Unk80132ED0* arg0, OptionState* arg1, s32 arg2, s32 arg3)
+void chmole_training_entrypoint_0(ActorMarker* arg0, OptionState* arg1, s32 arg2, s32 arg3)
 {
     Actor* temp_v0;
 

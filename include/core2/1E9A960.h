@@ -158,7 +158,7 @@ void func_800C401C(s32, f32, s32, f32*, f32, f32, s32);
 void func_800C4104(s32, f32, s32, f32*, f32, f32);
 void func_800C4140(u32, f32*, u32);
 void func_800C4208(s32, f32, s32, f32*, f32, f32);
-void func_800C4244(Unk80132ED0*, f32, u32, f32*, f32, f32);
+void func_800C4244(ActorMarker*, f32, u32, f32*, f32, f32);
 void func_800C427C();
 s32 func_800C42E0(s32);
 void func_800C4308(f32, f32);

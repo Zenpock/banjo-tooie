@@ -29,5 +29,5 @@ void func_80800168_bsbpeck(PlayerState*);
 void bsbpeck_entrypoint_1(PlayerState*);
 void bsbpeck_entrypoint_2(PlayerState*);
 s32 bsbpeck_entrypoint_3(s32);
-
+BsScript _bsbpeck_entrypoint_3(BsScriptType);
 #endif // __BS_BPECK_H__

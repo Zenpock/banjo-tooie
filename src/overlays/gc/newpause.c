@@ -525,87 +525,96 @@ void func_80800534_gcnewpause(PauseState* pauseMenu, u32 targetPage)
 			_gcnewoption_entrypoint_7(&pauseMenu->optionState);
 			break;
 		case 3: //Any Totals Page
-			_gldbstring_entrypoint_2(0x1864U);
+			_gldbstring_free(0x1864U);
 			pauseMenu->textPointer = NULL;
 			pauseMenu->movesTextPointer = NULL;
 			func_8080152C_gcnewpause(pauseMenu);
 			break;
 		}
-		switch (targetPage) {
-		case 1: //Setup Page
-			func_800FC348(0, 0x7D0, 2);
-			func_800FEC60(1);
-			func_800FC124(0x24);
-			func_80800DE0_gcnewpause(1.1f);
-			func_800C06C4();
-			func_80018634();
-			if (func_800D395C() != 0)
+		switch (targetPage) 
+		{
+			case 1: //Setup Page
 			{
-				pauseMenu->ActivePauseMenuVariant = 4;
-			}
-			else if (func_800D3948() != 0)
-			{
-				if (func_800A946C() == 1)
+				func_800FC348(0, 0x7D0, 2);
+				func_800FEC60(1);
+				func_800FC124(0x24);
+				func_80800DE0_gcnewpause(1.1f);
+				func_800C06C4();
+				func_80018634();
+				if (func_800D395C() != 0)
 				{
-					pauseMenu->ActivePauseMenuVariant = 5;
+					pauseMenu->ActivePauseMenuVariant = 4;
+				}
+				else if (func_800D3948() != 0)
+				{
+					if (func_800A946C() == 1)
+					{
+						pauseMenu->ActivePauseMenuVariant = 5;
+					}
+					else
+					{
+						pauseMenu->ActivePauseMenuVariant = 6;
+					}
 				}
 				else
 				{
-					pauseMenu->ActivePauseMenuVariant = 6;
+					pauseMenu->ActivePauseMenuVariant = 0;
+					if (func_80801EF0_gcnewpause((s32)pauseMenu) != 0)
+					{
+						pauseMenu->ActivePauseMenuVariant += 1;
+					}
+					if (func_80801F18_gcnewpause((u32)pauseMenu) != 0)
+					{
+						pauseMenu->ActivePauseMenuVariant += 2;
+					}
 				}
-			}
-			else
-			{
-				pauseMenu->ActivePauseMenuVariant = 0;
-				if (func_80801EF0_gcnewpause((s32)pauseMenu) != 0)
-				{
-					pauseMenu->ActivePauseMenuVariant += 1;
-				}
-				if (func_80801F18_gcnewpause((u32)pauseMenu) != 0)
-				{
-					pauseMenu->ActivePauseMenuVariant += 2;
-				}
-			}
-			break;
-		case 2: //Main Option Page
-			func_80800A08_gcnewpause(pauseMenu);
-			pauseMenu->unk3 = D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].unk3;
-			break;
-		case 3: //Totals Page
-			pauseMenu->unk3 = 1;
-			pauseMenu->CanExitPage = 0;
-			pauseMenu->Timer = 0.2f;
-			func_80801660_gcnewpause(pauseMenu);
-			func_8080136C_gcnewpause(pauseMenu);
-			_gcaudiolist_entrypoint_1(4U, 0x4650U);
-			pauseMenu->SoundEffectTimerPageOpen = 0xB;
-			break;
-		case 4: //Close Pause Menu
-			func_800FECB8(1);
-			switch (pauseMenu->ExitType)
-			{
-			case 1:
-				func_800C0710();
-				func_80800DE0_gcnewpause(0.9f);
-				func_800FC348(-1, 0x7D0, 2);
-				func_800FC1A8();
-				break;
-			case 2:
-			case 3:
-			case 4:
-				func_800FC348(-1, 0x7D0, 2);
-				func_800FC1A8();
-				func_800FE4E4();
 				break;
 			}
-			break;
-		case 5: //GameOver
-			pauseMenu->Timer = 5.0f; //Set The amount of time in seconds to wait before the grunty fade out
-			func_800FCAE0(0x24, 0, 0x7D0);
-			func_800FCA90(0x24);
-			func_800FC660(0x12);
-			func_80801CCC_gcnewpause(pauseMenu);
-			break;
+			case 2: //Main Option Page
+				func_80800A08_gcnewpause(pauseMenu);
+				pauseMenu->unk3 = D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].unk3;
+				break;
+			case 3: //Totals Page
+			{
+				pauseMenu->unk3 = 1;
+				pauseMenu->CanExitPage = 0;
+				pauseMenu->Timer = 0.2f;
+				func_80801660_gcnewpause(pauseMenu);
+				func_8080136C_gcnewpause(pauseMenu);
+				_gcaudiolist_entrypoint_1(4U, 0x4650U);
+				pauseMenu->SoundEffectTimerPageOpen = 0xB;
+				break;
+			}
+			case 4: //Close Pause Menu
+			{
+				func_800FECB8(1);
+				switch (pauseMenu->ExitType)
+				{
+				case 1:
+					func_800C0710();
+					func_80800DE0_gcnewpause(0.9f);
+					func_800FC348(-1, 0x7D0, 2);
+					func_800FC1A8();
+					break;
+				case 2:
+				case 3:
+				case 4:
+					func_800FC348(-1, 0x7D0, 2);
+					func_800FC1A8();
+					func_800FE4E4();
+					break;
+				}
+				break;
+			}
+			case 5: //GameOver
+			{
+				pauseMenu->Timer = 5.0f; //Set The amount of time in seconds to wait before the grunty fade out
+				func_800FCAE0(0x24, 0, 0x7D0);
+				func_800FCA90(0x24);
+				func_800FC660(0x12);
+				func_80801CCC_gcnewpause(pauseMenu);
+				break;
+			}
 		}
 		pauseMenu->PageIndex = (u8)targetPage;
 	}

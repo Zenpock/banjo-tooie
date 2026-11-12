@@ -1,19 +1,72 @@
 #include "core2/1E9F060.h"
 
+
+//Some of this file pulled from code_94780.c from BK
 extern f32 D_801258AC;
+extern struct {
+    f32 unk0;
+    f32 unk4;
+    u8 rgb[3];
+    u8 unkB[3];
+    u8 unkE[3];
+    u8 unk11;
+}D_8012AA20;
 
 void func_800C5770(void) {
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C5778.s")
+void func_800C5778(void) {
+    D_8012AA20.unk11 = 0;
+    D_8012AA20.unk0 = D_8012AA20.unk4 = 0.0f;
+    D_8012AA20.unkE[0] = D_8012AA20.unkE[1] = D_8012AA20.unkE[2] = 0xFF;
+    D_8012AA20.unkB[0] = D_8012AA20.unkB[1] = D_8012AA20.unkB[2] = 0xFF;
+    D_8012AA20.rgb[0] = D_8012AA20.rgb[1] = D_8012AA20.rgb[2] = 0xFF;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C57C0.s")
+void func_800C57C0(void) {
+    func_800BF48C(D_8012AA20.rgb[0], D_8012AA20.rgb[1], D_8012AA20.rgb[2]);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C57F0.s")
+void func_800C57F0(void) {
+    s32 i;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C5968.s")
+    if (D_8012AA20.unk11 != 0) {
+        D_8012AA20.unk0 = ml_max_f(0.0f, D_8012AA20.unk0 - time_getDelta());
+        for (i = 0; i < 3; i++) {
+            D_8012AA20.rgb[i] = ml_map_f(D_8012AA20.unk0, D_8012AA20.unk4, 0.0f, D_8012AA20.unkE[i], D_8012AA20.unkB[i]);
+        }
+        func_800C57C0();
+        if (D_8012AA20.unk0 == 0.0f) {
+            D_8012AA20.unk11 = 0;
+        }
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C59F0.s")
+void func_800C5968(s32 red, s32 blue, s32 green, f32 arg3) {
+    if (arg3 != 0.0f) {
+        D_8012AA20.unk11 = 1;
+        D_8012AA20.unk0 = arg3;
+        D_8012AA20.unk4 = arg3;
+        D_8012AA20.unkB[0] = red;
+        D_8012AA20.unkB[1] = blue;
+        D_8012AA20.unkB[2] = green;
+        D_8012AA20.unkE[0] = D_8012AA20.rgb[0];
+        D_8012AA20.unkE[1] = D_8012AA20.rgb[1];
+        D_8012AA20.unkE[2] = D_8012AA20.rgb[2];
+        return;
+    }
+    else {
+        D_8012AA20.unk11 = 0;
+        D_8012AA20.rgb[0] = red;
+        D_8012AA20.rgb[1] = blue;
+        D_8012AA20.rgb[2] = green;
+        func_800C57C0();
+    }
+}
+
+void func_800C59F0(s32 arg0, s32 arg1, s32 arg2) {
+    func_800C5968(arg0, arg1, arg2, 0.0f);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C5A10.s")
 

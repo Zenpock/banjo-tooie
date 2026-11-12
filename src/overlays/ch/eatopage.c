@@ -3,7 +3,7 @@
 void func_8080000C_chcheatopage(Actor*);
 void func_80800070_chcheatopage(Actor*);
 s32 func_80800124_chcheatopage(Actor*, s32, s32);
-void func_80800194_chcheatopage(Actor*, Unk80132ED0*);
+void func_80800194_chcheatopage(Actor*, ActorMarker*);
 void func_808002A0_chcheatopage(Actor*, void*);
 s32 func_808002F0_chcheatopage(Actor*);
 
@@ -95,7 +95,7 @@ s32 func_80800124_chcheatopage(Actor* actor, s32 eventId, s32 arg2)
 }
 
 //Handle Touching the cheato page
-void func_80800194_chcheatopage(Actor* actor, Unk80132ED0* arg1)
+void func_80800194_chcheatopage(Actor* actor, ActorMarker* arg1)
 {
     if (func_8010A6B0(actor, ((u32)arg1->unk18_5)) != 0)
     {

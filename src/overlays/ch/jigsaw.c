@@ -4,7 +4,7 @@ extern ActorData D_80800770_chjigsaw;
 extern ActorData D_808007B8_chjigsaw;
 
 
-void func_80800000_chjigsaw(Actor* arg0, Unk80132ED0* arg1)
+void func_80800000_chjigsaw(Actor* arg0, ActorMarker* arg1)
 {
     if ((func_8010A6B0(arg0, arg1->unk18_5) != 0) && (flag_getValue(FLAG2_665_UNK) == 0))
     {
@@ -145,7 +145,7 @@ s32 func_80800518_chjigsaw(Actor* arg0, s32 eventId, s32 arg2)
     switch (eventId)
     {
         case EVENT_3E_ACTOR_TOUCHED:
-            func_80800000_chjigsaw(arg0, (Unk80132ED0*)arg2);
+            func_80800000_chjigsaw(arg0, (ActorMarker*)arg2);
             break;
         case 0x12:
             arg0->unk64_19 = (u32)arg2;

@@ -43,6 +43,6 @@ s32 func_8009E77C(PlayerState *, s32);
 void func_8009E7AC(PlayerState*);
 s32 func_8009E7C8(PlayerState*, s32);
 void func_8009E830(PlayerState *, s32);
-void func_8009E83C(PlayerState*);
+void bs_stateUpdate(PlayerState*);
 
 #endif // __CORE2_1E77A20_H__

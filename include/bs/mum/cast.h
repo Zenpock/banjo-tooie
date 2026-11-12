@@ -15,6 +15,6 @@ extern s32 D_808004A0_bsmumcast[];
 
 extern void _bsmumcast_entrypoint_0(PlayerState *self);
 extern void _bsmumcast_entrypoint_1(PlayerState *self);
-extern s32 _bsmumcast_entrypoint_4(s32 idx);
+extern BsScript _bsmumcast_entrypoint_4(BsScriptType);
 
 #endif // __BS_MUM_CAST_H__

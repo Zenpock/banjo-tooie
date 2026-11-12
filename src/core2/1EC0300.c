@@ -34,7 +34,7 @@ void func_800E6A90(char* arg0, char* arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0300/func_800E6AFC.s")
 
-s32 func_800E6B7C(s32 arg0, f32 arg1)
+s32 float_getSign(s32 arg0, f32 arg1)
 {
 	s32 returnValue;
 	if (arg1 < 0.0f)
@@ -48,53 +48,53 @@ s32 func_800E6B7C(s32 arg0, f32 arg1)
 	return returnValue;
 }
 
-void func_800E6BAC(char* arg0, f32 arg1)
+void string_FToA(char* str, f32 arg1)
 {
 	s32 temp_f4_2;
 	char* sp38;
-	switch (func_800E6B7C(&sp38, arg1))
+	switch (float_getSign(&sp38, arg1))
 	{
 		case 0:
-			string_concat(arg0, sp38);
+			string_concat(str, sp38);
 			return;
 		case -1:
-			string_concat(arg0, "-");
+			string_concat(str, "-");
 			arg1 = -arg1;
 		case 1:
-			string_IToA(arg0, (s32)arg1);
-			string_concat(arg0, ".");
+			string_IToA(str, (s32)arg1);
+			string_concat(str, ".");
 			temp_f4_2 = ((arg1 - (s32)arg1) * 100.0f);
 			if (temp_f4_2 < 0xA)
 			{
-				string_concat(arg0, "0");
+				string_concat(str, "0");
 			}
-			string_IToA(arg0, temp_f4_2);
+			string_IToA(str, temp_f4_2);
 			return;
 	}
 }
 
-void func_800E6CA8(char* arg0, f32 arg1, s32 arg2)
+void string_FToAPrecision(char* str, f32 value, s32 decimalPoints)
 {
 	char* sp44;
 
-	switch (func_800E6B7C(&sp44, arg1))
+	switch (float_getSign(&sp44, value))
 	{
 	case 0:
-		string_concat(arg0, sp44);
+		string_concat(str, sp44);
 		return;
 	case -1:
-		string_concat(arg0, "-");
-		arg1 = -arg1;
+		string_concat(str, "-");
+		value = -value;
 	case 1:
-		string_IToA(arg0, arg1);
-		if (arg2 != 0)
+		string_IToA(str, value);
+		if (decimalPoints != 0)
 		{
-			string_concat(arg0, ".");
-			while (arg2--)
+			string_concat(str, ".");
+			while (decimalPoints--)
 			{
-				arg1 -= (s32)arg1;
-				arg1 *= 10.0f;
-				string_IToA(arg0, arg1);
+				value -= (s32)value;
+				value *= 10.0f;
+				string_IToA(str, value);
 			}
 		}
 	}
@@ -158,7 +158,7 @@ void string_IToAPrefix(char* dst, s32 value, char prefix, s32 arg3)
 	*dst = '\0';
 }
 
-void func_800E6F7C(char* arg0, u32 arg1)
+void string_IntToHexString(char* arg0, u32 arg1)
 {
 	s32 temp_t0;
 	s32 var_v1;

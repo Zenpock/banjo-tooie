@@ -297,6 +297,7 @@ s32 player_atWaterSurface(PlayerState* arg0) {
 }
 
 s32 func_8009650C(PlayerState* arg0) {
+
     return (s32) arg0->unk94->unk55;
 }
 
@@ -328,7 +329,7 @@ s32 func_800965C8(PlayerState* arg0) {
     return arg0->unk94->unkA4;
 }
 
-Unk80132ED0* func_800965D4(PlayerState* arg0) {
+ActorMarker* func_800965D4(PlayerState* arg0) {
     return arg0->unk94->unk50;
 }
 

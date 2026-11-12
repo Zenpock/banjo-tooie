@@ -23,10 +23,10 @@
 #include "core2/1ECA640.h"
 #include "common.h"
 #include <ultra64.h>
-
+#include "bs.h"
 extern s32 D_808006F0_bsmumattack[];
 extern s32 D_80800700_bsmumattack[];
 
-extern s32 _bsmumattack_entrypoint_0(s32 idx);
+BsScript _bsmumattack_entrypoint_0(BsScriptType);
 
 #endif // __BS_MUM_ATTACK_H__

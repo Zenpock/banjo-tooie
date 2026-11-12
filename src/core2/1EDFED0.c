@@ -34,7 +34,7 @@ void* actorList_pushback(s32* indexCreated)
 //Erase an actor at index
 void actorList_erase(u32 index)
 {
-	Unk80132ED0* temp_v1;
+	ActorMarker* temp_v1;
 	//Erase the Actor
 	vector_erase_unordered(D_80136EE0, index);
 	if ((s32)index < vector_size(D_80136EE0))
@@ -62,7 +62,7 @@ Actor* actorList_getAtIndex(s32 arg0)
 	return vector_at(D_80136EE0, arg0);
 }
 
-Actor* func_80106790(Unk80132ED0* arg0)
+Actor* func_80106790(ActorMarker* arg0)
 {
 	return vector_at(D_80136EE0, arg0->unk18_5);
 }
@@ -147,7 +147,7 @@ void* func_80106920(s32* arg0)
 	return NULL;
 }
 
-s32 func_801069A4(Unk80132ED0* arg0)
+s32 func_801069A4(ActorMarker* arg0)
 {
 	s32 isActorOutsideActorArrayBounds;
 	if (D_80136EE0 == NULL)

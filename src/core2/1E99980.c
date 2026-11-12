@@ -1,10 +1,12 @@
 #include <ultra64.h>
 #include "gfx.h"
 #include "core2/1E99980.h"
+#include "gc/newpause.h"
 
 extern s32 D_801288B0;
 extern s32 D_80128AF4;
 extern void* D_80128AF0;
+extern s32 D_8011A7D0;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0090.s")
 
@@ -79,7 +81,35 @@ void func_800C08C0(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0948.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0984.s")
+void func_800C0984(GraphicsBuffers* arg0)
+{
+	if (func_800A8184() != 4)
+	{
+		if (D_8011A7D0 == 0) {
+			func_800C1044(arg0);
+		}
+		D_8011A7D0 = 1;
+		return;
+	}
+	if (func_800A8178() == 0)
+	{
+		if (D_8011A7D0 != 0)
+		{
+			func_800D58CC();
+			func_800C0F8C(arg0);
+			D_8011A7D0 = 0;
+		}
+		else
+		{
+			func_800C0FD8(arg0);
+		}
+		if (D_80128AF0 != NULL)
+		{
+			_gcnewpause_entrypoint_3(arg0, D_80128AF0);
+		}
+	}
+	
+}
 
 void func_800C0A2C(void) {
 }

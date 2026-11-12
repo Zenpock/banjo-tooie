@@ -29,5 +29,6 @@ void bsbbarge_end(PlayerState *self);
 void bsbbarge_init(PlayerState *self);
 void bsbbarge_update(PlayerState *self);
 BsScript bsbbarge_entrypoint_0(BsScriptType type);
+BsScript _bsbbarge_entrypoint_0(BsScriptType type);
 
 #endif // __BS_BBARGE__

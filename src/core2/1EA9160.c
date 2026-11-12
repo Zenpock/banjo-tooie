@@ -69,7 +69,7 @@ extern unkD_D_8012B18C D_8012B18C[];
 typedef struct
 {
     f32 coords[3];
-    Unk80132ED0* unkC;
+    ActorMarker* unkC;
     s16 spawnMap;
     s16 unk12;
 } UnkD_8012B180;
@@ -444,7 +444,7 @@ void func_800D0594(s32 arg0, CollectableId arg1, s16 arg2)
     }
 }
 
-void func_800D05E4(s32 arg0, CollectableId arg1, Unk80132ED0* arg2)
+void func_800D05E4(s32 arg0, CollectableId arg1, ActorMarker* arg2)
 {
     s32 temp_v0;
 
@@ -710,7 +710,7 @@ Actor* collectable_itemSpawnMovement(PropId arg0, f32* coords, u32 spawnStyle, s
 }
 
 
-Unk80132ED0* collectable_itemSetup(s32 arg0, f32* coords, s32 spawnStyle, Unk80132ED0* arg3)
+ActorMarker* collectable_itemSetup(s32 arg0, f32* coords, s32 spawnStyle, ActorMarker* arg3)
 {
     CollectableId itemType;
     s32 itemFlag;
@@ -767,7 +767,7 @@ Unk80132ED0* collectable_itemSetup(s32 arg0, f32* coords, s32 spawnStyle, Unk801
     return sp2C->unk0;
 }
 
-void collectable_itemInit(s32 arg0, s32 x, s32 y, s32 z, s32 spawnStyle, Unk80132ED0* arg5)
+void collectable_itemInit(s32 arg0, s32 x, s32 y, s32 z, s32 spawnStyle, ActorMarker* arg5)
 {
     f32 temp;
     f32 coords[3];
@@ -777,7 +777,7 @@ void collectable_itemInit(s32 arg0, s32 x, s32 y, s32 z, s32 spawnStyle, Unk8013
     collectable_itemSetup(arg0, coords, spawnStyle, arg5);
 }
 
-void collectable_spawnItem(u32 itemIndex, CollectableId itemType, f32* spawnCoords, u32 spawnStyle, Unk80132ED0* arg4)
+void collectable_spawnItem(u32 itemIndex, CollectableId itemType, f32* spawnCoords, u32 spawnStyle, ActorMarker* arg4)
 {
     s32 sp44[3];
     s32 temp;
@@ -810,7 +810,7 @@ void func_800D1218(s32 arg0, CollectableId arg1, f32* arg2)
     temp_v0 = func_800D0634(arg0, arg1);
     if (temp_v0 != 0) 
     {
-        ml_vec3f_copy(arg2, func_80106790((Unk80132ED0*)temp_v0)->position);
+        ml_vec3f_copy(arg2, func_80106790((ActorMarker*)temp_v0)->position);
     }
 }
 
@@ -823,7 +823,7 @@ void func_800D1254(s32 arg0, CollectableId arg1, f32* arg2)
     temp_v0 = func_800D0634(arg0, arg1);
     if (temp_v0 != 0)
     {
-        temp_v0_2 = func_80106790((Unk80132ED0*)temp_v0);
+        temp_v0_2 = func_80106790((ActorMarker*)temp_v0);
         ml_vec3f_copy(temp_v0_2->position, arg2);
         func_80103014(temp_v0_2);
     }

@@ -18,7 +18,10 @@
 #include "common.h"
 #include "player.h"
 #include <ultra64.h>
-
+#include "bs.h"
 extern s32 D_808001E0_bsmumsplat[];
+
+BsScript _bsmumsplat_entrypoint_0(BsScriptType);
+
 
 #endif // __BS_MUM_SPLAT_H__

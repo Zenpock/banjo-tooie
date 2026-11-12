@@ -113,7 +113,7 @@ void func_8001546C(s32 arg0)
         if (temp2 && temp && temp3)
         {
             //This Tries to trigger the debug screen for being in an infinite loop (also can be caused by really long loads)
-            func_8001E5DC(2);
+            debugger_displayError(2);
             D_8003F5D0 = 0;
         }
         osSendMesg(&D_80079030, NULL, 0);

@@ -300,22 +300,22 @@ void func_808002E0_chjinjo(Actor* arg0)
                 arg0->actorData[5] = 1;
                 func_800FC63C(0x1CU, 0x7FFFU);
                 func_800FCA90(0x1CU);
-                func_800C4244((Unk80132ED0*)0x4A2, 0.8f, 0x7FFFU, arg0->position, 300.0f, 2000.0f);
+                func_800C4244((ActorMarker*)0x4A2, 0.8f, 0x7FFFU, arg0->position, 300.0f, 2000.0f);
             }
             else if ((func_80101E14(arg0, 0.434f) != 0) || (func_80101E14(arg0, 0.811f) != 0))
             {
-                func_800C4244((Unk80132ED0*)0x4A2, 0.9f, 0x7FFFU, arg0->position, 300.0f, 2000.0f);
+                func_800C4244((ActorMarker*)0x4A2, 0.9f, 0x7FFFU, arg0->position, 300.0f, 2000.0f);
             }
         }
         else
         {
             if (func_80101E14(arg0, 0.214f) != 0)
             {
-                func_800C4244((Unk80132ED0*)0x4A2, 1.1f, 0x7FFFU, arg0->position, 300.0f, 2000.0f);
+                func_800C4244((ActorMarker*)0x4A2, 1.1f, 0x7FFFU, arg0->position, 300.0f, 2000.0f);
             }
             else if (func_80101E14(arg0, 0.55f) != 0)
             {
-                func_800C4244((Unk80132ED0*)0x43A, 1.5f, 0x7FFFU, arg0->position, 300.0f, 2000.0f);
+                func_800C4244((ActorMarker*)0x43A, 1.5f, 0x7FFFU, arg0->position, 300.0f, 2000.0f);
             }
             else if (func_80101E14(arg0, 0.75f) != 0)
             {
@@ -396,7 +396,7 @@ void chjinjo_entrypoint_4(s32 arg0, s32 arg1, s32 arg2)
 
 s32 func_80800C10_chjinjo(Actor* arg0, s32 eventId, s32 arg2)
 {
-    Unk80132ED0* pad;
+    ActorMarker* pad;
     s32 sp40;
     s32 var_v0;
 

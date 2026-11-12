@@ -43,7 +43,7 @@ void bsthrow_entrypoint_1(PlayerState* self) {
     if ((anctrl_isAt(sp48, 0.35f) != 0) && (temp_v0 != 0))
     {
         self->unk15C.word = 1;
-        temp_v0_2 = func_80106790((Unk80132ED0*)temp_v0);
+        temp_v0_2 = func_80106790((ActorMarker*)temp_v0);
         temp_v0_2->unk64_22 = 1;
     }
     if (anctrl_isStopped(sp48) != 0)

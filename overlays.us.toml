@@ -6613,7 +6613,7 @@ name = "gldbstring"
 entrypoints = [
   "gldbstring_entrypoint_0",
   "gldbstring_entrypoint_1",
-  "gldbstring_entrypoint_2",
+  "gldbstring_free",
 ]
 
 [[overlay]] # Overlay 702

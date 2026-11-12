@@ -17,6 +17,6 @@
 #include "core2/1ECA640.h"
 #include "player.h"
 
-extern s32 _bskazspring_entrypoint_0(s32 idx);
+extern BsScript _bskazspring_entrypoint_0(BsScriptType);
 
 #endif // __BS_KAZ_SPRING_H__
