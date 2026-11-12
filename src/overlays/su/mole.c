@@ -488,6 +488,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
                     arg0->unk6C_0 = 2;
                     return;
                 }
+                break;
             case 2:
                 sumole_entrypoint_15(arg0, (s32)arg1[(s32)arg0->unk54].charactersAllowed, -1);
                 return;
