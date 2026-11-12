@@ -717,6 +717,7 @@ void gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3)
 
 		if (pauseMenu->unk13 != 0) //Exit Randomizer Options
 		{
+			_gcnewoption_entrypoint_7(arg1);
 			pauseMenu->ActivePauseMenuVariant = pauseMenu->unk13 - 1;
 			pauseMenu->LastOptionSelected = 0;
 			pauseMenu->unk13 = 0;
@@ -840,6 +841,7 @@ void func_80800CE4_gcnewpause(PauseState* pauseMenu, OptionState *arg1, s32 sele
 		break;
 
 	case 5: //Open Randomizer Options
+		_gcnewoption_entrypoint_7(arg1);
 		pauseMenu->unk13 = pauseMenu->ActivePauseMenuVariant + 1;
 		pauseMenu->ActivePauseMenuVariant = 7;
 		pauseMenu->PageIndex = 1;
