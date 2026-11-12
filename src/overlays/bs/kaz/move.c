@@ -73,7 +73,10 @@ BanjoStateId func_808001C4_bskazmove(PlayerState *self, BanjoStateId nextState) 
         if (bainput_func_80097FB8(self) != 0) {
             nextState = BS_STATE_C4;
         }
-    } else if (bainput_func_80097FB8(self) != 0) {
+    }
+	//Randomizer Change to allow for Dragon Kazooie Fire without wing whack
+	else if (bakey_pressed(self, BUTTON_B) && baflag_isFalse(self, BA_FLAG_5_HAS_PECKED) && !func_8008E39C(self) && (ability_getValue(ABILITY_1D_WING_WHACK) || bs_getDragonKazooieState()))
+	{
         nextState = _bskaz_entrypoint_4(self);
     }
     return nextState;
