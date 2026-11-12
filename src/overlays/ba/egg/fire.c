@@ -137,7 +137,6 @@ void func_80800250_baeggfire(PlayerState* arg0) {
 	ml_vec3f_set_length(sp44, arg0->unk6C->unk10 == 7 ? 5000.0f : 3000.0f);
 	_baeggsetup_entrypoint_6(arg0, arg0->unk6C->unk10, sp50, sp38, sp44);
 	_baeggcursor_entrypoint_8(arg0);
-	func_800C6DA0(0x43);
 }
 
 void baeggfire_entrypoint_3(PlayerState* arg0, f32* arg1, f32* arg2)

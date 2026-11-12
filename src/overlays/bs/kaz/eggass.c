@@ -34,7 +34,6 @@ void bskazeggass_entrypoint_1(PlayerState *self) {
         if (anctrl_isAt(sp28, 0.38) != 0) {
             _baeggsetup_entrypoint_9(self);
             _baeggsetup_entrypoint_2(self, self->unk164.word, 45, 25);
-            func_800C6DA0(0x43);
         }
         if ((anctrl_isAt(sp28, 0.6) != 0) && (self->unk160.word < self->unk15C.word)) {
             anctrl_setDuration(sp28, 0.49821422);

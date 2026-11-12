@@ -528,7 +528,6 @@ s32 bsbswim_entrypoint_6(s32 arg0)
 }
 
 void func_80800EC8_bsbswim(PlayerState* self) {
-    func_800C6DA0(0x3F);
     baanim_playForDuration_onceSmooth(self, 0x3C, 1.5f);
     func_80800000_bsbswim(self);
     yaw_setVelocityBounded(self, 500.0f, 5.0f);

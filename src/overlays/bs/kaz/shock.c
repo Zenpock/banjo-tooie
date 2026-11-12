@@ -142,7 +142,6 @@ void bskazshock_entrypoint_5(PlayerState *self) {
     baphysics_set_vertical_velocity(self, 1820);
     baphysics_set_gravity(self, -1200);
     func_8009DBF0(self, 0x408, 1);
-    func_800C6DA0(0x45);
     self->unk160.word = 0;
 }
 

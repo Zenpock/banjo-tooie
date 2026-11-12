@@ -37,7 +37,6 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
         }
         if (anctrl_isAt(aCtrl, 0.4704f)) {
             _baeggsetup_entrypoint_5(player, player->unk164.word, 80.0f, 120.0f);
-            func_800C6DA0(0x43);
         }
         if (anctrl_isAt(aCtrl, 0.5919f) && player->unk160.word < player->unk15C.word) {
             anctrl_setStart(aCtrl, 0.3878f);

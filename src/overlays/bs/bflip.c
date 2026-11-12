@@ -15,7 +15,6 @@ void func_80800064_bsbflip(PlayerState *self, s32 substate) {
 
     switch(substate){
         case 0:
-            func_800C6DA0(0x3E);
             baphysics_reset_gravity(self);
             baphysics_reset_terminal_velocity(self);
             func_800A0D44(self, 0);

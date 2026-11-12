@@ -5,7 +5,6 @@ extern s32 D_80800400_bsclaw[];
 void bsclaw_entrypoint_0(PlayerState* self)
 {
 	func_8009E474(self);
-	func_800C6DA0(0x47);
 	baflag_clear(self, 0x1F);
 	func_800A0CF4(self, 0);
 }

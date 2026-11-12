@@ -54,7 +54,6 @@ void func_808001A8_bsbanswim(PlayerState* self)
 }
 
 void func_808001C8_bsbanswim(PlayerState* self) {
-    func_800C6DA0(0x3F);
     baanim_playForDuration_onceSmoothStartingAt(self, 0x27D, 1.7f, 0.1f);
     func_80800000_bsbanswim(self);
     yaw_setVelocityBounded(self, 500.0f, 5.0f);

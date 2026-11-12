@@ -91,7 +91,6 @@ void func_80800320_bskazfly(PlayerState *self) {
 }
 
 void func_808003E0_bskazfly(PlayerState *self) {
-    func_800C6DA0(0x44);
     func_800A0CF4(self, 0);
     func_800A4E30(self);
 }

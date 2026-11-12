@@ -180,7 +180,6 @@ void bsbshock_entrypoint_4(PlayerState* self)
     func_8009DBF0(self, 0x408, 1.0f);
     func_800A0CE8(self, 1);
     func_800A0CF4(self, 1);
-    func_800C6DA0(0x45);
     func_80093300(self, -87.0f);
     func_8009C1B4(self, -87.0f);
     func_8009DF58(self, 0x43A, 1.0f);

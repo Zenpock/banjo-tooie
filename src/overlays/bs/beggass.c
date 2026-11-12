@@ -32,7 +32,6 @@ void bsbeggass_entrypoint_1(PlayerState* arg0) {
         if (anctrl_isAt(plyr_mvmt, 0.3837f)) {
             _baeggsetup_entrypoint_9(arg0);
             _baeggsetup_entrypoint_2(arg0, arg0->unk164.word, 60.0f, -18.0f);
-            func_800C6DA0(0x43);
         }
         if (anctrl_isAt(plyr_mvmt, 0.4885f) && (arg0->unk160.word < arg0->unk15C.word)) {
             anctrl_setStart(plyr_mvmt, 0.349f);

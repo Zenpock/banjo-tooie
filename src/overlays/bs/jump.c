@@ -194,10 +194,6 @@ void bsjump_entrypoint_1(PlayerState* self)
 
 void bsjump_entrypoint_2(PlayerState* self)
 {
-    if (ability_getValue(ABILITY_0A_BK_FULL_JUMP_HEIGHT) != 0)
-    {
-        func_800C6DA0(0x3C);
-    }
     if (bs_getNextState(self) != BS_STATE_11_RATATAP)
     {
         baphysics_reset_gravity(self);

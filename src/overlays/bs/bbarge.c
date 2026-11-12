@@ -41,7 +41,6 @@ void bsbbarge_setSubstate(PlayerState *self, int substate) {
 
 void bsbbarge_end(PlayerState *self) {
     func_8009E474(self);
-    func_800C6DA0(0x41);
     func_800A0CF4(self, 0);
     baflag_clear(self, 0x20);
     _badust_entrypoint_12(self, 0x1);

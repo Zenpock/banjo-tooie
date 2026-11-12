@@ -175,7 +175,6 @@ void bsbflap_update(PlayerState *self) {
 }
 
 void bsbflap_end(PlayerState *self) {
-    func_800C6DA0(0x3D);
     baphysics_reset_gravity(self);
     baphysics_reset_terminal_velocity(self);
     func_800A0D14(self, 0, 0.2f);

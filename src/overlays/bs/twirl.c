@@ -10,7 +10,6 @@ BsScript D_808002C0_bstwirl[4] = {func_80800000_bstwirl, bstwirl_init, bstwirl_u
 /* .text */
 void func_80800000_bstwirl(PlayerState *self) {
     func_800A0CF4(self, 0);
-    func_800C6DA0(0x48);
     baflag_clear(self, 0x29);
     _badust_entrypoint_12(self, 1);
 }

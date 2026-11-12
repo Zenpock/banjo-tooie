@@ -18,7 +18,6 @@ void __bsbanbflip_set_substate(PlayerState *self, BanjoStateId next_state) {
     f32 sp38[3];
     switch (next_state) {
         case 0:
-            func_800C6DA0(0x3E);
             baphysics_reset_gravity(self);
             baphysics_reset_terminal_velocity(self);
             func_800A0D44(self, 0);

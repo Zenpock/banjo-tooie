@@ -97,7 +97,6 @@ void bsclimb_entrypoint_0(PlayerState* self) {
 		yaw_setIdeal(self, sp3C);
 		yaw_applyIdeal(self);
 	}
-	func_800C6DA0(0x40);
 	baanim_playForDuration_loopSmooth(self, 0xB2, 2.64f);
 	func_8008CA4C(self, BAANIM_UPDATE_1_NORMAL);
 	func_808000E8_bsclimb(self);
