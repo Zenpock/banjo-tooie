@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1EDCA30.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_80103140.s")
 
@@ -12,12 +12,18 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_8010381C.s")
 
-void func_80103930(s32 arg0) 
+void func_80103930(Actor* arg0)
 {
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_80103938.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_80103964.s")
+void* func_80103964(ActorMarker* arg0)
+{
+    if ((arg0->unk14 == 0) || (arg0->unk14 == 0xFFFF)) {
+        return NULL;
+    }
+    return asset_load(arg0->unk14);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_801039A4.s")
 

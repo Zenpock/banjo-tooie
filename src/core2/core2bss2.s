@@ -464,7 +464,10 @@ dlabel D_80135450
     /* 80135450 */ .space 0x1C
 
 dlabel D_8013546C
-    /* 8013546C */ .space 0x17
+    /* 8013546C */ .space 0x4
+
+dlabel D_80135470
+    /* 80135470 */ .space 0x13
 
 dlabel D_80135483
     /* 80135483 */ .space 0x0D

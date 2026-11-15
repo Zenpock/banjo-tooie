@@ -2,6 +2,23 @@
 #define __CORE2_1EDCA30_H__
 
 #include "common.h"
+#include "core2/1E875C0.h"
+#include "core2/1E8A670.h"
+#include "core2/1E8BFE0.h"
+#include "core2/1EAED30.h"
+#include "core2/1EAF950.h"
+#include "core2/1EB57A0.h"
+#include "core2/1EC8070.h"
+#include "core2/1ED8C80.h"
+#include "core2/1ED9D70.h"
+#include "core2/1EDA900.h"
+#include "core2/1EDB4D0.h"
+#include "core2/1EDC7B0.h"
+#include "core2/1EDCA30.h"
+#include "core2/1EDDA60.h"
+#include "core2/1EDDC40.h"
+#include "core2/1EDFED0.h"
+#include "su/baddiefade.h"
 
 typedef struct {
     s32 pad[5];

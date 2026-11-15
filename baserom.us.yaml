@@ -8346,15 +8346,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x0204CB80
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x0204CB80, c, ticker]
-      - [0x0204D270, .rodata, ticker]
-      - [0x0204D3B0, data, ticker]
-      - [0x0204D500, bss, ticker]
+      - [auto, c, ticker]
   - name: chstadiumdoors_header
     dir: overlays/chstadiumdoors
     type: bin

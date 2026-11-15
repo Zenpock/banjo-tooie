@@ -112,7 +112,7 @@ void sujiggy_entrypoint_8(void)
     func_800A9B84();
     func_800A9B8C(0x151, 3);
     sp1C = sujiggy_entrypoint_4(sp24);
-    func_800A9BA0(1, sp1C, sujiggy_entrypoint_5(sp24));
+    demo_playDemo(DEMO_1_JIGGYWIGGY, sp1C, sujiggy_entrypoint_5(sp24));
 }
 
 void sujiggy_entrypoint_9()
@@ -142,7 +142,7 @@ void sujiggy_entrypoint_11(s32 arg0)
     func_800FE844(2U);
     func_800FE734(1U);
     flag_setMultipleValue(FLAG5_D57_UNK, sujiggy_entrypoint_19() + 1, 4);
-    func_800A9BA0(1, sujiggy_entrypoint_4(arg0), sujiggy_entrypoint_5(arg0));
+    demo_playDemo(DEMO_1_JIGGYWIGGY, sujiggy_entrypoint_4(arg0), sujiggy_entrypoint_5(arg0));
 }
 
 s32 sujiggy_entrypoint_12(void)
