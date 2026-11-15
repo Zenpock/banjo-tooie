@@ -60,18 +60,18 @@ void func_800A7584(s32 arg0, s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7840.s")
 
-void func_800A791C(s32 arg0, s32 arg1, s32 arg2)
+void map_travelToTarget(MapId arg0, s32 arg1, s32 arg2)
 {
-    func_800A79D4(arg0, arg1);
-    func_800A7A90(arg2);
-    func_800A7B18(1U);
+    map_setTarget(arg0, arg1);
+    map_setTransition(arg2);
+    map_activateTransition(1U);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A794C.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7990.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A79D4.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/map_setTarget.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7A18.s")
 
@@ -81,12 +81,12 @@ void func_800A7A5C(void)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7A6C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7A90.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/map_setTransition.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7AD4.s")
 
 //Set Warp Bit To On
-void func_800A7B18(u32 warpVal)
+void map_activateTransition(u32 warpVal)
 {
     D_80127630.unk12 = warpVal;
 }

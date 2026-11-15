@@ -13,7 +13,8 @@
 #include "core2/1ED8C80.h"
 #include "gc/frontend.h"
 #include "gl/cutDll.h"
+#include "gl/introsyncDll.h"
 #include "ch/attract.h"
-
+#include "gs/attract.h"
 
 #endif
