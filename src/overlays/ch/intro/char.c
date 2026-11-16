@@ -1,7 +1,9 @@
 #include "ch/intro/char.h"
 
 typedef struct {
-    u8 unk0[0xD0];
+    char unk0[0x40];
+    char unk40[0x40];
+    char unk80[0x50];
     f32 unkD0[2];
     u8 unkD4[0xC];
     f32 unkE4[3];

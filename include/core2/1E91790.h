@@ -22,7 +22,7 @@
 
 void func_800B7F14(GraphicsBuffers*);
 void func_800B811C(GraphicsBuffers*);
-void func_800B81CC(GraphicsBuffers*, s32, s32, char);
+s32 func_800B81CC(GraphicsBuffers*, s32, s32, char);
 void graphics_resetTextParams(void);
 void graphics_setTextAlpha(s32 Transparency);
 void graphics_setTextFont(s32 Font);
@@ -31,7 +31,9 @@ void func_800B8CB0(s32);
 void graphics_setTextColors(s8, s8, s8);
 void graphics_setTextPattern(s32 pattern);
 void graphics_setTextScale(f32 size);
+s32 func_800B8CFC(char*);
 void graphics_drawChar(GraphicsBuffers*, s32, s32, char);
+void func_800B8E28(GraphicsBuffers*, s32, s32, char*);
 void func_800B8FE0();
 void func_800B8FEC();
 void func_800B90C8();

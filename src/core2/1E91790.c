@@ -2,6 +2,8 @@
 
 
 extern s8 D_8011A668;
+extern s32 D_8012712C;
+
 extern s8 D_801282C5;
 
 void func_800B7EA0(s32 arg0, s32 arg1)
@@ -99,9 +101,14 @@ void graphics_drawChar(GraphicsBuffers* arg0, s32 coordX, s32 coordY, char charT
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8E28.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8F88.s")
+void func_800B8F88(GraphicsBuffers* buf, s32 verticalOffset, char* text)
+{
+	func_800B8E28(buf, (0x130 - func_800B8CFC(text)) / 2, verticalOffset, text);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8FE0.s")
+void func_800B8FE0(void) {
+	D_8012712C = 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8FEC.s")
 
