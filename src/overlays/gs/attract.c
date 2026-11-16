@@ -88,16 +88,8 @@ void func_80800274_gsattract(u32 arg0) {
 
 void func_808002A4_gsattract(s32 arg0)
 {
-    D_80800490_gsattract_2* temp_v0;
-    D_80135470.unk0[1] = arg0;
-    temp_v0 = &D_80800490_gsattract[D_80135470.unk0[0]].unk4[arg0];
-    if (temp_v0->unk2 < 0)
-    {
-        map_travelToTarget(temp_v0->unk0, 1, 1);
-        return;
-    }
-    func_800D3A14(temp_v0->unk4);
-    demo_playDemo(DEMO_2_ATTRACT, temp_v0->unk0, temp_v0->unk2);
+    //Randomizer Change just go straight to game select instead of playing demos
+    map_travelToTarget(MAP_158_GAME_SELECT, 1, 1);
 }
 
 void gsattract_entrypoint_5(u32 arg0)
