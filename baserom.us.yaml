@@ -4387,15 +4387,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F96A70
-    bss_size: 0x00000010
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F96A70, c, attract]
-      - [0x01F96EB0, .rodata, attract]
-      - [0x01F96EB0, data, attract]
-      - [0x01F96FB0, bss, attract]
+      - [auto, c, attract]
   - name: chwitchytents_header
     dir: overlays/chwitchytents
     type: bin

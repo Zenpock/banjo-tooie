@@ -34,6 +34,7 @@ void graphics_setTextScale(f32 size);
 s32 func_800B8CFC(char*);
 void graphics_drawChar(GraphicsBuffers*, s32, s32, char);
 void func_800B8E28(GraphicsBuffers*, s32, s32, char*);
+void func_800B8F88(GraphicsBuffers*, s32, char*);
 void func_800B8FE0();
 void func_800B8FEC();
 void func_800B90C8();
