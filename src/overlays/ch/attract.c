@@ -125,18 +125,23 @@ void func_80800014_chattract(Actor* arg0)
         actor_mark_delete(arg0);
     }
 }
-
-void func_80800204_chattract(Actor* arg0, GraphicsBuffers* arg1) {
+void func_80800204_chattract(Actor* arg0, GraphicsBuffers* buf) {
     f32 sp3C[3];
-
-    if (arg0->rotation[1] != 0.0f)
     {
-        ml_vec3f_assign_value(sp3C, 0, arg0->rotation[1], 0);
-        func_800DF4CC(sp3C);
+        char saveTypeWarn[] = { "CHANGE SAVE TYPE TO 16-KBIT IN EMULATOR\0" };
+        char controllerWarn[] = { "OR JUST PLUG IN A CONTROLLER\0" };
+        char* tmp = saveTypeWarn;
+        graphics_resetTextParams();
+        graphics_setTextFont(0);
+        graphics_setTextScale(0.9f);
+        graphics_setTextColors(255, 230, 255);
+        func_800B8CB0(1);
+        func_800B7F14(buf);
+        func_800B8F88(buf, 0xA0, tmp);
+        tmp = controllerWarn;
+        func_800B8F88(buf, 0xAB, tmp);
+        func_800B811C(buf);
     }
-    func_800DF410(arg0->alpha);
-    func_800DF47C(func_801015D0, arg0);
-    func_800DF944(arg1, arg0->position, 0.0f, arg0->scale, 0U, 1U, func_8010347C(arg0->unk0));
 }
 
 s32 func_808002AC_chattract(Actor* arg0, s32 arg1, s32 arg2) {
