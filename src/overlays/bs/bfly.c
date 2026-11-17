@@ -229,12 +229,12 @@ void func_80800624_bsbfly(PlayerState* self)
             break;
         case 1:
             _bafly_entrypoint_7(self, 1);
-            temp_f0 = ml_normalizeAngle_f(func_8009BFD8(self) - 30.0f);
+            temp_f0 = ml_normalizeAngle_f(bapitch_getIdeal(self) - 30.0f);
             if ((temp_f0 > 80.0f) && (temp_f0 < 300.0f)) 
             {
                 temp_f0 = 300.0f;
             }
-            func_8009BF5C(self, temp_f0);
+            bapitch_setIdeal(self, temp_f0);
             _bafly_entrypoint_21(self);
             if (sp38 != 0)
             {
@@ -314,7 +314,7 @@ void func_80800A24_bsbfly(PlayerState* self, s32 arg1)
             func_8009FFD8(self, 1, 1, 3, 7);
             _bafly_entrypoint_1(self, self->kazfly->unk10, &sp34, 4200);
             yaw_setIdeal(self, sp38 + 180.0f);
-            func_8009BF5C(self, sp34);
+            bapitch_setIdeal(self, sp34);
             baroll_setIdeal(self, 0);
             func_8009BA9C(self, self->kazfly->unk10);
             func_800A0CF4(self, 1);
@@ -535,7 +535,7 @@ void func_80801208_bsbfly(PlayerState* self)
     func_80095A40(self);
     func_800961AC(self, 1);
     baroll_setIdeal(self, 0.0f);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baphysics_reset_gravity(self);
     baphysics_reset_terminal_velocity(self);
     func_80093360(self, 0.0f);

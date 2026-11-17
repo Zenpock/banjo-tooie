@@ -236,7 +236,7 @@ void func_80800680_bstrexsmall(PlayerState* self) {
 
 void func_8080070C_bstrexsmall(PlayerState* self) {
     _basudie_entrypoint_6(self);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
 }
 
@@ -257,7 +257,7 @@ void func_80800744_bstrexsmall(PlayerState* self) {
     anctrl_setPlaybackType(temp_s0, 1);
     anctrl_start(temp_s0);
     _basudie_entrypoint_3(self, self->unk16C, 800.0f, -2400.0f, 10.0f);
-    func_8009BFE4(self, 1000.0f, 12.0f);
+    bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
     func_8009D820(self, 1.4f);
     self->unk15C.bytes[0] = 0;
 }

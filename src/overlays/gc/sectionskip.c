@@ -474,7 +474,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
             break;
         }
     }
-    if ((func_800D395C() != 0) || (func_800D3948() != 0))
+    if ((game_isReplayMinigame() != 0) || (game_isMultiplayer() != 0))
     {
         func_808002A0_gcsectionskip(temp_v0, arg0);
         return 0;

@@ -14,7 +14,7 @@ f32 bsmummove_entrypoint_2(PlayerState *self) {
 
 void func_80800030_bsmummove(PlayerState *self) {
     _bsmum_entrypoint_1(self);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
 }
 
@@ -42,7 +42,7 @@ void func_80800068_bsmummove(PlayerState *self) {
     baanim_setDurationRange(self, 0.3f, 1.5f);
     func_8008C9F0(self, 120.0f, 600.0f, 0.65f, 0.4f);
     func_8008CA30(self, 1.0f);
-    func_8009BFE4(self, 1000.0f, 12.0f);
+    bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
     baroll_setAngularVelocity(self, 1000.0f, 12.0f);
 }
 

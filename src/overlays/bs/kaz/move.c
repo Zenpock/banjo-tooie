@@ -270,7 +270,7 @@ void bskazmove_entrypoint_6(PlayerState *self) {
 }
 
 void bskazmove_entrypoint_7(PlayerState *self) {
-    func_8009BF5C(self, 0);
+    bapitch_setIdeal(self, 0);
     baroll_setIdeal(self, 0);
     _bskaz_entrypoint_2(self);
 }
@@ -283,7 +283,7 @@ void bskazmove_entrypoint_8(PlayerState *self) {
     self->unk15C.word = 0;
     func_80800754_bskazmove(self);
     func_8009FFD8(self, BAANIM_UPDATE_2_SCALE_HORZ, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
-    func_8009BFE4(self, 1000, 12);
+    bapitch_setAngularVelocity(self, 1000, 12);
     baroll_setAngularVelocity(self, 1000, 12);
 }
 

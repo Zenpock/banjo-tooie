@@ -1,14 +1,5 @@
 #include "core2/1EBCFC0.h"
 
-typedef struct {
-    Gfx* unk0;
-    Mtx* unk4;
-} Unkfunc_800E44FC;
-
-typedef struct {
-    u8 unk0[68];
-} Unkfunc_800E44FC_2;
-
 extern f32* D_8012D500;
 extern f32* D_8012D504;
 extern s32 D_8012D508;
@@ -194,11 +185,11 @@ void func_800E42E4(s32 arg0) {
  * @param arg0 The graphics context to apply the matrices to.
  * @param use_widescreen Determines whether to adjust the resulting matrix for anamorphic widescreen if widescreen is enabled.
  */
-void func_800E42F0(Unkfunc_800E44FC* arg0, s32 use_widescreen) {
+void func_800E42F0(GraphicsBuffers* arg0, s32 use_widescreen) {
     Gfx* cur_gfx;
     Mtx* cur_mtx;
-    cur_gfx = arg0->unk0;
-    cur_mtx = arg0->unk4;
+    cur_gfx = arg0->gfx;
+    cur_mtx = arg0->mtx;
 
     // Build the orthographic matrix.
     // Determine the matrix's left and right coordinates based on whether widescreen should be used and is enabled.
@@ -229,8 +220,8 @@ void func_800E42F0(Unkfunc_800E44FC* arg0, s32 use_widescreen) {
     gSPMatrix(cur_gfx++, OS_K0_TO_PHYSICAL(cur_mtx++), G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
 
     // Update the graphics context with the final displaylist and matrix pointers.
-    arg0->unk0 = cur_gfx;
-    arg0->unk4 = cur_mtx;
+    arg0->gfx = cur_gfx;
+    arg0->mtx = cur_mtx;
 }
 
 /**

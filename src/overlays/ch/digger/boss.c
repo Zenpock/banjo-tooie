@@ -1114,7 +1114,7 @@ void func_80800A4C_chdiggerboss(Actor* arg0)
 		case 0x45:
 			if (timer_reachedZero(&sp44->unkF8) != 0)
 			{
-				if (func_800D395C() != 0)
+				if (game_isReplayMinigame() != 0)
 				{
 					func_800FDC28(0U);
 					_gcfrontend_entrypoint_10();
@@ -1130,7 +1130,7 @@ void func_80800A4C_chdiggerboss(Actor* arg0)
 			if (func_80101DDC(arg0) != 0)
 			{
 				func_80803BE8_chdiggerboss(arg0, 0x48, 8);
-				if (func_800D395C() != 0)
+				if (game_isReplayMinigame() != 0)
 				{
 					func_80803660_chdiggerboss(arg0, 0xCEB, 0x144);
 				}
@@ -1227,7 +1227,7 @@ s32 func_80801A04_chdiggerboss(Actor* arg0, s32 eventId, s32 arg2)
 			}
 			break;
 		case 0x96:
-			if (func_800D395C() == 0)
+			if (game_isReplayMinigame() == 0)
 			{
 				return 0;
 			}
@@ -1243,7 +1243,7 @@ s32 func_80801A04_chdiggerboss(Actor* arg0, s32 eventId, s32 arg2)
 			func_80800618_chdiggerboss(arg0, 0, 0);
 			if (func_80802288_chdiggerboss(arg0) != 0)
 			{
-				func_800D395C();
+				game_isReplayMinigame();
 				func_80803BE8_chdiggerboss(arg0, 0x48, 8);
 			}
 			else

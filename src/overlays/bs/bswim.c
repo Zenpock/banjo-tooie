@@ -49,7 +49,7 @@ void func_80800104_bsbswim(PlayerState* self)
 {
     if (func_8009E74C(self, 0xB) == 0)
     {
-        func_8009BF5C(self, 0.0f);
+        bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
         func_8009BC34(self);
         func_800A0CF4(self, 0);
@@ -536,7 +536,7 @@ void func_80800EC8_bsbswim(PlayerState* self) {
     func_80800030_bsbswim(self);
     _baswim_entrypoint_10(self, 0.0f);
     _baswim_entrypoint_8(self, 600.0f);
-    func_8009BFE4(self, 200.0f, 2.5f);
+    bapitch_setAngularVelocity(self, 200.0f, 2.5f);
     func_8009D874(self);
     self->unk164.bytes[0] = 0;
 }
@@ -551,7 +551,7 @@ void func_80800F64_bsbswim(PlayerState* self)
     switch (self->unk164.bytes[0])
     {
     case 0:
-        func_8009BF5C(self, 50.0f);
+        bapitch_setIdeal(self, 50.0f);
         if (anctrl_isAt(sp20, 0.2916f) != 0)
         {
             if (_baswim_entrypoint_1(self) != 0)
@@ -610,7 +610,7 @@ void func_808010B8_bsbswim(PlayerState* self)
     func_8009BC5C(self, 1.0f);
     func_8009B94C(self, NULL);
     func_8009BA9C(self, NULL);
-    func_8009BF5C(self, 275.0f);
+    bapitch_setIdeal(self, 275.0f);
     baroll_setIdeal(self, 0.0f);
     func_8008E944(self);
     _batimer_set(self, 0, 0.0f);
@@ -796,7 +796,7 @@ void func_8080182C_bsbswim(PlayerState* self)
 {
     func_80800030_bsbswim(self);
     _bsdrone_entrypoint_0(self);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
 }
 
@@ -849,7 +849,7 @@ void func_8080196C_bsbswim(PlayerState* self)
     func_80800000_bsbswim(self);
     func_8009B94C(self, NULL);
     func_8009BA9C(self, NULL);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
     self->unk164.bytes[1] = 0;
 }
@@ -947,7 +947,7 @@ void func_80801C64_bsbswim(PlayerState* self) {
     func_80800000_bsbswim(self);
     func_8009B94C(self, NULL);
     func_8009BA9C(self, NULL);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
     func_800A0CF4(self, 1);
 }

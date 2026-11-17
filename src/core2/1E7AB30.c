@@ -17,7 +17,7 @@ void func_800A1294(s32 arg0)
     TransformationId activeTransformation;
     u32 maxHealth;
 
-    if ((D_80127090[4] == 0) && (func_800D3948() == 0)
+    if ((D_80127090[4] == 0) && (game_isMultiplayer() == 0)
         && (flag_getValue(FLAG2_6B6_UNK) == 0)
         && (cheat_isActive(9U) == 0) && (D_80127090[7] == 0))
     {

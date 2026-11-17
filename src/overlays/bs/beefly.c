@@ -89,7 +89,7 @@ void func_808002E4_bsbeefly(PlayerState* self) {
     if (func_8009CA70(self, bs_getNextState(self), 0x4000) == 0) {
         func_80093360(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
-        func_8009BF5C(self, 0.0f);
+        bapitch_setIdeal(self, 0.0f);
         func_800A4E30(self);
         baphysics_reset_gravity(self);
         baphysics_reset_terminal_velocity(self);
@@ -196,7 +196,7 @@ void func_80800708_bsbeefly(PlayerState* self) {
     func_80800480_bsbeefly(self);
     _bafly_entrypoint_10(self, 300.0f, 80.0f);
     _bafly_entrypoint_11(self);
-    func_8009BFCC(self);
+    bapitch_get(self);
     if (bakey_pressed(self, BUTTON_A)
         && (player_getCoordVertical(self) < 27500.0f)) // playerPosition_getY
     {
@@ -210,7 +210,7 @@ void func_80800708_bsbeefly(PlayerState* self) {
     sp30 = &D_80800E3C_bsbeefly[flap_count];
     volume = 0.9f;
     volume += *sp30;
-    pitch = func_8009BFCC(self); // pitch_get
+    pitch = bapitch_get(self); // pitch_get
     var_f2_3 = 0.0f;
     if (baphysics_get_vertical_velocity(self) < 0/*.0f*/) {
         if (pitch < 300.0f) {
@@ -236,13 +236,13 @@ void func_80800708_bsbeefly(PlayerState* self) {
             }
             break;
         case 1:
-            // func_8009BFD8 -> pitch_getIdeal()
+            // bapitch_getIdeal -> pitch_getIdeal()
             // ml_normalizeAngle -> mlNormalizeAngle
-            angle_degrees = ml_normalizeAngle_f(func_8009BFD8(self) - 30.0f);
+            angle_degrees = ml_normalizeAngle_f(bapitch_getIdeal(self) - 30.0f);
             if ((angle_degrees > 80.0f) && (angle_degrees < 300.0f)) {
                 angle_degrees = 300.0f;
             }
-            func_8009BF5C(self, angle_degrees);
+            bapitch_setIdeal(self, angle_degrees);
             _bafly_entrypoint_21(self);
             if (flap_count != 0) {
                 baphysics_set_vertical_velocity(self, (f32) flap_count * 400.0f);

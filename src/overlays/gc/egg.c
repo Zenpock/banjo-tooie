@@ -80,7 +80,7 @@ int gcegg_entrypoint_6(s32 eggType)
 int gcegg_entrypoint_7(s32 arg0)
 {
     s32 returnValue;
-    if (!func_800D3948())
+    if (!game_isMultiplayer())
     {
         return 1;
     }

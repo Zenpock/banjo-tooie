@@ -30,7 +30,7 @@ s32 func_808002A8_cheggsplode(Actor* arg0, s32 arg1, s32 arg2)
     {
     case 0x9F:
     {
-        if (func_800D3948() == 0)
+        if (game_isMultiplayer() == 0)
         {
             sp1C->unk6 = 1;
         }

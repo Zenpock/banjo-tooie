@@ -69,7 +69,7 @@ void func_800989E4(PlayerState* self) {
     if (self->unkBC->unk18 == 0)
     {
         self->unkBC->unk18 = 1;
-        if ((func_800D3948() != 0) || (func_800D395C() != 0))
+        if ((game_isMultiplayer() != 0) || (game_isReplayMinigame() != 0))
         {
             _gcfrontend_entrypoint_12();
             return;
@@ -185,7 +185,7 @@ void func_80098C48(PlayerState* self)
     func_8009AC6C(self);
     func_8009B4FC(self);
     func_8009BD50(self);
-    func_8009BF04(self);
+    bapitch_init(self);
     func_80098538(self);
     func_8009CC90(self);
     baroll_reset(self);
@@ -362,7 +362,7 @@ void func_800991B0(PlayerState* self)
         func_80095C94(self);
         if (func_80091E80(self, 2) != 0)
         {
-            func_8009BF34(self);
+            bapitch_update(self);
             baroll_update(self);
             func_8009D088(self);
         }

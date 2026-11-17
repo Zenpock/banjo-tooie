@@ -328,7 +328,7 @@ void bskazjump_entrypoint_14(PlayerState *self) {
     _batimer_decrement(self, 0);
     _bskazmove_entrypoint_0(self);
     if (_batimer_isZero(self, 1) != 0) {
-        func_8009BF5C(self, func_8009BFD8(self) + 20.0f);
+        bapitch_setIdeal(self, bapitch_getIdeal(self) + 20.0f);
     }
     if (player_inWater(self) != 0) {
         next_state = BS_STATE_160;

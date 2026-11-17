@@ -147,14 +147,14 @@ void baswim_entrypoint_12(PlayerState* self)
     temp_f0 = _bafpctrl_entrypoint_3(self);
     temp_f0 = ml_map_f(temp_f0, 0.1f, 1.0f, temp_f0 * temp_f0, 1.0f);
     sp2C *= temp_f0;
-    func_8009BFE4(self, sp2C, 1.6f);
+    bapitch_setAngularVelocity(self, sp2C, 1.6f);
     temp_f0_2 = bastick_getY(self);
     if (temp_f0_2 < 0.0f)
     {
-        func_8009BF5C(self, ml_map_f(temp_f0_2, -1.0f, 0.0f, 275.0f, 360.0f));
+        bapitch_setIdeal(self, ml_map_f(temp_f0_2, -1.0f, 0.0f, 275.0f, 360.0f));
         return;
     }
-    func_8009BF5C(self, ml_map_f(temp_f0_2, 0.0f, 1.0f, 0.0f, 85.0f));
+    bapitch_setIdeal(self, ml_map_f(temp_f0_2, 0.0f, 1.0f, 0.0f, 85.0f));
 }
 
 void baswim_entrypoint_13(PlayerState* self)
@@ -162,7 +162,7 @@ void baswim_entrypoint_13(PlayerState* self)
     f32 sp44;
     s32 sp40;
     f32 sp34[3];
-    sp44 = func_8009BFCC(self);
+    sp44 = bapitch_get(self);
     func_800EF4E4(sp34, sp44, yaw_get(self), 0.0f, 0.0f, self->swim->unk0);
     self->swim->unk0 = ml_max_f(self->swim->unk0 - (time_getDelta() * self->swim->unk4), 0.0f);
     func_8009B94C(self, sp34);

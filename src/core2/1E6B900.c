@@ -60,7 +60,7 @@ void func_8009216C(PlayerState* arg0, f32* arg1, f32* arg2)
     BaUnknown50* temp_v0;
     func_800920F0(arg0);
     arg0->unk50->unk24 = baroll_get(arg0);
-    arg0->unk50->unk20 = func_8009BFCC(arg0);
+    arg0->unk50->unk20 = bapitch_get(arg0);
     temp_v0 = arg0->unk50;
     ml_vec3f_assign_value(arg2, temp_v0->unk20, temp_v0->unk28, temp_v0->unk24);
     player_getCoords(arg0, arg1);

@@ -241,7 +241,7 @@ BanjoStateId bsrest_entrypoint_13(PlayerState *self) {
 }
 
 void bsrest_entrypoint_14(PlayerState *self) {
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
     func_8080003C_bsrest(self);
 }

@@ -47,7 +47,7 @@ int player_canDive(PlayerState* arg0) {
 //Can Use Eggs
 s32 player_canEggShoot(PlayerState* arg0)
 {
-    enum transform_e temp_v0;
+    TransformationId temp_v0;
 
 	if (ability_getValue(ABILITY_06_BK_USE_EGGS) == 0)
 	{

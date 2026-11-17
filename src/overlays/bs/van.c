@@ -51,9 +51,9 @@ void bsvan_entrypoint_0(PlayerState* self) {
         _bastatemem_entrypoint_1(self);
         func_80092864(self, 1.0f);
         func_800947EC(self, 1, 0);
-        func_8009BF5C(self, 0.0f);
+        bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
-        func_8009C000(self);
+        bapitch_resetAngularVelocity(self);
         baroll_resetAngularVelocity(self);
         bastick_popZone(self);
         func_80095A40(self);
@@ -73,7 +73,7 @@ void bsvan_entrypoint_1(PlayerState* self) {
         self->unk174 = 1.0f;
         _batimer_set(self, 2, 0.0f);
         func_80092864(self, 2.2999878f);
-        func_8009BFE4(self, 1000.0f, 12.0f);
+        bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
         baroll_setAngularVelocity(self, 1000.0f, 12.0f);
         bastick_pushZone(self);
         bastick_setZoneMax(self, 0, 0.12f);
@@ -232,7 +232,7 @@ s32 bsvan_entrypoint_5(s32 arg0) {
 }
 
 void func_808007EC_bsvan(PlayerState* self) {
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
     bsvan_entrypoint_0(self);
 }
@@ -404,7 +404,7 @@ void func_80800BDC_bsvan(PlayerState* self) {
 
 void func_80800E0C_bsvan(PlayerState* self) {
     baphysics_reset_gravity(self);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
     bsvan_entrypoint_0(self);
 }
@@ -460,7 +460,7 @@ void func_80800F70_bsvan(PlayerState* self) {
     func_8008C9F0(self, 30.0f, 900.0f, 1.0f, 0.4f);
     func_8008CA30(self, 1.0f);
     yaw_setVelocityBounded(self, 300.0f, 6.5f);
-    func_8009BFE4(self, 1000.0f, 12.0f);
+    bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
     baroll_setAngularVelocity(self, 1000.0f, 12.0f);
 }
 

@@ -229,7 +229,7 @@ void func_808003DC_chevilmumbo(Actor* arg0, s32 arg1)
             return;
         case 4:
             actor_disableCollision(arg0);
-            if (func_800D395C() == 0)
+            if (game_isReplayMinigame() == 0)
             {
                 collectable_spawnItem(0x47U, TYPE_1_JIGGY, NULL, 1U, arg0->unk0);
                 func_808001F4_chevilmumbo(arg0, 0xF, 0x20, NULL);
@@ -245,7 +245,7 @@ void func_808003DC_chevilmumbo(Actor* arg0, s32 arg1)
             _chexploder_entrypoint_3(arg0, sp30, 3U);
             return;
         case 5:
-            if (func_800D395C() != 0) {
+            if (game_isReplayMinigame() != 0) {
                 _gcfrontend_entrypoint_10();
             }
             else {

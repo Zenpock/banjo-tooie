@@ -189,7 +189,7 @@ int func_800EB15C(ActorMarker* arg0)
 	{
 		return 1;
 	}
-	if (!func_800D3948())
+	if (!game_isMultiplayer())
 	{
 		if (!func_800F6774(character_getActiveIndex()))
 		{

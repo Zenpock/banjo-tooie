@@ -426,9 +426,9 @@ void func_80801058_bsmum(PlayerState *self) {
     next_state = BS_STATE_0_INVALID;
     bsmum_entrypoint_13(self);
     if (func_8008DF8C(self, 0x190) != 0) {
-        func_8009BF5C(self, 180.0f);
+        bapitch_setIdeal(self, 180.0f);
     } else {
-        func_8009BF5C(self, func_8009BFD8(self) + 20.0f);
+        bapitch_setIdeal(self, bapitch_getIdeal(self) + 20.0f);
     }
     if (player_inWater(self) != 0) {
         next_state = BS_STATE_F4;

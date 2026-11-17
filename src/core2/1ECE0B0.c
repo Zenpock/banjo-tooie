@@ -572,7 +572,7 @@ f32 func_800F5AD0(s32 arg0) {
 
 f32 func_800F5AE0(s32 arg0)
 {
-    return func_8009BFCC(D_80135490.unk0[arg0]);
+    return bapitch_get(D_80135490.unk0[arg0]);
 }
 
 s32 func_800F5B0C(s32 arg0)
@@ -665,7 +665,7 @@ void func_800F5DC8(s32 arg0, Vec3f* arg1) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    arg1->pos.x = func_8009BFD8(sp1C);
+    arg1->pos.x = bapitch_getIdeal(sp1C);
     arg1->pos.y = yaw_getIdeal(sp1C);
     arg1->pos.z = baroll_getIdeal(sp1C);
 }
@@ -1722,7 +1722,7 @@ void func_800F8418(s32 arg0, f32* arg1)
 
 void func_800F8444(s32 arg0, f32* arg1) {
     PlayerState* temp = D_80135490.unk0[arg0];
-    func_8009BF5C(temp, arg1[0]);
+    bapitch_setIdeal(temp, arg1[0]);
     yaw_setIdeal(temp, arg1[1]);
     baroll_setIdeal(temp, arg1[2]);
 }
@@ -2160,8 +2160,8 @@ TransformationId func_800F929C(void) {
     return TRANSFORM_1_BK;
 }
 
-void func_800F92CC(u32* arg0, enum transform_e* arg1, s32* arg2, s32* arg3) {
-    enum transform_e temp_v0_2;
+void func_800F92CC(u32* arg0, TransformationId* arg1, s32* arg2, s32* arg3) {
+    TransformationId temp_v0_2;
     u32 temp_v0;
 
     temp_v0 = character_getActiveIndex();
@@ -2179,8 +2179,8 @@ void func_800F92CC(u32* arg0, enum transform_e* arg1, s32* arg2, s32* arg3) {
     *arg2 = _character_findCharOfTransform(*arg3);
 }
 
-void func_800F9354(u32* arg0, enum transform_e* arg1, s32* arg2) {
-    enum transform_e temp_v0_2;
+void func_800F9354(u32* arg0, TransformationId* arg1, s32* arg2) {
+    TransformationId temp_v0_2;
     u32 temp_v0;
 
     temp_v0 = character_getActiveIndex();
@@ -2221,9 +2221,9 @@ void func_800F9444(s32 arg0) {
 }
 
 int func_800F9488(s32 arg0) {
-    enum transform_e sp5C;
+    TransformationId sp5C;
     s32 sp58;
-    enum transform_e sp54;
+    TransformationId sp54;
     s32 sp50;
     f32 sp44[3];
     f32 sp38[3];

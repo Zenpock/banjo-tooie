@@ -69,7 +69,7 @@ void func_8080000C_chgameselect(Actor* arg0) {
     u32 var_s0;
 
     func_80016BDC(4);
-    temp_s0 = func_800D395C();
+    temp_s0 = game_isReplayMinigame();
     _gcfrontend_entrypoint_0();
     if (func_800AA0B8() != 0)
     {

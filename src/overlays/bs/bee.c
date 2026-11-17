@@ -5,7 +5,7 @@
 void bsbee_entrypoint_0(PlayerState* self) {
     if (func_8009E74C(self, 1) == 0) {
         func_800947EC(self, 1, 0);
-        func_8009BF5C(self, 0.0f);
+        bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
         bastick_popZone(self);
         func_800A0CF4(self, 0);
@@ -22,7 +22,7 @@ void bsbee_entrypoint_0(PlayerState* self) {
 void bsbee_entrypoint_1(PlayerState* self) {
     if (func_8009E77C(self, 1) == 0) {
         _babee_entrypoint_4(self);
-        func_8009BFE4(self, 1000.0f, 12.0f);
+        bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
         baroll_setAngularVelocity(self, 1000.0f, 12.0f);
         func_800959C8(self, 50.0f, 25.0f);
         baflag_set(self, BA_FLAG_3);

@@ -523,7 +523,7 @@ void bsjump_entrypoint_18(PlayerState* self)
 	_bswalk_entrypoint_1(self);
 	if (_batimer_isZero(self, 1) != 0)
 	{
-		func_8009BF5C(self, func_8009BFD8(self) + 20.0f);
+		bapitch_setIdeal(self, bapitch_getIdeal(self) + 20.0f);
 	}
 	if (_batimer_isNonzero(self, 0) != 0)
 	{

@@ -45,7 +45,7 @@ void bskazdie_entrypoint_0(PlayerState *self) {
     baphysics_set_type(self, 3);
     baphysics_set_vertical_velocity(self, 510);
     baphysics_set_gravity(self, -1400);
-    func_8009BFE4(self, 1000, 12);
+    bapitch_setAngularVelocity(self, 1000, 12);
     func_800A4DFC(self, 10);
     _ncbadie_entrypoint_3(func_800A4CA8(self), 30);
     func_800A0180(self);
@@ -101,7 +101,7 @@ void bskazdie_entrypoint_1(PlayerState *self) {
 
 void bskazdie_entrypoint_2(PlayerState *self) {
     baphysics_reset_gravity(self);
-    func_8009BF5C(self, 0);
+    bapitch_setIdeal(self, 0);
     baroll_setIdeal(self, 0);
     func_800A4E30(self);
     func_800951B4(self);

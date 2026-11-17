@@ -155,7 +155,7 @@ void graphics_drawChar(GraphicsBuffers* arg0, s32 coordX, s32 coordY, char charT
 }
 
 //graphics_drawString
-void func_800B8E28(GraphicsBuffers* buf, s32 xCoord, s32 yCoord, char* text)
+void graphics_drawString(GraphicsBuffers* buf, s32 xCoord, s32 yCoord, char* text)
 {
 	s32 var_s5;
 	s32 var_s4;
@@ -195,9 +195,9 @@ void func_800B8E28(GraphicsBuffers* buf, s32 xCoord, s32 yCoord, char* text)
 }
 
 //graphics_drawStringHorizCentered
-void func_800B8F88(GraphicsBuffers* buf, s32 verticalOffset, char* text)
+void graphics_drawStringHorizCentered(GraphicsBuffers* buf, s32 verticalOffset, char* text)
 {
-	func_800B8E28(buf, (0x130 - func_800B8CFC(text)) / 2, verticalOffset, text);
+	graphics_drawString(buf, (0x130 - func_800B8CFC(text)) / 2, verticalOffset, text);
 }
 
 void func_800B8FE0(void) {

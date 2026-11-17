@@ -232,7 +232,7 @@ void func_808007EC_bstnt(PlayerState* self, s32 arg1) {
 		func_800931AC(self, 1);
 		func_808000D4_bstnt(self, 0.1f);
 		func_8009BC34(self);
-		func_8009BF5C(self, 0.0f);
+		bapitch_setIdeal(self, 0.0f);
 		baroll_setIdeal(self, 0.0f);
 		return;
 	}
@@ -390,7 +390,7 @@ void bstnt_entrypoint_2(PlayerState* self) {
 	if (func_8009E74C(self, 0xC) == 0) {
 		func_800947EC(self, 1, 0);
 		func_80092864(self, 1.0f);
-		func_8009C000(self);
+		bapitch_resetAngularVelocity(self);
 		baroll_resetAngularVelocity(self);
 		bastick_popZone(self);
 		func_80095A40(self);
@@ -405,7 +405,7 @@ void bstnt_entrypoint_3(PlayerState* self) {
 		self->unk168.bytes[2] = 0;
 		_batimer_set(self, 2, 0.0f);
 		func_80092864(self, 0.8999939f);
-		func_8009BFE4(self, 1000.0f, 12.0f);
+		bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
 		baroll_setAngularVelocity(self, 1000.0f, 12.0f);
 		bastick_pushZone(self);
 		bastick_setZoneMax(self, 0, 0.12f);
@@ -546,7 +546,7 @@ void func_808012F8_bstnt(PlayerState* self) {
 
 void func_80801464_bstnt(PlayerState* self)
 {
-	func_8009BF5C(self, 0.0f);
+	bapitch_setIdeal(self, 0.0f);
 	baroll_setIdeal(self, 0.0f);
 	bstnt_entrypoint_2(self);
 }
@@ -666,7 +666,7 @@ void func_8080166C_bstnt(PlayerState* self) {
 
 void func_808018D0_bstnt(PlayerState* self) {
 	baphysics_reset_gravity(self);
-	func_8009BF5C(self, 0.0f);
+	bapitch_setIdeal(self, 0.0f);
 	baroll_setIdeal(self, 0.0f);
 	bstnt_entrypoint_2(self);
 }
@@ -734,7 +734,7 @@ void func_80801980_bstnt(PlayerState* self, u32 arg1) {
 		baanim_setEndAndDuration(self, 0.93f, 0.7f);
 		return;
 	case 0:
-		func_8009BF5C(self, 0.0f);
+		bapitch_setIdeal(self, 0.0f);
 		baroll_setIdeal(self, 0.0f);
 
 	default:

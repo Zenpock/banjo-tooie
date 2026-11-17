@@ -185,7 +185,7 @@ ActorData* chjigsaw_entrypoint_0()
 
 void func_808006CC_chjigsaw(Actor* arg0)
 {
-    if (func_800D395C() != 0)
+    if (game_isReplayMinigame() != 0)
     {
         actor_mark_delete(arg0);
         return;

@@ -144,7 +144,7 @@ void func_80800368_bsbansack(PlayerState* self)
         func_8009D2F0(self, 0, 0.5f);
         return;
     }
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
 }
 
@@ -424,7 +424,7 @@ void func_80800AF4_bsbansack(PlayerState* self, s32 arg1)
     case 0:
         func_80800A78_bsbansack(self);
         baphysics_reset_gravity(self);
-        func_8009BF5C(self, 0.0f);
+        bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
     default:
         return;
@@ -821,7 +821,7 @@ void func_80801680_bsbansack(PlayerState* self, s32 arg1)
         return;
     case 0:
         func_80800A78_bsbansack(self);
-        func_8009BF5C(self, 0.0f);
+        bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
         break;
     }

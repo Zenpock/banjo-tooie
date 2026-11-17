@@ -53,7 +53,7 @@ void func_8080013C_bsblongleg(PlayerState* self)
         func_800A0CF4(self, 1);
         func_800A0CE8(self, 1);
         func_800A0DD0(self, 1);
-        func_8009BFE4(self, 1000.0f, 12.0f);
+        bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
         baroll_setAngularVelocity(self, 1000.0f, 12.0f);
         baflag_set(self, BA_FLAG_3);
         func_800931AC(self, 2);
@@ -71,7 +71,7 @@ void func_80800204_bsblongleg(PlayerState* self)
         func_800A0CE8(self, 0);
         func_800A0DD0(self, 0);
         func_800931AC(self, 1);
-        func_8009BF5C(self, 0.0f);
+        bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
         bastatetimer_clear(self, 2);
         func_800C77DC(1);
@@ -500,7 +500,7 @@ void bsblongleg_entrypoint_20(PlayerState* self)
     baphysics_set_horizontal_velocity(self, rotation[0], baphysics_get_target_horizontal_velocity(self));
     func_800A0CF4(self, 1);
     func_800A0CE8(self, 1);
-    func_8009BFE4(self, 1000.0f, 12.0f);
+    bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
     baroll_setAngularVelocity(self, 1000.0f, 12.0f);
     baphysics_set_target_horizontal_velocity(self, 0.0f);
     func_8009D658(self);
@@ -522,7 +522,7 @@ void bsblongleg_entrypoint_21(PlayerState* self)
         func_800963C0(self, sp34);
         func_800F1EA4(sp34, &sp44);
         func_8009D2F0(self, 1, 0.5f);
-        baphysics_set_target_horizontal_velocity(self, ml_map_f(func_8009BFD8(self), 20.0f, 60.0f, 550.0f, 700.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_map_f(bapitch_getIdeal(self), 20.0f, 60.0f, 550.0f, 700.0f));
         baphysics_set_target_yaw(self, sp44);
         _badust_entrypoint_1(self);
     } else {

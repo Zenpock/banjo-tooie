@@ -31,7 +31,7 @@ void func_8009E154(PlayerState* arg0, s32 arg1, f32* arg2)
 		if (ml_vec3f_is_zero(sp7C) != 0)
 		{
 			ml_vec3f_copy(sp58, arg0->unk114->unk0[arg1].unkC);
-			func_800EF8BC(sp58, sp58, func_8009BFCC(arg0));
+			func_800EF8BC(sp58, sp58, bapitch_get(arg0));
 			func_800EF934(sp58, sp58, yaw_get(arg0));
 			ml_vec3f_sum(sp7C, sp64, sp58);
 		}
@@ -39,7 +39,7 @@ void func_8009E154(PlayerState* arg0, s32 arg1, f32* arg2)
 		{
 			ml_getdiff_vec3f(sp58, sp7C, sp64);
 			func_800EF934(sp58, sp58, -yaw_get(arg0));
-			func_800EF8BC(sp58, sp58, -func_8009BFCC(arg0));
+			func_800EF8BC(sp58, sp58, -bapitch_get(arg0));
 			ml_vec3f_copy(arg0->unk114->unk0[arg1].unkC, sp58);
 		}
 	}
