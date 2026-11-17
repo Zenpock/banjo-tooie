@@ -123,7 +123,7 @@ s32 func_80098BA0()
     return sizeof(ba_unknown_B8_s);
 }
 
-void func_80098BA8(PlayerState* self, s32 arg1)
+void func_80098BA8(PlayerState* self, GraphicsBuffers* arg1)
 {
     if (func_80091E80(self, 1) != 0)
     {

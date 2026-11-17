@@ -6,6 +6,17 @@ extern s16 D_80132E9C;
 extern s32 D_80132ED0[];
 
 typedef struct {
+	ActorMarker* unk0;
+	s32 unk4;
+	s32 unk8;
+} UNK80132E80_2;
+
+typedef struct {
+	UNK80132E80_2* unk0;
+	s32 unk4;
+} UNK80132E80;
+
+typedef struct {
 	u8 pad0[0x14];
 	s32 unk14;
 	s32 unk18;
@@ -19,7 +30,37 @@ extern s32 D_8013546C;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EB3D0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EB51C.s")
+void func_800EB51C(s32 arg0, GraphicsBuffers* arg1) {
+	Vector* temp_s0;
+	UNK80132E80* vectorIter;
+	UNK80132E80* start;
+	UNK80132E80* end;
+
+	temp_s0 = D_80132E80[arg0];
+	if (temp_s0 != NULL)
+	{
+		start = vector_begin(temp_s0);
+		end = vector_end(temp_s0);
+		vectorIter = start;
+		if (end == start)
+		{
+			return;
+		}
+		D_80132E9C = arg0;
+		for (vectorIter = start; vectorIter < end; vectorIter++)
+		{
+			if (vectorIter->unk0->unk8 & 1)
+			{
+				func_800EC7D4(vectorIter->unk0->unk0, arg1);
+			}
+			else
+			{
+				_gspropprop_entrypoint_3(vectorIter->unk0, arg1);
+			}
+
+		}
+	}
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EB5E0.s")
 

@@ -5,7 +5,7 @@
 #include "ba/playerstate.h"
 
 s32 func_8010FAE4(s32);
-void func_8010FAEC(s32, s32);
+void func_8010FAEC(GraphicsBuffers*, s32);
 void func_8010FBD4(s32);
 void func_8010FC38(s32);
 void func_8010FE34(s32, s32);

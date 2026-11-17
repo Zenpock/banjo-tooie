@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1E8DFA0.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8DFA0/func_800B46B0.s")
 
@@ -14,10 +14,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8DFA0/func_800B52EC.s")
 
-void func_800B537C(s32 arg0)
+void func_800B537C(GraphicsBuffers* buf)
 {
-    func_800B525C();
-    func_800B52EC(arg0);
+    func_800B525C(buf);
+    func_800B52EC(buf);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8DFA0/func_800B53A4.s")
 

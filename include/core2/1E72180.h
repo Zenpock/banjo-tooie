@@ -74,7 +74,7 @@ void func_800989E4(PlayerState* self);
 void func_80098B4C(PlayerState* self, s32 arg1);
 void func_80098B5C(PlayerState* self, f32* arg1, f32* arg2);
 s32 func_80098BA0();
-void func_80098BA8(PlayerState* self, s32 arg1);
+void func_80098BA8(PlayerState* self, GraphicsBuffers* arg1);
 void func_80098BE0(PlayerState* self);
 void func_80098C48(PlayerState* self);
 void func_80098E64(PlayerState* self);

@@ -10,9 +10,11 @@
 #include "gfx.h"
 
 void func_800E3980(f32*);
+void func_800E39A8(f32*, f32*);
 s32 func_800E3E8C(s32, f32);
 void func_800E42B4(f32*);
 void func_800E443C(MtxF*, f32[3], f32);
+void func_800E44FC(GraphicsBuffers*);
 void func_800E4640(Gfx** gfx);
 
 #endif

@@ -22,7 +22,7 @@
 
 void func_800B7F14(GraphicsBuffers*);
 void func_800B811C(GraphicsBuffers*);
-void func_800B81CC(GraphicsBuffers*, s32, s32, char);
+s32 func_800B81CC(GraphicsBuffers*, s32, s32, char);
 void graphics_resetTextParams(void);
 void graphics_setTextAlpha(s32 Transparency);
 void graphics_setTextFont(s32 Font);

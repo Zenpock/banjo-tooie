@@ -241,7 +241,7 @@ void func_800F4FC4(void) {
 }
 
 
-void func_800F5008(s32 arg0) 
+void func_800F5008(GraphicsBuffers* arg0)
 {
     s32 temp;
     PlayerState* playerState;
@@ -250,9 +250,11 @@ void func_800F5008(s32 arg0)
 
     for (i = 0, count = 0; i < 8; i++) {
         playerState = D_80135490.unk0[i];
-        if (playerState != NULL && playerState->unk17C != 0) {
+        if (playerState != NULL && playerState->unk17C != 0) 
+		{
             // yummy fake ^0
-            if ((func_80092258(playerState)^0) == 0xFF) {
+            if ((func_80092258(playerState)^0) == 0xFF) 
+			{
                 func_80098BA8(playerState, arg0);
             } 
             else 
@@ -266,7 +268,7 @@ void func_800F5008(s32 arg0)
 }
 
 
-void func_800F50D0(s32 arg0) {
+void func_800F50D0(GraphicsBuffers* arg0) {
     s32 pad[2];
     s32 var_s0;
     f32 sp38;

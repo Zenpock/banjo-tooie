@@ -273,7 +273,7 @@ void func_800E443C(MtxF* base_matrix, f32* translation, f32 scale) {
  * 
  * @param arg0 The graphics context to apply the matrices to.
  */
-void func_800E44FC(Unkfunc_800E44FC* arg0) {
+void func_800E44FC(GraphicsBuffers* buf) {
     u16 persp_norm;
     MtxF proj;
     f32 translation[3];
@@ -289,7 +289,7 @@ void func_800E44FC(Unkfunc_800E44FC* arg0) {
 
     // Build the projection matrix and load its perspnorm value.
     persp_norm = func_800CB124(D_8012D500, &proj);
-    gSPPerspNormalize(arg0->unk0++, persp_norm);
+    gSPPerspNormalize(buf->gfx++, persp_norm);
 
     // Build the viewproj matrix from the projection matrix, translation, and world scale.
     func_800E443C(&proj, translation, func_800CA6E8(D_8012D500));
@@ -301,15 +301,15 @@ void func_800E44FC(Unkfunc_800E44FC* arg0) {
     }
 
     // Convert the matrix stack into fixed point and load it as the viewproj matrix.
-    mlMtxApply(arg0->unk4);
-    gSPMatrix(arg0->unk0++, OS_K0_TO_PHYSICAL(arg0->unk4++), G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
+    mlMtxApply(buf->mtx);
+    gSPMatrix(buf->gfx++, OS_K0_TO_PHYSICAL(buf->mtx++), G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
 
     // Record the viewproj matrix that was created.
-    D_8012D558 = arg0->unk4 - 1;
+    D_8012D558 = buf->mtx - 1;
 
     // Create an identity matrix and load it into the model stack.
-    guMtxIdent(arg0->unk4);
-    gSPMatrix(arg0->unk0++, OS_K0_TO_PHYSICAL(arg0->unk4++), G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    guMtxIdent(buf->mtx);
+    gSPMatrix(buf->gfx++, OS_K0_TO_PHYSICAL(buf->mtx++), G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
 }
 
 void func_800E4628() {

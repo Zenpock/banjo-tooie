@@ -13,6 +13,7 @@
 #include "gc/statusDll.h"
 
 void func_800A877C(s32);
+void func_800A8EF0(GraphicsBuffers*, s32);
 s32 func_800A8FDC(void);
 s32 func_800A907C(s32, s32, s32);
 void func_800A91A8(s32);
