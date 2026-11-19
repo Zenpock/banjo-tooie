@@ -538,12 +538,12 @@ void func_8080101C_bsbansack(PlayerState* self, s32 arg1)
         case 1:
             temp_f0 = yaw_get(self);
             self->unk174 = temp_f0;
-            func_8009328C(self, temp_f0);
+            player_setModelYaw(self, temp_f0);
             func_800931AC(self, 3);
             _batimer_set(self, 0, 1.2f);
             break;
         case 2:
-            temp_f0 = func_80092BE8(self);
+            temp_f0 = player_getModelYaw(self);
             self->unk170 = temp_f0;
             temp_f0 = func_800F1DCC(self->unk174, temp_f0);
             var_f2 = temp_f0;
@@ -582,7 +582,7 @@ s32 func_8080119C_bsbansack(PlayerState* self)
 	f32 sp2C;
 	f32 temp_f12;
 
-	sp2C = func_80092BE8(self);
+	sp2C = player_getModelYaw(self);
 	gameSpeed = time_getDelta();
 	_batimer_decrement(self, 0);
 	switch (self->unk15C.bytes[0])
@@ -590,7 +590,7 @@ s32 func_8080119C_bsbansack(PlayerState* self)
 	case 1:
 		sp34 = ml_map_f(_batimer_get(self, 0.0f), 0.0f, 1.2f, 700.0f, 1400.0f);
 		sp2C += (sp34 * gameSpeed);
-		func_8009328C(self, sp2C);
+		player_setModelYaw(self, sp2C);
 		if (func_8008DF8C(self, 1) != 0)
 		{
 			self->unk16C = sp34;
@@ -601,7 +601,7 @@ s32 func_8080119C_bsbansack(PlayerState* self)
 		temp_f12 = ml_map_f(_batimer_get(self, 0), 0.0f, 0.5f, 1.0f, 0.0f) * 90.0f;
 		sp3C = self->unk174 - self->unk170;
 		sp2C = (func_80013970(temp_f12) * (sp3C)) + self->unk170;
-		func_8009328C(self, sp2C);
+		player_setModelYaw(self, sp2C);
 		if (_batimer_get(self, 0) != 0.0f)
 		{
 			return 0;

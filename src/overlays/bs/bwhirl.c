@@ -30,7 +30,7 @@ void func_80800008_bsbwhirl(PlayerState* self) {
         sp24 = func_80092B8C(self, sp28);
         player_getCoords(self, sp34);
         ml_vec3f_add(&sp34, sp28);
-        ml_translateAngleDist(&sp34, func_80092BE8(self), sp24);
+        ml_translateAngleDist(&sp34, player_getModelYaw(self), sp24);
         sp34[1] += sp24;
         func_800C8CB8(self->unk160.word, &sp34);
     }

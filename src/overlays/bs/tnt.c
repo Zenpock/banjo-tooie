@@ -224,10 +224,10 @@ void func_808007EC_bstnt(PlayerState* self, s32 arg1) {
 		self->unk16C = 800.0f;
 		temp_f0 = yaw_get(self);
 		self->unk170 = temp_f0;
-		func_8009328C(self, temp_f0);
+		player_setModelYaw(self, temp_f0);
 		return;
 	case 0:
-		yaw_setIdeal(self, func_80092BE8(self));
+		yaw_setIdeal(self, player_getModelYaw(self));
 		yaw_applyIdeal(self);
 		func_800931AC(self, 1);
 		func_808000D4_bstnt(self, 0.1f);
@@ -279,7 +279,7 @@ void func_80800998_bstnt(PlayerState* self) {
 		func_8080009C_bstnt(self);
 		temp_f0 = ml_normalizeAngle_f(self->unk170 + (self->unk16C * sp20));
 		self->unk170 = temp_f0;
-		func_8009328C(self, temp_f0);
+		player_setModelYaw(self, temp_f0);
 		if (baanim_getTimer(self) > 0.78f) {
 			self->unk16C = ml_max_f(0.0f, self->unk16C - (750.0f * sp20));
 		}

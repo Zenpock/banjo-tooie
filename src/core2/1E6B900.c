@@ -8,7 +8,7 @@ extern f32 D_80124D40;
 
 s32 func_80092010(void)
 {
-	return 0x118;
+	return sizeof(BaUnknown50);
 }
 
 void func_80092018(PlayerState* arg0)
@@ -238,7 +238,7 @@ void func_80092898(PlayerState* arg0)
     arg0->unk50->unk28 = arg0->unk50->unk24 = arg0->unk50->unk20 = 0.0f;
     func_80093370(arg0, 1);
     func_8009337C(arg0, 1);
-    func_80093230(arg0, 1.0f);
+    player_setModelScale(arg0, 1.0f);
     arg0->unk50->unk15 = 0;
     func_800931AC(arg0, 1);
     func_80092778(arg0);
@@ -265,17 +265,17 @@ void* func_80092B04(PlayerState* arg0, s32 arg1)
 
     if (arg0->unk50->unkC == 0x607)
     {
-        return func_80093F7C(arg0);
+        return func_80093F7C(arg0,arg1);
     }
     temp_v0 = asset_load(arg0->unk50->unkC);
     if (arg1 == 0)
     {
-        func_800D62E4(arg0->unk50->unkC, arg1, arg0);
+        func_800D62E4(arg0->unk50->unkC);
     }
     return temp_v0;
 }
 
-s32 func_80092B80(PlayerState* arg0)
+s32 player_getCurrentModel(PlayerState* arg0)
 {
     return arg0->unk50->unkC;
 }
@@ -296,12 +296,12 @@ f32 func_80092BD0(PlayerState* arg0)
     return arg0->unk50->unkC8;
 }
 
-f32 func_80092BDC(PlayerState* arg0)
+f32 player_getModelScale(PlayerState* arg0)
 {
     return arg0->unk50->unk1C;
 }
 
-f32 func_80092BE8(PlayerState* arg0)
+f32 player_getModelYaw(PlayerState* arg0)
 {
     return arg0->unk50->unk28;
 }
@@ -421,9 +421,9 @@ void func_80092EBC(PlayerState* arg0, s32 arg1)
 
 void func_80093070(PlayerState* arg0, s32 arg1, s32 arg2, u8* arg3)
 {
-    ImageStruct* sp34;
-    ImageStruct* sp30;
-    s32 sp2C;
+    void* sp34;
+	void* sp30;
+	VertexStore* sp2C;
     s32 sp20;
     u8 temp_v1;
     s32 temp_v0;
@@ -475,7 +475,7 @@ void func_800931AC(PlayerState* arg0, s32 arg1)
     arg0->unk50->unk15 = (u8)arg1;
 }
 
-void func_80093230(PlayerState* arg0, f32 arg1)
+void player_setModelScale(PlayerState* arg0, f32 arg1)
 {
     arg0->unk50->unk1C = arg1;
     arg0->unk50->unk70 = arg0->unk50->unk5C * arg0->unk50->unk1C;
@@ -483,7 +483,7 @@ void func_80093230(PlayerState* arg0, f32 arg1)
     ml_vec3f_apply_scale((f32*)arg0->unk50->unk64, arg0->unk50->unk1C);
 }
 
-void func_8009328C(PlayerState* arg0, f32 arg1)
+void player_setModelYaw(PlayerState* arg0, f32 arg1)
 {
     arg0->unk50->unk28 = ml_normalizeAngle_f(arg1);
 }
@@ -662,7 +662,17 @@ s32 func_80093DF4(PlayerState* arg0, s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80093F30.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80093F7C.s")
+void* func_80093F7C(PlayerState* arg0, s32 arg1)
+{
+	void* sp1C;
+
+	sp1C = asset_load(arg0->unk50->unk10C);
+	if (arg1 == 0)
+	{
+		func_800D62E4(arg0->unk50->unk10C);
+	}
+	return sp1C;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80093FD4.s")
 

@@ -31,6 +31,7 @@ void func_800DF6BC(s32, s32);
 void func_800DF72C(s32);
 void func_800DF738(void*);
 void func_800DF744(s32, s32);
+void func_800DF7F8(s32, f32, f32);
 //graphics_setModelDrawLayer
 void func_800DF830(s32);
 void func_800DF944(GraphicsBuffers* a0, f32* coords, f32 a2, f32 a3, u8 a4, u8 a5, void *a6);

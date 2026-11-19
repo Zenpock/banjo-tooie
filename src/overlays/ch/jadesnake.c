@@ -237,7 +237,7 @@ void func_80800728_chjadesnake(Actor* arg0, s32 arg1, s32 arg2)
     }
 }
 
-void func_80800770_chjadesnake(Actor* arg0, void* arg1)
+void func_80800770_chjadesnake(Actor* arg0, GraphicsBuffers* arg1)
 {
     func_80101870(arg0, arg1);
     if (arg0->unk7C_12)

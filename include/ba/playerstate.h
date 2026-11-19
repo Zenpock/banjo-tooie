@@ -78,10 +78,10 @@ typedef struct ba_unknown_50_s {
     u8 unk18;
     u8 unk19;
     u8 unk1A;
-    f32 unk1C;
-    f32 unk20;
-    f32 unk24;
-    f32 unk28;
+    f32 unk1C;//Model Scale
+    f32 unk20;//Pitch
+    f32 unk24;//Roll
+    f32 unk28;//Yaw
     f32 unk2C[3];
     f32 unk38;
     f32 unk3C;
@@ -130,6 +130,9 @@ typedef struct ba_unknown_50_s {
     u8 unkC7;
     f32 unkC8;
     MtxF unkCC;
+	s32 unk10C; //Seems to be the Asset for Banjo's Model because unkC falls back to using this one when set to 0x607
+	s32 unk110;
+	s32 unk114;
 } BaUnknown50;
 typedef struct ba_unk54_s {
 	u8 unk0;

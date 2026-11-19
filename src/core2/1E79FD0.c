@@ -8,7 +8,7 @@ s32 func_800A06E0()
 }
 
 void func_800A06E8(PlayerState* self) {
-	func_800A0714(self, func_80092B80(self));
+	func_800A0714(self, player_getCurrentModel(self));
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E79FD0/func_800A0714.s")
 

@@ -8,7 +8,7 @@ void func_80800A48_chglowbo(Actor*);
 void func_80800B10_chglowbo(Actor*);
 void func_80800E28_chglowbo(Actor*);
 void func_80800F64_chglowbo(Actor*);
-void func_80801118_chglowbo(Actor*, s32);
+void func_80801118_chglowbo(Actor*, GraphicsBuffers*);
 s32 func_8080115C_chglowbo(Actor*, s32, u32);
 void func_80801258_chglowbo(Actor* );
 
@@ -616,7 +616,7 @@ void func_80800F64_chglowbo(Actor* arg0)
     }
 }
 
-void func_80801118_chglowbo(Actor* arg0, s32 arg1)
+void func_80801118_chglowbo(Actor* arg0, GraphicsBuffers* arg1)
 {
     func_800DF5D8(0x80, 0x80, 0x80, _subaddiefade_entrypoint_0(arg0));
     func_80101870(arg0, arg1);

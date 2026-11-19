@@ -31,7 +31,7 @@ void func_80800670_chnests(Actor* arg0, UnkArg2ChNest* arg1);
 void func_808006C4_chnests(Actor*);
 void func_808007C8_chnests(Actor*);
 void func_8080082C_chnests(Actor*, GraphicsBuffers*);
-s32 func_80800898_chnests(Actor*, s32, f32);
+s32 func_80800898_chnests(Actor*, GraphicsBuffers*, f32);
 void func_8080093C_chnests(Actor*, s32);
 void func_80800960_chnests(s32);
 void func_80800968_chnests(Actor*, GraphicsBuffers*);
@@ -748,7 +748,7 @@ void func_8080082C_chnests(Actor* arg0, GraphicsBuffers* arg1)
     }
 }
 
-s32 func_80800898_chnests(Actor* arg0, s32 arg1, f32 arg2)
+s32 func_80800898_chnests(Actor* arg0, GraphicsBuffers* arg1, f32 arg2)
 {
     f32 sp34[3];
     ImageStruct* sp30;

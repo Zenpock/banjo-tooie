@@ -28,7 +28,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8BFE0/func_800B2824.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8BFE0/func_800B2840.s")
+//Get Pointer to Vertex Store
+VertexStore* func_800B2840(ModelBin* arg0)
+{
+	return (void*)((u32)arg0 + arg0->unk10);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8BFE0/func_800B284C.s")
 

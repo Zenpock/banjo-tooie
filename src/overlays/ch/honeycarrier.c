@@ -130,7 +130,7 @@ void func_80800260_chhoneycarrier(Actor* arg0)
     func_80103110(arg0, 0U);
 }
 
-void func_80800380_chhoneycarrier(Actor* arg0,void* arg1)
+void func_80800380_chhoneycarrier(Actor* arg0, GraphicsBuffers* arg1)
 {
     func_80101870(arg0, arg1);
     if (arg0->unk7C_12)

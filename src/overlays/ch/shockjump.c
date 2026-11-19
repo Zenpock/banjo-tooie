@@ -54,7 +54,7 @@ void chshockjump_entrypoint_2(ActorMarker* arg0)
 	_subaddieaudioquick_entrypoint_2(temp_v0, temp_v0->position, &D_80800340_chshockjump);
 }
 
-void func_80800148_chshockjump(Actor* arg0, void* arg1)
+void func_80800148_chshockjump(Actor* arg0, GraphicsBuffers* arg1)
 {
 	AbilityId var_a0;
 	s32 sp18;

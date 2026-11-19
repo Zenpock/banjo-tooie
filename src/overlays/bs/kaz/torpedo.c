@@ -476,7 +476,7 @@ void func_80801484_bskaztorpedo(PlayerState *self) {
     func_8009BD88(self);
     func_8008E95C(self);
     func_800951B4(self);
-    yaw_setIdeal(self, func_80092BE8(self));
+    yaw_setIdeal(self, player_getModelYaw(self));
     yaw_applyIdeal(self);
     func_800931AC(self, 1);
     _bakaztorpedo_entrypoint_6(self, 2);

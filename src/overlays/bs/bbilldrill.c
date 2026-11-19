@@ -125,7 +125,7 @@ void func_808002DC_bsbbilldrill(PlayerState* self, s32 arg1) {
         case 5:
             func_8009E53C(self, 1, 0.0f);
             baflag_clear(self, 0x22);
-            func_8009328C(self, yaw_get(self));
+            player_setModelYaw(self, yaw_get(self));
             baphysics_set_vertical_velocity(self, 730.0f);
             baphysics_set_gravity(self, -2400.0f);
             baanim_setEndAndDuration(self, 0.7299f, 2.1f);
@@ -138,7 +138,7 @@ void func_808002DC_bsbbilldrill(PlayerState* self, s32 arg1) {
 
 void func_808005C0_bsbbilldrill(PlayerState* self) {
     self->unk16C += (self->unk170 * time_getDelta());
-    func_8009328C(self, self->unk16C);
+    player_setModelYaw(self, self->unk16C);
 }
 
 void bsbbilldrill_entrypoint_0(PlayerState* self) {

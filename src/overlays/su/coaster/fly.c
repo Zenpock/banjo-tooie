@@ -58,8 +58,8 @@ void func_80802128_sucoasterfly(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/fly/sucoasterfly_entrypoint_5.s")
 
-void sucoasterfly_entrypoint_6()
+void sucoasterfly_entrypoint_6(Actor* actor, GraphicsBuffers* buf)
 {
-    func_80101870();
+	func_80101870(actor, buf);
 }
 

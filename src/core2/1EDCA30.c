@@ -4,9 +4,48 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_801032B0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_80103328.s")
+void func_80103328(Actor* actor)
+{
+	s32 sp44[3];
+	s32 sp38[3];
+	f32 sp2C[3];
+	VertexStore* sp28;
+	f32 sp24;
+	ModelBin* asset_pointer;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_8010347C.s")
+	if (actor->unk68 != 0)
+	{
+		return;
+	}
+
+	asset_pointer = func_80103964(actor->unk0);
+
+	if (asset_pointer == NULL)
+	{
+		return;
+	}
+	func_800D62E4(actor->unk0->unk14);
+	sp28 = func_800B2840(asset_pointer);
+	actor->unk68 = sp28->unk12;
+	actor->unk6A = sp28->unk14;
+	actor->unk62 = func_800B2248(sp28);
+	func_800B2198(sp28, &sp44, &sp38);
+	actor->unk88 = sp44[1];
+	actor->unk8A = sp38[1];
+	func_800B237C(sp28, sp2C, &sp24);
+	ml_vec3f_to_vec3s(actor->unk0->unk1E, sp2C);
+	actor->unk0->unk18_21 = sp24;
+}
+
+s32 func_8010347C(ActorMarker* arg0)
+{
+	Actor* sp1C;
+
+	sp1C = func_80106790(arg0);
+	func_80103328(sp1C);
+	func_800DF7F8(arg0->unk14, sp1C->unk68, sp1C->unk6A);
+	return 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_80103508.s")
 

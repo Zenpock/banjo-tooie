@@ -47,7 +47,7 @@ extern s16 D_8012BE62;
 s32 func_800D6060(s32);
 s32 func_800D61B4(unkD_8012B800*);
 s32 asset_findIndex(s32);
-void func_800D62E4(s32, s32, PlayerState*);
+void func_800D62E4(AssetId);
 s32 func_800D6408(unkD_8012B800*);
 void func_800D66AC();
 //Load Asset

@@ -528,7 +528,7 @@ s32 func_80800E40_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
 }
 
 //Robot
-void func_80800FFC_chfactoryrobot(Actor* arg0, void* arg1)
+void func_80800FFC_chfactoryrobot(Actor* arg0, GraphicsBuffers* arg1)
 {
     FactoryRobotStruct* temp_v0;
     s32 var_s0;
