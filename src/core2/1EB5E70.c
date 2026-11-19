@@ -1,7 +1,12 @@
 #include "core2/1EB5E70.h"
 
 extern s32 D_8012C824;
+extern s32 D_8012C850[];
 extern s32 D_8012C940;
+extern s32 D_8012C978;
+extern s32 D_8012C9B8;
+extern f32 D_8012C9BC[3];
+extern s32 D_8012CA28;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DC580.s")
 
@@ -78,7 +83,7 @@ void func_800DC628(s32 arg0, s32 arg1) {
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DE318.s")
 
 // modelRender_draw?
-void* func_800DE448(f32* position, f32* arg1, f32 scale, f32* arg3, s32 arg4) {
+void* func_800DE448(f32 position[3], f32 arg1[3], f32 scale, f32 arg3[3], s32 arg4) {
     return func_800DE498(graphics_getGraphicsBuffer(), position, arg1, scale, arg3, arg4);
 }
 
@@ -103,11 +108,20 @@ s32 func_800DF350()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF38C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF3E0.s")
+void func_800DF3E0(void)
+{
+    s32 var_v1;
+    for (var_v1 = 0; var_v1 < 0x3C; var_v1++)
+    {
+        D_8012C850[var_v1] = 0;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF410.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF41C.s")
+void func_800DF41C(s32 arg0) {
+    D_8012C824 = arg0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF428.s")
 
@@ -125,7 +139,11 @@ s32 func_800DF350()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF4B0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF4CC.s")
+void func_800DF4CC(f32 arg0[3])
+{
+    D_8012C9B8 = 1;
+    ml_vec3f_copy(D_8012C9BC, arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF500.s")
 
@@ -163,9 +181,13 @@ s32 func_800DF350()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF818.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF824.s")
+void func_800DF824(s32 arg0) {
+    D_8012C978 = arg0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF830.s")
+void func_800DF830(s32 arg0) {
+    D_8012CA28 = arg0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF83C.s")
 
@@ -177,13 +199,17 @@ s32 func_800DF350()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF8BC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF8C4.s")
+f32 func_800DF8C4(f32* arg0) {
+    return *arg0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF8CC.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF8D4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF8F8.s")
+s32 func_800DF8F8(s32* arg0) {
+    return arg0[1];
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF900.s")
 

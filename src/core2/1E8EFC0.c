@@ -2,7 +2,7 @@
 
 typedef struct UNKD_80127F28 {
     f32 unk0;
-    u32 unk4;
+    UNKD_80127F10* unk4;
     u32 unk8_31 : 1;
     u32 unk8_21 : 10;
     u32 unk8_0 : 21;

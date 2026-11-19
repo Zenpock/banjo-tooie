@@ -772,25 +772,25 @@ s32 func_80801BF0_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
     return 1;
 }
 
-void func_80801CFC_chclockworkmouse(Actor* actor, s32 arg1) {
+void func_80801CFC_chclockworkmouse(Actor* actor, GraphicsBuffers* buf) {
     Unk80100094* temp_s4;
     f32 sp50[3];
     ImageStruct *imageStruct;
     s32 var_s0;
 
-    func_801018A4();
+    func_801018A4(actor,buf);
     if (actor->unk7C_12) {
         imageStruct = asset_load(ASSET_9E2_GOLD_SPARKLE);
         temp_s4 = ((Unk80100094 *)actor_getAdditionalMem(actor, 0));
         func_800E2588(2);
-        func_800E2594(arg1, imageStruct);
+        func_800E2594(buf, imageStruct);
         for (var_s0 = 0; var_s0 < 10; var_s0++) {
             if (temp_s4->unkF0[var_s0] == 2) {
                 ml_vec3f_assign_value(sp50, temp_s4->unkAC[var_s0], temp_s4->unkAC[var_s0], temp_s4->unkAC[var_s0]);
-                func_800E2720(arg1, 0, 0, &temp_s4->unkC.vecs[var_s0], sp50, 0xFF);
+                func_800E2720(buf, 0, 0, &temp_s4->unkC.vecs[var_s0], sp50, 0xFF);
             }
         }
-        func_800E2A14(arg1);
+        func_800E2A14(buf);
     }
 }
 
@@ -1438,8 +1438,8 @@ s32 func_808032F8_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
     return 1;
 }
 
-void func_8080364C_chclockworkmouse(void) {
-    func_801018A4();
+void func_8080364C_chclockworkmouse(Actor* actor, GraphicsBuffers* buf) {
+    func_801018A4(actor,buf);
 }
 
 ActorData *chclockworkmouse_entrypoint_1(void) {

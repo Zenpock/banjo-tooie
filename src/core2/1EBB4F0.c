@@ -125,7 +125,7 @@ void func_800E2588(u32 arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBB4F0/func_800E28A4.s")
 
-void func_800E2A14(s32 arg0) {
+void func_800E2A14(GraphicsBuffers* arg0) {
     func_800E22F0(arg0, D_8012D470.unk80);
     D_8012D470.unk80 = 0;
 }
@@ -186,7 +186,7 @@ void draw_2D_Image(GraphicsBuffers* arg0, ImageStruct* arg1, s32 arg2, s32* arg3
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBB4F0/func_800E35E0.s")
 
-void func_800E368C(s32 arg0) {
+void func_800E368C(GraphicsBuffers* arg0) {
     func_800E22F0(arg0, D_8012D470.unk84);
     D_8012D470.unk84 = 0;
     func_800E4640(arg0);

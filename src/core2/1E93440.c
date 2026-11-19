@@ -23,8 +23,8 @@ int func_800BA28C(unkStruct800BA198* arg0) {
     return (arg0->unk90 - arg0->unk8C) / 60 == 0 && arg0->unk7 == 2;
 }
 
-s32 func_800BA2C4(void) {
-    heap_free();
+s32 func_800BA2C4(void* arg0) {
+    heap_free(arg0);
     return 0;
 }
 

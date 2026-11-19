@@ -307,12 +307,12 @@ void func_800E4628() {
     D_8012D558 = D_8012D554 = NULL;
 }
 
-void func_800E4640(Gfx** gfx) {
+void func_800E4640(GraphicsBuffers* buf) {
     if (D_8012D508 != 0) {
-        gSPDisplayList((*gfx)++, 0x08000000);
+        gSPDisplayList((buf->gfx)++, 0x08000000);
         return;
     }
-    gSPMatrix((*gfx)++, OS_K0_TO_PHYSICAL(D_8012D558), G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
+    gSPMatrix((buf->gfx)++, OS_K0_TO_PHYSICAL(D_8012D558), G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
 }
 
 void func_800E46A4(f32 out[4], f32 in[4]) {

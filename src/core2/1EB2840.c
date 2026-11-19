@@ -24,7 +24,7 @@ void func_800D8F84(void) {
 
 void func_800D8FA0(s32 arg0)
 {
-    D_8012C764 = ml_clamp_i(arg0, 1, 0xF);
+    D_8012C764 = ml_clamp_i(arg0, 1, 15);
     func_800D8F50((s32)D_8012C764 * 0.016666668f);
 }
 

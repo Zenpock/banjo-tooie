@@ -2,9 +2,57 @@
 
 extern u8 D_8012762C;
 extern s16 D_808002A0_bapreload[][2];
+typedef struct {
+	s16 unk0;
+	s16 unk2;
+} UNKD_808002F0_bapreload;
 
-void func_80800000_bapreload(PlayerState*, TransformationId, s16*, s16*);
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/preload/func_80800000_bapreload.s")
+extern UNKD_808002F0_bapreload D_808002F0_bapreload[];
+extern UNKD_808002F0_bapreload D_80800300_bapreload[];
+extern UNKD_808002F0_bapreload D_80800310_bapreload[];
+extern UNKD_808002F0_bapreload D_80800320_bapreload[];
+
+void func_80800000_bapreload(PlayerState* arg0, TransformationId arg1, s16* arg2, s16* arg3)
+{
+	UNKD_808002F0_bapreload* sp1C;
+	s32 var_a0;
+
+	switch (arg1)
+	{
+	case TRANSFORM_6_BEE:
+		sp1C = D_80800310_bapreload;
+		break;
+	case TRANSFORM_C_SUB:
+		sp1C = D_80800320_bapreload;
+		break;
+	case TRANSFORM_B_KAZOOIE:
+		sp1C = D_80800300_bapreload;
+		break;
+	case TRANSFORM_1_BK:
+		sp1C = D_808002F0_bapreload;
+		break;
+	case TRANSFORM_11_CLOCKWORK:
+		*arg2 = 0x60E;
+		*arg3 = 0;
+		return;
+	default:
+		*arg2 = 0x607;
+		*arg3 = 0;
+		return;
+	}
+	if (func_800EA068(0x20))
+	{
+		var_a0 = func_800A940C(arg0->unk184);
+	}
+	else
+	{
+		var_a0 = arg0->unk184;
+	}
+	sp1C += var_a0;
+
+	*arg2 = sp1C->unk0;
+	*arg3 = sp1C->unk2;
+}
 
 void bapreload_entrypoint_0(PlayerState* arg0, TransformationId transform, s16* arg2, s16* arg3)
 {

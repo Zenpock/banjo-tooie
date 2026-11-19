@@ -795,7 +795,7 @@ s32 func_808034C8_chevilmumbo(Actor* arg0, s32 eventId, s32 arg2)
     return 1;
 }
 
-void func_808035A8_chevilmumbo(Actor* arg0, s32 arg1)
+void func_808035A8_chevilmumbo(Actor* arg0, GraphicsBuffers* arg1)
 {
     arg0->rotation[0] = -arg0->rotation[0];
     func_80101970(arg0);

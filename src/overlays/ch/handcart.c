@@ -1151,7 +1151,7 @@ s32 func_80802468_chhandcart(Actor* arg0, s32 arg1, s32 arg2)
 
 }
 
-void func_8080256C_chhandcart(Actor* arg0, u32 arg1)
+void func_8080256C_chhandcart(Actor* arg0, GraphicsBuffers* arg1)
 {
     ImageStruct *imageStruct;
     s32 var_s0;
@@ -2114,9 +2114,9 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
     return 1;
 }
 
-void func_8080436C_chhandcart(void) 
+void func_8080436C_chhandcart(Actor* arg0, GraphicsBuffers* buf)
 {
-    func_801018A4();
+    func_801018A4(arg0,buf);
 }
 
 void chhandcart_entrypoint_1(Actor* arg0)
