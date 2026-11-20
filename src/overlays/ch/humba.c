@@ -299,7 +299,7 @@ s32 func_808008A0_chhumba(Actor* arg0)
 {
     f32 sp24[3];
     Actor* sp20;
-    sp20 = func_80106790(arg0->unk3C);
+    sp20 = actorList_getFromMarker(arg0->unk3C);
     func_80800238_chhumba(arg0, sp24);
     if ((sp20->position[1] < (-202.5f * arg0->scale)) && (func_800F0064(sp20->position, (arg0->scale * 1550.0f), sp24) != 0)) {
         return 1;
@@ -493,8 +493,8 @@ void func_80800E44_chhumba(Actor* arg0, u32 arg1)
     case 5:
         func_80800238_chhumba(arg0, sp24);
         func_80090768(sp24);
-        arg0->unk3C = func_8008FDEC();
-        temp = func_80106790(arg0->unk3C);
+        arg0->unk3C = activePlayer_getHeldMarker();
+        temp = actorList_getFromMarker(arg0->unk3C);
         ml_vec3f_copy((f32*)((Actor*)temp)->actorData, sp24);
         ((Actor*)temp)->unk74_30 = 1;
         func_808000D4_chhumba(arg0, 0xE, 9, arg0->unk3C);
@@ -744,7 +744,7 @@ void func_808015DC_chhumba(Actor* arg0)
             }
             if (func_800902E4(arg0->position, 2500.0f, var_a2, &arg0) != 0)
             {
-                if ((func_8008FE14() == var_a2) && (func_80090818() != 0)) {
+                if ((activePlayer_getHeldProp() == var_a2) && (func_80090818() != 0)) {
                     func_80800E44_chhumba(arg0, 5);
                     return;
                 }

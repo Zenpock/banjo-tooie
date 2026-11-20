@@ -49,7 +49,7 @@ void func_808000C8_bskazstilt(PlayerState *self) {
 }
 
 void func_8080013C_bskazstilt(PlayerState *self) {
-    if (func_8009E77C(self, 8) == 0)
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_8_STILT) == 0)
     {
         _bskaz_entrypoint_1(self);
         baflag_clear(self, BA_FLAG_E_TOUCHING_WADING_BOOTS);
@@ -70,7 +70,7 @@ void func_8080013C_bskazstilt(PlayerState *self) {
 }
 
 void func_80800234_bskazstilt(PlayerState *self) {
-    if (func_8009E74C(self, 8) == 0)
+    if (bs_matchesNextStateType(self, BS_STATETYPE_8_STILT) == 0)
     {
         _baalarm_free(self);
         func_8009E474(self);

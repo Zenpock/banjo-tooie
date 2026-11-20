@@ -249,7 +249,7 @@ s32 bstrexlarge_entrypoint_0(s32 arg0) {
 }
 
 void bstrexlarge_entrypoint_1(PlayerState* self) {
-    if (func_8009E74C(self, 0x11) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_11_LARGETREX) == 0) {
         bastick_popZone(self);
         func_800A4D6C(self, 1.0f, 1.0f);
         func_80092864(self, 1.0f);
@@ -264,7 +264,7 @@ void bstrexlarge_entrypoint_1(PlayerState* self) {
 
 void bstrexlarge_entrypoint_2(PlayerState* self)
 {
-    if (func_8009E77C(self, 0x11) == 0)
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_11_LARGETREX) == 0)
     {
         bastick_pushZone(self);
         bastick_setZoneMax(self, 0, 0.12f);

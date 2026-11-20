@@ -502,16 +502,16 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 				sp5C->unk3 = 2U;
 				return;
 			case 2:
-				if ((arg0->unk7C_12) && (func_800902E4(arg0->position, 750.0f, 0x29F, &arg0) != 0) && (func_8008FE14() == 0x29F) && (func_80090818() != 0))
+				if ((arg0->unk7C_12) && (func_800902E4(arg0->position, 750.0f, 0x29F, &arg0) != 0) && (activePlayer_getHeldProp() == 0x29F) && (func_80090818() != 0))
 				{
-					arg0->unk3C = func_8008FDEC();
+					arg0->unk3C = activePlayer_getHeldMarker();
 					func_80090768(sp5C->unk4);
 					sp5C->unk3 = 3U;
 					return;
 				}
 				break;
 			case 3:
-				temp_v0_5 = func_80106790(arg0->unk3C);
+				temp_v0_5 = actorList_getFromMarker(arg0->unk3C);
 				ml_vec3f_copy((f32*)&temp_v0_5->actorData[0], sp5C->unk4);
 				temp_v0_5->unk74_30 = 1;
 				temp_v0_5->unk64_19 = 1;

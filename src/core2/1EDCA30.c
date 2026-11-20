@@ -41,7 +41,7 @@ s32 func_8010347C(ActorMarker* arg0)
 {
 	Actor* sp1C;
 
-	sp1C = func_80106790(arg0);
+	sp1C = actorList_getFromMarker(arg0);
 	func_80103328(sp1C);
 	func_800DF7F8(arg0->unk14, sp1C->unk68, sp1C->unk6A);
 	return 0;

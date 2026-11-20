@@ -19,11 +19,11 @@ s32 func_80800000_badata(PlayerState *self) {
             return 0xE;
 
         case TRANSFORM_A_BANJO:
-            if(func_8009E71C(self, 0x12)) {
+            if(bs_matchesCurrentStateType(self, BS_STATETYPE_12_BANSACK)) {
                 return 0xA;
-            } else if (func_8009E71C(self, 0x13)) {
+            } else if (bs_matchesCurrentStateType(self, BS_STATETYPE_13_BANSHACK)) {
                 return 0x1F;
-            } else if (func_8009E71C(self, 0x14)) {
+            } else if (bs_matchesCurrentStateType(self, BS_STATETYPE_14_BANSNOOZE)) {
                 return 0x20;
             } else if (func_8009CA70(self, sp1C, 0x400)) {
                 return 0x1C;
@@ -45,7 +45,7 @@ s32 func_80800000_badata(PlayerState *self) {
         case TRANSFORM_B_KAZOOIE:
             if (func_8009CA70(self, sp1C, 0x200)) {
                 return 0x22;
-            } else if (func_8009CBDC(self, sp1C) == 0x9) {
+            } else if (bs_getStateType(self, sp1C) == BS_STATETYPE_9_FLYING) {
                 return 0x3;
             } else if (bastatetimer_get(self, BA_STATE_TIMER_ID_2_LONGLEG) != 0.0f) {
                 return 0x1;
@@ -92,11 +92,11 @@ s32 func_80800000_badata(PlayerState *self) {
             
         case TRANSFORM_1_BK:
         default:
-            if (func_8009CBDC(self, sp1C) == 2) {
+            if (bs_getStateType(self, sp1C) == BS_STATETYPE_2_LEDGE) {
                 return 0x23;
-            } else if (func_8009CBDC(self, sp1C) == 0xA) {
+            } else if (bs_getStateType(self, sp1C) == BS_STATETYPE_A_CLIMB) {
                 return 0xC;
-            } else if (func_8009CBDC(self, sp1C) == 0x9) {
+            } else if (bs_getStateType(self, sp1C) == BS_STATETYPE_9_FLYING) {
                 return 0x7;
             } else if (func_8009CA70(self, sp1C, 0x40)) {
                 return 0x8;

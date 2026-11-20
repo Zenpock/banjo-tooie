@@ -135,14 +135,14 @@ s32 func_8008FDC4()
     return func_800F55FC(character_getActiveIndex());
 }
 
-ActorMarker* func_8008FDEC()
+ActorMarker* activePlayer_getHeldMarker()
 {
-    return func_800F56D8(character_getActiveIndex());
+    return character_getHeldMarker(character_getActiveIndex());
 }
 
-s32 func_8008FE14()
+PropId activePlayer_getHeldProp()
 {
-    return func_800F5704(character_getActiveIndex());
+    return character_getHeldProp(character_getActiveIndex());
 }
 
 void func_8008FE3C(s32 arg0)
@@ -222,9 +222,9 @@ void func_800900D0(s32 arg0)
     func_800F63B4(character_getActiveIndex(),arg0);
 }
 
-void func_800900FC(s32 arg0)
+void activePlayer_getInventByProp(PropId arg0)
 {
-    func_800F640C(character_getActiveIndex(),arg0);
+    character_getInventByProp(character_getActiveIndex(),arg0);
 }
 
 s32 func_80090128()

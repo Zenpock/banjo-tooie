@@ -177,7 +177,7 @@ void func_800FFA3C(Actor* actor)
 
 void func_800FFA88(ActorMarker* a0)
 {
-    actor_mark_delete(func_80106790(a0));
+    actor_mark_delete(actorList_getFromMarker(a0));
 }
 
 void actor_mark_delete(Actor* actor)
@@ -189,7 +189,7 @@ void actor_mark_delete(Actor* actor)
 	temp_a2 = actor->unk40;
 	if (temp_a2 != 0 && actor->unk6C_9 != 0x243)
 	{
-		temp_v0 = func_80106790((ActorMarker*)actor->unk40);
+		temp_v0 = actorList_getFromMarker((ActorMarker*)actor->unk40);
 		temp_v0->unk64_17 = 1;
 		actor->unk40 = 0;
 		temp_v0->unk40 = 0;

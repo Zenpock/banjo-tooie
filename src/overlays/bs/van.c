@@ -47,7 +47,7 @@ void func_808000BC_bsvan(PlayerState* self) {
 }
 
 void bsvan_entrypoint_0(PlayerState* self) {
-    if (func_8009E74C(self, 0xD) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_D_VAN) == 0) {
         _bastatemem_entrypoint_1(self);
         func_80092864(self, 1.0f);
         func_800947EC(self, 1, 0);
@@ -65,7 +65,7 @@ void bsvan_entrypoint_0(PlayerState* self) {
 }
 
 void bsvan_entrypoint_1(PlayerState* self) {
-    if (func_8009E77C(self, 0xD) == 0) {
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_D_VAN) == 0) {
         _bastatemem_entrypoint_0(self, 0x14);
         _bavan_entrypoint_3(self);
         //I think this is an error

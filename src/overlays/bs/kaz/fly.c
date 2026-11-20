@@ -21,7 +21,7 @@ void func_808000AC_bskazfly(PlayerState *self) {
 }
 
 void func_80800128_bskazfly(PlayerState *self) {
-    if (func_8009E77C(self, 9) == 0) {
+    if (bs_matchesPreviousStateType(self,BS_STATETYPE_9_FLYING) == 0) {
         _bastatemem_entrypoint_0(self, 0x20);
         _bafly_entrypoint_5(self);
         func_808000AC_bskazfly(self);
@@ -31,7 +31,7 @@ void func_80800128_bskazfly(PlayerState *self) {
 }
 
 void func_80800188_bskazfly(PlayerState *self) {
-    if (func_8009E74C(self, 9) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_9_FLYING) == 0) {
         _bafly_entrypoint_4(self);
         _bastatemem_entrypoint_1(self);
         baphysics_reset_gravity(self);
@@ -482,7 +482,7 @@ void func_80801320_bskazfly(PlayerState *self) {
 
     func_8009E0DC(self);
     func_8009E100(self);
-    if (func_8009E74C(self, 9) != 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_9_FLYING) != 0) {
         func_808000AC_bskazfly(self);
     }
 

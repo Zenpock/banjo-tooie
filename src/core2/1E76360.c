@@ -1,10 +1,10 @@
 #include "core2/1E76360.h"
 
 typedef struct {
-    s16 unk0;
-    s16 unk2;
-    s32 unk4;
-    BsScript (*unk8)(BsScriptType);
+    s16 banjoState;
+    s16 stateType;
+    s32 stateMask;
+    BsScript (*stateFunctions)(BsScriptType);
 }BSStateArray;
 
 
@@ -416,7 +416,7 @@ BSStateArray D_80117F30[] =
 s32 func_8009CA70(PlayerState* arg0, BanjoStateId arg1, s32 arg2)
 {
     s32 var_v0;
-    if (D_80117F30[arg1].unk4 & arg2)
+    if (D_80117F30[arg1].stateMask & arg2)
     {
         var_v0 = 1;
 
@@ -432,7 +432,7 @@ void (*func_8009CAAC(PlayerState* arg0, BanjoStateId arg1))(PlayerState*)
 {
     BsScript(*temp_v0)(BsScriptType);
 
-    temp_v0 = D_80117F30[arg1].unk8;
+    temp_v0 = D_80117F30[arg1].stateFunctions;
     if (temp_v0 != NULL) {
         return temp_v0(BS_SCRIPT_TYPE_0);
     }
@@ -443,7 +443,7 @@ void (*func_8009CAF8(PlayerState* arg0, BanjoStateId arg1))(PlayerState*)
 {
     BsScript(*temp_v0)(BsScriptType);
 
-    temp_v0 = D_80117F30[arg1].unk8;
+    temp_v0 = D_80117F30[arg1].stateFunctions;
     if (temp_v0 != NULL) {
         return temp_v0(BS_SCRIPT_TYPE_1_INIT);
     }
@@ -454,7 +454,7 @@ void (*func_8009CB44(PlayerState* arg0, BanjoStateId arg1))(PlayerState*)
 {
     BsScript (*temp_v0)(BsScriptType);
 
-    temp_v0 = D_80117F30[arg1].unk8;
+    temp_v0 = D_80117F30[arg1].stateFunctions;
     if (temp_v0 != NULL) {
         return temp_v0(BS_SCRIPT_TYPE_3);
     }
@@ -465,7 +465,7 @@ void (*bs_getStateUpdateFunc(PlayerState* self, BanjoStateId arg1))(PlayerState*
 {
     BsScript(*temp_v0)(BsScriptType);
 
-    temp_v0 = D_80117F30[arg1].unk8;
+    temp_v0 = D_80117F30[arg1].stateFunctions;
     if (temp_v0 != NULL)
     {
         return temp_v0(BS_SCRIPT_TYPE_2_UPDATE);
@@ -473,9 +473,9 @@ void (*bs_getStateUpdateFunc(PlayerState* self, BanjoStateId arg1))(PlayerState*
     return NULL;
 }
 
-s32 func_8009CBDC(PlayerState* arg0, s32 arg1)
+BanjoStateType bs_getStateType(PlayerState* arg0, s32 arg1)
 {
-    return D_80117F30[arg1].unk2;
+    return D_80117F30[arg1].stateType;
 }
 
 void func_8009CBFC(PlayerState* arg0) {

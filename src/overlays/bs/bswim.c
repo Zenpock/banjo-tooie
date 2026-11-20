@@ -24,7 +24,7 @@ void func_80800000_bsbswim(PlayerState* self)
 
 void func_80800030_bsbswim(PlayerState* self)
 {
-    if (func_8009E77C(self, 0xB) == 0)
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_B_SWIM) == 0)
     {
         _baswim_entrypoint_5(self);
         baroll_setAngularVelocity(self, 130.0f, 0.9f);
@@ -47,7 +47,7 @@ void func_80800030_bsbswim(PlayerState* self)
 
 void func_80800104_bsbswim(PlayerState* self)
 {
-    if (func_8009E74C(self, 0xB) == 0)
+    if (bs_matchesNextStateType(self, BS_STATETYPE_B_SWIM) == 0)
     {
         bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);

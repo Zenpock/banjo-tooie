@@ -101,7 +101,7 @@ void func_80109F90(s32 arg0, s32 arg1)
 
 void func_80109FB8(ActorMarker* arg0, ActorMarker* arg1)
 {
-    func_80106790(arg1)->unk3C = arg0;
+    actorList_getFromMarker(arg1)->unk3C = arg0;
     if (arg1) {}
 }
 
@@ -168,14 +168,7 @@ u32 func_8010A654(Actor* arg0, s32 arg1)
 {
     s32 returnVal;
     returnVal = arg0->unk0->unk0->unkA_3;
-    if (arg1 != 0)
-    {
-        arg0->unk0->unk0->unkA_3 = 1;
-    }
-    else
-    {
-        arg0->unk0->unk0->unkA_3 = 0;
-    }
+    arg0->unk0->unk0->unkA_3 = (arg1) ? 1 : 0;
     return returnVal;
 }
 

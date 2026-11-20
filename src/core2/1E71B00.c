@@ -1,8 +1,10 @@
 #include "core2/1E71B00.h"
 
+extern f32 D_80124E20;
+
 s32 func_80098210() 
 {
-    return 0x30;
+    return sizeof(ba_unknown_AC_s);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E71B00/func_80098218.s")
@@ -25,15 +27,15 @@ void func_80098520(PlayerState* self, f32 arg1) {
 }
 s32 func_80098530() 
 {
-    return 0x34;
+    return sizeof(ba_unknown_E0_s);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E71B00/func_80098538.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E71B00/func_80098590.s")
 
-f32 func_800985B8(PlayerState* self) {
-    return self->unkE0->unk4;
+f32 player_getPoleBottomHeight(PlayerState* self) {
+    return self->unkE0->unk0[1];
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E71B00/func_800985C4.s")
@@ -46,7 +48,7 @@ s32 func_8009861C(PlayerState* self) {
     return self->unkE0->unk2E;
 }
 
-f32 func_80098628(PlayerState* self) {
+f32 player_getPoleThickness(PlayerState* self) {
     return self->unkE0->unk18;
 }
 
@@ -58,8 +60,8 @@ s32 func_80098640(PlayerState* self) {
     return self->unkE0->unk2D;
 }
 
-f32 func_8009864C(PlayerState* self) {
-    return self->unkE0->unk10;
+f32 player_getPoleTopHeight(PlayerState* self) {
+    return self->unkE0->unkC[1];
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E71B00/func_80098658.s")
@@ -70,4 +72,9 @@ f32 func_8009864C(PlayerState* self) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E71B00/func_800987CC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E71B00/func_80098840.s")
+void player_exitPoleClimb(PlayerState* arg0) {
+
+    arg0->unkE0->unk2C = 0;
+    ml_vec3f_copy(arg0->unkE0->unk1C, arg0->unkE0->unk0);
+    arg0->unkE0->unk28 = D_80124E20;
+}

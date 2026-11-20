@@ -37,7 +37,7 @@ void bsjig_entrypoint_1(PlayerState* self)
     baflag_clear(self, BA_FLAG_7);
     baflag_clear(self, BA_FLAG_F);
     func_8008E944(self);
-    _chjigsawdance_entrypoint_1(func_80106790(func_800A32F8(self)), 1);
+    _chjigsawdance_entrypoint_1(actorList_getFromMarker(func_800A32F8(self)), 1);
     self->unk15C.word = 0;
 }
 
@@ -48,7 +48,7 @@ void bsjig_entrypoint_2(s32 self)
     temp_v0 = character_getPlayerState(self);
     if (func_800A32F8(temp_v0) != NULL)
     {
-        _chjigsawdance_entrypoint_1(func_80106790(func_800A32F8(temp_v0)), 4);
+        _chjigsawdance_entrypoint_1(actorList_getFromMarker(func_800A32F8(temp_v0)), 4);
     }
 }
 
@@ -88,7 +88,7 @@ void bsjig_entrypoint_4(PlayerState* self)
 
     temp_v0 = func_800A32F8(self);
     if (temp_v0 != NULL) {
-        _chjigsawdance_entrypoint_1(func_80106790(temp_v0), 5);
+        _chjigsawdance_entrypoint_1(actorList_getFromMarker(temp_v0), 5);
         func_800A34D8(self, 0);
     }
 }

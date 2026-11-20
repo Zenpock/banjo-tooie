@@ -359,7 +359,7 @@ void func_8080083C_chpawnbroker(Actor* arg0, s32 dialogEnded, s32 choiceResult)
                 NextState = 7;
             }
             func_80102424(arg0, NextState);
-            func_80102424(func_80106790(arg0->unk3C), 2);
+            func_80102424(actorList_getFromMarker(arg0->unk3C), 2);
             func_80800B88_chpawnbroker(arg0, 3, 0x30);
             return;
     }
@@ -494,7 +494,7 @@ void func_80800CB4_chpawnbroker(Actor* arg0)
     //Have we collected the jiggy
     if (collectable_isCollected(JRL_PAWNOS, 1U) == 0)
     {
-        ItemForSale = func_80106790(func_800D0634(JRL_PAWNOS, 1U));
+        ItemForSale = actorList_getFromMarker(func_800D0634(JRL_PAWNOS, 1U));
     }
     //Have we collected the Cheato page
     else if (collectable_isCollected(0xAU, 4U) == 0)
@@ -515,7 +515,7 @@ s32 func_80800D5C_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
     {
         func_800BBCB8(arg0->position, arg0->position, arg0->scale, 0x28, &D_80801100_chpawnbroker);
         _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801134_chpawnbroker);
-        actor_enableCollision(func_80106790(arg0->unk3C));
+        actor_enableCollision(actorList_getFromMarker(arg0->unk3C));
         actor_mark_delete(arg0);
         return 1;
     }

@@ -60,7 +60,7 @@ void func_80800164_bssnowball(PlayerState* self) {
 }
 
 void bssnowball_entrypoint_0(PlayerState* self) {
-    if (func_8009E74C(self, 0x16) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_16_SNOWBALL) == 0) {
         func_800947EC(self, 1, 0);
         bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
@@ -75,7 +75,7 @@ void bssnowball_entrypoint_0(PlayerState* self) {
 }
 
 void bssnowball_entrypoint_1(PlayerState* self) {
-    if (func_8009E77C(self, 0x16) == 0) {
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_16_SNOWBALL) == 0) {
         _basnowball_entrypoint_2(self);
         bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
         baroll_setAngularVelocity(self, 1000.0f, 12.0f);

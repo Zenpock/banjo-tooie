@@ -254,7 +254,7 @@ void func_808009DC_chheggy(Actor* arg0)
         {
             if (arg0->unk3C != NULL)
             {
-                func_80106790(arg0->unk3C)->rotation[1] = sp4C->rotation[1];
+                actorList_getFromMarker(arg0->unk3C)->rotation[1] = sp4C->rotation[1];
             }
         }
         if (_subaddieitem_entrypoint_3(arg0, sp50->unk0[arg0->actorData[7] == 0x515 ? 3 : 4].f, sp54) != 0)
@@ -408,7 +408,7 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
         {
             func_800FFA88(*temp_v0);
         }
-        func_80106790(arg0->unk3C)->unk64_16 = 1;
+        actorList_getFromMarker(arg0->unk3C)->unk64_16 = 1;
     }
     switch (arg1)
     {
@@ -497,7 +497,7 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
         func_80105634(arg0);
         arg0->unk58 = 1.0f;
         ml_vec3f_copy(sp34->unk64, arg0->position);
-        ml_vec3f_copy(sp34->unk70, func_80106790(arg0->unk3C)->position);
+        ml_vec3f_copy(sp34->unk70, actorList_getFromMarker(arg0->unk3C)->position);
         if (arg0->unk64_20)
         {
             func_808006C4_chheggy(arg0, arg0->unk0, 4, 0x30);
@@ -723,7 +723,7 @@ s32 func_80801A00_chheggy(Actor* arg0, s32 arg1, s32 arg2)
         func_8010A624(arg0);
         return 1;
     case 0xF:
-        sp34 = func_80106790(func_80101080());
+        sp34 = actorList_getFromMarker(func_80101080());
         func_800C4140(0x59919413, arg0->position, 0x04B000FA);
         func_800BBCB8(arg0->position, arg0->position, 1.0f, 6, &D_80801EE4_chheggy);
         func_800BBCB8(arg0->position, arg0->position, 1.0f, 3, &D_80801F1C_chheggy);

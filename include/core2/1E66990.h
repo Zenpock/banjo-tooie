@@ -63,7 +63,7 @@ s32 func_8008DAC8(s32);
 s32 func_8008DAE8(PlayerState*, f32*, f32); 
 int func_8008DC90(PlayerState*, f32*, f32);
 int func_8008DD04(PlayerState *);
-s32 func_8008DD70(PlayerState*);
+s32 player_inFirstPState(PlayerState*);
 s32 func_8008DD90(PlayerState*);
 s32 func_8008DDEC(PlayerState*, f32*, f32);
 s32 func_8008DE24(PlayerState *);

@@ -50,7 +50,7 @@ void func_80800040_bsledge(PlayerState *self, f32 arg1[3]) {
 }
 
 void func_808001A8_bsledge(PlayerState* self) {
-    if (func_8009E74C(self, 2) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_2_LEDGE) == 0) {
         func_8009E474(self);
         if (func_80096388(self) == 7) {
             func_800961AC(self, 1);
@@ -65,7 +65,7 @@ void func_808001A8_bsledge(PlayerState* self) {
 }
 
 void func_80800238_bsledge(PlayerState* self) {
-    if (func_8009E77C(self, 2) == 0) {
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_2_LEDGE) == 0) {
         func_8009E4AC(self);
         func_8009E55C(self, 0, 32.0f);
         func_8009E53C(self, 0, 30.0f);

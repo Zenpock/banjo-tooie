@@ -145,7 +145,7 @@ void func_80800834_bssub(PlayerState* self) {
 }
 
 void func_808008D8_bssub(PlayerState* self) {
-    if (func_8009E74C(self, 0xF) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_F_SUB) == 0) {
         func_800947EC(self, 1, 0);
         func_800961AC(self, 1);
         func_8009BC34(self);
@@ -167,7 +167,7 @@ void func_808008D8_bssub(PlayerState* self) {
 
 void func_808009B0_bssub(PlayerState* self)
 {
-    if (func_8009E77C(self, 0xF) == 0)
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_F_SUB) == 0)
     {
         _basub_entrypoint_10(self);
         self->unk16C = 0.0f;

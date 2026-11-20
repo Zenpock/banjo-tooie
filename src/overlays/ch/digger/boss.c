@@ -1422,7 +1422,7 @@ s32 func_808021E8_chdiggerboss(Actor* arg0, s32 arg1)
 
 //Get the other actor Hag-1 for Grunty and Grunty for Hag-1
 Actor* func_80802228_chdiggerboss(Actor* arg0) {
-    return func_80106790(arg0->unk3C);
+    return actorList_getFromMarker(arg0->unk3C);
 }
 
 //Grunty
@@ -1513,7 +1513,7 @@ void func_808023D8_chdiggerboss(Actor* arg0)
 	temp_a0 = *(s32*)&sp3C->unk0;
 	if (temp_a0 != NULL)
 	{
-		temp_v0_2 = func_80106790(temp_a0);
+		temp_v0_2 = actorList_getFromMarker(temp_a0);
 		ml_vec3f_copy(temp_v0_2->position, arg0->position);
 		temp_v0_2->position[1] += 300.0f;
 	}
@@ -1542,7 +1542,7 @@ void func_80802550_chdiggerboss(Actor* arg0)
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808025D4_chdiggerboss.s")
 
 Actor* func_808026F8_chdiggerboss(Actor* arg0) {
-    return func_80106790(arg0->unk3C);
+    return actorList_getFromMarker(arg0->unk3C);
 }
 
 //Grunty
@@ -1954,7 +1954,7 @@ void chdiggerboss_entrypoint_2(s32 arg0, ActorMarker* arg1)
 	DiggerBossAdditionalMem0* sp18;
 	OptionState* optionState;
 
-	sp1C = func_80106790(arg1);
+	sp1C = actorList_getFromMarker(arg1);
 	sp18 = actor_getAdditionalMem(sp1C, 0U);
 	optionState = &((DiggerBossAdditionalMem0*)actor_getAdditionalMem(sp1C, 0U))->unk10C;
 	if (sp18->unk40 == 2) {
@@ -3140,7 +3140,7 @@ Actor* func_80806D84_chdiggerboss(Actor* arg0) {
 
 	temp_v0 = actor_getAdditionalMem(arg0, 0U);
 	if (temp_v0->unk64 != NULL) {
-		return func_80106790(temp_v0->unk64);
+		return actorList_getFromMarker(temp_v0->unk64);
 	}
 	return NULL;
 }
@@ -3461,7 +3461,7 @@ Actor* func_808086A8_chdiggerboss(Actor* arg0) {
 
 	temp_v0 = actor_getAdditionalMem(arg0, 0U);
 	if (temp_v0->unkD4 != NULL) {
-		return func_80106790(temp_v0->unkD4);
+		return actorList_getFromMarker(temp_v0->unkD4);
 	}
 	return NULL;
 }
@@ -3509,7 +3509,7 @@ void func_808088CC_chdiggerboss(Actor* arg0)
 	{
 		if (hag1Mem->unkB0[var_s0] != NULL)
 		{
-			func_80808BE4_chdiggerboss(arg0, func_80106790(hag1Mem->unkB0[var_s0]), var_s0);
+			func_80808BE4_chdiggerboss(arg0, actorList_getFromMarker(hag1Mem->unkB0[var_s0]), var_s0);
 		}
 	}
 }
@@ -3691,7 +3691,7 @@ void func_80809310_chdiggerboss(Actor* arg0)
 	Actor* temp_v0_2;
 	ActorMarker* temp_a0;
 
-	temp_s0 = func_80106790(func_80101080());
+	temp_s0 = actorList_getFromMarker(func_80101080());
 	sp20 = actor_getAdditionalMem(arg0, 0U);
 	func_80802938_chdiggerboss(arg0, (s32)temp_s0->unk0, D_8080A204_chdiggerboss[sp20->unkDC][0], 0x28);
 	_chexploder_entrypoint_6(temp_s0, 1000.0f, 1200.0f);

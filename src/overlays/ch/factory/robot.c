@@ -203,7 +203,7 @@ s32 func_80800360_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
     switch (arg1)
     {
     case 0x40:
-        func_80106790(arg0->unk3C)->unk3C = NULL;
+        actorList_getFromMarker(arg0->unk3C)->unk3C = NULL;
         func_808005D4_chfactoryrobot(arg0);
         func_80107070(arg0, 3);
         break;
@@ -256,7 +256,7 @@ void func_80800508_chfactoryrobot(Actor* arg0)
 
     //Find Robot Tube
     _subaddiefind_entrypoint_10(arg0, 0x3BF, arg0->unk74_7);
-    temp_v0 = func_80106790(arg0->unk3C);
+    temp_v0 = actorList_getFromMarker(arg0->unk3C);
     temp_v0->unk3C = arg0->unk0;
     func_80101FDC(temp_v0, 1U);
     func_80103110(temp_v0, 1U);
@@ -498,7 +498,7 @@ s32 func_80800E40_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
             temp_v0->unk18 = arg0->unk64_29;
             break;
         case 0x90:
-            temp_v0_2 = func_80106790(func_80101080());
+            temp_v0_2 = actorList_getFromMarker(func_80101080());
             _chexploder_entrypoint_9(temp_v0_2, 3, 0);
             _chexploder_entrypoint_13(temp_v0_2, 0xAU);
             if (func_80107070(arg0, 3) == 0)
@@ -910,7 +910,7 @@ void func_80801D7C_chfactoryrobot(Actor* arg0)
             func_80101FDC(arg0, 3U);
             break;
         }
-        if ((func_80106790(arg0->unk3C)->unk58 > 0.0f) && (temp_s2->unk14 == 0))
+        if ((actorList_getFromMarker(arg0->unk3C)->unk58 > 0.0f) && (temp_s2->unk14 == 0))
         {
             _sudialog_entrypoint_0(0x364, 4);
             pad = temp_s2->unk10;
@@ -925,7 +925,7 @@ void func_80801D7C_chfactoryrobot(Actor* arg0)
                             150.0f,
                             800.0f,
                             0,
-                            func_80106790(((s32*)temp_s2)[sp6C])->position
+                            actorList_getFromMarker(((s32*)temp_s2)[sp6C])->position
                         ) != 0
                         )
                     {
@@ -1101,7 +1101,7 @@ s32 func_80802398_chfactoryrobot(Actor* arg0)
         return 0;
     }
     //I think this is getting the tube
-    sp24 = func_80106790(arg0->unk3C);
+    sp24 = actorList_getFromMarker(arg0->unk3C);
     var_v1 = actor_getAdditionalMem(sp24, 0U);
     if (sp24->unk7C_15 == 0)
     {
@@ -1130,7 +1130,7 @@ s32 func_80802470_chfactoryrobot(Actor* arg0, s32 arg1)
         return 0;
     }
 
-    temp_v0 = func_80106790(arg0->unk3C);
+    temp_v0 = actorList_getFromMarker(arg0->unk3C);
     sp28 = actor_getAdditionalMem(temp_v0, 0U);
     if ((arg1 != 0) && (sp28->unk12 != 0))
     {

@@ -599,7 +599,7 @@ void chdippy_entrypoint_3(s32 arg0, ChDippyUnk* arg1, ChDippyUnk* arg2, s32 arg3
     ChDippyUnk* end;
     u32 i;
 
-    temp_v1 = DIPPY_DATA(func_80106790(arg4))->unk0;
+    temp_v1 = DIPPY_DATA(actorList_getFromMarker(arg4))->unk0;
     for (end = &arg2[arg3]; arg2 < end; arg1++, arg2++)
     {
         arg2->unk2 = arg1->unk2 + temp_v1;

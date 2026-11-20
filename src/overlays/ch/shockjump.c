@@ -19,7 +19,7 @@ s32 func_80800018_chshockjump(s32 arg0, s32 arg1, s32 arg2)
 	switch (arg1)
 	{
 	case 0x90:
-		temp_v0 = func_80106790(func_80101080());
+		temp_v0 = actorList_getFromMarker(func_80101080());
 		_chexploder_entrypoint_6(temp_v0, 400.0f, 600.0f);
 		_chexploder_entrypoint_7(temp_v0, -600.0f, -400.0f);
 		break;
@@ -49,7 +49,7 @@ void chshockjump_entrypoint_2(ActorMarker* arg0)
 {
 	Actor* temp_v0;
 
-	temp_v0 = func_80106790(arg0);
+	temp_v0 = actorList_getFromMarker(arg0);
 	_chexploder_entrypoint_5(temp_v0, 0x756, temp_v0->position, temp_v0->rotation[1], temp_v0->scale, 0xC);
 	_subaddieaudioquick_entrypoint_2(temp_v0, temp_v0->position, &D_80800340_chshockjump);
 }

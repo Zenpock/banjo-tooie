@@ -33,22 +33,22 @@ s32 func_8008EE04(s32 arg0, s32 arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E68670/func_8008F748.s")
 
-void func_8008F788(s32 arg0, s32 arg1) {
-	inventory_incrementValue(func_800D1B34(arg1));
+void inventory_incrementByProp(s32 arg0, PropId arg1) {
+	inventory_incrementValue(inventory_getInventIdFromPropId(arg1));
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E68670/func_8008F7B4.s")
 
-void func_8008F828(s32 arg0, s32 arg1) {
-	inventory_getValue(func_800D1B34(arg1));
+void inventory_getValueByProp(s32 arg0, PropId arg1) {
+	inventory_getValue(inventory_getInventIdFromPropId(arg1));
 }
 
-void func_8008F854(s32 arg0, s32 arg1)
+void inventory_showValueByProp(s32 arg0, PropId arg1)
 {
-	inventory_showValue(func_800D1B34(arg1));
+	inventory_showValue(inventory_getInventIdFromPropId(arg1));
 }
 
 void func_8008F880(ActorMarker* arg0, f32* arg1)
 {
-	ml_vec3f_copy(arg1, func_80106790(arg0)->position);
+	ml_vec3f_copy(arg1, actorList_getFromMarker(arg0)->position);
 }

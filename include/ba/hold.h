@@ -15,8 +15,10 @@ void _bahold_entrypoint_1(PlayerState*);
 void _bahold_entrypoint_2(PlayerState*);
 void _bahold_entrypoint_3(PlayerState*);
 void _bahold_entrypoint_4(PlayerState*);
-s32 _bahold_entrypoint_5(PlayerState*);
-void _bahold_entrypoint_6(PlayerState*, s32);
+//Get Held
+ActorMarker* _bahold_entrypoint_5(PlayerState*);
+//Set Held
+void _bahold_entrypoint_6(PlayerState*, ActorMarker*);
 void _bahold_entrypoint_7(PlayerState*, f32, f32);
 
 #endif

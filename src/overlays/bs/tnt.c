@@ -387,7 +387,7 @@ s32 bstnt_entrypoint_1(s32 arg0) {
 }
 
 void bstnt_entrypoint_2(PlayerState* self) {
-	if (func_8009E74C(self, 0xC) == 0) {
+	if (bs_matchesNextStateType(self, BS_STATETYPE_C_TNT) == 0) {
 		func_800947EC(self, 1, 0);
 		func_80092864(self, 1.0f);
 		bapitch_resetAngularVelocity(self);
@@ -399,7 +399,7 @@ void bstnt_entrypoint_2(PlayerState* self) {
 }
 
 void bstnt_entrypoint_3(PlayerState* self) {
-	if (func_8009E77C(self, 0xC) == 0) {
+	if (bs_matchesPreviousStateType(self, BS_STATETYPE_C_TNT) == 0) {
 		self->unk164.word = 0;
 		self->unk168.bytes[0] = 0;
 		self->unk168.bytes[2] = 0;

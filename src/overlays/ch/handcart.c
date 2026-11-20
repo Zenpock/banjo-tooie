@@ -218,7 +218,7 @@ void func_80800528_chhandcart(Actor* arg0)
         case 2:
 
         case 4:
-            sp78 = func_80106790(arg0->unk3C);
+            sp78 = actorList_getFromMarker(arg0->unk3C);
             sp40 = 1;
             break;
 
@@ -555,7 +555,7 @@ void func_80800FA0_chhandcart(Actor* arg0, s32 arg1)
 void func_808010D8_chhandcart(Actor* arg0, s32 arg1) {
     Actor* sp1C;
 
-    sp1C = func_80106790(arg0->unk3C);
+    sp1C = actorList_getFromMarker(arg0->unk3C);
     func_80800FA0_chhandcart(arg0, arg1);
     func_80802CE8_chhandcart(sp1C, arg1);
 }
@@ -888,7 +888,7 @@ void func_80801D50_chhandcart(Actor* arg0)
         return;
     }
     gameSpeed = time_getDelta();
-    sp3C = func_80106790(arg0->unk3C);
+    sp3C = actorList_getFromMarker(arg0->unk3C);
     sp34 = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     switch (arg0->unk70_10)
     {
@@ -1117,11 +1117,11 @@ s32 func_80802468_chhandcart(Actor* arg0, s32 arg1, s32 arg2)
         func_80802394_chhandcart(arg0);
         break;
     case 0xE:
-        func_80802400_chhandcart(func_80106790(arg0->unk3C), arg2);
+        func_80802400_chhandcart(actorList_getFromMarker(arg0->unk3C), arg2);
         return 3;
 
     case 0xB:
-        temp_a1 = func_80106790(arg0->unk3C);
+        temp_a1 = actorList_getFromMarker(arg0->unk3C);
         var_v1 = 0;
         if (arg2 != 0x19)
         {
@@ -1367,7 +1367,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
     canaryMary = (CanaryMaryMemory*)actor_getAdditionalMem(arg0, 0U);
     if (arg0->unk3C != 0)
     {
-        sp2C = func_80106790(arg0->unk3C);
+        sp2C = actorList_getFromMarker(arg0->unk3C);
     }
     else
     {
@@ -1562,7 +1562,7 @@ void func_808031D0_chhandcart(Actor* arg0, s32 arg1) {
     func_80802CE8_chhandcart(arg0, arg1);
     if (arg0->unk3C != 0) 
     {
-        func_80800FA0_chhandcart(func_80106790(arg0->unk3C), arg1);
+        func_80800FA0_chhandcart(actorList_getFromMarker(arg0->unk3C), arg1);
     }
 }
 
@@ -1722,7 +1722,7 @@ void func_80803794_chhandcart(Actor* arg0)
     sp44 = time_getDelta();
     if (arg0->unk3C != 0)
     {
-        sp40 = func_80106790(arg0->unk3C);
+        sp40 = actorList_getFromMarker(arg0->unk3C);
         sp3C = (HandcartMemory*)actor_getAdditionalMem(sp40, 0U);
     }
     else
@@ -2001,7 +2001,7 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
         func_80802400_chhandcart(arg0, arg2);
         return 3;
     case 47: //Callback from dialog ending
-        temp_t0 = (HandcartMemory*)actor_getAdditionalMem(func_80106790(arg0->unk3C), 0U);
+        temp_t0 = (HandcartMemory*)actor_getAdditionalMem(actorList_getFromMarker(arg0->unk3C), 0U);
         switch (*(s16*)&arg2)
         {
         case 0xF84:
@@ -2017,7 +2017,7 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
         }
         break;
     case 13:
-        temp_s0 = func_80106790(arg0->unk3C);
+        temp_s0 = actorList_getFromMarker(arg0->unk3C);
         switch (arg2 & 0xFFFF)
         {
         case 1:
@@ -2031,7 +2031,7 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
     case 46: //Callback from dialog ending
         if (arg0->unk3C != 0)
         {
-            var_a2 = func_80106790(arg0->unk3C);
+            var_a2 = actorList_getFromMarker(arg0->unk3C);
         }
         else
         {
@@ -2121,7 +2121,7 @@ void func_8080436C_chhandcart(Actor* arg0, GraphicsBuffers* buf)
 
 void chhandcart_entrypoint_1(Actor* arg0)
 {
-    func_80101F24(func_80106790((ActorMarker*)arg0));
+    func_80101F24(actorList_getFromMarker((ActorMarker*)arg0));
 }
 
 ActorData* chhandcart_entrypoint_2(void) 

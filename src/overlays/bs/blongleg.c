@@ -46,7 +46,7 @@ void func_808000C8_bsblongleg(PlayerState* self)
 
 void func_8080013C_bsblongleg(PlayerState* self)
 {
-    if (func_8009E77C(self, 8) == 0) {
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_8_STILT) == 0) {
         func_8009E53C(self, 1, -50.0f);
         bastick_setZoneMax(self, 0, 0.03f);
         bastick_setZoneMax(self, 1, 1.0f);
@@ -63,7 +63,7 @@ void func_8080013C_bsblongleg(PlayerState* self)
 
 void func_80800204_bsblongleg(PlayerState* self)
 {
-    if (func_8009E74C(self, 8) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_8_STILT) == 0) {
         _baalarm_free(self);
         func_8009E53C(self, 1, 0.0f);
         bastick_resetZones(self);

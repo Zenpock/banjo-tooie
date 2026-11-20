@@ -246,7 +246,7 @@ ImageStruct* func_800EC3E8(ActorMarker* arg0)
 
 void func_800EC7D4(ActorMarker* arg0, GraphicsBuffers* arg1)
 {
-	func_8010A79C(func_80106790(arg0), arg1);
+	func_8010A79C(actorList_getFromMarker(arg0), arg1);
 }
 
 int func_800EC800(ActorMarker* arg0)

@@ -437,7 +437,7 @@ void func_800A3A80(PlayerState* self)
     {
         player_getCoords(self, self->unkA0->unk2C);
     }
-    if ((player_isStable(self) != 0) || (func_8009E71C(self, 0xA) != 0))
+    if ((player_isStable(self) != 0) || (bs_matchesCurrentStateType(self, 0xA) != 0))
     {
         baflag_clear(self, BA_FLAG_5_HAS_PECKED);
         baflag_clear(self, BA_FLAG_12_HAS_FLAPPED);

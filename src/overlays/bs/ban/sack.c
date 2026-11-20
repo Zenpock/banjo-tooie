@@ -102,7 +102,7 @@ void func_808001D4_bsbansack(PlayerState* arg0)
 
 void func_80800238_bsbansack(PlayerState* self)
 {
-    if (func_8009E74C(self, 0x12) != 0)
+    if (bs_matchesNextStateType(self, BS_STATETYPE_12_BANSACK) != 0)
     {
         if (_babackpack_get_state(self) != 4)
         {
@@ -124,7 +124,7 @@ void func_80800238_bsbansack(PlayerState* self)
 
 void func_808002D4_bsbansack(PlayerState* self)
 {
-    if (func_8009E77C(self, 0x12) == 0)
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_12_BANSACK) == 0)
     {
         func_800A0CD0(self, 0);
         _babackpack_set_state(self, 4);

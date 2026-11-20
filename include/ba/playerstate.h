@@ -291,17 +291,11 @@ typedef struct ba_unknown_8C_s {
 typedef struct ba_hold_s {
     f32 unk0;
     f32 unk4;
-    s32 unk8;
+    ActorMarker* unk8;
     u8 unkC;
     s8 unkD;
     s8 unkE;
     s8 unkF;
-    s8 unk10;
-    s8 unk11;
-    s8 unk12;
-    s8 unk13;
-    s32 unk14;
-    f32 unk18;
 } BaHold;
 
 typedef struct ba_unkA0_s {
@@ -379,15 +373,12 @@ typedef struct ba_unknown_DC_s {
     f32 unkC;
 } ba_unknown_DC_s;
 typedef struct ba_unknown_E0_s {
-    f32 unk0;
-    f32 unk4;
-    f32 unk8;
-    f32 unkC;
-    f32 unk10;
-    f32 unk14;
-    f32 unk18;
-    u8 pad1C[0x10];
-    u8 unk2C;
+    f32 unk0[3]; //Bottom of the climbing pole
+    f32 unkC[3]; //Top of climbing pole
+    f32 unk18; //Pole Thickness
+    f32 unk1C[3]; //Last Pole Coords
+    f32 unk28; //Timer
+    u8 unk2C;//Should we latch to a climb surface
     u8 unk2D;
     u8 unk2E;
     u8 unk2F;

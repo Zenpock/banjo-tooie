@@ -37,7 +37,7 @@ void func_808000AC_bsbfly(PlayerState* self)
 
 void func_80800128_bsbfly(PlayerState* self)
 {
-    if (!func_8009E77C(self, 9))
+    if (!bs_matchesPreviousStateType(self, BS_STATETYPE_9_FLYING))
     {
         _bastatemem_entrypoint_0(self, 0x20);
         _bafly_entrypoint_5(self);
@@ -49,7 +49,7 @@ void func_80800128_bsbfly(PlayerState* self)
 
 void func_80800188_bsbfly(PlayerState* self)
 {
-    if (!func_8009E74C(self, 9))
+    if (!bs_matchesNextStateType(self, BS_STATETYPE_9_FLYING))
     {
         _bafly_entrypoint_4(self);
         _bastatemem_entrypoint_1(self);
@@ -507,7 +507,7 @@ void func_80801178_bsbfly(PlayerState* self)
 
     func_8009E0DC(self);
     func_8009E100(self);
-    if (func_8009E74C(self, 9) != 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_9_FLYING) != 0) {
         func_808000AC_bsbfly(self);
     }
     temp_v0 = bs_getNextState(self);

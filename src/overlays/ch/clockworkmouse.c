@@ -161,7 +161,7 @@ void func_808004B0_chclockworkmouse(Actor* actor) {
             break;
         case 2:
         case 4:
-            sp68 = func_80106790(actor->unk3C);
+            sp68 = actorList_getFromMarker(actor->unk3C);
             break;
         }
         _susplinet_entrypoint_11(splineMemory, _susplinet_entrypoint_9(splineMemory));
@@ -429,7 +429,7 @@ void func_80800D14_chclockworkmouse(Actor* actor, s32 arg1) {
 void func_80800E8C_chclockworkmouse(Actor *actor, s32 arg1) {
     Actor *sp1C;
 
-    sp1C = func_80106790(actor->unk3C);
+    sp1C = actorList_getFromMarker(actor->unk3C);
     func_80800D14_chclockworkmouse(actor, arg1);
     func_808022E4_chclockworkmouse(sp1C, arg1);
 }
@@ -575,7 +575,7 @@ void func_80801588_chclockworkmouse(Actor* actor) {
         return;
     }
     sp38 = time_getDelta();
-    sp3C = func_80106790(actor->unk3C);
+    sp3C = actorList_getFromMarker(actor->unk3C);
     sp34 = ((Unk80100094 *)actor_getAdditionalMem(actor, 0));
     sp34->unk8 += 5.0f * CLOCKWORK_DATA(actor)->unkC * sp38;
     switch (actor->unk70_10) {
@@ -745,10 +745,10 @@ s32 func_80801BF0_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
         func_80801A94_chclockworkmouse(actor);
         break;
     case 0xE:
-        func_80801B90_chclockworkmouse(func_80106790(actor->unk3C), arg2);
+        func_80801B90_chclockworkmouse(actorList_getFromMarker(actor->unk3C), arg2);
         return 3;
     case 0xB:
-        sp1C = func_80106790(actor->unk3C);
+        sp1C = actorList_getFromMarker(actor->unk3C);
         sp18 = 0;
         switch (arg2) {
         case 23:
@@ -912,7 +912,7 @@ void func_808022E4_chclockworkmouse(Actor* actor, s32 arg1) {
     u8 var_a1;
     u8 var_a1_2;
 
-    sp2C = func_80106790(actor->unk3C);
+    sp2C = actorList_getFromMarker(actor->unk3C);
     sp28 = ((Unk80100094 *)actor_getAdditionalMem(actor, 0));
     switch (actor->unk70_10) {
     case 19:
@@ -1023,7 +1023,7 @@ void func_808022E4_chclockworkmouse(Actor* actor, s32 arg1) {
 void func_808026E0_chclockworkmouse(Actor *actor, s32 arg1) {
     Actor *sp1C;
 
-    sp1C = func_80106790(actor->unk3C);
+    sp1C = actorList_getFromMarker(actor->unk3C);
     func_808022E4_chclockworkmouse(actor, arg1);
     func_80800D14_chclockworkmouse(sp1C, arg1);
 }
@@ -1183,7 +1183,7 @@ void func_80802CC8_chclockworkmouse(Actor* arg0) {
     Unk80100094* sp30;
     f32 sp2C;
 
-    sp34 = func_80106790(arg0->unk3C);
+    sp34 = actorList_getFromMarker(arg0->unk3C);
     sp30 = (Unk80100094 *)actor_getAdditionalMem(sp34, 0);
     sp2C = time_getDelta();
     _suexpression_entrypoint_10(actor_getAdditionalMem(arg0, 1), arg0->unk0, 0);
@@ -1355,7 +1355,7 @@ s32 func_808032F8_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
         func_80801B90_chclockworkmouse(actor, arg2);
         return 3;
     case 47:
-        temp_t0 = (Unk80100094 *)actor_getAdditionalMem(func_80106790(actor->unk3C), 0);
+        temp_t0 = (Unk80100094 *)actor_getAdditionalMem(actorList_getFromMarker(actor->unk3C), 0);
         switch (*new_var) {
         case 0x142A:
             collectable_spawnItem(0x4A, 1, &temp_t0->unk114, 1, actor->unk0);
@@ -1366,7 +1366,7 @@ s32 func_808032F8_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
         }
         break;
     case 13:
-        sp28 = func_80106790(actor->unk3C);
+        sp28 = actorList_getFromMarker(actor->unk3C);
         switch (*((s32 *)new_var) & 0xFFFF) {
         case 1:
             func_80800850_chclockworkmouse(sp28, 0x17, 0x2000, func_80101080());
@@ -1377,7 +1377,7 @@ s32 func_808032F8_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
         }
         break;
     case 46:
-        temp_a2 = func_80106790(actor->unk3C);
+        temp_a2 = actorList_getFromMarker(actor->unk3C);
         switch (*new_var) {
         case 0x1426:
             func_808009F4_chclockworkmouse(temp_a2);

@@ -10,7 +10,7 @@ extern s32 D_80800AA8_bsbansnooze[];
 
 void func_80800000_bsbansnooze(PlayerState* self)
 {
-    if (func_8009E74C(self, 0x14) != 0)
+    if (bs_matchesNextStateType(self, BS_STATETYPE_14_BANSNOOZE) != 0)
     {
         if (_babackpack_get_state(self) != 6)
         {
@@ -32,7 +32,7 @@ void func_80800000_bsbansnooze(PlayerState* self)
 
 void func_80800098_bsbansnooze(PlayerState* self)
 {
-    if (func_8009E77C(self, 0x14) == 0)
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_14_BANSNOOZE) == 0)
     {
         func_800A0CD0(self, 0);
         _babackpack_set_state(self, 6);

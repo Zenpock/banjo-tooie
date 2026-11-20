@@ -22,7 +22,7 @@ void func_8008E530(PlayerState* self, ActorMarker* arg1)
 	s32 sp18;
 
 	if ((!(arg1->unk18_16) ||
-		((temp_v0 = func_80106790(arg1), !(temp_v0->unk64_17)) && (!(temp_v0->unk7A_3) ||
+		((temp_v0 = actorList_getFromMarker(arg1), !(temp_v0->unk64_17)) && (!(temp_v0->unk7A_3) ||
 			(_chbounce_entrypoint_10(temp_v0) == 0))))
 		&& ((sp18 = _glhittableDll_entrypoint_4(self->unkC->unk0, arg1), (func_800F424C(self) != 0)) ||
 			(_glhittableDll_entrypoint_2(sp18) == 0) ||

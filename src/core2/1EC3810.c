@@ -191,7 +191,7 @@ int func_800EB15C(ActorMarker* arg0)
 	{
 		if (!func_800F6774(character_getActiveIndex()))
 		{
-			if ((arg0->unk18_16) && (func_80102F74(func_80106790(arg0), 0x88000000)))
+			if ((arg0->unk18_16) && (func_80102F74(actorList_getFromMarker(arg0), 0x88000000)))
 			{
 				return 1;
 			}

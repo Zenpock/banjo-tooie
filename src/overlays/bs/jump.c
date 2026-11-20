@@ -22,9 +22,10 @@ void bsjump_entrypoint_0(PlayerState* self)
 	self->unk164.word = (baflag_isTrue(self, BA_FLAG_2_ON_SPRING_PAD) && player_isSplitUp(self) == 0);
 	temp_v0 = bs_getPreviousState(self);
 	sp38 = temp_v0;
-	if (func_8009CBDC(self, temp_v0) == 0xA)
+	if (bs_getStateType(self, temp_v0) == BS_STATETYPE_A_CLIMB)
 	{
-		func_80098840(self);
+		//If we we just jumped off a climbing surface
+		player_exitPoleClimb(self);
 	}
 	if (sp38 == BS_STATE_11_RATATAP)
 	{
@@ -328,7 +329,7 @@ void bsjump_entrypoint_8(PlayerState* arg0)
 	AnimCtrl* temp_s0;
 
 	temp_s0 = baanim_getAnimCtrlPtr(arg0);
-	func_80098840(arg0);
+	player_exitPoleClimb(arg0);
 	anctrl_reset(temp_s0);
 	anctrl_setIndex(temp_s0, 8);
 	anctrl_setDuration(temp_s0, 1.9f);

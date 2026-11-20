@@ -140,7 +140,7 @@ void func_800E2A14(GraphicsBuffers* arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBB4F0/func_800E2E48.s")
 
-void draw_2D_Image(GraphicsBuffers* arg0, ImageStruct* arg1, s32 arg2, s32* arg3)
+void draw_2D_Image(GraphicsBuffers* arg0, ImageStruct* arg1, s32 frameToUse, s32* arg3)
 {
     s32 pad;
     s32 coords[2];
@@ -149,7 +149,7 @@ void draw_2D_Image(GraphicsBuffers* arg0, ImageStruct* arg1, s32 arg2, s32* arg3
     s32 var_v1;
     s16* temp_v0;
 
-    temp_v0 = func_800AF5FC(arg1, arg2);
+    temp_v0 = func_800AF5FC(arg1, frameToUse);
     if ((temp_v0[0] == 0) && (temp_v0[1] == 0))
     {
         temp_f0 = func_800E2DF0();
@@ -177,7 +177,7 @@ void draw_2D_Image(GraphicsBuffers* arg0, ImageStruct* arg1, s32 arg2, s32* arg3
         coords[0] = arg3[0];
         coords[1] = arg3[1];
     }
-    func_800E2E48(arg0, arg1, arg2, coords);
+    func_800E2E48(arg0, arg1, frameToUse, coords);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBB4F0/func_800E3220.s")

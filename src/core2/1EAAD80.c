@@ -193,7 +193,7 @@ u32 func_800D1A6C(u32 inventoryId)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAAD80/func_800D1ACC.s")
 
-s32 func_800D1B34(s32 arg0)
+s32 inventory_getInventIdFromPropId(PropId arg0)
 {
     switch (arg0)
     {

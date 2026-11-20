@@ -3,6 +3,32 @@
 
 #include "ba/playerstate.h"
 
+typedef enum bs_state_type_e {
+    BS_STATETYPE_0_NORMAL = 0,
+    BS_STATETYPE_1_BEE = 1,
+    BS_STATETYPE_2_LEDGE = 2,
+    BS_STATETYPE_3_STONY = 3,
+    BS_STATETYPE_5_FIRST_PERSON = 5,
+    BS_STATETYPE_6_MUMBO = 6,
+    BS_STATETYPE_7_GOLIATH = 7,
+    BS_STATETYPE_8_STILT = 8,
+    BS_STATETYPE_9_FLYING = 9,
+    BS_STATETYPE_A_CLIMB = 0xA,
+    BS_STATETYPE_B_SWIM = 0xB,
+    BS_STATETYPE_C_TNT = 0xC,
+    BS_STATETYPE_D_VAN = 0xD,
+    BS_STATETYPE_E_TAXIPACK = 0xE,
+    BS_STATETYPE_F_SUB = 0xF,
+    BS_STATETYPE_10_SMALLTREX = 0x10,
+    BS_STATETYPE_11_LARGETREX = 0x11,
+    BS_STATETYPE_12_BANSACK = 0x12,
+    BS_STATETYPE_13_BANSHACK = 0x13,
+    BS_STATETYPE_14_BANSNOOZE = 0x14,
+    BS_STATETYPE_15_WASHER = 0x15,
+    BS_STATETYPE_16_SNOWBALL = 0x16
+}BanjoStateType;
+
+
 // TODO validate that the rest of these state
 typedef enum bs_state_e {
     BS_STATE_0_INVALID = 0x0,

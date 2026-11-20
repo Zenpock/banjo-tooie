@@ -42,7 +42,7 @@ void func_80800130_bsmum(PlayerState *self) {
 }
 
 void bsmum_entrypoint_1(PlayerState *self) {
-    if (func_8009E74C(self, 6) != 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_6_MUMBO) != 0) {
         return;
     }
     
@@ -55,7 +55,7 @@ void bsmum_entrypoint_1(PlayerState *self) {
 }
 
 void bsmum_entrypoint_2(PlayerState *self) {
-    if (func_8009E77C(self, 6) != 0) {
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_6_MUMBO) != 0) {
         return;
     }
 

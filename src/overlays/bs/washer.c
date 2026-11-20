@@ -46,7 +46,7 @@ void func_808000BC_bswasher(PlayerState* self) {
 }
 
 void func_808000F0_bswasher(PlayerState* self) {
-    if (func_8009E74C(self, 0x15) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_15_WASHER) == 0) {
         func_800947EC(self, 1, 0);
         bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
@@ -64,7 +64,7 @@ void func_808000F0_bswasher(PlayerState* self) {
 }
 
 void func_808001A8_bswasher(PlayerState* self) {
-    if (func_8009E77C(self, 0x15) == 0) {
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_15_WASHER) == 0) {
         _bawasher_entrypoint_2(self);
         bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
         baroll_setAngularVelocity(self, 1000.0f, 12.0f);

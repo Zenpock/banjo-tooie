@@ -197,7 +197,7 @@ s32 sumole_entrypoint_3(Actor* arg0, s32 arg1, Arg2 arg2, MoveData* arg3)
         }
         break;
     case 0x2F:
-        sp24 = func_80106790(arg0->unk3C);
+        sp24 = actorList_getFromMarker(arg0->unk3C);
         switch (arg2.s_1)
         {
         case 1:
@@ -292,7 +292,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
             }
             if (var_v1 != arg0->unk74_29)
             {
-                temp_v0 = func_80106790(arg0->unk3C);
+                temp_v0 = actorList_getFromMarker(arg0->unk3C);
                 temp_v0->unk74_29 = var_v1;
                 arg0->unk74_29 = var_v1;
             }
@@ -431,7 +431,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
                 var_v1 = activePlayer_getCurrentHealth();
                 if (var_v1 >= activePlayer_getMaxHealth())
                 {
-                    if (_chmolehill_entrypoint_3(func_80106790(arg0->unk3C)) != 0)
+                    if (_chmolehill_entrypoint_3(actorList_getFromMarker(arg0->unk3C)) != 0)
                     {
                         sumole_entrypoint_2(arg0, 9);
                         return;
@@ -507,14 +507,14 @@ s32 sumole_entrypoint_6(Actor* arg0, s32 arg1, f32 arg2)
 
 void sumole_entrypoint_7(Actor* arg0)
 {
-    _chmolehill_entrypoint_1(func_80106790(arg0->unk3C), 1);
+    _chmolehill_entrypoint_1(actorList_getFromMarker(arg0->unk3C), 1);
 }
 
 s32 sumole_entrypoint_8(Actor* arg0, s32 arg1)
 {
     Actor* sp1C;
 
-    sp1C = func_80106790(arg0->unk3C);
+    sp1C = actorList_getFromMarker(arg0->unk3C);
     if ((func_800C064C() == -1) && ((sp1C->unk64_19) == 1) && (sp1C->unk3C != NULL))
     {
         if (arg1 != -1)
@@ -528,14 +528,14 @@ s32 sumole_entrypoint_8(Actor* arg0, s32 arg1)
 
 void sumole_entrypoint_9(Actor* arg0)
 {
-    _chmolehill_entrypoint_1(func_80106790(arg0->unk3C), 3);
+    _chmolehill_entrypoint_1(actorList_getFromMarker(arg0->unk3C), 3);
 }
 
 s32 sumole_entrypoint_10(Actor* arg0, s32 arg1)
 {
     Actor* sp1C;
 
-    sp1C = func_80106790(arg0->unk3C);
+    sp1C = actorList_getFromMarker(arg0->unk3C);
     if ((func_800C064C() == -1) && ((sp1C->unk64_19) == 1) && (sp1C->unk3C != NULL))
     {
         if (arg1 != -1)
@@ -549,12 +549,12 @@ s32 sumole_entrypoint_10(Actor* arg0, s32 arg1)
 
 void sumole_entrypoint_11(Actor* arg0)
 {
-    _chmolehill_entrypoint_1(func_80106790(arg0->unk3C), 4);
+    _chmolehill_entrypoint_1(actorList_getFromMarker(arg0->unk3C), 4);
 }
 
 s32 sumole_entrypoint_12(Actor* arg0)
 {
-    if ((func_80106790(arg0->unk3C)->unk70_10) == 1)
+    if ((actorList_getFromMarker(arg0->unk3C)->unk70_10) == 1)
     {
         return 1;
     }
@@ -563,12 +563,12 @@ s32 sumole_entrypoint_12(Actor* arg0)
 
 void sumole_entrypoint_13(Actor* arg0)
 {
-    _chmolehill_entrypoint_1(func_80106790(arg0->unk3C), 2);
+    _chmolehill_entrypoint_1(actorList_getFromMarker(arg0->unk3C), 2);
 }
 
 s32 sumole_entrypoint_14(Actor* arg0)
 {
-    if ((func_80106790(arg0->unk3C)->unk70_10) == 1)
+    if ((actorList_getFromMarker(arg0->unk3C)->unk70_10) == 1)
     {
         return 1;
     }
@@ -696,14 +696,14 @@ void sumole_entrypoint_16(Actor* arg0, s32 arg1)
         sumole_entrypoint_2(arg0, 7);
         return;
     case 10:
-        if (_chmolehill_entrypoint_3(func_80106790(arg0->unk3C)) == 0)
+        if (_chmolehill_entrypoint_3(actorList_getFromMarker(arg0->unk3C)) == 0)
         {
             func_800C0850();
         }
         sumole_entrypoint_2(arg0, 0x11);
         return;
     case 17:
-        if (_chmolehill_entrypoint_3(func_80106790(arg0->unk3C)) == 0)
+        if (_chmolehill_entrypoint_3(actorList_getFromMarker(arg0->unk3C)) == 0)
         {
             func_800C0850();
         }
@@ -947,7 +947,7 @@ void sumole_entrypoint_21(ActorMarker* arg0, s32 arg1)
     Actor* temp_v0;
     if (&arg0) {}
 
-    sp24 = func_80106790(arg0);
+    sp24 = actorList_getFromMarker(arg0);
     temp_v0 = func_801084B0(0x247, &sp24);
     sp20 = temp_v0;
     sp24->unk3C = temp_v0->unk0;

@@ -226,7 +226,7 @@ void func_80098E64(PlayerState* self)
         player_setTransformation(self, TRANSFORM_D_MUMBO);
         func_800F8EBC(self->unk184);
     }
-    sp30 = func_8009CBDC(self, bs_getCurrentState(self));
+    sp30 = bs_getStateType(self, bs_getCurrentState(self));
     if (func_8008DAA8(self) != 0)
     {
         func_8009E880();
@@ -278,7 +278,7 @@ void func_80098E64(PlayerState* self)
             break;
         }
     }
-    var_a1 = func_8009E71C(self, 5)?1:0;
+    var_a1 = bs_matchesCurrentStateType(self, BS_STATETYPE_5_FIRST_PERSON)?1:0;
     var_a1 &= func_800EA068(8)?1:0;
     func_8009EB18(var_a1);
     bs_setState(self, 0x5A);

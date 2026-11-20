@@ -205,7 +205,7 @@ void func_80800150_chjadesnake(Actor* arg0)
     }
     if ((arg0->unk6C_0) && (func_800D0634(0xAU, 1U) != 0))
     {
-        temp_v0_2 = func_80106790(func_800D0634(0xAU, 1U));
+        temp_v0_2 = actorList_getFromMarker(func_800D0634(0xAU, 1U));
         ml_vec3f_add(temp_v0_2->position, (f32*)&temp_v0_2->actorData[4]);
         arg0->unk6C_0--;
         if (arg0->unk6C_0 == 2)
@@ -258,7 +258,7 @@ s32 func_808007DC_chjadesnake(Actor* arg0, s32 arg1, u32 arg2)
     case 0xD:
         if ((arg0->unk70_10) != 1)
         {
-            temp_v0 = func_80106790(func_80101080());
+            temp_v0 = actorList_getFromMarker(func_80101080());
             ml_getdiff_vec3f(&temp_v0->actorData[4], &arg0->actorData[0], &arg0->actorData[4]);
             //Apply Scale
             ml_vec3f_apply_scale(&temp_v0->actorData[4], 0.14285715f);

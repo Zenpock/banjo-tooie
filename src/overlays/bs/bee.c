@@ -3,7 +3,7 @@
 /* .code */
 
 void bsbee_entrypoint_0(PlayerState* self) {
-    if (func_8009E74C(self, 1) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_1_BEE) == 0) {
         func_800947EC(self, 1, 0);
         bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
@@ -20,7 +20,7 @@ void bsbee_entrypoint_0(PlayerState* self) {
 }
 
 void bsbee_entrypoint_1(PlayerState* self) {
-    if (func_8009E77C(self, 1) == 0) {
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_1_BEE) == 0) {
         _babee_entrypoint_4(self);
         bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
         baroll_setAngularVelocity(self, 1000.0f, 12.0f);

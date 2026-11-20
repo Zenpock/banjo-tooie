@@ -102,7 +102,7 @@ void func_80800110_chpickups(Actor* arg0)
             _fxsparkle_entrypoint_1(arg0->position, 5U);
             func_800FC6B0(0xE);
         }
-        func_800F6388(character_getActiveIndex(), arg0->unk6C_9);
+        character_incrementInventByProp(character_getActiveIndex(), arg0->unk6C_9);
         actor_mark_delete(arg0);
     }
 }
@@ -117,7 +117,7 @@ void func_808001A0_chpickups(ActorMarker* arg0, f32* arg1)
     f32 var_f16;
     f32 var_f14;
 
-    temp_s0 = func_80106790(arg0);
+    temp_s0 = actorList_getFromMarker(arg0);
     ml_vec3f_to_vec3i(sp50, arg1);
     switch (temp_s0->unk6C_9)
     {
@@ -207,9 +207,9 @@ void func_80800528_chpickups(Actor* arg0)
 {
     s32 pad;
     f32 sp28[3];
-    if (func_8008FDEC() != arg0->unk0)
+    if (activePlayer_getHeldMarker() != arg0->unk0)
     {
-        func_800F63E0(character_getActiveIndex(), arg0->unk6C_9);
+        character_showInventByProp(character_getActiveIndex(), arg0->unk6C_9);
         actor_mark_delete(arg0);
         return;
     }
