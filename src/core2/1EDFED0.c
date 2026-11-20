@@ -62,7 +62,7 @@ Actor* actorList_getAtIndex(s32 arg0)
 	return vector_at(D_80136EE0, arg0);
 }
 
-Actor* func_80106790(ActorMarker* arg0)
+Actor* actorList_getFromMarker(ActorMarker* arg0)
 {
 	return vector_at(D_80136EE0, arg0->unk18_5);
 }

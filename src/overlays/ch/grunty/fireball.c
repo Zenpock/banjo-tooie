@@ -48,8 +48,8 @@ void func_80800030_chgruntyfireball(Actor* actor)
     }
     if (((s32*)actor->actorData)[3] != 0)
     {
-        func_800C8CB8(((s32*)actor->actorData)[3], actor->position);
-        func_800C8E84(((s32*)actor->actorData)[3], D_808004E0_chgruntyfireball[func_8001210C(1)]);
+        light_setPosition(((s32*)actor->actorData)[3], actor->position);
+        light_setColors(((s32*)actor->actorData)[3], D_808004E0_chgruntyfireball[func_8001210C(1)]);
     }
 }
 
@@ -75,9 +75,9 @@ s32 func_80800130_chgruntyfireball(Actor* actor, s32 arg1, s32 arg2)
         func_80800260_chgruntyfireball(actor);
         break;
     case EVENT_95_ACTOR_SPAWNED:
-        temp_v0 = func_800C8A98();
+        temp_v0 = light_createNew();
         actor->actorData[3] = temp_v0;
-        func_800C8CB8(temp_v0, actor->position);
+        light_setPosition(temp_v0, actor->position);
         func_800C8D4C(actor->actorData[3], &D_8080050C_chgruntyfireball);
         break;
     default:

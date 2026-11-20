@@ -241,7 +241,7 @@ void func_800F4FC4(void) {
 }
 
 
-void func_800F5008(s32 arg0) 
+void func_800F5008(GraphicsBuffers* arg0)
 {
     s32 temp;
     PlayerState* playerState;
@@ -250,9 +250,11 @@ void func_800F5008(s32 arg0)
 
     for (i = 0, count = 0; i < 8; i++) {
         playerState = D_80135490.unk0[i];
-        if (playerState != NULL && playerState->unk17C != 0) {
+        if (playerState != NULL && playerState->unk17C != 0) 
+		{
             // yummy fake ^0
-            if ((func_80092258(playerState)^0) == 0xFF) {
+            if ((func_80092258(playerState)^0) == 0xFF) 
+			{
                 func_80098BA8(playerState, arg0);
             } 
             else 
@@ -266,7 +268,7 @@ void func_800F5008(s32 arg0)
 }
 
 
-void func_800F50D0(s32 arg0) {
+void func_800F50D0(GraphicsBuffers* arg0) {
     s32 pad[2];
     s32 var_s0;
     f32 sp38;
@@ -401,9 +403,9 @@ void func_800F551C(s32 arg0, f32* arg1, f32* arg2, f32* arg3) {
     func_800A3148(D_80135490.unk0[arg0], arg1, arg2, arg3);
 }
 
-void func_800F554C(s32 arg0)
+void character_getModelScale(s32 arg0)
 {
-    func_80092BDC(D_80135490.unk0[arg0]);
+    player_getModelScale(D_80135490.unk0[arg0]);
 }
 
 s32 character_getCurrentHealth(s32 arg0)
@@ -446,17 +448,17 @@ s32 func_800F56AC(s32 arg0)
     return func_80096694(D_80135490.unk0[arg0]);
 }
 
-ActorMarker* func_800F56D8(s32 arg0)
+ActorMarker* character_getHeldMarker(s32 charIndex)
 {
-    return _bahold_entrypoint_5(D_80135490.unk0[arg0]);
+    return _bahold_entrypoint_5(D_80135490.unk0[charIndex]);
 }
 
-u32 func_800F5704(s32 arg0) {
+PropId character_getHeldProp(s32 charIndex) {
     ActorMarker* temp;
 
-    temp = _bahold_entrypoint_5(D_80135490.unk0[arg0]);
+    temp = _bahold_entrypoint_5(D_80135490.unk0[charIndex]);
     if (temp != NULL) {
-        return func_80106790(temp)->unk6C_9;
+        return actorList_getFromMarker(temp)->unk6C_9;
     }
     return 0;
 }
@@ -570,7 +572,7 @@ f32 func_800F5AD0(s32 arg0) {
 
 f32 func_800F5AE0(s32 arg0)
 {
-    return func_8009BFCC(D_80135490.unk0[arg0]);
+    return bapitch_get(D_80135490.unk0[arg0]);
 }
 
 s32 func_800F5B0C(s32 arg0)
@@ -663,7 +665,7 @@ void func_800F5DC8(s32 arg0, Vec3f* arg1) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    arg1->pos.x = func_8009BFD8(sp1C);
+    arg1->pos.x = bapitch_getIdeal(sp1C);
     arg1->pos.y = yaw_getIdeal(sp1C);
     arg1->pos.z = baroll_getIdeal(sp1C);
 }
@@ -832,9 +834,9 @@ PlayerState* func_800F6308(s32 arg0, s32 arg1, f32* arg2)
     return newPlayer;
 }
 
-void func_800F6388(s32 arg0, s32 arg1)
+void character_incrementInventByProp(s32 arg0, PropId arg1)
 {
-    func_8008F788(D_80135490.unk0[arg0],arg1);
+    inventory_incrementByProp(D_80135490.unk0[arg0],arg1);
 }
 
 void func_800F63B4(s32 arg0)
@@ -842,14 +844,14 @@ void func_800F63B4(s32 arg0)
     func_8008F7B4(D_80135490.unk0[arg0]);
 }
 
-void func_800F63E0(s32 arg0, u32 arg1)
+void character_showInventByProp(s32 arg0, PropId arg1)
 {
-    func_8008F854(D_80135490.unk0[arg0],arg1);
+    inventory_showValueByProp(D_80135490.unk0[arg0],arg1);
 }
 
-void func_800F640C(s32 arg0)
+void character_getInventByProp(s32 arg0, PropId prop)
 {
-    func_8008F828(D_80135490.unk0[arg0]);
+    inventory_getValueByProp(D_80135490.unk0[arg0],prop);
 }
 
 s32 func_800F6438(u32 arg0) {
@@ -890,10 +892,10 @@ s32 func_800F651C(u32 arg0) {
     return func_8009E674(sp1C, 0x1000);
 }
 
-s32 func_800F6590(s32 arg0) {
+s32 character_inClimbingState(s32 arg0) {
     PlayerState* sp1C;
     sp1C = D_80135490.unk0[arg0];
-    return func_8009CBDC(sp1C, bs_getCurrentState(sp1C)) == 0xA;
+    return bs_getStateType(sp1C, bs_getCurrentState(sp1C)) == BS_STATETYPE_A_CLIMB;
 }
 
 s32 func_800F65D0(s32 arg0) {
@@ -940,7 +942,7 @@ int func_800F6720(s32 arg0) {
     PlayerState* temp_a0;
 
     temp_a0 = D_80135490.unk0[arg0];
-    return func_8009E71C(temp_a0, 9) != 0 || func_8008DE74(temp_a0) != 0;
+    return bs_matchesCurrentStateType(temp_a0, BS_STATETYPE_9_FLYING) != 0 || func_8008DE74(temp_a0) != 0;
 }
 
 int func_800F6774(u32 arg0) {
@@ -988,7 +990,7 @@ s32 func_800F690C(s32 arg0) {
 
 s32 func_800F693C(s32 arg0)
 {
-    return func_8008DD70(D_80135490.unk0[arg0]);
+    return player_inFirstPState(D_80135490.unk0[arg0]);
 }
 
 int func_800F6968(s32 arg0) {
@@ -1068,11 +1070,11 @@ s32 character_isStable(s32 arg0)
     return player_isStable(D_80135490.unk0[arg0]);
 }
 
-s32 func_800F6C88(s32 arg0) {
+s32 character_inLedgeState(s32 arg0) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    return func_8009CBDC(sp1C, bs_getCurrentState(sp1C)) == 2;
+    return bs_getStateType(sp1C, bs_getCurrentState(sp1C)) == BS_STATETYPE_2_LEDGE;
 }
 
 s32 func_800F6CC8(u32 arg0) {
@@ -1097,11 +1099,11 @@ int func_800F6D50(s32 arg0) {
     return (func_8008E124(sp1C) != 0) && (func_8009E674(sp1C, 0x10) != 0);
 }
 
-s32 func_800F6DA0(s32 arg0) {
+s32 character_inBanSackState(s32 arg0) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    return func_8009CBDC(sp1C, bs_getCurrentState(sp1C)) == 0x12;
+    return bs_getStateType(sp1C, bs_getCurrentState(sp1C)) == BS_STATETYPE_12_BANSACK;
 }
 
 s32 func_800F6DE0(f32* arg0)
@@ -1116,11 +1118,11 @@ void func_800F6E00(s32 arg0) {
     func_8009CA70(sp1C, bs_getCurrentState(sp1C), 0x100000);
 }
 
-s32 func_800F6E40(s32 arg0) {
+s32 character_inBanShackState(s32 arg0) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    return func_8009CBDC(sp1C, bs_getCurrentState(sp1C)) == 0x13;
+    return bs_getStateType(sp1C, bs_getCurrentState(sp1C)) == BS_STATETYPE_13_BANSHACK;
 }
 
 void func_800F6E80(s32 arg0)
@@ -1169,11 +1171,11 @@ s32 func_800F6F00(s32 arg0) {
     return 1;
 }
 
-s32 func_800F7018(s32 arg0) {
+s32 character_inStiltState(s32 arg0) {
     PlayerState* sp1C;
     PlayerState* temp_a0;
     sp1C = D_80135490.unk0[arg0];
-    return func_8009CBDC(sp1C, bs_getCurrentState(sp1C)) == 8;
+    return bs_getStateType(sp1C, bs_getCurrentState(sp1C)) == BS_STATETYPE_8_STILT;
 }
 
 s32 func_800F7058(s32 arg0) {
@@ -1185,8 +1187,8 @@ s32 func_800F7058(s32 arg0) {
     return 0;
 }
 
-s32 func_800F70BC(u32 arg0) {
-    return func_8009E71C(D_80135490.unk0[arg0], 0xE);
+s32 character_inTaxiState(u32 arg0) {
+    return bs_matchesCurrentStateType(D_80135490.unk0[arg0], BS_STATETYPE_E_TAXIPACK);
 }
 
 s32 func_800F70EC(s32 arg0) {
@@ -1720,7 +1722,7 @@ void func_800F8418(s32 arg0, f32* arg1)
 
 void func_800F8444(s32 arg0, f32* arg1) {
     PlayerState* temp = D_80135490.unk0[arg0];
-    func_8009BF5C(temp, arg1[0]);
+    bapitch_setIdeal(temp, arg1[0]);
     yaw_setIdeal(temp, arg1[1]);
     baroll_setIdeal(temp, arg1[2]);
 }
@@ -1836,7 +1838,7 @@ s32 func_800F87A4(s32 arg0) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
-    if ((func_800F56D8(arg0) != NULL) && (func_8009E674(sp1C, 0x400) != 0)) {
+    if ((character_getHeldMarker(arg0) != NULL) && (func_8009E674(sp1C, 0x400) != 0)) {
         return func_8009E7C8(sp1C, 0x16) == 2;
     }
     return 0;
@@ -2161,8 +2163,8 @@ TransformationId func_800F929C(void) {
     return TRANSFORM_1_BK;
 }
 
-void func_800F92CC(u32* arg0, enum transform_e* arg1, s32* arg2, s32* arg3) {
-    enum transform_e temp_v0_2;
+void func_800F92CC(u32* arg0, TransformationId* arg1, s32* arg2, s32* arg3) {
+    TransformationId temp_v0_2;
     u32 temp_v0;
 
     temp_v0 = character_getActiveIndex();
@@ -2180,8 +2182,8 @@ void func_800F92CC(u32* arg0, enum transform_e* arg1, s32* arg2, s32* arg3) {
     *arg2 = _character_findCharOfTransform(*arg3);
 }
 
-void func_800F9354(u32* arg0, enum transform_e* arg1, s32* arg2) {
-    enum transform_e temp_v0_2;
+void func_800F9354(u32* arg0, TransformationId* arg1, s32* arg2) {
+    TransformationId temp_v0_2;
     u32 temp_v0;
 
     temp_v0 = character_getActiveIndex();
@@ -2222,9 +2224,9 @@ void func_800F9444(s32 arg0) {
 }
 
 int func_800F9488(s32 arg0) {
-    enum transform_e sp5C;
+    TransformationId sp5C;
     s32 sp58;
-    enum transform_e sp54;
+    TransformationId sp54;
     s32 sp50;
     f32 sp44[3];
     f32 sp38[3];

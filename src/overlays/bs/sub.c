@@ -76,7 +76,7 @@ void func_808000F0_bssub(PlayerState* self) {
     }
     temp_f0 = _bafpctrl_entrypoint_3(self);
     var_f22 *= ml_map_f(temp_f0, 0.1f, 1.0f, SQ(temp_f0), 1.0f);
-    func_8009BFE4(self, var_f22, sp48);
+    bapitch_setAngularVelocity(self, var_f22, sp48);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/sub/func_80800254_bssub.s")
@@ -122,10 +122,10 @@ void func_80800768_bssub(PlayerState* self) {
     }
     temp_f0 = bastick_getY(self);
     if (temp_f0 < 0.0f) {
-        func_8009BF5C(self, ml_map_f(temp_f0, -1.0f, 0.0f, sp28, 360.0f));
+        bapitch_setIdeal(self, ml_map_f(temp_f0, -1.0f, 0.0f, sp28, 360.0f));
         return;
     }
-    func_8009BF5C(self, ml_map_f(temp_f0, 0.0f, 1.0f, 0.0f, sp24));
+    bapitch_setIdeal(self, ml_map_f(temp_f0, 0.0f, 1.0f, 0.0f, sp24));
 }
 
 void func_80800834_bssub(PlayerState* self) {
@@ -145,13 +145,13 @@ void func_80800834_bssub(PlayerState* self) {
 }
 
 void func_808008D8_bssub(PlayerState* self) {
-    if (func_8009E74C(self, 0xF) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_F_SUB) == 0) {
         func_800947EC(self, 1, 0);
         func_800961AC(self, 1);
         func_8009BC34(self);
-        func_8009BF5C(self, 0.0f);
+        bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
-        func_8009C000(self);
+        bapitch_resetAngularVelocity(self);
         baroll_resetAngularVelocity(self);
         bastick_resetZones(self);
         func_80095A40(self);
@@ -167,7 +167,7 @@ void func_808008D8_bssub(PlayerState* self) {
 
 void func_808009B0_bssub(PlayerState* self)
 {
-    if (func_8009E77C(self, 0xF) == 0)
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_F_SUB) == 0)
     {
         _basub_entrypoint_10(self);
         self->unk16C = 0.0f;
@@ -450,7 +450,7 @@ void func_80801490_bssub(PlayerState* self)
 }
 void func_808014B8_bssub(PlayerState* self) {
     func_808009B0_bssub(self);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     _bsrest_entrypoint_16(self);
     func_8009B94C(self, NULL);
     func_8009BA9C(self, NULL);

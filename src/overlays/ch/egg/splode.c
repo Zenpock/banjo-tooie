@@ -30,7 +30,7 @@ s32 func_808002A8_cheggsplode(Actor* arg0, s32 arg1, s32 arg2)
     {
     case 0x9F:
     {
-        if (func_800D3948() == 0)
+        if (game_isMultiplayer() == 0)
         {
             sp1C->unk6 = 1;
         }
@@ -40,10 +40,10 @@ s32 func_808002A8_cheggsplode(Actor* arg0, s32 arg1, s32 arg2)
     {
         if (func_800BF8E4() > 0)
         {
-            temp_v0 = func_800C8A98();
+            temp_v0 = light_createNew();
             sp1C->unk10 = temp_v0;
-            func_800C8E84(temp_v0, &D_808009DC_cheggsplode);
-            func_800C8CB8(sp1C->unk10, arg0->position);
+            light_setColors(temp_v0, &D_808009DC_cheggsplode);
+            light_setPosition(sp1C->unk10, arg0->position);
         }
         return 1;
     }

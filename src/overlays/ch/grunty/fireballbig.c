@@ -61,8 +61,8 @@ void func_80800030_chgruntyfireballbig(Actor* actor)
     }
     if (((s32*)actor->actorData)[3] != 0)
     {
-        func_800C8CB8(((s32*)actor->actorData)[3], actor->position);
-        func_800C8E84(((s32*)actor->actorData)[3], D_808006E0_chgruntyfireballbig[func_8001210C(1)]);
+        light_setPosition(((s32*)actor->actorData)[3], actor->position);
+        light_setColors(((s32*)actor->actorData)[3], D_808006E0_chgruntyfireballbig[func_8001210C(1)]);
     }
 }
 
@@ -89,8 +89,8 @@ s32 func_808001B4_chgruntyfireballbig(Actor* actor, s32 arg1, s32 arg2)
         func_8080034C_chgruntyfireballbig(actor);
         break;
     case EVENT_95_ACTOR_SPAWNED:
-        actor->actorData[3] = func_800C8A98();
-        func_800C8CB8(actor->actorData[3], actor->position);
+        actor->actorData[3] = light_createNew();
+        light_setPosition(actor->actorData[3], actor->position);
         func_800C8D4C(actor->actorData[3], &D_8080070C_chgruntyfireballbig);
         break;
     case 0x9B:

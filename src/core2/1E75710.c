@@ -1,11 +1,14 @@
 #include "core2/1E75710.h"
 
-s32 func_8009BE20() 
+
+//BaPitch
+
+s32 bapitch_getStructSize() 
 {
     return sizeof(ba_unknown_DC_s);
 }
 
-void func_8009BE28(PlayerState* self, f32 arg1, f32 arg2)
+void bapitch_update_limited(PlayerState* self, f32 arg1, f32 arg2)
 {
 	ba_unknown_DC_s* temp2;
 	f32 temp_f2;
@@ -25,45 +28,45 @@ void func_8009BE28(PlayerState* self, f32 arg1, f32 arg2)
 	temp2->unk0 = ml_normalizeAngle_f(temp2->unk0);
 }
 
-void func_8009BF04(PlayerState* self)
+void bapitch_init(PlayerState* self)
 {
     self->unkDC->unk0 = 0.0f;
     self->unkDC->unk4 = 0.0f;
-    func_8009C000(self);
+    bapitch_resetAngularVelocity(self);
 }
 
-void func_8009BF34(PlayerState* self)
+void bapitch_update(PlayerState* self)
 {
-    func_8009BE28(self, self->unkDC->unk8, self->unkDC->unkC);
+    bapitch_update_limited(self, self->unkDC->unk8, self->unkDC->unkC);
 }
 
-void func_8009BF5C(PlayerState* self, f32 arg1) {
+void bapitch_setIdeal(PlayerState* self, f32 arg1) {
     self->unkDC->unk4 = ml_normalizeAngle_f(arg1);
 }
 
-void func_8009BF8C(PlayerState* self, f32 arg1) {
+void bapitch_set(PlayerState* self, f32 arg1) {
     self->unkDC->unk0 = ml_normalizeAngle_f(arg1);
 }
 
-void func_8009BFBC(PlayerState* self) {
+void bapitch_applyIdeal(PlayerState* self) {
     self->unkDC->unk0 = self->unkDC->unk4;
 }
 
-f32 func_8009BFCC(PlayerState* self) {
+f32 bapitch_get(PlayerState* self) {
     return self->unkDC->unk0;
 }
 
-f32 func_8009BFD8(PlayerState* self)
+f32 bapitch_getIdeal(PlayerState* self)
 {
     return self->unkDC->unk4;
 }
 
-void func_8009BFE4(PlayerState* self, f32 arg1, f32 arg2)
+void bapitch_setAngularVelocity(PlayerState* self, f32 arg1, f32 arg2)
 {
     self->unkDC->unk8 = arg1;
     self->unkDC->unkC = arg2;
 }
 
-void func_8009C000(PlayerState* self) {
-    func_8009BFE4(self, 500.0f, 0.8f);
+void bapitch_resetAngularVelocity(PlayerState* self) {
+    bapitch_setAngularVelocity(self, 500.0f, 0.8f);
 }

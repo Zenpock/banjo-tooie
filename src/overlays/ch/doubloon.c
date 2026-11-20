@@ -2,7 +2,7 @@
 
 void func_80800000_chdoubloon(Actor*);
 void func_8080000C_chdoubloon(Actor*);
-void chdoubloon_entrypoint_0(Actor*, void*);
+void chdoubloon_entrypoint_0(Actor*, GraphicsBuffers*);
 void chdoubloon_entrypoint_1(Actor*);
 s32 func_808001D4_chdoubloon(Actor*, s32, s32);
 
@@ -48,7 +48,7 @@ void func_8080000C_chdoubloon(Actor* arg0)
     func_80103110(arg0, 0U);
 }
 
-void chdoubloon_entrypoint_0(Actor* arg0, void* arg1)
+void chdoubloon_entrypoint_0(Actor* arg0, GraphicsBuffers* arg1)
 {
     func_80101870(arg0, arg1);
     if (arg0->unk7C_12)

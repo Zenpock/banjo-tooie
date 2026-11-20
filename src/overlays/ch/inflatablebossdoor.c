@@ -15,7 +15,7 @@ void func_8080000C_chinflatablebossdoor(Actor* arg0)
 
     sp34 = flag_getValue(FLAG_17F_RETRY_BOSS_MR_PATCH);
     sp30 = character_includedInTransformMask(character_getActiveIndex(), ALLOW_BK);
-    sp2C = func_800D395C();
+    sp2C = game_isReplayMinigame();
     if (_glcutDll_entrypoint_20() != 0)
     {
         func_80101FDC(arg0, 1U);

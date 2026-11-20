@@ -115,12 +115,12 @@ typedef struct {
 
 s32 func_800C84B0(s32);
 void func_800C8900(s32, s32*);
-s32 func_800C8A98(void);
+s32 light_createNew(void);
 void func_800C8B84(s32);
-void func_800C8CB8(s32, f32[3]);
+void light_setPosition(s32, f32[3]);
 void func_800C8D4C(s32, f32*);
 void func_800C8E54(s32, f32, f32);
-void func_800C8E84(s32, u32[3]);
+void light_setColors(s32, u32[3]);
 void func_800C8F64(s32, s32);
 void func_800C8FB0(s32, u32, u32, u32);
 void func_800C8FE0(s32, s32);

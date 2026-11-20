@@ -164,7 +164,7 @@ s32 func_80800260_chmrsicecube(Actor* arg0, s32 arg1, s32 arg2)
     return 1;
 }
 
-void func_808003BC_chmrsicecube(Actor* arg0, void* arg1)
+void func_808003BC_chmrsicecube(Actor* arg0, GraphicsBuffers* arg1)
 {
     Actor* temp_v0;
 

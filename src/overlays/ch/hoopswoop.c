@@ -61,9 +61,9 @@ ActorData* chhoopswoop_entrypoint_2()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hoopswoop/func_80801A10_chhoopswoop.s")
 
-void func_80801A94_chhoopswoop()
+void func_80801A94_chhoopswoop(Actor* actor, GraphicsBuffers* buf)
 {
-    func_80101870();
+    func_80101870(actor,buf);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hoopswoop/func_80801AB4_chhoopswoop.s")

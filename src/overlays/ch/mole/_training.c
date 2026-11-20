@@ -193,7 +193,7 @@ void chmole_training_entrypoint_0(ActorMarker* arg0, OptionState* arg1, s32 arg2
 {
     Actor* temp_v0;
 
-    temp_v0 = func_80106790(arg0);
+    temp_v0 = actorList_getFromMarker(arg0);
     switch (arg3)
     {
     case 3:

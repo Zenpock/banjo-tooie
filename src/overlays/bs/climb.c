@@ -63,7 +63,7 @@ void func_808000E8_bsclimb(PlayerState* self)
 
 void func_808001D0_bsclimb(PlayerState* self)
 {
-	if (func_8009E74C(self, 0xA) == 0) {
+	if (bs_matchesNextStateType(self, BS_STATETYPE_A_CLIMB) == 0) {
 		func_800A4E30(self);
 		bastick_resetZones(self);
 		func_8008CA4C(self, BAANIM_UPDATE_1_NORMAL);
@@ -92,7 +92,7 @@ void bsclimb_entrypoint_0(PlayerState* self) {
 
 	activePlayer_getCoords(sp30);
 	func_80098590(self, sp24);
-	if (func_8009E77C(self, 0xA) == 0) {
+	if (bs_matchesPreviousStateType(self, BS_STATETYPE_A_CLIMB) == 0) {
 		func_800F1E6C(sp30, sp24, &sp3C);
 		yaw_setIdeal(self, sp3C);
 		yaw_applyIdeal(self);

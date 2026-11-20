@@ -65,7 +65,7 @@ s32 func_80800170_chdiggerbossbattery(Actor* arg0, s32 arg1, s32 arg2)
         }
         break;
     case 0x90:
-        temp_v0_2 = func_80106790(func_80101080());
+        temp_v0_2 = actorList_getFromMarker(func_80101080());
         _chexploder_entrypoint_9(temp_v0_2, 1, 2);
         _chexploder_entrypoint_15((s32)temp_v0_2, 2U, 1.0f);
         _chexploder_entrypoint_13((s32)temp_v0_2, 1U);

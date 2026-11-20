@@ -38,7 +38,7 @@
 #include "ch/baddiesetup.h"
 
 s32 func_80092258(PlayerState*);
-void func_80092444(PlayerState*, s32);
+void func_80092444(PlayerState*, GraphicsBuffers*);
 void func_8009272C(PlayerState*, s32);
 void func_80092744(PlayerState*, s32);
 void func_80092750(PlayerState*, s32, s32, s32, s32);
@@ -51,11 +51,11 @@ void func_80092AA4(PlayerState*);
 void func_80092AB0(PlayerState*);
 Unkfunc_800E0960_1 *func_80092AD8(PlayerState *);
 void *func_80092B04(PlayerState *, s32);
-s32 func_80092B80(PlayerState*);
+s32 player_getCurrentModel(PlayerState*);
 // This might take a s32 instead of a PlayerState pointer
 // This might return a s32 instead of a PlayerState pointer
 f32 func_80092B8C(PlayerState*, f32*);
-f32 func_80092BE8(PlayerState *);
+f32 player_getModelYaw(PlayerState *);
 f32 func_80092BF4(PlayerState *);
 
 void func_80092C00(PlayerState*, f32[3]);
@@ -70,8 +70,8 @@ s32 func_80092EB0(PlayerState*);
 void func_80092EC8(PlayerState*, s32);
 void func_8009312C(PlayerState*, s32);
 void func_800931AC(PlayerState*, s32);
-void func_80093230(PlayerState*, f32);
-void func_8009328C(PlayerState*, f32);
+void player_setModelScale(PlayerState*, f32);
+void player_setModelYaw(PlayerState*, f32);
 void func_80093300(PlayerState*, f32);
 void func_8009332C(PlayerState*, f32);
 void func_80093360(PlayerState*, f32);
@@ -86,7 +86,7 @@ void func_80093584(PlayerState*);
 void func_800936E8(PlayerState*, s32);
 void func_80093700(PlayerState*, s32);
 s32 func_80093DF4(PlayerState*, s32);
-PlayerState* func_80093F7C(PlayerState*);
+void* func_80093F7C(PlayerState*,s32);
 s32 func_80094348(PlayerState*, s32);
 void func_80094390(PlayerState*);
 s32 func_800944E0(PlayerState *, s32);

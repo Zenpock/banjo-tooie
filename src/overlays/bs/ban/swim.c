@@ -12,7 +12,8 @@ void func_80800000_bsbanswim(PlayerState* self)
 
 void func_80800030_bsbanswim(PlayerState* self)
 {
-    if (func_8009E77C(self, 0xB) == 0)
+    //If we were not swimming during the previous state
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_B_SWIM) == 0)
     {
         _baswim_entrypoint_5(self);
         baroll_setAngularVelocity(self, 130.0f, 0.9f);
@@ -34,8 +35,8 @@ void func_80800030_bsbanswim(PlayerState* self)
 }
 
 void func_80800104_bsbanswim(PlayerState* self) {
-    if (func_8009E74C(self, 0xB) == 0) {
-        func_8009BF5C(self, 0.0f);
+    if (bs_matchesNextStateType(self, BS_STATETYPE_B_SWIM) == 0) {
+        bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
         func_8009BC34(self);
         func_800A0CF4(self, 0);
@@ -60,7 +61,7 @@ void func_808001C8_bsbanswim(PlayerState* self) {
     func_80800030_bsbanswim(self);
     _baswim_entrypoint_10(self, 0.0f);
     _baswim_entrypoint_8(self, 600.0f);
-    func_8009BFE4(self, 200.0f, 2.5f);
+    bapitch_setAngularVelocity(self, 200.0f, 2.5f);
     self->unk164.bytes[0] = 0;
 }
 
@@ -75,7 +76,7 @@ void func_8080025C_bsbanswim(PlayerState* self) {
     switch (temp_v1) 
     {
     case 0:
-        func_8009BF5C(self, 50.0f);
+        bapitch_setIdeal(self, 50.0f);
         if (anctrl_isAt(sp20, 0.37f) != 0) {
             if (_baswim_entrypoint_1(self) != 0) {
                 func_800A0E64(self);

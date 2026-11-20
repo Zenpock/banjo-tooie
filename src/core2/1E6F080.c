@@ -17,8 +17,8 @@ void func_80095798(PlayerState* arg0) {
     f32 sp30;
     f32 var_f2;
 
-    sp38 = func_800985B8(arg0);
-    temp_f0 = func_8009864C(arg0);
+    sp38 = player_getPoleBottomHeight(arg0);
+    temp_f0 = player_getPoleTopHeight(arg0);
     var_f2 = arg0->unk94->unk78[1];
     if (temp_f0 < var_f2) {
         arg0->unk94->unk78[1] = temp_f0;

@@ -8,7 +8,7 @@ ActorData* chjiggygamenew_entrypoint_0()
 
 u32 func_8080000C_chjiggygamenew(ActorMarker* arg0)
 {
-    return func_80106790(arg0)->actorData[2];
+    return actorList_getFromMarker(arg0)->actorData[2];
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80800030_chjiggygamenew.s")
@@ -27,7 +27,7 @@ u32 func_8080000C_chjiggygamenew(ActorMarker* arg0)
 
 s32 func_808007BC_chjiggygamenew(ActorMarker* arg0) 
 {
-    return func_80106790(arg0)->actorData[4] == 5;
+    return actorList_getFromMarker(arg0)->actorData[4] == 5;
 }
 
 
@@ -86,11 +86,11 @@ void func_80803564_chjiggygamenew(s32 arg0)
 {
 }
 void func_8080356C_chjiggygamenew(ActorMarker* arg0) {
-    func_80102424(func_80106790(arg0), 8);
+    func_80102424(actorList_getFromMarker(arg0), 8);
 }
 
 void func_80803598_chjiggygamenew(ActorMarker* arg0) {
-    func_80102424(func_80106790(arg0), 7);
+    func_80102424(actorList_getFromMarker(arg0), 7);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_808035C4_chjiggygamenew.s")
@@ -99,7 +99,7 @@ void func_80803598_chjiggygamenew(ActorMarker* arg0) {
 
 s32 func_8080363C_chjiggygamenew(ActorMarker* arg0)
 {
-    return (func_80106790(arg0)->unk70_10) == 1;
+    return (actorList_getFromMarker(arg0)->unk70_10) == 1;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80803668_chjiggygamenew.s")

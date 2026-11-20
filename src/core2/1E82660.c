@@ -30,7 +30,7 @@ void func_800A8E9C(void)
 		}
 	}
 }
-void func_800A8EF0(s32 arg0, s32 arg1)
+void func_800A8EF0(GraphicsBuffers* arg0, s32 arg1)
 {
 	s32 var_s0;
 	for (var_s0 = 0; var_s0 < 8; var_s0++)

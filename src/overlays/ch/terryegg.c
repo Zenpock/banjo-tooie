@@ -116,7 +116,7 @@ s32 func_8080023C_chterryegg(Actor* arg0, s32 arg1, s32 arg2)
         func_800F77E8(character_getActiveIndex(), sp40);
         func_800F8300(character_getActiveIndex(), 2, arg0->position);
         func_80102424(arg0, 6);
-        temp_v0 = func_80106790(arg0->unk3C);
+        temp_v0 = actorList_getFromMarker(arg0->unk3C);
         func_80102424(temp_v0, 2);
         func_80102FDC(temp_v0, func_80801188_chterryegg(temp_v0, 1));
         break;
@@ -139,7 +139,7 @@ s32 func_8080023C_chterryegg(Actor* arg0, s32 arg1, s32 arg2)
         func_80102424(arg0, 1);
         break;
     case 0x90:
-        temp_v0 = func_80106790(func_80101080());
+        temp_v0 = actorList_getFromMarker(func_80101080());
         _chexploder_entrypoint_6(temp_v0, 600.0f, 800.0f);
         _chexploder_entrypoint_12(temp_v0, 0xA);
         _chexploder_entrypoint_9(temp_v0, 1, 2);

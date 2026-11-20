@@ -70,7 +70,7 @@ void func_80800100_bsbanshack(PlayerState* self)
 
 void func_80800164_bsbanshack(PlayerState* self)
 {
-    if (func_8009E74C(self, 0x13) != 0)
+    if (bs_matchesNextStateType(self, BS_STATETYPE_13_BANSHACK) != 0)
     {
         if (_babackpack_get_state(self) != 5)
         {
@@ -95,7 +95,7 @@ void func_80800164_bsbanshack(PlayerState* self)
 }
 
 void func_8080021C_bsbanshack(PlayerState* self) {
-    if (func_8009E77C(self, 0x13) == 0) {
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_13_BANSHACK) == 0) {
         _babackpack_set_state(self, 5);
         func_800A0CD0(self, 0);
         bastick_pushZone(self);

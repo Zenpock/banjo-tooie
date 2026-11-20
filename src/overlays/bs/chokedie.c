@@ -51,7 +51,7 @@ void bschokedie_entrypoint_1(PlayerState* self) {
 
 void bschokedie_entrypoint_2(PlayerState* self) {
     func_800951B4(self);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
     func_800A4E30(self);
 }

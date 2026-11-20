@@ -43,8 +43,8 @@ typedef struct {
 
 void func_800D37FC();
 void func_800D389C();
-s32 func_800D3948();
-s32 func_800D395C();
+s32 game_isMultiplayer();
+s32 game_isReplayMinigame();
 void func_800D39D0(s32);
 void func_800D3A14(s32);
 u8 func_800D3B60();

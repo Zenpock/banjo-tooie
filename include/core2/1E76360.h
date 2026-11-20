@@ -469,7 +469,7 @@ void (*func_8009CAAC(PlayerState*, BanjoStateId))(PlayerState*);
 void (*func_8009CAF8(PlayerState*, BanjoStateId))(PlayerState*);
 void (*func_8009CB44(PlayerState*, BanjoStateId))(PlayerState*);
 void (*bs_getStateUpdateFunc(PlayerState*, BanjoStateId))(PlayerState*);
-s32 func_8009CBDC(PlayerState*, s32);
+BanjoStateType bs_getStateType(PlayerState*, s32);
 void func_8009CBFC(PlayerState*);
 
 #endif // __CORE2_1E76360_H__

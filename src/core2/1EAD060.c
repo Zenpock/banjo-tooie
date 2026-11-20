@@ -87,15 +87,15 @@ void func_800D389C(void) {
     }
 }
 
-s32 func_800D3934(void) {
+s32 game_isBottlesRevenge(void) {
     return D_8012B3F2 == 1;
 }
 
-s32 func_800D3948(void) {
+s32 game_isMultiplayer(void) {
     return D_8012B3F2 == 3;
 }
 
-s32 func_800D395C(void) {
+s32 game_isReplayMinigame(void) {
     return D_8012B3F2 == 2;
 }
 

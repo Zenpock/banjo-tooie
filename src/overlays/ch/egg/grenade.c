@@ -72,7 +72,7 @@ void chegggrenade_entrypoint_0(ActorMarker* arg0)
     Actor* temp_v0;
     s32 pad;
     s32 sp1C;
-    temp_v0 = func_80106790(arg0);
+    temp_v0 = actorList_getFromMarker(arg0);
     sp1C = ((EggNormalData*)actor_getAdditionalMem(temp_v0, 0U))->unk3A;
     _cheggsplode_entrypoint_1(&temp_v0, sp1C, _gcegg_entrypoint_0((u32)arg0->unk24_22));
     _suegg_entrypoint_4(temp_v0, 0);

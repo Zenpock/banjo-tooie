@@ -19,7 +19,7 @@ void actorList_erase(u32);
 s32 actorList_getSize(void);
 //Get Actor at index
 Actor* actorList_getAtIndex(s32);
-Actor* func_80106790(ActorMarker *);
+Actor* actorList_getFromMarker(ActorMarker *);
 //Get the last actor in list
 Actor* actorList_getLast(s32*);
 //Get the next actor in the list

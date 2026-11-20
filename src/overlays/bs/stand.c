@@ -91,9 +91,9 @@ void bsstand_entrypoint_0(PlayerState* self)
     BanjoStateId temp_v0;
 
     temp_v0 = bs_getPreviousState(self);
-    if (func_8009CBDC(self, temp_v0) == 0xA)
+    if (bs_getStateType(self, temp_v0) == BS_STATETYPE_A_CLIMB)
     {
-        func_80098840(self);
+        player_exitPoleClimb(self);
     }
     if (temp_v0 == 0x5B)
     {

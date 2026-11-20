@@ -35,7 +35,7 @@ void func_80101808(Actor* arg0, s32 (*arg1)(Actor*)) {
     func_800DE448(arg0->position, sp28, arg0->scale, sp2C, func_8010347C(arg0->unk0));
 }
 
-void func_80101870(Actor* arg0, void* arg1) {
+void func_80101870(Actor* arg0, GraphicsBuffers* arg1) {
     func_80101970(arg0);
     func_80101808(arg0, func_801015D0);
 }

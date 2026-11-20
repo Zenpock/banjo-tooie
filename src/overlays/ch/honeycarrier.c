@@ -80,13 +80,13 @@ s32 func_808000C4_chhoneycarrier(Actor* arg0, s32 arg1, s32 arg2)
             arg0->unk50 = (f32)arg2;
             break;
         case 0x55:
-            arg0->unk6C_0 = func_800C8A98();
-            func_800C8CB8(arg0->unk6C_0, arg0->position);
+            arg0->unk6C_0 = light_createNew();
+            light_setPosition(arg0->unk6C_0, arg0->position);
             func_800C8D4C(arg0->unk6C_0, D_808003EC_chhoneycarrier);
-            func_800C8E84(arg0->unk6C_0, D_808003E0_chhoneycarrier);
+            light_setColors(arg0->unk6C_0, D_808003E0_chhoneycarrier);
             ml_vec3f_copy(sp2C, arg0->position);
             sp2C[1] += 150.0f;
-            func_800C8CB8(arg0->unk6C_0, sp2C);
+            light_setPosition(arg0->unk6C_0, sp2C);
             break;
         default:
             return 0;
@@ -131,7 +131,7 @@ void func_80800260_chhoneycarrier(Actor* arg0)
     func_80103110(arg0, 0U);
 }
 
-void func_80800380_chhoneycarrier(Actor* arg0,void* arg1)
+void func_80800380_chhoneycarrier(Actor* arg0, GraphicsBuffers* arg1)
 {
     func_80101870(arg0, arg1);
     if (arg0->unk7C_12)

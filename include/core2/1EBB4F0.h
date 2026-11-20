@@ -10,7 +10,7 @@
 #include "core2/1EC8070.h"
 #include "core2/1ECBCC0.h"
 
-void func_800E22F0(s32, s32);
+void func_800E22F0(GraphicsBuffers*, s32);
 void func_800E2434(s32);
 void func_800E24CC(s32);
 void func_800E24F8(s32, s32, s32);
@@ -19,7 +19,9 @@ void func_800E2554(f32, f32);
 void func_800E2568(s32, s32);
 void func_800E257C(s32);
 void func_800E2588(u32);
-void func_800E2594(u32, void*);
+void func_800E2594(GraphicsBuffers*, void*);
+void func_800E2720(GraphicsBuffers*, u32, u32, f32[3], f32[3], f32[3]);
+void func_800E2A14(GraphicsBuffers*);
 f32 func_800E2DF0();
 void func_800E2E48(GraphicsBuffers*, ImageStruct*, s32, s32*);
 void draw_2D_Image(GraphicsBuffers*, ImageStruct*, s32, s32*);

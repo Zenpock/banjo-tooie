@@ -4,8 +4,9 @@
 #include "common.h"
 #include "ba/playerstate.h"
 #include "core2/1EAF950.h"
+#include "AssetStructs.h"
 
-s32 func_800B2840(void*);
+VertexStore* func_800B2840(ModelBin*);
 void func_800A2540(PlayerState*, s32);
 s32 func_800A25D0(PlayerState*);
 

@@ -27,7 +27,7 @@ void func_808000DC_bskazwingwhack(PlayerState *self) {
     baflag_clear(self, BA_FLAG_36);
     baphysics_reset_gravity(self);
     baphysics_reset_terminal_velocity(self);
-    yaw_set(self, func_80092BE8(self));
+    yaw_set(self, player_getModelYaw(self));
     func_800931AC(self, 1);
     _bskaz_entrypoint_2(self);
 }
@@ -43,7 +43,7 @@ void func_80800148_bskazwingwhack(PlayerState *self) {
     self->unk16C = ml_min_f(self->unk16C, 1200.0f);
     baphysics_set_target_horizontal_velocity(self, self->unk16C);
     func_800931AC(self, 3);
-    func_8009328C(self, yaw_get(self));
+    player_setModelYaw(self, yaw_get(self));
     baphysics_set_vertical_velocity(self, 0.0f);
     baphysics_set_gravity(self, -200.0f);
     baphysics_set_terminal_velocity(self, -60.0f);

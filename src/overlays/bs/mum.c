@@ -42,20 +42,20 @@ void func_80800130_bsmum(PlayerState *self) {
 }
 
 void bsmum_entrypoint_1(PlayerState *self) {
-    if (func_8009E74C(self, 6) != 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_6_MUMBO) != 0) {
         return;
     }
     
     func_800947EC(self, 1, 0);
     func_8009E474(self);
     bastick_resetZones(self);
-    func_80093230(self, 1.0f);
+    player_setModelScale(self, 1.0f);
     _bamum_entrypoint_4(self, 0);
     func_80092864(self, 1.0f);
 }
 
 void bsmum_entrypoint_2(PlayerState *self) {
-    if (func_8009E77C(self, 6) != 0) {
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_6_MUMBO) != 0) {
         return;
     }
 
@@ -67,7 +67,7 @@ void bsmum_entrypoint_2(PlayerState *self) {
     func_8009E5A4(self, 2, 0xA);
     bastick_func_8009F2A4(self);
     func_800A0DAC(self, 1);
-    func_80093230(self, 0.5f);
+    player_setModelScale(self, 0.5f);
     _bamum_entrypoint_4(self, 1);
     func_800947EC(self, 1, 1);
     func_80092864(self, 2.399994f);
@@ -429,9 +429,9 @@ void func_80801058_bsmum(PlayerState *self) {
     next_state = BS_STATE_0_INVALID;
     bsmum_entrypoint_13(self);
     if (func_8008DF8C(self, 0x190) != 0) {
-        func_8009BF5C(self, 180.0f);
+        bapitch_setIdeal(self, 180.0f);
     } else {
-        func_8009BF5C(self, func_8009BFD8(self) + 20.0f);
+        bapitch_setIdeal(self, bapitch_getIdeal(self) + 20.0f);
     }
     if (player_inWater(self) != 0) {
         next_state = BS_STATE_F4;

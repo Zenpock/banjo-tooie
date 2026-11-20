@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1E8A670.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8A670/func_800B0D80.s")
 
@@ -16,13 +16,45 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8A670/func_800B1F8C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8A670/func_800B2190.s")
+s32 func_800B2190(s32 arg0) {
+	return arg0 + 0x18;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8A670/func_800B2198.s")
+void func_800B2198(VertexStore* arg0, s32* arg1, s32* arg2)
+{
+	arg1[0] = arg0->unk0;
+	arg1[1] = arg0->unk2;
+	arg1[2] = arg0->unk4;
+	arg2[0] = arg0->unk6;
+	arg2[1] = arg0->unk8;
+	arg2[2] = arg0->unkA;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8A670/func_800B21CC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8A670/func_800B2248.s")
+s32 func_800B2248(VertexStore* arg0)
+{
+	s32 sp1C;
+	s32 temp;
+
+	sp1C = mlAbsF(arg0->unk0);
+	temp = mlAbsF(arg0->unk4);
+	if (sp1C < temp)
+	{
+		sp1C = temp;
+	}
+	temp = mlAbsF(arg0->unk6);
+	if (sp1C < temp)
+	{
+		sp1C = temp;
+	}
+	temp = mlAbsF(arg0->unkA);
+	if (sp1C < temp)
+	{
+		sp1C = temp;
+	}
+	return sp1C;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8A670/func_800B2324.s")
 
@@ -30,7 +62,13 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8A670/func_800B2354.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8A670/func_800B237C.s")
+void func_800B237C(VertexStore* arg0, f32* arg1, f32* arg2)
+{
+	arg1[0] = arg0->unkC;
+	arg1[1] = arg0->unkE;
+	arg1[2] = arg0->unk10;
+	*arg2 = arg0->unk12;
+}
 
 void func_800B23E0(void* arg0) 
 {

@@ -37,7 +37,20 @@ s32 asset_findIndex(s32 asset_id)
     return -1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D62E4.s")
+void func_800D62E4(AssetId arg0) 
+{
+	unkD_8012B800* temp_v1;
+
+	if (D_8012BE64 != 0)
+	{
+		temp_v1 = &D_8012B800[asset_findIndex(arg0)];
+		if ((temp_v1->unk0_1 == 2) && (temp_v1->unk8_17) && !(temp_v1->unk8_16))
+		{
+			temp_v1->unk8_17 = 0;
+		}
+		D_8012BE64 = 0;
+	}
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D6378.s")
 

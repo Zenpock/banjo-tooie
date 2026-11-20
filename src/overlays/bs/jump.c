@@ -22,9 +22,10 @@ void bsjump_entrypoint_0(PlayerState* self)
 	self->unk164.word = (baflag_isTrue(self, BA_FLAG_2_ON_SPRING_PAD) && player_isSplitUp(self) == 0);
 	temp_v0 = bs_getPreviousState(self);
 	sp38 = temp_v0;
-	if (func_8009CBDC(self, temp_v0) == 0xA)
+	if (bs_getStateType(self, temp_v0) == BS_STATETYPE_A_CLIMB)
 	{
-		func_80098840(self);
+		//If we we just jumped off a climbing surface
+		player_exitPoleClimb(self);
 	}
 	if (sp38 == BS_STATE_11_RATATAP)
 	{
@@ -320,29 +321,29 @@ void bsjump_entrypoint_8(PlayerState* self)
     f32 sp24[3];
     AnimCtrl* temp_s0;
 
-    temp_s0 = baanim_getAnimCtrlPtr(self);
-    func_80098840(self);
-    anctrl_reset(temp_s0);
-    anctrl_setIndex(temp_s0, 8);
-    anctrl_setDuration(temp_s0, 1.9f);
-    func_8008B1C8(temp_s0, 0.134f);
-    anctrl_setStart(temp_s0, 0.3f);
-    anctrl_setSubrange(temp_s0, 0.0f, 0.5042f);
-    anctrl_setPlaybackType(temp_s0, 1);
-    anctrl_start(temp_s0);
-    func_8008CA4C(self, BAANIM_UPDATE_1_NORMAL);
-    yaw_setUpdateType(self, YAW_TYPE_1_DEFAULT);
-    func_8009D2D8(self, 3);
-    baphysics_set_type(self, BA_PHYSICS_3_LOCKED_ROTATION);
-    baphysics_set_target_yaw(self, yaw_getIdeal(self));
-    baphysics_set_target_horizontal_velocity(self, 120.0f);
-    sp24[0] = yaw_getIdeal(self);
-    baphysics_set_horizontal_velocity(self, sp24[0], baphysics_get_target_horizontal_velocity(self));
-    baphysics_set_vertical_velocity(self, 710.0f);
-    baphysics_set_gravity(self, -1350.0f);
-    func_800961AC(self, 6);
+	temp_s0 = baanim_getAnimCtrlPtr(self);
+	player_exitPoleClimb(self);
+	anctrl_reset(temp_s0);
+	anctrl_setIndex(temp_s0, 8);
+	anctrl_setDuration(temp_s0, 1.9f);
+	func_8008B1C8(temp_s0, 0.134f);
+	anctrl_setStart(temp_s0, 0.3f);
+	anctrl_setSubrange(temp_s0, 0.0f, 0.5042f);
+	anctrl_setPlaybackType(temp_s0, 1);
+	anctrl_start(temp_s0);
+	func_8008CA4C(self, BAANIM_UPDATE_1_NORMAL);
+	yaw_setUpdateType(self, YAW_TYPE_1_DEFAULT);
+	func_8009D2D8(self, 3);
+	baphysics_set_type(self, BA_PHYSICS_3_LOCKED_ROTATION);
+	baphysics_set_target_yaw(self, yaw_getIdeal(self));
+	baphysics_set_target_horizontal_velocity(self, 120.0f);
+	sp24[0] = yaw_getIdeal(self);
+	baphysics_set_horizontal_velocity(self, sp24[0], baphysics_get_target_horizontal_velocity(self));
+	baphysics_set_vertical_velocity(self, 710.0f);
+	baphysics_set_gravity(self, -1350.0f);
+	func_800961AC(self, 6);
     self->unk15C.word = 0;
-    func_80800000_bsjump(self);
+	func_80800000_bsjump(self);
 }
 
 void bsjump_entrypoint_9(PlayerState* self)
@@ -507,30 +508,30 @@ void bsjump_entrypoint_18(PlayerState* self)
 {
     BanjoStateId nextState;
 
-    nextState = BS_STATE_0_INVALID;
-    if (_batimer_decrement(self, 1) != 0)
-    {
-        func_8009DF18(self, 0x446, 1.0f, 0x7D00);
-    }
-    _batimer_decrement(self, 0);
-    _bswalk_entrypoint_1(self);
-    if (_batimer_isZero(self, 1) != 0)
-    {
-        func_8009BF5C(self, func_8009BFD8(self) + 20.0f);
-    }
-    if (_batimer_isNonzero(self, 0) != 0)
-    {
-        switch (player_getTransformation(self))
-        {
-        case TRANSFORM_1_BK:
-            if (bainput_func_80097DF4(self) != 0)
-            {
-                nextState = BS_STATE_10_FFLAP;
-            }
-            if (bainput_func_80097F08(self) != 0)
-            {
-                nextState = BS_STATE_11_RATATAP;
-            }
+	nextState = BS_STATE_0_INVALID;
+	if (_batimer_decrement(self, 1) != 0)
+	{
+		func_8009DF18(self, 0x446, 1.0f, 0x7D00);
+	}
+	_batimer_decrement(self, 0);
+	_bswalk_entrypoint_1(self);
+	if (_batimer_isZero(self, 1) != 0)
+	{
+		bapitch_setIdeal(self, bapitch_getIdeal(self) + 20.0f);
+	}
+	if (_batimer_isNonzero(self, 0) != 0)
+	{
+		switch (player_getTransformation(self))
+		{
+		case TRANSFORM_1_BK:
+			if (bainput_func_80097DF4(self) != 0)
+			{
+				nextState = BS_STATE_10_FFLAP;
+			}
+			if (bainput_func_80097F08(self) != 0)
+			{
+				nextState = BS_STATE_11_RATATAP;
+			}
             //RANDOMIZER CHANGE It will now fall back on BILL DRILL if we do not have beak bust
             if (bainput_should_beak_bust(self) || (bakey_pressed(self, BUTTON_Z) && ability_getValue(ABILITY_19_BILL_DRILL)))
             {

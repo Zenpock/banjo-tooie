@@ -7,7 +7,7 @@ s32 bahold_entrypoint_0()
     return 0x10;
 }
 
-void func_80800008_bahold(PlayerState* self, s32 arg1) {
+void func_80800008_bahold(PlayerState* self, ActorMarker* arg1) {
     s32 var_a2;
 
     self->hold->unk8 = arg1;
@@ -35,7 +35,7 @@ void func_80800088_bahold(ActorMarker* arg0, f32* arg1, f32* arg2)
 {
     Actor* temp_v0;
 
-    temp_v0 = func_80106790(arg0);
+    temp_v0 = actorList_getFromMarker(arg0);
     if (temp_v0->unk64_23 > 0)
     {
         temp_v0->position[0] = arg1[0];
@@ -75,11 +75,11 @@ void bahold_entrypoint_4(PlayerState* self)
     func_80800008_bahold(self,0);
 }
 
-s32 bahold_entrypoint_5(PlayerState* self) {
+ActorMarker* bahold_entrypoint_5(PlayerState* self) {
     return self->hold->unk8;
 }
 
-void bahold_entrypoint_6(PlayerState* self, s32 arg1) {
+void bahold_entrypoint_6(PlayerState* self, ActorMarker* arg1) {
     func_80800008_bahold(self, arg1);
     func_808000E0_bahold(self);
     self->hold->unkC = 1;

@@ -21,5 +21,6 @@ void func_800B5B88();
 s32 func_800B5BE4(s32);
 void graphics_setSimpleTextKern(s32);
 void graphics_setSimpleTextScale(f32);
+void func_800B7BB0();
 
 #endif // __CORE2_1E8F430_H__

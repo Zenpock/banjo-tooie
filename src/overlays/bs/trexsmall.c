@@ -172,7 +172,7 @@ s32 bstrexsmall_entrypoint_0(s32 arg0) {
 }
 
 void bstrexsmall_entrypoint_1(PlayerState* self) {
-    if (func_8009E74C(self, 0x10) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_10_SMALLTREX) == 0) {
         func_808000C8_bstrexsmall(self, 0U);
         bastick_popZone(self);
         func_80092864(self, 1.0f);
@@ -185,7 +185,7 @@ void bstrexsmall_entrypoint_1(PlayerState* self) {
 }
 
 void bstrexsmall_entrypoint_2(PlayerState* self) {
-    if (func_8009E77C(self, 0x10) == 0) {
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_10_SMALLTREX) == 0) {
         self->unk15C.bytes[2] = 0;
         func_808000C8_bstrexsmall(self, 1U);
         bastick_pushZone(self);
@@ -236,7 +236,7 @@ void func_80800680_bstrexsmall(PlayerState* self) {
 
 void func_8080070C_bstrexsmall(PlayerState* self) {
     _basudie_entrypoint_6(self);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
 }
 
@@ -257,7 +257,7 @@ void func_80800744_bstrexsmall(PlayerState* self) {
     anctrl_setPlaybackType(temp_s0, 1);
     anctrl_start(temp_s0);
     _basudie_entrypoint_3(self, self->unk16C, 800.0f, -2400.0f, 10.0f);
-    func_8009BFE4(self, 1000.0f, 12.0f);
+    bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
     func_8009D820(self, 1.4f);
     self->unk15C.bytes[0] = 0;
 }

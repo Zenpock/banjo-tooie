@@ -133,7 +133,7 @@ void func_808003F8_bscarry(PlayerState* self) {
     baanim_playForDuration_loopSmooth(self, 0x72, 1.2f);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
     baphysics_set_target_horizontal_velocity(self, 0.0f);
-    func_8009BFE4(self, 1000.0f, 12.0f);
+    bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
     baroll_setAngularVelocity(self, 1000.0f, 12.0f);
 }
 

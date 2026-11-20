@@ -21,7 +21,7 @@ void func_808000AC_bskazfly(PlayerState *self) {
 }
 
 void func_80800128_bskazfly(PlayerState *self) {
-    if (func_8009E77C(self, 9) == 0) {
+    if (bs_matchesPreviousStateType(self,BS_STATETYPE_9_FLYING) == 0) {
         _bastatemem_entrypoint_0(self, 0x20);
         _bafly_entrypoint_5(self);
         func_808000AC_bskazfly(self);
@@ -31,7 +31,7 @@ void func_80800128_bskazfly(PlayerState *self) {
 }
 
 void func_80800188_bskazfly(PlayerState *self) {
-    if (func_8009E74C(self, 9) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_9_FLYING) == 0) {
         _bafly_entrypoint_4(self);
         _bastatemem_entrypoint_1(self);
         baphysics_reset_gravity(self);
@@ -168,11 +168,11 @@ void func_80800540_bskazfly(PlayerState *self) {
             break;
         case 1:
             _bafly_entrypoint_7(self, 1);
-            sp30 = ml_normalizeAngle_f(func_8009BFD8(self) - 30.0f);
+            sp30 = ml_normalizeAngle_f(bapitch_getIdeal(self) - 30.0f);
             if (sp30 > 80 && sp30 < 300) {
                 sp30 = 300.0f;
             }
-            func_8009BF5C(self, sp30);
+            bapitch_setIdeal(self, sp30);
             _bafly_entrypoint_21(self);
             if (sp38 != 0) {
                 baphysics_set_vertical_velocity(self, (f32) sp38 * 600.0f);
@@ -252,7 +252,7 @@ void func_808009C8_bskazfly(PlayerState *self, s32 arg1) {
             func_8009FFD8(self, 1, 1, 3, 7);
             _bafly_entrypoint_1(self, self->kazfly->unk10, &sp34, 4200);
             yaw_setIdeal(self, sp38 + 180.0f);
-            func_8009BF5C(self, sp34);
+            bapitch_setIdeal(self, sp34);
             baroll_setIdeal(self, 0);
             func_8009BA9C(self, self->kazfly->unk10);
             func_800A0CF4(self, 1);
@@ -435,7 +435,7 @@ void func_8080111C_bskazfly(PlayerState *self) {
     func_80095A40(self);
     func_800961AC(self, 1);
     baroll_setIdeal(self, 0);
-    func_8009BF5C(self, 0);
+    bapitch_setIdeal(self, 0);
     baphysics_reset_gravity(self);
     baphysics_reset_terminal_velocity(self);
     func_80093360(self, 0);
@@ -481,7 +481,7 @@ void func_80801320_bskazfly(PlayerState *self) {
 
     func_8009E0DC(self);
     func_8009E100(self);
-    if (func_8009E74C(self, 9) != 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_9_FLYING) != 0) {
         func_808000AC_bskazfly(self);
     }
 

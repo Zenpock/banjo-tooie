@@ -520,7 +520,7 @@ void bswalk_entrypoint_14(PlayerState* self)
     func_8009FFD8(self, BAANIM_UPDATE_2_SCALE_HORZ, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
     baanim_setDurationRange(self, 0.3f, 1.5f);
     func_8008C9F0(self, 225.0f, 500.0f, 0.54f, 0.44f);
-    func_8009BFE4(self, 1000.0f, 12.0f);
+    bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
     baroll_setAngularVelocity(self, 1000.0f, 12.0f);
     func_808001D8_bswalk(self, 0.3f);
     bastick_resetZones(self);
@@ -624,7 +624,7 @@ void bswalk_entrypoint_15(PlayerState* self)
 
 void bswalk_entrypoint_16(PlayerState* self)
 {
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
     if (func_8008E0E8(self) != 0)
     {

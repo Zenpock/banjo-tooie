@@ -22,17 +22,17 @@ void func_80800008_bsbwhirl(PlayerState* self) {
     if (func_800BF8E4() > 0) {
         if (self->unk160.word == 0)
         {
-            self->unk160.word = func_800C8A98();
+            self->unk160.word = light_createNew();
             func_800C8E54(self->unk160.word, 80.0f, 350.0f);
             func_800C8F64(self->unk160.word, 0xB);
-            func_800C8E84(self->unk160.word, &D_80800F50_bsbwhirl);
+            light_setColors(self->unk160.word, &D_80800F50_bsbwhirl);
         }
         sp24 = func_80092B8C(self, sp28);
         player_getCoords(self, sp34);
         ml_vec3f_add(&sp34, sp28);
-        ml_translateAngleDist(&sp34, func_80092BE8(self), sp24);
+        ml_translateAngleDist(&sp34, player_getModelYaw(self), sp24);
         sp34[1] += sp24;
-        func_800C8CB8(self->unk160.word, &sp34);
+        light_setPosition(self->unk160.word, &sp34);
     }
 }
 

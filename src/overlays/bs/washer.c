@@ -46,11 +46,11 @@ void func_808000BC_bswasher(PlayerState* self) {
 }
 
 void func_808000F0_bswasher(PlayerState* self) {
-    if (func_8009E74C(self, 0x15) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_15_WASHER) == 0) {
         func_800947EC(self, 1, 0);
-        func_8009BF5C(self, 0.0f);
+        bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
-        func_8009C000(self);
+        bapitch_resetAngularVelocity(self);
         baroll_resetAngularVelocity(self);
         bastick_popZone(self);
         func_80095A40(self);
@@ -64,9 +64,9 @@ void func_808000F0_bswasher(PlayerState* self) {
 }
 
 void func_808001A8_bswasher(PlayerState* self) {
-    if (func_8009E77C(self, 0x15) == 0) {
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_15_WASHER) == 0) {
         _bawasher_entrypoint_2(self);
-        func_8009BFE4(self, 1000.0f, 12.0f);
+        bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
         baroll_setAngularVelocity(self, 1000.0f, 12.0f);
         bastick_pushZone(self);
         bastick_setZoneMax(self, 0, 0.12f);
@@ -251,7 +251,7 @@ s32 bswasher_entrypoint_2(s32 arg0)
 
 void func_808008BC_bswasher(PlayerState* self)
 {
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
     func_808000F0_bswasher(self);
 }
@@ -416,7 +416,7 @@ void func_80800C70_bswasher(PlayerState* self) {
 
 void func_80800E74_bswasher(PlayerState* self) {
     baphysics_reset_gravity(self);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
     func_808000F0_bswasher(self);
 }

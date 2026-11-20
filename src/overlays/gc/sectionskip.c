@@ -148,7 +148,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
     }
     sp24 = character_getTransform(temp_v0);
     _gcgoto_entrypoint_0(&mapToEnter, &mapEntranceToUse);
-    if ((func_800F6D24(temp_v0) != 0) || (func_800F8004((s32)temp_v0) != 0) || (func_800F6CC8(temp_v0) != 0) || (func_800F66F0(temp_v0) != 0) || (func_800F70BC(character_getActiveIndex()) != 0))
+    if ((func_800F6D24(temp_v0) != 0) || (func_800F8004((s32)temp_v0) != 0) || (func_800F6CC8(temp_v0) != 0) || (func_800F66F0(temp_v0) != 0) || (character_inTaxiState(character_getActiveIndex()) != 0))
     {
         func_808002A0_gcsectionskip(temp_v0, arg0);
         return 0;
@@ -473,7 +473,7 @@ s32 gcsectionskip_entrypoint_1(Prop* arg0, MapId mapToEnter, s32 mapEntranceToUs
             break;
         }
     }
-    if ((func_800D395C() != 0) || (func_800D3948() != 0))
+    if ((game_isReplayMinigame() != 0) || (game_isMultiplayer() != 0))
     {
         func_808002A0_gcsectionskip(temp_v0, arg0);
         return 0;

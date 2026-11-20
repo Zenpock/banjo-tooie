@@ -810,7 +810,7 @@ void func_800D1218(s32 arg0, CollectableId arg1, f32* arg2)
     temp_v0 = func_800D0634(arg0, arg1);
     if (temp_v0 != 0) 
     {
-        ml_vec3f_copy(arg2, func_80106790((ActorMarker*)temp_v0)->position);
+        ml_vec3f_copy(arg2, actorList_getFromMarker((ActorMarker*)temp_v0)->position);
     }
 }
 
@@ -823,7 +823,7 @@ void func_800D1254(s32 arg0, CollectableId arg1, f32* arg2)
     temp_v0 = func_800D0634(arg0, arg1);
     if (temp_v0 != 0)
     {
-        temp_v0_2 = func_80106790((ActorMarker*)temp_v0);
+        temp_v0_2 = actorList_getFromMarker((ActorMarker*)temp_v0);
         ml_vec3f_copy(temp_v0_2->position, arg2);
         func_80103014(temp_v0_2);
     }

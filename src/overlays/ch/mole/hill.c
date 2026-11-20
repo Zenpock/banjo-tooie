@@ -173,7 +173,7 @@ void chmolehill_entrypoint_0(ActorMarker* arg0)
     Actor* temp_v0;
     s32 pad;
 
-    sp24 = func_80106790(arg0);
+    sp24 = actorList_getFromMarker(arg0);
     if (arg0) {}
     temp_v0 = func_801084B0(0x18F, &sp24);
     sp24->unk3C = temp_v0->unk0;
@@ -234,7 +234,7 @@ void chmolehill_entrypoint_1(Actor* arg0, s32 arg1)
     }
     if (arg0->unk3C != NULL)
     {
-        _chmoley_entrypoint_0(func_80106790(arg0->unk3C), arg1);
+        _chmoley_entrypoint_0(actorList_getFromMarker(arg0->unk3C), arg1);
     }
 }
 
@@ -253,7 +253,7 @@ void chmolehill_entrypoint_2(Actor* arg0, s32 arg1)
         }
         if (arg0->unk3C != NULL)
         {
-            _chmoley_entrypoint_1(func_80106790(arg0->unk3C), arg1);
+            _chmoley_entrypoint_1(actorList_getFromMarker(arg0->unk3C), arg1);
         }
     }
 }

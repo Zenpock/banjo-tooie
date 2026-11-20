@@ -120,7 +120,7 @@ void func_808001F8_chjigsaw(Actor* arg0)
         {
             ml_vec3f_copy(sp60, arg0->position);
             sp60[1] += 100.0f;
-            func_800C8CB8(arg0->unk6C_0, sp60);
+            light_setPosition(arg0->unk6C_0, sp60);
         }
         func_8080011C_chjigsaw(arg0);
     }
@@ -168,11 +168,11 @@ s32 func_80800518_chjigsaw(Actor* arg0, s32 eventId, s32 arg2)
             actor_mark_delete(arg0);
             break;
         case 0x55:
-            arg0->unk6C_0 = func_800C8A98();
+            arg0->unk6C_0 = light_createNew();
             func_800CF9E4((s32)arg0->unk50, 1, arg0->unk6C_0);
             ml_vec3f_copy(&sp1C, arg0->position);
             sp1C[1] += 100.0f;
-            func_800C8CB8(arg0->unk6C_0, &sp1C);
+            light_setPosition(arg0->unk6C_0, &sp1C);
             break;
         default:
             return 0;
@@ -187,7 +187,7 @@ ActorData* chjigsaw_entrypoint_0()
 
 void func_808006CC_chjigsaw(Actor* arg0)
 {
-    if (func_800D395C() != 0)
+    if (game_isReplayMinigame() != 0)
     {
         actor_mark_delete(arg0);
         return;

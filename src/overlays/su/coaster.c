@@ -49,9 +49,9 @@ void sucoaster_entrypoint_18(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/sucoaster_entrypoint_19.s")
 
-void sucoaster_entrypoint_20()
+void sucoaster_entrypoint_20(Actor* actor, GraphicsBuffers* buf)
 {
-    func_80101870();
+	func_80101870(actor, buf);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/sucoaster_entrypoint_21.s")

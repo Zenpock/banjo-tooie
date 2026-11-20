@@ -69,7 +69,7 @@ void func_8080000C_chgameselect(Actor* arg0) {
     u32 var_s0;
 
     func_80016BDC(4);
-    temp_s0 = func_800D395C();
+    temp_s0 = game_isReplayMinigame();
     _gcfrontend_entrypoint_0();
     if (func_800AA0B8() != 0)
     {
@@ -448,7 +448,7 @@ void func_808027D4_chgameselect(s32 arg0)
 
 void func_80802BE8_chgameselect(ActorMarker* arg0)
 {
-    func_808029D8_chgameselect(func_80106790(arg0));
+    func_808029D8_chgameselect(actorList_getFromMarker(arg0));
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80802C10_chgameselect.s")

@@ -22,7 +22,7 @@ void func_80800098_chjadestatue(Actor* arg0) {
 	}
 }
 
-void func_80800104_chjadestatue(Actor* arg0, void* arg1)
+void func_80800104_chjadestatue(Actor* arg0, GraphicsBuffers* arg1)
 {
 	func_80101870(arg0, arg1);
 	if (arg0->unk7C_12) {

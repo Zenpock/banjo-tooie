@@ -260,7 +260,7 @@ void func_808003BC_chintroticker(Actor* arg0)
 void func_808003C4_chintroticker(Actor* actor)
 {
     func_80800254_chintroticker(actor);
-    if (func_800D395C() != 0)
+    if (game_isReplayMinigame() != 0)
     {
         _gcfrontend_entrypoint_10();
         func_800EA334(1);

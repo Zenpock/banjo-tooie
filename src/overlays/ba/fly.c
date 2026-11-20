@@ -79,7 +79,7 @@ void bafly_entrypoint_8(PlayerState* self, f32 arg1, f32 arg2, f32 arg3, f32 arg
     f32 temp_f20;
     f32 sp3C;
 
-    temp_f20 = func_8009BFCC(self);
+    temp_f20 = bapitch_get(self);
     baphysics_set_gravity(self, arg4);
     bafly_entrypoint_6(self, 0.0f);
     if (baflag_isTrue(self, BA_FLAG_9) != 0) {
@@ -131,9 +131,9 @@ void bafly_entrypoint_10(PlayerState* self, f32 arg1, f32 arg2) {
 
     temp_f0 = bastick_getY(self);
     if (temp_f0 < 0.0f) {
-        func_8009BF5C(self, ml_map_f(temp_f0, -1.0f, 0.0f, arg1, 360.0f));
+        bapitch_setIdeal(self, ml_map_f(temp_f0, -1.0f, 0.0f, arg1, 360.0f));
     } else {
-        func_8009BF5C(self, ml_map_f(temp_f0, 0.0f, 1.0f, 0.0f, arg2));
+        bapitch_setIdeal(self, ml_map_f(temp_f0, 0.0f, 1.0f, 0.0f, arg2));
     }
 }
 
@@ -310,7 +310,7 @@ void bafly_entrypoint_20(PlayerState* self)
 
     temp_f0 = _bafpctrl_entrypoint_3(self);
     temp_f0 = ml_map_f(temp_f0, 0.1f, 1.0f, temp_f0 * temp_f0, 1.0f);
-    func_8009BFE4(self, 500.0f * temp_f0, 1.2f);
+    bapitch_setAngularVelocity(self, 500.0f * temp_f0, 1.2f);
 }
 
 void bafly_entrypoint_21(PlayerState* self) 
@@ -319,5 +319,5 @@ void bafly_entrypoint_21(PlayerState* self)
 
     temp_f0 = _bafpctrl_entrypoint_3(self);
     temp_f0 = ml_map_f(temp_f0, 0.1f, 1.0f, temp_f0 * temp_f0, 1.0f);
-    func_8009BFE4(self, 1000.0f*temp_f0, 2.2f);
+    bapitch_setAngularVelocity(self, 1000.0f*temp_f0, 2.2f);
 }

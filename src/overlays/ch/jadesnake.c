@@ -245,7 +245,7 @@ void func_80800728_chjadesnake(Actor* arg0, s32 arg1, s32 arg2)
     }
 }
 
-void func_80800770_chjadesnake(Actor* arg0, void* arg1)
+void func_80800770_chjadesnake(Actor* arg0, GraphicsBuffers* arg1)
 {
     func_80101870(arg0, arg1);
     if (arg0->unk7C_12)
@@ -266,7 +266,7 @@ s32 func_808007DC_chjadesnake(Actor* arg0, s32 arg1, u32 arg2)
     case 0xD:
         if ((arg0->unk70_10) != 1)
         {
-            temp_v0 = func_80106790(func_80101080());
+            temp_v0 = actorList_getFromMarker(func_80101080());
             ml_getdiff_vec3f(&temp_v0->actorData[4], &arg0->actorData[0], &arg0->actorData[4]);
             //Apply Scale
             ml_vec3f_apply_scale(&temp_v0->actorData[4], 0.14285715f);

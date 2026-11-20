@@ -9,7 +9,7 @@ void bskazflamethrower_entrypoint_0(PlayerState *self, f32 arg1[3], f32 arg2[3])
     s32 pad2;
     f32 unk1;
 
-    unk1 = func_8009BFCC(self);
+    unk1 = bapitch_get(self);
     func_800EEC30(arg2, -unk1, yaw_get(self), 1);
     player_getCoords(self, arg1);
     ml_vec3f_getVectorOfMagnitude(unk0, arg2, 17);

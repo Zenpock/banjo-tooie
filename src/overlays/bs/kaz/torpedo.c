@@ -32,12 +32,12 @@ void func_8080009C_bskaztorpedo(PlayerState *self) {
 
 void func_808000CC_bskaztorpedo(PlayerState *self) {
     if (player_inWater(self) != 0) {
-        func_8009BFE4(self, 220.0f, 3.5f);
+        bapitch_setAngularVelocity(self, 220.0f, 3.5f);
         baroll_setAngularVelocity(self, 120.0f, 1.8f);
         yaw_setVelocityBounded(self, 290.0f, 5.0f);
         return;
     }
-    func_8009BFE4(self, 250.0f, 2.8f);
+    bapitch_setAngularVelocity(self, 250.0f, 2.8f);
     baroll_setAngularVelocity(self, 250.0f, 2.8f);
     yaw_setVelocityBounded(self, 350.0f, 3.5f);
 }
@@ -68,10 +68,10 @@ void func_8080024C_bskaztorpedo(PlayerState *self) {
 
     temp_f0 = bastick_getY(self);
     if (temp_f0 < 0.0f) {
-        func_8009BF5C(self, ml_map_f(temp_f0, -1.0f, 0.0f, 275.0f, 360.0f));
+        bapitch_setIdeal(self, ml_map_f(temp_f0, -1.0f, 0.0f, 275.0f, 360.0f));
         return;
     }
-    func_8009BF5C(self, ml_map_f(temp_f0, 0.0f, 1.0f, 0.0f, 85.0f));
+    bapitch_setIdeal(self, ml_map_f(temp_f0, 0.0f, 1.0f, 0.0f, 85.0f));
 }
 
 void func_808002E0_bskaztorpedo(PlayerState *self) {
@@ -106,8 +106,8 @@ void func_808002E0_bskaztorpedo(PlayerState *self) {
     }
     func_808000CC_bskaztorpedo(self);
     _bakaztorpedo_entrypoint_7(self, ml_map_f(baphysics_get_velocity(self), 0.0f, 1500.0f, 300.0f, 1200.0f));
-    sp2C[2] = func_8009BFD8(self);
-    sp34 = ml_absNormalizeAngle_f(sp2C[2] - func_8009BFCC(self));
+    sp2C[2] = bapitch_getIdeal(self);
+    sp34 = ml_absNormalizeAngle_f(sp2C[2] - bapitch_get(self));
     sp38[0] = yaw_getIdeal(self);
     _bakaztorpedo_entrypoint_5(self, sp34 * 0.75f, ml_absNormalizeAngle_f(sp38[0] - yaw_get(self)) * 0.75f);
     if (sp44 != 0) {
@@ -121,9 +121,9 @@ void func_80800508_bskaztorpedo(PlayerState *self) {
         func_8008C984(self, 3);
         func_800961AC(self, 1);
         func_8009BC34(self);
-        func_8009BF5C(self, 0.0f);
+        bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
-        func_8009C000(self);
+        bapitch_resetAngularVelocity(self);
         baroll_resetAngularVelocity(self);
         bastick_popZone(self);
         func_80095A40(self);
@@ -476,7 +476,7 @@ void func_80801484_bskaztorpedo(PlayerState *self) {
     func_8009BD88(self);
     func_8008E95C(self);
     func_800951B4(self);
-    yaw_setIdeal(self, func_80092BE8(self));
+    yaw_setIdeal(self, player_getModelYaw(self));
     yaw_applyIdeal(self);
     func_800931AC(self, 1);
     _bakaztorpedo_entrypoint_6(self, 2);
@@ -504,7 +504,7 @@ void func_808014F8_bskaztorpedo(PlayerState *self) {
     yaw_setIdeal(self, sp4C);
     yaw_applyIdeal(self);
     baroll_setIdeal(self, 0.0f);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baphysics_set_target_horizontal_velocity(self, _bareact_entrypoint_4(self));
     baphysics_set_target_yaw(self, sp4C);
     baphysics_set_horizontal_velocity(self, sp4C, baphysics_get_target_horizontal_velocity(self));

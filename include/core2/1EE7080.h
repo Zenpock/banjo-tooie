@@ -6,6 +6,6 @@
 #include "core2/1E9A960.h"
 #include "core2/1EA0690.h"
 
-void func_8010D930(s32, s32, f32*, s32*);
+void func_8010D930(s32, s32, f32[3], s32*);
 
 #endif

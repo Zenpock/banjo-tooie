@@ -30,19 +30,19 @@ s32 func_808003F4_chnests(Actor*, s32, s32);
 void func_80800670_chnests(Actor* arg0, UnkArg2ChNest* arg1);
 void func_808006C4_chnests(Actor*);
 void func_808007C8_chnests(Actor*);
-void func_8080082C_chnests(Actor*, s32);
-s32 func_80800898_chnests(Actor*, s32, f32);
+void func_8080082C_chnests(Actor*, GraphicsBuffers*);
+s32 func_80800898_chnests(Actor*, GraphicsBuffers*, f32);
 void func_8080093C_chnests(Actor*, s32);
 void func_80800960_chnests(s32);
-void func_80800968_chnests(Actor*, s32);
+void func_80800968_chnests(Actor*, GraphicsBuffers*);
 void func_808009D4_chnests(s32, s32);
 void func_808009F8_chnests(s32);
-void func_80800A00_chnests(Actor*, s32);
+void func_80800A00_chnests(Actor*, GraphicsBuffers*);
 void func_80800A6C_chnests(s32);
 void func_80800B80_chnests(Actor*);
 void func_80800BD8_chnests(Actor*, s32, f32, f32);
 void func_80800C3C_chnests(Actor*);
-void func_80800D8C_chnests(Actor*, s32);
+void func_80800D8C_chnests(Actor*, GraphicsBuffers*);
 void func_80800ED8_chnests(Actor*);
 void func_80800F08_chnests(Actor*);
 int func_80801014_chnests(Actor* arg0);
@@ -488,7 +488,7 @@ void func_80800000_chnests(Actor* arg0)
 void func_80800098_chnests(Actor* arg0)
 {
     func_80800000_chnests(arg0);
-    if ((func_800D3948() == 0) && (func_800F7150(character_getActiveIndex()) != 0))
+    if ((game_isMultiplayer() == 0) && (func_800F7150(character_getActiveIndex()) != 0))
     {
         func_808002E0_chnests(arg0);
     }
@@ -722,7 +722,7 @@ void func_808007C8_chnests(Actor* arg0)
     }
 }
 
-void func_8080082C_chnests(Actor* arg0, s32 arg1)
+void func_8080082C_chnests(Actor* arg0, GraphicsBuffers* arg1)
 {
     if (func_80800898_chnests(arg0, arg1, ((f32*)arg0->actorData)[4]) != 0)
     {
@@ -734,7 +734,7 @@ void func_8080082C_chnests(Actor* arg0, s32 arg1)
     }
 }
 
-s32 func_80800898_chnests(Actor* arg0, s32 arg1, f32 arg2)
+s32 func_80800898_chnests(Actor* arg0, GraphicsBuffers* arg1, f32 arg2)
 {
     f32 sp34[3];
     ImageStruct* sp30;
@@ -757,7 +757,7 @@ void func_80800960_chnests(s32 arg0)
 {
 }
 
-void func_80800968_chnests(Actor* arg0, s32 arg1)
+void func_80800968_chnests(Actor* arg0, GraphicsBuffers* arg1)
 {
     if (func_80800898_chnests(arg0, arg1, arg0->rotation[1]) != 0)
     {
@@ -776,7 +776,7 @@ void func_808009F8_chnests(s32 arg0)
 {
 }
 
-void func_80800A00_chnests(Actor* arg0, s32 arg1)
+void func_80800A00_chnests(Actor* arg0, GraphicsBuffers* arg1)
 {
     if (func_80800898_chnests(arg0, arg1, arg0->rotation[1]) != 0)
     {
@@ -897,7 +897,7 @@ void func_80800C3C_chnests(Actor* arg0)
     }
 }
 
-void func_80800D8C_chnests(Actor* arg0, s32 arg1)
+void func_80800D8C_chnests(Actor* arg0, GraphicsBuffers* arg1)
 {
     s32 temp_f18;
     if (func_80800898_chnests(arg0, arg1, arg0->rotation[1]) != 0)

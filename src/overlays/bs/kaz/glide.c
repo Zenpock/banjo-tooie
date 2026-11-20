@@ -26,7 +26,7 @@ void func_80800090_bskazglide(PlayerState *self) {
         yaw_setUpdateType(self, YAW_TYPE_3_BOUNDED);
         yaw_setVelocityBounded(self, 500, 2);
         baroll_setAngularVelocity(self, 500, 2);
-        func_8009BFE4(self, 500, 1.2);
+        bapitch_setAngularVelocity(self, 500, 1.2);
         baphysics_set_gravity(self, -300);
         baphysics_set_terminal_velocity(self, -50.0f);
         func_800959C8(self, 60, 45);

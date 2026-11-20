@@ -31,7 +31,7 @@ void func_8009E154(PlayerState* arg0, s32 arg1, f32* arg2)
 		if (ml_vec3f_is_zero(sp7C) != 0)
 		{
 			ml_vec3f_copy(sp58, arg0->unk114->unk0[arg1].unkC);
-			func_800EF8BC(sp58, sp58, func_8009BFCC(arg0));
+			func_800EF8BC(sp58, sp58, bapitch_get(arg0));
 			func_800EF934(sp58, sp58, yaw_get(arg0));
 			ml_vec3f_sum(sp7C, sp64, sp58);
 		}
@@ -39,7 +39,7 @@ void func_8009E154(PlayerState* arg0, s32 arg1, f32* arg2)
 		{
 			ml_getdiff_vec3f(sp58, sp7C, sp64);
 			func_800EF934(sp58, sp58, -yaw_get(arg0));
-			func_800EF8BC(sp58, sp58, -func_8009BFCC(arg0));
+			func_800EF8BC(sp58, sp58, -bapitch_get(arg0));
 			ml_vec3f_copy(arg0->unk114->unk0[arg1].unkC, sp58);
 		}
 	}
@@ -167,16 +167,16 @@ BanjoStateId bs_getPreviousState(PlayerState *self) {
     return self->state->previous;
 }
 
-s32 func_8009E71C(PlayerState* arg0, s32 arg1) {
-	return func_8009CBDC(arg0, arg0->state->current) == arg1;
+s32 bs_matchesCurrentStateType(PlayerState* arg0, BanjoStateType arg1) {
+	return bs_getStateType(arg0, arg0->state->current) == arg1;
 }
 
-s32 func_8009E74C(PlayerState* arg0, s32 arg1) {
-	return func_8009CBDC(arg0, arg0->state->next) == arg1;
+s32 bs_matchesNextStateType(PlayerState* arg0, BanjoStateType arg1) {
+	return bs_getStateType(arg0, arg0->state->next) == arg1;
 }
 
-s32 func_8009E77C(PlayerState* arg0, s32 arg1) {
-	return func_8009CBDC(arg0, arg0->state->previous) == arg1;
+s32 bs_matchesPreviousStateType(PlayerState* arg0, BanjoStateType arg1) {
+	return bs_getStateType(arg0, arg0->state->previous) == arg1;
 }
 
 void func_8009E7AC(PlayerState* self) {

@@ -32,5 +32,8 @@
 #include "gl/id.h"
 #include "su/baddiefade.h"
 #include "su/expression.h"
+#include "fx/step.h"
+
+void _chintrochar_entrypoint_1(void);
 
 #endif

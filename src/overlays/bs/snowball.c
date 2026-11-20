@@ -60,11 +60,11 @@ void func_80800164_bssnowball(PlayerState* self) {
 }
 
 void bssnowball_entrypoint_0(PlayerState* self) {
-    if (func_8009E74C(self, 0x16) == 0) {
+    if (bs_matchesNextStateType(self, BS_STATETYPE_16_SNOWBALL) == 0) {
         func_800947EC(self, 1, 0);
-        func_8009BF5C(self, 0.0f);
+        bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
-        func_8009C000(self);
+        bapitch_resetAngularVelocity(self);
         baroll_resetAngularVelocity(self);
         bastick_popZone(self);
         baflag_clear(self, BA_FLAG_3);
@@ -75,9 +75,9 @@ void bssnowball_entrypoint_0(PlayerState* self) {
 }
 
 void bssnowball_entrypoint_1(PlayerState* self) {
-    if (func_8009E77C(self, 0x16) == 0) {
+    if (bs_matchesPreviousStateType(self, BS_STATETYPE_16_SNOWBALL) == 0) {
         _basnowball_entrypoint_2(self);
-        func_8009BFE4(self, 1000.0f, 12.0f);
+        bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
         baroll_setAngularVelocity(self, 1000.0f, 12.0f);
         bastick_pushZone(self);
         bastick_setZoneMax(self, 0, 0.12f);
@@ -162,7 +162,7 @@ s32 bssnowball_entrypoint_4(s32 arg0) {
 }
 
 void func_8080056C_bssnowball(PlayerState* self) {
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
     bssnowball_entrypoint_0(self);
 }
@@ -240,7 +240,7 @@ void func_808007D8_bssnowball(PlayerState* self) {
 
 void func_8080089C_bssnowball(PlayerState* self) {
     baphysics_reset_gravity(self);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
     bssnowball_entrypoint_0(self);
 }

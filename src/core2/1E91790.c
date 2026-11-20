@@ -1,10 +1,11 @@
 #include "core2/1E91790.h"
 
-
+extern Gfx D_8011A630[];
 extern s8 D_8011A668;
 extern s32 D_8012712C;
-
 extern s8 D_801282C5;
+extern u8 D_801282C6;
+extern s32 D_801282D0;
 
 void func_800B7EA0(s32 arg0, s32 arg1)
 {
@@ -17,7 +18,26 @@ void func_800B7EA0(s32 arg0, s32 arg1)
 	D_801282C0.unkB = sp34;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B7F14.s")
+void func_800B7F14(GraphicsBuffers* buf) {
+
+	gSPDisplayList((buf->gfx)++, OS_K0_TO_PHYSICAL(D_8011A630));
+	gDPSetTextureFilter((buf->gfx)++, D_801282C0.font == 1 ? G_TF_BILERP : G_TF_POINT);
+	gDPSetPrimColor((buf->gfx)++, 0, 0, D_801282C0.red, D_801282C0.green, D_801282C0.blue, D_801282C0.alpha);
+
+	if (D_801282C0.pattern != 0) {
+		gDPSetCycleType((buf->gfx)++, G_CYC_2CYCLE);
+		gDPSetCombineLERP((buf->gfx)++, TEXEL0, 0, TEXEL1, 0, 0, 0, 0, TEXEL0, COMBINED, 0, PRIMITIVE, 0, COMBINED, 0, PRIMITIVE, 0);
+		gDPSetRenderMode((buf->gfx)++, IM_RD | CVG_DST_FULL | ZMODE_XLU | FORCE_BL | G_RM_PASS, IM_RD | CVG_DST_FULL | ZMODE_XLU | FORCE_BL | GBL_c2(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_1MA));
+		func_800B7EA0(buf, D_801282C0.pattern + 0xC24);
+	}
+	else {
+		gDPSetCycleType((buf->gfx)++, G_CYC_1CYCLE);
+		gDPSetCombineMode((buf->gfx)++, G_CC_MODULATEIA_PRIM, G_CC_MODULATEIA_PRIM);
+		gDPSetRenderMode((buf->gfx)++, IM_RD | CVG_DST_FULL | ZMODE_XLU | FORCE_BL | GBL_c1(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_1MA), IM_RD | CVG_DST_FULL | ZMODE_XLU | FORCE_BL | GBL_c2(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_1MA));
+	}
+	D_801282C0.unk5 = 1;
+	D_801282C0.unkC = func_800D3724(D_801282C0.font);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B80D0.s")
 
@@ -31,7 +51,22 @@ void func_800B811C(GraphicsBuffers* arg0) {
 	D_801282C0.unk5 = 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8148.s")
+s32 func_800B8148(u8* arg0) {
+	s32 sp1C;
+	s32 sp18;
+
+	sp1C = func_800D35D0(D_801282C6, *arg0);
+	if (sp1C == -1) {
+		return 0;
+	}
+	sp18 = func_800D3524((s32)D_801282C6);
+	if (sp18 == 0) {
+		return 0;
+	}
+	D_801282D0 = func_800B0D58((unkStruct800B0D58*)sp18);
+	*arg0 = (u8)sp1C;
+	return sp18;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B81CC.s")
 
@@ -87,7 +122,27 @@ void graphics_setTextScale(f32 size)
 	D_801282C0.size = size;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8CFC.s")
+s32 func_800B8CFC(char* text)
+{
+	f32 temp_f10;
+	s32 temp_v0;
+	s32 var_s1;
+	s32 var_s2;
+	s32 var_s3;
+
+	var_s2 = 0;
+	var_s3 = 0;
+	var_s1 = 0;
+
+	for (var_s1 = 0; var_s1 < string_length(text); var_s1++)
+	{
+		temp_v0 = func_800D36C4(D_801282C0.font, text[var_s1]);
+		temp_f10 = (f32)(temp_v0 + var_s3);
+		var_s2 += (temp_f10 * 0.5f);
+		var_s3 = temp_v0;
+	}
+	return var_s2 * D_801282C0.size;
+}
 
 void graphics_drawChar(GraphicsBuffers* arg0, s32 coordX, s32 coordY, char charToPrint)
 {
@@ -99,11 +154,50 @@ void graphics_drawChar(GraphicsBuffers* arg0, s32 coordX, s32 coordY, char charT
 
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8E28.s")
-
-void func_800B8F88(GraphicsBuffers* buf, s32 verticalOffset, char* text)
+//graphics_drawString
+void graphics_drawString(GraphicsBuffers* buf, s32 xCoord, s32 yCoord, char* text)
 {
-	func_800B8E28(buf, (0x130 - func_800B8CFC(text)) / 2, verticalOffset, text);
+	s32 var_s5;
+	s32 var_s4;
+	s32 var_v0;
+
+	if (D_801282C0.unkC == 0)
+	{
+		return;
+	}
+
+	if (D_801282C0.unk7 != 0)
+	{
+		var_s4 = func_800D3574(D_801282C0.font) * D_801282C0.size;
+	}
+	else
+	{
+		var_s5 = func_800D35BC(D_801282C0.font) * D_801282C0.size;
+	}
+
+	D_801282C0.unk8 = 0;
+	while (*text != '\0')
+	{
+		var_v0 = func_800B81CC(buf, xCoord, yCoord, *text);
+		text++;
+		if ((D_801282C0.unk7 != 0) && (D_801282C0.unk8 == 0))
+		{
+			xCoord += var_v0 / 2;
+			D_801282C0.unk8 = 1;
+		}
+		else
+		{
+			xCoord += D_801282C0.unk7 != 0
+				? (var_v0 != 0 ? var_v0 : var_s4)
+				: var_s5;
+		}
+	}
+}
+
+//graphics_drawStringHorizCentered
+void graphics_drawStringHorizCentered(GraphicsBuffers* buf, s32 verticalOffset, char* text)
+{
+	graphics_drawString(buf, (0x130 - func_800B8CFC(text)) / 2, verticalOffset, text);
 }
 
 void func_800B8FE0(void) {

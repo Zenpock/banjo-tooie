@@ -78,10 +78,10 @@ typedef struct ba_unknown_50_s {
     u8 unk18;
     u8 unk19;
     u8 unk1A;
-    f32 unk1C;
-    f32 unk20;
-    f32 unk24;
-    f32 unk28;
+    f32 unk1C;//Model Scale
+    f32 unk20;//Pitch
+    f32 unk24;//Roll
+    f32 unk28;//Yaw
     f32 unk2C[3];
     f32 unk38;
     f32 unk3C;
@@ -130,6 +130,9 @@ typedef struct ba_unknown_50_s {
     u8 unkC7;
     f32 unkC8;
     MtxF unkCC;
+	s32 unk10C; //Seems to be the Asset for Banjo's Model because unkC falls back to using this one when set to 0x607
+	s32 unk110;
+	s32 unk114;
 } BaUnknown50;
 typedef struct ba_unk54_s {
 	u8 unk0;
@@ -289,17 +292,11 @@ typedef struct ba_unknown_8C_s {
 typedef struct ba_hold_s {
     f32 unk0;
     f32 unk4;
-    s32 unk8;
+    ActorMarker* unk8;
     u8 unkC;
     s8 unkD;
     s8 unkE;
     s8 unkF;
-    s8 unk10;
-    s8 unk11;
-    s8 unk12;
-    s8 unk13;
-    s32 unk14;
-    f32 unk18;
 } BaHold;
 
 typedef struct ba_unkA0_s {
@@ -377,15 +374,12 @@ typedef struct ba_unknown_DC_s {
     f32 unkC;
 } ba_unknown_DC_s;
 typedef struct ba_unknown_E0_s {
-    f32 unk0;
-    f32 unk4;
-    f32 unk8;
-    f32 unkC;
-    f32 unk10;
-    f32 unk14;
-    f32 unk18;
-    u8 pad1C[0x10];
-    u8 unk2C;
+    f32 unk0[3]; //Bottom of the climbing pole
+    f32 unkC[3]; //Top of climbing pole
+    f32 unk18; //Pole Thickness
+    f32 unk1C[3]; //Last Pole Coords
+    f32 unk28; //Timer
+    u8 unk2C;//Should we latch to a climb surface
     u8 unk2D;
     u8 unk2E;
     u8 unk2F;

@@ -137,9 +137,9 @@ void func_80800204_chattract(Actor* arg0, GraphicsBuffers* buf) {
         graphics_setTextColors(255, 230, 255);
         func_800B8CB0(1);
         func_800B7F14(buf);
-        func_800B8F88(buf, 0xA0, tmp);
+        graphics_drawStringHorizCentered(buf, 0xA0, tmp);
         tmp = controllerWarn;
-        func_800B8F88(buf, 0xAB, tmp);
+        graphics_drawStringHorizCentered(buf, 0xAB, tmp);
         func_800B811C(buf);
     }
 }

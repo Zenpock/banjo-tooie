@@ -8,7 +8,7 @@ s32 func_800A06E0()
 }
 
 void func_800A06E8(PlayerState* self) {
-	func_800A0714(self, func_80092B80(self));
+	func_800A0714(self, player_getCurrentModel(self));
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E79FD0/func_800A0714.s")
 
@@ -16,11 +16,12 @@ s32 func_800A0C20(PlayerState* self) {
     return self->unk138->unk10;
 }
 
-f32 func_800A0C2C(PlayerState* self) {
+
+f32 player_getLeftEyelidHeight(PlayerState* self) {
     return self->unk138->unk0;
 }
 
-f32 func_800A0C38(PlayerState* self) {
+f32 player_getRightEyelidHeight(PlayerState* self) {
     return self->unk138->unk4;
 }
 
@@ -59,11 +60,11 @@ void func_800A0D68(PlayerState* self, s32 arg1) {
     self->unk138->unk17 = arg1;
 }
 
-void func_800A0D74(PlayerState* self, f32 arg1) {
+void player_setLeftEyelidHeight(PlayerState* self, f32 arg1) {
     self->unk138->unk0 = arg1;
 }
 
-void func_800A0D84(PlayerState* self, f32 arg1) {
+void player_setRightEyelidHeight(PlayerState* self, f32 arg1) {
     self->unk138->unk4 = arg1;
 }
 

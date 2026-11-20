@@ -76,7 +76,7 @@ void bababykaz_entrypoint_11(PlayerState *self) {
     s32 sp28;
 
     sp38 = !(func_8008E124(self) || func_800C954C()  || func_800F8004(self->unk184) || func_800F99E8() || func_800F68B8(self->unk184));
-    sp28 = (sp38 && !(func_800C0638() || func_800D3948())
+    sp28 = (sp38 && !(func_800C0638() || game_isMultiplayer())
     );
     if (sp38 && _batimer_decrement(self, 0xC)) {
         self->babykaz->unk1 = 1;

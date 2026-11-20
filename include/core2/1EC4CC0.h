@@ -16,7 +16,9 @@
 #include "core2/1EE4020.h"
 #include "memory.h"
 #include "vector.h"
+#include "gs/propprop.h"
 
+void func_800EB51C(s32, GraphicsBuffers*);
 s32 func_800EB854();
 void func_800EBB5C();
 void func_800EBD2C(ActorMarker*, s32*, s32);

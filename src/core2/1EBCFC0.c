@@ -1,14 +1,5 @@
 #include "core2/1EBCFC0.h"
 
-typedef struct {
-    Gfx* unk0;
-    Mtx* unk4;
-} Unkfunc_800E44FC;
-
-typedef struct {
-    u8 unk0[68];
-} Unkfunc_800E44FC_2;
-
 extern f32* D_8012D500;
 extern f32* D_8012D504;
 extern s32 D_8012D508;
@@ -194,11 +185,11 @@ void func_800E42E4(s32 arg0) {
  * @param arg0 The graphics context to apply the matrices to.
  * @param use_widescreen Determines whether to adjust the resulting matrix for anamorphic widescreen if widescreen is enabled.
  */
-void func_800E42F0(Unkfunc_800E44FC* arg0, s32 use_widescreen) {
+void func_800E42F0(GraphicsBuffers* arg0, s32 use_widescreen) {
     Gfx* cur_gfx;
     Mtx* cur_mtx;
-    cur_gfx = arg0->unk0;
-    cur_mtx = arg0->unk4;
+    cur_gfx = arg0->gfx;
+    cur_mtx = arg0->mtx;
 
     // Build the orthographic matrix.
     // Determine the matrix's left and right coordinates based on whether widescreen should be used and is enabled.
@@ -229,8 +220,8 @@ void func_800E42F0(Unkfunc_800E44FC* arg0, s32 use_widescreen) {
     gSPMatrix(cur_gfx++, OS_K0_TO_PHYSICAL(cur_mtx++), G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
 
     // Update the graphics context with the final displaylist and matrix pointers.
-    arg0->unk0 = cur_gfx;
-    arg0->unk4 = cur_mtx;
+    arg0->gfx = cur_gfx;
+    arg0->mtx = cur_mtx;
 }
 
 /**
@@ -273,7 +264,7 @@ void func_800E443C(MtxF* base_matrix, f32* translation, f32 scale) {
  * 
  * @param arg0 The graphics context to apply the matrices to.
  */
-void func_800E44FC(Unkfunc_800E44FC* arg0) {
+void func_800E44FC(GraphicsBuffers* buf) {
     u16 persp_norm;
     MtxF proj;
     f32 translation[3];
@@ -289,7 +280,7 @@ void func_800E44FC(Unkfunc_800E44FC* arg0) {
 
     // Build the projection matrix and load its perspnorm value.
     persp_norm = func_800CB124(D_8012D500, &proj);
-    gSPPerspNormalize(arg0->unk0++, persp_norm);
+    gSPPerspNormalize(buf->gfx++, persp_norm);
 
     // Build the viewproj matrix from the projection matrix, translation, and world scale.
     func_800E443C(&proj, translation, func_800CA6E8(D_8012D500));
@@ -301,27 +292,27 @@ void func_800E44FC(Unkfunc_800E44FC* arg0) {
     }
 
     // Convert the matrix stack into fixed point and load it as the viewproj matrix.
-    mlMtxApply(arg0->unk4);
-    gSPMatrix(arg0->unk0++, OS_K0_TO_PHYSICAL(arg0->unk4++), G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
+    mlMtxApply(buf->mtx);
+    gSPMatrix(buf->gfx++, OS_K0_TO_PHYSICAL(buf->mtx++), G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
 
     // Record the viewproj matrix that was created.
-    D_8012D558 = arg0->unk4 - 1;
+    D_8012D558 = buf->mtx - 1;
 
     // Create an identity matrix and load it into the model stack.
-    guMtxIdent(arg0->unk4);
-    gSPMatrix(arg0->unk0++, OS_K0_TO_PHYSICAL(arg0->unk4++), G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    guMtxIdent(buf->mtx);
+    gSPMatrix(buf->gfx++, OS_K0_TO_PHYSICAL(buf->mtx++), G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
 }
 
 void func_800E4628() {
     D_8012D558 = D_8012D554 = NULL;
 }
 
-void func_800E4640(Gfx** gfx) {
+void func_800E4640(GraphicsBuffers* buf) {
     if (D_8012D508 != 0) {
-        gSPDisplayList((*gfx)++, 0x08000000);
+        gSPDisplayList((buf->gfx)++, 0x08000000);
         return;
     }
-    gSPMatrix((*gfx)++, OS_K0_TO_PHYSICAL(D_8012D558), G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
+    gSPMatrix((buf->gfx)++, OS_K0_TO_PHYSICAL(D_8012D558), G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
 }
 
 void func_800E46A4(f32 out[4], f32 in[4]) {

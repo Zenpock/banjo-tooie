@@ -541,11 +541,11 @@ void func_80800534_gcnewpause(PauseState* pauseMenu, u32 targetPage)
 				func_80800DE0_gcnewpause(1.1f);
 				func_800C06C4();
 				func_80018634();
-				if (func_800D395C() != 0)
+				if (game_isReplayMinigame() != 0)
 				{
 					pauseMenu->ActivePauseMenuVariant = 4;
 				}
-				else if (func_800D3948() != 0)
+				else if (game_isMultiplayer() != 0)
 				{
 					if (func_800A946C() == 1)
 					{

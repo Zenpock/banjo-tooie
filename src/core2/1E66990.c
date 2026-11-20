@@ -47,7 +47,7 @@ int player_canDive(PlayerState* arg0) {
 //Can Use Eggs
 s32 player_canEggShoot(PlayerState* arg0)
 {
-    enum transform_e temp_v0;
+    TransformationId temp_v0;
 
 	if (ability_getValue(ABILITY_06_BK_USE_EGGS) == 0)
 	{
@@ -266,9 +266,9 @@ int func_8008DD04(PlayerState* self)
         && player_isStable(self) == 0;
 }
 
-s32 func_8008DD70(PlayerState* self)
+s32 player_inFirstPState(PlayerState* self)
 {
-    return func_8009E71C(self,0x5);
+    return bs_matchesCurrentStateType(self,BS_STATETYPE_5_FIRST_PERSON);
 }
 
 s32 func_8008DD90(PlayerState* self) {

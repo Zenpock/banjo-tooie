@@ -157,11 +157,11 @@ void func_8009B27C(PlayerState* self)
 	self->unkC8->unk4[2] = sp30[2];
 	if (func_8009861C(self) == 2)
 	{
-		ml_vec3f_getVecFromYaw(sp3C, ml_normalizeAngle_f(func_80098610(self) + 180.0f), -func_80098628(self));
+		ml_vec3f_getVecFromYaw(sp3C, ml_normalizeAngle_f(func_80098610(self) + 180.0f), -player_getPoleThickness(self));
 	}
 	else
 	{
-		ml_vec3f_getVecFromYaw(sp3C, yaw_get(self), -func_80098628(self));
+		ml_vec3f_getVecFromYaw(sp3C, yaw_get(self), -player_getPoleThickness(self));
 	}
 
 	self->unkC8->unk4[0] += sp3C[0];

@@ -404,7 +404,7 @@ void func_80800C28_bsbeemain(PlayerState* self)
     baphysics_set_horizontal_velocity(self, sp48, baphysics_get_target_horizontal_velocity(self));
     baphysics_set_vertical_velocity(self, 420.0f);
     baphysics_set_gravity(self, -1200.0f);
-    func_8009BFE4(self, 1000.0f, 12.0f);
+    bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
     func_8009D820(self, 1.8f);
     _batimer_set(self, 0, 2.9f);
     self->unk15C.word = 0;

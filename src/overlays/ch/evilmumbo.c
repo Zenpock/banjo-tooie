@@ -54,7 +54,7 @@ void func_80800000_chevilmumbo(Actor* actor)
     f32 sp20[3];
 
     temp_v0 = (CHEVILMUMBO*)actor_getAdditionalMem(actor, 0U);
-    if ((temp_v0->unk95 == 3) && (func_800F6C88(character_getActiveIndex()) == 0))
+    if ((temp_v0->unk95 == 3) && (character_inLedgeState(character_getActiveIndex()) == 0))
     {
         ml_vec3f_copy(sp20, actor->position);
         sp20[1] += 100.0f;
@@ -229,7 +229,7 @@ void func_808003DC_chevilmumbo(Actor* arg0, s32 arg1)
             return;
         case 4:
             actor_disableCollision(arg0);
-            if (func_800D395C() == 0)
+            if (game_isReplayMinigame() == 0)
             {
                 collectable_spawnItem(0x47U, TYPE_1_JIGGY, NULL, 1U, arg0->unk0);
                 func_808001F4_chevilmumbo(arg0, 0xF, 0x20, NULL);
@@ -245,7 +245,7 @@ void func_808003DC_chevilmumbo(Actor* arg0, s32 arg1)
             _chexploder_entrypoint_3(arg0, sp30, 3U);
             return;
         case 5:
-            if (func_800D395C() != 0) {
+            if (game_isReplayMinigame() != 0) {
                 _gcfrontend_entrypoint_10();
             }
             else {
@@ -660,7 +660,7 @@ void func_808030AC_chevilmumbo(Actor* arg0)
     f32 sp2C;
 
     sp44 = time_getDelta();
-    sp40 = func_80106790(arg0->unk3C);
+    sp40 = actorList_getFromMarker(arg0->unk3C);
     sp3C = actor_getAdditionalMem(sp40, 0U);
     _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1U, &D_80804208_chevilmumbo);
     if (sp3C) {}
@@ -668,8 +668,8 @@ void func_808030AC_chevilmumbo(Actor* arg0)
     if (arg0->unk70_10 == 1)
     {
         func_800C8E54(arg0->unk6C_0, arg0->scale * 400.0f, arg0->scale * 1000.0f);
-        func_800C8E84(arg0->unk6C_0, &D_808044E4_chevilmumbo);
-        func_800C8CB8(arg0->unk6C_0, arg0->position);
+        light_setColors(arg0->unk6C_0, &D_808044E4_chevilmumbo);
+        light_setPosition(arg0->unk6C_0, arg0->position);
         if (collectable_isSpawned(0x47, TYPE_1_JIGGY) == 0)
         {
             ml_vec3f_copy(sp30, (f32*)sp40->actorData);
@@ -723,10 +723,10 @@ void func_80803388_chevilmumbo(Actor* arg0)
     CHEVILMUMBO* sp30;
     f32 sp24[3];
 
-    sp34 = func_80106790(arg0->unk3C);
+    sp34 = actorList_getFromMarker(arg0->unk3C);
     sp30 = (CHEVILMUMBO*)actor_getAdditionalMem(sp34, 0U);
     arg0->scale = 0.4f;
-    arg0->unk6C_0 = func_800C8A98();
+    arg0->unk6C_0 = light_createNew();
     if (sp30->unk93 < 5)
     {
         ((f32*)arg0->actorData)[3] = 1000.0f;
@@ -771,7 +771,7 @@ s32 func_808034C8_chevilmumbo(Actor* arg0, s32 eventId, s32 arg2)
             func_8080300C_chevilmumbo(arg0);
             break;
         case 0x1C:
-            if (func_80106790(arg0->unk3C)->unk64_19)
+            if (actorList_getFromMarker(arg0->unk3C)->unk64_19)
             {
                 return 2;
             }
@@ -795,7 +795,7 @@ s32 func_808034C8_chevilmumbo(Actor* arg0, s32 eventId, s32 arg2)
     return 1;
 }
 
-void func_808035A8_chevilmumbo(Actor* arg0, s32 arg1)
+void func_808035A8_chevilmumbo(Actor* arg0, GraphicsBuffers* arg1)
 {
     arg0->rotation[0] = -arg0->rotation[0];
     func_80101970(arg0);
@@ -921,7 +921,7 @@ void func_8080398C_chevilmumbo(Actor* arg0, s32 arg1)
     s32 pad;
     f32 sp38[3];
     CHEVILMUMBO* temp_v0;
-    temp_v0 = (CHEVILMUMBO*)actor_getAdditionalMem(func_80106790(arg0->unk3C), 0U);
+    temp_v0 = (CHEVILMUMBO*)actor_getAdditionalMem(actorList_getFromMarker(arg0->unk3C), 0U);
     ml_vec3f_copy(arg0->position, temp_v0->unk78);
     ml_vec3f_assign_value(sp38, 0.0f, 0.0f, 0.0f);
     func_800DF47C(func_801017D0, arg0);

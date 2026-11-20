@@ -171,7 +171,7 @@ void func_80800538_bsbtrot(PlayerState* self)
         bastick_setZoneMax(self, 1, 1.0f);
         func_800A0CF4(self, 1);
         func_800A0CE8(self, 1);
-        func_8009BFE4(self, 1000.0f, 12.0f);
+        bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
         baroll_setAngularVelocity(self, 1000.0f, 12.0f);
         baflag_set(self, BA_FLAG_3);
         func_80094F14(self, 4, 1, 0.24f);
@@ -194,7 +194,7 @@ void func_8080061C_bsbtrot(PlayerState* self)
         bastick_resetZones(self);
         func_800A0CF4(self, 0);
         func_800A0CE8(self, 0);
-        func_8009BF5C(self, 0.0f);
+        bapitch_setIdeal(self, 0.0f);
         baroll_setIdeal(self, 0.0f);
         baflag_clear(self, BA_FLAG_3);
         if (sp24 != 0x5A) {
@@ -598,7 +598,7 @@ void bsbtrot_entrypoint_20(PlayerState* self)
     baphysics_set_horizontal_velocity(self, sp2C, baphysics_get_target_horizontal_velocity(self));
     func_800A0CF4(self, 1);
     func_800A0CE8(self, 1);
-    func_8009BFE4(self, 1000.0f, 12.0f);
+    bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
     baroll_setAngularVelocity(self, 1000.0f, 12.0f);
     baphysics_set_target_horizontal_velocity(self, 0.0f);
     func_8009D658(self);
@@ -624,7 +624,7 @@ void bsbtrot_entrypoint_21(PlayerState* self) {
         func_800963C0(self, &sp38);
         func_800F1EA4(&sp38, &sp34);
         func_8009D3A8(self, 1);
-        baphysics_set_target_horizontal_velocity(self, ml_map_f(func_8009BFD8(self), 20.0f, 60.0f, 550.0f, 700.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_map_f(bapitch_getIdeal(self), 20.0f, 60.0f, 550.0f, 700.0f));
         baphysics_set_target_yaw(self, sp34);
         _badust_entrypoint_1(self);
     }

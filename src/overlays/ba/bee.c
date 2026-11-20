@@ -42,7 +42,7 @@ void babee_entrypoint_1(s32 arg0) {
     sp3C = func_80092CDC(self, sp50, 4);
     sp40 = func_80092EB0(self);
     if (sp3C && sp40) {
-        sp30 = (player_isStable(self)) ? 0.0f : -func_8009BFCC(self);
+        sp30 = (player_isStable(self)) ? 0.0f : -bapitch_get(self);
         func_800F3BD0(self, 0x5, sp5C);
         func_800EEC30(sp44, sp30, yaw_get(self), bee->unk0[bee->index].unk0);
         func_80800008_babee(sp50, sp44, 0.0f);

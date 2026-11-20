@@ -14,8 +14,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E88E90/func_800AF5F0.s")
 
-s16* func_800AF5FC(ImageStruct* arg0, s32 arg1) {
-    return arg0->unk1C[arg1];
+s16* func_800AF5FC(ImageStruct* arg0, s32 frame) {
+    return arg0->unk1C[frame];
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E88E90/func_800AF614.s")

@@ -48,14 +48,14 @@ typedef struct {
     /* 0x12 */ u16 unk12_0 : 1;
     /* 0x14 */ u16 unk14; //Model
     /* 0x16 */ u16 unk16;
-	/* 0x18 */ u32 unk18_17 : 15;
+	/* 0x18 */ u32 unk18_21 : 11;
+	/* 0x18 */ u32 unk18_17 : 4;
 	/* 0x18 */ u32 unk18_16 : 1;
 	/* 0x18 */ u32 unk18_5 : 11; //Actor Index
 	/* 0x18 */ u32 unk18_1 : 4;
 	/* 0x18 */ u32 unk18_0 : 1;
     /* 0x1C */ s16 unk1C;
-    /* 0x1E */ s16 unk1E;
-    /* 0x20 */ u32 unk20;
+    /* 0x1E */ s16 unk1E[3];
     /* 0x24 */ u32 unk24_22 : 10;
     /* 0x24 */ u32 unk24_16 : 6;
     /* 0x24 */ u32 unk24_7 : 9;
@@ -91,7 +91,8 @@ typedef struct Actor {
     /* 0x58 */ f32 unk58;
     /* 0x5C */ u8 unk5C[3];
     /* 0x5F */ u8 unk5F;
-    /* 0x60 */ s32 pad60;
+    /* 0x60 */ s16 unk60;
+	/* 0x62 */ s16 unk62;
     /* 0x64 */ u32 unk64_31 : 1;
     /* 0x64 */ u32 unk64_30 : 1;
     /* 0x64 */ u32 unk64_29 : 1; //unk64 & 0x20000000
@@ -109,7 +110,8 @@ typedef struct Actor {
     /* 0x64 */ u32 unk64_17 : 1; //Marked for Deletion?
     /* 0x64 */ u32 unk64_16 : 1;
     /* 0x64 */ u32 unk64_0 : 16;
-    /* 0x68 */ s32 pad68;
+    /* 0x68 */ u16 unk68;
+	/* 0x6A */ u16 unk6A;
     /* 0x6C */ u32 unk6C_21 : 11;
     /* 0x6C */ u32 unk6C_9 : 12; //PropId
     /* 0x6C */ u32 unk6C_0 : 9; // if accessed directly: unk6C & 0x1FF, if assigned: ((u16)valueToAssign & 0x1FF) | (unk6E & 0xFE00);
@@ -186,7 +188,8 @@ typedef struct Actor {
     /* 0x80 */ s16 pad80;
     /* 0x82 */ s16 unk82[2]; //Holds index of extra memory
     /* 0x86 */ s16 pad86;
-    /* 0x88 */ u32 pad88;
+	/* 0x88 */ s16 unk88;
+	/* 0x88 */ s16 unk8A;
     /* 0x8C */ s16 unk8C;
 	/* 0x8E */ s16 unk8E;
     /* 0x90 */ s16 unk90;

@@ -30,7 +30,7 @@ void bsdie_entrypoint_0(PlayerState* self) {
     _basudie_entrypoint_4(self, 250.0f, 510.0f, -1400.0f, 25.0f, 3.5f);
     func_800A0CF4(self, 1);
     func_8009D820(self, 1.0f);
-    func_8009BFE4(self, 1000.0f, 12.0f);
+    bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
     self->unk15C.word = 0;
 }
 
@@ -92,7 +92,7 @@ void bsdie_entrypoint_1(PlayerState* self)
 void bsdie_entrypoint_2(PlayerState* self) {
     _basudie_entrypoint_6(self);
     func_800A0CF4(self, 0);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
 }
 
@@ -114,7 +114,7 @@ void bsdie_entrypoint_4(PlayerState* self) {
     self->unk16C = 250.0f;
     _basudie_entrypoint_4(self, 250.0f, 510.0f, -1400.0f, 30.0f, 4.0f);
     func_800A0CF4(self, 1);
-    func_8009BFE4(self, 1000.0f, 12.0f);
+    bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
     func_8009D820(self, 1.0f);
     self->unk15C.word = 0;
 }
@@ -167,7 +167,7 @@ void bsdie_entrypoint_5(PlayerState* self) {
 
 void bsdie_entrypoint_6(PlayerState* self) {
     _basudie_entrypoint_6(self);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
     func_800A0CF4(self, 0);
 }
@@ -189,7 +189,7 @@ void bsdie_entrypoint_8(PlayerState* self) {
     anctrl_setPlaybackType(temp_v0, 1);
     anctrl_start(temp_v0);
     _basudie_entrypoint_4(self, self->unk16C, 510.0f, -1400.0f, 30.0f, 3.3999999f);
-    func_8009BFE4(self, 1000.0f, 12.0f);
+    bapitch_setAngularVelocity(self, 1000.0f, 12.0f);
     func_8009D820(self, 1.0f);
     self->unk15C.word = 0;
 }
@@ -242,7 +242,7 @@ void bsdie_entrypoint_9(PlayerState* self) {
 
 void bsdie_entrypoint_10(PlayerState* self) {
     _basudie_entrypoint_6(self);
-    func_8009BF5C(self, 0.0f);
+    bapitch_setIdeal(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
 }
 

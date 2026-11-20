@@ -19,7 +19,7 @@ s32 func_80800000_chmineentrygrille(Actor* arg0, s32 arg1, u32 arg2) {
         flag_setValueTrue(FLAG_393_PROGRESS_OPENED_WORLD_GGM);
         return 1;
     case 0x90:
-        temp_v0 = func_80106790(func_80101080());
+        temp_v0 = actorList_getFromMarker(func_80101080());
         _chexploder_entrypoint_13(temp_v0, 6);
         _chexploder_entrypoint_15(temp_v0, 2, 1.0f);
 

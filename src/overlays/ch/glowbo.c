@@ -8,7 +8,7 @@ void func_80800A48_chglowbo(Actor*);
 void func_80800B10_chglowbo(Actor*);
 void func_80800E28_chglowbo(Actor*);
 void func_80800F64_chglowbo(Actor*);
-void func_80801118_chglowbo(Actor*, s32);
+void func_80801118_chglowbo(Actor*, GraphicsBuffers*);
 s32 func_8080115C_chglowbo(Actor*, s32, u32);
 void func_80801258_chglowbo(Actor* );
 
@@ -30,7 +30,7 @@ void func_80800A48_chglowbo(Actor*);
 void func_80800B10_chglowbo(Actor*);
 void func_80800E28_chglowbo(Actor*);
 void func_80800F64_chglowbo(Actor*);
-void func_80801118_chglowbo(Actor*, s32);
+void func_80801118_chglowbo(Actor*, GraphicsBuffers*);
 s32 func_8080115C_chglowbo(Actor*, s32, u32);
 ActorData D_808014C0_chglowbo = {
         /*0x0*/ 0x39,
@@ -196,7 +196,7 @@ void func_80800000_chglowbo(Actor* arg0)
     sp18[0] = (s32)sp18[0] * temp_v0->unk8;
     sp18[1] = (s32)sp18[1] * temp_v0->unk8;
     sp18[2] = (s32)sp18[2] * temp_v0->unk8;
-    func_800C8E84(temp_v0->unk4, sp18);
+    light_setColors(temp_v0->unk4, sp18);
 }
 
 void func_8080013C_chglowbo(Actor* arg0)
@@ -316,7 +316,7 @@ void func_808002F4_chglowbo(Actor* arg0)
                 {
                     ml_vec3f_copy(sp54, arg0->position);
                     sp54[1] += 150.0f;
-                    func_800C8CB8(sp74->unk4, sp54);
+                    light_setPosition(sp74->unk4, sp54);
                     func_80800000_chglowbo(arg0);
                 }
                 if (((sp74->unkC <= 0.0f) && (rand_percentChance(0.1f) != 0)) && (func_8010CAC0(arg0->position, 0x5DCU) != 0))
@@ -341,7 +341,7 @@ void func_808002F4_chglowbo(Actor* arg0)
                     sp48[0] = arg0->position[0];
                     sp48[1] = arg0->position[1] + 150.0f;
                     sp48[2] = arg0->position[2];
-                    func_800C8CB8(sp74->unk4, sp48);
+                    light_setPosition(sp74->unk4, sp48);
                     func_80800000_chglowbo(arg0);
                 }
                 if (func_80101E14(arg0, 0.3f) != 0)
@@ -415,14 +415,14 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
     case 0x13:
         sp2C->unk0 = arg2;
         break;
-    case 0x55:
-        sp2C->unk4 = func_800C8A98();
-        func_800C8E54(sp2C->unk4, 100.0f, 750.0f);
-        sp2C->unk16 = 1;
-        sp2C->unk8 = 0.5f;
-        break;
-    default:
-        return 0;
+        case 0x55:
+            sp2C->unk4 = light_createNew();
+            func_800C8E54(sp2C->unk4, 100.0f, 750.0f);
+            sp2C->unk16 = 1;
+            sp2C->unk8 = 0.5f;
+            break;
+        default:
+            return 0;
     }
     return 1;
 }
@@ -455,7 +455,7 @@ void func_80800A48_chglowbo(Actor* arg0)
         arg0->scale = 0.25f;
     }
     GLOWBO_DATA(arg0)->unkC = 100.0f;
-    temp_v0 = func_800C8A98();
+    temp_v0 = light_createNew();
     sp1C->unk4 = temp_v0;
     func_800C8E54(temp_v0, 100.0f, 750.0f);
     sp1C->unk8 = 0.5f;
@@ -612,7 +612,7 @@ void func_80800F64_chglowbo(Actor* arg0)
     }
 }
 
-void func_80801118_chglowbo(Actor* arg0, s32 arg1)
+void func_80801118_chglowbo(Actor* arg0, GraphicsBuffers* arg1)
 {
     func_800DF5D8(0x80, 0x80, 0x80, _subaddiefade_entrypoint_0(arg0));
     func_80101870(arg0, arg1);

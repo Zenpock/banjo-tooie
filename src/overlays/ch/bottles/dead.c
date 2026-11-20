@@ -11,7 +11,7 @@ void func_80800034_chbottlesdead()
     func_8010C964();
 }
 
-void func_80800054_chbottlesdead(Actor* arg0, void* arg1) 
+void func_80800054_chbottlesdead(Actor* arg0, GraphicsBuffers* arg1)
 {
     func_800DF744(3, 0);
     func_80101870(arg0, arg1);
