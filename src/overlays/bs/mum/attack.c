@@ -19,7 +19,7 @@ void func_80800054_bsmumattack(PlayerState *self) {
 
 void func_80800060_bsmumattack(PlayerState *self) {
     self->unk160.bytes[0] = func_8009D454(self, 0, D_808006F0_bsmumattack);
-    self->unk164.word = func_800C8A98();
+    self->unk164.word = light_createNew();
     self->unk16C = 1.0f;
 }
 
@@ -40,7 +40,7 @@ void func_808000E0_bsmumattack(PlayerState *self) {
     }
     
     func_80092C48(self, sp3C);
-    func_800C8CB8(self->unk164.word, sp3C);
+    light_setPosition(self->unk164.word, sp3C);
     if (func_8001210C(1) != 0) {
         temp_f10 = (s32) (self->unk16C * 255);
         sp30[0] = temp_f10;
@@ -55,7 +55,7 @@ void func_808000E0_bsmumattack(PlayerState *self) {
     sp28[1] = 120;
     sp28[2] = 500;
     func_800C8D4C(self->unk164.word, &sp28[1]);
-    func_800C8E84(self->unk164.word, sp30);
+    light_setColors(self->unk164.word, sp30);
 }
 
 void func_808001B4_bsmumattack(PlayerState *self, s32 arg1) {

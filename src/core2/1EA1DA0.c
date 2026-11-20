@@ -195,7 +195,7 @@ void func_800C8A08(void) {
     }
 }
 
-s32 func_800C8A98(void) {
+s32 light_createNew(void) {
     unkStruct800C85A0* sp24;
     unkStruct800C85A0* temp_v0;
     unkStruct800C85A0* var_a2;
@@ -217,18 +217,18 @@ s32 func_800C8A98(void) {
     var_a2->unk14 = 0;
     var_a2->unk18 = 0;
     var_a2->unk19 = 0;
-    func_800C8CB8(sp18, D_8011A9CC);
+    light_setPosition(sp18, D_8011A9CC);
     func_800C8D4C(sp18, D_8011A9D8);
-    func_800C8E84(sp18, D_8011A9E0);
+    light_setColors(sp18, D_8011A9E0);
     return sp18;
 }
 
 void func_800C8B84(s32 arg0) {
     unkStruct800C85A0* sp1C = vector_at(D_8012AB00, arg0 - 1);
 
-    func_800C8CB8(arg0, D_8011A9EC);
+    light_setPosition(arg0, D_8011A9EC);
     func_800C8D4C(arg0, D_8011A9F8);
-    func_800C8E84(arg0, D_8011AA00);
+    light_setColors(arg0, D_8011AA00);
     sp1C->unk16 = 2;
 }
 
@@ -257,7 +257,7 @@ void func_800C8C90(s32* arg0) {
 }
 
 
-void func_800C8CB8(s32 arg0, f32* arg1) {
+void light_setPosition(s32 arg0, f32* arg1) {
     unkStruct800C85A0* sp24;
     s16 sp1C[3];
 
@@ -303,7 +303,7 @@ void func_800C8E54(s32 arg0, f32 arg1, f32 arg2) {
     func_800C8D4C(arg0, sp18);
 }
 
-void func_800C8E84(s32 arg0, u32* arg1) {
+void light_setColors(s32 arg0, u32* arg1) {
     unkStruct800C85A0* temp_v0 = vector_at(D_8012AB00, arg0 - 1);
 
     if ((temp_v0->unkA != arg1[0]) || (temp_v0->unkB != arg1[1]) || (temp_v0->unkC != arg1[2])) {
@@ -339,7 +339,7 @@ void func_800C8FB0(s32 arg0, u32 arg1, u32 arg2, u32 arg3) {
     sp1C[0] = arg1;
     sp1C[1] = arg2;
     sp1C[2] = arg3;
-    func_800C8E84(arg0, sp1C);
+    light_setColors(arg0, sp1C);
 }
 
 void func_800C8FE0(s32 arg0, s32 arg1) {

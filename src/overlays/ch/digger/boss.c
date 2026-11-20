@@ -2571,7 +2571,7 @@ void func_80804C28_chdiggerboss(Actor* arg0)
 	for (var_s1 = 0; var_s1 < 4; var_s1++)
 	{
 		func_80805448_chdiggerboss(arg0, var_s1, 0);
-		temp_v0_3 = func_800C8A98();
+		temp_v0_3 = light_createNew();
 		temp_v0->unk30[var_s1].unk0 = temp_v0_3;
 		func_800C8F64(temp_v0_3, 9);
 		func_800C8D4C(temp_v0_3, &D_8080A038_chdiggerboss);
@@ -2702,8 +2702,8 @@ void func_808057D0_chdiggerboss(Actor* arg0) {
 		func_800C8FE0(temp_s1, var_s0);
 		if (var_s0 != 0)
 		{
-			func_800C8CB8(temp_s1, var_s2->unk30[var_s3].unkC);
-			func_800C8E84(temp_s1, D_8080A06C_chdiggerboss[func_8001210C(1)]);
+			light_setPosition(temp_s1, var_s2->unk30[var_s3].unkC);
+			light_setColors(temp_s1, D_8080A06C_chdiggerboss[func_8001210C(1)]);
 		}
 	}
 }

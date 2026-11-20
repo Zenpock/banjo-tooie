@@ -19,14 +19,14 @@ void func_80800008_bsbbilldrill(PlayerState* self) {
 
     if (func_800BF8E4() > 0) {
         if (self->unk168.word == 0) {
-            self->unk168.word = func_800C8A98();
+            self->unk168.word = light_createNew();
             func_800C8E54(self->unk168.word, 80.0f, 350.0f);
             func_800C8F64(self->unk168.word, 0xB);
         }
         player_getCoords(self, sp24);
         sp24[1] -= 10.0f;
-        func_800C8CB8(self->unk168.word, sp24);
-        func_800C8E84(self->unk168.word, func_8001210C(1) + &D_80800AB0_bsbbilldrill);
+        light_setPosition(self->unk168.word, sp24);
+        light_setColors(self->unk168.word, func_8001210C(1) + &D_80800AB0_bsbbilldrill);
     }
 }
 

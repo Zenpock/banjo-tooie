@@ -668,8 +668,8 @@ void func_808030AC_chevilmumbo(Actor* arg0)
     if (arg0->unk70_10 == 1)
     {
         func_800C8E54(arg0->unk6C_0, arg0->scale * 400.0f, arg0->scale * 1000.0f);
-        func_800C8E84(arg0->unk6C_0, &D_808044E4_chevilmumbo);
-        func_800C8CB8(arg0->unk6C_0, arg0->position);
+        light_setColors(arg0->unk6C_0, &D_808044E4_chevilmumbo);
+        light_setPosition(arg0->unk6C_0, arg0->position);
         if (collectable_isSpawned(0x47, TYPE_1_JIGGY) == 0)
         {
             ml_vec3f_copy(sp30, (f32*)sp40->actorData);
@@ -726,7 +726,7 @@ void func_80803388_chevilmumbo(Actor* arg0)
     sp34 = actorList_getFromMarker(arg0->unk3C);
     sp30 = (CHEVILMUMBO*)actor_getAdditionalMem(sp34, 0U);
     arg0->scale = 0.4f;
-    arg0->unk6C_0 = func_800C8A98();
+    arg0->unk6C_0 = light_createNew();
     if (sp30->unk93 < 5)
     {
         ((f32*)arg0->actorData)[3] = 1000.0f;

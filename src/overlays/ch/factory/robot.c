@@ -377,8 +377,8 @@ void func_80800920_chfactoryrobot(Actor* arg0)
                     _chelectricfence_entrypoint_1(arg0, &sp4C);
                 }
             }
-            func_800C8CB8(temp_v0->unk14, arg0->position);
-            func_800C8E84(temp_v0->unk14, D_80802890_chfactoryrobot[rand_percentChance(0.35f)]);
+            light_setPosition(temp_v0->unk14, arg0->position);
+            light_setColors(temp_v0->unk14, D_80802890_chfactoryrobot[rand_percentChance(0.35f)]);
         }
         else if (temp_v0_3 != 0)
         {
@@ -747,9 +747,9 @@ void func_8080183C_chfactoryrobot(Actor* arg0)
     func_80802398_chfactoryrobot(arg0);
     sp2C[0] *= arg0->scale;
     sp2C[1] *= arg0->scale;
-    temp_v0->unk14 = func_800C8A98();
-    func_800C8E84(temp_v0->unk14, &D_80802890_chfactoryrobot);
-    func_800C8CB8(temp_v0->unk14, arg0->position);
+    temp_v0->unk14 = light_createNew();
+    light_setColors(temp_v0->unk14, &D_80802890_chfactoryrobot);
+    light_setPosition(temp_v0->unk14, arg0->position);
     func_800C8F64(temp_v0->unk14, 3);
     func_800C8D4C(temp_v0->unk14, sp2C);
 
