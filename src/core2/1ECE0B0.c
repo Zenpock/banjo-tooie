@@ -218,11 +218,11 @@ void func_800F4EC8(s32 arg0, s32 arg1, s32 arg2, volatile s32 arg3, f32 arg4) {
     func_8009F860(sp24, arg1, arg2, arg3, arg4, player_getSpeedModifier(sp24) * 1000.0f);
 }
 
-void func_800F4F34(s32 arg0, f32* arg1, f32 arg2, f32 arg3) {
+s32 func_800F4F34(s32 arg0, f32* arg1, f32 arg2, f32 arg3) {
     PlayerState* sp24;
 
     sp24 = D_80135490.unk0[arg0];
-    func_8009FA20(sp24, arg1, arg2, arg3, player_getSpeedModifier(sp24) * 1000.0f);
+    return func_8009FA20(sp24, arg1, arg2, arg3, player_getSpeedModifier(sp24) * 1000.0f);
 }
 
 void func_800F4F98(s32 arg0)

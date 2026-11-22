@@ -159,7 +159,7 @@ void func_800F4CC0(s32);
 void func_800F4CEC(s32, u32);
 void character_affectCurrentHealth(s32, s32);
 void func_800F4E5C(s32, f32*, f32*, s32*, s32*);
-void func_800F4F34(s32, f32*, f32, f32);
+s32 func_800F4F34(s32, f32*, f32, f32);
 void func_800F5008(GraphicsBuffers*);
 void func_800F50D0(GraphicsBuffers*);
 void func_800F51CC();
