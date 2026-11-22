@@ -31,6 +31,7 @@ void func_800B8CB0(s32);
 void graphics_setTextColors(s8, s8, s8);
 void graphics_setTextPattern(s32 pattern);
 void graphics_setTextScale(f32 size);
+s32 func_800B8CFC(char*);
 void graphics_drawChar(GraphicsBuffers*, s32, s32, char);
 void graphics_drawString(GraphicsBuffers*, s32, s32, char*);
 void graphics_drawStringHorizCentered(GraphicsBuffers*, s32, char*);

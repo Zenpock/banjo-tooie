@@ -309,7 +309,7 @@ void func_808002E0_chjinjo(Actor* arg0)
             {
                 func_800F82D4(arg0->actorData[4], 0);
                 flag_setMultipleValue(FLAG2_6D0_UNK, temp_v0_4, 4);
-                _glcutDll_entrypoint_6(0x142U, 0x84U);
+                _glcutDll_entrypoint_6(MAP_142_JV_JINJO_VILLAGE, 0x84U);
             }
             else
             {
@@ -328,7 +328,7 @@ void func_808002E0_chjinjo(Actor* arg0)
 
 void chjinjo_entrypoint_4(s32 arg0, s32 arg1, s32 arg2)
 {
-    _glcutDll_entrypoint_6(0x142U, 0x84U);
+    _glcutDll_entrypoint_6(MAP_142_JV_JINJO_VILLAGE, 0x84U);
 }
 
 s32 func_80800C10_chjinjo(Actor* arg0, s32 eventId, s32 arg2)

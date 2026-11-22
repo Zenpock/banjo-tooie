@@ -2262,7 +2262,7 @@ void func_80803E84_chdiggerboss(Actor* arg0)
 				func_800C4B64(sp30);
 				func_800C4B70(sp2C);
 			}
-			temp_v0->unkB = _subaddieaudioloop_entrypoint_7((s32)temp_v0->unkB, arg0->position, 1, &D_80809FC0_chdiggerboss, arg0->unk70_0);
+			temp_v0->unkB = _subaddieaudioloop_entrypoint_7(temp_v0->unkB, arg0->position, 1, &D_80809FC0_chdiggerboss, arg0->unk70_0);
 			if (temp_v0->unkB != 0) {
 				func_800C31DC(temp_v0->unkB, sp30);
 				func_800C3058(temp_v0->unkB, sp2C);
@@ -2284,7 +2284,7 @@ void func_80803E84_chdiggerboss(Actor* arg0)
 			}
 			break;
 		case 3:
-			temp_v0->unkC = _subaddieaudioloop_entrypoint_7((s32)temp_v0->unkC, arg0->position, 1, &D_80809FD0_chdiggerboss, arg0->unk70_0);
+			temp_v0->unkC = _subaddieaudioloop_entrypoint_7(temp_v0->unkC, arg0->position, 1, &D_80809FD0_chdiggerboss, arg0->unk70_0);
 			break;
 		case 4:
 			func_80804450_chdiggerboss(arg0);
@@ -3018,7 +3018,7 @@ void func_808064CC_chdiggerboss(Actor* arg0, s32 arg1)
 	DiggerBossAdditionalMem0* sp24;
 
 	sp24 = actor_getAdditionalMem(arg0, 0U);
-	sp24->unk24 = _subaddieaudioloop_entrypoint_7((s32)sp24->unk24, arg0->position, arg1, &D_8080A0EC_chdiggerboss, arg0->unk70_0);
+	sp24->unk24 = _subaddieaudioloop_entrypoint_7(sp24->unk24, arg0->position, arg1, &D_8080A0EC_chdiggerboss, arg0->unk70_0);
 }
 
 //Grunty
@@ -3331,7 +3331,7 @@ void func_80808034_chdiggerboss(Actor* arg0) {
 			func_808081AC_chdiggerboss(arg0);
 		}
 	}
-	sp24->unkA6 = _subaddieaudioloop_entrypoint_7((s32)sp24->unkA6, arg0->position, sp20, &D_8080A160_chdiggerboss, arg0->unk70_0);
+	sp24->unkA6 = _subaddieaudioloop_entrypoint_7(sp24->unkA6, arg0->position, sp20, &D_8080A160_chdiggerboss, arg0->unk70_0);
 }
 //Hag-1
 void func_808080C0_chdiggerboss(Actor* arg0, s32 arg1)

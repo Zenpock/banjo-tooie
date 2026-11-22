@@ -30,6 +30,7 @@ void func_8008FE94(s32, f32*);
 f32 func_8008FEF0();
 void func_8008FF40(f32*);
 void func_8008FFBC(f32*);
+s32 func_8008FFE8();
 f32 func_80090010(void);
 s32 func_80090080();
 void func_800900D0(s32);

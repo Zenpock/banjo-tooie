@@ -101,15 +101,15 @@ void func_800F4A2C(s32 arg0,f32* arg1)
 }
 
 
-void func_800F4A58(s32 arg0, s32 arg1, f32 arg2) {
+void func_800F4A58(s32 arg0, f32* arg1, f32 arg2) {
     _badrone_entrypoint_14(D_80135490.unk0[arg0], arg1, arg2);
 }
 
-void func_800F4A8C(s32 arg0, s32 arg1, f32 arg2) {
+void func_800F4A8C(s32 arg0, f32* arg1, f32 arg2) {
     _badrone_entrypoint_15(D_80135490.unk0[arg0], arg1, arg2);
 }
 
-void func_800F4AC0(s32 arg0, s32 arg1, f32 arg2) {
+void func_800F4AC0(s32 arg0, f32* arg1, f32 arg2) {
     _badrone_entrypoint_16(D_80135490.unk0[arg0], arg1, arg2);
 }
 
@@ -170,7 +170,7 @@ s32 func_800F4C24(s32 arg0) {
         return 0;
     }
     temp_v0 = bs_getCurrentState(sp1C);
-    if ((temp_v0 == 0xED) || (temp_v0 == 0x157)) {
+    if ((temp_v0 == 0xED) || (temp_v0 == BS_STATE_157_START_TALON_TORPEDO)) {
         return 0;
     }
     return 1;
@@ -218,11 +218,11 @@ void func_800F4EC8(s32 arg0, s32 arg1, s32 arg2, volatile s32 arg3, f32 arg4) {
     func_8009F860(sp24, arg1, arg2, arg3, arg4, player_getSpeedModifier(sp24) * 1000.0f);
 }
 
-void func_800F4F34(s32 arg0, f32* arg1, f32 arg2, f32 arg3) {
+s32 func_800F4F34(s32 arg0, f32* arg1, f32 arg2, f32 arg3) {
     PlayerState* sp24;
 
     sp24 = D_80135490.unk0[arg0];
-    func_8009FA20(sp24, arg1, arg2, arg3, player_getSpeedModifier(sp24) * 1000.0f);
+    return func_8009FA20(sp24, arg1, arg2, arg3, player_getSpeedModifier(sp24) * 1000.0f);
 }
 
 void func_800F4F98(s32 arg0)
@@ -1863,7 +1863,7 @@ void func_800F8874(s32 arg0)
     func_8009224C(D_80135490.unk0[arg0]);
 }
 
-unkStruct800F88A0* func_800F88A0(s32 arg0) {
+unkStruct800F88A0* func_800F88A0(TransformationId arg0) {
     unkStruct800F88A0* sp1C;
     unkStruct800F88A0* temp_v0;
 
@@ -1900,20 +1900,20 @@ s32 func_800F8914(unkStruct800F88A0* arg0, s32 arg1)
     return temp;
 }
 
-s32 func_800F89BC(void) {
-    if (D_801354F8.splitStatus == 2) {
-        return 0xB;
+TransformationId func_800F89BC(void) {
+    if (D_801354F8.splitStatus == SPLIT_STATE_SPLIT) {
+        return TRANSFORM_B_KAZOOIE;
     }
-    return 1;
+    return TRANSFORM_1_BK;
 }
 
-s32 func_800F89E4(s32 arg0, f32* arg1) {
+s32 func_800F89E4(TransformationId arg0, f32 arg1[3]) {
     s32 sp1C;
 
-    if (arg0 == 0xA) {
+    if (arg0 == TRANSFORM_A_BANJO) {
         ml_vec3f_copy(arg1, &D_80135500);
         sp1C = D_8013551C;
-    } else if (arg0 == 0xB) {
+    } else if (arg0 == TRANSFORM_B_KAZOOIE) {
         ml_vec3f_copy(arg1, &D_80135510);
         sp1C = D_8013551C;
     }
@@ -1926,11 +1926,11 @@ f32 func_800F8A50(void)
 	return D_8013550C;
 }
 
-MapId func_800F8A5C(s32 arg0) {
+MapId func_800F8A5C(TransformationId arg0) {
     return func_800F88A0(arg0)->unk22;
 }
 
-u8 func_800F8A80(s32 arg0) {
+u8 func_800F8A80(TransformationId arg0) {
     return *(s16*)&func_800F88A0(arg0)->unk20;
 }
 
@@ -1953,14 +1953,14 @@ u8 func_800F8AA4(void) {
     return 0;
 }
 
-void func_800F8B0C(s32 arg0, s32 arg1) {
+void func_800F8B0C(TransformationId arg0, s32 arg1) {
     u8* v0;
 
     v0 = func_800F88A0(arg0);
     ml_vec3f_copy(arg1, v0 + 0x24);
 }
 
-void func_800F8B38(s32 arg0, s32 arg1) {
+void func_800F8B38(TransformationId arg0, s32 arg1) {
     u8* v0;
 
     v0 = func_800F88A0(arg0);
@@ -1971,11 +1971,11 @@ s32 func_800F8B64(void) {
     return (s32)D_801354F8.unk1;
 }
 
-u8 func_800F8B70(void) {
+s32 func_800F8B70(void) {
     return D_801354F8.unk4;
 }
 
-u8 func_800F8B7C(void) {
+s32 func_800F8B7C(void) {
     return D_801354F8.unk5;
 }
 
@@ -1985,7 +1985,7 @@ SPLITUP_STATUS bs_getSplitStatus(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F8B94.s")
 
-void func_800F8D50(s32 arg0, s32 arg1) {
+void func_800F8D50(s32 arg0, TransformationId arg1) {
     func_800F8D80(arg0, func_800F88A0(arg1));
 }
 
@@ -1993,7 +1993,7 @@ void func_800F8D80(s32 arg0, unkStruct800F88A0* arg1) {
     _plcamera_entrypoint_12(arg0, arg1->unk4, arg1->unk10);
 }
 
-s32 func_800F8DA8(s32 arg0) {
+s32 func_800F8DA8(TransformationId arg0) {
     s32 var_v1;
 
     if (func_800F88A0(arg0) != 0) {
@@ -2024,7 +2024,7 @@ void func_800F8E08(void) {
     func_800F9A44();
 }
 
-void func_800F8E78(s32 arg0) {
+void func_800F8E78(TransformationId arg0) {
     void* temp_v0;
 
     temp_v0 = func_800F88A0(arg0);
@@ -2076,7 +2076,7 @@ void func_800F8F3C(void) {
     }
 }
 
-void func_800F9070(s32 arg0, s32 arg1) {
+void func_800F9070(TransformationId arg0, s32 arg1) {
     unkStruct800F88A0* result = func_800F88A0(arg0);
     result->unk1 = arg1;
 }

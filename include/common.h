@@ -43,7 +43,7 @@ typedef struct {
     /* 0x04 */ u32* unk4;
     /* 0x08 */ CallbackTable* (*unk8)(void);
     /* 0x0C */ u32 unkC;
-    /* 0x10 */ s16 unk10;
+    /* 0x10 */ u16 unk10;
     /* 0x12 */ u16 unk12_1:15;
     /* 0x12 */ u16 unk12_0 : 1;
     /* 0x14 */ u16 unk14; //Model

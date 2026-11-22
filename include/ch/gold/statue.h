@@ -1,0 +1,25 @@
+#ifndef __CH_GOLD_STATUE_H__
+#define __CH_GOLD_STATUE_H__
+
+#include "common.h"
+#include "ca/pod.h"
+#include "ch/glowbo.h"
+#include "core2/1E691A0.h"
+#include "core2/1EB3750.h"
+#include "core2/1EB5E70.h"
+#include "core2/1ECE0B0.h"
+#include "core2/1ED8C80.h"
+#include "core2/1EDA900.h"
+#include "core2/1EDAEA0.h"
+#include "core2/1EDB4D0.h"
+#include "core2/1EDCA30.h"
+#include "core2/1EE5DF0.h"
+#include "gl/cutDll.h"
+#include "su/baddieDll.h"
+#include "su/baddieaudioloop.h"
+#include "su/baddieaudioquick.h"
+#include "su/baddieskeleton.h"
+#include "su/deflect.h"
+#include "su/mumbofx.h"
+#include "ch/mumbo/pad.h"
+#endif

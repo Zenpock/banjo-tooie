@@ -30,7 +30,7 @@ void func_8008F990(s32 arg0,f32 arg1)
     func_800F4A58(character_getActiveIndex(),arg0,arg1);
 }
 
-void func_8008F9C4(s32 arg0,s32 arg1)
+void func_8008F9C4(f32* arg0, f32 arg1)
 {
     func_800F4A8C(character_getActiveIndex(),arg0,arg1);
 }
@@ -59,7 +59,10 @@ void func_8008FA94(s32 arg0,s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_8008FB10.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_8008FB58.s")
+s32 func_8008FB58(f32 arg0[3], f32 arg1, f32 arg2)
+{
+    return func_800F4F34(character_getActiveIndex(), arg0, arg1, arg2);
+}
 
 void activePlayer_affectCurrentHealth(s32 arg0)
 {

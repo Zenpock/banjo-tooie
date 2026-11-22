@@ -587,7 +587,9 @@ typedef struct player_state_s {
 	/* 0xF0 */ ba_unknown_F0_s* unkF0;
     /* 0xF4 */ struct ba_roll_s *roll;
     /* 0xF8 */ struct ba_yaw_s *yaw;
-    u8 padFC[0x10];
+    u8 padFC[0x4];
+    /* 0x100 */ s32* unk100;
+    u8 pad104[0x8];
     /* 0x10C */ ba_shoes_s* shoes;
     u8 pad110[0x4];
     /* 0x114 */ BaUnknown114* unk114;

@@ -1954,7 +1954,7 @@ void func_80803794_chhandcart(Actor* arg0)
             func_80105634(arg0);
             if (_gclevel_entrypoint_3(0x18) != 0)
             {
-                _glcutDll_entrypoint_6(0x136, 0x55);
+                _glcutDll_entrypoint_6(MAP_136_CCL_CLOUD_CUCKOOLAND, 0x55);
             }
             else
             {

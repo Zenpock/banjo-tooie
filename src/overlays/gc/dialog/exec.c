@@ -1,4 +1,4 @@
-#include "common.h"
+#include "gc/dialogexec.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/dialog/exec/func_80800000_gcdialogexec.s")
 

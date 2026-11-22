@@ -69,7 +69,7 @@ s32 func_80800220_bswalk(PlayerState* self)
     return self->unk16C == 0.0f;
 }
 
-BsStickZoneId func_80800248_bswalk(PlayerState* self, BsStickZoneId arg1)
+BanjoStateId func_80800248_bswalk(PlayerState* self, BanjoStateId arg1)
 {
     if (bakey_pressed(self, BUTTON_B) != 0)
     {

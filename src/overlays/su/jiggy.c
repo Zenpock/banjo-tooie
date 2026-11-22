@@ -211,7 +211,7 @@ void sujiggy_entrypoint_15(s32 arg0, s32 arg1)
     }
     if (arg1 != 0)
     {
-        _glcutDll_entrypoint_6(0x14FU, 0x67U);
+        _glcutDll_entrypoint_6(MAP_14F_IOH_WOODED_HOLLOW, 0x67U);
         return;
     }
     flag_setValueTrue(FLAG_58A_UNK);

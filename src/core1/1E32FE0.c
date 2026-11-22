@@ -19,7 +19,17 @@ void func_8001B4B0(void)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E32FE0/func_8001B4E8.s")
+void func_8001B4E8(void)
+{
+    int index;
+    for (index = 2; index < 0xFA; index++)
+    {
+        if (D_8007BF10[index].unk0)
+        {
+
+        }
+    }
+}
 
 void func_8001B50C(void)
 {
@@ -45,9 +55,10 @@ s16 func_8001B668(s32 arg0, s32 arg1)
     return 0;
 }
 
-void func_8001B710(s16 arg0, s32 arg1)
+void* func_8001B710(s16 index, s32 size)
 {
-    D_8007BF10[arg0].unk0 = heap_realloc(D_8007BF10[arg0].unk0, arg1);
+    D_8007BF10[index].unk0 = heap_realloc(D_8007BF10[index].unk0, size);
+    return D_8007BF10[index].unk0;
 }
 
 void func_8001B754(s16 arg0)
@@ -61,9 +72,9 @@ void* func_8001B798(s16 arg0)
     return D_8007BF10[arg0].unk0;
 }
 
-void func_8001B7B8(s16 arg0) 
+s32 func_8001B7B8(s16 arg0) 
 {
-    heap_get_allocation_size(D_8007BF10[arg0].unk0);
+    return heap_get_allocation_size(D_8007BF10[arg0].unk0);
 }
 
 void func_8001B7F0(s16 arg0, u8 arg1, s32 arg2)

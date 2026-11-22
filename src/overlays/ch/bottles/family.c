@@ -56,7 +56,7 @@ void func_8080088C_chbottlesfamily(Actor* arg0, s32 arg1, s32 arg2)
 
 	case 0x1501:
 		func_80800BC0_chbottlesfamily(arg0);
-		_glcutDll_entrypoint_6(0x142U, 0x66U);
+		_glcutDll_entrypoint_6(MAP_142_JV_JINJO_VILLAGE, 0x66U);
 		break;
 
 	default:

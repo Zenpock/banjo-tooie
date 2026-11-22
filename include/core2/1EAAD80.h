@@ -10,6 +10,8 @@ void inventory_setup();
 void inventory_free();
 void inventory_defrag(void);
 void func_800D162C();
+s32 inventory_getIndex(s32 arg0);
+void inventory_setValue(s32 inventoryIndex, s32 newValue);
 void inventory_addValue(s32, s32);
 void inventory_decrementValue(s32);
 //Inventory Item by 0 to show item value

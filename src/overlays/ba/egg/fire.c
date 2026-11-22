@@ -164,7 +164,7 @@ void baeggfire_entrypoint_3(PlayerState* arg0, f32* arg1, f32* arg2)
 	ml_vec3f_set_length(arg2, 1.0f);
 }
 
-void baeggfire_entrypoint_4(s32 arg0)
+void baeggfire_entrypoint_4(PlayerState* arg0)
 {
     func_8009E0AC(arg0, 1);
 }

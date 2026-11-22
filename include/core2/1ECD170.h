@@ -48,6 +48,7 @@ void func_800F4200(PlayerState*, f32*);
 s32 func_800F4244(PlayerState*);
 s32 func_800F424C(PlayerState*);
 PlayerState* func_800F43A8(s32);
+void func_800F44DC(PlayerState*, s32);
 void func_800F452C(PlayerState*, f32*);
 void func_800F457C(PlayerState*, s32);
 void func_800F45B0(PlayerState*, s32, f32*);
