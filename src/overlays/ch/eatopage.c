@@ -67,7 +67,7 @@ void func_80800070_chcheatopage(Actor* actor)
         {
             func_800F82D4(character_getActiveIndex(), 0);
             actor_mark_delete(actor);
-            _glcutDll_entrypoint_6(0xADU, 1U);
+            _glcutDll_entrypoint_6(MAP_AD_GL_ENTRANCE, 1U);
         }
     }
 }

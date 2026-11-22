@@ -523,7 +523,7 @@ void func_80800E30_chstonepillar(Actor* arg0)
     {
         flag_setValueTrue(FLAG3_9D5_UNK);
         flag_setValueTrue(sp1C->unk2C + 0x65C);
-        _glcutDll_entrypoint_6(0xB9U, 0xBU);
+        _glcutDll_entrypoint_6(MAP_B9_MT_PRISON_COMPOUND, 0xBU);
     }
 }
 
@@ -582,7 +582,7 @@ void func_808010CC_chstonepillar(Actor* arg0)
 {
     if ((flag_getValue(FLAG3_9D9_UNK) == 0) && (map_getCurrent() != MAP_B9_MT_PRISON_COMPOUND) && (func_800F6CC8(character_getActiveIndex()) == 0))
     {
-        _glcutDll_entrypoint_6(0xB9U, 0xBU);
+        _glcutDll_entrypoint_6(MAP_B9_MT_PRISON_COMPOUND, 0xBU);
     }
 }
 

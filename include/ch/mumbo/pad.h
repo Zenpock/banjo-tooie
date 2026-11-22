@@ -21,4 +21,6 @@
 #include "core2/1EE27C0.h"
 #include "core2/1EE5DF0.h"
 
+s16 _chmumbopad_entrypoint_0(s32);
+
 #endif

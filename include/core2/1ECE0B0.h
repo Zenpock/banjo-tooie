@@ -239,6 +239,7 @@ void func_800F7C0C(s32, s32, f32);
 s32 func_800F7C58(s32 arg0, s32 arg1, s32 arg2);
 void func_800F7C9C(u32, s32, s32, s32);
 void func_800F7CF4(s32, s32, f32*);
+void func_800F7D38(s32, s32, f32*, f32);
 s32 func_800F7E3C(s32, s32);
 void func_800F7E64(s32, TransformationId);
 void func_800F7F50(u32, f32*, f32*, f32, s32, s32);

@@ -20,7 +20,7 @@ void bsmum_entrypoint_0(PlayerState *self) {
 
     if (func_8009E6EC(self) == 0x43) {
         temp_v0 = bs_getCurrentState(self);
-        if ((temp_v0 == 0xE5) || (temp_v0 == 0xE6) || (temp_v0 == 0xE7) || (temp_v0 == 0xF7)) {
+        if ((temp_v0 == BS_STATE_E5) || (temp_v0 == BS_STATE_E6) || (temp_v0 == BS_STATE_E7) || (temp_v0 == BS_STATE_F7)) {
             bs_setState(self, BS_STATE_11E);
             func_8009E830(self, 2);
             return;

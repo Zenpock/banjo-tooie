@@ -36,7 +36,7 @@ s32 func_80800000_chlagoonufoext(Actor* arg0, s32 arg1, s32 arg2)
             _susubgame_entrypoint_4(arg0, actor_getAdditionalMem(arg0, 0U));
             if (_gclevel_entrypoint_3(0x17) != 0)
             {
-                _glcutDll_entrypoint_6(0x128, 0x4A);
+                _glcutDll_entrypoint_6(MAP_128_HP_ICY_SIDE, 0x4A);
             }
             return 4;
         }

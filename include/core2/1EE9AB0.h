@@ -48,7 +48,7 @@ void func_80110818(s32, Vec3f*);
 // func_80110890
 // func_80110898
 void func_801108A0(PlayerState*);
-// func_80110928
+void func_80110928(PlayerState*);
 // func_80110970
 // func_80110A24
 // func_80110A68

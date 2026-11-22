@@ -24,7 +24,7 @@ extern u8 D_8012762C;
 void glcutDll_entrypoint_16(void);
 void glcutDll_entrypoint_11(u32 arg0);
 void glcutDll_entrypoint_10(u32 arg0);
-void glcutDll_entrypoint_7(u32 arg0);
+void glcutDll_entrypoint_7(MapId);
 
 void func_80800000_glcutDll(u32 arg0)
 {
@@ -197,7 +197,7 @@ void glcutDll_entrypoint_5(void)
     }
 }
 
-void glcutDll_entrypoint_6(u32 arg0, u32 arg1)
+void glcutDll_entrypoint_6(MapId arg0, u32 arg1)
 {
     glcutDll_entrypoint_0();
     glcutDll_entrypoint_7(arg0);
@@ -206,7 +206,7 @@ void glcutDll_entrypoint_6(u32 arg0, u32 arg1)
 }
 
 //Set the Cutscene Map
-void glcutDll_entrypoint_7(u32 arg0) 
+void glcutDll_entrypoint_7(MapId arg0)
 {
     D_801275E8.unk0 = arg0;
 }

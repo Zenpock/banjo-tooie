@@ -235,7 +235,7 @@ typedef struct ActorData {
     s16 unk0;
     s16 unk2; //PropId
     u16 Model;
-    s16 unk6;
+    s16 unk6; //Starting ActorState
     void *unk8;
     void (*update_func)(Actor* actor); //Update
     void (*unk10_func)(Actor* actor);

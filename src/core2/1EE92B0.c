@@ -18,9 +18,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE92B0/func_8010FD60.s")
 
-void func_8010FD88()
+void func_8010FD88(s32 arg0)
 {
-    func_8010FD08();
+    func_8010FD08(arg0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE92B0/func_8010FDA8.s")
