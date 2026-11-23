@@ -1,6 +1,6 @@
 #include "core2/1ECD070.h"
 
-void func_800F3780(f32 arg0, Vec2f* arg1, s16 arg2) {
+f32 func_800F3780(f32 arg0, Vec2f* arg1, s16 arg2) {
     s32 lo;
     s32 hi;
     s32 mid;
@@ -28,5 +28,5 @@ void func_800F3780(f32 arg0, Vec2f* arg1, s16 arg2) {
             }
         } while (next < hi);
     }
-    ml_map_f(arg0, (lo + arg1)->x, (hi + arg1)->x, (lo + arg1)->y, (hi + arg1)->y);
+    return ml_map_f(arg0, (lo + arg1)->x, (hi + arg1)->x, (lo + arg1)->y, (hi + arg1)->y);
 }

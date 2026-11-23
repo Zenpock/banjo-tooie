@@ -463,30 +463,30 @@ PropId character_getHeldProp(s32 charIndex) {
     return 0;
 }
 
-u32 func_800F5754(s32 arg0) {
+u32 func_800F5754(s32 charIdx) {
     ActorMarker* temp;
 
-    temp = _bahold_entrypoint_5(D_80135490.unk0[arg0]);
+    temp = _bahold_entrypoint_5(D_80135490.unk0[charIdx]);
     if (temp != NULL) {
         return temp->unk24_22;
     }
     return 0;
 }
 
-void func_800F5794(s32 arg0)
+void func_800F5794(s32 charIdx, s32 arg1, s32 arg2)
 {
-    func_800F3B3C(D_80135490.unk0[arg0]);
+    func_800F3B3C(D_80135490.unk0[charIdx], arg1, arg2);
 }
 
-void func_800F57C0(s32 arg0) {
+void func_800F57C0(s32 charIdx) {
     s32 sp18[2];
 
-    func_8008E9B8(D_80135490.unk0[arg0], sp18);
+    func_8008E9B8(D_80135490.unk0[charIdx], sp18);
 }
 
-void func_800F57F0(s32 arg0, f32* arg1)
+void func_800F57F0(s32 charIdx, f32* arg1)
 {
-    func_800F3B90(D_80135490.unk0[arg0],arg1);
+    func_800F3B90(D_80135490.unk0[charIdx],arg1);
 }
 
 s32 func_800F581C(s32 arg0) {
@@ -1659,9 +1659,9 @@ void func_800F81D4(s32 arg0)
     _bafpctrl_entrypoint_12(D_80135490.unk0[arg0]);
 }
 
-void func_800F8200(s32 arg0)
+void func_800F8200(s32 arg0,s32 arg1)
 {
-    func_800F4524(D_80135490.unk0[arg0]);
+    func_800F4524(D_80135490.unk0[arg0],arg1);
 }
 
 void func_800F822C(s32 arg0, f32 arg1, f32 arg2) {

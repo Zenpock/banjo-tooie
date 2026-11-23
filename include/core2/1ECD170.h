@@ -11,6 +11,7 @@
 #include "ba/statetimer.h"
 #include "ba/stick.h"
 #include "ba/yaw.h"
+#include "bs/jump.h"
 #include "core1/heap.h"
 #include "core2/1E66990.h"
 #include "core2/1E67DA0.h"
@@ -38,23 +39,31 @@
 #include "freelist.h"
 
 void player_destroy(PlayerState*);
-s32 func_800F38A8(PlayerState*, s32);
-s32 func_800F3930(PlayerState*, s32, s32);
+int func_800F38A8(PlayerState*, s32);
+s32 func_800F3930(PlayerState* , s32, s32);
+s32 func_800F3A78(PlayerState*, s32, s32);
+f32 func_800F3B3C(PlayerState*, f32*, s32);
+void func_800F3B90(PlayerState*, f32*);
 void player_getCoords_Dupe(PlayerState*, f32*);
-void func_800F3BD0(PlayerState*, s32, f32[3]);
+void func_800F3BD0(PlayerState*, s32, f32*);
+//player_getRotation
+void func_800F3E84(PlayerState*, f32 [3]);
 s32 func_800F3ED0(PlayerState*);
 s32 func_800F40EC(PlayerState*);
-void func_800F4200(PlayerState*, f32*);
+void func_800F4200(PlayerState* , f32*);
 s32 func_800F4244(PlayerState*);
 s32 func_800F424C(PlayerState*);
+s32 func_800F4354(u32);
 PlayerState* func_800F43A8(s32);
 void func_800F44DC(PlayerState*, s32);
+void func_800F4524(PlayerState*, s32);
 void func_800F452C(PlayerState*, f32*);
-void func_800F457C(PlayerState*, s32);
+void func_800F457C(PlayerState* , s32);
 void func_800F45B0(PlayerState*, s32, f32*);
-void func_800F4648(PlayerState*, f32*);
+void func_800F45E0(PlayerState*, f32 [3]);
+void func_800F4648(PlayerState*, f32 [3]);
 void func_800F468C(PlayerState*);
+//PlayerState defrag
 PlayerState* func_800F46D8(PlayerState*);
-f32 func_800F3780(f32, s32[], s32);
 
 #endif // __CORE2_1ECD170_H__

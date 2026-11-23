@@ -51,7 +51,7 @@ BsScript _bsjump_entrypoint_11(BsScriptType);
 // bsjump_entrypoint_13
 void bsjump_entrypoint_14(PlayerState* self);
 BsScript _bsjump_entrypoint_15(BsScriptType);
-// bsjump_entrypoint_16
+s32 _bsjump_entrypoint_16(PlayerState*);
 // bsjump_entrypoint_17
 // bsjump_entrypoint_18
 // bsjump_entrypoint_19

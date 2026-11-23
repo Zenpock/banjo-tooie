@@ -258,24 +258,24 @@ void func_80098E64(PlayerState* self)
         func_8009E9FC(0.0f);
         switch (sp30)
         {
-        case 8:
-            func_8009E9FC(bastatetimer_get(self, BA_STATE_TIMER_ID_2_LONGLEG));
-            break;
-        case 9:
-            if (player_getTransformation(self) == TRANSFORM_6_BEE)
-            {
-                func_8009EAD0(4);
-            }
-            break;
-        case 18:
-            func_8009EAD0(3);
-            break;
-        case 19:
-            func_8009EAD0(6);
-            break;
-        case 20:
-            func_8009EAD0(7);
-            break;
+            case BS_STATETYPE_8_STILT:
+                func_8009E9FC(bastatetimer_get(self, BA_STATE_TIMER_ID_2_LONGLEG));
+                break;
+            case BS_STATETYPE_9_FLYING:
+                if (player_getTransformation(self) == TRANSFORM_6_BEE)
+                {
+                    func_8009EAD0(4);
+                }
+                break;
+            case BS_STATETYPE_12_BANSACK:
+                func_8009EAD0(3);
+                break;
+            case BS_STATETYPE_13_BANSHACK:
+                func_8009EAD0(6);
+                break;
+            case BS_STATETYPE_14_BANSNOOZE:
+                func_8009EAD0(7);
+                break;
         }
     }
     var_a1 = bs_matchesCurrentStateType(self, BS_STATETYPE_5_FIRST_PERSON)?1:0;
