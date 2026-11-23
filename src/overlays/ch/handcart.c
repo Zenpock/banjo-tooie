@@ -567,7 +567,7 @@ void func_8080111C_chhandcart(Actor* arg0)
         //Position
         func_800907C0(arg0->position);
         //Rotation
-        func_800906DC(arg0->rotation);
+        activePlayer_setRotation(arg0->rotation);
     }
 }
 
@@ -920,7 +920,7 @@ void func_80801D50_chhandcart(Actor* arg0)
         if ((temp_f0 < -35.0f) || (temp_f0 > 35.0f))
         {
             sp28[1] += temp_f0 * gameSpeed * 5.0f;
-            func_800906DC(sp28);
+            activePlayer_setRotation(sp28);
         }
         else
         {

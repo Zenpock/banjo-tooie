@@ -47,7 +47,7 @@ void func_800F3B90(PlayerState*, f32*);
 void player_getCoords_Dupe(PlayerState*, f32*);
 void func_800F3BD0(PlayerState*, s32, f32*);
 //player_getRotation
-void func_800F3E84(PlayerState*, f32 [3]);
+void player_getRotation(PlayerState*, f32 [3]);
 s32 func_800F3ED0(PlayerState*);
 s32 func_800F40EC(PlayerState*);
 void func_800F4200(PlayerState* , f32*);
@@ -60,7 +60,7 @@ void func_800F4524(PlayerState*, s32);
 void func_800F452C(PlayerState*, f32*);
 void func_800F457C(PlayerState* , s32);
 void func_800F45B0(PlayerState*, s32, f32*);
-void func_800F45E0(PlayerState*, f32 [3]);
+void player_setRotation(PlayerState*, f32 [3]);
 void func_800F4648(PlayerState*, f32 [3]);
 void func_800F468C(PlayerState*);
 //PlayerState defrag

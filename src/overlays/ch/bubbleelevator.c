@@ -185,7 +185,7 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
         func_800F7B9C(character_getActiveIndex(), 0x7C);
         func_800F8294(character_getActiveIndex(), arg0->position);
         ml_vec3f_assign_value(&sp2C, 0.0f, func_800F1DF4(arg0->position, ELEVATOR_DATA(arg0)->unk0), 0.0f);
-        func_800F832C(character_getActiveIndex(), &sp2C);
+        character_setRotation(character_getActiveIndex(), &sp2C);
         func_800F80E4(character_getActiveIndex(), 0);
         _capod_entrypoint_13(arg0->unk0, arg0->unk0, D_80800C20_chbubbleelevator[(u32) arg0->unk79_4].unk0, 0x2001);
         arg0->unk6C_0 = func_80015184();

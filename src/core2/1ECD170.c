@@ -202,7 +202,7 @@ void func_800F3BD0(PlayerState* self, s32 arg1, f32* arg2)
     }
 }
 
-void func_800F3E84(PlayerState* self, f32 arg1[3])
+void player_getRotation(PlayerState* self, f32 arg1[3])
 {
     arg1[0] = bapitch_get(self);
     arg1[1] = yaw_get(self);
@@ -508,7 +508,7 @@ void func_800F45B0(PlayerState* self, s32 arg1, f32* arg2)
     func_8009CD70(self, arg2);
 }
 
-void func_800F45E0(PlayerState* self, f32 arg1[3])
+void player_setRotation(PlayerState* self, f32 arg1[3])
 {
     bapitch_setIdeal(self, arg1[0]);
     yaw_setIdeal(self, arg1[1]);

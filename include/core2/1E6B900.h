@@ -55,6 +55,7 @@ s32 player_getCurrentModel(PlayerState*);
 // This might take a s32 instead of a PlayerState pointer
 // This might return a s32 instead of a PlayerState pointer
 f32 func_80092B8C(PlayerState*, f32*);
+f32 player_getModelScale(PlayerState*);
 f32 player_getModelYaw(PlayerState *);
 f32 func_80092BF4(PlayerState *);
 

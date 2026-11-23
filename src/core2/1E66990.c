@@ -255,7 +255,7 @@ int func_8008DC90(PlayerState* self, f32* arg1, f32 arg2)
     f32 sp18[2];
 
     player_getCoords(self, sp20);
-    func_8008FF40(sp2C);
+    activePlayer_getRotation(sp2C);
     func_800F18FC(sp20, arg1, sp18);
     return func_800F20BC(sp2C[0], sp18[0], arg2) && func_800F20BC(sp2C[1], sp18[1], arg2);
 }

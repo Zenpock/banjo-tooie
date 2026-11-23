@@ -178,9 +178,9 @@ void func_8008FF18()
     func_800F5B0C(character_getActiveIndex());
 }
 
-void func_8008FF40(f32* arg0)
+void activePlayer_getRotation(f32* arg0)
 {
-    func_800F5B38(character_getActiveIndex(),arg0);
+    character_getRotation(character_getActiveIndex(),arg0);
 }
 
 void func_8008FF6C()
@@ -370,9 +370,9 @@ void func_800906B0(s32 arg0)
     func_800F8294(character_getActiveIndex(),arg0);
 }
 
-void func_800906DC(f32* arg0)
+void activePlayer_setRotation(f32* arg0)
 {
-    func_800F832C(character_getActiveIndex(),arg0);
+    character_setRotation(character_getActiveIndex(),arg0);
 }
 
 void func_80090708(s32 arg0)

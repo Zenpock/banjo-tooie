@@ -32,7 +32,7 @@ s32 bababykaz_entrypoint_5(PlayerState *self) {
     TransformationId sp24 = (bs_getSplitStatus() == SPLIT_STATE_SPLIT) ? TRANSFORM_B_KAZOOIE : TRANSFORM_1_BK;
     s32 pad0;
 
-    if(func_800F8A5C(sp24) != map_getCurrent()) {
+    if(transform_multiCharGetMap(sp24) != map_getCurrent()) {
         return -1;
     } else {
         return _character_findCharOfTransform(sp24);

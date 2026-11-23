@@ -1,20 +1,13 @@
 #include "core2/1ECE0B0.h"
 extern Unk80135490 D_80135490;
 extern u8 D_801354DA;
+//MultiChar
 extern Vector* D_801354F0;
 extern u32 D_801354DC;
 extern unkStructD_801354F8 D_801354F8;
-extern u8 D_801354F9;
-extern u8 D_801354FC;
-extern u8 D_801354FD;
-extern f32 D_80135500[3];
 extern s8 D_801354B0;
-extern f32 D_80135510[3];
-extern u8 D_801354FA;
-extern s32 D_8013551C;
 extern unkStructD_80135520 D_80135520;
 extern u8 D_8012762C;
-extern f32 D_8013550C;
 extern u8 D_801354B8[];
 extern u8 D_801354D9;
 extern u8 D_80135521;
@@ -22,7 +15,7 @@ extern u8 D_80135522;
 extern u8 D_80135498;
 
 //Call a function on all active players
-void func_800F47C0(void (*arg0)(PlayerState*))
+void character_runFuncOnAll(void (*arg0)(PlayerState*))
 {
     PlayerState* temp_a0;
     s32 index;
@@ -285,15 +278,15 @@ void func_800F50D0(GraphicsBuffers* arg0) {
 }
 
 void func_800F5184(void) {
-    func_800F47C0(func_80093528);
+    character_runFuncOnAll(func_80093528);
 }
 
 void func_800F51A8(void) {
-    func_800F47C0(func_80093584);
+    character_runFuncOnAll(func_80093584);
 }
 
 void func_800F51CC(void) {
-    func_800F47C0(func_80098BE0);
+    character_runFuncOnAll(func_80098BE0);
 }
 
 void func_800F51F0(s32 arg0, s32 arg1, s32 arg2)
@@ -403,9 +396,9 @@ void func_800F551C(s32 arg0, f32* arg1, f32* arg2, f32* arg3) {
     func_800A3148(D_80135490.unk0[arg0], arg1, arg2, arg3);
 }
 
-void character_getModelScale(s32 arg0)
+f32 character_getModelScale(s32 arg0)
 {
-    player_getModelScale(D_80135490.unk0[arg0]);
+    return player_getModelScale(D_80135490.unk0[arg0]);
 }
 
 s32 character_getCurrentHealth(s32 arg0)
@@ -580,12 +573,12 @@ s32 func_800F5B0C(s32 arg0)
     return func_8009CC68(D_80135490.unk0[arg0]);
 }
 
-void func_800F5B38(s32 arg0, f32* arg1)
+void character_getRotation(s32 arg0, f32 arg1[3])
 {
-    func_800F3E84(D_80135490.unk0[arg0], arg1);
+    player_getRotation(D_80135490.unk0[arg0], arg1);
 }
 
-f32 func_800F5B64(s32 arg0, f32* arg1) {
+f32 func_800F5B64(s32 arg0, f32 arg1[3]) {
     f32 sp24;
     f32 sp20;
     PlayerState* sp1C;
@@ -661,7 +654,7 @@ void func_800F5D9C(s32 arg0, f32* arg1)
     func_800F4200(D_80135490.unk0[arg0],arg1);
 }
 
-void func_800F5DC8(s32 arg0, Vec3f* arg1) {
+void character_getIdealRotation(s32 arg0, Vec3f* arg1) {
     PlayerState* sp1C;
 
     sp1C = D_80135490.unk0[arg0];
@@ -790,8 +783,8 @@ s32 func_800F61E4(void) {
     func_800F6140(-1);
 }
 
-void func_800F6204(s32 arg0) {
-    func_800F6140(arg0);
+s32 func_800F6204(s32 arg0) {
+    return func_800F6140(arg0);
 }
 
 s32 character_createNew(s32 arg0) {
@@ -1692,9 +1685,9 @@ void func_800F8300(s32 arg0, s32 arg1, f32* arg2)
     func_800F45B0(D_80135490.unk0[arg0],arg1,arg2);
 }
 
-void func_800F832C(s32 arg0,f32* a1)
+void character_setRotation(s32 arg0,f32* a1)
 {
-    func_800F45E0(D_80135490.unk0[arg0],a1);
+    player_setRotation(D_80135490.unk0[arg0],a1);
 }
 
 void func_800F8358(s32 arg0, s32 arg1) {
@@ -1849,13 +1842,13 @@ void func_800F8804(s32 arg0,f32* arg1)
     func_8009CD70(D_80135490.unk0[arg0],arg1);
 }
 
-void func_800F8830(s32 arg0)
+void func_800F8830(PlayerState* arg0)
 {
     func_8009E7C8(arg0,0x99);
 }
 
 void func_800F8850(void) {
-    func_800F47C0((void (*)(PlayerState*)) func_800F8830);
+    character_runFuncOnAll(func_800F8830);
 }
 
 void func_800F8874(s32 arg0)
@@ -1863,15 +1856,15 @@ void func_800F8874(s32 arg0)
     func_8009224C(D_80135490.unk0[arg0]);
 }
 
-unkStruct800F88A0* func_800F88A0(TransformationId arg0) {
-    unkStruct800F88A0* sp1C;
-    unkStruct800F88A0* temp_v0;
+MultiCharData* transform_getMultiChar(TransformationId arg0) {
+    MultiCharData* sp1C;
+    MultiCharData* temp_v0;
 
     sp1C = vector_begin(D_801354F0);
     temp_v0 = vector_end(D_801354F0);
     while (sp1C < temp_v0) 
     {
-        if (arg0 == sp1C->unk0) 
+        if (arg0 == sp1C->transform)
         {
             return sp1C;
         }
@@ -1882,20 +1875,20 @@ unkStruct800F88A0* func_800F88A0(TransformationId arg0) {
     return NULL;
 }
 
-s32 func_800F8914(unkStruct800F88A0* arg0, s32 arg1)
+s32 bs_multiCharSetData(MultiCharData* arg0, s32 charIndex)
 {
     s32 temp;
-    character_getCoords(arg1, arg0->unk24);
-    func_800F5B38(arg1, arg0->unk30);
-    _plcamera_entrypoint_14(arg1, arg0->unk4, arg0->unk10);
-    arg0->unk2 = func_800F9214(arg1);
-    arg0->unk0 = character_getTransform(arg1);
-    arg0->unk1 = func_800F65D0(arg1);
-    arg0->unk22 = map_getCurrent();
+    character_getCoords(charIndex, arg0->currentPos);
+    character_getRotation(charIndex, arg0->currentRot);
+    _plcamera_entrypoint_14(charIndex, arg0->unk4, arg0->unk10);
+    arg0->unk2 = func_800F9214(charIndex);
+    arg0->transform = character_getTransform(charIndex);
+    arg0->unk1 = func_800F65D0(charIndex);
+    arg0->homeMap = map_getCurrent();
     arg0->unk21 = func_800EA090();
     arg0->unk20 = 2;
-    arg0->unk1D = func_800F58F8(arg1);
-    temp = func_800F5924(arg1);
+    arg0->unk1D = func_800F58F8(charIndex);
+    temp = func_800F5924(charIndex);
     arg0->unk1C = temp;
     return temp;
 }
@@ -1907,15 +1900,15 @@ TransformationId func_800F89BC(void) {
     return TRANSFORM_1_BK;
 }
 
-s32 func_800F89E4(TransformationId arg0, f32 arg1[3]) {
+MapId bs_getSoloSpawnPos(TransformationId arg0, f32 arg1[3]) {
     s32 sp1C;
 
     if (arg0 == TRANSFORM_A_BANJO) {
-        ml_vec3f_copy(arg1, &D_80135500);
-        sp1C = D_8013551C;
+        ml_vec3f_copy(arg1, D_801354F8.soloBanjoSpawn);
+        sp1C = D_801354F8.splitUpMap;
     } else if (arg0 == TRANSFORM_B_KAZOOIE) {
-        ml_vec3f_copy(arg1, &D_80135510);
-        sp1C = D_8013551C;
+        ml_vec3f_copy(arg1, D_801354F8.soloKazSpawn);
+        sp1C = D_801354F8.splitUpMap;
     }
     return sp1C;
 }
@@ -1923,48 +1916,43 @@ s32 func_800F89E4(TransformationId arg0, f32 arg1[3]) {
 
 f32 func_800F8A50(void)
 {
-	return D_8013550C;
+	return D_801354F8.unk14;
 }
 
-MapId func_800F8A5C(TransformationId arg0) {
-    return func_800F88A0(arg0)->unk22;
+MapId transform_multiCharGetMap(TransformationId arg0) {
+    return transform_getMultiChar(arg0)->homeMap;
 }
 
-u8 func_800F8A80(TransformationId arg0) {
-    return *(s16*)&func_800F88A0(arg0)->unk20;
+s32 func_800F8A80(s32 arg0) {
+	return transform_getMultiChar(arg0)->unk21;
 }
 
-u8 func_800F8AA4(void) {
-    UnkStruct800F8AA4* sp1C;
-    UnkStruct800F8AA4* var_v1;
-    u32 temp_v0;
+s32 func_800F8AA4(void)
+{
+	MultiCharData* iter;
+	u32 end;
 
-    sp1C = vector_begin(D_801354F0);
-    temp_v0 = vector_end(D_801354F0);
-    var_v1 = sp1C;
-    if ((u32)var_v1 < temp_v0) {
-        do {
-            if (var_v1->unk1 != 0) {
-                return var_v1->unk0;
-            }
-            var_v1++;
-        } while ((u32)var_v1 < temp_v0);
-    }
-    return 0;
+	iter = vector_begin(D_801354F0);
+	end = vector_end(D_801354F0);
+	while ((s32)iter < end)
+	{
+		if (iter->unk1 != 0)
+		{
+			return iter->transform;
+		}
+		iter++;
+	}
+	return 0;
 }
 
-void func_800F8B0C(TransformationId arg0, s32 arg1) {
-    u8* v0;
-
-    v0 = func_800F88A0(arg0);
-    ml_vec3f_copy(arg1, v0 + 0x24);
+void transform_multiCharGetPosition(TransformationId arg0, f32 arg1[3])
+{
+	ml_vec3f_copy(arg1, transform_getMultiChar(arg0)->currentPos);
 }
 
-void func_800F8B38(TransformationId arg0, s32 arg1) {
-    u8* v0;
-
-    v0 = func_800F88A0(arg0);
-    ml_vec3f_copy(arg1, v0 + 0x30);
+void transform_multiCharGetRotation(TransformationId arg0, f32 arg1[3])
+{
+	ml_vec3f_copy(arg1, transform_getMultiChar(arg0)->currentRot);
 }
 
 s32 func_800F8B64(void) {
@@ -1983,20 +1971,70 @@ SPLITUP_STATUS bs_getSplitStatus(void) {
     return D_801354F8.splitStatus;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F8B94.s")
+void func_800F8B94(void) 
+{
+	MultiCharData* begin;
+	MultiCharData* end;
+	MultiCharData* iter;
+	s32 player;
+	u8 val;
 
-void func_800F8D50(s32 arg0, TransformationId arg1) {
-    func_800F8D80(arg0, func_800F88A0(arg1));
+	begin = vector_begin(D_801354F0);
+	end = vector_end(D_801354F0);
+	for (iter = begin; iter < end; iter++)
+	{
+		if (map_getCurrent() == (s16)iter->homeMap)
+		{
+			player = func_800F6204(0);
+			func_800F7E64(player, iter->transform);
+			func_800F8268(player, iter->unk1D, iter->unk1C);
+			if (D_801354F8.unk1 != 0 && (iter->transform == TRANSFORM_A_BANJO || iter->transform == TRANSFORM_B_KAZOOIE))
+			{
+				func_800F8294(player, (iter->transform == TRANSFORM_A_BANJO) ? D_801354F8.soloBanjoSpawn : D_801354F8.soloKazSpawn);
+			}
+			else
+			{
+				func_800F8294(player, iter->currentPos);
+			}
+			character_setRotation(player, iter->currentRot);
+			if (iter->unk1 != 0)
+			{
+				func_800F80D8(player);
+			}
+			if (D_801354F8.splitStatus != SPLIT_STATE_NOTSPLIT && (iter->transform == TRANSFORM_A_BANJO || iter->transform == TRANSFORM_B_KAZOOIE))
+			{
+				func_800F8358(player, 1);
+			}
+			val = iter->unk2;
+			switch (iter->unk2)
+			{
+			case 1:
+				break;
+			case 2:
+				func_800F608C(player, 2);
+				break;
+
+			}
+			if (iter->unk1 != 0) 
+			{
+				func_800F8D80(player, iter);
+			}
+		}
+	}
 }
 
-void func_800F8D80(s32 arg0, unkStruct800F88A0* arg1) {
+void func_800F8D50(s32 arg0, TransformationId arg1) {
+    func_800F8D80(arg0, transform_getMultiChar(arg1));
+}
+
+void func_800F8D80(s32 arg0, MultiCharData* arg1) {
     _plcamera_entrypoint_12(arg0, arg1->unk4, arg1->unk10);
 }
 
 s32 func_800F8DA8(TransformationId arg0) {
     s32 var_v1;
 
-    if (func_800F88A0(arg0) != 0) {
+    if (transform_getMultiChar(arg0) != 0) {
         var_v1 = 1;
     } else {
         var_v1 = 0;
@@ -2011,23 +2049,23 @@ void func_800F8DD8(void) {
 }
 
 
-void func_800F8E08(void) {
+void bs_multiCharSetup(void) {
     D_801354F0 = vector_new(0x3C, 2);
     D_801354F8.unk1 = 0;
     D_801354F8.unk4 = 0;
     D_801354F8.unk5 = 0;
-    D_801354F8.splitStatus = 0;
-    func_800F911C(1);
-    ml_vec3f_clear(&D_80135500);
-    ml_vec3f_clear(&D_80135510);
-    D_8013551C = 0;
+    D_801354F8.splitStatus = SPLIT_STATE_INVALID;
+    bs_setSplitStatus(SPLIT_STATE_NOTSPLIT);
+    ml_vec3f_clear(D_801354F8.soloBanjoSpawn);
+    ml_vec3f_clear(D_801354F8.soloKazSpawn);
+	D_801354F8.splitUpMap = 0;
     func_800F9A44();
 }
 
-void func_800F8E78(TransformationId arg0) {
+void bs_multiCharErase(TransformationId arg0) {
     void* temp_v0;
 
-    temp_v0 = func_800F88A0(arg0);
+    temp_v0 = transform_getMultiChar(arg0);
     if (temp_v0 != 0) {
         vector_erase(D_801354F0, vector_index_of(D_801354F0, temp_v0));
     }
@@ -2035,63 +2073,70 @@ void func_800F8E78(TransformationId arg0) {
 
 void func_800F8EBC(s32 a0)
 {
-    func_800F8E78(character_getTransform(a0));
+    bs_multiCharErase(character_getTransform(a0));
 }
 
-void func_800F8EE4(s32 arg0) {
+void bs_multiCharCreate(s32 charIndex) {
     void* temp_v0;
 
-    temp_v0 = func_800F88A0(character_getTransform(arg0));
-    if (temp_v0 != NULL) {
-        func_800F8914(temp_v0, arg0);
+    temp_v0 = transform_getMultiChar(character_getTransform(charIndex));
+    if (temp_v0 != NULL) 
+	{
+        bs_multiCharSetData(temp_v0, charIndex);
         return;
     }
-    func_800F8914(vector_push_back(&D_801354F0), arg0);
+    bs_multiCharSetData(vector_push_back(&D_801354F0), charIndex);
 }
 
 
-void func_800F8F3C(void) {
-    void* temp_v0;
-    unkStruct800F8F3C* temp_s2;
-    unkStruct800F8F3C* s0;
+void func_800F8F3C(void)
+{
+	MultiCharData* end;
+	MultiCharData* start;
+	MultiCharData* iter;
 
-    if (D_801354F8.splitStatus == 2 && D_801354F0 != 0) {
-        temp_s2 = vector_begin(D_801354F0);
-        temp_v0 = vector_end(D_801354F0);
-        s0 = temp_s2;
-        if ((u32)temp_s2 < (u32)temp_v0) {
-            do {
-                if (s0->unk0 == 0xA) {
-                    ml_vec3f_copy((u8*)s0 + 0x24, &D_80135500);
-                    s0->unk22 = (s16)D_801354F8.unk24;
-                    ml_vec3f_assign_value((u8*)s0 + 0x30, 0.0f, D_801354F8.unk14, 0.0f);
-                } else if (s0->unk0 == 0xB) {
-                    ml_vec3f_copy((u8*)s0 + 0x24, &D_80135510);
-                    s0->unk22 = (s16)D_801354F8.unk24;
-                    ml_vec3f_assign_value((u8*)s0 + 0x30, 0.0f, D_801354F8.unk14, 0.0f);
-                }
-                s0 = (unkStruct800F8F3C*)((u8*)s0 + 0x3C);
-            } while ((u32)s0 < (u32)temp_v0);
-        }
-    }
+	if (D_801354F8.splitStatus == SPLIT_STATE_SPLIT && D_801354F0 != 0)
+	{
+		start = vector_begin(D_801354F0);
+		end = vector_end(D_801354F0);
+		iter = start;
+
+		while ((u32)iter < (u32)end)
+		{
+			if (iter->transform == TRANSFORM_A_BANJO)
+			{
+				ml_vec3f_copy(iter->currentPos, D_801354F8.soloBanjoSpawn);
+				iter->homeMap = D_801354F8.splitUpMap;
+				ml_vec3f_assign_value(iter->currentRot, 0.0f, D_801354F8.unk14, 0.0f);
+			}
+			else if (iter->transform == TRANSFORM_B_KAZOOIE)
+			{
+				ml_vec3f_copy(iter->currentPos, D_801354F8.soloKazSpawn);
+				iter->homeMap = D_801354F8.splitUpMap;
+				ml_vec3f_assign_value(iter->currentRot, 0.0f, D_801354F8.unk14, 0.0f);
+			}
+			iter++;
+		}
+
+	}
 }
 
 void func_800F9070(TransformationId arg0, s32 arg1) {
-    unkStruct800F88A0* result = func_800F88A0(arg0);
+    MultiCharData* result = transform_getMultiChar(arg0);
     result->unk1 = arg1;
 }
 
-void func_800F9098(s32 arg0, f32* arg1) {
-    if (arg0 == 0xA) {
-        ml_vec3f_copy(&D_80135500, arg1);
-    } else if (arg0 == 0xB) {
-        ml_vec3f_copy(&D_80135510, arg1);
+void bs_setSoloSpawnPos(TransformationId arg0, f32 arg1[3]) {
+    if (arg0 == TRANSFORM_A_BANJO) {
+        ml_vec3f_copy(D_801354F8.soloBanjoSpawn, arg1);
+    } else if (arg0 == TRANSFORM_B_KAZOOIE) {
+        ml_vec3f_copy(D_801354F8.soloKazSpawn, arg1);
     }
-    D_8013551C = map_getCurrent();
+	D_801354F8.splitUpMap = map_getCurrent();
 }
 
 void func_800F90EC(f32 arg0) {
-    D_8013550C = arg0;
+	D_801354F8.unk14 = arg0;
 }
 
 void func_800F90F8(s32 arg0) {
@@ -2099,36 +2144,36 @@ void func_800F90F8(s32 arg0) {
 }
 
 void func_800F9104(s32 arg0) {
-    D_801354FC = arg0;
+    D_801354F8.unk4 = arg0;
 }
 
 void func_800F9110(s32 arg0) {
-    D_801354FD = arg0;
+	D_801354F8.unk5 = arg0;
 }
 
-void func_800F911C(s32 arg0) {
-    if (D_801354F8.splitStatus == 3) {
+void bs_setSplitStatus(SPLITUP_STATUS arg0) {
+    if (D_801354F8.splitStatus == SPLIT_STATE_TALON_TORPEDO) {
         func_800CF840(0);
     }
-    if ((u8) (D_801354F8.splitStatus = arg0) == 3) {
+    if ((D_801354F8.splitStatus = arg0) == SPLIT_STATE_TALON_TORPEDO) {
         func_800CF840(1);
     }
 }
 
 void func_800F9178(void) {
-    D_801354FA = 0;
+	D_801354F8.unk2 = 0;
 }
 
 s32 func_800F9184(void) {
-    return D_801354FA == 0;
+    return D_801354F8.unk2 == 0;
 }
 
 void func_800F9198(void) {
-    if (D_801354FA == 0) {
+    if (D_801354F8.unk2 == 0) {
         func_800F90F8(0);
         func_800F9104(0);
         func_800F9110(0);
-        D_801354FA = 1;
+		D_801354F8.unk2 = 1;
     }
     func_800F9C6C();
 }
@@ -2160,7 +2205,7 @@ TransformationId func_800F929C(void) {
     return TRANSFORM_1_BK;
 }
 
-void func_800F92CC(u32* arg0, TransformationId* arg1, s32* arg2, s32* arg3) {
+void func_800F92CC(u32* arg0, TransformationId* arg1, s32* arg2, TransformationId* arg3) {
     TransformationId temp_v0_2;
     u32 temp_v0;
 
@@ -2170,16 +2215,16 @@ void func_800F92CC(u32* arg0, TransformationId* arg1, s32* arg2, s32* arg3) {
     *arg1 = temp_v0_2;
     switch (temp_v0_2) {
     case TRANSFORM_A_BANJO:
-        *arg3 = 0xB;
+        *arg3 = TRANSFORM_B_KAZOOIE;
         break;
     case TRANSFORM_B_KAZOOIE:
-        *arg3 = 0xA;
+        *arg3 = TRANSFORM_A_BANJO;
         break;
     }
     *arg2 = _character_findCharOfTransform(*arg3);
 }
 
-void func_800F9354(u32* arg0, TransformationId* arg1, s32* arg2) {
+void func_800F9354(u32* arg0, TransformationId* arg1, TransformationId* arg2) {
     TransformationId temp_v0_2;
     u32 temp_v0;
 
@@ -2189,22 +2234,22 @@ void func_800F9354(u32* arg0, TransformationId* arg1, s32* arg2) {
     *arg1 = temp_v0_2;
     switch (temp_v0_2) {
     case TRANSFORM_A_BANJO:
-        *arg2 = 0xB;
+        *arg2 = TRANSFORM_B_KAZOOIE;
         return;
     case TRANSFORM_B_KAZOOIE:
-        *arg2 = 0xA;
+        *arg2 = TRANSFORM_A_BANJO;
         return;
     }
 }
 
-void func_800F93C4(s32* arg0, s32* arg1) {
+void bs_getActiveCharAndTransform(s32* arg0, TransformationId* arg1) {
     s32 temp = character_getActiveIndex();
     *arg0 = temp;
     *arg1 = character_getTransform(temp);
 }
 
-void func_800F9400(s32 arg0) {
-    if ((arg0 == 0xA) || (arg0 == 1)) {
+void func_800F9400(TransformationId arg0) {
+    if ((arg0 == TRANSFORM_A_BANJO) || (arg0 == TRANSFORM_1_BK)) {
         func_800C964C(0xC);
         return;
     }
@@ -2212,8 +2257,8 @@ void func_800F9400(s32 arg0) {
 }
 
 
-void func_800F9444(s32 arg0) {
-    if ((arg0 == 0xA) || (arg0 == 1)) {
+void func_800F9444(TransformationId arg0) {
+    if ((arg0 == TRANSFORM_A_BANJO) || (arg0 == TRANSFORM_1_BK)) {
         func_800C964C(0xD);
         return;
     }
@@ -2249,7 +2294,7 @@ int func_800F9488(s32 arg0) {
         break;
     case 9: 
         if (arg0 == 1) {
-            func_800F93C4(&sp58, &sp5C);
+            bs_getActiveCharAndTransform(&sp58, &sp5C);
             func_800F8EBC(sp58);
             func_800F8268(sp58, 1, 1);
             func_800F82D4(sp58, 0);
@@ -2257,8 +2302,8 @@ int func_800F9488(s32 arg0) {
         break;
     case 15:
         if (arg0 == 1) {
-            func_800F93C4(&sp58, &sp5C);
-            func_800F8E78(0xA);
+            bs_getActiveCharAndTransform(&sp58, &sp5C);
+            bs_multiCharErase(0xA);
         }
         break;
     }
@@ -2274,7 +2319,7 @@ int func_800F9488(s32 arg0) {
     case 3: 
         func_800F92CC((u32* ) &sp58, &sp5C, &sp50, &sp54);
         func_800F8128(sp50);
-        func_800F8EE4(sp58);
+        bs_multiCharCreate(sp58);
         func_800F8EBC(sp50);
         func_800F9400(sp54);
         return;
@@ -2287,9 +2332,9 @@ int func_800F9488(s32 arg0) {
         func_800F9354((u32* ) &sp58, &sp5C, &sp54);
         func_800F9070(sp54, 1);
         func_800F8268(sp58, 0, 1);
-        func_800F8EE4(sp58);
+        bs_multiCharCreate(sp58);
         func_800F9070(sp5C, 0);
-        func_800A7990(func_800F8A5C(sp54), 0, 0);
+        func_800A7990(transform_multiCharGetMap(sp54), 0, 0);
         return;
     case 6: 
         func_800F9354((u32* ) &sp58, &sp5C, &sp54);
@@ -2303,18 +2348,18 @@ int func_800F9488(s32 arg0) {
         sp54 = func_800F929C();
         func_800F9070(sp54, 1);
         if (func_800DB9B0() == 0) {
-            func_800A7990(func_800F8A5C(sp54), 0, 0);
+            func_800A7990(transform_multiCharGetMap(sp54), 0, 0);
             return;
         }
     default:
         return;
     case 9: 
-        func_800F93C4(&sp58, &sp5C);
+        bs_getActiveCharAndTransform(&sp58, &sp5C);
         func_800F82D4(sp58, 2);
         func_800F9400(sp5C);
         return;
     case 10:
-        func_800F93C4(&sp58, &sp5C);
+        bs_getActiveCharAndTransform(&sp58, &sp5C);
         sp50 = _character_findCharOfTransform(TRANSFORM_11_CLOCKWORK);
         func_800F8128(sp58);
         func_800F759C(sp50);
@@ -2328,16 +2373,16 @@ int func_800F9488(s32 arg0) {
         func_800F8268(sp50, 1, 1);
         return;
     case 13:
-        func_800F93C4(&sp58, &sp5C);
+        bs_getActiveCharAndTransform(&sp58, &sp5C);
         func_800F82D4(sp58, 2);
         func_800F9444(TRANSFORM_B_KAZOOIE);
         return;
     case 14:
         func_800F9070(TRANSFORM_A_BANJO, 1);
-        func_800A7990(func_800F8A5C(TRANSFORM_A_BANJO), 0, 0);
+        func_800A7990(transform_multiCharGetMap(TRANSFORM_A_BANJO), 0, 0);
         return;
     case 15:
-        func_800F93C4(&sp58, &sp5C);
+        bs_getActiveCharAndTransform(&sp58, &sp5C);
         sp50 = character_createNew(sp58);
         func_800F7E64(sp50, TRANSFORM_B_KAZOOIE);
         func_800F608C(sp50, 1);
@@ -2424,7 +2469,7 @@ void func_800F9AFC(void) {
     s32 sp20;
     s32 sp1C;
 
-    func_800F93C4(&sp20, &sp24);
+    bs_getActiveCharAndTransform(&sp20, &sp24);
     sp1C = _character_findCharOfTransform(func_800F929C());
     func_800F8128(sp1C);
     func_800F8EBC(sp1C);
@@ -2560,7 +2605,7 @@ void func_800F9C6C(void) {
         func_800F9488(1);
         return;
     case 18:
-        sp18 = func_800F8A5C(0xA);
+        sp18 = transform_multiCharGetMap(0xA);
         if (map_getCurrent() == sp18) {
             func_800F9488(0x10);
             return;
@@ -2568,7 +2613,7 @@ void func_800F9C6C(void) {
         func_800F9488(0xD);
         return;
     case 19:
-        sp18 = func_800F8A5C(0xA);
+        sp18 = transform_multiCharGetMap(0xA);
         if (map_getCurrent() == sp18) 
         {
             func_800F9488(0x11);

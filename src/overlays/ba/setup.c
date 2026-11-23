@@ -237,7 +237,7 @@ s32 func_80800534_basetup(PlayerState* self)
     }
     if ((func_800F8B7C() != 0) && (player_isSplitUp(self) != 0))
     {
-        func_800F89E4(player_getTransformation(self), &sp2C);
+        bs_getSoloSpawnPos(player_getTransformation(self), &sp2C);
         func_800F452C(self, &sp2C);
         yaw_setIdeal(self, func_800F8A50());
         yaw_applyIdeal(self);

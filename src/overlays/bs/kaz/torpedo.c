@@ -376,7 +376,7 @@ void func_80800FB4_bskaztorpedo(PlayerState *self) {
         ml_vec3f_assign_value(sp48, sp3C[0], sp3C[1] - 50.0f, sp3C[2]);
         func_800BABB8(func_8009FBB0(self, sp3C, 80.0f), sp3C, sp48, 1.0f, D_80801770_bskaztorpedo);
         func_800F82C0(self->unk184);
-        func_800F911C(1);
+        bs_setSplitStatus(1);
         sp34 = character_getPlayerState(_character_findCharOfTransform(TRANSFORM_A_BANJO));
         _baduo_entrypoint_7(sp34, 1);
         player_setTransformation(sp34, TRANSFORM_1_BK);

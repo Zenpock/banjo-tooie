@@ -511,16 +511,16 @@ dlabel D_801354FC
 dlabel D_801354FD
     /* 801354FD */ .space 0x03
 
-dlabel D_80135500
+dlabel soloBanjoSpawn
     /* 80135500 */ .space 0x0C
 
 dlabel D_8013550C
     /* 8013550C */ .space 0x04
 
-dlabel D_80135510
+dlabel soloKazooieSpawn
     /* 80135510 */ .space 0x0C
 
-dlabel D_8013551C
+dlabel splitUpMap
     /* 8013551C */ .space 0x04
 
 dlabel D_80135520

@@ -437,7 +437,7 @@ void func_80800E8C_chclockworkmouse(Actor *actor, s32 arg1) {
 void func_80800ED0_chclockworkmouse(Actor *actor) {
     if (func_8009EA64() == 0x171) {
         func_800907C0(actor->position);
-        func_800906DC(actor->rotation);
+        activePlayer_setRotation(actor->rotation);
     }
 }
 
@@ -601,7 +601,7 @@ void func_80801588_chclockworkmouse(Actor* actor) {
             temp_f0 = func_800F1DCC(actor->rotation[1], sp28[1]);
             if ((temp_f0 < -35.0f) || (temp_f0 > 35.0f)) {
                 sp28[1] += temp_f0 * sp38 * 5.0f;
-                func_800906DC(sp28);
+                activePlayer_setRotation(sp28);
             } else {
                 func_8080019C_chclockworkmouse(sp3C);
             }

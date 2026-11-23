@@ -8,7 +8,7 @@ void gcgame_entrypoint_0(s32 arg0)
     func_80012128();
     func_800DA0B4();
     func_800DA0D8();
-    func_800F8E08();
+    bs_multiCharSetup();
     func_8009E8D4();
     func_800D2438();
     inventory_setup();

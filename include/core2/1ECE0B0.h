@@ -75,7 +75,7 @@ typedef enum
 	ALLOW_BK = 1 << (TRANSFORM_1_BK + 0x1F)
 }AllowedTransformation;
 typedef struct {
-    u8 unk0;
+    u8 transform;
     u8 unk1;
     u8 unk2;
     u8 pad3;
@@ -86,22 +86,10 @@ typedef struct {
     u8 pad1E[2];
     u8 unk20;
     u8 unk21;
-    s16 unk22;
-    f32 unk24[3];
-    f32 unk30[3];
-} unkStruct800F88A0;
-
-typedef struct {
-    u8 unk0;
-    u8 unk1;
-    u8 pad2[0x3A];
-} UnkStruct800F8AA4;
-typedef struct {
-    u8 unk0;
-    u8 pad1[0x21];
-    s16 unk22;
-    u8 pad24[0x18];
-} unkStruct800F8F3C;
+    s16 homeMap;
+    f32 currentPos[3]; //This is the position the character was last switched from
+    f32 currentRot[3];
+} MultiCharData; //Each character instance has this
 
 typedef struct {
     u8 unk0;
@@ -120,13 +108,16 @@ typedef enum
 typedef struct {
     u8 splitStatus;
     u8 unk1;
-    u8 pad2[2];
-    u8 unk4;
-    u8 unk5;
-    u8 pad6[0xE];
+	u8 unk2;
+	u8 unk3;
+	u8 unk4;
+	u8 unk5;
+	u8 unk6;
+	u8 unk7;
+	f32 soloBanjoSpawn[3];
     f32 unk14;
-    u8 pad18[0xC];
-    s32 unk24;
+    f32 soloKazSpawn[3];
+    s32 splitUpMap; //8013551C
 } unkStructD_801354F8;
 
 typedef struct {
@@ -183,6 +174,8 @@ void func_800F5A2C(s32, s32, f32[3]);
 void character_getCoords3s(s32, s32[3]);
 f32 func_800F5AE0(s32);
 s32 func_800F5B0C(s32);
+void character_getRotation(s32, f32[3]);
+f32 func_800F5B64(s32, f32[3]);
 f32 func_800F5BF0(s32, f32*);
 void func_800F5D44(s32, f32*);
 void func_800F5D70(s32, f32*);
@@ -255,40 +248,40 @@ void func_800F8294(s32, f32*);
 void func_800F82C0(s32);
 void func_800F82D4(s32, s32);
 void func_800F8300(s32, s32, f32*);
-void func_800F832C(s32, f32*);
+void character_setRotation(s32, f32*);
 void func_800F8418(s32, f32*);
 void func_800F8444(s32, f32*);
 void func_800F86C4(s32, TransformationId);
 void func_800F8804(s32, f32*);
 void func_800F8850();
-unkStruct800F88A0* func_800F88A0(TransformationId);
-s32 func_800F8914(unkStruct800F88A0*, s32);
+MultiCharData* transform_getMultiChar(TransformationId);
+s32 bs_multiCharSetData(MultiCharData*, s32);
 TransformationId func_800F89BC(void);
-s32 func_800F89E4(TransformationId, f32[3]);
+MapId bs_getSoloSpawnPos(TransformationId, f32[3]);
 f32 func_800F8A50();
-MapId func_800F8A5C(TransformationId);
+MapId transform_multiCharGetMap(TransformationId);
 s32 func_800F8B64(void);
 s32 func_800F8B7C();
 SPLITUP_STATUS bs_getSplitStatus();
 void func_800F8B94(void);
-void func_800F8D80(s32, unkStruct800F88A0*);
+void func_800F8D80(s32, MultiCharData*);
 void func_800F8DD8();
-void func_800F8E08();
+void bs_multiCharSetup();
 void func_800F8EBC(s32);
-void func_800F8EE4(s32);
-void func_800F9098(s32, f32*);
+void bs_multiCharCreate(s32);
+void bs_setSoloSpawnPos(TransformationId, f32[3]);
 void func_800F90EC(f32);
 void func_800F90F8(s32);
 void func_800F9104(s32);
 void func_800F9110(s32);
-void func_800F911C(s32);
+void bs_setSplitStatus(SPLITUP_STATUS);
 void func_800F9178();
 s32 func_800F9184(void);
 // Might take in a PlayerState *
 void func_800F9198(void);
 s32 func_800F9214(s32);
 TransformationId func_800F929C(void);
-void func_800F93C4(s32*, s32*);
+void bs_getActiveCharAndTransform(s32*, TransformationId*);
 int func_800F9488(s32);
 s32 func_800F99E8(void);
 s32 func_800F99FC();

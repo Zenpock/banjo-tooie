@@ -167,7 +167,7 @@ void baduo_entrypoint_13(PlayerState* self)
                 func_800F82D4(self->unk184, 0);
             }
             _bapackctrl_entrypoint_5(self, 1);
-            func_800F911C(1);
+            bs_setSplitStatus(SPLIT_STATE_NOTSPLIT);
             func_800F80D8((u32)self->unk184);
             func_800D5034(player_getTransformation(self), TRANSFORM_1_BK);
             player_setTransformation(self, TRANSFORM_1_BK);
@@ -246,7 +246,7 @@ void baduo_entrypoint_15(PlayerState* self, f32* arg1)
     bs_setState(temp_v0_2, 0x136);
     func_800F8128(sp4C);
     func_800A38F0(self, 0, 1);
-    func_800F8EE4(self->unk184);
+    bs_multiCharCreate(self->unk184);
     bs_setState(self, _badrone_entrypoint_29(self));
     _sudialog_entrypoint_0(0xE8, 0xC);
     func_80800C78_baduo(temp_v0_2, 0x11);
@@ -268,12 +268,12 @@ void baduo_entrypoint_16(PlayerState* self)
     func_80800008_baduo(self, temp_s0);
     baduo_entrypoint_7(temp_s0, 2);
     baduo_entrypoint_7(self, 2);
-    func_800F911C(2);
-    func_800F9098(0xA, self->duo->unk8);
+    bs_setSplitStatus(SPLIT_STATE_SPLIT);
+    bs_setSoloSpawnPos(TRANSFORM_A_BANJO, self->duo->unk8);
     func_800F90EC(self->duo->unk4);
     func_800D5034(TRANSFORM_1_BK, TRANSFORM_A_BANJO);
     func_800D5034(TRANSFORM_1_BK, TRANSFORM_B_KAZOOIE);
-    func_800F8EE4(sp24);
+    bs_multiCharCreate(sp24);
     func_800F8128(self->unk184);
     event_sendToActorsOfType(PROP_158_SWAP_CLOUD, 0x16, 0);
 }
@@ -305,7 +305,7 @@ void baduo_entrypoint_18(PlayerState* self, f32* arg1)
     func_80800008_baduo(self, temp_v0_2);
     func_800A38F0(self, 0, 1);
     func_800F8128(sp24);
-    func_800F8EE4(self->unk184);
+    bs_multiCharCreate(self->unk184);
     func_800F45B0(self, 2, arg1);
     yaw_setIdeal(temp_v0_2, 0.0f);
     yaw_applyIdeal(temp_v0_2);
@@ -346,7 +346,7 @@ void baduo_entrypoint_20(PlayerState* self, f32* arg1, f32 arg2)
     _bsstatue_entrypoint_1(self);
     bs_setState(temp_v0_2, 0xF9);
     func_800F8128(temp_v0);
-    func_800F8EE4(self->unk184);
+    bs_multiCharCreate(self->unk184);
     func_800F45B0(self, 2, arg1);
     func_800A38F0(self, 0, 1);
     _sudialog_entrypoint_0(0x50, 0xE);
@@ -360,7 +360,7 @@ void baduo_entrypoint_21(PlayerState* self)
     PlayerState* currentState;
     f32 sp24[3];
 
-    func_800F911C(3);
+    bs_setSplitStatus(SPLIT_STATE_TALON_TORPEDO);
     sp34 = character_createNew(self->unk184);
     currentState = character_getPlayerState(sp34);
     player_getCoords(self, sp24);
@@ -375,7 +375,7 @@ void baduo_entrypoint_21(PlayerState* self)
     bs_setState(currentState, 0x153);
     func_800A91A8(sp34);
     func_80800008_baduo(self, currentState);
-    func_800F8EE4(self->unk184);
+    bs_multiCharCreate(self->unk184);
     func_800A38F0(self, 0, 1);
     func_800D5234(1);
     func_800A16BC(1);

@@ -586,11 +586,11 @@ void func_80801260_chhumba(Actor* arg0)
         sp34[index] = ((sp44[index] - sp34[index]) * 0.05f) + sp34[index];
     }
     func_800907C0(sp34);
-    func_8008FF40(sp34);
+    activePlayer_getRotation(sp34);
     sp34[1] += func_800F1DCC(180.0f, sp34[1]) * 0.05f;
     sp34[0] += func_800F1DCC(0.0f, sp34[0]) * 0.05f;
     sp34[2] += func_800F1DCC(0.0f, sp34[2]) * 0.05f;
-    func_800906DC(sp34);
+    activePlayer_setRotation(sp34);
 }
 
 void func_8080138C_chhumba(Actor* arg0)

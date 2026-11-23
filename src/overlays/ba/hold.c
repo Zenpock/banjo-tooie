@@ -49,7 +49,7 @@ void func_808000E0_bahold(PlayerState* self) {
     f32 sp24[3];
     f32 sp18[3];
 
-    func_8008FF40(sp18);
+    activePlayer_getRotation(sp18);
     func_80092D44(self, sp24);
     sp18[1] = ml_normalizeAngle_f(sp18[1] + self->hold->unk4);
     sp24[1] += self->hold->unk0;
