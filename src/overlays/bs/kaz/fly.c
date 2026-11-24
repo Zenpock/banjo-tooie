@@ -317,7 +317,7 @@ BanjoStateId func_80800D24_bskazfly(PlayerState *self, BanjoStateId nextState) {
     }
 
     is_player_stable = player_isStable(self);
-    if (func_8009650C(self) == 0 && is_player_stable == 0) {
+    if (player_touchingWall(self) == 0 && is_player_stable == 0) {
         return nextState;
     } 
 
@@ -325,7 +325,7 @@ BanjoStateId func_80800D24_bskazfly(PlayerState *self, BanjoStateId nextState) {
         func_800963C0(self, sp38);
         sp28 = func_80096628(self);
     } else {
-        func_80096440(self, sp38);
+        player_getWallTouchNormal(self, sp38);
         sp28 = func_80096434(self);
     }
 

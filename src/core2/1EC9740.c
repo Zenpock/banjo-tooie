@@ -142,7 +142,7 @@ void func_800F03AC(f32* arg0, f32* arg1, f32* arg2, f32* arg3)
     ml_getdiff_vec3f(arg0, arg3, sp1C);
 }
 
-void func_800F0410(f32* arg0, f32* arg1, f32* arg2)
+void func_800F0410(f32* arg0, f32 tri[3][3], f32* arg2)
 {
     f32 sp54;
     f32 sp50;
@@ -151,9 +151,9 @@ void func_800F0410(f32* arg0, f32* arg1, f32* arg2)
     f32 sp34[3];
     f32 sp28[3];
 
-    func_800F0274(sp40, arg1, &arg1[3], arg2);
-    func_800F0274(sp34, &arg1[3], &arg1[6], arg2);
-    func_800F0274(sp28, &arg1[6], arg1, arg2);
+    func_800F0274(sp40, tri[0], tri[1], arg2);
+    func_800F0274(sp34, tri[1], tri[2], arg2);
+    func_800F0274(sp28, tri[2], tri[0], arg2);
     sp54 = ml_vec3f_distance_sq(sp40, arg2);
     sp50 = ml_vec3f_distance_sq(sp34, arg2);
     temp_f0 = ml_vec3f_distance_sq(sp28, arg2);

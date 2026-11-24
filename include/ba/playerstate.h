@@ -201,11 +201,11 @@ typedef struct ba_unknown_94_s {
     s32 unk14;
     u8 unk18[4];
     s32 unk1C;
-    f32 unk20[3][3];
-    f32 unk44[3];
+    f32 unk20[3][3]; //Coordinates of the vertices of the last touched wall
+    f32 wallNormal[3]; //Last Wall Touched Normal Vector
 	ActorMarker* unk50; //Object being stood on
 	u8 unk54;
-	u8 unk55;
+	u8 touchingWall;
 	u8 unk56;
 	u8 unk57;
     u8 unk58[0xC];

@@ -309,7 +309,7 @@ void func_800A3644(PlayerState* self)
         if ((func_80096518(self) == 0) && !(sp30 & 0x50))
         {
             sp2C = func_80096434(self);
-            if ((func_8009650C(self) != 0) && (sp2C & 0x50))
+            if ((player_touchingWall(self) != 0) && (sp2C & 0x50))
             {
                 sp30 = sp2C;
             }

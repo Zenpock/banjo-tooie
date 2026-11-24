@@ -97,7 +97,7 @@ void func_808002E0_bskaztorpedo(PlayerState *self) {
     if (bakey_held(self, BUTTON_A) != 0) {
         _bakaztorpedo_entrypoint_6(self, 3);
         self->unk16C = 225.0f;
-        if (func_8009650C(self) != 0) {
+        if (player_touchingWall(self) != 0) {
             self->unk16C *= 0.5f;
         }
     } else {

@@ -142,7 +142,7 @@ void func_80095AD0(PlayerState* arg0) {
     ml_vec3f_clear(arg0->unk94->unk90);
     ml_vec3f_clear(arg0->unk94->unk78);
     ml_vec3f_clear(arg0->unk94->unk84);
-    ml_vec3f_clear(arg0->unk94->unk44);
+    ml_vec3f_clear(arg0->unk94->wallNormal);
     arg0->unk94->unk1C = 0;
     arg0->unk94->unkA2 = 0;
     func_80095A40(arg0);
@@ -271,11 +271,13 @@ s32 func_80096434(PlayerState* arg0) {
     return arg0->unk94->unk74;
 }
 
-void func_80096440(PlayerState* arg0, f32* arg1) {
-    ml_vec3f_copy(arg1, arg0->unk94->unk44);
+//player_getWallTouchNormal
+void player_getWallTouchNormal(PlayerState* arg0, f32* arg1) {
+    ml_vec3f_copy(arg1, arg0->unk94->wallNormal);
 }
 
-void func_8009646C(PlayerState* arg0, f32 arg1[3][3]) {
+//player_getWallVertices
+void player_getWallTouchVertices(PlayerState* arg0, f32 arg1[3][3]) {
     s32 i;
 
     for (i = 0; i < 3; i++) {
@@ -296,9 +298,9 @@ s32 player_atWaterSurface(PlayerState* arg0) {
     return arg0->unk94->atSurface;
 }
 
-s32 func_8009650C(PlayerState* arg0) {
+s32 player_touchingWall(PlayerState* arg0) {
 
-    return (s32) arg0->unk94->unk55;
+    return (s32) arg0->unk94->touchingWall;
 }
 
 s32 func_80096518(PlayerState* arg0) {
@@ -691,26 +693,28 @@ s32 func_800976DC(PlayerState* arg0) {
     f32 sp74;
     f32 sp70;
     f32 sp64[3];
-    f32 sp58[3];
+    f32 wallNormal[3];
     f32 sp4C[3];
-    f32 sp28[3][3];
+    f32 vertices[3][3];
     ba_unknown_98_s* temp_v0;
 
     if (bastatetimer_isActive(arg0, BA_STATE_TIMER_ID_7_UNKNOWN) != 0) {
         return 0;
     }
-    if (func_8009650C(arg0) == 0) {
+    if (player_touchingWall(arg0) == 0) {
         return 0;
     }
-    func_80096440(arg0, sp58);
-    if ((0.028f < sp58[1]) && (sp58[1] < 0.98f)) {
+    player_getWallTouchNormal(arg0, wallNormal);
+
+	//Reject most wall normals that point up
+    if ((0.028f < wallNormal[1]) && (wallNormal[1] < 0.98f)) {
         return 0;
     }
     player_getCoords(arg0, sp64);
     func_80095870(arg0, &sp70, &sp74);
     sp64[1] = sp64[1] + sp70;
-    func_8009646C(arg0, sp28);
-    func_800F0410(sp4C, sp28[0], sp64);
+    player_getWallTouchVertices(arg0, vertices);
+    func_800F0410(sp4C, vertices, sp64);
     ml_getdiff_vec3f(arg0->unk98->unk0, sp4C, sp64);
     arg0->unk98->unk0[1] = 0.0f;
     ml_vec3f_normalizeMagnitude(arg0->unk98->unk0);

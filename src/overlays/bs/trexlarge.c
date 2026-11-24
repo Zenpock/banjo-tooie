@@ -52,7 +52,7 @@ void func_80800044_bstrexlarge(PlayerState* self)
     sp4C = func_800962D4(self);
     sp2C = func_80096518(self) == 0;
     sp48 = baphysics_get_vertical_velocity(self);
-    if ((func_8009650C(self) != 0) && (sp2C != 0) && (sp4C < 70.0f) && (sp30[1] < 5.0f) && (sp48 < -100.0f))
+    if ((player_touchingWall(self) != 0) && (sp2C != 0) && (sp4C < 70.0f) && (sp30[1] < 5.0f) && (sp48 < -100.0f))
     {
         self->unk164.word = (s32)ml_min_f((f32)(self->unk164.word + 1), 100.0f);
         return;

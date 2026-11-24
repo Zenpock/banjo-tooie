@@ -486,7 +486,7 @@ s32 func_800F581C(s32 arg0) {
     PlayerState* sp1C;
     s32 var_v1;
     sp1C = D_80135490.unk0[arg0];
-    if (func_8009650C(sp1C) != 0) {
+    if (player_touchingWall(sp1C) != 0) {
         var_v1 = func_80096434(sp1C);
     } else {
         var_v1 = 0;

@@ -268,8 +268,8 @@ void func_808007F8_bsswim(PlayerState* self) {
 	if (player_inWater(self) == 0) {
 		nextState = BS_STATE_1_IDLE;
 	}
-	if ((func_8009650C(self) != 0) && (player_canDive(self) != 0)) {
-		func_80096440(self, sp24);
+	if ((player_touchingWall(self) != 0) && (player_canDive(self) != 0)) {
+		player_getWallTouchNormal(self, sp24);
 		if (sp24[1] < -0.7f) {
 			sp20 = player_getWaterHeight(self);
 			if ((sp20 - player_getCoordVertical(self)) > 90.0f) {

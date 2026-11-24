@@ -380,7 +380,7 @@ s32 func_80800D80_bsbfly(PlayerState* self, s32 arg1)
         arg1 = 0x4C;
     }
     isStable = player_isStable(self);
-    if((func_8009650C(self) == 0) && (isStable == 0)) 
+    if((player_touchingWall(self) == 0) && (isStable == 0)) 
     {
         return arg1;
     }
@@ -393,7 +393,7 @@ s32 func_80800D80_bsbfly(PlayerState* self, s32 arg1)
                 var_v0 = func_80096628(self);
                 break;
             case 0:
-                func_80096440(self, &sp38);
+                player_getWallTouchNormal(self, &sp38);
                 var_v0 = func_80096434(self);
                 break;
         } 
