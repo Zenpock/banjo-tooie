@@ -1,7 +1,7 @@
 #include "bs/drone/bubbled.h"
 
 void func_80800000_bsdronebubbled(PlayerState* self) {
-	func_8010114C(self->unk54->unk48, 0x2C, self->unk184);
+	event_sendToActorByMarker(self->unk54->unk48, 0x2C, self->unk184);
 	self->unk54->unk48 = 0;
 }
 

@@ -33,9 +33,9 @@ s32 func_800CFFBC(s32, CollectableId);
 s32 collectable_getCollectedInLevel(CollectableId, s32);
 s32 func_800D035C(s16 a0);
 void func_800D053C(u32, u32);
-void func_800D0594(s32, CollectableId, s16);
-void func_800D05E4(s32, CollectableId, ActorMarker*);
-s32 func_800D0634(s32, CollectableId);
+void collectable_setMapForJiggy(s32, CollectableId, s16);
+void collectable_setMarkerForJiggy(s32, CollectableId, ActorMarker*);
+ActorMarker* collectable_getMarkerForJiggy(s32, CollectableId);
 s16 func_800D0684(s32, CollectableId);
 //Get Associated Level Id of given item
 s32 func_800D06D4(s32 itemIndex, CollectableId itemType);
@@ -61,7 +61,7 @@ ActorMarker* collectable_itemSetup(s32, f32*, s32, ActorMarker*);
 void collectable_spawnItem(u32, CollectableId, f32*, u32, ActorMarker*);
 //Despawn Collectable
 void func_800D119C(s32, CollectableId);
-void func_800D1218(s32, CollectableId, f32*);
+void collectable_getJiggyActorPosition(s32, CollectableId, f32*);
 void func_800D1254(s32, CollectableId, f32*);
 //Get Total Number of Jinjos of Type
 s32 func_800D129C(u32);

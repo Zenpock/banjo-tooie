@@ -51,7 +51,7 @@ void babounce_entrypoint_3(PlayerState *self) {
     baphysics_set_terminal_velocity(self, self->bounce->unk18);
     func_8008E95C(self);
     if (self->bounce->unk10 != 0) {
-        func_8010114C(self->bounce->unk10, 0xA1, 0);
+        event_sendToActorByMarker(self->bounce->unk10, 0xA1, 0);
         self->bounce->unk10 = 0;
     }
 }

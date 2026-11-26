@@ -35,7 +35,7 @@ typedef struct
 s32 _sujiggy_entrypoint_0();
 
 //Get the required amount of jiggies for the given world
-s32 _sujiggy_entrypoint_2(s32);
+s32 _world_getJiggyRequirement(s32);
 s32 sujiggy_entrypoint_4(s32);
 s32 sujiggy_entrypoint_5(s32);
 void _sujiggy_entrypoint_8();

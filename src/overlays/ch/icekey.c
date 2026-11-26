@@ -12,7 +12,7 @@ s32 func_80800000_chicekey(Actor* arg0, s32 arg1, s32 arg2)
         inventory_incrementValue(0x53);
         _subaddiedialog_entrypoint_11(arg0->unk0, 0x1550U, 4U, arg0->position, 0x6FU);
         func_800FC660(0xE);
-        func_800FFA88(arg0->unk0);
+        actorMarker_mark_delete(arg0->unk0);
         return 1;
     }
     return 0;

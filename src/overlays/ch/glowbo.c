@@ -624,7 +624,7 @@ void func_80801118_chglowbo(Actor* arg0, GraphicsBuffers* arg1)
 
 s32 func_8080115C_chglowbo(Actor* arg0, s32 arg1, u32 arg2) {
     if (arg1 == 0x4D) {
-        func_800FFA88(arg0->unk0);
+        actorMarker_mark_delete(arg0->unk0);
         return 1;
     }
     return 0;

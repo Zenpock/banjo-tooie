@@ -17,7 +17,7 @@ void func_80800098_chjadestatue(Actor* arg0) {
 	if (arg0->unk64_20)
 	{
 		func_808001C0_chjadestatue(arg0);
-		func_800FFA88(arg0->unk0);
+		actorMarker_mark_delete(arg0->unk0);
 	}
 }
 

@@ -494,7 +494,7 @@ void func_80800CB4_chpawnbroker(Actor* arg0)
     //Have we collected the jiggy
     if (collectable_isCollected(JRL_PAWNOS, 1U) == 0)
     {
-        ItemForSale = actorList_getFromMarker(func_800D0634(JRL_PAWNOS, 1U));
+        ItemForSale = actorList_getFromMarker(collectable_getMarkerForJiggy(JRL_PAWNOS, 1U));
     }
     //Have we collected the Cheato page
     else if (collectable_isCollected(0xAU, 4U) == 0)

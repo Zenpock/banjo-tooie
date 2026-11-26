@@ -3,9 +3,9 @@
 extern MoveData D_808000C0_chmole_factory[];
 extern ActorData D_808000F0_chmole_factory;
 
-void func_80800000_chmole_factory(Actor* a0, u32 a1, u32 a2)
+void chmole_factory_eventHandler(Actor* a0, u32 a1, u32 a2)
 {
-	_sumole_entrypoint_3(a0, a1, a2, D_808000C0_chmole_factory);
+	_sumole_eventHandler(a0, a1, a2, D_808000C0_chmole_factory);
 }
 
 void func_80800024_chmole_factory(Actor* a0)

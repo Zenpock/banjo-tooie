@@ -161,7 +161,7 @@ s32 character_getTransformBit(s32);
 u32 character_getActiveIndex(void);
 s32 character_getCurrentHealth(s32);
 s32 character_getMaxHealth(s32);
-ActorMarker* func_800F55D0(s32);
+ActorMarker* character_getFloorMarker(s32);
 f32 character_getGroundHeight(s32);
 s32 func_800F56AC(s32);
 ActorMarker* character_getHeldMarker(s32 charIndex);

@@ -21,7 +21,7 @@ void func_80800070_chjigsaw(Actor* arg0)
         actor_mark_delete(arg0);
         return;
     }
-    func_800D05E4((s32)arg0->unk50, 1, arg0->unk0);
+    collectable_setMarkerForJiggy((s32)arg0->unk50, 1, arg0->unk0);
     if (arg0->unk58 != 0.0f)
     {
         func_800FC6B0(0x18U);
@@ -43,7 +43,7 @@ void func_8080011C_chjigsaw(Actor* arg0)
 
 void func_8080017C_chjigsaw(Actor* arg0)
 {
-    func_800D05E4((s32)arg0->unk50, 1, NULL);
+    collectable_setMarkerForJiggy((s32)arg0->unk50, 1, NULL);
     if (arg0->unk6C_0 != 0)
     {
         func_800C8B84(arg0->unk6C_0);
@@ -55,7 +55,7 @@ void func_808001D0_chjigsaw(Actor* arg0)
     func_80105834(arg0);
     func_8080011C_chjigsaw(arg0);
 }
-void func_808001F8_chjigsaw(Actor* arg0)
+void chjigsaw_update(Actor* arg0)
 {
     s32 temp_s1;
     f32 spA0;
@@ -124,7 +124,7 @@ void func_808001F8_chjigsaw(Actor* arg0)
     }
 }
 
-void func_808004A0_chjigsaw(Actor* arg0, s32 arg1)
+void func_808004A0_chjigsaw(Actor* arg0, GraphicsBuffers* arg1)
 {
     f32 sp2C[3];
 
@@ -134,7 +134,7 @@ void func_808004A0_chjigsaw(Actor* arg0, s32 arg1)
     func_800DE448(arg0->position, sp2C, arg0->scale, NULL, func_8010347C(arg0->unk0));
 }
 
-s32 func_80800518_chjigsaw(Actor* arg0, s32 eventId, s32 arg2)
+s32 chjigsaw_eventHandler(Actor* arg0, s32 eventId, s32 arg2)
 {
     f32 sp1C[3];
 

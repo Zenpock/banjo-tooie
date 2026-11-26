@@ -17,7 +17,7 @@ typedef struct {
     u8 unk39_0 : 1;
 } EggNormalData;
 
-void func_80800194_cheggnormal(Actor* arg0);
+void cheggNormal_update(Actor* arg0);
 ActorData D_808004D0_cheggnormal =
 {
     /*0x0*/ 0x26C,
@@ -25,7 +25,7 @@ ActorData D_808004D0_cheggnormal =
     /*0x4*/ 0x9D7,
     /*0x6*/ 0x1,
     /*0x8*/ 0,
-    /*0xC*/ func_80800194_cheggnormal,
+    /*0xC*/ cheggNormal_update,
     /*0x10*/ func_80105834,
     /*0x14*/ _subaddiedraw25d_entrypoint_2,
     /*0x18*/ 0x0000,
@@ -87,7 +87,7 @@ void func_80800000_cheggnormal(Actor* arg0)
 
 }
 
-void func_80800194_cheggnormal(Actor* arg0)
+void cheggNormal_update(Actor* arg0)
 {
     EggNormalData* sp2C;
 

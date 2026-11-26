@@ -550,7 +550,7 @@ f32 func_800EFC7C(f32* arg0, f32* arg1)
     temp_f12 = arg0[2] - arg1[2];
     if ((temp_f2 != 0.0f) || (temp_f12 != 0.0f))
     {
-        return (temp_f2 * temp_f2) + (temp_f12 * temp_f12);
+        return SQ(temp_f2) + SQ(temp_f12);
     }
     return 0;
 }

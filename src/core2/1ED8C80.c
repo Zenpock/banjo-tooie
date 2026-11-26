@@ -197,7 +197,7 @@ void func_800FFA3C(Actor* actor)
 }
 
 
-void func_800FFA88(ActorMarker* a0)
+void actorMarker_mark_delete(ActorMarker* a0)
 {
     actor_mark_delete(actorList_getFromMarker(a0));
 }

@@ -60,7 +60,7 @@ void func_808000A8_chterryegg(Actor* arg0)
     switch (arg0->unk70_10)
     {
     case 1:
-        temp_v0 = _plsu_entrypoint_3(arg0->unk0);
+        temp_v0 = _marker_getCharacterOnTop(arg0->unk0);
         if (temp_v0 != -1)
         {
             func_800F7BC8(temp_v0, 0x53, arg0->unk0);
@@ -83,7 +83,7 @@ void func_808000A8_chterryegg(Actor* arg0)
         *(f32*)&arg0->actorData[4] = ml_map_f(arg0->unk58, 0, 2.5f, 0.0f, 255.0f);
         break;
     case 5:
-        temp_v0_2 = _plsu_entrypoint_3(arg0->unk0);
+        temp_v0_2 = _marker_getCharacterOnTop(arg0->unk0);
         if (temp_v0_2 != -1)
         {
             func_800F7BC8(temp_v0_2, 0x53, arg0->unk0);

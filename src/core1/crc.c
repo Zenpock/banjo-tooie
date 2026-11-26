@@ -29,7 +29,7 @@ CrcEntry crc_entries[] = {
     {init_crc_check, 9, FALSE},
     {ovl_entrypoint, 12, FALSE},
     {func_800A1364, 15, FALSE},
-    {func_800965D4, 18, FALSE},
+    {player_getFloorMarker, 18, FALSE},
     {func_8009B7C0, 21, FALSE},
     {func_8001C1C0, 24, FALSE},
     {collectable_setJinjoPattern, 27, FALSE},

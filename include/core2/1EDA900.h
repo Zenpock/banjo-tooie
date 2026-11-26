@@ -20,7 +20,7 @@ void* func_80101080(void);
 s32 event_sendToActor(Actor*, ActorEventId, s32);
 
 //Send an event to Actor that has ActorMarker*
-s32 func_8010114C(ActorMarker*, ActorEventId, s32);
+s32 event_sendToActorByMarker(ActorMarker*, ActorEventId, s32);
 
 //Send an event to items of type
 s32 event_sendToActorsOfType(s32 propId, ActorEventId eventId, s32);

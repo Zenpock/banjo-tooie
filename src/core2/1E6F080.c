@@ -305,7 +305,7 @@ void func_80095C94(PlayerState* arg0)
         baflag_clear(arg0, BA_FLAG_2_ON_SPRING_PAD);
         if ((arg0->unk94->unk50 != NULL) && (player_isStable(arg0) != 0))
         {
-            func_8010114C(arg0->unk94->unk50, EVENT_91_ACTOR_STOOD_ON, arg0->unk184);
+            event_sendToActorByMarker(arg0->unk94->unk50, EVENT_91_ACTOR_STOOD_ON, arg0->unk184);
         }
     }
 }
@@ -469,7 +469,7 @@ s32 func_800965C8(PlayerState* arg0) {
     return arg0->unk94->unkA4;
 }
 
-ActorMarker* func_800965D4(PlayerState* arg0) {
+ActorMarker* player_getFloorMarker(PlayerState* arg0) {
     return arg0->unk94->unk50;
 }
 

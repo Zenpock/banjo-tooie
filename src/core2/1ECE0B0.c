@@ -411,9 +411,9 @@ s32 character_getMaxHealth(s32 arg0)
     return player_getMaxHealth(D_80135490.unk0[arg0]);
 }
 
-ActorMarker* func_800F55D0(s32 arg0)
+ActorMarker* character_getFloorMarker(s32 arg0)
 {
-    return func_800965D4(D_80135490.unk0[arg0]);
+    return player_getFloorMarker(D_80135490.unk0[arg0]);
 }
 
 s32 func_800F55FC(s32 arg0)

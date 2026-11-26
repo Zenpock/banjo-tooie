@@ -140,7 +140,7 @@ typedef union {
     struct { s16 s_0; s16 s_1; };
 } Arg2;
 
-s32 sumole_entrypoint_3(Actor* arg0, s32 arg1, Arg2 arg2, MoveData* arg3)
+s32 sumole_eventHandler(Actor* arg0, s32 arg1, Arg2 arg2, MoveData* arg3)
 {
     s32 a1;
     Actor* temp_v0;
@@ -149,7 +149,7 @@ s32 sumole_entrypoint_3(Actor* arg0, s32 arg1, Arg2 arg2, MoveData* arg3)
 
     switch (arg1)
     {
-    case 0x95:
+    case EVENT_95_ACTOR_SPAWNED:
         if (_glcutDll_entrypoint_20() != 0)
         {
             sumole_entrypoint_2(arg0, 0xC);
@@ -643,7 +643,7 @@ void sumole_entrypoint_16(Actor* arg0, s32 arg1)
     MoveData* temp_v0;
     s32 sp28;
 
-    func_8010114C((s32)arg0->unk0, 0x21, 0);
+    event_sendToActorByMarker((s32)arg0->unk0, 0x21, 0);
     temp_v0 = (MoveData*)func_80101080();
     arg0->unk58 = 0.0f;
     switch (arg0->unk70_10)

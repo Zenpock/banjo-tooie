@@ -19,7 +19,7 @@ ActorData D_808003F4_chhoneycarrier=
     /*0x4*/ 0x612,
     /*0x6*/ 0x1,
     /*0x8*/ 0,
-    /*0xC*/ func_80800260_chhoneycarrier,
+    /*0xC*/ chhoneycarrier_update,
     /*0x10*/ func_80105834,
     /*0x14*/ func_80800380_chhoneycarrier,
     /*0x18*/ 0,
@@ -37,7 +37,7 @@ ActorData D_808003F4_chhoneycarrier=
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8800,
     /*0x3E*/ 0x3000,
-    /*0x40*/ func_808000C4_chhoneycarrier,
+    /*0x40*/ chhoneycarrier_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0,
 };
@@ -60,11 +60,11 @@ void func_80800000_chhoneycarrier(Actor* arg0, ActorMarker* arg1)
         //Increment Inventory Value for honeycomb
         inventory_incrementValue(0x49);
         _fxsparkle_entrypoint_1(arg0->position, 0);
-        func_800FFA88(arg0->unk0);
+        actorMarker_mark_delete(arg0->unk0);
     }
 }
 
-s32 func_808000C4_chhoneycarrier(Actor* arg0, s32 arg1, s32 arg2)
+s32 chhoneycarrier_eventHandler(Actor* arg0, s32 arg1, s32 arg2)
 {
     f32 sp2C[3];
     switch (arg1)
@@ -106,7 +106,7 @@ void func_80800210_chhoneycarrier(Actor* arg0)
     arg0->unk58 = -200.0f;
 }
 
-void func_80800260_chhoneycarrier(Actor* arg0)
+void chhoneycarrier_update(Actor* arg0)
 {
 
     s32 var_s1 = 0;

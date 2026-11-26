@@ -406,7 +406,7 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
         temp_v0 = _subaddiefind_entrypoint_2(arg0->actorData[7], 0);
         if (temp_v0 != NULL)
         {
-            func_800FFA88(*temp_v0);
+            actorMarker_mark_delete(*temp_v0);
         }
         actorList_getFromMarker(arg0->unk3C)->unk64_16 = 1;
     }
@@ -508,7 +508,7 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
         }
         break;
     case 15:
-        func_8010114C(arg0->unk3C, 0x18, 0);
+        event_sendToActorByMarker(arg0->unk3C, 0x18, 0);
         arg0->unk58 = 1.0f;
         ml_vec3f_copy(sp34->unk64, arg0->position);
         if (arg0->unk64_20)
@@ -729,7 +729,7 @@ s32 func_80801A00_chheggy(Actor* arg0, s32 arg1, s32 arg2)
         func_800BBCB8(arg0->position, arg0->position, 1.0f, 3, &D_80801F1C_chheggy);
         _chskeletonexplode_entrypoint_3(sp34, 1, 0);
         _chskeletonexplode_entrypoint_3(sp34, 2, 1);
-        func_800FFA88(arg0->unk0);
+        actorMarker_mark_delete(arg0->unk0);
         return 1;
     case EVENT_1F_ACTOR_ONSCREEN:
         func_801015D0(arg0);

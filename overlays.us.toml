@@ -5837,7 +5837,7 @@ entrypoints = [
   "plsu_entrypoint_0",
   "character_findCharOfTransform",
   "character_soloCharactersExist",
-  "plsu_entrypoint_3",
+  "marker_getCharacterOnTop",
 ]
 
 [[overlay]] # Overlay 639
@@ -6593,7 +6593,7 @@ entrypoints = [
   "glglobalsettings_entrypoint_0",
   "glglobalsettings_entrypoint_1",
   "glglobalsettings_entrypoint_2",
-  "glglobalsettings_entrypoint_3",
+  "settings_isWideScreenEnabled",
   "glglobalsettings_entrypoint_4",
   "glglobalsettings_entrypoint_5",
   "glglobalsettings_entrypoint_6",
@@ -7708,7 +7708,7 @@ entrypoints = [
   "sumole_entrypoint_0",
   "sumole_entrypoint_1",
   "sumole_entrypoint_2",
-  "sumole_entrypoint_3",
+  "sumole_eventHandler",
   "sumole_entrypoint_4",
   "sumole_entrypoint_5",
   "sumole_entrypoint_6",
@@ -8361,7 +8361,7 @@ name = "sujiggy"
 entrypoints = [
   "sujiggy_entrypoint_0",
   "sujiggy_entrypoint_1",
-  "sujiggy_entrypoint_2",
+  "world_getJiggyRequirement",
   "sujiggy_entrypoint_3",
   "sujiggy_entrypoint_4",
   "sujiggy_entrypoint_5",

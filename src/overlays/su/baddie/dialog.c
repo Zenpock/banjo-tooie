@@ -560,7 +560,7 @@ void subaddiedialog_entrypoint_12(s32 arg1, s32 arg2, s32 arg3)
     s16 combined[2];
     combined[0] = arg2;
     combined[1] = arg3;
-    func_8010114C(arg1, EVENT_2E_ACTOR_DIALOG_ENDED, ((s32*)combined)[0]);
+    event_sendToActorByMarker(arg1, EVENT_2E_ACTOR_DIALOG_ENDED, ((s32*)combined)[0]);
 }
 
 void subaddiedialog_entrypoint_13(s32 arg1, s32 arg2, s32 arg3)
@@ -568,7 +568,7 @@ void subaddiedialog_entrypoint_13(s32 arg1, s32 arg2, s32 arg3)
     s16 combined[2];
     combined[0] = arg2;
     combined[1] = arg3;
-    func_8010114C(arg1, 0x2F, ((s32*)combined)[0]);
+    event_sendToActorByMarker(arg1, 0x2F, ((s32*)combined)[0]);
 }
 
 void subaddiedialog_entrypoint_14(s32 arg1, s32 arg2, s32 arg3)
@@ -576,7 +576,7 @@ void subaddiedialog_entrypoint_14(s32 arg1, s32 arg2, s32 arg3)
     s16 combined[2];
     combined[0] = arg2;
     combined[1] = arg3;
-    func_8010114C(arg1, 0x30, ((s32*)combined)[0]);
+    event_sendToActorByMarker(arg1, 0x30, ((s32*)combined)[0]);
 }
 
 void subaddiedialog_entrypoint_15(s32 arg1, s32 arg2, s32 arg3)
@@ -584,7 +584,7 @@ void subaddiedialog_entrypoint_15(s32 arg1, s32 arg2, s32 arg3)
     s16 combined[2];
     combined[0] = arg2;
     combined[1] = arg3;
-    func_8010114C(arg1, 0x3a, ((s32*)combined)[0]);
+    event_sendToActorByMarker(arg1, 0x3a, ((s32*)combined)[0]);
 }
 
 /// Get the value of dialog flag

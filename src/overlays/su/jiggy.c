@@ -51,7 +51,7 @@ s32 sujiggy_entrypoint_1()
     return 0xB;
 }
 
-u8 sujiggy_entrypoint_2(s32 arg0)
+u8 world_getJiggyRequirement(s32 arg0)
 {
     return D_808008E0_sujiggy[arg0].WorldCost;
 }
@@ -230,7 +230,7 @@ s32 sujiggy_entrypoint_16(void)
     {
         return 0;
     }
-    sp1C = sujiggy_entrypoint_2(sp24);
+    sp1C = world_getJiggyRequirement(sp24);
     temp_v1 = sp1C - func_800D035C(1);
     if (temp_v1 > 0)
     {
@@ -256,7 +256,7 @@ s32 sujiggy_entrypoint_17(void)
         return -1;
     }
     sp1C = func_800D035C(1);
-    if (sp1C >= sujiggy_entrypoint_2(sp24))
+    if (sp1C >= world_getJiggyRequirement(sp24))
     {
         var_v1 = 1;
     }

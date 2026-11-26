@@ -1533,7 +1533,7 @@ void func_80802550_chdiggerboss(Actor* arg0)
 	func_80808948_chdiggerboss(arg0);
 	if (func_801069A4(*(s32*)&sp24->unk0) != 0)
 	{
-		func_800FFA88(*(s32*)&sp24->unk0);
+		actorMarker_mark_delete(*(s32*)&sp24->unk0);
 		*(s32*)&sp24->unk0 = NULL;
 	}
 }
@@ -3346,7 +3346,7 @@ void func_808080C0_chdiggerboss(Actor* arg0, s32 arg1)
 			if (sp1C->unkA8 != NULL)
 			{
 				sp1C = sp1C;
-				func_8010114C(sp1C->unkA8, 0x4F, 0);
+				event_sendToActorByMarker(sp1C->unkA8, 0x4F, 0);
 				sp1C->unkA8 = NULL;
 				return;
 			}
@@ -3527,7 +3527,7 @@ void func_80808948_chdiggerboss(Actor* arg0) {
 		{
 			if (func_801069A4(hag1Mem->unkB0[var_s0]) != 0)
 			{
-				func_800FFA88(hag1Mem->unkB0[var_s0]);
+				actorMarker_mark_delete(hag1Mem->unkB0[var_s0]);
 			}
 			hag1Mem->unkB0[var_s0] = NULL;
 		}
@@ -3560,7 +3560,7 @@ void func_80808B40_chdiggerboss(Actor* arg0, s32 arg1)
 				temp_a0 = temp_v0->unkB0[var_s1];
 				if (temp_a0 != NULL)
 				{
-					func_800FFA88(temp_a0);
+					actorMarker_mark_delete(temp_a0);
 					temp_v0->unkB0[var_s1] = NULL;
 				}
 			}
@@ -3700,7 +3700,7 @@ void func_80809310_chdiggerboss(Actor* arg0)
 	func_808093F8_chdiggerboss(arg0);
 	temp_a0 = sp20->unkE4;
 	if (temp_a0 != NULL) {
-		func_800FFA88(temp_a0);
+		actorMarker_mark_delete(temp_a0);
 	}
 	sp20->unkE4 = temp_s0->unk0;
 	if (arg0->unk3C != NULL) {

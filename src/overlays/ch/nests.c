@@ -25,11 +25,11 @@ s32 D_808010F0_chnests[] = { 0,0,0x40000000,0x01140401,0x3f1c28f6,0x01cb0d01,0x3
 void func_80800000_chnests(Actor*);
 void func_80800098_chnests(Actor*);
 void func_808002E0_chnests(Actor*);
-void func_808003AC_chnests(Actor*);
-s32 func_808003F4_chnests(Actor*, s32, s32);
+void chnests_nonCyclingUpdate(Actor*);
+s32 chnests_eventHandler(Actor*, s32, s32);
 void func_80800670_chnests(Actor* arg0, UnkArg2ChNest* arg1);
 void func_808006C4_chnests(Actor*);
-void func_808007C8_chnests(Actor*);
+void chnests_noteUpdate(Actor*);
 void func_8080082C_chnests(Actor*, GraphicsBuffers*);
 s32 func_80800898_chnests(Actor*, GraphicsBuffers*, f32);
 void func_8080093C_chnests(Actor*, s32);
@@ -41,7 +41,7 @@ void func_80800A00_chnests(Actor*, GraphicsBuffers*);
 void func_80800A6C_chnests(s32);
 void func_80800B80_chnests(Actor*);
 void func_80800BD8_chnests(Actor*, s32, f32, f32);
-void func_80800C3C_chnests(Actor*);
+void chnests_cyclingUpdate(Actor*);
 void func_80800D8C_chnests(Actor*, GraphicsBuffers*);
 void func_80800ED8_chnests(Actor*);
 void func_80800F08_chnests(Actor*);
@@ -71,7 +71,7 @@ ActorData D_808011E8_chnests =
     /*0x4*/ 0x6EA,
     /*0x6*/ 0x1,
     /*0x8*/ 0,
-    /*0xC*/ func_808003AC_chnests,
+    /*0xC*/ chnests_nonCyclingUpdate,
     /*0x10*/ func_80102EC0,
     /*0x14*/ func_80800968_chnests,
     /*0x18*/ 0x0000,
@@ -89,7 +89,7 @@ ActorData D_808011E8_chnests =
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8400,
     /*0x3E*/ 0x3010,
-    /*0x40*/ func_808003F4_chnests,
+    /*0x40*/ chnests_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0
 };
@@ -101,7 +101,7 @@ ActorData D_80801230_chnests =
     /*0x4*/ 0x6EA,
     /*0x6*/ 0x1,
     /*0x8*/ 0,
-    /*0xC*/ func_808003AC_chnests,
+    /*0xC*/ chnests_nonCyclingUpdate,
     /*0x10*/ func_80102EC0,
     /*0x14*/ func_80800968_chnests,
     /*0x18*/ 0x0000,
@@ -119,7 +119,7 @@ ActorData D_80801230_chnests =
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8400,
     /*0x3E*/ 0x3010,
-    /*0x40*/ func_808003F4_chnests,
+    /*0x40*/ chnests_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0,
 };
@@ -131,7 +131,7 @@ ActorData D_80801278_chnests =
     /*0x4*/ 0x6EA,
     /*0x6*/ 0x1,
     /*0x8*/ 0,
-    /*0xC*/ func_808003AC_chnests,
+    /*0xC*/ chnests_nonCyclingUpdate,
     /*0x10*/ func_80102EC0,
     /*0x14*/ func_80800968_chnests,
     /*0x18*/ 0x0000,
@@ -149,7 +149,7 @@ ActorData D_80801278_chnests =
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8400,
     /*0x3E*/ 0x3010,
-    /*0x40*/ func_808003F4_chnests,
+    /*0x40*/ chnests_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0,
 };
@@ -161,7 +161,7 @@ ActorData D_808012C0_chnests =
     /*0x4*/ 0x6EA,
     /*0x6*/ 0x1,
     /*0x8*/ 0,
-    /*0xC*/ func_808003AC_chnests,
+    /*0xC*/ chnests_nonCyclingUpdate,
     /*0x10*/ func_80102EC0,
     /*0x14*/ func_80800968_chnests,
     /*0x18*/ 0x0000,
@@ -179,7 +179,7 @@ ActorData D_808012C0_chnests =
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8400,
     /*0x3E*/ 0x3010,
-    /*0x40*/ func_808003F4_chnests,
+    /*0x40*/ chnests_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0,
 };
@@ -191,7 +191,7 @@ ActorData D_80801308_chnests =
     /*0x4*/ 0x6EA,
     /*0x6*/ 0x1,
     /*0x8*/ 0,
-    /*0xC*/ func_808003AC_chnests,
+    /*0xC*/ chnests_nonCyclingUpdate,
     /*0x10*/ func_80102EC0,
     /*0x14*/ func_80800968_chnests,
     /*0x18*/ 0x0000,
@@ -209,7 +209,7 @@ ActorData D_80801308_chnests =
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8400,
     /*0x3E*/ 0x3010,
-    /*0x40*/ func_808003F4_chnests,
+    /*0x40*/ chnests_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0,
 };
@@ -221,7 +221,7 @@ ActorData D_80801350_chnests =
     /*0x4*/ 0x6EA,
     /*0x6*/ 0x1,
     /*0x8*/ 0,
-    /*0xC*/ func_808003AC_chnests,
+    /*0xC*/ chnests_nonCyclingUpdate,
     /*0x10*/ func_80102EC0,
     /*0x14*/ func_80800968_chnests,
     /*0x18*/ 0x0000,
@@ -239,7 +239,7 @@ ActorData D_80801350_chnests =
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8400,
     /*0x3E*/ 0x3010,
-    /*0x40*/ func_808003F4_chnests,
+    /*0x40*/ chnests_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0,
 };
@@ -251,7 +251,7 @@ ActorData D_80801398_chnests =
     /*0x4*/ 0x6EA,
     /*0x6*/ 0x1,
     /*0x8*/ 0,
-    /*0xC*/ func_808003AC_chnests,
+    /*0xC*/ chnests_nonCyclingUpdate,
     /*0x10*/ func_80102EC0,
     /*0x14*/ func_80800968_chnests,
     /*0x18*/ 0x0000,
@@ -269,7 +269,7 @@ ActorData D_80801398_chnests =
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8400,
     /*0x3E*/ 0x3010,
-    /*0x40*/ func_808003F4_chnests,
+    /*0x40*/ chnests_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0,
 };
@@ -281,7 +281,7 @@ ActorData D_808013E0_chnests =
     /*0x4*/ 0x6EF,
     /*0x6*/ 0x3,
     /*0x8*/ 0,
-    /*0xC*/ func_808003AC_chnests,
+    /*0xC*/ chnests_nonCyclingUpdate,
     /*0x10*/ func_80102EC0,
     /*0x14*/ func_80800A00_chnests,
     /*0x18*/ 0x0000,
@@ -299,7 +299,7 @@ ActorData D_808013E0_chnests =
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8400,
     /*0x3E*/ 0x3010,
-    /*0x40*/ func_808003F4_chnests,
+    /*0x40*/ chnests_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0,
 };
@@ -311,7 +311,7 @@ ActorData D_80801428_chnests =
     /*0x4*/ 0x6EF,
     /*0x6*/ 0x3,
     /*0x8*/ 0,
-    /*0xC*/ func_808003AC_chnests,
+    /*0xC*/ chnests_nonCyclingUpdate,
     /*0x10*/ func_80102EC0,
     /*0x14*/ func_80800A00_chnests,
     /*0x18*/ 0x0000,
@@ -329,7 +329,7 @@ ActorData D_80801428_chnests =
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8400,
     /*0x3E*/ 0x3410,
-    /*0x40*/ func_808003F4_chnests,
+    /*0x40*/ chnests_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0,
 };
@@ -341,7 +341,7 @@ ActorData D_80801470_chnests =
     /*0x4*/ 0x6EC,
     /*0x6*/ 0x2,
     /*0x8*/ 0,
-    /*0xC*/ func_808007C8_chnests,
+    /*0xC*/ chnests_noteUpdate,
     /*0x10*/ func_80102EC0,
     /*0x14*/ func_8080082C_chnests,
     /*0x18*/ 0x0000,
@@ -359,7 +359,7 @@ ActorData D_80801470_chnests =
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8400,
     /*0x3E*/ 0x3450,
-    /*0x40*/ func_808003F4_chnests,
+    /*0x40*/ chnests_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0,
 };
@@ -371,7 +371,7 @@ ActorData D_808014B8_chnests =
     /*0x4*/ 0x6ED,
     /*0x6*/ 0x2,
     /*0x8*/ 0,
-    /*0xC*/ func_808007C8_chnests,
+    /*0xC*/ chnests_noteUpdate,
     /*0x10*/ func_80102EC0,
     /*0x14*/ func_8080082C_chnests,
     /*0x18*/ 0x0000,
@@ -389,7 +389,7 @@ ActorData D_808014B8_chnests =
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8400,
     /*0x3E*/ 0x3450,
-    /*0x40*/ func_808003F4_chnests,
+    /*0x40*/ chnests_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0,
 };
@@ -400,7 +400,7 @@ ActorData D_80801500_chnests =
     /*0x4*/ 0x6EA,
     /*0x6*/ 0x1,
     /*0x8*/ 0,
-    /*0xC*/ func_80800C3C_chnests,
+    /*0xC*/ chnests_cyclingUpdate,
     /*0x10*/ func_80102EC0,
     /*0x14*/ func_80800D8C_chnests,
     /*0x18*/ 0x01F4,
@@ -418,7 +418,7 @@ ActorData D_80801500_chnests =
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8000,
     /*0x3E*/ 0x7010,
-    /*0x40*/ func_808003F4_chnests,
+    /*0x40*/ chnests_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0,
 };
@@ -429,7 +429,7 @@ ActorData D_80801548_chnests =
     /*0x4*/ 0x6EF,
     /*0x6*/ 0x3,
     /*0x8*/ 0,
-    /*0xC*/ func_80800C3C_chnests,
+    /*0xC*/ chnests_cyclingUpdate,
     /*0x10*/ func_80102EC0,
     /*0x14*/ func_80800D8C_chnests,
     /*0x18*/ 0x01F4,
@@ -447,7 +447,7 @@ ActorData D_80801548_chnests =
     /*0x38*/ func_80107C2C,
     /*0x3C*/ 0x8000,
     /*0x3E*/ 0x7010,
-    /*0x40*/ func_808003F4_chnests,
+    /*0x40*/ chnests_eventHandler,
     /*0x44*/ 0,
     /*0x46*/ 0,
 };
@@ -555,7 +555,7 @@ void func_808001F0_chnests(Actor* arg0, UnkArg2ChNest* arg1)
         func_80800B80_chnests(arg0);
         break;
     default:
-        func_800FFA88(sp24);
+        actorMarker_mark_delete(sp24);
         return;
     }
 
@@ -585,7 +585,7 @@ void func_8080034C_chnests(Actor* arg0)
 }
 
 //Update for single type egg/feather nests
-void func_808003AC_chnests(Actor* arg0)
+void chnests_nonCyclingUpdate(Actor* arg0)
 {
     if (((arg0->unk70_10) == 4) && (timer_reachedZero(&arg0->unk58) != 0))
     {
@@ -594,7 +594,7 @@ void func_808003AC_chnests(Actor* arg0)
 }
 
 //Event Handler
-s32 func_808003F4_chnests(Actor* arg0, s32 eventType, s32 arg2)
+s32 chnests_eventHandler(Actor* arg0, s32 eventType, s32 arg2)
 {
     switch (eventType)
     {
@@ -727,7 +727,7 @@ void func_808006C4_chnests(Actor* arg0)
 }
 
 //Update Note Nests
-void func_808007C8_chnests(Actor* arg0)
+void chnests_noteUpdate(Actor* arg0)
 {
     if ((arg0->unk70_10 == 2) && (arg0->unk74_27))
     {
@@ -869,7 +869,7 @@ void func_80800BD8_chnests(Actor* arg0, s32 arg1, f32 arg2, f32 arg3)
 }
 
 //Update Cycling Egg/Feather Nests
-void func_80800C3C_chnests(Actor* arg0)
+void chnests_cyclingUpdate(Actor* arg0)
 {
     switch (arg0->actorData[6])
     {

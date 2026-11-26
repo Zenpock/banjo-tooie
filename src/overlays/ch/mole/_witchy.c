@@ -1,9 +1,9 @@
 #include "ch/mole.h"
 
 
-void func_80800000_chmole_witchy(Actor*, s32, s32);
+void chmole_witchy_eventHandler(Actor*, s32, s32);
 void func_80800024_chmole_witchy(Actor*);
-void func_80800090_chmole_witchy(Actor*);
+void chmole_witchy_update(Actor*);
 
 MoveData D_808000C0_chmole_witchy[] = 
 {
@@ -18,7 +18,7 @@ ActorData D_808000F0_chmole_witchy =
 	/*0x4*/ 0x0000,
 	/*0x6*/ 0x0001,
 	/*0x8*/ 0x00000000,
-	/*0xC*/ func_80800090_chmole_witchy,
+	/*0xC*/ chmole_witchy_update,
 	/*0x10*/ 0x00000000,
 	/*0x14*/ func_8010A730,
 	/*0x18*/ 0x01F4,
@@ -36,14 +36,14 @@ ActorData D_808000F0_chmole_witchy =
 	/*0x38*/ func_80107C2C,
 	/*0x3C*/ 0x8000,
 	/*0x3E*/ 0x2202,
-	/*0x40*/ func_80800000_chmole_witchy,
+	/*0x40*/ chmole_witchy_eventHandler,
 	/*0x44*/ 0x0000,
 	/*0x46*/ 0x0000
 };
 
-void func_80800000_chmole_witchy(Actor* a0, s32 a1, s32 a2)
+void chmole_witchy_eventHandler(Actor* a0, s32 a1, s32 a2)
 {
-	_sumole_entrypoint_3(a0, a1, a2, D_808000C0_chmole_witchy);
+	_sumole_eventHandler(a0, a1, a2, D_808000C0_chmole_witchy);
 }
 
 void func_80800024_chmole_witchy(Actor* a0)
@@ -53,7 +53,7 @@ void func_80800024_chmole_witchy(Actor* a0)
 	a0->unk54 = a0->unk74_7;
 }
 
-void func_80800090_chmole_witchy(Actor* a0)
+void chmole_witchy_update(Actor* a0)
 {
 	_sumole_entrypoint_4(a0, D_808000C0_chmole_witchy);
 }

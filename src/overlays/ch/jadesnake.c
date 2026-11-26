@@ -203,9 +203,9 @@ void func_80800150_chjadesnake(Actor* arg0)
         }
         break;
     }
-    if ((arg0->unk6C_0) && (func_800D0634(0xAU, 1U) != 0))
+    if ((arg0->unk6C_0) && (collectable_getMarkerForJiggy(0xAU, 1U) != 0))
     {
-        temp_v0_2 = actorList_getFromMarker(func_800D0634(0xAU, 1U));
+        temp_v0_2 = actorList_getFromMarker(collectable_getMarkerForJiggy(0xAU, 1U));
         ml_vec3f_add(temp_v0_2->position, (f32*)&temp_v0_2->actorData[4]);
         arg0->unk6C_0--;
         if (arg0->unk6C_0 == 2)

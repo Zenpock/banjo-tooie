@@ -430,7 +430,7 @@ void func_800D046C(s32 arg0, s32 arg1, CollectableId arg2)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D053C.s")
 
-void func_800D0594(s32 arg0, CollectableId arg1, s16 arg2)
+void collectable_setMapForJiggy(s32 arg0, CollectableId arg1, s16 arg2)
 {
     s32 temp_v0;
 
@@ -444,7 +444,7 @@ void func_800D0594(s32 arg0, CollectableId arg1, s16 arg2)
     }
 }
 
-void func_800D05E4(s32 arg0, CollectableId arg1, ActorMarker* arg2)
+void collectable_setMarkerForJiggy(s32 arg0, CollectableId arg1, ActorMarker* arg2)
 {
     s32 temp_v0;
 
@@ -459,7 +459,7 @@ void func_800D05E4(s32 arg0, CollectableId arg1, ActorMarker* arg2)
 }
 
 
-s32 func_800D0634(s32 arg0, CollectableId arg1)
+ActorMarker* collectable_getMarkerForJiggy(s32 arg0, CollectableId arg1)
 {
     s32 temp_v0;
 
@@ -696,7 +696,7 @@ Actor* collectable_itemSpawnMovement(PropId arg0, f32* coords, u32 spawnStyle, s
         return _chbounce_entrypoint_7(0x1D, coords, arg0);
     case 4: //CCW
         return _chbounce_entrypoint_7(0x1E, coords, arg0);
-    case 3:
+    case 3: //Trigger an Event
         *arg3 = 1;
     case 2: //Spin CCW
         return func_80108474(arg0, coords, 0);
@@ -727,7 +727,7 @@ ActorMarker* collectable_itemSetup(s32 arg0, f32* coords, s32 spawnStyle, ActorM
         {
             event_sendToActor(sp2C, 0x14, 1);
         }
-        func_800D05E4(itemFlag, itemType, sp2C->unk0);
+        collectable_setMarkerForJiggy(itemFlag, itemType, sp2C->unk0);
         break;
     case TYPE_0_JINJO:
         sp2C = collectable_itemSpawnMovement(PROP_1F4_JINJO_REAL, coords, spawnStyle, &sp28);
@@ -762,7 +762,7 @@ ActorMarker* collectable_itemSetup(s32 arg0, f32* coords, s32 spawnStyle, ActorM
     if ((arg3 != NULL) && (arg3->unk18_16))
     {
         func_80101074(sp2C->unk0);
-        func_8010114C(arg3, 0xD, arg0);
+        event_sendToActorByMarker(arg3, 0xD, arg0);
     }
     return sp2C->unk0;
 }
@@ -803,14 +803,14 @@ void collectable_spawnItem(u32 itemIndex, CollectableId itemType, f32* spawnCoor
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D119C.s")
 
-void func_800D1218(s32 arg0, CollectableId arg1, f32* arg2)
+void collectable_getJiggyActorPosition(s32 arg0, CollectableId arg1, f32* arg2)
 {
-    s32 temp_v0;
+    ActorMarker* temp_v0;
 
-    temp_v0 = func_800D0634(arg0, arg1);
+    temp_v0 = collectable_getMarkerForJiggy(arg0, arg1);
     if (temp_v0 != 0) 
     {
-        ml_vec3f_copy(arg2, actorList_getFromMarker((ActorMarker*)temp_v0)->position);
+        ml_vec3f_copy(arg2, actorList_getFromMarker(temp_v0)->position);
     }
 }
 
@@ -818,12 +818,12 @@ void func_800D1254(s32 arg0, CollectableId arg1, f32* arg2)
 {
     s32 pad;
     Actor* temp_v0_2;
-    s32 temp_v0;
+    ActorMarker* temp_v0;
 
-    temp_v0 = func_800D0634(arg0, arg1);
+    temp_v0 = collectable_getMarkerForJiggy(arg0, arg1);
     if (temp_v0 != 0)
     {
-        temp_v0_2 = actorList_getFromMarker((ActorMarker*)temp_v0);
+        temp_v0_2 = actorList_getFromMarker(temp_v0);
         ml_vec3f_copy(temp_v0_2->position, arg2);
         func_80103014(temp_v0_2);
     }

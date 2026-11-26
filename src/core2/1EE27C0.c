@@ -77,25 +77,25 @@ void func_80109F08(Actor* arg0, s32 arg1)
 
 void func_80109F18(s32 arg0, s32 arg1)
 {
-    func_8010114C(arg0, EVENT_3E_ACTOR_TOUCHED, arg1);
+    event_sendToActorByMarker(arg0, EVENT_3E_ACTOR_TOUCHED, arg1);
     if (arg1) {}
 }
 
 void func_80109F40(s32 arg0, s32 arg1)
 {
-    func_8010114C(arg0, 0x3F, arg1);
+    event_sendToActorByMarker(arg0, 0x3F, arg1);
     if (arg1) {}
 }
 
 void func_80109F68(s32 arg0, s32 arg1)
 {
-    func_8010114C(arg0, 0x40, arg1);
+    event_sendToActorByMarker(arg0, 0x40, arg1);
     if (arg1) {}
 }
 
 void func_80109F90(s32 arg0, s32 arg1)
 {
-    func_8010114C(arg0, 0x41, arg1);
+    event_sendToActorByMarker(arg0, 0x41, arg1);
     if (arg1) {}
 }
 

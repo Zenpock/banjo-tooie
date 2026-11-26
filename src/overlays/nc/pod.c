@@ -188,7 +188,7 @@ s32 ncpod_entrypoint_5(s32 arg0, UNKPODSTRUCT* arg1, ActorEventId arg2, s32 arg3
         if (arg1->unk8->unk18_16)
         {
             func_80101074(arg4);
-            temp_v0 = func_8010114C(arg1->unk8, arg2, arg3);
+            temp_v0 = event_sendToActorByMarker(arg1->unk8, arg2, arg3);
             switch (temp_v0)
             {
                 case 4:
@@ -219,7 +219,7 @@ s32 ncpod_entrypoint_6(s32 arg0, UNKPODSTRUCT* arg1, ActorEventId arg2, s32 arg3
     if ((func_808002E8_ncpod(arg1->unk8, arg1->unkC) != 0) && (arg1->unk8->unk18_16))
     {
         func_80101074(arg4);
-        return func_8010114C(arg1->unk8, arg2, arg3);
+        return event_sendToActorByMarker(arg1->unk8, arg2, arg3);
     }
     return -1;
 }

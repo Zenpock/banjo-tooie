@@ -3,23 +3,23 @@
 extern MoveData D_80800190_chmole_overworld;
 extern s32 D_808001E0_chmole_overworld[];
 
-s32 func_80800000_chmole_overworld(Actor* arg0, s32 eventId, s32 arg2)
+s32 chmole_overworld_eventHandler(Actor* arg0, s32 eventId, s32 arg2)
 {
     switch (eventId)
     {
-    case 0x2F:
-    {
-        if (((s16*)&arg2)[1] == 3)
-        {
-            inventory_addValue(D_808001E0_chmole_overworld[(s32)arg0->unk54], func_800D1A6C(D_808001E0_chmole_overworld[(s32)arg0->unk54]) - inventory_getValue(D_808001E0_chmole_overworld[(s32)arg0->unk54]));
-            break;
-        }
-        _sumole_entrypoint_3(arg0, eventId, (s32)arg2, &D_80800190_chmole_overworld);
-        return;
-    }
-    default:
-        _sumole_entrypoint_3(arg0, eventId, (s32)arg2, &D_80800190_chmole_overworld);
-        return;
+        case 0x2F:
+            {
+                if (((s16*)&arg2)[1] == 3)
+                {
+                    inventory_addValue(D_808001E0_chmole_overworld[(s32)arg0->unk54], func_800D1A6C(D_808001E0_chmole_overworld[(s32)arg0->unk54]) - inventory_getValue(D_808001E0_chmole_overworld[(s32)arg0->unk54]));
+                    break;
+                }
+                _sumole_eventHandler(arg0, eventId, (s32)arg2, &D_80800190_chmole_overworld);
+                return;
+            }
+        default:
+            _sumole_eventHandler(arg0, eventId, (s32)arg2, &D_80800190_chmole_overworld);
+            return;
     }
     return 1;
 }

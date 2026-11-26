@@ -310,7 +310,7 @@ void func_80800B60_bstnt(PlayerState* self, s32 arg1) {
 	case 1:
 		baanim_playForDuration_onceSmooth(self, 0xE2, 0.7f);
 		func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_0_NONE);
-		func_8010114C(self->unk164.word, 6, 0);
+		event_sendToActorByMarker(self->unk164.word, 6, 0);
 		func_80101038(sp2C);
 		player_getCoords(self, sp38);
 		func_800F1E6C(sp38, sp2C, &sp44);
@@ -367,7 +367,7 @@ void func_80800D08_bstnt(PlayerState* self) {
 			func_8009514C(self);
 		}
 		if (baanim_isAt(self, 0.665f) != 0) {
-			func_8010114C(self->unk164.word, 5, self->unk184);
+			event_sendToActorByMarker(self->unk164.word, 5, self->unk184);
 			func_8080009C_bstnt(self);
 		}
 		if (baanim_isAt(self, 0.85f) != 0) {

@@ -95,8 +95,8 @@ void gccollectDll_entrypoint_4(void)
         for (iterator = temp_v0; iterator < temp_v0 + 0xA; iterator++)
         {
             func_800D0778(iterator, 1, D_80800C0C_gccollectDll);
-            func_800D05E4(iterator, 1, NULL);
-            func_800D0594(iterator, 1, 0);
+            collectable_setMarkerForJiggy(iterator, 1, NULL);
+            collectable_setMapForJiggy(iterator, 1, 0);
         }
         //If we are not in a cutscene
         if (func_800DB9B0() == 0)
@@ -227,7 +227,7 @@ void func_808005BC_gccollectDll(u32 arg0, Prop* arg1)
     sp18[2] = (s32)arg1->position[2];
     sp24 = func_80108C90(PROP_21F_JIGGY_REAL, sp18, 0U, NULL);
     func_800D053C(arg0, 1);
-    func_800D05E4((s32)arg0, 1, sp24->unk0);
+    collectable_setMarkerForJiggy((s32)arg0, 1, sp24->unk0);
     func_800CFBC8(sp24, arg0, TYPE_1_JIGGY, 0);
     if ((_glreflight_entrypoint_0() & 0xFF) != 0xFE) 
     {
@@ -295,7 +295,7 @@ void func_808007D8_gccollectDll(Prop* arg0)
 {
     f32 sp24[3];
 
-    if ((collectable_isSpawned((u32)arg0->FlagOrRotation, 1U) != 0) && (collectable_isCollected((u32)arg0->FlagOrRotation, 1U) == 0) && (func_800D0634((u32)arg0->FlagOrRotation, 1) == 0))
+    if ((collectable_isSpawned((u32)arg0->FlagOrRotation, 1U) != 0) && (collectable_isCollected((u32)arg0->FlagOrRotation, 1U) == 0) && (collectable_getMarkerForJiggy((u32)arg0->FlagOrRotation, 1) == 0))
     {
         func_808005BC_gccollectDll((u32)arg0->FlagOrRotation, arg0);
         return;

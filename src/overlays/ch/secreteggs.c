@@ -41,7 +41,7 @@ void func_808000C0_chsecreteggs(Actor* arg0)
     {
         if (flag_getValue(FLAG_3E7_SNS_EGG_HATCHED_YELLOW) != 0)
         {
-            func_800FFA88(arg0->unk0);
+            actorMarker_mark_delete(arg0->unk0);
             return;
         }
         actor_disableCollision(arg0);
@@ -66,7 +66,7 @@ void func_80800118_chsecreteggs(Actor* arg0)
         }
         if (arg0->unk7A_5)
         {
-            s32 temp_v0 = _plsu_entrypoint_3(arg0->unk0);
+            s32 temp_v0 = _marker_getCharacterOnTop(arg0->unk0);
             if (temp_v0 != -1)
             {
                 func_800F7BC8(temp_v0, 0x53, arg0->unk0);
@@ -149,7 +149,7 @@ s32 func_80800328_chsecreteggs(Actor* arg0, s32 arg1, s32 arg2)
             inventory_incrementValue(0x52);
             func_80800000_chsecreteggs(arg0);
             func_800FC660(0xE);
-            func_800FFA88(arg0->unk0);
+            actorMarker_mark_delete(arg0->unk0);
             return 1;
         default:
             return 0;

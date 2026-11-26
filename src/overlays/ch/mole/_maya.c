@@ -5,9 +5,9 @@ extern MoveData D_808001E0_chmole_maya[];
 extern ActorData D_80800210_chmole_maya;
 extern ActorData D_80800258_chmole_maya;
 
-void func_80800000_chmole_maya(Actor* a0, u32 a1, u32 a2)
+void chmole_maya_eventHandler(Actor* a0, u32 a1, u32 a2)
 {
-	_sumole_entrypoint_3(a0, a1, a2, D_808001E0_chmole_maya);
+	_sumole_eventHandler(a0, a1, a2, D_808001E0_chmole_maya);
 }
 
 void func_80800024_chmole_maya(Actor* a0)

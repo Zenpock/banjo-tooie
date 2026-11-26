@@ -311,11 +311,11 @@ void func_80800E24_chgameselect(Actor* arg0)
         {
             if (func_80016B30(0U, 1U) == 1)
             {
-                func_8010114C(arg0->unk3C, 8, arg0->unk79_4);
+                event_sendToActorByMarker(arg0->unk3C, 8, arg0->unk79_4);
             }
             else if (func_80016B30(0U, 0U) == 1)
             {
-                func_8010114C(arg0->unk3C, 7, arg0->unk79_4);
+                event_sendToActorByMarker(arg0->unk3C, 7, arg0->unk79_4);
             }
         }
         if (((arg0->unk6C_0) == 1) && (arg0->unk7C_12))

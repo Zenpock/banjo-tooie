@@ -16,7 +16,7 @@ typedef struct {
     u8 unk39_0 : 1;
     s16 unk3A;
 } EggNormalData;
-void func_80800164_chegggrenade(Actor* arg0);
+void cheggGrenade_update(Actor* arg0);
 ActorData D_80800450_chegggrenade =
 {
     /*0x0*/ 0x26F,
@@ -24,7 +24,7 @@ ActorData D_80800450_chegggrenade =
     /*0x4*/ 0x9C2,
     /*0x6*/ 0x1,
     /*0x8*/ 0,
-    /*0xC*/ func_80800164_chegggrenade,
+    /*0xC*/ cheggGrenade_update,
     /*0x10*/ func_80105834,
     /*0x14*/ _subaddiedraw25d_entrypoint_2,
     /*0x18*/ 0x0000,
@@ -78,7 +78,7 @@ void chegggrenade_entrypoint_0(ActorMarker* arg0)
     _suegg_entrypoint_4(temp_v0, 0);
 }
 
-void func_80800164_chegggrenade(Actor* arg0)
+void cheggGrenade_update(Actor* arg0)
 {
     EggNormalData* sp2C;
 

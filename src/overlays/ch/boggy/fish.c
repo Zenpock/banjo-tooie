@@ -7,8 +7,8 @@ typedef struct {
 	u32 unk24;
 } unkStructBoggyFish;
 
-void func_8080018C_chboggyfish(Actor*);
-s32 func_80800064_chboggyfish(Actor*, s32, s32);
+void chboggyfish_update(Actor*);
+s32 chboggyfish_eventHandler(Actor*, s32, s32);
 void func_80800000_chboggyfish(Actor*, unkStructBoggyFish*);
 s32 D_80800210_chboggyfish[4] = { 0,0,0x3F99999A,0x04440049 };
 ActorData D_80800220_chboggyfish =
@@ -18,7 +18,7 @@ ActorData D_80800220_chboggyfish =
 	/*0x4*/ 0x08FA,
 	/*0x6*/ 0x0001,
 	/*0x8*/ D_80800210_chboggyfish,
-	/*0xC*/ func_8080018C_chboggyfish,
+	/*0xC*/ chboggyfish_update,
 	/*0x10*/ func_80105834,
 	/*0x14*/ func_801018A4,
 	/*0x18*/ 0x0000,
@@ -36,7 +36,7 @@ ActorData D_80800220_chboggyfish =
 	/*0x38*/ func_80107C2C,
 	/*0x3C*/ 0x8040,
 	/*0x3E*/ 0x5404,
-	/*0x40*/ func_80800064_chboggyfish,
+	/*0x40*/ chboggyfish_eventHandler,
 	/*0x44*/ 0x0000,
 	/*0x46*/ 0x0000
 };
@@ -51,11 +51,11 @@ void func_80800000_chboggyfish(Actor* arg0, unkStructBoggyFish* arg1)
 		inventory_incrementValue(0x51);
 		func_800FC6B0(0xEU);
 		flag_setValueTrue(FLAG_438_UNK);
-		func_800FFA88(arg0->unk0);
+		actorMarker_mark_delete(arg0->unk0);
 	}
 }
 
-s32 func_80800064_chboggyfish(Actor* arg0, s32 arg1, s32 arg2)
+s32 chboggyfish_eventHandler(Actor* arg0, s32 arg1, s32 arg2)
 {
 	u8 temp_v0;
 	s32 temp_f6;
@@ -97,7 +97,7 @@ s32 func_80800064_chboggyfish(Actor* arg0, s32 arg1, s32 arg2)
 	return 1;
 }
 
-void func_8080018C_chboggyfish(Actor* arg0)
+void chboggyfish_update(Actor* arg0)
 {
 	BOGGYFISH_DATA(arg0)->unk10 = (BOGGYFISH_DATA(arg0)->unk10 + BOGGYFISH_DATA(arg0)->unk14);
 	if (BOGGYFISH_DATA(arg0)->unk10 <= 0.0f)

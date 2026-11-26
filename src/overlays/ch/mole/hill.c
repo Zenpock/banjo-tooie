@@ -247,7 +247,7 @@ void chmolehill_entrypoint_2(Actor* arg0, s32 arg1)
         {
             if (arg0->unk3C != NULL)
             {
-                func_800FFA88(arg0->unk3C);
+                actorMarker_mark_delete(arg0->unk3C);
                 arg0->unk3C = NULL;
             }
         }

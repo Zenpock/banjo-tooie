@@ -322,7 +322,7 @@ s32 func_80800870_chstonepillar(Actor* arg0)
 
     gameSpeed = time_getDelta();
     temp_s0 = actor_getAdditionalMem(arg0, 0U);
-    func_800D1218(8, 1, sp2C);
+    collectable_getJiggyActorPosition(8, TYPE_1_JIGGY, sp2C);
     _fxsparkle_entrypoint_1(sp2C, 0x12U);
     if (temp_s0->unk2F == 0)
     {
@@ -399,7 +399,7 @@ s32 func_80800B58_chstonepillar(Actor* arg0)
     StonePillarStruct* sp28;
 
     sp28 = actor_getAdditionalMem(arg0, 0U);
-    func_800D1218(8, 1, sp2C);
+    collectable_getJiggyActorPosition(8, 1, sp2C);
     func_800BBCB8(sp2C, sp2C, 1.0f, 0xE, _fxgenlist_entrypoint_0());
     sp2C[1] += 40.0f;
     func_80800BDC_chstonepillar(sp2C);

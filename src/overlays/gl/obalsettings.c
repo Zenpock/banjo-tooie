@@ -21,7 +21,7 @@ void func_80800084_glglobalsettings()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/obalsettings/glglobalsettings_entrypoint_2.s")
 
-s32 glglobalsettings_entrypoint_3()
+s32 settings_isWideScreenEnabled()
 {
     return flag_getValue(GFLAG_BB9_WIDESCREEN_ENABLED);
 }

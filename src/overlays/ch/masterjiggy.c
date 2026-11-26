@@ -97,7 +97,7 @@ void func_8080047C_chmasterjiggy(s32 arg0)
     if ((func_800C0638() == 0) && (flag_getValue(FLAG5_D4E_UNK) == 0) && (_glcutDll_entrypoint_20() == 0))
     {
         func_800D2498(0x10EU, func_800D035C(1), 0U);
-        func_800D2498(0x106U, _sujiggy_entrypoint_2(_sujiggy_entrypoint_0()), 0U);
+        func_800D2498(0x106U, _world_getJiggyRequirement(_sujiggy_entrypoint_0()), 0U);
     }
 }
 

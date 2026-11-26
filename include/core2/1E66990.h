@@ -7,6 +7,7 @@
 
 #include "core2/1E691A0.h"
 #include "core2/1E6F080.h"
+#include "core2/1E700B0.h"
 #include "core2/1E75920.h"
 #include "core2/1E76360.h"
 #include "core2/1E77A20.h"

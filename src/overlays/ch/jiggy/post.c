@@ -42,7 +42,7 @@ void func_80800068_chjiggypost(Actor* arg0)
         temp_a0 = (arg0->unk74_7) - 0x33;
         if (temp <= temp_a0)
         {
-            temp = _sujiggy_entrypoint_2(temp_a0) - func_800D035C(1);
+            temp = _world_getJiggyRequirement(temp_a0) - func_800D035C(1);
             if (temp > 0)
             {
                 func_800D2498(0x106U, temp, 0U);
@@ -69,7 +69,7 @@ void func_80800068_chjiggypost(Actor* arg0)
             else
             {
 
-                if (_sujiggy_entrypoint_2(arg0->unk74_7 - 0x33) == 1)
+                if (_world_getJiggyRequirement(arg0->unk74_7 - 0x33) == 1)
                 {
                     temp = 0x1513;
                 }
@@ -93,7 +93,7 @@ void func_808001C4_chjiggypost(Actor* arg0, s32 arg1, s32 arg2)
     case 0x1514:
         if (flag_getValue(FLAG_35B_FTT_CS_JIGGYWIGGY) != 0)
         {
-            if (func_800D035C(1) >= _sujiggy_entrypoint_2(arg0->unk74_7 - 0x33))
+            if (func_800D035C(1) >= _world_getJiggyRequirement(arg0->unk74_7 - 0x33))
             {
                 if (activePlayer_getTransformation() == TRANSFORM_1_BK)
                 {
@@ -141,7 +141,7 @@ s32 func_808002DC_chjiggypost(Actor* arg0, s32 arg1, s32 arg2)
         case EVENT_95_ACTOR_SPAWNED:
             break;
         case 0x30:
-            return _sujiggy_entrypoint_2(arg0->unk74_7 - 0x33);
+            return _world_getJiggyRequirement(arg0->unk74_7 - 0x33);
         case 0x52:
             _gcdialogcamera_entrypoint_3(D_808003C8_chjiggypost, arg0->scale);
             break;

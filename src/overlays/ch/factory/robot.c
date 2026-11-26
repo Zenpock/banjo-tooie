@@ -474,7 +474,7 @@ void func_80800DC4_chfactoryrobot(Actor* arg0)
 }
 
 //Robot Event Handler
-s32 func_80800E40_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
+s32 chfactoryrobot_eventHandler(Actor* arg0, s32 arg1, s32 arg2)
 {
     FactoryRobotStruct* temp_v0;
     Actor* temp_v0_2;

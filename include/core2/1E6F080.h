@@ -63,7 +63,7 @@ s32 func_80096530(PlayerState*);
 s32 func_80096544(PlayerState *);
 s32 func_80096568(PlayerState*, s32);
 s32 func_8009659C(PlayerState*, s32);
-ActorMarker* func_800965D4(PlayerState*);
+ActorMarker* player_getFloorMarker(PlayerState*);
 void func_800965E0(PlayerState*, void*);
 void player_getFloorVertices(PlayerState*, f32[3][3]);
 s32 func_80096628(PlayerState *);

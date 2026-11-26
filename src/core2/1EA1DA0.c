@@ -714,7 +714,7 @@ void func_800C9B30(ActorMarker* arg0, s32 arg1, s32 arg2)
     }
     if ((func_801069A4(sp1C) != 0) && (arg1 == ((u32)sp1C->unk12_1)))
     {
-        func_8010114C(sp1C, 0x22, arg2);
+        event_sendToActorByMarker(sp1C, 0x22, arg2);
     }
 }
 
