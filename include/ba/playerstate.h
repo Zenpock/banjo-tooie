@@ -166,13 +166,13 @@ typedef struct {
     s32 unk10;
     s32 unk14;
     s32 unk18;
-    f32 unk1C[3][3];
+    f32 unk1C[3][3]; //Vertices for Floor being touched
     u8 unk40[3][4]; //Player Lighting?
     f32 unk4C[3];
     f32 unk58[3];
     f32 unk64[3];
-    f32 unk70;
-    f32 unk74;
+    f32 unk70; //Ground Height
+    f32 unk74; //Water Height
     f32 unk78;
     s32 unk7C;
     s32 unk80;
@@ -208,14 +208,14 @@ typedef struct ba_unknown_94_s {
 	u8 touchingWall;
 	u8 unk56;
 	u8 unk57;
-    u8 unk58[0xC];
+    f32 unk58[3];
     f32 unk64;
     f32 unk68;
     u8 unk6C[8];
     s32 unk74;
     f32 unk78[3];
     f32 unk84[3];
-    f32 unk90[3];
+    f32 movementDelta[3]; //Difference between old and current position
     s32 unk9C;
     u8 touchingWater; //0xA0 Touching Water
 	u8 atSurface; //0xA1 At surface of water e.g. can jump

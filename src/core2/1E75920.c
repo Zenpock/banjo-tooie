@@ -16,7 +16,7 @@ void func_8009C038(PlayerState* self)
 
 void func_8009C08C(PlayerState* self)
 {
-    func_8009C21C(self);
+    player_oldCoordsToStorage(self);
     ml_vec3f_clear(self->posInfo->unk24);
 }
 
@@ -45,14 +45,14 @@ f32 player_getCoordVertical(PlayerState* self)
     return self->posInfo->current[1];
 }
 
-void func_8009C15C(PlayerState* self, f32* dst) { ml_vec3f_copy(dst, self->posInfo->oldPos); }
+void player_getPrevCoords(PlayerState* self, f32* dst) { ml_vec3f_copy(dst, self->posInfo->oldPos); }
 
-void func_8009C188(PlayerState* self, f32* dst)
+void player_getOlderCoords(PlayerState* self, f32* dst)
 {
     ml_vec3f_copy(dst, self->posInfo->olderPos);
 }
 
-void func_8009C1B4(PlayerState* self, f32 src)
+void player_addVertical(PlayerState* self, f32 src)
 {
     self->posInfo->current[1] += src;
 }
@@ -67,7 +67,7 @@ void func_8009C1F8(PlayerState* self, f32* src)
     ml_vec3f_copy(self->posInfo->unk24, src);
 }
 
-void func_8009C21C(PlayerState* self)
+void player_oldCoordsToStorage(PlayerState* self)
 {
     ml_vec3f_copy(self->posInfo->olderPos, self->posInfo->oldPos);
     ml_vec3f_copy(self->posInfo->oldPos, self->posInfo->current);

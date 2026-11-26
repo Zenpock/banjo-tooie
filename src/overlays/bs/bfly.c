@@ -389,7 +389,7 @@ s32 func_80800D80_bsbfly(PlayerState* self, s32 arg1)
         switch (isStable) 
         {
             default:
-                func_800963C0(self, &sp38);
+                player_getFloorNormal(self, &sp38);
                 var_v0 = func_80096628(self);
                 break;
             case 0:

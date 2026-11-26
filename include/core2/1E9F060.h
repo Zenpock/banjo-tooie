@@ -39,5 +39,6 @@ void func_800C6840(UNKfunc_800C68A0_ARG0*, f32[3][3]);
 void func_800C68A0(UNKfunc_800C68A0_ARG0*, f32);
 void func_800C68D4(UNKfunc_800C68A0_ARG0*, s32);
 void func_800C68DC(UNKfunc_800C68A0_ARG0*);
+void func_800C68E8(UNKfunc_800C68A0_ARG0*, s32, f32);
 
 #endif

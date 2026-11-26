@@ -96,8 +96,8 @@ void bafly_entrypoint_8(PlayerState* self, f32 arg1, f32 arg2, f32 arg3, f32 arg
         sp3C = ml_map_f(temp_f20, arg1, arg1 + 40.0f, 0.0f, arg3);
         bafly_entrypoint_6(self, ml_map_f(temp_f20, arg1, arg1 + 40.0f, -0.25f, 0.0f));
     }
-    func_80096394(self, sp44);
-    if ((player_touchingWall(self) != 0) && (sp44[1] > -1.0f)) {
+    player_getMovementDelta(self, sp44);
+    if ((player_touchingWall(self)) && (sp44[1] > -1.0f)) {
         sp3C = 0.0f;
     }
     baphysics_set_target_yaw(self, yaw_get(self));

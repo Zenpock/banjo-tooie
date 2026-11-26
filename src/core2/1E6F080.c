@@ -1,8 +1,6 @@
 #include "core2/1E6F080.h"
 
-extern f32 D_80124DFC;
 extern Unk80126E30 D_80126E30[];
-
 s32 func_80095790() 
 {
     return sizeof(ba_unknown_94_s);
@@ -118,7 +116,7 @@ void func_80095A6C(s32 arg0, PlayerState* arg1) {
 }
 
 void func_80095A74(PlayerState* arg0, s32 arg1) {
-    if (map_getCurrent() == 0xB8) {
+    if (map_getCurrent() == MAP_B8_MT_MAYAHEM_TEMPLE) {
         if (arg1 != 0) {
             func_80095A08(arg0, 8, 1);
             return;
@@ -139,7 +137,7 @@ void func_80095AD0(PlayerState* arg0) {
     arg0->unk94->touchingWater = temp_v0;
     func_800959FC(arg0, 0x400005);
     arg0->unk94->unk0 = func_800C5A38();
-    ml_vec3f_clear(arg0->unk94->unk90);
+    ml_vec3f_clear(arg0->unk94->movementDelta);
     ml_vec3f_clear(arg0->unk94->unk78);
     ml_vec3f_clear(arg0->unk94->unk84);
     ml_vec3f_clear(arg0->unk94->wallNormal);
@@ -179,22 +177,24 @@ void func_800961A0(PlayerState* arg0, s32 arg1) {
 }
 
 void func_800961AC(PlayerState* arg0, s32 arg1) {
-    switch (arg0->unk94->unk9C) {
-    case 7:
-        func_80097858(arg0);
-        break;
-    case 0xA:
-        _bahitspline_entrypoint_0(arg0);
-        break;
+    switch (arg0->unk94->unk9C) 
+    {
+        case 7:
+            func_80097858(arg0);
+            break;
+        case 0xA:
+            _bahitspline_entrypoint_0(arg0);
+            break;
     }
     arg0->unk94->unk9C = arg1;
-    switch (arg1) {
-    case 7:
-        func_8009788C(arg0);
-        break;
-    case 0xA:
-        _bahitspline_entrypoint_1((s32) arg0);
-        break;
+    switch (arg1) 
+    {
+        case 7:
+            func_8009788C(arg0);
+            break;
+        case 0xA:
+            _bahitspline_entrypoint_1((s32) arg0);
+            break;
     }
 }
 
@@ -240,18 +240,18 @@ s32 func_80096388(PlayerState* arg0) {
     return arg0->unk94->unk9C;
 }
 
-void func_80096394(PlayerState* arg0, f32* arg1) {
-    ml_vec3f_copy(arg1, arg0->unk94->unk90);
+void player_getMovementDelta(PlayerState* arg0, f32* arg1) {
+    ml_vec3f_copy(arg1, arg0->unk94->movementDelta);
 }
 
-void func_800963C0(PlayerState* arg0, f32 arg1[3]) {
+void player_getFloorNormal(PlayerState* arg0, f32 arg1[3]) {
     func_800C675C(arg0->unk94->unk0, arg1);
 }
 
 f32 func_800963E4(PlayerState* arg0) {
     f32 sp1C[3];
 
-    func_800963C0(arg0, sp1C);
+    player_getFloorNormal(arg0, sp1C);
     return func_80013A7C(sp1C[1]);
 }
 
@@ -339,7 +339,7 @@ void func_800965E0(PlayerState* arg0, void* arg1) {
     func_800C67F8(arg0->unk94->unk0, arg1);
 }
 
-void func_80096604(PlayerState* arg0, f32 arg1[3][3]) {
+void player_getFloorVertices(PlayerState* arg0, f32 arg1[3][3]) {
     func_800C6840(arg0->unk94->unk0, arg1);
 }
 
@@ -456,16 +456,16 @@ void func_800967C8(f32* arg0, f32* arg1, f32* arg2, f32* arg3) {
         D_80126E30[0].unk0 = 0;
     }
     D_80126E30[D_80126E30[0].unk0].unk4 = temp_f0_2;
-    ml_vec3f_copy(&D_80126E30[D_80126E30[0].unk0].unk8.pos.x, arg0);
-    ml_vec3f_copy(&D_80126E30[D_80126E30[0].unk0].unk14.pos.x, arg1);
-    ml_vec3f_copy(&D_80126E30[D_80126E30[0].unk0].unk20.pos.x, sp60);
-    ml_vec3f_copy(&D_80126E30[D_80126E30[0].unk0].unk2C, sp7C);
+    ml_vec3f_copy(D_80126E30[D_80126E30[0].unk0].unk8, arg0);
+    ml_vec3f_copy(D_80126E30[D_80126E30[0].unk0].unk14, arg1);
+    ml_vec3f_copy(D_80126E30[D_80126E30[0].unk0].unk20, sp60);
+    ml_vec3f_copy(D_80126E30[D_80126E30[0].unk0].unk2C, sp7C);
     D_80126E30[0].unk0 = (s32) (D_80126E30[0].unk0 + 1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_80096ACC.s")
 
-s32 func_80096DD4(s32 arg0, s32 arg1, f32* arg2, f32* arg3) {
+s32 func_80096DD4(f32 arg0[3], f32 arg1[3], f32 arg2[3], f32 arg3[3]) {
     f32 sp24[3];
     f32 sp18[3];
 
@@ -507,13 +507,13 @@ s32 func_80096E30(ba_unknown_98_s* arg0, f32* arg1, f32* arg2, f32 arg3, f32 arg
     ml_vec3f_sum(sp4C, sp1C, sp40);
     ml_vec3f_sum(spB8, sp94, sp7C);
     ml_vec3f_sum(sp70, sp4C, sp34);
-    if (func_80096DD4((s32)spA0, (s32)spAC, sp94, spB8) == 0) {
+    if (func_80096DD4(spA0, spAC, sp94, spB8) == 0) {
         return 0;
     }
-    if (func_80096DD4((s32)sp58, (s32)sp64, sp4C, sp70) == 0) {
+    if (func_80096DD4(sp58, sp64, sp4C, sp70) == 0) {
         return 1;
     }
-    if (ml_vec3f_dot_product(spAC, sp64) <= D_80124DFC) {
+    if (ml_vec3f_dot_product(spAC, sp64) <= 0.1000000015f) {
         return 4;
     }
     func_800EFE50(arg1, spA0, sp58, 0.5f);
@@ -706,7 +706,7 @@ s32 func_800976DC(PlayerState* arg0) {
     }
     player_getWallTouchNormal(arg0, wallNormal);
 
-	//Reject most wall normals that point up
+    //Reject most wall normals that point up
     if ((0.028f < wallNormal[1]) && (wallNormal[1] < 0.98f)) {
         return 0;
     }
@@ -745,7 +745,7 @@ void func_800978A4(PlayerState* arg0) {
     f32 sp30[3];
     f32 sp24[3];
 
-    func_8009C15C(arg0, sp3C);
+    player_getPrevCoords(arg0, sp3C);
     if (arg0->unk98->unk26 != 0) {
         arg0->unk98->unk26 = 0;
         ml_vec3f_copy(sp30, arg0->unk98->unk18);

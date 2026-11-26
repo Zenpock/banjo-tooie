@@ -27,18 +27,18 @@ void player_getCoords(PlayerState *, f32[3]);
 //Get Player Vertical Coordinate
 f32 player_getCoordVertical(PlayerState*);
 
-void func_8009C15C(PlayerState*, f32[3]);
+void player_getPrevCoords(PlayerState*, f32[3]);
 
 //Get Older Player Coordinates
-void func_8009C188(PlayerState*, f32*);
+void player_getOlderCoords(PlayerState*, f32*);
 
 //Add Vertical to Player
-void func_8009C1B4(PlayerState*, f32);
+void player_addVertical(PlayerState*, f32);
 void func_8009C1CC(PlayerState*, f32*);
 void func_8009C1F8(PlayerState *, f32[3]);
 
 //Decay Position To Storage
-void func_8009C21C(PlayerState*);
+void player_oldCoordsToStorage(PlayerState*);
 void func_8009C25C(PlayerState*);
 
 #endif // __CORE2_1E75920_H__

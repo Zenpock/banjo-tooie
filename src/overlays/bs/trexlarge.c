@@ -48,7 +48,7 @@ void func_80800044_bstrexlarge(PlayerState* self)
     s32 sp2C;
     s32 pad[2];
     player_getCoords(self, sp3C);
-    func_80096394(self, sp30);
+    player_getMovementDelta(self, sp30);
     sp4C = func_800962D4(self);
     sp2C = func_80096518(self) == 0;
     sp48 = baphysics_get_vertical_velocity(self);

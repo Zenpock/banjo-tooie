@@ -11,46 +11,46 @@ extern s16 D_80132DCC;
 
 void func_800E9F20(s32 arg0, s32 arg1)
 {
-	GraphicsBuffers* buf;
+    GraphicsBuffers* buf;
 
-	buf = graphics_getGraphicsBuffer();
-	if (D_80132DCC == 0)
-	{
-		func_800E44FC(buf);
-		return;
-	}
-	func_800BE9B0();
-	func_800BFD6C(buf, arg0); //Draw Skybox
-	func_800E44FC(buf);
-	func_800D2A44(buf);
-	func_800BC8F8(buf);
-	func_800BE9E4(buf); //Draw World
-	func_800BD594(buf);
-	func_800EB51C(1, buf); //Draw solid actors
-	func_800EB51C(5, buf); //Draw Shadows
-	func_800F5008(buf); //Draw Banjo
-	func_800EB51C(0, buf); //Draw Actors
-	func_800B525C(buf);
-	if (func_800BF3E4() != 0) {
-		func_800BEA24(buf); //Transparent Textures
-	}
-	func_800B7BB0();
-	func_800F50D0(buf);
-	func_800EB51C(2, buf);
-	func_800B52EC(buf); //Particles
-	func_800BC948(buf);
-	func_800EB51C(6, buf);
-	if (D_80127EF4 != 0) {
-		_sufade_entrypoint_1(buf);
-	}
-	func_800A8EF0(buf, arg0);
-	func_800F51CC();
+    buf = graphics_getGraphicsBuffer();
+    if (D_80132DCC == 0)
+    {
+        func_800E44FC(buf);
+        return;
+    }
+    func_800BE9B0();
+    func_800BFD6C(buf, arg0); //Draw Skybox
+    func_800E44FC(buf);
+    func_800D2A44(buf);
+    func_800BC8F8(buf);
+    func_800BE9E4(buf); //Draw World
+    func_800BD594(buf);
+    func_800EB51C(1, buf); //Draw solid actors
+    func_800EB51C(5, buf); //Draw Shadows
+    func_800F5008(buf); //Draw Banjo
+    func_800EB51C(0, buf); //Draw Actors
+    func_800B525C(buf);
+    if (func_800BF3E4() != 0) {
+        func_800BEA24(buf); //Transparent Textures
+    }
+    func_800B7BB0();
+    func_800F50D0(buf);
+    func_800EB51C(2, buf);
+    func_800B52EC(buf); //Particles
+    func_800BC948(buf);
+    func_800EB51C(6, buf);
+    if (D_80127EF4 != 0) {
+        _sufade_entrypoint_1(buf);
+    }
+    func_800A8EF0(buf, arg0);
+    func_800F51CC();
 }
 
 // Get World Section
 MapId map_getCurrent(void) 
 {
-	return D_80132DC2;
+    return D_80132DC2;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EA068.s")
@@ -179,60 +179,60 @@ void func_800EA398(void) {
 
 int func_800EB15C(ActorMarker* arg0)
 {
-	if (arg0->unk18_0)
-	{
-		return 0;
-	}
-	if (!arg0->unk24_22)
-	{
-		return 1;
-	}
-	if (!game_isMultiplayer())
-	{
-		if (!func_800F6774(character_getActiveIndex()))
-		{
-			if ((arg0->unk18_16) && (func_80102F74(actorList_getFromMarker(arg0), 0x88000000)))
-			{
-				return 1;
-			}
-			return 0;
-		}
-	}
-	return 1;
+    if (arg0->unk18_0)
+    {
+        return 0;
+    }
+    if (!arg0->unk24_22)
+    {
+        return 1;
+    }
+    if (!game_isMultiplayer())
+    {
+        if (!func_800F6774(character_getActiveIndex()))
+        {
+            if ((arg0->unk18_16) && (func_80102F74(actorList_getFromMarker(arg0), 0x88000000)))
+            {
+                return 1;
+            }
+            return 0;
+        }
+    }
+    return 1;
 }
 
 void func_800EB210(ActorMarker* arg0, ActorMarker* arg1, s32 arg2)
 {
-	CallbackTable* temp_v0;
+    CallbackTable* temp_v0;
 
-	if (func_800EB15C(arg0) != 0)
-	{
-		temp_v0 = func_800EC3C4(arg0);
-		if (arg0) {}
-		switch (arg2)
-		{
-		case 0:
-			if (temp_v0->unk0 != 0)
-			{
-				temp_v0->unk0(arg0, arg1);
-				return;
-			}
-			break;
-		case 1:
-			if (temp_v0->unk4 != 0)
-			{
-				temp_v0->unk4(arg0, arg1);
-				return;
-			}
-			break;
-		case 2:
-			if (temp_v0->unk8 != 0)
-			{
-				temp_v0->unk8(arg0, arg1);
-			}
-			break;
-		}
-	}
+    if (func_800EB15C(arg0) != 0)
+    {
+        temp_v0 = func_800EC3C4(arg0);
+        if (arg0) {}
+        switch (arg2)
+        {
+        case 0:
+            if (temp_v0->unk0 != 0)
+            {
+                temp_v0->unk0(arg0, arg1);
+                return;
+            }
+            break;
+        case 1:
+            if (temp_v0->unk4 != 0)
+            {
+                temp_v0->unk4(arg0, arg1);
+                return;
+            }
+            break;
+        case 2:
+            if (temp_v0->unk8 != 0)
+            {
+                temp_v0->unk8(arg0, arg1);
+            }
+            break;
+        }
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EB2DC.s")

@@ -10,7 +10,7 @@
 
 s32 func_80800160_gccubesearch(s32 arg0, s32 arg1, s32 arg2)
 {
-    return (arg0 * arg0) + (arg1 * arg1) + (arg2 * arg2);
+    return SQ(arg0) + SQ(arg1) + SQ(arg2);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/cubesearch/gccubesearch_entrypoint_4.s")

@@ -9,6 +9,7 @@
 	#include "core2/1EC9740.h"
 	#include "core2/1ECB9F0.h"
 
-    void func_800D4D5C(f32*, ba_unknown_94_s*);
+	void func_800D4584(ba_unknown_94_s*, f32[3], f32[3], f32[3]);
+	void func_800D4D5C(f32*, ba_unknown_94_s*);
 
     #endif

@@ -519,7 +519,7 @@ void bsblongleg_entrypoint_21(PlayerState* self)
     func_8009D658(self);
     _batimer_decrement(self, 0);
     if (func_8008E148(self) != 0) {
-        func_800963C0(self, sp34);
+        player_getFloorNormal(self, sp34);
         func_800F1EA4(sp34, &sp44);
         func_8009D2F0(self, 1, 0.5f);
         baphysics_set_target_horizontal_velocity(self, ml_map_f(bapitch_getIdeal(self), 20.0f, 60.0f, 550.0f, 700.0f));

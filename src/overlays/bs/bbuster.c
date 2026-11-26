@@ -129,7 +129,7 @@ void bsbbuster_update(PlayerState *self) {
                 self->unk15C.bytes[3]++;
             }
             self->unk15C.bytes[1] = baflag_isTrue(self, BA_FLAG_8);
-            func_80096394(self, sp28);
+            player_getMovementDelta(self, sp28);
             if (mlAbsF(sp28[1]) < 1.0f) {
                 self->unk160.bytes[0]++;
             } else {

@@ -190,7 +190,7 @@ void func_800F3BD0(PlayerState* self, s32 arg1, f32* arg2)
         func_80092DC0(self, arg2);
         return;
     case 8:
-        func_8009C188(self, arg2);
+        player_getOlderCoords(self, arg2);
         return;
     case 9:
         func_80092D9C(self, arg2);

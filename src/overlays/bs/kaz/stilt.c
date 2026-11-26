@@ -438,7 +438,7 @@ void bskazstilt_entrypoint_21(PlayerState *self) {
     _batimer_decrement(self, 0);
     if (func_8008DF18(self) != 0)
     {
-        func_800963C0(self, sp38);
+        player_getFloorNormal(self, sp38);
         func_800F1EA4(&sp38, &sp34);
         func_8009D2F0(self, 1, 0.5f);
         baphysics_set_target_horizontal_velocity(self, ml_map_f(bapitch_getIdeal(self), 20.0f, 60, 550, 700.0f));

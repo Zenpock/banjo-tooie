@@ -7,7 +7,8 @@
 #include "ba/playerstate.h"
 
 void _bahitspline_entrypoint_0(PlayerState*);
-void bahitspline_entrypoint_1(s32 arg0);
-// bahitspline_entrypoint_2
+void bahitspline_entrypoint_1(PlayerState*);
+void _bahitspline_entrypoint_1(PlayerState*);
+void _bahitspline_entrypoint_2(PlayerState*);
 
 #endif // __BA_HITSPLINE__

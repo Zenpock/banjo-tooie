@@ -17,5 +17,6 @@ s32 func_800FB1B0(f32[3], f32[3], s32);
 f32 func_800FB1EC(f32[3], f32, f32[3], s32);
 s32 func_800FB2AC(f32[3], f32);
 s32 func_800FB338(f32*, s32, s32*, f32*);
+void func_800FB508(u8*, s32);
 
 #endif

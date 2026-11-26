@@ -36,7 +36,7 @@ void bsbshock_entrypoint_0(PlayerState* self) {
     func_800C301C(self->unk164.bytes[0], 0x41D);
     func_800C3730(self->unk164.bytes[0], 1.4f, 0.4f, -1.2f);
     func_80093300(self, -87.0f);
-    func_8009C1B4(self, -87.0f);
+    player_addVertical(self, -87.0f);
     self->unk15C.word = 1;
     self->unk160.word = 0;
 }
@@ -125,7 +125,7 @@ void bsbshock_entrypoint_1(PlayerState* self)
     {
         baphysics_set_vertical_velocity(self, 180.0f);
         func_80093300(self, 0.0f);
-        func_8009C1B4(self, 87.0f);
+        player_addVertical(self, 87.0f);
     }
     if ((sp24[1] < 0.0f) && (player_inWater(self) != 0))
     {
@@ -142,7 +142,7 @@ void bsbshock_entrypoint_2(PlayerState* self)
     if (func_80092BF4(self) != 0.0f)
     {
         func_80093300(self, 0.0f);
-        func_8009C1B4(self, 87.0f);
+        player_addVertical(self, 87.0f);
     }
 }
 
@@ -182,7 +182,7 @@ void bsbshock_entrypoint_4(PlayerState* self)
     func_800A0CF4(self, 1);
     func_800C6DA0(0x45);
     func_80093300(self, -87.0f);
-    func_8009C1B4(self, -87.0f);
+    player_addVertical(self, -87.0f);
     func_8009DF58(self, 0x43A, 1.0f);
     self->unk160.word = 0;
 }
@@ -244,7 +244,7 @@ void bsbshock_entrypoint_6(PlayerState* self)
     func_800A0CE8(self, 0);
     func_800A0CF4(self, 0);
     func_80093300(self, 0.0f);
-    func_8009C1B4(self, 87.0f);
+    player_addVertical(self, 87.0f);
 }
 
 s32 bsbshock_entrypoint_7(s32 arg0) {

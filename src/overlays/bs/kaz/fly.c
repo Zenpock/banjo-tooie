@@ -322,7 +322,7 @@ BanjoStateId func_80800D24_bskazfly(PlayerState *self, BanjoStateId nextState) {
     } 
 
     if (is_player_stable != 0) {
-        func_800963C0(self, sp38);
+        player_getFloorNormal(self, sp38);
         sp28 = func_80096628(self);
     } else {
         player_getWallTouchNormal(self, sp38);

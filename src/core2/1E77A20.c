@@ -48,7 +48,7 @@ void func_8009E154(PlayerState* arg0, s32 arg1, f32* arg2)
 		func_800EF4E4(sp70, arg0->unk114->unk0[arg1].unk20, ml_normalizeAngle_f(yaw_get(arg0) + arg0->unk114->unk0[arg1].unk24), 0.0f, 0.0f, arg0->unk114->unk0[arg1].unk1C);
 		ml_vec3f_add(sp7C, sp70);
 	}
-	func_80096394(arg0, sp40);
+	player_getMovementDelta(arg0, sp40);
 	ml_vec3f_add(sp7C, sp40);
 	ml_vec3f_copy(arg2, sp7C);
 }

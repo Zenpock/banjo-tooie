@@ -209,7 +209,7 @@ void bsbbilldrill_entrypoint_2(PlayerState* self) {
             }
             break;
         case 3:
-            func_80096394(self, sp34);
+            player_getMovementDelta(self, sp34);
             if (mlAbsF(sp34[1]) < 1.0f) {
                 self->unk15C.bytes[1] += 1;
             } else {

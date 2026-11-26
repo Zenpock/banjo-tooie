@@ -329,7 +329,7 @@ int func_8008DF8C(PlayerState* arg0, s32 arg1)
 	{
 		return 1;
 	}
-	func_800963C0(arg0, sp24);
+	player_getFloorNormal(arg0, sp24);
 	if ((sp24[1] < D_80124AE4) && (sp24[1] >= 0.0f))
 	{
 		return 0;

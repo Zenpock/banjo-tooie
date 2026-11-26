@@ -621,7 +621,7 @@ void bsbtrot_entrypoint_21(PlayerState* self) {
     self->unk16C = ml_max_f(self->unk16C - time_getDelta(), 0.0f);
     if (func_8008DF18(self) != 0)
     {
-        func_800963C0(self, &sp38);
+        player_getFloorNormal(self, &sp38);
         func_800F1EA4(&sp38, &sp34);
         func_8009D3A8(self, 1);
         baphysics_set_target_horizontal_velocity(self, ml_map_f(bapitch_getIdeal(self), 20.0f, 60.0f, 550.0f, 700.0f));

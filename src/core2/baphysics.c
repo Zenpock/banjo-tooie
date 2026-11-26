@@ -53,7 +53,7 @@ void func_8009AE08(PlayerState* self) {
 	sp58[1] = 0.0f;
 	if (func_80096518(self) != 0)
 	{
-		func_800963C0(self, sp4C);
+		player_getFloorNormal(self, sp4C);
 		ml_vec3f_getNormalized(sp40, sp58);
 		sp3C = ml_vec3f_dot_product(sp40, sp4C);
 		sp38 = func_800A3378(self);

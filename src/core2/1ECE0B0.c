@@ -433,7 +433,7 @@ void func_800F5654(s32 arg0)
 
 void func_800F5680(s32 arg0,f32 arg1[3])
 {
-    func_800963C0(D_80135490.unk0[arg0],arg1);
+    player_getFloorNormal(D_80135490.unk0[arg0],arg1);
 }
 
 s32 func_800F56AC(s32 arg0)
@@ -509,9 +509,9 @@ void func_800F58A0(s32 arg0)
     _bswalk_entrypoint_0(D_80135490.unk0[arg0]);
 }
 
-void func_800F58CC(s32 arg0,f32* arg1)
+void character_getMovementDelta(s32 arg0,f32* arg1)
 {
-    func_80096394(D_80135490.unk0[arg0],arg1);
+    player_getMovementDelta(D_80135490.unk0[arg0],arg1);
 }
 
 s32 func_800F58F8(s32 arg0)
@@ -1137,15 +1137,13 @@ s32 func_800F6F00(s32 arg0) {
     f32 sp2C[3];
     f32 sp20[3];
     PlayerState* sp1C;
-    f32* sp18;
 
     sp1C = D_80135490.unk0[arg0];
     if (_badata_entrypoint_14(sp1C) == 0) {
         return 1;
     }
-    sp18 = sp2C;
-    func_800F58CC(arg0, sp2C);
-    if (*sp18 != 0.0f || sp2C[2] != 0.0f) {
+    character_getMovementDelta(arg0, sp2C);
+    if (sp2C[0] != 0.0f || sp2C[2] != 0.0f) {
         return 0;
     }
     if (character_isStable(arg0) == 0) {
