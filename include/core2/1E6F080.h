@@ -25,14 +25,6 @@
 #include "core2/1E97EF0.h"
 #include "core1/1E2B200.h"
 
-typedef struct {
-    s32 unk0;
-    f32 unk4;
-    f32 unk8[3];
-    f32 unk14[3];
-    f32 unk20[3];
-    f32 unk2C[2]; // ?? should be Vec3f, too
-} Unk80126E30;
 
 void func_80095870(PlayerState*, f32*, f32*);
 s32 func_8009588C(PlayerState*);
@@ -83,19 +75,5 @@ void func_80096704(PlayerState*);
 void func_80096728(PlayerState*);
 void func_80096768(PlayerState*);
 void func_8009679C(PlayerState*);
-s32 func_80096ACC(f32[3], f32[3], f32[3], f32[3]);
-s32 func_80096DD4(f32[3], f32[3], f32[3], f32[3]);
-s32 func_80096E30(ba_unknown_98_s*, f32*, f32*, f32, f32, f32);
-s32 func_8009700C(PlayerState*, f32*, f32*, f32, f32);
-s32 func_800970A4(f32*, f32*, f32);
-s32 func_80097104(PlayerState*, f32*, f32);
-s32 func_800972BC(PlayerState*, f32*);
-f32 func_800974FC(PlayerState*);
-u8 func_80097524(PlayerState *);
-s32 func_80097530(PlayerState *);
-s32 func_800976DC(PlayerState*);
-void func_80097858(PlayerState*);
-void func_8009788C(PlayerState*);
-void func_800978A4(PlayerState*);
 
 #endif // __CORE2_1E6F080_H__

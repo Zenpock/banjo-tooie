@@ -23,6 +23,7 @@
 #include "core2/1E66990.h"
 #include "core2/1E6B900.h"
 #include "core2/1E6F080.h"
+#include "core2/1E700B0.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
 #include "core2/1E78BF0.h"
