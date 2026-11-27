@@ -36,7 +36,7 @@ void func_8080000C_chwaterfallfx(Actor* arg0)
     arg0->unk50 = (f32)((s32)temp_f0 * 1.5f);
 }
 
-void func_80800148_chwaterfallfx(Actor* arg0)
+void chwaterfallfx_update(Actor* arg0)
 {
     _subaddieaudioloop_entrypoint_5(arg0, arg0->position, 1, 0xC80, &D_80800458_chwaterfallfx);
     if (arg0->unk5F != 0)
@@ -57,7 +57,7 @@ void func_80800148_chwaterfallfx(Actor* arg0)
     }
 }
 
-s32 func_808001E4_chwaterfallfx(s32 arg0, s32 arg1, s32 arg2) 
+s32 chwaterfallfx_eventHandler(Actor* arg0, s32 arg1, s32 arg2)
 {
     return 0;
 }

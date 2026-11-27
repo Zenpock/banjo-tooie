@@ -7,9 +7,9 @@ ActorData* chhotwatersteam_entrypoint_0()
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hot/watersteam/func_8080000C_chhotwatersteam.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hot/watersteam/func_8080003C_chhotwatersteam.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hot/watersteam/chhotwatersteam_update.s")
 
-s32 func_808000C4_chhotwatersteam(s32 arg0, s32 arg1, s32 arg2) 
+s32 chhotwatersteam_eventHandler(s32 arg0, s32 arg1, s32 arg2) 
 {
     return 0;
 }

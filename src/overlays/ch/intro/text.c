@@ -69,7 +69,7 @@ void func_80800130_chintrotext(s32 arg0)
     flag_setValueFalse(FLAG2_6AD_CURRENTLY_SHOWING_INTROTEXT);
 }
 
-void func_80800154_chintrotext(Actor* arg0)
+void chintrotext_update(Actor* arg0)
 {
     introTextMemory* sp3C;
     s32 sp38;

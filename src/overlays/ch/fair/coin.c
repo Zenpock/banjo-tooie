@@ -2,7 +2,7 @@
 extern s32 D_80800150_chfaircoin;
 extern ActorData D_8080015C_chfaircoin;
 
-void func_80800000_chfaircoin(Actor* arg0)
+void chfaircoin_update(Actor* arg0)
 {
     f32 sp2C;
     f32 temp_f0;

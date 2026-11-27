@@ -90,7 +90,7 @@ s32 chswitch_entrypoint_5(Actor* arg0, s32 arg1, u32 arg2)
     return 1;
 }
 
-void chswitch_entrypoint_6(Actor* arg0)
+void chswitch_update(Actor* arg0)
 {
     s32 temp_v0;
     s32 temp;

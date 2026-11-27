@@ -15,7 +15,7 @@ void func_80800264_chlagoonfish()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/fish/func_808002F8_chlagoonfish.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/fish/func_8080038C_chlagoonfish.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/fish/chlagoonfish_update.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/fish/func_80800908_chlagoonfish.s")
 
@@ -23,7 +23,7 @@ void func_80800264_chlagoonfish()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/fish/func_80800A44_chlagoonfish.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/fish/func_80800AE0_chlagoonfish.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/fish/chlagoonfish_eventHandler.s")
 
 extern ActorData D_80800B70_chlagoonfish;
 ActorData* chlagoonfish_entrypoint_0()

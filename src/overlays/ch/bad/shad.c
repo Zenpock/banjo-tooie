@@ -7,7 +7,7 @@ ActorData* chbadshad_entrypoint_0()
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/shad/func_8080000C_chbadshad.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/shad/func_80800090_chbadshad.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/shad/chbadshad_update.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/shad/func_808000E0_chbadshad.s")
 

@@ -1,6 +1,6 @@
 #include "ch/lavatraindoorswitch.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/traindoorswitch/func_80800000_chlavatraindoorswitch.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/traindoorswitch/chlavatraindoorswitch_eventHandler.s")
 
 void func_8080003C_chlavatraindoorswitch(s32 arg0)
 {

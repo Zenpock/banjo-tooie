@@ -19,7 +19,7 @@ void func_8080000C_chfactoryposter(Actor* arg0)
     func_800BF744(2, 1);
 }
 
-void func_8080005C_chfactoryposter(Actor* arg0)
+void chfactoryposter_update(Actor* arg0)
 {
     f32 sp24[3];
 

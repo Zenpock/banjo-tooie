@@ -25,7 +25,7 @@ void func_8080000C_chgruntyfireballbig(Actor* actor)
     func_80109EEC(actor, 0x40);
 }
 
-void func_80800030_chgruntyfireballbig(Actor* actor)
+void chgruntyfireballbig_update(Actor* actor)
 {
     f32 sp2C;
 
@@ -66,7 +66,7 @@ void func_80800030_chgruntyfireballbig(Actor* actor)
     }
 }
 
-s32 func_808001B4_chgruntyfireballbig(Actor* actor, s32 arg1, s32 arg2)
+s32 chgruntyfireballbig_eventHandler(Actor* actor, s32 arg1, s32 arg2)
 {
     f32 sp34[3];
     u32* temp_a0;

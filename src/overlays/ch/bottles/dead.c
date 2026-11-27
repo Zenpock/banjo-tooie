@@ -6,7 +6,7 @@ void func_80800000_chbottlesdead(Actor* arg0)
 {
     func_80102FDC(arg0, arg0->scale * 0.15f);
 }
-void func_80800034_chbottlesdead()
+void chbottlesdead_update()
 {
     func_8010C964();
 }

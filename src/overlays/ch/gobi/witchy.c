@@ -7,7 +7,7 @@ ActorData* chgobiwitchy_entrypoint_0()
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gobi/witchy/func_8080000C_chgobiwitchy.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gobi/witchy/func_80800104_chgobiwitchy.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gobi/witchy/chgobiwitchy_eventHandler.s")
 
 void func_808001C8_chgobiwitchy(Actor* arg0) 
 {

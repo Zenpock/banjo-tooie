@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/temple/bossdoor.h"
 
 extern ActorData D_808001C0_chtemplebossdoor;
 ActorData* chtemplebossdoor_entrypoint_0()
@@ -7,4 +7,4 @@ ActorData* chtemplebossdoor_entrypoint_0()
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/temple/bossdoor/func_8080000C_chtemplebossdoor.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/temple/bossdoor/func_808000E8_chtemplebossdoor.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/temple/bossdoor/chtemplebossdoor_eventHandler.s")

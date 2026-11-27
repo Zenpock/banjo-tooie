@@ -10,11 +10,11 @@ ActorData* chboggyfatboy_entrypoint_1()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/func_80800078_chboggyfatboy.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/func_808000AC_chboggyfatboy.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/chboggyfatboy_update.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/func_8080052C_chboggyfatboy.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/func_808005AC_chboggyfatboy.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/chboggyfatboy_eventHandler.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/func_80800808_chboggyfatboy.s")
 

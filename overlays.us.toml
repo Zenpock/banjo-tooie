@@ -2495,7 +2495,7 @@ entrypoints = [
   "chswitch_entrypoint_3",
   "chswitch_entrypoint_4",
   "chswitch_entrypoint_5",
-  "chswitch_entrypoint_6",
+  "chswitch_update",
   "chswitch_entrypoint_7",
   "chswitch_entrypoint_8",
   "chswitch_entrypoint_9",
@@ -3400,8 +3400,8 @@ entrypoints = [
 [[overlay]] # Overlay 293
 name = "chdoor"
 entrypoints = [
-  "chdoor_entrypoint_0",
-  "chdoor_entrypoint_1",
+  "chdoor_update",
+  "chdoor_eventHandler",
 ]
 
 [[overlay]] # Overlay 294
@@ -7932,7 +7932,7 @@ entrypoints = [
   "sucoasterfly_entrypoint_1",
   "sucoasterfly_entrypoint_2",
   "sucoasterfly_entrypoint_3",
-  "sucoasterfly_entrypoint_4",
+  "sucoasterfly_eventHandler",
   "sucoasterfly_entrypoint_5",
   "sucoasterfly_entrypoint_6",
 ]
@@ -8081,7 +8081,7 @@ name = "sucoaster"
 entrypoints = [
   "sucoaster_entrypoint_0",
   "sucoaster_entrypoint_1",
-  "sucoaster_entrypoint_2",
+  "sucoaster_update",
   "sucoaster_entrypoint_3",
   "sucoaster_entrypoint_4",
   "sucoaster_entrypoint_5",
@@ -8100,7 +8100,7 @@ entrypoints = [
   "sucoaster_entrypoint_18",
   "sucoaster_entrypoint_19",
   "sucoaster_entrypoint_20",
-  "sucoaster_entrypoint_21",
+  "sucoaster_eventHandler",
   "sucoaster_entrypoint_22",
 ]
 

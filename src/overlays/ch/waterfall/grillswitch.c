@@ -1,6 +1,6 @@
-#include "common.h"
+#include "ch/waterfall/grillswitch.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/waterfall/grillswitch/func_80800000_chwaterfallgrillswitch.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/waterfall/grillswitch/chwaterfallgrillswitch_update.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/waterfall/grillswitch/func_80800054_chwaterfallgrillswitch.s")
 

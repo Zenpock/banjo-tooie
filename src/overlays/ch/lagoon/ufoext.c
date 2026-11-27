@@ -23,7 +23,7 @@ typedef struct {
 }UFOActorData;
 #define UFO_DATA(arg0) ((UFOActorData*)(arg0->actorData))
 void func_808002A4_chlagoonufoext(Actor*);
-s32 func_80800000_chlagoonufoext(Actor* arg0, s32 arg1, s32 arg2)
+s32 chlagoonufoext_eventHandler(Actor* arg0, s32 arg1, s32 arg2)
 {
     u32 temp_v0;
 
@@ -113,7 +113,7 @@ void func_808002A4_chlagoonufoext(Actor* arg0)
     _subaddiedialog_entrypoint_11(arg0->unk0, 0x1047U, 0x40U, arg0->position, 0U);
 }
 
-void func_8080032C_chlagoonufoext(Actor* arg0)
+void chlagoonufoext_update(Actor* arg0)
 {
     s32 sp34;
 

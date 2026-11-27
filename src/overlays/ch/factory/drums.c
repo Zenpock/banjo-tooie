@@ -8,7 +8,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/drums/func_808003A8_chfactorydrums.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/drums/func_808003DC_chfactorydrums.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/drums/chfactorydrums_update.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/drums/chfactorydrums_entrypoint_0.s")
 
@@ -16,7 +16,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/drums/func_80800CD0_chfactorydrums.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/drums/func_80800D90_chfactorydrums.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/drums/chfactorydrums_eventHandler.s")
 
 extern ActorData D_8080125C_chfactorydrums;
 ActorData* chfactorydrums_entrypoint_2()

@@ -7,7 +7,7 @@ ActorData* cheggproximity_entrypoint_0()
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/proximity/cheggproximity_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/proximity/func_808000A8_cheggproximity.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/proximity/cheggproximity_eventHandler.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/proximity/func_80800164_cheggproximity.s")
 
@@ -15,7 +15,7 @@ ActorData* cheggproximity_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/proximity/cheggproximity_entrypoint_2.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/proximity/func_80800330_cheggproximity.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/proximity/cheggproximity_update.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/proximity/func_8080048C_cheggproximity.s")
 

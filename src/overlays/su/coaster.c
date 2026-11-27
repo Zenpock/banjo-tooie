@@ -4,7 +4,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/sucoaster_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/sucoaster_entrypoint_2.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/sucoaster_update.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/func_8080027C_sucoaster.s")
 
@@ -54,7 +54,7 @@ void sucoaster_entrypoint_20(Actor* actor, GraphicsBuffers* buf)
 	func_80101870(actor, buf);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/sucoaster_entrypoint_21.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/sucoaster_eventHandler.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/sucoaster_entrypoint_22.s")
 

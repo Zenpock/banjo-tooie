@@ -11,7 +11,7 @@ void sucoasterfly_entrypoint_2(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/fly/sucoasterfly_entrypoint_3.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/fly/sucoasterfly_entrypoint_4.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/fly/sucoasterfly_eventHandler.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/fly/func_80800EF0_sucoasterfly.s")
 

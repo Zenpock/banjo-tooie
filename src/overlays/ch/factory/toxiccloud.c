@@ -4,7 +4,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxiccloud/func_808000F0_chfactorytoxiccloud.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxiccloud/func_808001B8_chfactorytoxiccloud.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxiccloud/chfactorytoxiccloud_update.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxiccloud/func_80800A34_chfactorytoxiccloud.s")
 
@@ -20,7 +20,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxiccloud/func_80801164_chfactorytoxiccloud.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxiccloud/func_808011A0_chfactorytoxiccloud.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxiccloud/chfactorytoxiccloud_eventHandler.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxiccloud/func_808012C4_chfactorytoxiccloud.s")
 

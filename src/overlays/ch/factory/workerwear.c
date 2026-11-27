@@ -12,7 +12,7 @@ ActorData* chfactoryworkerwear_entrypoint_0()
 void func_80800124_chfactoryworkerwear(s32 arg0) 
 {
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerwear/func_8080012C_chfactoryworkerwear.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerwear/chfactoryworkerwear_update.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerwear/func_80800260_chfactoryworkerwear.s")
 
@@ -20,4 +20,4 @@ void func_80800124_chfactoryworkerwear(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerwear/func_80800320_chfactoryworkerwear.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerwear/func_80800350_chfactoryworkerwear.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerwear/chfactoryworkerwear_eventHandler.s")

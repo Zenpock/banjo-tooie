@@ -17,9 +17,9 @@ ActorData* chbadjinjo_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/jinjo/func_808003EC_chbadjinjo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/jinjo/func_8080059C_chbadjinjo.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/jinjo/chbadjinjo_update.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/jinjo/func_80800C90_chbadjinjo.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/jinjo/chbadjinjo_eventHandler.s")
 
 void func_80800DF0_chbadjinjo(s32 arg0) 
 {

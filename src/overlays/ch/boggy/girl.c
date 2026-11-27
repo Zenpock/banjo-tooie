@@ -7,9 +7,9 @@ ActorData* chboggygirl_entrypoint_0()
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/func_8080000C_chboggygirl.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/func_808000A8_chboggygirl.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/chboggygirl_update.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/func_80800508_chboggygirl.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/chboggygirl_eventHandler.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/func_80800708_chboggygirl.s")
 

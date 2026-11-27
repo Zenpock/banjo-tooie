@@ -9,7 +9,7 @@ void func_80800000_chgruntylairexttowerwindow(s32 arg0)
 {
 }
 
-s32 func_80800008_chgruntylairexttowerwindow(Actor* arg0, s32 arg1, s32 arg2)
+s32 chgruntylairexttowerwindow_eventHandler(Actor* arg0, s32 arg1, s32 arg2)
 {
     switch (arg1)
     {

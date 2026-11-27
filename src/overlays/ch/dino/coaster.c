@@ -37,7 +37,7 @@ s32 func_808001C8_chdinocoaster(Actor* arg0, s32 arg1, s32 arg2)
 		case EVENT_95_ACTOR_SPAWNED:
 			arg0->unk64_20 = 0;
 		default:
-			return _sucoaster_entrypoint_21(arg0, arg1, arg2);
+			return _sucoaster_eventHandler(arg0, arg1, arg2);
 	}
 	return 1;
 }

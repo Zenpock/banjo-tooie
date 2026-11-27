@@ -1,6 +1,6 @@
 #include "ch/lavacolumnswitch.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/columnswitch/func_80800000_chlavacolumnswitch.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/columnswitch/chlavacolumnswitch_eventHandler.s")
 
 void func_8080003C_chlavacolumnswitch(s32 arg0)
 {

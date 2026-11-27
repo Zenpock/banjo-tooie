@@ -4,7 +4,7 @@ extern s32 D_80800150_chlavaentrydoor;
 extern s32 D_80800190_chlavaentrydoor;
 extern ActorData D_808001A4_chlavaentrydoor;
 
-s32 func_80800000_chlavaentrydoor(Actor* arg0, s32 arg1, s32 arg2)
+s32 chlavaentrydoor_eventHandler(Actor* arg0, s32 arg1, s32 arg2)
 {
     Actor* temp_v0;
 

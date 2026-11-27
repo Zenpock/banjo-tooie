@@ -131,7 +131,7 @@ void func_8080032C_chgoldstatue(Actor* arg0)
 }
 
 //Update
-void func_80800528_chgoldstatue(Actor* arg0)
+void chgoldstatue_update(Actor* arg0)
 {
     s32 sp34;
     void* sp30;

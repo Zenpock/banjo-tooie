@@ -13,7 +13,7 @@ void func_8080016C_chfaircoinbox(s32 arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fair/coinbox/func_80800174_chfaircoinbox.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fair/coinbox/func_808001C8_chfaircoinbox.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fair/coinbox/chfaircoinbox_update.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fair/coinbox/func_80800264_chfaircoinbox.s")
 
@@ -23,7 +23,7 @@ void func_8080016C_chfaircoinbox(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fair/coinbox/chfaircoinbox_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fair/coinbox/func_808003C4_chfaircoinbox.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fair/coinbox/chfaircoinbox_eventHandler.s")
 
 extern ActorData D_808004C8_chfaircoinbox;
 ActorData* chfaircoinbox_entrypoint_2()

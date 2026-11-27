@@ -1,8 +1,8 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/empspell/func_80800000_chfactoryempspell.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/empspell/chfactoryempspell_update.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/empspell/func_80800630_chfactoryempspell.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/empspell/chfactoryempspell_eventHandler.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/empspell/func_80800A08_chfactoryempspell.s")
 

@@ -162,7 +162,7 @@ void func_80803A78_chintrochar(Actor* arg0, GraphicsBuffers* arg1)
 	}
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/char/func_80803D0C_chintrochar.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/char/chintrochar_eventHandler.s")
 
 extern ActorData D_8080532C_chintrochar;
 ActorData* chintrochar_entrypoint_0()

@@ -4,7 +4,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/onion/func_808000BC_chfantasyonion.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/onion/func_80800254_chfantasyonion.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/onion/chfantasyonion_update.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/onion/func_80800624_chfantasyonion.s")
 

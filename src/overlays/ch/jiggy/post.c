@@ -29,7 +29,7 @@ void func_80800014_chjiggypost(Actor* arg0, s32 arg1)
     func_80101FDC(arg0, 2);
 }
 
-void func_80800068_chjiggypost(Actor* arg0)
+void chjiggypost_update(Actor* arg0)
 {
 
     s32 temp_a0;
@@ -130,7 +130,7 @@ void func_808001C4_chjiggypost(Actor* arg0, s32 arg1, s32 arg2)
 
 }
 
-s32 func_808002DC_chjiggypost(Actor* arg0, s32 arg1, s32 arg2)
+s32 chjiggypost_eventHandler(Actor* arg0, s32 arg1, s32 arg2)
 {
     splitS32* split = (splitS32*)&arg2;
     switch (arg1)

@@ -23,7 +23,7 @@ s32* _chswitch_entrypoint_2(void);
 s32 _chswitch_entrypoint_3(Actor*, enum flag_e);
 void _chswitch_entrypoint_4(Actor*);
 s32 _chswitch_entrypoint_5(Actor*, s32, u32);
-void _chswitch_entrypoint_6(Actor*);
+void _chswitch_update(Actor*);
 s32 _chswitch_entrypoint_7(Actor*, enum flag_e);
 void _chswitch_entrypoint_8(Actor*, s32);
 void _chswitch_entrypoint_9(Actor*);

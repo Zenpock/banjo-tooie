@@ -20,7 +20,7 @@ ActorData* cheggsplode_entrypoint_0()
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/splode/func_8080000C_cheggsplode.s")
 
-s32 func_808002A8_cheggsplode(Actor* arg0, s32 arg1, s32 arg2)
+s32 cheggsplode_eventHandler(Actor* arg0, s32 arg1, s32 arg2)
 {
     EggSplodeData* sp1C;
     s32 temp_v0;
@@ -52,7 +52,7 @@ s32 func_808002A8_cheggsplode(Actor* arg0, s32 arg1, s32 arg2)
 
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/splode/func_8080035C_cheggsplode.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/splode/cheggsplode_update.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/splode/func_8080041C_cheggsplode.s")
 

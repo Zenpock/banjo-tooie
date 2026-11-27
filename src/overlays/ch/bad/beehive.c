@@ -11,9 +11,9 @@ ActorData* chbadbeehive_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/beehive/func_80800158_chbadbeehive.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/beehive/func_80800298_chbadbeehive.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/beehive/chbadbeehive_update.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/beehive/func_8080070C_chbadbeehive.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/beehive/chbadbeehive_eventHandler.s")
 
 void func_808008F0_chbadbeehive(s32 arg0) 
 {

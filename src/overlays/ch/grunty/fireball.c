@@ -25,7 +25,7 @@ void func_8080000C_chgruntyfireball(Actor* actor)
     func_80109EEC(actor, 0x40);
 }
 
-void func_80800030_chgruntyfireball(Actor* actor)
+void chgruntyfireball_update(Actor* actor)
 {
     _subaddieaudioloop_entrypoint_4(actor, actor->position, 1U, &D_808004C8_chgruntyfireball);
     switch (actor->unk70_10)
@@ -53,7 +53,7 @@ void func_80800030_chgruntyfireball(Actor* actor)
     }
 }
 
-s32 func_80800130_chgruntyfireball(Actor* actor, s32 arg1, s32 arg2)
+s32 chgruntyfireball_eventHandler(Actor* actor, s32 arg1, s32 arg2)
 {
     f32 sp34[3];
     s32 temp_v0;

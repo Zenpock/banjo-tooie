@@ -10,9 +10,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/drillfield/func_8080048C_chfantasydrillfield.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/drillfield/func_808004E8_chfantasydrillfield.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/drillfield/chfantasydrillfield_update.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/drillfield/func_8080054C_chfantasydrillfield.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/drillfield/chfantasydrillfield_eventHandler.s")
 
 extern ActorData D_808009C4_chfantasydrillfield;
 ActorData* chfantasydrillfield_entrypoint_0()
