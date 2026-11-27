@@ -29,7 +29,7 @@ int position_isWithinRangeOf(f32* arg0, f32 arg1, f32* arg2)
     //Get Diff
     ml_getdiff_vec3f(diff, arg2, arg0);
     //Compare squared length
-    return ml_vec3f_magnitude_sq(diff) <= (arg1 * arg1);
+    return ml_vec3f_magnitude_sq(diff) <= SQ(arg1);
 }
 
 int func_800F0008(f32* arg0, f32 arg1, f32* arg2, f32 arg3)
@@ -39,7 +39,7 @@ int func_800F0008(f32* arg0, f32 arg1, f32* arg2, f32 arg3)
 
     ml_getdiff_vec3f(diff, arg0, arg2);
     temp_f2 = arg1 + arg3;
-    return ml_vec3f_magnitude_sq(diff) <= (temp_f2 * temp_f2);
+    return ml_vec3f_magnitude_sq(diff) <= SQ(temp_f2);
 }
 
 int func_800F0064(f32* arg0, f32 arg1, f32* arg2)
@@ -47,7 +47,7 @@ int func_800F0064(f32* arg0, f32 arg1, f32* arg2)
     s32 var_v0;
 
     var_v0 = 0;
-    return func_800EFC7C(arg0, arg2) < (arg1 * arg1);
+    return func_800EFC7C(arg0, arg2) < SQ(arg1);
 }
 
 int func_800F00A4(f32* arg0, f32 arg1, f32 arg2, f32 arg3, f32* arg4)
@@ -56,7 +56,7 @@ int func_800F00A4(f32* arg0, f32 arg1, f32 arg2, f32 arg3, f32* arg4)
     {
         return 0;
     }
-    return func_800EFC7C(arg0, arg4) < (arg1 * arg1);
+    return func_800EFC7C(arg0, arg4) < SQ(arg1);
 }
 
 //ml_vec3w_within_horizontal_distance
@@ -66,7 +66,7 @@ int func_800F0130(s32* arg0, s32 arg1, s32* arg2)
 
     diff[0] = arg2[0] - arg0[0];
     diff[2] = arg2[2] - arg0[2];
-    return ((diff[0] * diff[0]) + (diff[2] * diff[2])) < (arg1 * arg1);
+    return ((diff[0] * diff[0]) + (diff[2] * diff[2])) < SQ(arg1);
 }
 
 void func_800F018C(f32* arg0, f32* arg1, f32* arg2, f32* arg3)

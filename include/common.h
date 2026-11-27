@@ -159,7 +159,7 @@ typedef struct Actor {
     /* 0x79 */ u8 unk79_0 : 2; //unk78 & 3
     /* 0x7A */ u16 unk7A_14 : 2;
     /* 0x7A */ u16 unk7A_12 : 2;
-	/* 0x7A */ u16 unk7A_9 : 3;
+	/* 0x7A */ u16 unk7A_9 : 3; // arg0->unk7A & 0xFF3F
     /* 0x7A */ u16 unk7A_8 : 1;
     /* 0x7A */ u16 unk7A_7 : 1;
 	/* 0x7A */ u16 unk7A_6 : 1;
