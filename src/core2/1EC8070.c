@@ -128,13 +128,13 @@ void ml_vec3f_getVecFromYaw(f32* dst, f32 yaw, f32 dist)
     dst[2] = ml_cos2f() * dist;
 }
 
-void func_800EEBF0(f32* dst, f32* arg1, f32 dist)
+void func_800EEBF0(f32 dst[3], f32 arg1[2], f32 dist)
 {
     ml_vec3f_clear(dst);
     ml_translateAngleDist_3D(dst, arg1[0], arg1[1], dist);
 }
 
-void func_800EEC30(f32* dst, f32 pitch, f32 yaw, f32 dist)
+void func_800EEC30(f32 dst[3], f32 pitch, f32 yaw, f32 dist)
 {
     ml_vec3f_clear(dst);
     ml_translateAngleDist_3D(dst, pitch, yaw, dist);

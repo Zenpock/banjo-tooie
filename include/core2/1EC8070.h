@@ -23,7 +23,7 @@ f32 ml_vec3f_dot_product(f32 a[3], f32 b[3]); // ml_vec3f_dot_product
 f32 ml_vec3f_distance(f32 a[3], f32 b[3]); // ml_vec3f_distance
 f32 ml_vec3f_distance_sq(f32 a[3], f32 b[3]); // ml_vec3f_distance_sq
 void ml_vec3f_getVecFromYaw(f32[3], f32, f32);
-void func_800EEBF0(f32*, f32*, f32);
+void func_800EEBF0(f32[3], f32[2], f32);
 void func_800EEC30(f32[3], f32, f32, f32);
 void func_800EEC70(f32*, f32, f32, f32);
 int ml_vec3f_is_equal(f32*, f32*);
